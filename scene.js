@@ -2879,6 +2879,13 @@ Scene.validCommands                    = {
 };
 Scene.validCommands.lifemap            = 1;
 Scene.prototype.lifemap                = function lifemap(data) {
+    $('.stat_diff').remove();
+
+    // Create lastStats if none exists
+    if (!lastStats) {
+        lastStats = $.extend({}, stats);
+    }
+
     var inverseStyle       = document.createElement("style");
     inverseStyle.setAttribute("id", "inverseStyle");
     inverseStyle.innerHTML = "body { background-color: black; color: white; } a { color: #0099ff; }";
@@ -2904,7 +2911,7 @@ Scene.prototype.lifemap                = function lifemap(data) {
         if (!vig)continue;
         finishedSet[vig] = 1;
     }
-    ;
+
     var firstRowEmpty = true;
     while (firstRowEmpty && grid.length >= 5) {
         for (var columnNum = 1; firstRowEmpty && columnNum < 4; columnNum++) {
@@ -2932,9 +2939,17 @@ Scene.prototype.lifemap                = function lifemap(data) {
     var frag        = document.createElement("div");
     frag.innerHTML  = textBuilder.join("");
     var target      = this.target;
-    if (!target)target     = document.getElementById("text");
+    if (!target)target = document.getElementById("text");
     target.appendChild(frag);
+
+    addStatDiffTable();
+
     window.lifeMapCallback = function (vig) {
+        $('.stat_diff').remove();
+
+        // Save last stats so can see the difference after the scene
+        lastStats = $.extend({}, stats);
+
         function executeScene() {
             clearScreen(function () {
                 window.stats.vig = vig;

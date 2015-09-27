@@ -43,3 +43,56 @@ td[width="64"] a[data-name]:hover:after {
     height     : 60%;
     box-shadow : 0 0 80px greenyellow;
 }
+
+.stat_diff {
+    position         : fixed;
+    top              : 0;
+    left             : 0;
+    right            : 0;
+    padding          : 10px;
+    background-color : grey;
+    transition       : all 0.4s;
+    transform        : translateY(-100%);
+}
+
+/**
+<div class="stat_diff"><div><span class="name">Physical</span><span class="value">-15%</span></div>
+<div><span class="name">Confidence</span><span class="value">-7%</span></div>
+<div><span class="name">Gentleness</span><span class="value">+14%</span></div></div>
+*/
+.stat_diff:not(:empty):after {
+    position                   : absolute;
+    bottom                     : -32px;
+    right                      : 0;
+    display                    : block;
+    content                    : '';
+    background-color           : grey;
+    width                      : 32px;
+    height                     : 32px;
+    border-bottom-left-radius  : 8px;
+    border-bottom-right-radius : 8px;
+    background-image           : url(stats_180.png);
+    background-size            : cover;
+}
+
+.stat_diff:hover {
+    transform : translateY(0);
+}
+
+.stat_diff div.positive {
+    background-color : rgba(128, 255, 128, 0.5);
+    margin-bottom    : 4px;
+    padding          : 6px;
+}
+
+.stat_diff div.negative {
+    background-color : rgba(255, 128, 128, 0.5);
+    margin-bottom    : 4px;
+    padding          : 6px;
+
+}
+
+.stat_diff span.name {
+    display : inline-block;
+    width   : 160px;
+}

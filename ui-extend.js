@@ -45,6 +45,7 @@
         } else if (char === 'n' && el[0].getAttribute('data-name')) {
             // Zoom in and go
             var $lifeMapNext = $('#main table a[accesskey="n"]');
+            $lifeMapNext.addClass('active');
 
             $('body').animate(
                 { scrollTop : $lifeMapNext.offset().top },
@@ -55,7 +56,7 @@
                     $img
                         .css('transition', 'all 0.6s')
                         .css({
-                            'transform' : 'scale(16,16)',
+                            'transform' : 'scale(8,8)',
                             'opacity'   : 0.2,
                             'z-index'   : 1
                         });
@@ -94,3 +95,56 @@
 
     //speechSynthesis.getVoices().map(function(ssv){ return ssv.name; });
 })();
+
+function addStatDiffTable() {
+    var STAT_HUMAN_READABLE = {
+        "ph" : 'Physical',
+        "in" : 'Intellectual',
+        "vc" : 'Vocational',
+        "ca" : 'Calmness',
+        "cn" : 'Confidence',
+        "ex" : 'Expressiveness',
+        "fm" : 'Familial',
+        "gn" : 'Gentleness',
+        "hp" : 'Happiness',
+        "sc" : 'Social',
+        "th" : 'Thoughtfulness',
+        "tr" : 'Trustworthiness'
+    };
+
+    var $statDiff = $('<div class="stat_diff"/>');
+    var diffHTML  = Object.keys(lastStats)
+        .map(function (key) {
+            if (key in STAT_HUMAN_READABLE && stats[key] != lastStats[key]) {
+                return {
+                    name  : key,
+                    value : lastStats[key] - stats[key]
+                };
+            }
+        }
+    )
+        .
+        filter(Boolean)
+        .map(function (statdiff) {
+            var name  = STAT_HUMAN_READABLE[statdiff.name];
+            var value = statdiff.value;
+            var change;
+
+            if (statdiff.value > 0) {
+                value  = '+' + value + '%';
+                change = 'positive';
+            } else {
+                value  = value + '%';
+                change = 'negative';
+            }
+            return [
+                '<div class="' + change + '">',
+                '<span class="name">' + name + '</span>',
+                '<span class="value">' + value + '</span>',
+                '</div>'
+            ].join('');
+        })
+        .join('\n');
+    $statDiff.html(diffHTML);
+    $(document.body).append($statDiff);
+}
