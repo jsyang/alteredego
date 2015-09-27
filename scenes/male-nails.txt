@@ -1,0 +1,50 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+While sitting around the house with a girlfriend one night, she says she wants to give you a manicure.
+*choice mood action
+  #APPRECIATIVE
+    #ACCEPT THE MANICURE
+      *goto A11
+    #REFUSE THE MANICURE
+      *goto A12
+  #UNAPPRECIATIVE
+    *selectable_if (false) #ACCEPT THE MANICURE
+      *finish
+    #REFUSE THE MANICURE
+      *goto A22
+*label A11
+*set SC%+30
+*set CN%+30
+*set IN%+20
+Letting your friend groom you puts her in a very romantic mood. After she finishes the job you get cozy on the couch and have a hot and heavy time. Unfortunately, the next day, your friends see your polished nails and "rag"
+on you for days about it. Little do they know...
+*finish
+*label A12
+*set IN%-10
+*set SC%-20
+I guess you don't want to hurt the poor girl's feelings. How could she think a macho guy like you would want a manicure? You begin to doubt your own masculinity. Little did you know when someone wants to take care of you like
+that, it can be very sexy, making you MORE of a man. You just passed up the opportunity for a hot and heavy evening.
+*finish
+*label A22
+*if GN<40
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You are concerned that your male friends will make fun of you. Unfortunately, your emotional status indicator for Gentleness shows that you have a tendency to be unduly hostile at times. Your refusal comes off sounding critical. She
+replies that she was only trying to do you a favor. This leads to more fighting. She leaves early.
+*finish
+*label B.F
+You are concerned that your male friends will make fun of you. Your Gentleness characteristic suggests that you can tell your girlfriend that you would rather not have a manicure right now, without making it sound like a criticism.
+*page_break
+Little did you know that your concern with your male friends' reactions prevented you from having a potentially romantic evening. When men and women want to take care of one another by helping groom their partners (e.g., comb
+their hair, do their nails), that can be very sexy.
+*finish
+

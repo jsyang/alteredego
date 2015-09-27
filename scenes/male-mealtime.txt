@@ -1,0 +1,339 @@
+You are sitting in your highchair, eating your lunch which consists of crackers, strained peas and a mug of milk. You are just learning how to eat with utensils.
+*choice mood action
+  #ANGRY
+    #PICK UP SUPERDUCK PLASTIC DRINKING CUP
+      *goto A11
+    #TRY TO USE THE SPOON
+      *goto A12
+    #ESCAPE FROM THE HIGHCHAIR
+      *goto A13
+  #CURIOUS
+    #PICK UP SUPERDUCK PLASTIC DRINKING CUP
+      *goto A21
+    #TRY TO USE THE SPOON
+      *goto A22
+    #ESCAPE FROM THE HIGHCHAIR
+      *goto A23
+*label A11
+You are in a bad mood. You were disturbed right in the middle of an exciting game of blocks. Superduck would understand. You hold the plastic mug high over your head. It is full of milk. Mother says, "Put the mug down on the table
+before you spill it."
+
+
+Select an action:
+
+*choice
+  #"O.K." AND PUT DOWN THE MUG
+    *goto B1
+  #"NO!"
+    *goto B2
+*label B1
+Mom turns away.
+
+
+Select an action:
+
+*choice
+  #START PLAYING WITH THE CUP AGAIN
+    *goto C1
+  #DRINK THE MILK
+    *goto C2
+*label C1
+Superduck away! You zoom Superduck over your head, showering the kitchen with milk.
+*set TR%-20
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+Mom doesn't notice the mess until she slips on it and lands right on the floor. Fortunately, she doesn't get hurt. But she yells loudly. It hurts your ears and you begin to cry. You were bad.
+*finish
+*label D2
+You get caught. Not even Superduck will help you out of this mess. You get yelled at, but worse, Mom starts to feed you the way mothers do when they are mad. You barely get a chance to swallow your food. Yech!
+*set HP%-20
+*finish
+*label B2
+Mother says, "Don't you tell me 'NO,' young man. I am your MOTHER." You don't really understand what she is saying, so you say:
+*set GN%-10
+
+
+Select an action:
+
+*choice
+  #NOTHING
+    *goto E1
+  #"NO!"
+    *goto E2
+*label E1
+Smart. Don't get her temper up, she's having a rough day. You've saved yourself some emotional duress.
+*set TH%+25
+
+
+Select an action:
+
+*choice
+  #DRINK THE MILK
+    *goto F1
+  #USE THE SPOON
+    *goto F2
+*label N1
+*label F1
+*label P1
+*label Q1
+*label C2
+Lifting the milk with both hands, you attempt to find your mouth. You make the connection. The milk fills your tiny mouth very quickly and spills down around your chin. You try to put the cup down on the tray but it tips dangerously.
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label G1
+The cup rocks back and forth, but remains upright. Your mother is saved from having to wipe up a spill.
+*finish
+*label G2
+The cup rocks twice, then falls off the tray and bounces off the floor several times. Your mother is aggravated, but can't take it out on you. You were trying.
+*finish
+*label E2
+You are put into your room and told not to come out until you can behave yourself.
+*set GN%-10
+*set HP%-10
+*finish
+*label N2
+*label P2
+*label Q2
+*label A12
+Using hatchet-like strokes you pulverize the cracker until it is unrecognizable.
+*set GN%-20
+
+
+Select an action:
+
+*choice
+  #YELL AND POUND ON THE HIGHCHAIR TRAY
+    *goto H1
+  #QUIETLY SPRINKLE THE CRUMBS ALL OVER THE FLOOR
+    *goto H2
+*label H1
+Sometimes children your age just go wild for no apparent reason. Some parents will let you act out, as long as you are not doing anything dangerous to yourself.
+*set GN%-10
+*if ST>0
+  *goto I.T
+*else
+  *goto I.F
+*label I.T
+Yours will not. She is getting rapidly annoyed and gives you the "cut-it-out- or-else" look.
+*page_break
+What will you do:
+
+
+Select an action:
+
+*choice
+  #LIFT THE HIGHCHAIR TRAY AND SLAM IT DOWN
+    *goto J1
+  #STOP
+    *goto J2
+*label I.F
+Since your parents aren't very strict, your mother tries to ride this one out.
+*page_break
+What will you do:
+
+
+Select an action:
+
+*choice
+  #LIFT THE HIGHCHAIR TRAY AND SLAM IT DOWN
+    *goto J1
+  #STOP
+    *goto J2
+*label J1
+CRASH! You have decided to test the limits. Your mother gets annoyed, whether she is strict or not. You are sentenced to an afternoon nap. The crime: crankiness.
+*set GN%-10
+*set HP%-10
+*finish
+*label J2
+You have just avoided a premature nap.
+*set TH%+20
+*finish
+*label H2
+*set GN%-10
+*set TH%-10
+All of the characteristics related to extreme sneakiness and hostility have increased. Your actions will not be detected until the next time someone sweeps the floor. How do you feel about this?
+
+
+Select a mood:
+
+*choice
+  #GOOD
+    *goto K1
+  #GUILTY
+    *goto K2
+*label K1
+You are even more sneaky and mean than I thought. What kind of adult will you turn out to be if you keep this up?
+*set GN%-10
+*set TR%-30
+*finish
+*label K2
+Don't feel too guilty. You're just a kid, remember? I'll decrease some of your negative scores. That should make you feel a little better.
+*set GN%+30
+*set TR%+30
+*finish
+*label A13
+Your mom pulled you away from a block-building session that you didn't want to end. When her back is turned you lift the highchair tray and slip under it.
+You hit the floor with a loud thump.
+
+
+Select an action:
+
+*choice
+  #CRAWL AWAY
+    *goto L1
+  #CRY
+    *goto L2
+*label L1
+*label CRAWL
+*label V1
+*label W1
+Nothing (not even a sore bottom) can stop you now. You are headed for daylight. You go for the blocks with the speed of a charging buffalo. You encounter a large leg.
+*set CN%+20
+*set PH%+30
+
+
+Select an action:
+
+*choice
+  #DODGE
+    *goto M1
+  #SUBMIT
+    *goto M2
+*label M1
+*set CN%+20
+*set PH%+10
+You fake left and move right. Your mom is caught temporarily off guard and once again you are unobstructed. Your confidence increases even though you are eventually caught and dragged back to the highchair.
+
+
+Select an action:
+
+*choice
+  #DRINK THE MILK
+    *goto N1
+  #USE THE SPOON
+    *goto N2
+*label M2
+Admit it, you're outwitted (but not for long). You could have kept trying. Persistence sometimes does have its rewards. Your judgment seems pretty good, though, even at your age. You are taken back to your highchair.
+
+
+Select an action:
+
+*choice
+  #DRINK THE MILK
+    *goto P1
+  #USE THE SPOON
+    *goto P2
+*label L2
+Crying only puts your mom in a bad mood. See how easy it is to get a person to feel angry when you are angry, yourself?
+*page_break
+You are put back in the chair.
+
+
+Select an action:
+
+*choice
+  #DRINK THE MILK
+    *goto Q1
+  #USE THE SPOON
+    *goto Q2
+*label A22
+*label A21
+*label F2
+First you put the back end of the spoon in your mouth. You then lift the cup with both hands and try blowing through the spoon as if it were a straw. Nothing happens.
+
+
+Select an action:
+
+*choice
+  #FIND SOMETHING ELSE TO DO
+    *goto R1
+  #KEEP PLAYING WITH THE SPOON AND CUP
+    *goto R2
+*label R2
+Curiosity and persistence are early signs of an inventive personality. One day during late childhood you may find yourself attempting to rewire the electric hairdryer and have a shocking experience. For now you:
+
+
+Select an action:
+
+*choice
+  #STIR THE MILK RAPIDLY WITH THE SPOON
+    *goto S1
+  #PLACE THE SPOON INSIDE THE CUP AND TIP THE HIGHCHAIR TRAY FORWARD
+    *goto S2
+*label S1
+It makes bubbles! It bounces out of the cup and hits you in the face! It causes the cup to fly off the tray and spill all over the floor! This is great. Your mother fails to understand the true significance of your discoveries, but
+acts surprisingly tolerant.
+*finish
+*label S2
+Daredevil acts like this will probably not be very uncommon in your life. Please try to approach them with at least a concern for your own well-being, if not for the well-being of others. After three close calls the spoon and cup
+spill all over you. You suffer temporary physical distress (mild) because you have to be cleaned and changed. You make your mother aggravated.
+*set TH%-30
+*finish
+*label R1
+The strained peas look interesting. You can:
+
+
+Select an action:
+
+*choice
+  #TASTE SOME
+    *goto T1
+  #EXPERIMENT WITH THEM
+    *goto T2
+*label U1
+*label T1
+Ugh! They are terrible. Physical stress increases, slightly. Unfortunately, Mom feeds you the rest.
+*finish
+*label T2
+First, you use the spoon to cover a small amount of the tray with the strained peas. (Congratulations, you have learned to use a spoon.) Next, you take the mug and press it down on your pile of strained peas. Look at how the peas
+squish out from underneath the mug.
+*set IN%+30
+
+
+Select an action:
+
+*choice
+  #TASTE SOME
+    *goto U1
+  #DRINK THE MILK
+    *goto U2
+*label U2
+*set PH%+10
+This isn't so bad. The milk is actually quite good. Physically you are quite satisfied.
+*finish
+*label A23
+You will probably do much traveling when you get older. This isn't bad, provided that you are not traveling to avoid responsibility. You slip out of the chair, but hit the floor much harder than you expected.
+
+
+Select an action:
+
+*choice
+  #CRAWL AWAY
+    *goto V1
+  #CRY
+    *goto V2
+*label V2
+Mom comes over to make sure that you are O.K. No bad bruises or broken bones. You get much sympathy. This makes you feel good. The pain goes away (i.e., no more "boo-boo"). Would you like to try to crawl away again?
+*set PH%-20
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto W1
+  #NO
+    *goto W2
+*label W2
+Good idea. Mom stays and helps you learn how to eat with the right utensils. You will probably have excellent manners in restaurants when you grow up. Later, this can win you big points with women who are impressed by such things.
+*finish
+

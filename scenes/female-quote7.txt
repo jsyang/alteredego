@@ -1,0 +1,20 @@
+*check_purchase adfree
+*if choice_purchase_supported and not(choice_purchased_adfree)
+  Come back in a few minutes to play the next part of Alter Ego!
+
+  Or, you can buy the game now to skip the wait.
+
+  *purchase adfree $4.99 purchased
+  *delay_break 1200
+
+*label purchased
+
+WELCOME TO OLD AGE
+
+
+"The woman I shall become will be quite different from the woman I am now. Another 'I' is beginning, and so far I have not had to complain of her."
+
+GEORGE SAND
+Isadora, Volume II
+*finish
+

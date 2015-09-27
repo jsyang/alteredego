@@ -1,0 +1,66 @@
+*if FD>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+I'm sorry. Your life history prevents you from playing through this episode. Please try another.
+*finish
+*label Z.F
+Your father's eyesight is beginning to fail him, and his reflexes are not as quick as they used to be. In spite of this, he refuses to turn in his driver's license. Although he rarely drives, when he does, he is an absolute menace. You
+are sure that he will wind up killing either himself or an innocent person.
+*choice mood action
+  #SYMPATHETIC
+    #TELL HIM HE MUST GIVE UP HIS LICENSE
+      *goto A11
+    #TRY TO REASON WITH HIM
+      *goto A12
+    *selectable_if (false) #DO NOT BOTHER YOURSELF WITH IT
+      *finish
+  #ANGRY
+    #TELL HIM HE MUST GIVE UP HIS LICENSE
+      *goto A21
+    *selectable_if (false) #TRY TO REASON WITH HIM
+      *finish
+    *selectable_if (false) #DO NOT BOTHER YOURSELF WITH IT
+      *finish
+  #UNCONCERNED
+    *selectable_if (false) #TELL HIM HE MUST GIVE UP HIS LICENSE
+      *finish
+    *selectable_if (false) #TRY TO REASON WITH HIM
+      *finish
+    #DO NOT BOTHER YOURSELF WITH IT
+      *goto A33
+*label A11
+*set FM%-10
+That's not giving him sympathy; that's ordering him around, and you know how he resents that. He's not going to listen to you or anyone else and that's FINAL!
+*finish
+*label A12
+*set TH%+10
+You try to explain that he might hurt himself. "NONSENSE! WHAT'S THE MATTER WITH YOU? DO YOU THINK I'M A CHILD? I CAN TAKE CARE OF MYSELF!" Sympathy does not always soothe the savage breast. Your father feels as if an important
+decision were being made for him.
+*page_break
+This is very upsetting to older people. After spending a lifetime being responsible for your children, it is hard to accept their attempts to be responsible for you. He doesn't give up the license.
+*finish
+*label A21
+*if FM<50
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+This only turns into the same kind of argument you have been having all your life. Regardless of your intentions, the tension and hostility in the air wipe out any positive wishes or caring sentiments. He will probably continue to
+drive, and things between you will probably always be difficult.
+*finish
+*label B.F
+*set GN%-10
+The anger that you are expressing comes partially from the fact that we are uncomfortable seeing our parents as vulnerable, even in old age. It generally makes us feel helpless and weak ourselves. You may get angry, but eventually the
+anger subsides. Your father understands that his reflexes are not in tip-top shape, but he is terribly afraid of becoming dependent and a burden.
+*page_break
+Your family relationships thus far suggest that this is not likely to happen. Still, there is sadness accompanying the thought of a once powerful person growing older and weaker and that, before long, you will be at that stage, too.
+*finish
+*label A33
+*set GN%-20
+*set FM%-20
+You must have developed some pretty strong negative feelings about your father to be this insensitive to something potentially life-threatening. That is very unfortunate. He may need your help and guidance in this stage of life more
+than ever.
+*finish
+

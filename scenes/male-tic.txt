@@ -1,0 +1,108 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. You must be employed to play this vignette. You may try again after you have landed a job in the WORK ICON.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+It is the morning before an important day at work. As you are getting ready, your cheek begins to twitch rather noticeably. At first, the twitch feels like a mild tickle on your cheek. You don't give it much thought, but as time
+passes, it gets much worse. Soon, your eye begins to blink uncontrollably at random intervals.
+*choice mood action
+  #ANXIOUS/AFRAID
+    #DON'T GO TO WORK
+      *goto A11
+    #TRY TO DO SOMETHING ABOUT IT
+      *goto A12
+  #CALM
+    #DON'T GO TO WORK
+      *goto A21
+    #TRY TO DO SOMETHING ABOUT IT
+      *goto A22
+  #ANGRY
+    #DON'T GO TO WORK
+      *goto A31
+    #TRY TO DO SOMETHING ABOUT IT
+      *goto A32
+*label A11
+*set CA%-10
+*set VC%-10
+You are giving in to your problem. Hiding yourself won't make it go away. As a matter of fact, it only gets worse. Soon your head begins to jerk to the side. Everyone is wondering what is wrong with you.
+
+
+Select an action:
+
+*choice
+  #TRY TO DO SOMETHING ABOUT IT
+    *goto B1
+  #KEEP IGNORING IT
+    *goto B2
+*label B1
+*label A12
+*label A22
+What will you do?
+*label E
+
+
+Select an action:
+
+*choice
+  #WEAR DARK GLASSES TO HIDE IT
+    *goto C1
+  #SEE A DOCTOR
+    *goto C2
+  #TRY TO WORK THE NERVOUS HABIT INTO YOUR EVERYDAY BEHAVIOR
+    *goto C3
+*label C1
+*set CA%-10
+Unfortunately, it has been rainy, dark and gloomy lately, and no one can figure out what has come over you. Luckily, it goes away after a while, but not before it causes you a tremendous amount of anxiety.
+*finish
+*label C2
+The doctor tells you that your tic is probably a nervous habit, brought on by stress. There is no telling how long it may last, sometimes they become permanent. You will have to slow down and relax.
+
+
+Select an action:
+
+*choice
+  #TAKE A VACATION FROM WORK
+    *goto D1
+  #CONTINUE AS IS
+    *goto D2
+*label D1
+*set VC%+10
+*set CA%+30
+*set HP%+20
+The vacation does you a world of good. Some of the people you meet on vacation think that you are winking at them, but your nervous habit quickly goes away.
+*finish
+*label B2
+*label D2
+*set SC%-30
+*set CA%-20
+The habit becomes worse before it gets better. It is not long before your nervous tic becomes an involuntary shoulder shrug, always occuring at the most inconvenient times. One day, while standing in a crowded elevator, you
+nearly injure three people with your uncontrollable tics and body jerks. People begin to treat you as if there is something seriously wrong with you.
+*page_break
+Your stubborn refusal to take it easy has caused your problem to get worse. Not only do you have tics related to stress, you now have tics related to your self-consciousness about having tics! Eventually, they subside, but not
+before causing you extreme anxiety and embarrassment.
+*finish
+*label C3
+This would be a nice trick, if you could pull it off. Unfortunately, the people around you think you are winking at them. Some women (not to mention more than a few of the men) become extremely insulted.
+*finish
+*label A21
+*set CA%+40
+Aren't people going to wonder if you suddenly don't show up? Perhaps you think taking it easy for a day or so will make the problem go away. Well, chances are it will, and it does. Your nervous habit was related to stress. Staying calm
+and taking it easy reduced your stress level and removed the nervous habit.
+*finish
+*label A31
+*set GN%-20
+How dare this stupid thing suddenly happen to you! Many people get angry at symptoms like this, because they prevent them from functioning at their optimum level. However, staying home from work only gives you more time to get angry,
+and the symptom gets worse.
+*page_break
+Such intense reactions to things may be why this symptom popped up in the first place. Usually these symptoms are caused by stress. Eventually, you have to go into work, but the problem still hasn't disappeared. What will you do?
+*goto E
+*label A32
+*set CN%+30
+You are going to meet this problem head on. The intensity of your personality certainly shows through here. Unfortunately, this intensity may be the very thing that brought on this symptom in the first place. What will you do?
+*goto E
+

@@ -1,0 +1,116 @@
+*if AG < 15
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+You are doing some clothes shopping. A gorgeous guy keeps looking over at you, whispering to his friend and smiling.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*set CA%-5
+*finish
+*label A2
+He walks over to you, swaggering slightly, and introduces himself.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*set CA%-5
+*finish
+*label B2
+He eyes you up and down, stopping at all the strategic points along the way.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set CA%-10
+*finish
+*label C2
+He notes that you are a sharp dresser.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto D1
+  #CONTINUE
+    *goto D2
+*label D1
+*set CA%-10
+*finish
+*label D2
+He mentions that he needs to buy a present for someone just about your size and wonders whether you would consider trying on a beautiful and expensive formal gown, so he can make a decision. He has a slight accent.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto E1
+  #CONTINUE
+    *goto E2
+*label E1
+*set CA%-15
+*finish
+*label E2
+You try on the gown. He probably has a girlfriend.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto F1
+  #CONTINUE
+    *goto F2
+*label F1
+*set CA%-15
+*finish
+*label F2
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label G1
+*set SC%-10
+*set CN%-10
+He certainly does. Thanks for the help.
+*finish
+*label G2
+*set SC%+40
+No, he doesn't -- only a big fat wallet and a new dress and dinner invitation just for you.
+*if SR>0
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+
+Your boyfriend doesn't find out.
+*finish
+*label H.F
+*finish
+

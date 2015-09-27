@@ -1,0 +1,189 @@
+While rummaging around in the kitchen drawer you come across a book of matches.
+*choice mood action
+  #CONSCIENTIOUS
+    #PUT THE BOOK OF MATCHES AWAY
+      *goto A11
+    *selectable_if (false) #LIGHT ONE IN THE KITCHEN
+      *finish
+    *selectable_if (false) #TAKE THE MATCHES TO YOUR ROOM AND CLOSE THE DOOR
+      *finish
+  #CURIOUS
+    *selectable_if (false) #PUT THE BOOK OF MATCHES AWAY
+      *finish
+    #LIGHT ONE IN THE KITCHEN
+      *goto A22
+    #TAKE THE MATCHES TO YOUR ROOM AND CLOSE THE DOOR
+      *goto A23
+*label A11
+*set TR%+60
+A positive choice. There is nothing to be gained here except disaster. You may have just prevented a major loss to you and your family.
+*finish
+*label A22
+*set TR%-10
+You are mesmerized by the spark and flash of the match as you strike it. You let the flame burn down the shaft of the match, then blow it out and light another. The kitchen air soon becomes smoky, with a pungent sulfur odor.
+The smoke alarm rings and sends your mother scurrying to check what's happening. You are grounded for a week.
+*finish
+*label A23
+Now that you have the matches in the room you can:
+
+
+Select an action:
+
+*choice
+  #STRIKE A MATCH
+    *goto B1
+  #HIDE THE MATCHES
+    *goto B2
+*label B1
+*set TH%-30
+You are mesmerized by the spark and the flash of the match. You watch it burn down to the end of the shaft. A thin wisp of smoke snakes its way to the ceiling of your room. You can:
+
+
+Select an action:
+
+*choice
+  #STRIKE ANOTHER MATCH
+    *goto C1
+  #HIDE THE MATCHES
+    *goto C2
+*label C1
+*set TH%-30
+Again you watch the match burn. You pass the palm of your hand over the top of the flame and feel the heat. You can:
+
+
+Select an action:
+
+*choice
+  #STRIKE ANOTHER MATCH
+    *goto D1
+  #HIDE THE MATCHES
+    *goto D2
+*label D1
+*set TH%-20
+This time you light the match, then light a second one with the flame of the first. You wave them through the air and make designs with the fire. You can:
+
+
+Select an action:
+
+*choice
+  #LIGHT A SMALL PIECE OF PAPER WITH THE MATCH
+    *goto E1
+  #HIDE THE MATCHES
+    *goto E2
+*label E1
+*set TH%-20
+You roll up a piece of note paper and carefully watch it burn. It burns much faster than the match itself and before you know it you get stung by the heat of the flame as it touches your hand. Instinctively, you release the paper.
+*temp randomZ
+*rand randomZ 1 2
+*if randomZ=1
+  *goto Z1
+*else
+  *goto Z2
+*label Z1
+The buring paper lands on your bedspread and instantly ignites the fabric. You can:
+
+
+Select an action:
+
+*choice
+  #TRY TO PUT OUT THE FIRE
+    *goto F1
+  #RUN OUT OF THE HOUSE
+    *goto F2
+*label F1
+*set CA%-30
+The more you try to extinguish the flames, the worse the fire gets. Smoke fills the room and you can no longer find the door, which you locked before. You pass out.
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label G1
+*set PH%-40
+You wake up in a hospital with burns covering 30 percent of your body. No one else in your family is injured but the house is considerably damaged.
+*finish
+*label G2
+*set PH%-60
+Your body is covered with burns, your lungs filled with smoke. The lack of oxygen has caused permanent brain damage. You slip into a coma but eventually recover. Your carelessness has also caused the death of the
+firefighter who rescued you.
+*finish
+*label F2
+*set CA%-10
+*set TH%-30
+You could never have put out the fire. Fortunately, no one is seriously hurt, but the house incurs considerable damage. No one is quite sure how the fire started in the first place. Do you...
+
+
+Select an action:
+
+*choice
+  #KEEP QUIET
+    *goto H1
+  #CONFESS THAT IT WAS YOUR FAULT
+    *goto H2
+*label H1
+*set TR%-10
+Perhaps you think that if you confess, it will hurt your parents even more. Avoiding this confession is likely to make you feel guilty. Do you feel guilty now?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto I1
+  #NO
+    *goto I2
+*label I1
+*set TR%+10
+At least you have a conscience. Perhaps you will gather the strength to tell them some other time.
+*finish
+*label I2
+*set TR%-50
+Your lack of conscience is a sign of psychopathy. You could have killed innocent people. If you continue along this path, you will probably live a very short, self-destructive existence. Unfortunately, others will also pay a
+price for your bad streak. Repent!
+*finish
+*label H2
+*set HP%-30
+They say that "confession is good for the soul." It sure doesn't seem that way now. Your mother is in tears for a week. Everyone is so upset that you are not even punished, which probably makes you feel worse. It will be months before
+the effects of this experience wear off.
+*finish
+*label Z2
+The paper lands on the floor and burns a large hole in the carpet. You can:
+
+
+Select an action:
+
+*choice
+  #COVER IT UP WITH THE WASTEPAPER BASKET
+    *goto J1
+  #TELL YOUR PARENTS WHAT YOU DID
+    *goto J2
+*label J1
+*label B2
+*label D2
+*label E2
+*label C2
+Eventually you are found out and confronted. Your mom asks, "How did this get here?" You can:
+
+
+Select an action:
+
+*choice
+  #CONFESS
+    *goto K1
+  #SAY "I DON'T KNOW"
+    *goto K2
+*label J2
+*set TR%+30
+*goto TRUTH
+*label K1
+*set TR%+20
+*label TRUTH
+Your mom admires your truthfulness. She found the matches while she was cleaning. You are still, however, grounded for a week.
+*finish
+*label K2
+*set TR%-10
+*set HP%-20
+Nothing like adding insult to injury. She found the matches while she was cleaning. You are grounded one week for telling a lie and another week for playing with the matches.
+*finish
+

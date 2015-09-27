@@ -1,0 +1,141 @@
+You are attending the dinner party of a close friend, Michael Lewis, and his attractive wife, Judy. All through dinner Judy has been passing admiring glances your way.
+*page_break
+She has commented on your clothing, your jewelry and your cologne. Michael doesn't seem to mind his wife's flirtatiousness in the least. While clearing the dishes and preparing for dessert, Judy asks if you would help her do
+something in the kitchen.
+*choice mood action
+  #SHY/EMBARASSED
+    #GO INTO THE KITCHEN AND HELP
+      *goto A11
+    #MAKE AN EXCUSE AND AVOID GOING INTO THE KITCHEN
+      *goto A12
+  #BOLD
+    #GO INTO THE KITCHEN AND HELP
+      *goto A21
+    *selectable_if (false) #MAKE AN EXCUSE AND AVOID GOING INTO THE KITCHEN
+      *finish
+  #NEUTRAL
+    #GO INTO THE KITCHEN AND HELP
+      *goto A31
+    #MAKE AN EXCUSE AND AVOID GOING INTO THE KITCHEN
+      *goto A32
+*label A11
+*label A21
+*label A31
+*if (SR<1) and (MS<1)
+  *goto B.T
+*else
+  *goto B.F
+*label B.F
+The love of your life gives you a dirty look as you go off into the kitchen.
+*goto G
+*label B.T
+No one seems to notice you wandering off into the kitchen with Judy.
+*label G
+
+When you are in the kitchen Judy mentions that she wonders why Mike has kept all of his attractive men friends such a secret. You sense that she is beginning to make her move. What will you do now?
+
+
+Select an action:
+
+*choice
+  #FLIRT WITH HER
+    *goto H1
+  #BLUSH AND RETURN TO THE DINING ROOM
+    *goto H2
+  #FREEZE UP WITH ANXIETY
+    *goto H3
+*label H1
+*label Z1
+*set TH%-10
+*set TR%-20
+You say you never knew that Mike had such an attractive wife. Judy removes a large, sweet strawberry from a basket in the refrigerator and takes a bite from it, which makes her lips slick and wet. She asks if you would like a bite
+("of the strawberry, that is," she says with a giggle).
+
+
+Select an action:
+
+*choice
+  #TAKE A BITE
+    *goto I1
+  #GRACIOUSLY REFUSE
+    *goto I2
+*label K2
+*label I2
+This can lead to only one thing, and your conscience tells you that Mike would get upset. On the other hand, he didn't seem to mind it when you walked in here.
+
+
+Select an action:
+
+*choice
+  #TAKE A BITE
+    *goto J1
+  #KEEP REFUSING
+    *goto J2
+*label J2
+*label A12
+*label A32
+*set TH%+30
+*set TR%+40
+Your conscience gets the better of you. Thoughtfulness and Trustworthiness both increase.
+*finish
+*label J1
+*label I1
+She places the strawberry between her lips and holds it up to your mouth. You have one more chance to back out before you-know-what happens.
+
+
+Select an action:
+
+*choice
+  #TAKE IT ALL THE WAY TO YOU-KNOW-WHAT
+    *goto K1
+  #GRACIOUSLY REFUSE
+    *goto K2
+*label K1
+*temp randomL
+*rand randomL 1 2
+*if randomL=1
+  *goto L1
+*else
+  *goto L2
+*label L1
+Well, "you-know-what" happens...Mike walks in just when you are about to carry Judy into the bedroom for dessert. Everyone is embarrassed, but Mike has been through this before and evidently accepts it, although reluctantly. There are
+no hard feelings.
+*label Q
+*if (SR<1) and (MS<1)
+  *goto M.T
+*else
+  *goto M.F
+*label M.T
+*finish
+*label M.F
+*page_break
+*set TR%-50
+Trustworthiness for you, however, takes a nose dive because you didn't consider the feelings of your lover, who has been sitting alone for the past hour wondering what the two of you were doing in there.
+*finish
+*label L2
+*set HP%+20
+Well, "you-know-what" happens right there in the kitchen. It's surprising that the whole neighborhood doesn't realize what the two of you are doing in there, judging by the racket!
+*goto Q
+*label H2
+*set CA%-20
+I guess she was a bit on the forward side. Just when you are about to return she says, "Come on don't be so shy, I was only giving you a compliment. Help me bring this fruit out to the guests." She walks over to the refrigerator and
+takes out a large bowl of fresh fruit.
+*page_break
+She removes a large strawberry and places it between her teeth, letting it disappear slowly into her mouth with a loud "MMMMMMMmmmmmmmm."
+*if (SR<1) and (MS<1)
+  *goto R.T
+*else
+  *goto R.F
+*label R.T
+*finish
+*label R.F
+*page_break
+*set TR%-20
+When you return, your partner is very suspicious about the sound she just heard. Trustworthiness goes down, even though you didn't actually do anything.
+*finish
+*label H3
+*set SC%-20
+*set CN%-10
+Why did you go in there, if you didn't expect that she would get a bit forward with you? Your anxiety makes her think that you are a wimp. She hands you a bowl of fresh fruit and asks if you would bring it back to the table.
+*finish
+

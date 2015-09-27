@@ -1,0 +1,47 @@
+You are involved in a heated agrument with your wife. During the argument it strikes you that one of the things that is annoying you most is the fact that she is displaying the same characeristic you find undesirable in her mother. What
+will you do?
+
+
+Select an action:
+
+*choice
+  #BRING THIS TO HER ATTENTION
+    *goto A1
+  #TRY TO STOP THE ARGUMENT
+    *goto A2
+  #WALK OUT OF THE ROOM
+    *goto A3
+*label A1
+*set GN%-10
+You mention that she is being just like her mother. This, of course, is an especially keen insight provided at just the right moment -- to guarantee that she flies completely off the handle!
+*page_break
+As true as your observations may be, this is probably not the right time to play Sigmund with your ${spouseName}. Perhaps after she cooled down she would have thrown less dangerous objects in your direction.
+*finish
+*label A2
+You try to cool down the discussion, but she is absolutely determined to press the point.
+
+
+Select an action:
+
+*choice
+  #TELL HER SHE IS BEING UNREASONABLE
+    *goto B1
+  #TELL HER THAT SHE IS RIGHT JUST TO KEEP HER QUIET
+    *goto B2
+*label B1
+*set CA%-10
+"IS IT REASONABLE TO WANT TO HAVE AN INTELLIGENT DISCUSSION ABOUT SOMETHING?"
+*goto PIERCE
+*label B2
+*set MP+1
+"I HATE IT WHEN YOU PATRONIZE ME LIKE THAT!"
+*label PIERCE
+Her voice pierces through your skull with such intensity that your mouth puckers from the aftereffects. Maybe you should just let her scream it off.
+*finish
+*label A3
+*set CA%+30
+*set MP+2
+As you walk out of the room her voice fades pleasantly in the distance. This kind of avoidance is very reinforcing and almost guarantees that you will develop a habit of tuning your wife out during stressful times. It brings relief now,
+but is generally bad for your marriage.
+*finish
+

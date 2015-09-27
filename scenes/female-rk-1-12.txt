@@ -1,0 +1,220 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+You decide that you would like to try out for your school's cheerleading squad.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*finish
+*label A2
+It is your turn to do the routine.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*finish
+*label B2
+The cheerleading coach looks straight at you then turns her head away and whispers something to someone else.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set CA%-10
+*finish
+*label C2
+Both of them shake their heads back and forth...
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto D1
+  #CONTINUE
+    *goto D2
+*label D1
+*set CA%-15
+*finish
+*label D2
+You wave your pom-poms frantically in the air...
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto E1
+  #CONTINUE
+    *goto E2
+*label E1
+*set CA%+10
+*finish
+*label E2
+You hurl one skyward...
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto F1
+  #CONTINUE
+    *goto F2
+*label F1
+*set CA%+10
+*finish
+*label F2
+It bounces off your head.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto G1
+  #CONTINUE
+    *goto G2
+*label G1
+*finish
+*label G2
+You jump up and do a split in the air...
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto H1
+  #CONTINUE
+    *goto H2
+*label H1
+*set CA%-20
+*finish
+*label H2
+You land gracefully on your feet.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto I1
+  #CONTINUE
+    *goto I2
+*label I1
+*finish
+*label I2
+You begin to recite the school cheer...
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto J1
+  #CONTINUE
+    *goto J2
+*label J1
+*set CA%-30
+*finish
+*label J2
+You momentarily forget how to spell "Penatsquatch."
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto Q1
+  #CONTINUE
+    *goto Q2
+*label Q1
+*finish
+*label Q2
+A small crowd has gathered to watch the rest of your performance.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto K1
+  #CONTINUE
+    *goto K2
+*label K1
+*finish
+*label K2
+You are in the spotlight.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto L1
+  #CONTINUE
+    *goto L2
+*label L1
+*finish
+*label L2
+Exhausted from the emotional toll this has taken on you, you prepare to hear the results of the tryouts.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto M1
+  #CONTINUE
+    *goto M2
+*label M1
+*set CA%-30
+*set SC%-20
+*finish
+*label M2
+*temp randomN
+*rand randomN 1 3
+*if randomN=1
+  *goto N1
+*elseif randomN=2
+  *goto N2
+*else
+  *goto N3
+*label N1
+*set SC%-20
+I'm sorry. You need to practice a bit. Better luck next year.
+*finish
+*label N2
+*set SC%+10
+You make the team!
+*finish
+*label N3
+*set SC%+40
+*set CN%+40
+*set PH%+10
+Not only do you make the team, but the coach wants to know if you are up to being head cheerleader. Congratulations, you were terrific!
+*finish
+

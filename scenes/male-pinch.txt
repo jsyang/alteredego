@@ -1,0 +1,79 @@
+While you are sitting quietly at a party, you notice a very pretty, very slim young woman in a short skirt bend over to pick up something she has dropped on the floor.
+*choice mood action
+  #DEVILISH
+    #GIVE HER A LITTLE PINCH
+      *goto A11
+    #GIVE HER A BIG PINCH
+      *goto A12
+    *selectable_if (false) #LEAVE HER ALONE
+      *finish
+  #NICE
+    *selectable_if (false) #GIVE HER A LITTLE PINCH
+      *finish
+    *selectable_if (false) #GIVE HER A BIG PINCH
+      *finish
+    #LEAVE HER ALONE
+      *goto A23
+*label A11
+*label E1
+*set TR%-40
+"Oh!" The young lady turns around and looks at you with a startled expression on her face. You can:
+
+
+Select an action:
+
+*choice
+  #ADMIT THAT YOU PINCHED HER
+    *goto B1
+  #LOOK INNOCENT
+    *goto B2
+*label B1
+*set TR%+10
+You don't exactly have to admit it. She shakes her finger at you and tells you to behave yourself.
+*label B2
+*if TR<50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+After all these years of untrustworthy behavior, do you think she is going to fall for that innocent look? No way! She shakes her finger at you and tells you to behave yourself.
+*finish
+*label C.F
+Because you have been fairly trustworthy, the young lady gets suspicious, but can hardly believe a nice old gent like you could have done such a nasty thing. You have gotten away with it.
+*finish
+*label A12
+*set TR%-30
+*set GN%-10
+"OUCH!" That hurt. The young lady turns around startled and looks you right in the eye. She is mad! You can:
+
+
+Select an action:
+
+*choice
+  #APOLOGIZE
+    *goto D1
+  #TELL HER YOU WILL KISS IT AND MAKE IT BETTER
+    *goto D2
+*label D1
+*set SC%+10
+Apology accepted. "Don't let it happen again!"
+*finish
+*label D2
+"The nerve!" For the rest of the party every woman under fifty protects her bottom when she walks by.
+*finish
+*label A23
+*set SC%+30
+It's difficult to resist such temptations, isn't it? The sight of her firm, round, bottom brings back such sweet memories. Would you like to change your mind and give her a little pinch?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E2
+That's very admirable of you.
+*finish
+

@@ -1,0 +1,59 @@
+You would like to invite some old friends from the other side of the country, Bill and Marsha, for a visit. Marsha, a best friend from high school is a sweet person (always HAS been). Bill is a competitive, materialistic so-and-so,
+who is tolerable in small doses, but becomes very difficult to stand, VERY quickly.
+*page_break
+The last time you spoke with Marsha, she mentioned that she and Bill would be coming your way soon. It would be nice to invite them over for a weekend, but you are not sure if ${spouseName} could stand Bill for any length of time. ${spouseName} says
+he won't mind if you extend the invitation.
+
+
+Select an action:
+
+*choice
+  #INVITE THEM OVER
+    *goto A1
+  #DON'T INVITE THEM OVER
+    *goto A2
+*label A1
+*label F1
+*set TH%+10
+*set SC%+20
+Before they even step out of the car, you can hear Bill's big mouth addressing ${spouseName}: "HOWYA DOIN' THERE, OLD FELLA, GETTIN' A BIT OF A POT THERE!" (He pats your husband's belly.) "YOU LOOK LIKE YOU'RE ABOUT TO DELIVER A LITTER OF PUPS HA!
+HA! A LITTER OF PUPS, GET IT?!"
+*page_break
+After Bill and Marsha get settled in, Bill goes on to tell you about his boat, his new sports car, his portable video recorder and his local Bridge championship. He says to ${spouseName}, "Think you and the Mrs. are up to a little
+punishment from me and my co-champion here?" ${spouseName} can hardly refuse, even though you and Marsha would just rather sit and talk about old times.
+
+
+Select an action:
+
+*choice
+  #PLAY A GAME OF BRIDGE WITH HIM AND MARSHA
+    *goto B1
+  #IGNORE HIM
+    *goto B2
+*label B1
+For as long as you can remember, Bill has been a lousy Bridge player. Marsha is mortified and makes faces at you from across the table. Bill and Marsha lose terribly, but Bill doesn't seem to notice. It's just one boring story
+followed by another.
+*page_break
+Marsha confides that he's been this way since he retired. The two of you do get to talk and have a great time. Poor ${spouseName} is left babysitting for the rest of the weekend.
+*finish
+*label B2
+"HEY, NO BIGGIE. SOME OF US JUST CAN'T AFFORD TO PLAY WITH THE BIG BOYS, EH CHIEF?!" The time drags, and Marsha confides that he has been intolerable since his retirement. ${spouseName} later tells you that he thinks Bill was worse BEFORE
+his retirement.
+*finish
+*label A2
+*set HP%+20
+"But Marsha was your best friend in high school. It would be so nice if you could see her again." ${spouseName} seems very understanding.
+
+
+Select an action:
+
+*choice
+  #INVITE THEM
+    *goto F1
+  #DON'T INVITE THEM
+    *goto F2
+*label F2
+*set HP%+10
+${spouseName} is secretly very relieved.
+*finish
+

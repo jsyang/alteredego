@@ -1,0 +1,66 @@
+You haven't had a physical checkup for quite some time.
+*choice mood action
+  #CONCERNED
+    #GO TO THE DOCTOR
+      *goto A11
+    *selectable_if (false) #PUT IT OFF FOR A WHILE
+      *finish
+  #UNCONCERNED
+    #GO TO THE DOCTOR
+      *goto A21
+    #PUT IT OFF FOR A WHILE
+      *goto A22
+*label A11
+*label A21
+*set CA%-5
+*set PH%+20
+*set TH%+30
+The period between adolescence and early adulthood is one of the life periods that poses the least threat to people physically. The doctor checks you over from head to toe. The examination results show:
+*page_break
+*if CA<30
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set PH%-10
+Your blood pressure is a bit on the high side. This is probably because you are the anxious type. You need to slow your pace a bit. You run the risk of getting a heart attack early in life.
+*finish
+*label B.F
+*if PH<30
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set PH%-20
+You are overweight. Perhaps this is because you eat when you get nervous. Obesity can lead you to an early grave. I suggest you get more exercise and watch those sweets.
+*finish
+*label C.F
+*temp randomD
+*rand randomD 1 3
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*else
+  *goto D3
+*label D1
+*set PH%+30
+*set CN%+20
+Your health is absolutely perfect. You are in good shape.
+*finish
+*label D2
+Your blood pressure is high. This is something that seems to run in your family. You must cut down on salts and fatty foods.
+*finish
+*label D3
+*set PH%-30
+You are diabetic. This condition will cause you to make some adjustments in your diet and lifestyle. You will have to take insulin three times daily in the form of an injection. As you get older, you will be subject to some
+circulatory problems in the arms and legs. If you are not careful about this you may need arterial bypass surgery.
+*page_break
+If you take care of yourself, watch your diet and exercise, you should live a long life. If you are not careful, you could go into insulin shock and die. As far as this game is concerned, watch your Thoughtfulness characteristic.
+If it gets too low, it may suggest that you do not have the ability to avoid the sweets and starches that can be hazardous to your health.
+*finish
+*label A22
+*set TH%-20
+You can probably get away with this kind of behavior at this stage of life. Fortunately, the period between adolescence and early adulthood is, in general, a healthy one.
+*finish
+

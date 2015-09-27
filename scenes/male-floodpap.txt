@@ -1,0 +1,126 @@
+You are still not completely familiar with using the toilet. It is still quite fascinating to you. You have just finished and you have cleaned yourself like a big boy.
+*choice mood action
+  #PLAYFUL/CURIOUS
+    #WATCH THE TOILET PAPER DISAPPEAR INTO THE TOILET
+      *goto A11
+    #MAKE A BOAT OUT OF MOM'S BRUSH AND FLOAT IT IN THE BOWL
+      *goto A12
+    *selectable_if (false) #LEAVE THE BATHROOM
+      *finish
+  #CONTENT
+    *selectable_if (false) #WATCH THE TOILET PAPER DISAPPEAR INTO THE TOILET
+      *finish
+    *selectable_if (false) #MAKE A BOAT OUT OF MOM'S BRUSH AND FLOAT IT IN THE BOWL
+      *finish
+    #LEAVE THE BATHROOM
+      *goto A23
+*label A11
+Whoosh! You watch a long ribbon of paper spin and disappear into the bowl.
+
+
+Select an action:
+
+*choice
+  #DO IT AGAIN
+    *goto B1
+  #DO SOMETHING ELSE
+    *goto B2
+*label B1
+You pull about thirty feet of toilet paper off the roll and flush the bowl. It fills up all the way to the top with water, then comes rushing out on the floor. As the water comes rushing out, Mom rushes in.
+*page_break
+*label PUNISH
+*if ST>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+You are punished - you can't watch The Superduck Cartoon Hour for a week! This is the worst possible punishment.
+*page_break
+After three days the sanction is lifted.
+*finish
+*label C.F
+You stand there looking at your mother with your index finger hooked into your bottom lip. The cutesy routine doesn't work. You are sent directly to your room.
+*finish
+*label B2
+You can do one of the following:
+
+
+Select an action:
+
+*choice
+  #MAKE A BOAT OUT OF MOM'S BRUSH AND FLOAT IT IN THE BOWL
+    *goto D1
+  #LEAVE THE BATHROOM
+    *goto D2
+*label A12
+*label D1
+Oops! It doesn't float. You can:
+
+
+Select an action:
+
+*choice
+  #FLUSH THE BOWL
+    *goto E1
+  #GET IT OUT WITH YOUR HAND
+    *goto E2
+*label E1
+Whoosh! It spins around three times and tries to go down the pipe. It goes halfway down. The water slowly rises and spills out of the toilet. Mom rushes in....
+*goto PUNISH
+*label E2
+The water is cold! You can:
+
+
+Select an action:
+
+*choice
+  #LEAVE IT ALONE
+    *goto F1
+  #GET IT OUT OF THERE
+    *goto F2
+*label F1
+*label F2
+Mom finds it later in the day. She asks, "Did you do this?" You say:
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G1
+Good boy.
+*if ST>0
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+Even though you were honest you still get punished.
+*finish
+*label H.F
+You get a short lecture but avoid punishment because you were honest.
+*finish
+*label G2
+She didn't catch you red - handed so you don't get punished. She will trust you less in the future.
+*finish
+*label A23
+*label D2
+You have resisted a strong temptation. You deserve a cookie. There are some on the table over there. Would you like to take one?
+
+
+Select an action:
+
+*choice
+  #TAKE A COOKIE
+    *goto J1
+  #LEAVE THEM ALONE
+    *goto J2
+*label J1
+You didn't ask permission first. You get caught with your hand in the cookie jar. It's hard for a child your age to be perfect. Don't sweat it.
+*finish
+*label J2
+Boy, you are a hard one to fool. You seem to be growing up to be a real goody - two - shoes. We'll see how good you are at remaining this way when someone offers you your first drink of alcohol when you are still under age.
+*finish
+

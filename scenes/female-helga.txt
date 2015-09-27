@@ -1,0 +1,66 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+A couple of your girlfriends are going to "Bumps and Grinds," a new club which features MALE STRIPPERS. Tonight is ladies' night at the club. The stripper will be the Ape Man -- a guy who comes out in a gorilla suit and leaves in his
+birthday suit.
+*choice mood action
+  #INTERESTED
+    #GO TO THE CLUB
+      *goto A11
+    *selectable_if (false) #STAY HOME
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #GO TO THE CLUB
+      *finish
+    #STAY HOME
+      *goto A22
+*label A22
+I guess you are not really interested in this form of entertainment. (Party pooper!)
+*finish
+*label A11
+*set TH%-5
+The Ape Man comes out and peels his fur off to a series of bumps and grinds. The only thing he leaves on is his mask. All of your friends are pointing at his rotating hips (and his obvious bulge) and squealing. For a small
+donation ($10), you can reach into the front of his leopard-skin G-string and deposit your "investment."
+
+
+Select an action:
+
+*choice
+  #MAKE A DONATION
+    *goto B1
+  #PASS ON THE OFFER
+    *goto B2
+*label B2
+He bumps and grinds his way over to someone else.
+*finish
+*label B1
+*set CA%-10
+You put your hand in his underwear and feel the money slip into the fluffy patch of hair he has there. All of a sudden, he thrusts his hips (and his private parts) in your general direction, urging you to "take a squeeze."
+
+
+Select an action:
+
+*choice
+  #TAKE A SQUEEZE
+    *goto C1
+  #PASS ON THE OFFER
+    *goto C2
+*label C1
+*set TH%-10
+You reach the side and feel a huge hard mass. He is absolutely ENORMOUS.
+*page_break
+Suddenly he reaches down and tears off his shorts in one piece. Your friends start laughing hysterically.
+*page_break
+When you look in your hand, you can see that you are holding a BANANA!
+*finish
+*label C2
+*set HP%+10
+One of your friends jumps in and takes your place. Later she tells you she expected to find a banana, and instead she discovered a PEANUT!
+*finish
+

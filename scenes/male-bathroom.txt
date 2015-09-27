@@ -1,0 +1,319 @@
+It is the middle of the day and you get that heavy feeling in your stomach. You think it might be time to go to the potty.
+*if ST>0
+  *goto S.T
+*else
+  *goto S.F
+*label S.T
+You remember how upset Mother gets when you have an accident.
+*label S.F
+Your mother is not in the immediate vicinity.
+*choice mood action
+  #SPITEFUL
+    #CALL FOR MOM
+      *goto A11
+    *selectable_if (false) #TRY TO GET TO THE BATHROOM
+      *finish
+    #LET NATURE TAKE ITS COURSE
+      *goto A13
+  #CONCERNED
+    #CALL FOR MOM
+      *goto A21
+    #TRY TO GET TO THE BATHROOM
+      *goto A22
+    *selectable_if (false) #LET NATURE TAKE ITS COURSE
+      *finish
+  #PANICKY
+    #CALL FOR MOM
+      *goto A31
+    #TRY TO GET TO THE BATHROOM
+      *goto A32
+    #LET NATURE TAKE ITS COURSE
+      *goto A33
+*label A11
+*set GN%-50
+This action and mood can mean nothing but a direct challenge to parental authority. You may have chosen these because you enjoy watching your mother look helpless while you have an accident right in front of her.
+*page_break
+She has arrived and has seen that you need to go to the bathroom. As she enters the room, you scrunch up your face and grunt, releasing a large portion of last night's baked ham with corn relish, and this morning's oatmeal and
+applesauce. How do you feel about this?
+
+
+Select a mood:
+
+*choice
+  #HAPPY
+    *goto B1
+  #REGRETFUL
+    *goto B2
+*label B1
+*set GN%-50
+This kind of struggle over authority and control will almost certainly resurface in adolescence. You may develop the kind of personality that derives great pleasure from "dumping" on others, and as a result may have to deal
+with the retaliations of those your actions have turned against you.
+*finish
+*label B2
+*set GN%-20
+You have played out your hand and are now left with very few options.
+With your eyes downcast, and your by-products leaking out of your pants, you reluctantly accept the scolding your mother gives you. You must find a more appropriate way of dealing with your mother's tendency to overpower you.
+Unfortunately, at your age you don't have the ability to express your feelings with words. That is why you resort to actions. Your chance will come during adolescence.
+*finish
+*label A13
+On the surface it seems as though you are a sneaky coward who cannot confront the object of your anger. In reality, your behavior reveals a strong sense of guilt. You go to the bathroom in your pants quietly and spitefully, resenting
+your mother's arbitrary demand that you deposit your "belongings" in the receptacle of her choice. It may be hours before she finds out about your accident and by that time your bottom will be sore and uncomfortable.
+
+
+Select an action:
+
+*choice
+  #TAKE OFF YOUR CLOTHES AND LEAVE THEM IN THE MIDDLE OF THE FLOOR
+    *goto C1
+  #SUFFER UNDER THE PRESENT CONDITIONS
+    *goto C2
+*label C1
+*set GN%-50
+Failure to confront your anger directly at your mother gets you into still more trouble. She walks in and sees that you have removed your soiled clothing and have redecorated the living room with it. The whole business of learning how
+to use the bathroom is turning into an arena where past injustices and anger are acted out. You are probably headed for a rough adolescence.
+*finish
+*label C2
+*set HP%-30
+This only makes you build up even more rage. Failure to express such emotions adequately leads you to turn them inward, onto yourself, causing depression, which is usually quite serious in a child your age.
+*finish
+*label A22
+*label RUN
+*if ST>0
+  *goto U.T
+*else
+  *goto U.F
+*label U.T
+You remind yourself how important it is to go on the potty, as per your strict mother's instructions. This raises your anxiety, increasing your urge to go to the bathroom.
+*set CA%-20
+*page_break
+*goto CONT
+*label U.F
+*label CONT
+You run toward the bathroom taking little steps, holding both hands at your rear end. You are determined. You reach the bathroom door and reach up to turn the knob. Your small fingers slide around the shiny chrome knob several
+times.  It is difficult to get a good grip.
+
+
+Select an action:
+
+*choice
+  #GIVE UP
+    *goto D1
+  #KEEP TRYING
+    *goto D2
+*label D1
+*label GIVEUP
+*set CA%-20
+*set HP%-20
+A valiant effort which ends in vain. You try calling for assistance but the frustration of not getting into the bathroom along with the excitement of the moment causes a temporary loss of control.
+*page_break
+*if ST>0
+  *goto V.T
+*else
+  *goto V.F
+*label V.T
+Even though you tried, your Mom thinks you should have been able to hold it in. You resent this, because deep in your heart you know you gave it your best effort. You try not to let your mother's unrealistic expectations dictate
+your mood, but it is hard not to feel as though you have been a disappointment.
+*finish
+*label V.F
+*finish
+*label D2
+*label TRY
+You finally grasp the knob and enter the bathroom. The toilet bowl looms up at you like a huge porcelain boat.
+
+
+Select an action:
+
+*choice
+  #PULL DOWN YOUR PANTS
+    *goto E1
+  #LIFT UP THE LID
+    *goto E2
+*label E1
+With great skill you pull down pants, underwear and socks in one clean motion. You try to lift up the lid, but it keeps falling down. IT'S ALMOST COMING OUT!!! You had better hurry! Because your pants are around your ankles, it is
+hard to move around.
+*page_break
+You finally get up on the bowl and deposit the remains of last night's ham with corn relish dinner and this morning's oatmeal and applesauce. You feel slightly depressed because you are letting a part of yourself go.
+*set HP%-5
+
+
+Select an action:
+
+*choice
+  #CALL MOM IN TO SHOW HER WHAT YOU HAVE DONE
+    *goto F1
+  #FLUSH THE BOWL AND WALK OUT
+    *goto F2
+*label F1
+*label SHOW
+Showing others what you have accomplished is a healthy thing, as long as you do not overdo it and become pretentious.
+*set CN%+40
+*if ST>0
+  *goto W.T
+*else
+  *goto W.F
+*label W.T
+Your mom berates you for bothering her to show her something that is a necessity and merely a fact of life. She's never satisfied, so you had better learn to praise yourself.
+*finish
+*label W.F
+Your Mom makes a big fuss over what you have accomplished. She asks you to wave goodbye to the BM's. You have begun to master the art of self-control! Congratulations!
+*finish
+*label F2
+*label FLUSH
+You are becoming the type who is quietly satisfied with his accomplishments and does not need the approval of others. This is fine, as long as you are independently wealthy. In life reward often requires recognition and
+recognition is often the product of good advertising. Keep this in mind for later.
+*set CN%+50
+*finish
+*label E2
+You really have your priorities in order. I can see you securing an upper management position in a large company at a very young age. The lid flips up without a problem. You deftly remove your pants, underwear and socks in one
+smooth motion. You climb up on the bowl and get your business done with.
+*set IN%+50
+
+
+Select an action:
+
+*choice
+  #CALL MOM IN TO SHOW HER WHAT YOU HAVE DONE
+    *goto G1
+  #FLUSH THE BOWL
+    *goto G2
+*label G1
+*goto SHOW
+*label G2
+*goto FLUSH
+*label A21
+You call for Mom but she just doesn't seem to hear you.
+
+
+Select an action:
+
+*choice
+  #GO ON CALLING
+    *goto H1
+  #TRY SOMETHING ELSE
+    *goto H2
+*label H1
+*label A33
+The more you panic and yell, the closer you come to having an accident in your pants. Letting air out of your mouth accomplishes the same thing at the other end, although soon it won't be air!
+
+
+Select an action:
+
+*choice
+  #TRY TO GET TO THE BATHROOM
+    *goto J1
+  #GIVE UP
+    *goto J2
+*label J1
+*goto RUN
+*label J2
+*goto GIVEUP
+*label H2
+You try to get to the bathroom, but the door is closed and you can't open it. There is a large bucket sitting outside the bathroom door.
+
+
+Select an action:
+
+*choice
+  #GO TO THE BATHROOM IN THE BUCKET
+    *goto K1
+  #GO IN YOUR PANTS
+    *goto K2
+*label K1
+What a great idea! This choice shows creativity, flexibility, intelligence and a desire to follow the rules of society (even if you follow them in unconventional ways). Your mom has to clean out the bucket, but prefers this
+to deodorizing the carpet or cleaning your soiled clothes.
+*set IN%+30
+*finish
+*label K2
+The bucket would definitely have been a better choice. Flexibility and adaptation are very desirable characteristics that can take you very far. Now your mom has to clean your mess. This makes her angry at you.
+*set FM%-20
+*finish
+*label A31
+The more you panic the more it makes you feel like you have to go to the bathroom. You yell for your mother, but she doesn't hear you.
+
+
+Select an action:
+
+*choice
+  #HEAD FOR THE BATHROOM
+    *goto L1
+  #TAKE OFF YOUR PANTS SO YOU WON'T HAVE AN ACCIDENT IN THEM
+    *goto L2
+*label L1
+Your heart is pounding and you run to the bathroom. IT'S COMING OUT !!!...You hold your stomach with one hand and your rear end with the other. You reach the bathroom and throw open the door. You start to jump up and down to try to
+hold it in. At the same time you try to unbutton your pants. Coordinating all of these actions is impossible. IT'S ALMOST OUT!!! Your pants won't unbutton.
+
+
+Select an action:
+
+*choice
+  #GIVE UP
+    *goto M1
+  #TRY TO PULL THEM OFF WITHOUT UNBUTTONING THEM
+    *goto M2
+*label M1
+How can you overreact like this? You could have tried pulling your pants off. Kid's pants usually have elastic on the waist. You need to calm down a little. Believe me, you'll have plenty of opportunity to try again.
+*set CN%-20
+*finish
+*label M2
+They slide off with little difficulty. You climb safely to the bowl and, with great relief, make your deposit. That was a pretty harrowing experience, wasn't it? It really didn't have to be. Now that you have done so well you can:
+*set CN%+20
+
+
+Select an action:
+
+*choice
+  #CALL MOM TO SHOW HER WHAT YOU'VE DONE
+    *goto N1
+  #FLUSH THE TOILET
+    *goto N2
+*label N1
+*goto SHOW
+*label N2
+*goto FLUSH
+*label L2
+You start to remove your pants but neglect to remove your shoes first. You cannot pull the legs of your pants over your shoes in time and as a result...SPLAAT! You created the very thing you tried to avoid -- which, by
+the way, is what often happens to people who panic over things.
+*finish
+*label A32
+The more you panic the more it feels like it's about to come out. You rush over and try to turn the knob on the bathroom door, but it feels slippery. Do you want to try yelling for your mother?
+*set CA%-30
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto P1
+  #NO
+    *goto P2
+*label P1
+That doesn't work -- it only makes you more nervous, which makes you have to go to the bathroom even more. You try to turn the knob again...it doesn't work.
+
+
+Select an action:
+
+*choice
+  #KEEP TRYING
+    *goto Q1
+  #GIVE UP
+    *goto Q2
+*label Q1
+*goto TRY
+*label Q2
+*goto GIVEUP
+*label P2
+It probably would have done no good anyway. You try to turn the knob again...it doesn't work.
+
+
+Select an action:
+
+*choice
+  #KEEP TRYING
+    *goto R1
+  #GIVE UP
+    *goto R2
+*label R1
+*goto TRY
+*label R2
+*goto GIVEUP
+

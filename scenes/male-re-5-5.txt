@@ -1,0 +1,86 @@
+*if LT<1
+  *goto Q.T
+*else
+  *goto Q.F
+*label Q.F
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Q.T
+${loverName} invites you to her home for lunch. Even at her age, she takes meticulous care of everything, with no assistance from anyone else. She must be remarkably strong. As she gives you a tour of the house you notice that the study
+looks like it was recently used for reading law journals.
+*page_break
+There is a smoking jacket hung neatly over the arm of one chair. The daily paper, a pipe, and a fresh pouch of tobacco are on a stand. In the bathroom there are two toothbrushes. There is a pair of men's slippers beside hers on the
+floor next to the bed. You seem to recall that ${loverName}'s husband passed on more than ten years ago.
+
+
+Select an action:
+
+*choice
+  #BE CURIOUS/QUESTION ${LOVERNAME} ABOUT THE ARTICLES
+    *goto B1
+  #REMAIN QUIET ABOUT THE ARTICLES
+    *goto B2
+*label B2
+Truthfully, do you think all of this is very bizarre?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label B1
+Very matter-of-factly, she tells you that those were her husband's belongings. Even though much time has passed she still feels his "presence" in the house. She keeps the paper on the nightstand so he can read it if he wants to, and
+she keeps a fresh pouch of his favorite pipe tobacco on the table in case he would like a smoke.
+*page_break
+Sometimes she can smell the familiar odor of the smoke coming from the room, even though she knows he doesn't really smoke in there, anymore. At holiday time she buys him presents, and often calls on him for advice on financial
+matters.
+
+
+Select an action:
+
+*choice
+  #TRY TO CONVINCE HER THAT WHAT SHE IS DOING IS UNHEALTHY
+    *goto C1
+  #RESPECT HER BEHAVIOR WITHOUT CRITICIZING IT
+    *goto C2
+*label C1
+*label E1
+*set GN%-20
+It must seem very eerie to you. Actually, she acknowledges that her husband has passed away. She knows he doesn't really speak to her. The only thing that is different in ${loverName} is that she verbalizes and acts out what most people only
+feel and won't admit after the loss of a spouse who was an integral part of her life.
+*page_break
+If she were a recluse, or really believed she saw and spoke to her husband, there might be cause for alarm, but she really doesn't believe in any of these things. Your criticism of her behavior sounds unduly harsh to her. She
+suspects that you do not really understand much about love.
+*finish
+*label C2
+*label E2
+*set GN%+30
+If you do, as it seems, really respect her behavior, you realize that surviving the loss of a spouse can be one of the most traumatic experiences in life. She realizes that he is gone but still feels that somehow he is a part of her
+life. Her behavior may seem odd or eerie to some, but in reality it is just her way of reminding herself and reminiscing.
+*page_break
+She is not a social recluse who spends all of her day living in the past. It's just that this is her monument or tribute to a person she loves very dearly and doesn't want to forget. Do you think you can have a relationship with ${loverName},
+given this kind of behavior?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+Your sensitivity is very admirable.
+*finish
+*label D2
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+I admire your honesty. I guess this must just be too difficult for you to accept deep down in your heart.
+*finish
+

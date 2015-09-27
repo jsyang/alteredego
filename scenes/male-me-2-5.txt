@@ -1,0 +1,46 @@
+Your wife has an interesting habit, which she has displayed many times over the years you have been married. Every time the two of you go out to eat dinner, she leans over your plate and picks at the food in your dish.
+*page_break
+Tonight, the two of you are with very special friends. Moments after you sit down to eat, she spears an appetizer from your dish and pops it in her mouth.
+
+
+Select an action:
+
+*choice
+  #GIVE HER A DIRTY LOOK
+    *goto A1
+  #IGNORE IT
+    *goto A2
+  #MAKE A FUNNY JOKE ABOUT IT TO THE OTHERS
+    *goto A3
+  #SAY SOMETHING FIRM BUT POLITE TO HER
+    *goto A4
+*label A1
+*if GN<50
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set SC%-30
+Judging by your Gentleness characteristic, it would be difficult for you to do this without everyone else seeing it and getting the impression that the two of you are bickering. Social sphere goes down.
+*finish
+*label B.F
+*set SC%-30
+Even though you are typically very gentle, there is no way that you can give a dirty look to your wife in a public place in a socially acceptable way. Instead of just your wife doing something tacky, now you both have done something
+socially inappropriate. Social sphere goes down.
+*finish
+*label A2
+It is probably best not to make a big deal out of something like this, particularly in a public place. When the guests at the other end of the table see what is happening they look at each other quizzically. You think they are wondering
+about the appropriateness of your wife's behavior.
+*page_break
+In reality they are whispering to each other, "Is his appetizer THAT good?" Everyone at the table asks for a bite, and before you know it, you have none left!
+*finish
+*label A3
+*set GN%-10
+What kind of funny joke could you possibly make that would not sound mean and condescending? "My wife comes from a big family. Whenever anything was put on the table, it was every person for himself." Something like that would be cute and
+discreet, and that way you could insult not only your wife, but her upbringing as well. Some things are probably better overlooked.
+*finish
+*label A4
+*set GN%-10
+Whatever you say to her is bound to make her look and feel like a child. Her behavior may have been rude, but under the circumstances you might have been a bit more forgiving.
+*finish
+

@@ -1,0 +1,43 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+One of your friends is getting married next Sunday, and you have been invited to his bachelor party. The best man for the wedding has hired a performer for the evening. Her name is Helga, "The Norwegian Torch."
+*page_break
+Her talent is taking off all of her clothing, dousing herself with a flammable liquid, setting herself ablaze and dancing until the flame burns out. The most amazing aspect of her performance is the fact that she damages neither
+herself nor her immediate surroundings. After Helga's performance, she relaxes with the people at the party, wearing nothing more than a black G-string.
+*page_break
+At various intervals during the night, she whispers to a different gentleman at the party, leaves the room with him for about ten minutes, and returns. She leans over and whispers in your ear that she would like to perform a very
+bizarre sexual act with you.
+*choice mood action
+  #INTERESTED
+    #GO WITH HELGA
+      *goto A11
+    *selectable_if (false) #TELL HELGA IT SOUNDS LIKE FUN BUT YOU ARE NOT REALLY UP FOR IT RIGHT NOW
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #GO WITH HELGA
+      *finish
+    #TELL HELGA IT SOUNDS LIKE FUN BUT YOU ARE NOT REALLY UP FOR IT RIGHT NOW
+      *goto A22
+*label A11
+*set PH%-10
+*set TH%-10
+*set SEX+1
+Imagine the weirdest sexual thing a person could do while hanging upside down and spinning. By the time Helga is finished with you, you don't know whether you are coming or going. She is certainly a very creative and versatile
+person. Unfortunately, the experience leaves you with a rather unsavory souvenir.
+*page_break
+Three weeks and six shots of penicillin later, it exists only as a memory (thank goodness!).
+*finish
+*label A22
+*set TH%+20
+*set IN%+10
+This is an experience that could have left a long-lasting impression on you, in more ways than one. Many of the people who went with Helga that night were left with a "souvenir" of the experience. Fortunately, with a few shots of
+penicillin, it went away.
+*finish
+

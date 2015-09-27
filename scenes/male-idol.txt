@@ -1,0 +1,31 @@
+Marcus Kripple and the Tubeheads are the most popular rock group with kids your age. Anyone who likes them is "in." If you don't like them (or their new hit song "I Love You, Blowtorch Eyes") you are a definite "geek."
+*choice mood action
+  #CONCERNED WITH PEER ACCEPTANCE
+    #SPEND YOUR WHOLE ALLOWANCE ON THEIR NEW ALBUM
+      *goto A11
+    #DO NOT BUY THEIR NEWEST ALBUM
+      *goto A12
+  #UNCONCERNED WITH PEER ACCEPTANCE
+    *selectable_if (false) #SPEND YOUR WHOLE ALLOWANCE ON THEIR NEW ALBUM
+      *finish
+    #DO NOT BUY THEIR NEWEST ALBUM
+      *goto A22
+*label A11
+*set CA%-10
+*set SC%+30
+You lay it gently on the table and listen to the hard-driving sounds of lead singer Marcus Kripple: "I love you, Blowtorch Eyes, When I kiss you my heart fries, With your looks you par-a-liiiize, Put my love on your burner, I'm
+your biggest yearner, Blowtorch Eeeeeeyes!" That is so beautiful.
+*finish
+*label A12
+*set CA%-20
+Your anxiety level rises because you want to be like everyone else, yet you can't justify not eating for a week. When your friends ask you if you bought the album, you will have to make up a story (i.e, "My stereo is broken")
+in order to retain your status in the group.
+*finish
+*label A22
+*set IN%+10
+*set SC%-10
+*set CN%+40
+So what if none of the cool people want to "dangle" (stay) with you. You are your own person. You're your own LONELY person, but you're probably a lot smarter than everyone else, too. Social sphere drops slightly, Intellectual
+sphere increases.
+*finish
+

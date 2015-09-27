@@ -1,0 +1,157 @@
+Lately nothing seems to be going right for you. It seems as though no one understands you or cares about you. People want things from you, but give nothing in return. Life is miserable and sometimes you don't even feel
+like waking up in the morning.
+*choice mood action
+  #DEPRESSED
+    #SEEK HELP
+      *goto A11
+    #DO NOTHING
+      *goto A12
+  #SUICIDAL
+    #SEEK HELP
+      *goto A21
+    #DO NOTHING
+      *goto A22
+  #HAPPY
+    #SEEK HELP
+      *goto A31
+    #DO NOTHING
+      *goto A32
+*label A11
+*set HP%-30
+Everyone goes through periods like this once in a while. I'm glad you have decided to turn to someone to help you get through it. Who would you like to get help from?
+
+
+Select an action:
+
+*choice
+  #A PROFESSIONAL
+    *goto B1
+  #A FRIEND OR FAMILY MEMBER
+    *goto B2
+*label B2
+*set HP%+20
+Friends or family members are likely to sympathize with you. Such sympathy can be very comforting, especially when you are depressed. Most times they will stick by you until your depression lifts. A professional might have been a
+bit more helpful with learning to COPE with depression. For now your reliance on friends or family proves successful.
+*finish
+*label B1
+*set IN%+20
+A professional is likely to tell you that depression is really anger turned inward. It is a common response to loss, whether in the form of someone moving away or dying, or in the form of a loss of love, as in the case of someone
+who has rejected you. Tolerating such a loss can be difficult.
+*page_break
+You may have some sleepless nights, problems with your appetite, or feel just plain lousy. You may have to explore past relationships to discover new ways of coping with or expressing your feelings. It might take some time, but as a
+result, your overall life will improve. Do you think you would like to try psychotherapy?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+A wise choice. You can see:
+
+
+Select an action:
+
+*choice
+  #A PSYCHOANALYTIC THERAPIST
+    *goto D1
+  #A GESTALT THERAPIST
+    *goto D2
+  #A BEHAVIORAL THERAPIST
+    *goto D3
+*label D1
+*set IN%+10
+*set HP%+10
+*set CA%+20
+*set TH%+20
+The psychoanalytic therapist points out your tendency to use your depression to satisfy certain needs in unhealthy ways. He shows you your defenses and helps you explore your past. You might discuss your dreams during the sessions, and
+you would certainly explore your history of growing up and your relationships with parents or guardians.
+*page_break
+It is an educational and enlightening experience, one you might want to choose to continue, even after your depression lifts. Life spheres improve across the board.
+*finish
+*label D2
+*set IN%+10
+Gestalt therapy is an "active" therapy. Your therapist may seem a little peculiar at first, suggesting that you try speaking to an empty chair, or asking you to become your depression by acting as if it has a personality all its own.
+*page_break
+If you are the type of person who enjoys doing such things and can connect their meaning to your own life, this experience can be helpful and fun too.
+*finish
+*label D3
+*set IN%+10
+A behavioral therapist is likely to ask you to keep close tabs on your depression by filling out charts, graphs or other aids that will make you more aware of the depression's quantity, persistence, and the events that trigger
+it. He might ask you to practice "coping statements" in response to your depression.
+*page_break
+When your depression has lifted, the behavioral therapist will ask that you maintain records of your mood for awhile so that he can follow your progress.
+*finish
+*label C2
+A lot of people are afraid to go through with something like this. They believe it is voodoo or black magic. While psychotherapy is an art, it is derived from a commitment to the scientific method. When performed by a competent licensed
+professional, it can really turn your life around.
+*finish
+*label A12
+Oddly enough, the research on depression shows that if you can tolerate your depression, many times it will go away by itself, giving some credence to the old saying, "time heals all wounds."
+*page_break
+Other times, depression can have serious consequences, including problems with sleep, appetite, social functioning and job performance. When this happens it is difficult to ignore and you should seek help.
+*finish
+*label A21
+Who do you want to help you?
+
+
+Select an action:
+
+*choice
+  #A PROFESSIONAL
+    *goto E1
+  #A FRIEND OR FAMILY MEMBER
+    *goto E2
+*label E2
+Fortunately for you, they realize that this is something they cannot do alone. They seek the help of a trained professional.
+*page_break
+*goto B1
+*label E1
+If you are really feeling suicidal, then no one will be able to talk you out of it. Are you really set on killing yourself?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label G1
+*label F1
+Before you go, I would just like to tell you that suicide is an act of anger. It will probably shock and devastate the people you leave behind, leaving emotional scars that will take a long time to heal.
+*page_break
+The knowledge that you will get your revenge may be a comforting thought, but remember: the people you leave behind will try very hard to put this event in their pasts as quickly as possible. Unlike you, they realize life must go on
+regardless of pain. This game is over.
+*goto_scene you_have_died
+*label F2
+*set TH%-20
+*set GN%-20
+A professional will probably explain that suicide is a way of getting attention and revenge. You may need to be hospitalized or put on a program of long-term psychotherapy. Whether or not you live through depression is always
+your choice. Hopefully the professional will help you make the choice to continue living.
+*finish
+*label A22
+If you are really intent on killing yourself and not seeking help there isn't a person in the world capable of stopping you. Are you really set on killing yourself?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G2
+In that case you will probably need professional help to get you back on the road to survival.
+*page_break
+*goto F2
+*label A31
+*label A32
+*set EX%-50
+Either you are strongly denying your real feelings, or you are starting to lose your grip on reality. Most people don't feel happy after first feeling so blue.
+*finish
+
+

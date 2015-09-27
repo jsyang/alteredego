@@ -1,0 +1,219 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+A teen-age girl named Cathy Rhinehart  works at the dry cleaning store that you use. One evening you arrive at the store just as it is closing. You absolutely need the clothes tonight. Cathy is already out the door. Because
+you know Cathy by name, and because you also know that she is friendly, you feel sure that she will reopen the store and get you your clothes.
+*choice mood action
+  #FRIENDLY
+    #ASK HER TO REOPEN THE STORE
+      *goto A11
+    #DECIDE TO WAIT UNTIL THE STORE REOPENS
+      *goto A12
+  #ANXIOUS
+    #ASK HER TO REOPEN THE STORE
+      *goto A21
+    *selectable_if (false) #DECIDE TO WAIT UNTIL THE STORE REOPENS
+      *finish
+*label A11
+*if SC<60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Your social skills aren't good enough to get her to go to the trouble of reopening the store. She wants to go out with her friends tonight and this would hold her up. She calls out to you, saying that a time alarm has been
+set and her boss will think she is going in to do something illegal if she trips it by reopening it. "Company policy, you know. Sorry!"
+*finish
+*label B.F
+Your social skills make it easy for you to ask for this request in a way that is difficult to refuse. She reopens the store for you. As you watch her disappear to the back of the store, you notice how firm her body is, and for
+a moment drift back to the days when you were that young.
+*page_break
+"Was it THAT long ago?" You wonder. "Yes," you conclude, "It was THAT long ago." Cathy snaps you back to reality by handing you a big pile of clothes. After you walk out of the store, you notice Cathy having car trouble.
+
+
+Select an action:
+
+*choice
+  #TRY TO HELP HER FIX THE CAR
+    *goto C1
+  #OFFER HER A LIFT BACK HOME
+    *goto C2
+  #GO BACK TO YOUR OWN HOME
+    *goto C3
+*label C1
+*set SC%+20
+*set GN%+20
+All of the fiddling in the world won't help. The battery is completely dead.
+
+
+Select an action:
+
+*choice
+  #OFFER HER A LIFT BACK HOME
+    *goto D1
+  #GO BACK TO YOUR OWN HOME
+    *goto D2
+*label C2
+*label D1
+In the car on the way home, you notice her looking at you in a peculiar sort of way. She tells you that it's funny to be sitting next to someone whom she's only seen from behind a counter. You find yourself talking very freely to
+her, and for a moment, your connection to her is like taking a fast train ride back to adolescence.
+*page_break
+Because you are relating to her more on her own level, she perceives you as a "different" kind of adult, honestly curious and even envious about her life, rather than critical like most other adults. As you begin to feel younger,
+she begins to feel older. She says that she hopes that when she gets older she will stay young and attractive looking like you.
+*page_break
+You begin to realize that you could really enjoy talking to Cathy for a long time. When you arrive at her block, you discover that she lives alone, in an apartment. She moved out of her parents' home because she "needed to be
+independent." She invites you up for a cup of coffee.
+
+
+Select an action:
+
+*choice
+  #GO UP AND HAVE A CUP OF COFFEE
+    *goto E1
+  #SAY THAT YOU HAVE TO GET BACK HOME
+    *goto E2
+*label E1
+Cathy disappears to make the coffee and you notice that her apartment is decorated sparsely, but tastefully. There are no crazy posters or wild-looking artwork. From the room you are in, you can see some pairs of stockings and
+other delicate apparel hanging in the bathroom. She seems so much older than eighteen ("God, these kids sure grow up fast these days!").
+*page_break
+Then you remember that the current Miss America is eighteen, and so are several of the leading actresses and models, all of whom are doing very grown-up things. After all, don't they consider eighteen-year-old females to be
+women? Cathy emerges from an adjacent room with a fresh pot of coffee. She has changed into a man's shirt that she is wearing outside a pair of gym shorts.
+*page_break
+She is barefooted. She has beautiful, slim legs. As you sit by the table drinking your coffee and talking, you notice that you can see down Cathy's shirt with no difficulty at all. She isn't trying very hard to cover up, it
+seems. When you are finished with the coffee, you can:
+
+
+Select an action:
+
+*choice
+  #LINGER AROUND THE TABLE
+    *goto F1
+  #EXCUSE YOURSELF AND LEAVE
+    *goto F2
+*label F1
+The two of you talk with great passion about subjects you haven't discussed in years. You had almost forgotten how much energy young people have for philosophizing about things. The longer you stay, the more you lose track
+of time. You refuse to look out the window, fearing that you will be reminded by the violet sky that it is getting late.
+*page_break
+Finally, a silence falls between the two of you. It is the uncomfortable silence that happens when two people who are attracted to one another realize the sexual nature of their impulses. Cathy becomes shy. It is clear that if
+anything will happen between you, it will have to be initiated by you.
+
+
+Select an action:
+
+*choice
+  #MAKE A SEXUAL ADVANCE
+    *goto G1
+  #EXCUSE YOURSELF AND LEAVE
+    *goto G2
+*label G1
+*if MS>0
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+Right before you make your move, you are reminded about ${spouseName}. The usual questions run through your mind. "What if...?" "How would I explain...?" It is already very late now. You would have to make up a story either way.
+
+
+Select an action:
+
+*choice
+  #CHANGE YOUR MIND, APOLOGIZE AND LEAVE
+    *goto I1
+  #GO ON MAKING THE ADVANCE
+    *goto I2
+*label I1
+*label C3
+*set TR%+30
+*set TH%+30
+Your conscience gets the better of you. For a moment, you resent everything about your life: the fact that you are getting old, the fact that you are married, and the fact that you can no longer do whatever you please. Worse
+than that, you feel you never really appreciated that time of life when you could have done whatever you pleased.
+*page_break
+In the car on the way home, you remind yourself of the things you do have and begin the train ride back to adulthood, sighing at all the familiar images. As you walk through the door, ${spouseName}, with a worried look on her face, asks you where
+you have been.
+
+
+Select an action:
+
+*choice
+  #SAY, "CAR TROUBLE"
+    *goto J1
+  #GIVE HER A DIFFERENT EXCUSE
+    *goto J2
+  #TELL HER THE TRUTH
+    *goto J3
+*label J1
+*set TR%-10
+It's not exactly a lie, but think about it. You didn't really DO anything. You could have told the truth.
+*finish
+*label J2
+*set TR%-10
+${spouseName} breathes a sigh of relief. Any story would have been just fine.
+*finish
+*label J3
+You didn't really do anything, so there is no reason to hide it. ${spouseName} looks at you in a peculiar way. You don't look guilty enough OR happy enough to have done anything worth getting suspicious over!
+*finish
+*label I2
+*if TR>70
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+This may be a very powerful experience for you. You have been a very trustworthy person so far. This trustworthiness causes you to feel terribly guilty about having sex with this young girl. As a result, you have
+difficulties performing. You leave feeling resentful and foolish.
+*finish
+*label K.F
+After making love, the reality of what you have done suddenly sweeps over you. If ${spouseName} ever found out she would be crushed. Cathy looks dreamy-eyed. She begins to talk to you about sneaking away for a weekend, about meeting at
+hotels, and secret places just for the two of you.
+*page_break
+Her youth becomes painfully evident. She has no appreciation of the complexity of what has just happened, because to her it isn't very complex. She hasn't cheated on her spouse and can't even imagine it.
+
+
+Select an action:
+
+*choice
+  #TRY TO KEEP UP THE FACADE
+    *goto L1
+  #TELL HER THAT THIS IS ALL THERE CAN BE
+    *goto L2
+*label L1
+*set SC%-30
+*set TR%-30
+*set MP+2
+It doesn't work. How could you think it would? Eventually ${spouseName} finds out. It's difficult for her, but she finally forgives you for it.
+*finish
+*label L2
+*set CA%-30
+Cathy gets angry, and for a moment it seems as if she will cause trouble, but she is a smart kid and eventually begins to understand the realities of the situation. You are not found out by your wife, but a few months after the
+incident, a friend tells you that while picking up his clothing at the dry cleaners, he heard this rumor....
+*finish
+*label H.F
+The two of you make love for hours and fall asleep in each other's arms. The next day you are awakened by the usual smell of coffee, and for a moment wonder where you are. A flood of experiences from yesterday invades your
+consciousness. You look for Cathy, but she has evidently left the house. There is a note by the coffee pot.
+*page_break
+It reads, "To my Silver Tiger: Thanks for a great night! I'd really love to do it again sometime. I've got a heavy date tonight, so if you could be out by about noontime, I could straighten the place up a bit. Keep in touch!"
+*finish
+*label F2
+*label G2
+It's difficult, but you let yourself out. On the way back you begin to think about many aspects of your life--the fact that you are getting old, and the unfairness of the fact that you really never appreciate the freedom of
+youth until it has long since passed you by. (Sigh!)
+*finish
+*label D2
+*label E2
+On the way home, you begin to think back to the time when you were just a teenager, yourself. Maybe Cathy was the type of girl you would have asked out.
+She was very attractive. You sigh as you are transported briefly to another
+time of your life.
+*finish
+*label A12
+*set CA%+30
+You drop off your clothes the next morning and the girl behind the counter apologizes for not being able to help you. You shrug it off politely.
+*finish
+*label A21
+*set CA%-20
+The girl explains to you that once the registers are locked for the night, they can't be opened!
+*finish
+

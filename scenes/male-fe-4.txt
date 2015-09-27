@@ -1,0 +1,68 @@
+*comment @KID,0,3,5
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 6) and (childage0 > 3)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 6) and (childage1 > 3)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 6) and (childage2 > 3)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 6) and (childage3 > 3)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 6) and (childage4 > 3)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+You have just been told by an angry parent that ${childName} demonstrated disappointment at her child's refusal to share his toys, by biting this child in the leg.
+
+
+Select an action:
+
+*choice
+  #REPRIMAND YOUR CHILD FOR BITING
+    *goto A1
+  #TELL THE WOMAN THAT IT PROBABLY SERVED HER CHILD RIGHT
+    *goto A2
+*label A1
+*set SC%+30
+Even if the other child might have had it coming, biting is not a very socially acceptable way of expressing displeasure. You are a parent who is obviously concerned with communicating the social graces to your children!
+*finish
+*label A2
+*set SC%-20
+The woman thinks you are an animal. The next time you tell ${childName} what to do, you get your finger bitten!
+*finish
+

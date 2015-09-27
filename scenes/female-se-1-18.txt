@@ -1,0 +1,28 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 17
+  Sorry, you're too old for this experience.
+  *finish
+In gym, everyone has to take The President's Test (or something like that) for physical fitness. Everyone has to run the 50-yard dash. Last year, when Mary was running, she tripped at the end. All the Belmar Hills boys were watching.
+They were extremely cruel.
+
+
+Select an action:
+
+*choice
+  #GO ALL OUT FOR THE TEST
+    *goto A1
+  #BE CAREFUL NOT TO MESS YOUR HAIR
+    *goto A2
+*label A1
+*set SC%+10
+*set CN%+10
+What the hell, right? You give it all you've got and run the fastest 50-yard dash in school. The boys call you Lightnin' for a while.
+*finish
+*label A2
+*set GN%-10
+No way. You're not going to knock yourself out for this test. Like the president really CARES if you can run 50 yards. Really.
+*finish
+

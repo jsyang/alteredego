@@ -1,0 +1,58 @@
+You are walking up the front walk, when suddenly the phone rings. You have been expecting an important call, and this could be it!
+*choice mood action
+  #EXCITED/ANXIOUS
+    #HURRY UP THE STAIRS
+      *goto A11
+    *selectable_if (false) #TAKE YOUR TIME: NOTHING CAN BE THAT IMPORTANT
+      *finish
+  #NONCHALANT
+    *selectable_if (false) #HURRY UP THE STAIRS
+      *finish
+    #TAKE YOUR TIME: NOTHING CAN BE THAT IMPORTANT
+      *goto A22
+*label A11
+*set CA%-10
+After taking three quick steps, your heart begins to feel like it is about to burst right through your chest. You can:
+
+
+Select an action:
+
+*choice
+  #KEEP HURRYING
+    *goto B1
+  #SLOW DOWN
+    *goto B2
+*label B1
+*set PH%-10
+You hurry up the walk, feeling cold stabs of pain through your chest and lungs. The phone is still ringing. All you have to do is get out the keys, rush in and scoop the phone up from the receiver. You can:
+
+
+Select an action:
+
+*choice
+  #KEEP HURRYING
+    *goto C1
+  #SLOW DOWN
+    *goto C2
+*label C1
+*set PH%-10
+The keys are out, but you are so tired and confused, you cannot get the right key in the lock. Finally, the door flies open...RING! RING! You finally get to the phone. A young voice is on the other end. "Hello, is Mr. Walls there?" he
+asks innocently. You say, "No." He goes on to ask for Mrs. Walls, Bobby Walls and Peter Walls.
+*page_break
+In exasperation, he finally asks, "Are there any Walls there?" Again you say, "No." The boy breaks into hysterical laughter. "THEN WHAT'S HOLDING UP THE CEILING?" CLICK! A child and his friends are playing a silly phone prank.
+Don't they know how difficult it is for older people to do certain things?
+*finish
+*label B2
+*label C2
+*set PH%+10
+You begin to take your steps one at a time, with a short rest after each third step. There, that is comfortable. Before you get to the front door, the phone stops ringing. If it's that important, they'll call back.
+*finish
+*label A22
+*set IN%+30
+*set PH%+20
+You take your steps one at a time, with a short rest after every third step. You have learned to do things in this fashion by now. Individuals who survive this long have developed an adaptive style of living, emphasizing safety and
+control.
+*page_break
+You get to the top of the stairs, and the phone is still ringing. You must search for your keys. Unfortunately, by the time you get through the door, the phone stops ringing. If it is that important, they will call back.
+*finish
+

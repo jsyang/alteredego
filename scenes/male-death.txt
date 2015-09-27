@@ -1,0 +1,73 @@
+Time to feed the fish. You pinch a small amount of fish food between your fingers and tap on the glass. There is no sign of Gabriella.
+*choice mood action
+  #CONFUSED
+    #CALL FOR MOM
+      *goto A11
+    #LOOK FOR GABRIELLA
+      *goto A12
+    *selectable_if (false) #DO NOTHING
+      *finish
+  #UNAFFECTED
+    *selectable_if (false) #CALL FOR MOM
+      *finish
+    *selectable_if (false) #LOOK FOR GABRIELLA
+      *finish
+    #DO NOTHING
+      *goto A23
+*label A11
+Gabby floats up to the surface from under a big, gray rock. Her eye seems very puffy and her body is stiff. You are relieved to see she hasn't jumped out of the bowl.
+
+
+Select an action:
+
+*choice
+  #START TO LEAVE THE ROOM
+    *goto B1
+  #ASK MOM ABOUT GABBY
+    *goto B2
+*label B1
+You don't seem to understand. Mom explains that Gabby can't swim anymore. Mom says she's dead, that she's gone away (How can that be, she's right THERE?). "What is 'dead'?" you wonder. You are confused. Mom says that Gabby has to be
+taken out of the bowl.
+*label KF
+
+
+Select an action:
+
+*choice
+  #FLUSH GABBY DOWN THE TOILET
+    *goto C1
+  #KEEP HER IN A BOX IN YOUR DRAWER
+    *goto C2
+*label C1
+Even though Mom has on a sad face, you giggle at the thought of Gabby swimming in the bowl. You wonder if she will tickle you the next time you go to the bathroom. Hee. It isn't a real laugh, but you don't know what else to do.
+*finish
+*label C2
+*set HP%-20
+You really can't do that. Gabby will start to smell up the drawer. You still don't understand what this is all about, but tomorrow you will start to miss the ritual of feeding her.
+*finish
+*label B2
+Mom stutters through the answers to your questions. She is uncomfortable and sad. Mom explains that Gabby can't swim anymore. Mom says she's dead, that she's gone away. (How can that be, she's right THERE?). "What is 'dead?'",
+you wonder. You are confused. Mom says that Gabby has to be taken out of the bowl.
+*goto KF
+*label A12
+You put your hand in the fish bowl and look for Gabriella. She is stuck under a rock. She is stiff and her eyes are puffed out. You think that she might be sick.
+
+
+Select an action:
+
+*choice
+  #CALL FOR MOM
+    *goto E1
+  #TAKE GABBY OUT
+    *goto E2
+*label E1
+*goto A11
+*label E2
+You take Gabby out of the bowl and keep her with you in a secret place. Every once in a while you put her in the bowl to see if she will swim, but she just floats along the top of the water. You bring her a small piece of food and
+put it in her mouth. You are taking good care of her, but she is dead. By the time your Mom finds out, you already understand more than what she can explain to you.
+*finish
+*label A23
+I guess you are not ready to understand about death yet, but Gabriella has gone away. Little children and adults often hide their feelings by remaining aloof and unaffected on the outside. You will begin to miss the ritual of feeding
+and caring for this pet.  Eventually you will understand the pain of separation.
+*finish
+

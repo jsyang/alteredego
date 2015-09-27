@@ -1,0 +1,97 @@
+Soon after you sit down for dinner, your mother announces that the vegetable of the day is BRUSSELS SPROUTS.
+*choice mood action
+  #OBEDIENT
+    #EAT THE BRUSSELS SPROUTS WITHOUT PROTEST
+      *goto A11
+    *selectable_if (false) #RUN SCREAMING FROM THE TABLE
+      *finish
+    *selectable_if (false) #PUT YOUR FINGER IN YOUR MOUTH AND MAKE A GAGGING SOUND
+      *finish
+    #FEED THE SPROUTS TO YOUR DOG, GOODO
+      *goto A14
+  #PANIC
+    *selectable_if (false) #EAT THE BRUSSELS SPROUTS WITHOUT PROTEST
+      *finish
+    #RUN SCREAMING FROM THE TABLE
+      *goto A22
+    #PUT YOUR FINGER IN YOUR MOUTH AND MAKE A GAGGING SOUND
+      *goto A23
+    #FEED THE SPROUTS TO YOUR DOG, GOODO
+      *goto A24
+  #DISGUST
+    #EAT THE BRUSSELS SPROUTS WITHOUT PROTEST
+      *goto A31
+    #RUN SCREAMING FROM THE TABLE
+      *goto A32
+    #PUT YOUR FINGER IN YOUR MOUTH AND MAKE A GAGGING SOUND
+      *goto A33
+    #FEED THE SPROUTS TO YOUR DOG, GOODO
+      *goto A34
+*label A11
+*label A31
+*set FM%+10
+What kind of child is THAT obedient? Have you ever heard the expression, "develop a taste for something?" That's a nice way of saying that you were forced to eat it as a child. Brussels sprouts may be good for you, but they
+are also the kind of food that makes you have bad dreams. You could have gotten away with not eating them.
+*finish
+*label A14
+*set TH%-10
+*set IN%+50
+With a smile on your face, you calmly sneak the Brussels sprouts to Trusty Goodo, the family mongrel. Goodo keeps the secret, but reveals his acquired taste for Brussels sprouts later, by polluting the air with huge blasts of
+gas. He is sent outside to sleep in the cold night air.
+*finish
+*label A22
+*label A32
+*set TH%-10
+*set FM%-10
+Wise guy! Your flair for the dramatic will get you into trouble more than once in this life. You may be developing a hysterical personality. You are punished by having to eat your dinner alone in a corner.
+*finish
+*label A23
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+Your mother doesn't see you putting your finger in your mouth and gets worried that you are really choking. She smacks you on the back a few times, then assumes that a sinew from the meat must have gotten stuck in your throat.
+She takes the meat away and says, "Just eat the Brussels sprouts, Dear."
+*finish
+*label B2
+*set TH%-10
+Your mother tells you to stop making those disgusting sounds at the dinner table. Do you stop?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set TH%+30
+*set SC%+10
+*set FM%+20
+You showed good judgment. Eventually, when no one is looking, you feed the Brussels sprouts to the dog.
+*finish
+*label C2
+*set GN%-10
+You do it one more time for dramatic "effect." This is a way that children have of testing the limits of their situations. This is also a sign of people who develop a hostile attitude toward authority. You are sent to your room
+immediately after dinner, but this will probably have little effect on your future behavior.
+*finish
+*label A24
+*set CA%-10
+Your sense of panic betrays you. You are caught feeding the offending veggies to the family pooch. You look so guilty that everyone feels sorry for you and lets you off the hook. I wouldn't advise you to involve yourself in a life of
+crime. You are the type who always gets caught.
+*finish
+*label A33
+*set GN%-10
+*set CN%+30
+Your action is a bold and flagrant protest against authority and Brussels sprouts alike. It is also, however, a bit overstated. Save these kinds of responses for issues that will have a more powerful influence on your life.
+*finish
+*label A34
+*set GN%-10
+That's not very fair, is it? You resented having to eat the sprouts, yet you force them on poor old Goodo. Poor Goodo thinks you are doing him a favor. He will also think he's doing you a favor when he sleeps in your room later
+tonight, releasing the gaseous by-products of his meal for your olfactory pleasure.
+*finish
+

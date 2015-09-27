@@ -1,0 +1,153 @@
+*comment @KID,0,14,17
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 18) and (childage0 > 14)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 18) and (childage1 > 14)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 18) and (childage2 > 14)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 18) and (childage3 > 14)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 18) and (childage4 > 14)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+${childName} would like to go on an overnight ski trip with a group of other students at the high school. It will be supervised by the high school teachers. The cost of the ski trip is $700. ${childName} doesn't have the money to pay for the trip and
+you can tell by all the recent hard luck stories that ${childName} is hoping for a cash infusion from you.
+*page_break
+(${childName} has just ASSUMED that you would have no trouble granting permission to go on an overnight ski trip in the first place.) What will you do?
+
+
+Select an action:
+
+*choice
+  #TELL ${CHILDNAME} NOT TO WORRY ABOUT THE MONEY--YOU AREN'T EVEN GRANTING PERMISSION TO GO
+    *goto A1
+  #TELL ${CHILDNAME} THAT YOU ARE WILLING TO NEGOTIATE A DEAL
+    *goto A2
+  #GIVE ${CHILDNAME} THE MONEY AND SAY "HAVE A GOOD TIME!"
+    *goto A3
+*label A1
+"But DAAaaaad! You don't understand. I HAVE TO GO."
+
+
+Select an action:
+
+*choice
+  #SAY "SORRY" (AND STICK TO IT)
+    *goto B1
+  #CHANGE YOUR MIND
+    *goto B2
+*label B1
+"I HATE LIVING HERE. I CAN'T WAIT UNTIL I'M OLD ENOUGH TO MOVE OUT OF HERE AND DO WHATEVER I WANT (you hear crashing and pounding in the distance...)
+*finish
+*label B2
+That's very flexible of you.
+
+
+Select an action:
+
+*choice
+  #TELL ${CHILDNAME} THAT YOU ARE WILLING TO NEGOTIATE A DEAL
+    *goto C1
+  #GIVE ${CHILDNAME} THE MONEY AND SAY "HAVE A GOOD TIME!"
+    *goto C2
+*label A2
+*label C1
+*set TH%+30
+What are you willing to do to negotiate?
+
+
+Select an action:
+
+*choice
+  #PAY FOR THE TRIP IN EXCHANGE FOR WORK
+    *goto D1
+  #PAY FOR THE TRIP IN EXCHANGE FOR BEING REPAID
+    *goto D2
+*label D1
+Which one of these things would you say is worth $700?
+
+
+Select an action:
+
+*choice
+  #WASHING YOUR CAR FOR A FULL YEAR
+    *goto E1
+  #TAKING OUT THE TRASH FOR A FULL YEAR
+    *goto E2
+  #KEEPING ROOM CLEAN FOR A FULL YEAR
+    *goto E3
+  #PAINTING THE INSIDE OF YOUR HOME
+    *goto E4
+  #ALL OF THE ABOVE
+    *goto E5
+*label E1
+*label E2
+${childName} is getting off easy, but at least you are trying to teach a lesson.
+*label E3
+*set TH%-10
+*set IN%-10
+This is a big mistake. You should never pay a child for something he or she is already supposed to be doing. Even if ${childName} did stick to the deal (which is doubtful) what happens when the year is up?
+*finish
+*label E4
+*temp randomF
+*rand randomF 1 2
+*if randomF=1
+  *goto F1
+*else
+  *goto F2
+*label F1
+*set MN-2000
+*if MN < 5
+  *set MN 5
+${childName} sticks to the bargain. It costs you an additional $2000 to have the house repainted after ${childName} gets through with it.
+*finish
+*label F2
+*label E5
+Talk about slave labor! ${childName} decides it would be easier to stay home!
+*finish
+*label A3
+*label C2
+*set TH%-20
+You are doing an excellent job of spoiling ${childName}.
+*finish
+*label D2
+Ha! It seems that every time a "payment" is due, ${childName} is a little short. You can understand, right Dad?
+*finish
+

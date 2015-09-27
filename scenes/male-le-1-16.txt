@@ -1,0 +1,9 @@
+*set HP%-10
+*set CA%-10
+*set SC%-30
+A family member has begun to show signs of serious emotional problems. In the last two weeks he has tried to commit suicide twice. As a result, your parents are told that he must be hospitalized.
+*page_break
+Emotional and Familial spheres show marked decreases. Surprisingly, your Social Sphere declines as well. This is because people tend to shy away from relatives of those who have had emotional problems. This probably seems very unfair to
+you, but unfortunately, it's true.
+*finish
+

@@ -1,0 +1,59 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 17
+  Sorry, you're too old for this experience.
+  *finish
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You and your classmates are changing into your clothes for gym class. For a moment, everyone is naked. Even though you try not to look, you can't help noticing some of the other girls' chests, wondering about how you compare to
+everyone. How do you feel?
+
+
+Select a mood:
+
+*choice
+  #EXTREMELY ANXIOUS AND SELF-CONSCIOUS 
+    *goto A1
+  #VERY ANXIOUS AND SELF-CONSCIOUS
+    *goto A2
+  #A LITTLE ANXIOUS AND SELF-CONSCIOUS
+    *goto A3
+  #NOT ANXIOUS AT ALL
+    *goto A4
+*label A1
+*set CA%-40
+For some people, this is an extremely anxiety-provoking experience. As a result of your anxiety, you hurry to put your gym clothes on. You run out onto the gym floor and Mrs. Black, the gym teacher, says, "What's the matter with your
+chest?" You can hardly believe your ears.
+*page_break
+"Your shirt is on backwards!" she says.
+*finish
+*label A2
+*set CA%-20
+This kind of reaction is more common than you might think. Even though people tend to make a big deal over the size of a woman's breasts, you'll probably find out that plenty of guys want to see them no matter WHAT size they are.
+*finish
+*label A3
+*set CA%-10
+This is a perfectly normal kind of reaction. At your age, you are still not comfortable with your body and all the changes it has gone through. Although you might be ashamed of what your body looks like now, you'll probably wish
+for it back thirty years from now.
+*finish
+*label A4
+This is an unusually calm response.
+*if CA>70
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+After checking your Calmness characteristic, it is obvious that you are naturally this calm in most situations. You are obviously developing a "super-healthy" attitude about most things. Are you a real person?
+*finish
+*label B.F
+*finish
+

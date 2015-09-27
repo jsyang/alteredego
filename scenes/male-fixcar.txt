@@ -1,0 +1,258 @@
+Your car has to be taken in for some minor repair work. The work will not cost you any appreciable amount of money, but it will be an inconvenience since you will have to drop the car off at the repair shop early in the morning and
+rearrange your usual travel plans.
+*page_break
+You call in to make an appointment, and the service representative tells you that repairs are made on a first-come, first-served basis.
+*choice mood action
+  #ANGRY
+    #DELAY GETTING THE REPAIRS DONE
+      *goto A11
+    #BRING THE CAR IN TO BE FIXED
+      *goto A12
+  #CALM
+    #DELAY GETTING THE REPAIRS DONE
+      *goto A21
+    #BRING THE CAR IN TO BE FIXED
+      *goto A22
+*label E1
+*label D1
+*label C1
+*label A11
+*label A21
+*set MN-1000
+*if MN < 5
+  *set MN 5
+If it isn't major, you can probably live with it, right? Wrong! CLANK! CLANK! GRIND! SPUTTER! COUGH! Silence! Your car is no longer among the living. Towing, repair and service charges cost $1000.
+*finish
+*label A12
+When will you bring the car in?
+
+
+Select an action:
+
+*choice
+  #AS EARLY AS POSSIBLE
+    *goto B1
+  #LATE MORNING ON THE WAY TO WORK
+    *goto B2
+*label B1
+*label B2
+There is a long line of people already in front of you. Apparently, they have been LIVING at the service station, anticipating a car repair fad that seems to be sweeping the area. They are all holding coupons which ran in the local paper.
+*page_break
+Since you don't have one, you will be paying regular prices. To make matters worse, since you do not have an appointment any place else, you cannot take your car elsewhere to be fixed that day.
+
+
+Select an action:
+
+*choice
+  #WAIT FOR ANOTHER DAY
+    *goto C1
+  #SET UP CAMP AND WAIT IN LINE
+    *goto C2
+*label C2
+An hour passes.
+
+
+Select an action:
+
+*choice
+  #WAIT FOR ANOTHER DAY
+    *goto D1
+  #SET UP CAMP AND WAIT IN LINE
+    *goto D2
+*label D2
+Another hour passes.
+
+
+Select an action:
+
+*choice
+  #WAIT FOR ANOTHER DAY
+    *goto E1
+  #SET UP CAMP AND WAIT IN LINE
+    *goto E2
+*label E2
+Finally, it is your turn to visit the sacred car repair mechanic. His first words of wisdom are, "Do you have an appointment?" You explain to him that you were told that repairs were made on a first-come, first-served basis. You get the
+feeling that he doesn't believe that you ever had such a telephone conversation.
+*page_break
+He tells you, "I'm sorry. That's the way we have been doing it for years." At this point you can:
+
+
+Select an action:
+
+*choice
+  #START YELLING AND SCREAMING
+    *goto F1
+  #LEAVE
+    *goto F2
+  #TRY TO SPEAK RATIONALLY ABOUT THIS
+    *goto F3
+*label M3
+*label L1
+*label F1
+*set GN%-10
+Tch! Tch! That won't get you anywhere. The mechanic tells you there is nothing he can do except give you an appointment. There is one available three weeks from next Friday. Scheduling a private luncheon with the president of the United
+States would probably be easier.
+
+
+Select an action:
+
+*choice
+  #MAKE THE APPOINTMENT
+    *goto G1
+  #TRY TO FIND ANOTHER PLACE TO FIX THE CAR
+    *goto G2
+*label G1
+*set MN-1000
+*if MN < 5
+  *set MN 5
+Your car's performance deteriorates rapidly in the three week time period. Your repair bill, which should have been about $50, will cost you a cool, cruel, $1000.
+
+
+Select an action:
+
+*choice
+  #PAY THE MONEY AND DRIVE THE CAR AWAY
+    *goto H1
+  #ASK TO SPEAK TO THIS PERSON'S SUPERVISOR
+    *goto H2
+*label H1
+The mechanic says, "Have a nice day!"
+*finish
+*label H2
+You are much too angry to get anywhere with this person's supervisor. You made the appointment, you had the car fixed, and this is the price of the repairs.
+
+
+Select an action:
+
+*choice
+  #PUNCH OUT THE SUPERVISOR
+    *goto I1
+  #TRY TO RECOVER THE COSTS LEGALLY
+    *goto I2
+  #PAY THE MONEY AND FORGET ABOUT IT
+    *goto I3
+*label I1
+*set SC%-20
+*set TH%-30
+You are much too old to be acting this way. The supervisor calls the police and you are taken in "to cool off." No charges are pressed. Was it worth the satisfaction of loosening the supervisor's cap?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+You should try to settle yourself down a little.
+*finish
+*label J2
+*set CA%+20
+I'm glad you are back in a civilized frame of mind. If you don't watch your temper you are sure to have a heart attack.
+*finish
+*label I2
+You bring the garage to small claims court. The result of the action is:
+*temp randomK
+*rand randomK 1 2
+*if randomK=1
+  *goto K1
+*else
+  *goto K2
+*label K1
+*set CA%+30
+*set HP%+20
+*set MN+750
+You win! Like the man says, "If you don't like the services you are getting at your local garage, don't take the matter into your own hands, take 'em to court."
+*finish
+*label K2
+You lose! Sorry. Now you have to pay the $1000
+*finish
+*label I3
+Life is very unfair sometimes.
+*finish
+*label N2
+*label M4
+*label L2
+*label F2
+*label G2
+*set MN-1000
+*if MN < 5
+  *set MN 5
+On the way out of the service station, you hear your car making peculiar noises...CLANK! CLANK! GRIND! SPUTTER! COUGH! Silence! Your car is no longer among the living. Towing, repair and service charges cost $1000.
+*finish
+*label F3
+You try to control your voice, which still reflects your earlier anger, but there is no swaying the mechanic. He keeps referring to the appointment book and muttering that all of his assistants are on vacation over the next couple of
+weeks. At this point you can:
+
+
+Select an action:
+
+*choice
+  #START YELLING AND SCREAMING
+    *goto L1
+  #LEAVE
+    *goto L2
+*label A22
+It is easy to see that you are an optimist! You are greeted by a mechanic who is clearly holding a book with the word APPOINTMENTS in big letters across the front.
+*page_break
+You clearly recall hearing that cars would be taken on a first-come, first-served basis. Perhaps they are running a beauty parlor in the back of the garage. Perhaps they USED to do service by appointment and now they just keep the book
+for something else.
+*page_break
+Nope! It is a bona fide appointment book. The mechanic apologizes for the misunderstanding. He sees that you are a calm person, and is prepared to treat you with courtesy. He can give you an appointment for three weeks from Friday.
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE APPOINTMENT
+    *goto M1
+  #ASK TO SPEAK TO A SUPERVISOR
+    *goto M2
+  #BEGIN TO YELL AND SCREAM
+    *goto M3
+  #LEAVE
+    *goto M4
+*label M1
+*set MN-1000
+*if MN < 5
+  *set MN 5
+*set EX%-20
+Not only are you calm, but you are also quite unassertive (with all due respect). Over the next three weeks your car's health deteriorates rapidly. The cost of the repair bill when you finally DO get to your appointment is $1000.
+*finish
+*label M2
+The supervisor greets you and you explain your predicament. Surely, you can't be held accountable for a mistake that was made on their end. The supervisor relates (politely) that there is no way to be sure on which end the error was made.
+You will have to take an appointment like everyone else.
+
+
+Select an action:
+
+*choice
+  #ASK TO SPEAK TO HIS SUPERVISOR
+    *goto N1
+  #LEAVE
+    *goto N2
+*label N1
+Your persistence pays off. The supervisor's supervisor says that you can have an appointment later in the week. Does this satisfy you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto O1
+  #NO
+    *goto O2
+*label O1
+*set MN-400
+*if MN < 5
+  *set MN 5
+O.K. During the course of the next week, your car breaks down. The cost of the repairs is $400.
+*finish
+*label O2
+*set CA%+30
+*set SC%+20
+*set HP%+20
+O.K, O.K. You are a tough person to please, even if you are calm. You can have your appointment today. Sticking to your guns paid off!
+*finish
+

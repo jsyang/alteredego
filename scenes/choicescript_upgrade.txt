@@ -1,0 +1,17 @@
+*label start
+*check_purchase adfree
+
+*if choice_purchased_adfree = false
+  [b]Chapters 4 through 12[/b]
+  
+  Unlock chapters 4 through 12, including the thrilling conclusion!
+  
+  *purchase adfree $0.99 start
+
+*if choice_purchased_everything
+  You're completely upgraded!
+
+*if choice_purchased_adfree
+  [b]Chapters 4 through 12[/b]
+  
+  You've paid to unlock chapters 4 through 12.

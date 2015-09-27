@@ -1,0 +1,65 @@
+*if FD>0
+  *goto FD.T
+*else
+  *goto FD.F
+*label FD.T
+You get a phone call from someone asking for your father.  You awkwardly explain that he died some time ago.  The caller excuses himself and hangs up.
+*finish
+*label FD.F
+There is a telephone call for you. Your father has just had a heart attack.
+
+*temp randomA
+*rand randomA 1 9
+*if randomA=1
+  *goto A1
+*elseif randomA=2
+  *goto A2
+*elseif randomA=3
+  *goto A3
+*elseif randomA=4
+  *goto A4
+*elseif randomA=5
+  *goto A5
+*elseif randomA=6
+  *goto A6
+*elseif randomA=7
+  *goto A7
+*elseif randomA=8
+  *goto A8
+*else
+  *goto A9
+*label A1
+*label A2
+*label A3
+*label A4
+*label A5
+*label A6
+*label A7
+*label A8
+*set CA%-20
+Fortunately, it was just a mild attack. He recovers and returns to work within three months.
+*finish
+*label A9
+*comment @FDI
+*set FD 1
+You are told to wait by the phone for further news. Three hours later, the phone rings again. The doctors tried their best but lost him. I'm sorry. Your father has passed away.
+*page_break
+*if FM>80
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+I know this must be very difficult for you, especially considering how close you are to your family.
+*finish
+*label B.F
+*if FM>49
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+In the forthcoming weeks, your family will stick close together, trying to overcome the loss.
+*finish
+*label C.F
+Events like this can be especially difficult when family relationships are weak. Sometimes we get angry because the person has died before giving us the chance to resolve our past differences.
+*finish
+

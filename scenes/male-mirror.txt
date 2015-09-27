@@ -1,0 +1,84 @@
+You are touching something smooth and shiny. You pat it with your hand a few times.
+*choice mood action
+  #CONFUSED
+    #KEEP TOUCHING
+      *goto A11
+    #IGNORE THE SMOOTH SHINY THING
+      *goto A12
+  #PASSIVE
+    #KEEP TOUCHING
+      *goto A21
+    #IGNORE THE SMOOTH SHINY THING
+      *goto A22
+*label A11
+It is flat and a little cool. Wait a minute! There's a baby in there. Who is that baby?
+
+
+Select an action:
+
+*choice
+  #YOU
+    *goto B1
+  #SOMEONE ELSE
+    *goto B2
+*label B1
+That's right! You are looking at yourself in a mirror. Isn't that a BEE-YOO-TEE-FUL baby?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label YES
+*label C1
+*set CN%+50
+You really are quite stunning. You are developing a positive self-image.
+*finish
+*label NO
+*label C2
+*set CN%-20
+Of course you are. All babies are beautiful. You do not have a very good self-image.
+*finish
+*label B2
+No, that's you. You are looking at yourself in a mirror! Isn't that a BEE-YOO-TEE-FUL baby?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*goto YES
+*label D2
+*goto NO
+*label A12
+*set IN%-10
+Young children become smarter by exploring and manipulating their environments. You seem to be put off by things that don't make that much sense. Want to try to find out more about this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E1
+*goto A11
+*label E2
+*set EX%-10
+You're a very stubborn little boy. Have it your way, but don't blame me if you do poorly in school later.
+*finish
+*label A21
+Your explorations are only half-hearted. You fail to make the discovery that you are touching a mirror and that there is a reflection of yourself in there.
+*finish
+*label A22
+You have ignored a potentially enlightening experience. You fail to make the discovery that you are touching a mirror and that there is a reflection of yourself in there.
+*finish
+

@@ -1,0 +1,161 @@
+There is one more ice pop in the freezer that is being saved for another family member. Your mouth waters at the thought of this cool, tasty treat.
+*choice mood action
+  #HUNGRY
+    #EAT THE WHOLE POP
+      *goto A11
+    #TAKE A BITE OUT OF THE POP
+      *goto A12
+    #LEAVE IT ALONE
+      *goto A13
+  #ABLE TO RESIST
+    *selectable_if (false) #EAT THE WHOLE POP
+      *finish
+    *selectable_if (false) #TAKE A BITE OUT OF THE POP
+      *finish
+    #LEAVE IT ALONE
+      *goto A23
+*label A11
+*set TR%-20
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+When it is discovered that the pop is missing, you are asked about its possible location. You can:
+
+
+Select an action:
+
+*choice
+  #TELL THE TRUTH
+    *goto C1
+  #LIE
+    *goto C2
+*label C1
+Your confession is appreciated but generates a lot of anger. Your family rants and raves and carries on. You can:
+*label GO/SAY
+
+
+Select an action:
+
+*choice
+  #GO TO THE STORE AND BUY A POP TO REPLACE THE ONE YOU ATE
+    *goto D1
+  #SAY "IT SERVES YOU RIGHT FOR BEING SUCH A PICKLE PUSS"
+    *goto D2
+*label D1
+*if AG<9
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+You are not old enough to go to the store by yourself, but that was a nice thought.
+*finish
+*label E.F
+That was thoughtful. On the way home you are once again tempted by the possibility of disposing of yet another frozen
+treat. You can:
+
+
+Select an action:
+
+*choice
+  #EAT THIS ONE TOO
+    *goto F1
+  #EXERCISE SELF-CONTROL
+    *goto F2
+*label F1
+*set TR%-20
+Oh no! Not again! How could you be such a pig? Your lack of self-control will cause you trouble later, but you don't believe this, right?
+
+
+Select a mood:
+
+*choice
+  #RIGHT
+    *goto G1
+  #WRONG
+    *goto G2
+*label G1
+*set PH%-10
+It figures. Anyone who would steal an ice pop from someone in his own family couldn't have the kind of sensitivity it takes to see the error of his ways. By the way, your Physical sphere just took a nasty turn because of all the junk
+food you have been eating.
+*finish
+*label G2
+Oh, I see. I guess you just couldn't control yourself. Perhaps you could do something nice that doesn't involve eating.
+*finish
+*label F2
+*set TR%+20
+Terrific! All is forgiven.
+*finish
+*label D2
+This starts a family fight. At the end of the fight you:
+
+
+Select an action:
+
+*choice
+  #APOLOGIZE
+    *goto H1
+  #WAIT FOR AN APOLOGY
+    *goto H2
+*label H1
+*set FM%+20
+*set SC%+10
+*set IN%+10
+That was a very mature thing to do. You receive an apology in return.
+*finish
+*label H2
+You are going to have to wait a very long time. Stubbornness seems to run in your family.
+*finish
+*label C2
+*if TR>75
+  *goto I.T
+*else
+  *goto I.F
+*label I.T
+Your status sheet suggests that you are not a very good liar. You are found out and punished.
+*finish
+*label I.F
+Your lie effectively removes the blame from you, but someone overhears you talk about the ice pop in your sleep and you get in trouble anyway.
+*finish
+*label B2
+The pop is never discovered missing and the matter is never brought up.
+*finish
+*label A12
+As you might have expected, someone sees the mangled ice pop and is completely grossed out by the idea that he would have to put his lips to something you have already slobbered on. You can:
+*goto GO/SAY
+*label A13
+*set TH%+40
+You are learning to be the master of your impulses. This is good practice for adolescence, which often presents you with goodies that are much harder to resist.
+*finish
+*label A23
+*if TR<50
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+*set TR%+30
+*set SC%+30
+*set IN%+20
+That must have been very difficult for you, considering your history of untrustworthy behavior. Your appreciation for others increases your score in Trustworthiness, Social and Intellectual areas.
+*finish
+*label K.F
+You don't expect to be rewarded for this act of simple consideration, do you? The knowledge that you have respected the privacy of others should be enough. Does this make you angry?
+
+
+Select a mood:
+
+*choice
+  #YES
+    *goto L1
+  #NO
+    *goto L2
+*label L1
+Well, I'll have to admit that was a rather smug remark. I apologize.
+*finish
+*label L2
+Fine, then let's continue.
+*finish
+

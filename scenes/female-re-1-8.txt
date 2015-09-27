@@ -1,0 +1,138 @@
+*temp incrementedQ
+*set incrementedQ 0
+
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You are with ${loverName} and the two of you are getting romantic. You are alone in his room, and his parents aren't home.
+*page_break
+*label Q1
+${loverName} looks at you glassy-eyed and tells you, "I think we should try it."
+
+
+Select an action:
+
+*choice
+  #SAY, "I'M NOT READY YET."
+    *goto A1
+  #SAY, "NO." (FIRMLY)
+    *goto A2
+  #SAY, "LET'S KISS A LITTLE MORE FIRST."
+    *goto A3
+  #SAY, "O.K." (AND START TAKING OFF YOUR BLOUSE)
+    *goto A4
+*label A1
+*set GN%-10
+*set CA%-10
+${loverName} says, "I love you and you love me. What's there to be ready for?"
+
+
+Select an action:
+
+*choice
+  #SAY, "NO. I JUST DON'T WANT TO." (FIRMLY)
+    *goto B1
+  #SAY, "LET'S KISS A LITTLE MORE FIRST."
+    *goto B2
+  #SAY, "O.K." (AND START TAKING OFF YOUR BLOUSE)
+    *goto B3
+*label B1
+*label A2
+*set GN%-10
+"How can you get me all hot and bothered like that and say 'no' to me?"
+
+
+Select an action:
+
+*choice
+  #GRIT YOUR TEETH AND SAY, "I JUST SAID IT," AND WALK OUT
+    *goto C1
+  #SAY, "LET'S KISS A LITTLE MORE FIRST."
+    *goto C2
+  #SAY, "O.K." (AND START TAKING OFF YOUR BLOUSE)
+    *goto C3
+*label C1
+"Aw, come on. I didn't mean anything by it." ${loverName} is calling after you.
+
+
+Select an action:
+
+*choice
+  #GO HOME
+    *goto D1
+  #TELL HIM YOU'LL STAY WITH HIM ONLY IF HE QUITS BOTHERING YOU
+    *goto D2
+  #TELL HIM JUST TO KISS YOU BUT THAT'S ALL
+    *goto D3
+*label D1
+*set CA%+10
+The next day, he calls up and apologizes.
+*finish
+*label D3
+*set incrementedQ +1
+*if incrementedQ=1
+  *goto Q1
+*else
+  *goto Q2
+*label Q2
+*label D2
+*set SC%-10
+The rest of the afternoon is awkward. He blames it on your coldness.
+*finish
+*label A3
+*label C2
+*label B2
+The two of you kiss and ${loverName} begins to move his hands all over your body. He is beginning to breathe heavy.
+
+
+Select an action:
+
+*choice
+  #SLOW HIM DOWN
+    *goto E1
+  #LET HIM CONTINUE
+    *goto E2
+*label E1
+He doesn't want to slow down. He begins to unbutton your blouse.
+
+
+Select an action:
+
+*choice
+  #TELL HIM IN NO UNCERTAIN TERMS TO CUT IT OUT
+    *goto F1
+  #LET HIM CONTINUE
+    *goto F2
+*label F1
+*goto A2
+*label B3
+*label C3
+*label E2
+*label F2
+The two of you begin to have sex. He is still very rough and inexperienced. He is not a sensitive lover -- at least not this time.
+*finish
+*label A4
+*set HP%+30
+*set TH%-10
+You are eager to please him and eager to be pleased. The two of you explore each other's bodies and experiment with different techniques. After you are finished, do you feel guilty?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G1
+Perhaps you should think harder about what you're doing first. Now that you have satisfied your curiosity, perhaps you will think of it differently next time.
+*finish
+*label G2
+*finish
+

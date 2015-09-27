@@ -1,0 +1,132 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this icon, you need a steady job. You may go to the WORK ICON and apply for one, then return.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You have an appointment to meet a very successful man who can have a powerful influence on both your Resources and your career. You arrive for the meeting at his office with a little bit of time to spare, so you have the opportunity to
+review your strategy. The weather is a bit sticky, so you also consider freshening up.
+*choice mood action
+  #CONFIDENT
+    #MAKE A LAST MINUTE TRIP TO THE LADIES' ROOM TO CHECK YOUR APPEARANCE
+      *goto A11
+    #CALMLY WAIT IN THE OUTER OFFICE TO BE CALLED IN
+      *goto A12
+  #ANXIOUS
+    #MAKE A LAST MINUTE TRIP TO THE LADIES' ROOM TO CHECK YOUR APPEARANCE
+      *goto A21
+    #CALMLY WAIT IN THE OUTER OFFICE TO BE CALLED IN
+      *goto A22
+  #NERVOUS BUT TRYING NOT TO SHOW IT
+    #MAKE A LAST MINUTE TRIP TO THE LADIES' ROOM TO CHECK YOUR APPEARANCE
+      *goto A31
+    #CALMLY WAIT IN THE OUTER OFFICE TO BE CALLED IN
+      *goto A32
+*label A11
+*label A12
+*if CN>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You have chosen to handle yourself with your usual aplomb. Confidence is a strong part of your character. The result of your meeting is that you
+*label MEETING
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+*set MN+5000
+*set VC%+30
+make a strong positive impression. Resources and Vocational sphere rise impressively.
+*finish
+*label C2
+*set HP%-20
+are sorely disappointed. The secretary calls you in and tells you that your meeting has been abruptly cancelled. You have to reschedule later next month.
+*finish
+*label B.F
+*set CN%+20
+*set VC%+20
+Confidence isn't a very strong part of your personality. The best you can do is try to APPEAR confident. Your confidence seems exaggerated and out of place. The meeting goes smoothly but accomplishes nothing at the present time. Your
+experience is valuable, however, and your Confidence characteristic improves for next time.
+*finish
+*label A21
+*label A31
+*set CA%-10
+You remove a small brush from your pocketbook and begin to raise your arms over your head to fix your hair. OH NO! You notice two crescent-shaped rings of perspiration soaking through your white linen blazer.
+
+
+Select an action:
+
+*choice
+  #DRY YOUR BLAZER UNDER THE HOT AIR BLOWER IN THE BATHROOM
+    *goto D1
+  #TRY NOT TO LIFT YOUR ARMS AWAY FROM YOUR SIDE DURING THE MEETING
+    *goto D2
+  #THINK TO YOURSELF, "WHO CARES?"
+    *goto D3
+*label D1
+*label G1
+*set CA%-10
+A woman walks in and notices that you have forced the nozzle of the hot air blower into the sleeve of the blazer. When you put the blazer on, it is so hot that it burns your armpits!
+*page_break
+As a result, you begin to perspire more than ever. It's too late to do anything else, so you walk into your meeting. You
+*goto MEETING
+*label D2
+*label G2
+You enter the gentleman's office. He immediately extends his arm toward you in greeting. You walk towards him and stiffly tilt your right arm towards his outstretched hand.
+*page_break
+*if CN>60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Since Confidence is a strong part of your character, he barely notices your peculiar style of shaking hands. The result of the meeting is that you
+*goto MEETING
+*label E.F
+Unfortunately, Confidence is not a very strong part of your character, so your behavior seems awkward. The result of your meeting is that you
+*goto MEETING
+*label D3
+*label G3
+*label F2
+*set CN%+20
+*set MN+5000
+*set VC%+30
+That's the spirit! Perspiration only means that you are no stranger to hard work. That is precisely what this businessman thinks as well. The meeting is a smashing success. Vocational sphere and Resources increase. Confidence increases
+as well.
+*finish
+*label A22
+*label A32
+*set CA%-10
+You move nervously in your seat and flip through the pages of Trophy Hunter magazine. As the time for your meeting approaches, you notice a dampness under your arms.
+
+
+Select an action:
+
+*choice
+  #HEAD FOR THE LADIES ROOM TO CHECK WHAT IS GOING ON
+    *goto F1
+  #IGNORE IT AND FORGE AHEAD WITH THE MEETING
+    *goto F2
+*label F1
+OH NO! You notice two crescent-shaped rings of perspiration soaking through your white linen blazer.
+
+
+Select an action:
+
+*choice
+  #DRY YOUR BLAZER UNDER THE HOT AIR BLOWER IN THE BATHROOM
+    *goto G1
+  #TRY NOT TO LIFT YOUR ARMS AWAY FROM YOUR SIDE DURING THE MEETING
+    *goto G2
+  #THINK TO YOURSELF, "WHO CARES?"
+    *goto G3
+
+
+

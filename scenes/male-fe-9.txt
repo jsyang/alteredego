@@ -1,0 +1,80 @@
+*comment @KID,0,13,16
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 17) and (childage0 > 13)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 17) and (childage1 > 13)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 17) and (childage2 > 13)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 17) and (childage3 > 13)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 17) and (childage4 > 13)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+${childName} has just told you that the newest style in casual wear is to wrap electrical tape around the wrist and arms. ${childName} wants to know where you keep YOUR supply of electrical tape.
+
+
+Select an action:
+
+*choice
+  #TELL ${CHILDNAME} THAT YOU DISAPPROVE OF THAT STYLE
+    *goto A1
+  #TELL ${CHILDNAME} WHERE THE ELECTRICAL TAPE IS
+    *goto A2
+*label A1
+"But DAAaaaaaAAD. All of the other kids are wearing tape. Whyyyy can't I do it, too?"
+
+
+Select an action:
+
+*choice
+  #TELL ${CHILDNAME} THAT YOU DON'T CARE WHAT THE OTHER CHILDREN DO
+    *goto B1
+  #LET ${CHILDNAME} HAVE SOME TAPE
+    *goto B2
+*label B1
+*set IN%+10
+*set FM%+10
+Never try to combat whining with logic. "DAAAaaad!" In time, the droning subsides, but for now you become tempted to tape up ${childName}'s mouth as a means of compromising.
+*finish
+*label A2
+*label B2
+You didn't stand your ground. ${childName} puts on the tape so tightly that it cuts off the blood circulation. ${childName} finds out the hard way that keeping up with the latest fashion trends can be risky business.
+*finish
+

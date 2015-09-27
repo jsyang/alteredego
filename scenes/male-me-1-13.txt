@@ -1,0 +1,232 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+Your wife is wearing an extrememly low cut dress to a get-together the two of you are attending tonight. What do you think about this?
+
+
+Select an action:
+
+*choice
+  #APPROVE (WOW!)
+    *goto A1
+  #DO NOT APPROVE
+    *goto A2
+*label A1
+*set HP%+10
+*set CN%+20
+*set SC%+20
+She really looks great. As the evening passes you can't take your eyes off her for a moment. When you get home you can:
+
+
+Select an action:
+
+*choice
+  #GET ROMANTIC
+    *goto B1
+  #GO TO SLEEP
+    *goto B2
+*label N4
+*label B2
+BOOOOOOOOOOORINNNG!
+*finish
+*label B1
+*set CA%-10
+She knows you have been getting aroused all evening and decides to tease you a bit. She puts on some black lace lingerie and tickles you with her hands and tongue. What would you like to do?
+
+
+Select an action:
+
+*choice
+  #PLEASURE EACH OTHER ORALLY
+    *goto C1
+  #TRY SOME EXCITING SEX POSITIONS
+    *goto C2
+  #I HAVE MY OWN IDEAS
+    *goto C3
+*label N1
+*label C1
+By now you are both very aroused. The two of move your mouths gently over each other's most sensitive parts. It isn't long before the two of you both explode with pleasure. After you are finsished you can:
+*label H
+
+
+Select an action:
+
+*choice
+  #LIE IN BED AND CUDDLE
+    *goto D1
+  #GO TO SLEEP
+    *goto D2
+  #MAKE YOUR WIFE SOMETHING TO EAT
+    *goto D3
+*label D1
+*set HP%+20
+*set TH%+20
+That's very good. People do not do this nearly enough. As a matter of fact, some say that afterplay (the period immediately following sex) is one of the most satisfying parts of a lovemaking session.
+*finish
+*label D2
+I guess you must be tired, but you should know that many women complain about their husband's lack of interest in afterplay (the period immediately following sex). Some women (and men too) find this to be one of the most gratifying
+aspects of lovemaking.
+*finish
+*label D3
+*set TH%+30
+Women all over America are looking for you. Can you possibly be for real? This action is above and beyond the call of duty, and your wife appreciates it very much. Are you ready to go again?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E1
+*set HP%+40
+The second time is even better than the first. The two of you lie exhausted and giddy in one another's arms. This has been a great night.
+*finish
+*label E2
+I guess you are just too tired. Well, have a good night's rest.
+*finish
+*label N2
+*label C2
+You make love in a variety of sexual positions with the fervor and stamina of a honeymoon couple.
+*if PH>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+It's a good thing that you are in shape. Tonight's lovemaking really tested the limits of the flexibility of the human body. (I'll bet you didn't know you are able to bend like that!)
+*goto G
+*label F.F
+You have to be careful though, your Physical sphere shows that you are not exactly limber enough to do some of the things you might be thinking of.
+*label G
+*page_break
+After a while, the two of you find a position that is both comfortable and exciting. Soon, you both explode in a wonderful climax! After you are finished you can:
+*goto H
+*label N3
+*label C3
+I'm sure you do. I hope you are considerate enough to share them with your wife. After you are both weary and exhausted from doing only-you-know-what, you can:
+*goto H
+*label A2
+Your wife tells you to stop being such an old fuddy-duddy. She refuses to change her outfit. You can:
+
+
+Select an action:
+
+*choice
+  #REFUSE TO GO OUT WITH HER
+    *goto I1
+  #STOP GIVING HER A HARD TIME
+    *goto I2
+*label I1
+*set MP+1
+This turns into one of those childish arguments that continues until somebody ultimately gives in. Is that somebody going to be you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+You go out, but have a lousy time.
+*finish
+*label J2
+*set MP+1
+You showed her. The both of you stay home and act miserably toward one another.
+*finish
+*label I2
+Will you remain angry with her?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto K1
+  #NO
+    *goto K2
+*label K1
+*set MP+1
+You make snide comments to one another all night. She maintains that you have a dirty mind, and you maintain that every other man in the universe has a dirty mind. O.K. you can both agree that some people have dirty minds. Those who do,
+however, do so whether people have their clothes on or off so why not just try to enjoy each other's company?
+*finish
+*label K2
+That's very sporting of you. While you are at the party, a male friend compliments your wife on her lovely dress. What will you do?
+
+
+Select an action:
+
+*choice
+  #PASS A SNIDE COMMENT TO THE MAN
+    *goto L1
+  #PASS A SNIDE COMMENT TO YOUR WIFE
+    *goto L2
+  #BECOME FURIOUS
+    *goto L3
+  #NOTHING
+    *goto L4
+*label L1
+*set GN%-10
+He takes it personally and the two of you begin an argument. He tells you that you don't appreciate the kind of woman your wife is.
+
+
+Select an action:
+
+*choice
+  #PUNCH HIM IN THE NOSE
+    *goto M1
+  #LET IT DROP
+    *goto M2
+  #CONTINUE ARGUING
+    *goto M3
+*label M1
+*set GN%-30
+*set TH%-30
+"OUCH!" Now you've done it. The man just HAPPENS to be a police inspector. He threatens top haul you in for assault, but decides not to because your wife probably has enough aggravation just living with you.
+*finish
+*label M2
+Later, your wife tells you that she was really proud of the way you controlled yourself. When the two of you get home, she becomes very romantic. She dresses up in some black lace lingerie and begins to tease you with her hands and
+tongue. You can:
+*label O
+
+
+Select an action:
+
+*choice
+  #PLEASURE EACH OTHER ORALLY
+    *goto N1
+  #TRY SOME EXCITING SEX POSITIONS
+    *goto N2
+  #I HAVE MY OWN IDEAS
+    *goto N3
+  #GO TO SLEEP
+    *goto N4
+*label M3
+*set IN%-10
+The two of you look very foolish arguing over another man's right to compliment your wife. Perhaps you have taken this a bit too far.
+*finish
+*label L2
+She avoids you for the rest of the evening.
+*finish
+*label L3
+*set SC%-30
+You carry on like a wild cave man protecting his mate. How primal! How tacky! Everyone thinks there is something wrong with you and avoids you for the rest of the evening.
+*finish
+*label L4
+*set SC%+30
+*set TH%+20
+*set CN%+30
+You realize that the compliment was relatively harmless. I mean, how long can you stand there and talk about a person's dress before the conversation gets ridiculous. ("That's a nice dress, That's a REALLY nice dress, That's a FABULOUS
+dress..." See what I mean?)
+*page_break
+You also realize that your wife is a very sexy, attractive woman. When the two of you get home, she becomes very romantic. She dresses up in some black lace lingerie and begins to tease you with her hands and tongue.
+*goto O
+

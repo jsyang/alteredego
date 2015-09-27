@@ -1,0 +1,492 @@
+
+
+Select an action:
+
+*choice
+  #MEET SOMEONE
+    *goto A1
+  #BREAK OFF WITH SOMEONE
+    *goto A2
+  #GO ON A DATE/HAVE AN EXPERIENCE WITH YOUR PRESENT PARTNER
+    *goto A3
+  #GO STEADY
+    *goto A4
+  #LIVE TOGETHER
+    *goto A5
+  #LEAVE THIS ICON
+    *goto A6
+*label A6
+*comment @NTQ
+*set instantaneous true
+*finish
+
+*label A3
+*if GF<1
+  *goto S.T
+*else
+  *goto S.F
+*label S.T
+I'm sorry, but presently you don't have a relationship.
+*finish
+*label S.F
+*comment @SIE
+*goto_random_scene allow_no_selection
+  female-re-2-1
+  female-re-2-2
+  female-re-2-3
+  female-re-2-4
+  female-re-2-5
+  female-re-2-6
+  female-re-2-7
+  female-re-2-8
+There are none of these experiences you can do right now.
+*set instantaneous true
+*finish
+*label A1
+*if (SR<1) and (MS<1)
+  *goto C.T
+*else
+  *goto C.F
+*label C.F
+According to your past relationship behavior, you are involved in a serious relationship. Choosing to continue from here means that you are willing to cheat, risk losing your partner and suffer the emotional consequences of the breakup.
+Do you want to continue?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D2
+*finish
+*label D1
+*set TR%-30
+*set CH 1
+*label C.T
+Where would you like to meet this person?
+
+
+Select an action:
+
+*choice
+  #AT SCHOOL
+    *goto F1
+  #AT HIS PLACE OF WORK
+    *goto F2
+  #SOME PLACE OTHER THAN SCHOOL OR WORK
+    *goto F3
+*label F1
+*comment @SLS|You have seen him studying in the school library.|You have noticed him working out in the Physical Education Building.|He works at the courtesy counter in the school bookstore.|
+*temp dss
+*temp dss_num
+*rand dss_num 1 4
+*if dss_num = 1
+  *set dss "You have seen him studying in the school library."
+  *goto dss_finished40
+*elseif dss_num = 2
+  *set dss "You have noticed him working out in the Physical Education Building."
+  *goto dss_finished40
+*elseif dss_num = 3
+  *set dss "He works at the courtesy counter in the school bookstore."
+  *goto dss_finished40
+*else
+  *set dss ""
+  *goto dss_finished40
+*label dss_finished40
+*goto WHO
+*label F2
+*comment @SLS|He is a trainee in the front office.|He is an accountant who has done your family's taxes.|He is in charge of one of the departments where he works.|
+*temp dss
+*temp dss_num
+*rand dss_num 1 4
+*if dss_num = 1
+  *set dss "He is a trainee in the front office."
+  *goto dss_finished43
+*elseif dss_num = 2
+  *set dss "He is an accountant who has done your family's taxes."
+  *goto dss_finished43
+*elseif dss_num = 3
+  *set dss "He is in charge of one of the departments where he works."
+  *goto dss_finished43
+*else
+  *set dss ""
+  *goto dss_finished43
+*label dss_finished43
+*goto WHO
+*label F3
+*comment @SLS|He is a stripper at a club in town.|You met him while you were grocery shopping. |He is a famous television actor. While shooting a film on location, he walked right off the set and wanted to get to know you.|
+*temp dss
+*temp dss_num
+*rand dss_num 1 4
+*if dss_num = 1
+  *set dss "He is a stripper at a club in town."
+  *goto dss_finished46
+*elseif dss_num = 2
+  *set dss "You met him while you were grocery shopping. "
+  *goto dss_finished46
+*elseif dss_num = 3
+  *set dss "He is a famous television actor. While shooting a film on location, he walked right off the set and wanted to get to know you."
+  *goto dss_finished46
+*else
+  *set dss ""
+  *goto dss_finished46
+*label dss_finished46
+*label WHO
+Whom would you like to meet?
+
+
+Select an action:
+
+*choice
+  #PETER
+    *goto E1
+  #RICK
+    *goto E2
+  #JOSEPH
+    *goto E3
+  #BOBBY
+    *goto E4
+  #ROCK
+    *goto E5
+  #BEN
+    *goto E6
+  #KIP
+    *goto E7
+  #GILLES
+    *goto E8
+*label E1
+*comment @LVN,Peter
+*set loverName "Peter"
+*goto SUM
+*label E2
+*comment @LVN,Rick
+*set loverName "Rick"
+*goto SUM
+*label E3
+*comment @LVN,Joseph
+*set loverName "Joseph"
+*goto SUM
+*label E4
+*comment @LVN,Bobby
+*set loverName "Bobby"
+*goto SUM
+*label E5
+*comment @LVN,Rock
+*set loverName "Rock"
+*goto SUM
+*label E6
+*comment @LVN,Ben
+*set loverName "Ben"
+*goto SUM
+*label E7
+*comment @LVN,Kip
+*set loverName "Kip"
+*goto SUM
+*label E8
+*comment @LVN,Gilles
+*set loverName "Gilles"
+*label SUM
+*set GF 1
+*set SR 0
+*set LT 0
+*set ES 0
+*comment @CLV
+*rand NT 20 80
+*rand NG 20 80
+*rand NC 20 80
+*rand NF 20 80
+*rand NH 20 80
+*rand NA 20 80
+You have chosen to meet with ${loverName}. Your first impression suggests that:
+He is
+*comment @DFL,NT
+*if NT < 40
+  not very
+  *goto dfl_NT
+*elseif NT < 60 
+  moderately
+  *goto dfl_NT
+*else
+  very
+*label dfl_NT
+trustworthy.
+He is
+*comment @DFL,NG
+*if NG < 40
+  not very
+  *goto dfl_NG
+*elseif NG < 60 
+  moderately
+  *goto dfl_NG
+*else
+  very
+*label dfl_NG
+gentle.
+He is
+*comment @DFL,NC
+*if NC < 40
+  not very
+  *goto dfl_NC
+*elseif NC < 60 
+  moderately
+  *goto dfl_NC
+*else
+  very
+*label dfl_NC
+calm.
+He is
+*comment @DFL,NH
+*if NH < 40
+  not very
+  *goto dfl_NH
+*elseif NH < 60 
+  moderately
+  *goto dfl_NH
+*else
+  very
+*label dfl_NH
+happy.
+He is
+*comment @DFL,NF
+*if NF < 40
+  not very
+  *goto dfl_NF
+*elseif NF < 60 
+  moderately
+  *goto dfl_NF
+*else
+  very
+*label dfl_NF
+confident.
+He is
+*comment @DFL,NA
+*if NA < 40
+  not very
+  *goto dfl_NA
+*elseif NA < 60 
+  moderately
+  *goto dfl_NA
+*else
+  very
+*label dfl_NA
+attractive.
+*page_break
+This is how the two of you first run into each other:
+*comment @DSS
+${dss}
+
+The two of you meet and chat for a while; he seems very nice.
+*if SC<40
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+*set GF 0
+*set CA%-10
+*set HP%-20
+*set CN%+20
+*set SC%+10
+Unfortunately, you don't have the social skills necessary to impress him. He doesn't ask you out.
+*goto OLDST
+*label G.F
+*if SC<60
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+*temp randomJ
+*rand randomJ 1 2
+*if randomJ=1
+  *goto J1
+*else
+  *goto J2
+*label H.F
+*if SC<80
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+*temp randomL
+*rand randomL 1 3
+*if randomL=1
+  *goto L1
+*elseif randomL=2
+  *goto L2
+*else
+  *goto L3
+*label K.F
+*label J1
+*label L1
+*label L2
+*set HP%+30
+*set CN%+30
+*set SC%+20
+Since you both seem to be attracted to one another, you decide to go out.
+*goto OLDST
+*label J2
+*label L3
+*set GF 0
+*set HP%-10
+Even though he seems to like you, he takes your number but doesn't call.
+*label OLDST
+*if MS>0
+  *goto AA.T
+*else
+  *goto AA.F
+*label AA.T
+*temp randomZ
+*rand randomZ 1 2
+*if randomZ=1
+  *goto Z1
+*else
+  *goto Z2
+*label Z1
+*set MS 0
+*set HP%-20
+*set CH 0
+Your husband finds out you have been "on the prowl" and leaves you.
+*finish
+*label Z2
+Your husband doesn't find out about this relationship (for now).
+*finish
+*label AA.F
+*if CH>0
+  *goto M.T
+*else
+  *goto M.F
+*label M.T
+*set CH 0
+*page_break
+You were caught trying to weasel your way into another relationship.
+*if GF>0
+  *goto N.T
+*else
+  *goto N.F
+*label N.F
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*set HP%-20
+Your old boyfriend dumps you. Now you have no one!
+*label M.F
+*finish
+*label N.T
+*temp randomP
+*rand randomP 1 2
+*if randomP=1
+  *goto P1
+*else
+  *goto P2
+*label P1
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*set HP%-20
+Both guys dump you. Now you have no one!
+*finish
+*label P2
+*set GF 1
+*set SR 0
+*set ES 0
+*set LT 0
+Your old boyfriend dumps you. You still have ${loverName}.
+*finish
+*label A2
+*if GF>0
+  *goto W.T
+*else
+  *goto W.F
+*label W.F
+You're obviously upset -- and confused! You don't have a boyfriend to break up with.
+*finish
+*label W.T
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+*set SC%-10
+*set CA%-10
+*set HP%-10
+*set GN%-10
+Even though you have chosen to break off this relationship, it will still have an impact on you personally. Please check the status screen to see what adjustments have been made.
+*finish
+*label A4
+*if GF>0
+  *goto T.T
+*else
+  *goto T.F
+*label T.F
+You don't even have a boyfriend!
+*finish
+*label T.T
+*if SR>0
+  *goto R.T
+*else
+  *goto R.F
+*label R.T
+You're already going steady!
+*finish
+*label R.F
+*if SC>70
+  *goto Q.T
+*else
+  *goto Q.F
+*label Q.T
+*set SR 1
+You and ${loverName} make a handsome couple.
+*finish
+*label Q.F
+${loverName} doesn't want to get serious right now. Sorry.
+*finish
+*label A5
+*if LT>0
+  *goto BB.T
+*else
+  *goto BB.F
+*label BB.T
+Didn't you notice the other toothbrush and the extra laundry? You are already living together!
+*finish
+*label BB.F
+*if SR>0
+  *goto CC.T
+*else
+  *goto CC.F
+*label CC.F
+It would probably be a better idea if you were at least going steady first.
+*finish
+*label CC.T
+*temp randomU
+*rand randomU 1 3
+*if randomU=1
+  *goto U1
+*elseif randomU=2
+  *goto U2
+*else
+  *goto U3
+*label U1
+*set HP%+30
+*set CA%+30
+*set LT 1
+After thinking it over, ${loverName} agrees and you move in together.
+*if MS>0
+  *goto MAR.T
+*else
+  *goto MAR.F
+*label MAR.T
+
+*set IN%-30
+*set MS 0
+Your husband does not fail to notice that you are living with another man. I'm afraid your marriage is over.
+*label MAR.F
+*finish
+*label U2
+${loverName}'s parents don't think it's a good idea and have convinced him to avoid it.
+*finish
+*label U3
+${loverName} feels he really doesn't think he could do this right now. He wants his privacy.
+*finish
+

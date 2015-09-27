@@ -1,0 +1,182 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this icon, you need a steady job. You may go to the WORK ICON and apply for one, then return.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You and a close work associate have to take a trip out of town together. He is married. While the two of you are out to dinner, he mentions that he would like to go out on the town and "live it up" with a few women. Going along with him
+might mean a profitable increase in your Vocational sphere.
+*choice mood action
+  #UNEASY
+    #TELL HIM YOU WOULD RATHER NOT
+      *goto A11
+    #GO FOR IT!
+      *goto A12
+  #ANGRY
+    #TELL HIM YOU WOULD RATHER NOT
+      *goto A21
+    *selectable_if (false) #GO FOR IT!
+      *finish
+  #EXCITED
+    *selectable_if (false) #TELL HIM YOU WOULD RATHER NOT
+      *finish
+    #GO FOR IT!
+      *goto A32
+*label A11
+He asks why you don't want to go with him. How do you respond?
+
+
+Select an action:
+
+*choice
+  #TELL HIM THAT YOU DON'T WANT TO CHEAT ON YOUR WIFE OR LOVER
+    *goto B1
+  #TELL HIM THAT YOU DON'T THINK IT IS RIGHT FOR HIM TO CHEAT ON HIS WIFE
+    *goto B2
+*label B1
+*set TR%+30
+"That's reasonable," he says with a chuckle, "but DOWNRIGHT STUPID! HAR! HAR! I'M GOING TO GET ME SOME BABES!" You return to your hotel room and try to get some rest. At about 3 a.m., your associate brings home some ladies of the evening
+and offers to share them with you.
+
+
+Select an action:
+
+*choice
+  #GET ANGRY AND TELL THEM ALL TO GET THE %$@$Q OUT
+    *goto C1
+  #QUIETLY TELL THEM TO GET THE *&#%%$ OUT
+    *goto C2
+  #CHANGE YOUR MIND AND FOOL AROUND
+    *goto C3
+  #LEAVE THE ROOM AND FIND SOMEPLACE ELSE TO SLEEP
+    *goto C4
+*label D2
+*label C1
+*set GN%-20
+*set VC%-10
+"Let's not get testy," he says. The three of them leave the room. He returns fifteen minutes later and $1000 poorer. It evidently didn't take much to satisfy him. He resents you for the rest of the trip. You'll probably want to avoid going
+away with this fellow again.
+*finish
+*label C2
+*set VC%-10
+The women giggle and your associate tries again to convince you. It doesn't work. The three of them leave the room. He returns fifteen minutes later and $1000 poorer. It evidently didn't take much to satisfy him. He resents you for the
+rest of the trip. You'll probably want to avoid going away with this fellow again.
+*finish
+*label C4
+The hotel is booked solid.
+
+
+Select an action:
+
+*choice
+  #SLEEP IN THE CAR
+    *goto D1
+  #GET ANGRY AND TELL THEM ALL TO GET THE %&$@ OUT
+    *goto D2
+*label D1
+*set EX%-20
+*set SC%-10
+*set CN%-20
+How could you let that joker interfere with your nice peaceful night's sleep? I'm surprised at you.
+*finish
+*label C3
+The girls want an additional $500 to fool around with you. Do you still want to do it?
+*label N
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E2
+*finish
+*label E1
+*set TH%-20
+*set MN-500
+*if MN < 5
+  *set MN 5
+The girls are sexual acrobats. You have a wild time. The hotel bed groans and squeaks from the evening's activities.
+*if (SR<1) and (MS<1)
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*finish
+*label F.F
+
+When the dust settles, you begin thinking about the love of your life. How do you feel?
+
+
+Select an action:
+
+*choice
+  #GUILTY
+    *goto J1
+  #FINE
+    *goto J2
+*label J1
+*set CA%-10
+*set HP%-30
+Three hours of pleasure may turn into a painful and embarrassing memory that lingers for a lifetime. Do you think you will ever admit to what you have done?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto K1
+  #NO
+    *goto K2
+*label K1
+*set IN%-10
+You must really want to be punished for what you've done.
+*finish
+*label K2
+*set TR%-30
+I hope you are not the type who talks in his sleep.
+*finish
+*label J2
+Let me ask you something. How would you feel if you found out that the love of YOUR life pulled the same kind of stunt on you?
+
+
+Select an action:
+
+*choice
+  #"NO PROBLEM"
+    *goto L1
+  #"I'D KILL HER"
+    *goto L2
+*label L1
+*set TR%-10
+Sure, "No problem." Tell me another one.
+*finish
+*label L2
+*set GN%-30
+That's a nice, understanding response. You can get carried away with your impulses, but she's not allowed to get carried away with hers.
+*finish
+*label A21
+*label B2
+*set VC%-10
+He resents your self-righteous attitude about things. The trip proceeds poorly. You resent him and he resents you.
+*finish
+*label A12
+*set SC%-10
+*set VC%+10
+The two of you meet some girls who turn out to be "ladies of the evening." They want $500 to service you for the night. Do you still want to go for it?
+*goto N
+*label A32
+*set VC%+10
+*set PH%-20
+The two of you are like lions on the prowl. You stalk your unsuspecting prey... there's the quarry -- Two young women in slinky evening-wear. They are beautiful, alluring, vulnerable...
+*page_break
+You saunter over to them and look them in the eye... you are so close to them you can feel the vibrations of their pounding hearts... their boyfriends arrive. You can feel the vibrations of your aching head as they pummel you into the
+parking lot asphalt. Good night.
+*finish
+

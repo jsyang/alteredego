@@ -1,0 +1,134 @@
+*if AG < 15
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+You are getting ready for a party and begin to wonder how sexy you should make yourself look.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*set TH%-5
+*finish
+*label A2
+There's some very sexy black lace panties you can wear.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*set TH%-5
+*finish
+*label B2
+In your closet there is a skin-tight pair of jeans.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set TH%-5
+*finish
+*label C2
+You think about wearing a tight red top with a zipper that goes all the way down the front.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto D1
+  #CONTINUE
+    *goto D2
+*label D1
+*finish
+*label D2
+*set TH%-5
+You decide not to wear a bra.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto E1
+  #CONTINUE
+    *goto E2
+*label E1
+*set TH%-5
+*finish
+*label E2
+A nice pair of red spiked heels should make the outfit sizzle.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto F1
+  #CONTINUE
+    *goto F2
+*label F1
+*set TH%-5
+*finish
+*label F2
+Your friends beg you to go on.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto G1
+  #CONTINUE
+    *goto G2
+*label G1
+*set TH%-5
+*finish
+*label G2
+Now to tug that zipper down just enough, but not too much.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto H1
+  #CONTINUE
+    *goto H2
+*label H1
+*set TH%-10
+*finish
+*label H2
+*temp randomI
+*rand randomI 1 2
+*if randomI=1
+  *goto I1
+*else
+  *goto I2
+*label I1
+*set SC%+30
+When you get to the party, all eyes are upon you. Every guy who walks by you says, between drools, "You look am-A-zing!" The girls are beginning to think you are a bit of a "slut."
+*finish
+*label I2
+*set SC%-20
+The people at the party (guys and girls) nearly faint when you walk through the door. You think that they are talking about how great you look. Most of them are calling you a "slut." Your popularity drops.
+*finish
+

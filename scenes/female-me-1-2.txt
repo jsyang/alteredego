@@ -1,0 +1,74 @@
+Your husband has just purchased a $3000 satellite dish but refuses to purchase a new washing machine because that would be "frivolous."
+
+
+Select an action:
+
+*choice
+  #HAVE A DISCUSSION ABOUT IT
+    *goto A1
+  #GET ANGRY AND YELL ABOUT IT
+    *goto A2
+  #DO NOTHING/ IT ISN'T WORTH MAKING A BIG DEAL OVER
+    *goto A3
+*label A1
+*if GN<40
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set MP+1
+Your Gentleness characteristic suggests that you tend to be condescending and critical in situations like this. Even though you have a valid point, you put him on the defensive and argue over it.
+*finish
+*label B.F
+He understands your point but still believes he was justified in spending the money. How do you feel?
+
+
+Select an action:
+
+*choice
+  #ANGRY
+    *goto C1
+  #DEPRESSED
+    *goto C2
+  #NEUTRAL
+    *goto C3
+*label C1
+*set GN%-10
+*goto C3
+*label C2
+*set HP%-10
+*label C3
+You are entitled to your feelings. You hear him call in from the other room, "Hey, Honey, come on in. There's a great nature special coming in from Tibet."
+*page_break
+The show, broadcast in a language that sounds like clanging pots, shows the myriad uses of yak dung.
+*finish
+*label A2
+*set MP+1
+I can understand why you are angry, but yelling rarely solves anything. Do you feel better now that you have yelled?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+Good. Let me tell you, it didn't help your marriage any. But...
+*page_break
+*goto C3
+*label D2
+Well, don't be too hard on yourself. Anyone can slip and lose her temper.
+*finish
+*label A3
+*set TH%+30
+*set SC%+30
+*set MN-600
+*if MN < 5
+  *set MN 5
+What an attitude! You must be either very rich or deep in debt already. Of course, you could also be tolerant, patient, wonderful and loving, which I will assume you are!
+*page_break
+By the way, you have to foot the bill for a new washer yourself.
+*finish
+

@@ -1,0 +1,171 @@
+Late at night, while you are still awake, and ${spouseName} is sleeping, you watch her lying peacefully, a wide smile on her face.
+
+
+Select an action:
+
+*choice
+  #STROKE HER HAIR GENTLY AND WHISPER "I LOVE YOU"
+    *goto A1
+  #TURN OVER AND GO TO SLEEP YOURSELF
+    *goto A2
+*label A1
+${spouseName} looks up at you, glassy-eyed and half awake. She puts her arm across your chest and squirms into the comfortable spot between your arm and shoulder. She whispers, "Mmmmm..., I love YOU, Esteban...," then falls into a deep slumber.
+
+
+Select an action:
+
+*choice
+  #START SCREAMING AND WAKE HER UP NOW
+    *goto B1
+  #MENTION IT TO HER IN THE MORNING
+    *goto B2
+  #SAY NOTHING
+    *goto B3
+*label B1
+*set GN%-20
+"ESTEBAN, ESTEBAN, WHO THE $%#$ IS ESTEBAN?" ${spouseName} wakes up in a panic, believing the house is either on fire, being robbed, or being burned down by a robber who is not satisfied by what he was not able to find. She is curious
+to know why you are speaking Spanish to apparently no one, in the middle of the night.
+*page_break
+When you mention that she mistakenly called you Esteban, she passes it off as a silly dream.
+
+
+Select an action:
+
+*choice
+  #INQUIRE MORE ABOUT THE DREAM
+    *goto C1
+  #LET IT GO
+    *goto C2
+*label B3
+*label C2
+*label I1
+*label L2
+Perhaps you are remembering that you have had dreams like that, too. Do you also remember how you ENJOYED those dreams? How about how much you wished those dreams could come TRUE?
+
+
+Select an action:
+
+*choice
+  #INQUIRE MORE ABOUT THE DREAM
+    *goto D1
+  #DON'T WANT TO HEAR ABOUT IT
+    *goto D2
+*label D2
+*label E1
+*label F1
+*label G1
+Better not open up a can of worms, eh?
+*finish
+*label C1
+*label D1
+*label L1
+${spouseName} thinks you are being ridiculous. How can anyone remember THAT much detail about any dream? All she can remember is that Esteban had dark hair, and a moustache. Before she can say anything else, she begins to giggle.
+
+
+Select an action:
+
+*choice
+  #LET IT GO
+    *goto E1
+  #ASK HER WHAT IS SO FUNNY
+    *goto E2
+*label E2
+${spouseName} says, "Nothing." Then she begins to giggle hysterically.
+
+
+Select an action:
+
+*choice
+  #LET IT GO
+    *goto F1
+  #KEEP ASKING ABOUT THE DREAM
+    *goto F2
+*label F2
+"Well, if you REALLY want to know (uncontrollable laughter), he had a HUGE ..." She can't bring herself to say it.
+
+
+Select an action:
+
+*choice
+  #LET IT GO
+    *goto G1
+  #TELL HER TO STOP LAUGHING AND TELL YOU
+    *goto G2
+*label G2
+"A HUGE..SOMBRERO!" Good Night!
+*finish
+*label B2
+*if GN<50
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+*set GN%-10
+*set SC%-20
+You confront her with her nocturnal conversation with you last night in your usual aggressive manner (Have you checked your Gentleness characteristic lately?), and she immediately thinks you dreamt the whole thing yourself.
+There is no convincing her that she said another man's name in her sleep, and if she did, what's the big deal?
+
+
+Select an action:
+
+*choice
+  #CALM DOWN AND LET THE WHOLE THING DROP
+    *goto I1
+  #KEEP PESTERING HER ABOUT IT
+    *goto I2
+*label I2
+*set GN%-20
+You seem hell-bent on making a mountain out of a molehill. She tells you about a movie she had seen on TV a while ago, where Esteban was the hero. She was dreaming that she was the heroine.
+
+
+Select an action:
+
+*choice
+  #STOP PESTERING HER
+    *goto J1
+  #KEEP PESTERING HER ABOUT THE DREAM AND THE MOVIE
+    *goto J2
+*label J1
+Thank Goodness! You were beginning to drive everyone crazy.
+*finish
+*label J2
+${spouseName} gets a mischievous gleam in her eye. She tells you "In the movie, the heroine's name was Maria, and she was raped by a gang of thieves from across the border. Esteban saved her from being the sex slave of this band of thugs,
+then showed her honest, true 'amor.'" In her dream she kept playing these parts over and over.
+
+
+Select an action:
+
+*choice
+  #GET FURIOUS WITH ${SPOUSENAME}
+    *goto K1
+  #REALIZE HOW SILLY YOU ARE BEING
+    *goto K2
+*label K1
+*set MP+1
+Honestly! How can a grown man your age act like such a child. The whole incident sparks a fight that lasts for days.
+*finish
+*label K2
+${spouseName} is glad that you have finally come to your senses. She tells you that all she can remember about the dream is that Esteban had dark hair, a moustache and a HUGE...SOMBRERO!
+*finish
+*label H.F
+*set GN%+10
+*set EX%+20
+Since you can control your hostility and frustration rather well, you nonchalantly ask ${spouseName} if she remembers blurting out "Esteban's" name in her sleep last night. She says she doesn't remember anything like that, and
+laughs it off as being silly.
+*page_break
+You mention that she was looking quite peaceful during her sleep, which sparks an association. "Oh, yeah! I DO remember having a kind of kinky dream last night," She teases.
+
+
+Select an action:
+
+*choice
+  #INQUIRE ABOUT THE DREAM
+    *goto L1
+  #LET IT GO
+    *goto L2
+*label A2
+*set GN%-10
+*set TH%-10
+What a romantic devil.
+*finish
+

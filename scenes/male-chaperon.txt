@@ -1,0 +1,98 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+The high school from which you graduated is having their yearly prom. You have been asked to be a chaperone.
+*choice mood action
+  #HONORED/WILLING
+    #CHAPERONE THE PROM
+      *goto A11
+    *selectable_if (false) #REFUSE THE OFFER
+      *finish
+  #DISINTERESTED/UNWILLING
+    *selectable_if (false) #CHAPERONE THE PROM
+      *finish
+    #REFUSE THE OFFER
+      *goto A22
+*label A11
+*set SC%+20
+You arrive at the prom and see the students dressed in their begged, rented and borrowed "formal wear." Colored streamers decorate the area where the prom is being held. Young couples lean over each other, shuffling their feet in small
+steps during the slow dances. You can't help but reminisce about your passage through this time in life. How does this make you feel?
+
+
+Select an action:
+
+*choice
+  #HAPPY
+    *goto B1
+  #DEPRESSED
+    *goto B2
+  #NEUTRAL
+    *goto B3
+*label B1
+*set HP%+20
+*goto CORNER
+*label B2
+*set HP%-10
+*goto CORNER
+*label B3
+*label CORNER
+In the corner of the room you notice a couple necking passionately. The young man has managed to slide his hand up the skirt and between the legs of his date. What will you do?
+
+
+Select an action:
+
+*choice
+  #LEAVE THEM ALONE
+    *goto C1
+  #WALK OVER AND MAKE YOUR PRESENCE KNOWN
+    *goto C2
+*label C1
+Some chaperone you turned out to be!
+*finish
+*label C2
+How do you plan to accomplish this?
+
+
+Select an action:
+
+*choice
+  #CLEAR YOUR THROAT
+    *goto D1
+  #ACCIDENTALLY KICK THE CHAIR THE YOUNG MAN IS SITTING ON
+    *goto D2
+  #INTERRUPT THEM AND ASK THEM TO CALM DOWN
+    *goto D3
+*label E1
+*label D1
+*set SC%+10
+"Ahem!" First attempts have no effect. "AAAAAAAHHHHEM!" Much better. They get the hint and untangle themselves until later.
+*finish
+*label D2
+Not even an earthquake could interrupt them from their passionate embrace. You can:
+
+
+Select an action:
+
+*choice
+  #CLEAR YOUR THROAT
+    *goto E1
+  #INTERRUPT THEM AND ASK THEM TO CALM DOWN
+    *goto E2
+*label D3
+*label E2
+*set EX%+20
+Both participants look up at you sheepishly, flushed from the heat of their passionate activities. The young man searches your face for subtle signs of male approval. The young lady wishes she could disappear into one of the
+cracks in the gym floor.
+*page_break
+She quickly kicks her panties under the metal folding chair, hoping you won't notice. You recommend that they conduct their expressions of deep emotion in a more discreet manner.
+*finish
+*label A22
+Too bad. You probably would have had a good time.
+*finish
+

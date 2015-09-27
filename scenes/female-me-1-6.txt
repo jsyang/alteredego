@@ -1,0 +1,34 @@
+Your husband has left a package with a little note on it by your night table. Just as you reach for the package, the phone rings. It startles you, and you drop the package behind the bed. Will you:
+
+
+Select an action:
+
+*choice
+  #ANSWER THE PHONE FIRST
+    *goto A1
+  #RETRIEVE THE PACKAGE FIRST
+    *goto A2
+*label A1
+You are reminded by the person on the other end of the phone that you have forgotten to do something very urgent. There's no time now to crawl under the bed to get the package; it will have to wait until later.
+*finish
+*label A2
+*set CA%-10
+The phone is ringing. You climb under the bed to get the package. Your index finger can touch it, but you can't get enough of your hand on it to grasp it. You swipe at it several times, knocking it farther from your reach. The
+phone has stopped ringing.
+*page_break
+You get the package. Your mouth is full of dust from under the bed. The note reads:
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*set CA%-5
+"Honey, will you please drop these things over at the cleaners? I love you."
+*finish
+*label B2
+*set HP%+10
+"I couldn't stop thinking about you today. I ran over to the women's store and bought you the fur jacket that you admired in the window the other day. I love you."
+*finish
+

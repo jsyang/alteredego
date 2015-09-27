@@ -1,0 +1,106 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+*if EM>0
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+You are absolutely exhausted from a long difficult day at work. All you want to do is eat dinner, climb under the covers and fall asleep.
+*goto BODY
+*label A.F
+You are absolutely exhausted from a long difficult day filled with aggravation.  All you want to do is eat dinner, climb under the covers and fall asleep.
+*label BODY
+*page_break
+Just as you settle into bed, you feel ${spouseName} make some loving advances, running his hands up and down your body and moving close to you. All you can think about is going to sleep.
+
+
+Select an action:
+
+*choice
+  #TELL HIM THAT YOU ARE TOO TIRED
+    *goto B1
+  #PROVIDE THE FASTEST POSSIBLE RELEASE FOR HIM JUST TO GET IT OVER WITH
+    *goto B2
+  #GET INTO THE MOOD
+    *goto B3
+*label B1
+*if MP>7
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set GN%-10
+*set MP+1
+Your marriage experiences have had difficult outcomes in the past. ${spouseName} doesn't accept the news very gracefully. He asks, "What does a person have to do to get some 'attention' these days? See a prostitute?"
+
+
+Select an action:
+
+*choice
+  #GET FURIOUS WITH HIM AND THROW HIM OUT OF THE BED
+    *goto D1
+  #OFFER TO GIVE HIM THE MONEY
+    *goto D2
+  #TELL HIM THAT IF HE PAYS YOU $1000, YOU WILL DO WHATEVER HE WANTS
+    *goto D3
+*label D1
+*set MP+2
+Ah! Now for some peace and quiet.
+*finish
+*label D2
+*set GN%-20
+You tell him to shut up. With a snide tone in your voice, you offer to give him the money, but tell him not to expect much. No amount of money would be enough to get some people to do it with him.
+*finish
+*label D3
+*set MN+1000
+*set MP+2
+He agrees. You get $1000 for ten minutes of work.
+*finish
+*label C.F
+*set MP-1
+*set HP%+20
+*set GN%+20
+*set FM%+10
+${spouseName} is surprisingly understanding. He gives you a relaxing massage that helps you go out like a baby.
+*finish
+*label B2
+He is not satisfied unless you can have an orgasm too.
+
+
+Select an action:
+
+*choice
+  #FAKE ONE
+    *goto E1
+  #TELL HIM, "SORRY. YOU CAN'T HAVE EVERYTHING."
+    *goto E2
+*label E1
+*set TR%-10
+*set TH%+20
+It's not exactly an academy-award winning performance, but it is enough to soothe ${spouseName}'s fragile sense of self-worth.
+*finish
+*label E2
+*set MP+1
+${spouseName} goes to bed angry. Boy, sometimes you just can't win.
+*finish
+*label B3
+*if GN>50
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set TH%+20
+You must really love ${spouseName} (or sex, or both). You have a surprisingly good experience with your husband and fall soundly asleep.
+*finish
+*label F.F
+*set TH%+10
+You are not understanding enough to be able to do this successfully. Your resentment prevents you from having a satisfying experience.
+*finish
+

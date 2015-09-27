@@ -1,0 +1,176 @@
+*comment @KID,0,9,13
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 14) and (childage0 > 9)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 14) and (childage1 > 9)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 14) and (childage2 > 9)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 14) and (childage3 > 9)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 14) and (childage4 > 9)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+*if MS>0
+  *goto X.T
+*else
+  *goto X.F
+*label X.T
+${childName} has just asked you for permission to do something that you know "Mommy" said was absolutely out of the question.
+
+
+Select an action:
+
+*choice
+  #GIVE PERMISSION
+    *goto Y1
+  #GO WITH MOM'S REFUSAL FOR PERMISSION
+    *goto Y2
+*label Y1
+*set FM%-10
+This can be a very dangerous thing to do. You are saying that it is O.K. for your child to manipulate people. As a result, ${childName} will grow up to have poor interpersonal relationships.
+*finish
+*label Y2
+*set FM%+20
+By going with Mom's refusal for permission, you are not sanctioning the kind of manipulative behavior ${childName} is attempting. Regardless of whether or not you agree with Mom's judgment, you are helping ${childName} to deal with people on a more
+honest level.
+*finish
+*label X.F
+You are just about to go out for the evening when the phone rings. It's the babysitter. She's come down with the flu and won't be able to make it tonight.
+*label ASKIT
+
+
+Select an action:
+
+*choice
+  #ASK A NEIGHBOR TO SIT FOR THE NIGHT
+    *goto A1
+  #ASK A RELATIVE TO SIT FOR THE NIGHT
+    *goto A2
+  #CALL AN AGENCY IN THE PHONE BOOK AND HAVE THEM SEND SOMEONE OVER
+    *goto A3
+  #STAY HOME
+    *goto A4
+*label A4
+*label C2
+*set FM%+10
+*set SC%-10
+That's too bad. I guess once you have found a good sitter, you would prefer it to be that person or nobody. Familial sphere increases, Social sphere decreases.
+*finish
+*label A1
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+The neighbor you call seems to be out for the evening.
+*goto ASKIT
+*label B2
+There is no answer at your neighbor's house.
+*goto ASKIT
+*label A2
+All of your relatives are busy this evening. They all say, "I'd love to, BUT..."
+*goto ASKIT
+*label A3
+The woman who answers the phone seems very nice. Her name is Peggy. "You're in luck today," she sings. "We have a marvelous sitter available. Her name is Faith. Would you like us to send her over?"
+
+
+Select an action:
+
+*choice
+  #"YES."
+    *goto C1
+  #"NO, THANK YOU."
+    *goto C2
+*label C1
+*set CA%-10
+"Marvelous. I'm sure you will be very satisfied with Faith. She's conscientious, bright and has a great way with the young ones." Twenty-five minutes after you hang up the phone, your doorbell rings. "It's the babysitter," the voice
+behind the door replies.
+*page_break
+You open the door and blink twice, as if by doing that you could make everything that you see in front of you disappear.
+*page_break
+Faith has red hair. Not ordinary red hair, mind you. Faith has RED hair. About the only thing that is more peculiar than the color of Faith's red hair is every other thing about Faith. First of all, Faith's hair stands straight up and
+covers only the middle part of her head. The rest of her head is bald. Faith's lipstick is jet black and happens to match the color of several of her fingernails.
+*page_break
+Faith is wearing a leather miniskirt which appears to be nailed onto her body. When you question her about this, she says, "Only one of them is real, the rest are like, for decoration purposes only."
+*page_break
+On the positive side, Faith seems to be carrying some schoolbooks under her arm. One is titled "Imaginary Numbers." Another is "Dr. Spock's Guide to Healthy Babies."
+*page_break
+"Maybe she really IS a great babysitter?" you wonder. "I really shouldn't judge a person by the way she dresses." Then again, "What if some of her weirdness rubs off on ${childName}?"
+*page_break
+You ask yourself, "Should I take a chance on Faith, or should I stay home and send Faith back to her own solar system?"
+
+
+Select an action:
+
+*choice
+  #LET FAITH STAY
+    *goto D1
+  #SEND HER BACK
+    *goto D2
+*label D1
+*set HP%+20
+*set TR%+10
+*set SC%+10
+When you get back, you see that your child has been taken care of quite well. The kitchen is spotless (she even washed a few dishes that you had sitting in the sink), and everything seems just fine.
+*finish
+*label D2
+*set GN%-10
+Faith looks at you quite quizzically. Will you tell her why you don't want her as a babysitter or give her a different excuse?
+
+
+Select an action:
+
+*choice
+  #TELL HER THE TRUTH
+    *goto E1
+  #MAKE UP A STORY
+    *goto E2
+*label E1
+*set TR%+10
+Faith runs her hand over the top of her spikes. She looks very hurt. She apologizes but says, "With all due respect, sir, you can't always tell a book by it's cover. 'Appearances are often deceiving.' I believe Aesop said that. Have a
+good night."
+*finish
+*label E2
+*set TR%-10
+Faith says earnestly, "I'm sorry to hear that, sir. Keep us in mind for next time, won't you?" She might not have been as bad as she looked.
+*finish
+

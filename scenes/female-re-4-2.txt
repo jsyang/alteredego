@@ -1,0 +1,147 @@
+You have just found out that ${loverName} has a son from a previous marriage. Do you still want to continue with this episode?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto Z1
+  #NO
+    *goto Z2
+*label Z2
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+Picky, picky! You'll have to go find someone else.
+*finish
+*label Z1
+${loverName} has forgotten his wallet, and the two of you need to return to his place before going out on a date. While you are waiting for him to come down the stairs, you are greeted by his 15-year-old son, Greg, who is spending a few weeks
+with his dad. He is a typical teen-ager, not overly friendly, and keeps his distance while watching you from the corner of his eye.
+
+
+Select an action:
+
+*choice
+  #BE FRIENDLY AND INITIATE A CONVERSATION WITH HIM
+    *goto A1
+  #REMAIN QUIET
+    *goto A2
+*label A1
+*if SC>70
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set SC%+40
+Your friendliness and good social skills make you an instant hit with Greg. Your conversation with him is light and easygoing. He becomes confident that you will not be a threat to him.
+*label H
+
+
+Select an action:
+
+*choice
+  #SUGGEST THAT THE THREE OF YOU DO SOMETHING TOGETHER TONIGHT
+    *goto C1
+  #GO OUT WITH ${LOVERNAME} ALONE
+    *goto C2
+*label C1
+*set TH%+30
+${loverName} is thrilled that you would invite Greg along. The three of you have a marvelous time together. At one point during the evening, the three of you are talking together and Greg slips, accidentally calling you "Mom." How do you feel
+about this?
+
+
+Select an action:
+
+*choice
+  #A BIT EMBARRASSED
+    *goto D1
+  #PERFECTLY COMFORTABLE
+    *goto D2
+  #ANXIOUS
+    *goto D3
+*label D1
+It was only a slip. You should be flattered that you were able to make such a strong impression on the boy.
+*finish
+*label D2
+*set CA%+20
+It is a nice feeling when a teen-ager can warm to an adult in such a short time. I guess his behavior shows that he really feels a void in his life. Your companionship, even for one evening, does a great deal for him.
+*finish
+*label D3
+*set CA%-10
+Calm down. One date does not a wedding make. He was simply feeling comfortable with you and made an honest slip. Even Freud will tell you that sometimes a cigar is just a cigar!
+*finish
+*label C2
+*set SC%+20
+${loverName} can see that you made a favorable impression on Greg, which he says is a difficult thing to do. This pleases him, and as a result, you have a romantic, relaxing evening.
+*finish
+*label B.F
+It takes incredible patience and social skills to be able to converse with a suspicious adolescent. Unfortunately, you do not possess these. Every question you ask is met with the Universal Adolescent response, of "I dunno," or when he
+is feeling really adventurous, "I guesso," which suggests that it was the wrong question to begin with. When ${loverName} returns, you can:
+
+
+Select an action:
+
+*choice
+  #SUGGEST THAT THE THREE OF YOU GO OUT TOGETHER
+    *goto Q1
+  #GO OUT WITH ${LOVERNAME} ALONE
+    *goto Q2
+*label Q1
+You must be a glutton for punishment. Fortunately, Greg declines the invitation. He is already late for the "Rabid Poodles" concert. ${loverName} doesn't mind; he would rather be alone with you.
+*finish
+*label Q2
+*set SC%+20
+It is probably a relief for both of you to be out of Greg's scrutiny. ${loverName} asks you to understand that his behavior is only a sign that he is disappointed that his parents are no longer together. The evening begins with a little tension,
+but turns out well.
+*finish
+*label A2
+Greg asks, "Where are you two guys goin'?" What do you tell him?
+
+
+Select an action:
+
+*choice
+  #SOMETHING GENERAL LIKE, "OUT FOR THE EVENING"
+    *goto E1
+  #SOMETHING SPECIFIC LIKE, "WE ARE GOING TO DINNER AND THEN TO A SHOW"
+    *goto E2
+*label E1
+Greg turns to his father and says, "Aren't you going to feed her?"
+
+
+Select an action:
+
+*choice
+  #SAY SOMETHING SARCASTIC
+    *goto F1
+  #TRY TO PUT HIS MIND AT EASE
+    *goto F2
+*label F1
+Few adults can compete with teenagers for long in the sarcasm department. The end result of the conversation is that Greg mumbles something nasty to you under his breath.
+
+
+Select an action:
+
+*choice
+  #REPRIMAND HIM
+    *goto G1
+  #LET IT GO
+    *goto G2
+*label G1
+*set SC%-20
+*set IN%-10
+*set TH%-10
+The two of you begin a shouting match.  Greg storms out of the room, and you are left explaining the story, which sounds immature. ${loverName} is angry that you took on a parenting role with his son when it was really none of your business.
+You and ${loverName} have a miserable night
+*finish
+*label G2
+*set SC%+10
+Perhaps you sense that this is Greg's way of alienating you. If the two of you fight, ${loverName} will have to choose sides. Your ability to let things go is a sign of strength. The night is not a total disaster. You and ${loverName} have an enjoyable
+time.
+*finish
+*label F2
+*label E2
+You probably sense that this is Greg's way of testing you. Perhaps he would enjoy doing something with the two of you tonight.
+*goto H
+

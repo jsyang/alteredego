@@ -1,0 +1,177 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+There is a girl's pajama party at Pamela Gordon's house tonight. You and your friends plan an "undercover" pajama party crash.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*set CA%-10
+*finish
+*label A2
+You rendezvous in Tommy's backyard at 9 o'clock sharp.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*set CA%-20
+*finish
+*label B2
+You arrive at Pamela's house at approximately 9:30.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set CA%-25
+*finish
+*label C2
+You carefully check the floor plans drawn by Billy, a close friend of Pamela's brother, who has spent many afternoons over at her house.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto D1
+  #CONTINUE
+    *goto D2
+*label D1
+*set CA%-30
+*finish
+*label D2
+You proceed to the ground floor window identified as Pamela's room by the floor plans. The window is open a crack.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto E1
+  #CONTINUE
+    *goto E2
+*label E1
+*set CA%-35
+*finish
+*label E2
+The plan is to throw open the window, fire a quick barrage of water balloons, and beat a hasty retreat.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto F1
+  #CONTINUE
+    *goto F2
+*label F1
+*set CA%-40
+*finish
+*label F2
+READY!
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto G1
+  #CONTINUE
+    *goto G2
+*label G1
+*set CA%-45
+*finish
+*label G2
+SET!
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto H1
+  #CONTINUE
+    *goto H2
+*label H1
+*finish
+*label H2
+GO!
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto I1
+  #CONTINUE
+    *goto I2
+*label I1
+*finish
+*label I2
+You lift open the window and hurl the balloons in. There is water everywhere.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto J1
+  #CONTINUE
+    *goto J2
+*label J1
+*finish
+*label J2
+Why don't you hear any screaming?
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto K1
+  #CONTINUE
+    *goto K2
+*label K1
+*finish
+*label K2
+Because that was Pamela's parents' bedroom!
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto L1
+  #CONTINUE
+    *goto L2
+*label L1
+*set CA%-50
+*finish
+*label L2
+*set FM%-10
+*set CA%-50
+*set SC%-10
+You find out because Pamela's dad, who just happens to be a police officer, grabs you and three of your friends by the neck and drags you inside. In his underwear, he gives you a lecture and then calls your parents.
+*finish
+

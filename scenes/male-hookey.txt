@@ -1,0 +1,71 @@
+All of your friends are skipping class and they want you to come along, too.
+*choice mood action
+  #INTERESTED
+    #SKIP CLASS
+      *goto A11
+    *selectable_if (false) #GO TO CLASS
+      *finish
+  #DISINTERESTED
+    *selectable_if (false) #SKIP CLASS
+      *finish
+    #GO TO CLASS
+      *goto A22
+*label A11
+*if TR<40
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set IN%-30
+*set SC%+10
+Your status on the Trustworthiness characteristic suggests that this is probably not the first time you have done something like this. Intellectual sphere drops as a result of missing important school work. Social sphere
+increases because you went along with the group.
+*finish
+*label B.F
+*set CA%-10
+Your status on the Trustworthiness characteristic suggests that you are not the type of person who does this sort of thing frequently. As a result, you experience no negative emotional consequences, except for a slight decrease
+in the Calmness characteristic. (Since you are so trustworthy, an action like this is bound to make you a little nervous about getting caught.)
+*finish
+*label A22
+*if TR<40
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set TR%+20
+*set FM%+30
+*set IN%+40
+According to your status sheet, you are not the type of person who would usually pass up this kind of adventure. Perhaps you are beginning to accept responsibility a bit more. Intelligence, Trustworthiness and Family
+characteristics show moderate increases.
+*finish
+*label C.F
+You spend a boring day in class, thinking about what your friends are probably doing.
+
+
+Select an action:
+
+*choice
+  #BEGIN TO DAYDREAM
+    *goto D1
+  #DO YOUR SCHOOL WORK
+    *goto D2
+*label D1
+I can't blame you for daydreaming, especially since your friends are all skipping school.
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+After school, gorgeous Betty Freidrickson asks you where one of your friends is. You tell her he wasn't in school today. She asks if you want to take her for a soda. It was worth staying at school after all.
+*finish
+*label E2
+*set IN%-10
+Your teacher interrupts your reverie and asks you to work out a problem on the board. Maybe you should have gone, after all.
+*finish
+*label D2
+*set SC%+30
+You are very studious -- and very lucky as well. After school, gorgeous Betty Freidrickson asks you to tutor her in math. Looks like it was worth staying around, after all.
+*finish
+

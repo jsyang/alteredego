@@ -1,0 +1,183 @@
+*temp randomA
+*rand randomA 1 2
+*if randomA=1
+  *goto A1
+*else
+  *goto A2
+*label A1
+*set MN+500
+You have just won $500 in a fishing tournament!
+*finish
+*label A2
+*set CA%-10
+While combing your hair one day, you notice that a few strands are falling out into the sink. When you wake in the morning, you notice that clumps of your hair cover your pillow. Soon, when you look in the mirror you see a shining
+patch of scalp peeking through. You are going bald.
+*choice mood action
+  #UPSET
+    #TRY TO REMEDY THE SITUATION
+      *goto B11
+    #LEAVE IT ALONE
+      *goto B12
+  #CALM
+    #TRY TO REMEDY THE SITUATION
+      *goto B21
+    #LEAVE IT ALONE
+      *goto B22
+*label B22
+*set SC%+40
+*set IN%+20
+*set CN%+30
+Baldness is a circumstance that one out of about every three men encounters. For some people it is the most devastating event of their lives. For others, like yourself, it is accepted with grace and poise. You base your perception
+of yourself on past accomplishments and values rather than on superficial qualities. You should be proud of yourself.
+*finish
+*label B11
+*label B21
+What would you like to do?
+
+
+Select an action:
+
+*choice
+  #TRY SOME LOTIONS AND CREAMS THAT STOP BALDNESS AND "ENCOURAGE NEW HAIR GROWTH"
+    *goto C1
+  #TRY GETTING A TOUPEE
+    *goto C2
+  #TRY GETTING HAIR TRANSPLANTS
+    *goto C3
+  #TRY "CREATIVE HAIR COMBING"
+    *goto C4
+*label C1
+The treatments will cost $300. Do you want to buy them?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*if MN>300
+  *goto E.T
+*else
+  *goto E.F
+*label E.F
+I'm sorry. You can't afford this right now.
+*finish
+*label E.T
+*set MN-300
+*if MN < 5
+  *set MN 5
+You should have known better. These creams and lotions don't stand a chance of working. You continue to lose your hair. How much will you let going bald affect the way you feel about yourself?
+*label G
+
+
+Select an action:
+
+*choice
+  #A GOOD DEAL
+    *goto F1
+  #NOT VERY MUCH
+    *goto F2
+  #NOT AT ALL
+    *goto F3
+*label F1
+*label B12
+*set CA%-30
+*set HP%-20
+I can certainly sympathize with you. You probably feel cheated and betrayed. Your hair ran out on you when you needed it most. Maybe someday medicine will come up with an effective, safe treatment for baldness, but for now, try not
+to be so hard on yourself.
+*finish
+*label F2
+*set CN%+10
+You can't help feeling like you have been robbed of something that others tend to value, but you convince yourself that people will ultimately judge you by who you are, not what you look like. Try not to attract attention to your
+bald spot by covering it up with long strands of hair from other places on your head. This almost always guarantees that you will be ridiculed.
+*finish
+*label F3
+*set CN%+40
+You must have a very solid sense of self-esteem. Going bald can sometimes ruin a man's opinion of himself. You obviously understand that people will judge you by who you are, not what you look like. Even though you may learn in time to
+grow proud of your bald pate, keep out of the sun on extremely warm days.  You will be especially sensitive to sunburn for a while.
+*finish
+*label D2
+Those things don't work, anyway. How much will you let going bald affect the way you feel about yourself?
+*goto G
+*label C2
+A toupee will cost you $200. Do you still want to do this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H1
+*if MN>200
+  *goto I.T
+*else
+  *goto I.F
+*label I.F
+I'm sorry. You can't afford this right now.
+*finish
+*label I.T
+*set MN-200
+*if MN < 5
+  *set MN 5
+*set SC%-10
+The toupee doesn't work very well. It flies off in strong winds and makes you feel paranoid in general. How much will you let going bald affect the way you feel about yourself?
+*goto G
+*label H2
+I don't blame you. It's not worth the money, and they don't work very well. How much will you let going bald affect the way you feel about yourself?
+*goto G
+*label C3
+The hair transplant will be very painful and cost $3000. Are you sure you want a hair transplant?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+*if MN>3000
+  *goto K.T
+*else
+  *goto K.F
+*label K.F
+I'm sorry. You can't afford this right now.
+*finish
+*label K.T
+*set MN-3000
+*if MN < 5
+  *set MN 5
+*set CN%+20
+*set SC%+10
+The hair transplants are indeed painful. After all, you have just had a staple gun shot into your head about three hundred times. However, you have a nice full head of hair again.
+*finish
+*label J2
+I don't blame you. It's not worth the money, and sometimes they cause painful infections. How much will you let going bald affect the way you feel about yourself?
+*goto G
+*label C4
+*set SC%-10
+Please change your mind about this. Nothing looks more obvious than when you take a long piece of hair and attempt to wrap it back and forth across your scalp a hundred times. One good gust of wind and you're finished. Are you
+still intent on doing this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto L1
+  #NO
+    *goto L2
+*label L1
+Don't say I didn't warn you!
+*finish
+*label L2
+Thank heavens!
+*finish
+

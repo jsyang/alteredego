@@ -1,0 +1,69 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+You are at your first rock concert with friends.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*set CA%-5
+*finish
+*label A2
+Midway through the concert, someone passes you a joint and tells you it's O.K. to take some.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*set CA%-10
+*finish
+*label B2
+After you smoke a little, he offers to get you high (choose CONTINUE to get high).
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set CA%-10
+*set SC%-10
+*finish
+*label C2
+*set OH+3
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+*set HP%+30
+*set CN%+10
+*set TH%-10
+You smoke whatever he has at the concert and get a tremendous high from it. Your activities are undetected by parents and/or authorities.
+*finish
+*label D2
+*set TR%-20
+*set FM%-20
+You are busted by the police on the way out of the concert and are taken to the police station, where they call your parents to come pick you up. Familial sphere and Trustworthiness decrease.
+*finish
+

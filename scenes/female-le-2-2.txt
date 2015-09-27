@@ -1,0 +1,20 @@
+*if SC>80
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+An ex-lover sends you a dozen roses in the mail. With it is a note: "I was just thinking about you and remembered the time we made love outside by the lake. I never really thanked you for it. You were the best. Too bad we couldn't work
+everything out; we might have made a swell team -- Much Love"
+*finish
+*label A.F
+*if (SC<50) and (MS<1)
+  *goto B.T
+*else
+  *goto B.F
+*label B.F
+A note arrives in the mail from an ex-boyfriend. He's been thinking about you lately and just wanted to say "Hi!"
+*finish
+*label B.T
+Please monitor your social behavior a bit more carefully. At this rate, you may never find a partner with whom to go through life successfully.
+*finish
+

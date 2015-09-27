@@ -1,0 +1,57 @@
+Your mother has been out all day and has just phoned to tell you that she's stuck with the car. She sounds exhausted. Dinner hasn't even been started yet, and the house will be filling up with people any minute. It looks like it's
+going to be a ZOO. You are supposed to go out with your friends. The best place to be after she gets home would be miles away.
+*choice mood action
+  #SYMPATHETIC TO MOM
+    #MAKE DINNER FOR EVERYONE
+      *goto A11
+    *selectable_if (false) #RUN OUT WITH YOUR FRIENDS
+      *finish
+  #UNSYMPATHETIC
+    *selectable_if (false) #MAKE DINNER FOR EVERYONE
+      *finish
+    #RUN OUT WITH YOUR FRIENDS
+      *goto A22
+*label A11
+*set TH%+30
+*set GN%+30
+*set CA%+30
+*set FM%+40
+*set SC%+20
+*set TR%+30
+Family, Social and Emotional characteristics take a healthy jump. What would you like to prepare? You look through the cookbook.
+
+
+Select an action:
+
+*choice
+  #CHICKEN MARENGO
+    *goto B1
+  #HAMBURGERS AND FRENCH FRIES
+    *goto B2
+  #CHICKEN CORDON BLEU
+    *goto B3
+  #BEEF WELLINGTON
+    *goto B4
+*label B1
+An interesting concoction. Everyone makes unusual noises of approval when they eat it. You are terrific!
+*finish
+*label B2
+*set IN%+30
+*set MN+20
+Quick and easy. It satisfies all of the hungry beasts in the house and doesn't take much time. You can still go out with your friends. Mom slips you $20 for spending money and gives you a big kiss. You are terrific!
+*finish
+*label B3
+*label B4
+*set FM%+10
+*set MN+20
+A bold plan!
+*page_break
+But not very bright. The concoction you create should be photographed, then buried. Mom is really impressed by the sentiment. She gives you a big kiss and slips you $20 for spending money. You are terrific!
+*finish
+*label A22
+*set TH%-10
+*set FM%-20
+*set TR%-10
+That wasn't very thoughtful of you. Your mom doesn't say anything to you, but thinks you should have been mature enough to start dinner and help out. The free ride at home doesn't last forever.
+*finish
+

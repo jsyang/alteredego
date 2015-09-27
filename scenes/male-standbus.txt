@@ -1,0 +1,32 @@
+On occasion, you must rely on a public bus to get you to and from the places you want to go. Today the bus is particularly crowded, and you have to stand. You find an open area toward the back of the bus, where there is room to
+grasp a strong, steel pole that extends from the floor of the bus to the ceiling.
+*page_break
+Your fingers wrap around the pole tightly. A fall could mean a broken hip, or worse.  As the bus moves, the shock of the gentle bumps is absorbed by your feet, knees and legs. There is some discomfort. As a result, you lean forward
+slightly, so that you can take some of the pressure off your lower body. Your back then begins to ache.
+*page_break
+A little girl with chestnut colored hair and freckles, about eight years old, has been watching you, wide-eyed for the past five minutes. Not long ago, her mother whispered something in her ear, to which she looked up at you
+frightened, and shook her head, "No."
+*page_break
+After watching you a bit longer, she gets up from her seat, brushes it off with her tiny hand and steps aside, motioning you to sit down.
+*choice mood action
+  #PROUD
+    #REFUSE THE SEAT
+      *goto A11
+    *selectable_if (false) #ACCEPT THE SEAT
+      *finish
+  #GRATEFUL
+    *selectable_if (false) #REFUSE THE SEAT
+      *finish
+    #ACCEPT THE SEAT
+      *goto A22
+*label A11
+*set CN%+10
+With all the strength you can muster, you politely refuse the seat, and pat the child on the head. The rest of the ride is practically unbearable, but you'll be darned if you will be looked upon as old and helpless.
+*finish
+*label A22
+*set PH%+10
+You realize that accepting the seat is a sign of neither personal nor emotional weakness -- it is a simple fact of life. This child is young and in many ways stronger than you. She doesn't need the seat.
+*page_break
+As you sit, the relief spreads rapidly through your body, though soon your joints will begin to stiffen in this seated position. The child is looking at you, with great relief on her face.
+*finish
+

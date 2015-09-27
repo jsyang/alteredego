@@ -1,0 +1,124 @@
+Looking in the mirror one morning, you begin to wonder what you would look like if you radically changed your hairstyle and made it a different color.
+*choice mood action
+  #BECOME MORE INTERESTED AND CURIOUS
+    #DO IT
+      *goto A11
+    *selectable_if (false) #HOLD BACK
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #DO IT
+      *finish
+    #HOLD BACK
+      *goto A22
+*label A11
+What color would you make your hair?
+
+
+Select an action:
+
+*choice
+  #BLONDE
+    *goto B1
+  #JET-BLACK
+    *goto B2
+  #RED
+    *goto B3
+  #BROWN
+    *goto B4
+  #PURPLE
+    *goto B5
+*label B1
+*label B2
+*label B3
+*label B4
+*label B5
+*if CN>70
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set CN%+10
+*set SC%+10
+That ought to look interesting!
+*page_break
+Your Confidence characteristic shows that you are capable of enduring the comments that people make when you change your looks. The more sensitive people say things like, "You look different. I can't figure it out." The tactless
+ones say, "What happened to your hair?"
+*goto D
+*label C.F
+*set CN%-10
+*set SC%+10
+Your Confidence characteristic needs to be higher for you to ignore the snide comments that people make when you change your looks. They make you feel self-conscious. When you are able to put these comments out of your mind, you begin
+to feel like a new person.
+*label D
+*page_break
+You begin to see yourself as a different person -- sexier, wilder perhaps or mysterious.
+*if (SR<1) and (MS<1)
+  *goto NR.T
+*else
+  *goto NR.F
+*label NR.T
+*finish
+*label NR.F
+*page_break
+*temp randomE
+*rand randomE 1 3
+*if randomE=1
+  *goto E1
+*elseif randomE=2
+  *goto E2
+*else
+  *goto E3
+*label E1
+*finish
+*label E2
+Regardless of how you feel about the new hair,
+*if MS>0
+  *goto NW1.T
+*else
+  *goto NW1.F
+*label NW1.T
+${spouseName}
+*goto SHAVE
+*label NW1.F
+${loverName}
+*label SHAVE
+HATES it.
+
+
+Select an action:
+
+*choice
+  #RESTORE IT
+    *goto J1
+  #KEEP IT
+    *goto J2
+*label J1
+*set CN%-10
+He has to look at you more than you have to look at yourself, so to satisfy him, you restore it to its original color.
+*finish
+*label J2
+*set HP%-10
+He has no right to tell you what to do with your hair. He feels that the new look makes you a stranger to him. He can't get used to it. As a result, your sex life suffers.
+*finish
+*label E3
+*set SC%+20
+*set HP%+10
+Regardless of how you feel about the new hair,
+*if MS>0
+  *goto NW2.T
+*else
+  *goto NW2.F
+*label NW2.T
+${spouseName}
+*goto LOVIT
+*label NW2.F
+${loverName}
+*label LOVIT
+LOVES it. He says it makes you look more like a "sexy stranger." He makes believe that he is having an affair with a exciting new lover. He attacks you wildly and passionately, worshiping your every move.
+*page_break
+You could really get used to this, except for the question that keeps gnawing at the back of your mind: "What was wrong with the old LOVER?"
+*finish
+*label A22
+How will you know unless you try? Have you no sense of adventure? Oh well, maybe some other time.
+*finish
+

@@ -1,0 +1,57 @@
+You are alone in your parents' bedroom. There is a shiny silver quarter on the table.
+*choice mood action
+  #HONEST
+    *selectable_if (false) #TAKE THE QUARTER
+      *finish
+    #LEAVE IT ALONE
+      *goto A12
+  #DISHONEST
+    #TAKE THE QUARTER
+      *goto A21
+    *selectable_if (false) #LEAVE IT ALONE
+      *finish
+*label A21
+*set TR%-20
+It is really questionable as to whether a child your age can tell whether something like this is truly right or wrong. You have a vague sense that you shouldn't have picked it up. Your mother sees you stash something in your
+pocket. She asks what you have there. You say:
+
+
+Select an action:
+
+*choice
+  #"NOTHING."
+    *goto B1
+  #"THIS..." (AND HOLD OUT THE QUARTER)
+    *goto B2
+*label B1
+Her suspicion is immediately confirmed. She pries your hand open and reveals the silver coin. You look sheepish. Your knowledge of "mine" and "yours" is still rather primitive.
+*if ST>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+But your mother doesn't understand this. She scolds you harshly for lying and stealing. You are confused.
+*finish
+*label C.F
+She tries to explain why what you have done is wrong, but you may still be too young to understand.
+*finish
+*label B2
+*set TR%+20
+You're not so dishonest. In fact you are being very trustworthy. It was a temptation you couldn't resist.
+*if ST>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Your mom has mixed feelings about the incident. She begins to scold you, then realizes that you were honest in the end. As a result of her confusion, you also become confused.
+*finish
+*label D.F
+You get a big hug for being honest after all.
+*finish
+*label A12
+*set TR%+50
+This might have been a tough decision for you. At your age and even sometimes into adulthood, honesty is often less than clear cut. You might have figured that you had nothing to gain by stealing the quarter. You were right about
+that. You've gained in the Trustworthiness category.
+*finish
+
+

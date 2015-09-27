@@ -1,0 +1,40 @@
+*if TR<20
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+You are the untrustworthy type. This can get you into a lot of trouble. An angry woman confronts you, claiming that you have seduced her husband.
+
+
+Select an action:
+
+*choice
+  #ADMIT IT
+    *goto A1
+  #DENY IT
+    *goto A2
+*label A1
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*set PH%-20
+*set TR%+30
+SMACK! Thanks for your honesty. Physical sphere declines.
+*finish
+*label B2
+*set CA%+20
+*set TR%+30
+The woman is taken aback by your honesty. After talking it out, the two of you agree that it was bad judgment on all sides. She asks if you would kindly leave her and her husband alone so they can patch up their relationship together.
+*finish
+*label A2
+*set PH%-5
+"That's what they ALL say!" SMACK! Physical sphere declines.
+*finish
+*label Z.F
+A nosy friend has just informed you that she saw ${loverName} in a restaurant with a mysterious blonde stranger.
+*finish
+

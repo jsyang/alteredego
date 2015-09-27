@@ -1,0 +1,82 @@
+One of the older kids in school takes you aside and offers you a quick way to make money by dealing drugs -- nothing too heavy or dangerous, according to him. All you would have to deal is some pot and a few ludes.
+*choice mood action
+  #INTERESTED
+    #TELL HIM YOU WILL DO IT
+      *goto A11
+    *selectable_if (false) #TELL HIM YOU WON'T DO IT
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #TELL HIM YOU WILL DO IT
+      *finish
+    #TELL HIM YOU WON'T DO IT
+      *goto A22
+*label A11
+*set OH+4
+Your first deal is at three o'clock on Thursday.
+*if CA<80
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set FM%-20
+*set IN%-20
+You are not calm enough to pull off this deal without getting caught. You are busted by a teacher.
+*label F
+*page_break
+*if TR<50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+Your Trustworthiness characteristic shows that you have either been in trouble before or that you are deceptive. Your bad reputation causes the school to press charges against you. You are sentenced to 25 hours of community service
+work with the aged. Do you show up for it?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*set TH%+10
+At least you followed through on THIS responsibility. You still have a long way to go before people start forgetting your past.
+*finish
+*label D2
+*set TR%-30
+*set TH%-40
+Trustworthiness drops even lower.
+*finish
+*label C.F
+*set FM%-10
+Fortunately, you don't have much of a reputation for doing things like this. As a result, you are given a five-day suspension from school. Family relations decline because of the stress you have caused.
+*finish
+*label B.F
+*set MN+25
+Your level of Calmness makes the deal transpire very smoothly. You make 25 easy dollars. You are asked to do it again. Do you:
+
+
+Select an action:
+
+*choice
+  #ACCEPT
+    *goto E1
+  #REFUSE
+    *goto E2
+*label E1
+*set OH+4
+*set TH%-20
+*set FM%-50
+*set IN%-30
+You may have been calm, but this time your connection was careless. You are caught by a teacher.
+*goto F
+*label E2
+I guess you thought it was wise to quit while you were ahead. It was.
+*finish
+*label A22
+*set IN%+40
+He tells you that you have just passed up the opportunity to make some easy money. He is caught dealing three weeks later, but nothing much happens to him. Three months after that, you read that he was jailed in South America during
+a drug-related incident.
+*finish
+

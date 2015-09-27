@@ -1,0 +1,52 @@
+Your wife has become a lottery fanatic. She can't walk by the corner drugstore without spending a dollar on a lottery ticket. What will you do about this?
+
+
+Select an action:
+
+*choice
+  #NOTHING. WHATEVER SHE DOES WITH HER OWN MONEY IS HER BUSINESS
+    *goto A1
+  #GIVE HER A DOLLAR AND TELL HER, "BUY AN EXTRA ONE FOR ME"
+    *goto A2
+  #TELL HER IT MIGHT BE A GOOD IDEA TO CONSIDER HOW MUCH MONEY SHE COULD BE SAVING IF SHE STOPPED
+    *goto A3
+*label A1
+*set TH%+20
+That's very non-sexist of you. On the other hand, though you don't have the right to demand that she stop playing, she might benefit from the suggestion to consider how much she is spending.
+*finish
+*label A2
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+She buys you a ticket, and together you lose!
+*finish
+*label B2
+She buys you a ticket and you win $2000! Will you split it with her?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set MN+1000
+*set GN%+20
+*set TH%+30
+How generous!
+*finish
+*label C2
+*set MN+2000
+*set MP+1
+Cheapskate!
+*finish
+*label A3
+You can't reason with a gambler. She says she HAS to win one of these times, and when she does, you'll both be on easy street. (Sure!)
+*finish
+

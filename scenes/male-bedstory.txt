@@ -1,0 +1,195 @@
+Daddy says, "It's time to go to bed."
+*choice mood action
+  #CRANKY/MAD
+    #ASK TO STAY UP A LITTLE WHILE LONGER
+      *goto A11
+    #SAY, "I DON'T WANNA GO TO BED"
+      *goto A12
+    #IGNORE REQUEST
+      *goto A13
+  #TIRED
+    #ASK TO STAY UP A LITTLE WHILE LONGER
+      *goto A21
+    #SAY, "I DON'T WANNA GO TO BED"
+      *goto A22
+    #IGNORE REQUEST
+      *goto A23
+*label A11
+*set GN%-10
+Your father sees you are tired and irritable and says, "Come on, I'll take you." You say:
+
+
+Select an action:
+
+*choice
+  #NO
+    *goto B1
+  #OK
+    *goto B2
+*label A12
+*label B1
+You fold your hands across your chest and look him straight in the eye. He laughs at you and begins to pick you up. You say:
+
+
+Select an action:
+
+*choice
+  #NO!
+    *goto C1
+  #OK
+    *goto C2
+*label C1
+*set GN%-5
+He says, "Sorry, Tiger," and tucks you under his arm.
+
+
+Select an action:
+
+*choice
+  #CRY
+    *goto D1
+  #DO NOTHING
+    *goto D2
+*label D1
+You're not going to let him get away with overpowering you without making him feel guilty. It works!
+*finish
+*label D2
+You fall limp so that you are difficult to manage. You give Dad a backache. When you get to your bedroom you can:
+*label EX
+
+
+Select an action:
+
+*choice
+  #ASK FOR A DRINK OF WATER
+    *goto E1
+  #GO TO SLEEP
+    *goto E2
+*label E1
+Dad goes mumbling off and comes back with a drink. You sip it very slowly, keeping one eye on Dad at all times. You finish it.
+
+
+Select an action:
+
+*choice
+  #ASK FOR A DRINK
+    *goto F1
+  #GO TO SLEEP
+    *goto F2
+*label F1
+Dad says, "No. If you have anything else to drink tonight you'll float away." You say:
+
+
+Select an action:
+
+*choice
+  #"BUT I'M STILL THIRSTY"
+    *goto G1
+  #NOTHING
+    *goto G2
+*label G1
+Dad says, "You can't be thirsty after that." You say:
+
+
+Select an action:
+
+*choice
+  #"BUT I AM"
+    *goto H1
+  #NOTHING
+    *goto H2
+*label H1
+Dad agrees to get you more water. He comes back with a huge pitcher. With a wild look in his eyes, he tells you that you have to drink it ALL before you go to bed. You take two sips and stop. He tells you to drink more.
+*page_break
+He has outsmarted you. Anything you try after this fails. Good night!
+*finish
+*label B2
+*label C2
+*label E2
+*label F2
+*label G2
+*label H2
+Good Night! Dad says, "I love you."
+*finish
+*label A13
+Dad, in a stern voice, says, "Excuse me, young man. Did you hear what I just said?"
+
+
+Select an action:
+
+*choice
+  #KEEP IGNORING HIM
+    *goto I1
+  #MAKE BELIEVE YOU DIDN'T HEAR HIM THE FIRST TIME
+    *goto I2
+*label I1
+You sit there with your arms folded. You have made Dad mad. He scoops you up and tosses you in bed. You cry yourself to sleep thinking how mean both of your parents are.
+*finish
+*label I2
+*set TR%-20
+You look at him innocently and say, "Wha?" He falls for it and says, "I said it's time for bed." You can say:
+
+
+Select an action:
+
+*choice
+  #"NO!"
+    *goto J1
+  #"O.K."
+    *goto J2
+*label J1
+*goto C1
+*label J2
+*goto C2
+*label A21
+Dad explains how tired you are and what a busy day it will be tomorrow (the same old line). He offers to carry you. When you get to the bedroom you can:
+
+
+Select an action:
+
+*choice
+  #ASK HIM TO TELL YOU A STORY
+    *goto K1
+  #ASK FOR A DRINK OF WATER
+    *goto K2
+*label K1
+*temp randomL
+*rand randomL 1 3
+*if randomL=1
+  *goto L1
+*elseif randomL=2
+  *goto L2
+*else
+  *goto L3
+*label L1
+You are so tired that the murmur of words puts you right to sleep. You don't even remember what the story was about.
+*finish
+*label L2
+Dad tells you the story of The Three Bears. You have heard it a million times before, but when he tells it, it is always special. You fall asleep holding onto Dad's big finger.
+*finish
+*label L3
+Dad tells you a scary story about the TOAD MONSTER who sneaks into little boys' bedrooms and bites their toes. He waits till you fall asleep and then nibbles your foot. You really weren't asleep. You fool him by jumping up and making a
+growling noise. You both laugh. He kisses you good night and says, "I love you."
+*finish
+*label K2
+*goto E1
+*label A22
+Dad tries to bribe you by offering a bedtime story.
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE BRIBE
+    *goto M1
+  #KEEP REFUSING TO GO
+    *goto M2
+*label M1
+*goto K1
+*label M2
+You are too tired to refuse for long. He carries you to the bedroom. You are asleep before you get there.
+*finish
+*label A23
+You are falling asleep even as Dad is talking to you. He carries you to the bedroom.
+*goto EX
+

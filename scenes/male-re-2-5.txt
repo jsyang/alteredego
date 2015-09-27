@@ -1,0 +1,28 @@
+${loverName} has an annoying habit that grates on your nerves. Whenever you go out to a restaurant, she licks her fingers at the table and sometimes makes loud sucking noises. What do you intend to do about this?
+
+
+Select an action:
+
+*choice
+  #TELL HER THAT SHE IS BEHAVING LIKE A CAVEWOMAN
+    *goto E1
+  #GENTLY SUGGEST THAT SHE SHOULD BE MORE AWARE OF HER BEHAVIOR IN PUBLIC
+    *goto E2
+  #LEAVE HER ALONE--NOBODY'S PERFECT
+    *goto E3
+*label E1
+*set TH%-30
+*set GN%-20
+Very tactful. Your manners are quite superior, aren't they? Remember that time in the movies when you passed enough gas to wipe out a small army? Nobody's perfect, and besides, there are gentler ways of bringing a bad habit to a
+person's attention.
+*finish
+*label E2
+*set SC%+10
+If it's really THAT important to you, she'll be happy to make the adjustment.
+*finish
+*label E3
+*set TH%+20
+*set HP%+20
+What a sport! You must really be crazy about ${loverName}. Just make sure you are always seated in a quiet little nook off in the corner and the two of you will be just fine.
+*finish
+

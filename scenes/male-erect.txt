@@ -1,0 +1,58 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You are at the beach one day when an older but very beautiful lady notices that your back is red and peeling. She asks if you want her to rub some cream on your back.
+*choice mood action
+  #EMBARRASSED
+    #SAY "NO, THANK YOU. I'LL BE O.K."
+      *goto A11
+    #SAY "O.K."
+      *goto A12
+  #THANKFUL
+    *selectable_if (false) #SAY "NO, THANK YOU. I'LL BE O.K."
+      *finish
+    #SAY "O.K."
+      *goto A22
+*label A11
+*set CA%-20
+*set PH%-10
+Even though you know the lady is being sincere you think it would be too embarrassing for a stranger to touch you. Unfortunately, she was right about the sunburn. Physical sphere takes a sharp drop.
+*finish
+*label A12
+*set CA%-30
+*set HP%+30
+*set PH%+10
+Your back has been feeling kind of sensitive.
+*label D
+The lady's hands are soft and gentle. You kind of wish she wouldn't stop.
+*page_break
+All of a sudden, you feel a very unusual sensation in your bathing suit -- an unexpected erection! How embarrassing. You can:
+
+
+Select an action:
+
+*choice
+  #IGNORE IT
+    *goto B1
+  #EXCUSE YOURSELF AND JUMP IN THE WATER
+    *goto B2
+*label B1
+*set PH%+20
+You ignore it, but it doesn't go away. That's O.K., though. At your age something like that isn't bound to attract that much attention. At the very least you have saved yourself a bad sunburn. Go play.
+*finish
+*label B2
+You say: "Thank you, very much!!" and leap into the water, hoping to hide yourself. These little "surprises" happen all the time at your age. Now you don't appreciate them, but when you are much older you'll want them back.
+People never seem to be satisfied.
+*finish
+*label A22
+*set SC%+10
+Some people are brought up never to impose on others, even when they offer help. Fortunately, you have learned that accepting help is O.K. and even necessary for survival.
+
+*goto D
+

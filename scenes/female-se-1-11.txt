@@ -1,0 +1,26 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+You have forgotten your new class schedule. Will you:
+
+
+Select an action:
+
+*choice
+  #GO DOWN TO THE OFFICE AND GET A NEW ONE
+    *goto A1
+  #WALK INTO A CLASS THAT LOOKS LIKE THE ONE YOU SHOULD BE IN
+    *goto A2
+*label A1
+*set IN%+5
+They don't have a copy of it, either. The computer is broken. You have to sit in the office and keep yourself out of trouble until the computer is working again.
+*finish
+*label A2
+*set IN%-5
+Sorry. The class you walk into is a class of Greek students who are learning English as a second language. For a second there, it sounded like your ears might have been going a little crazy.
+*finish
+

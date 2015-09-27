@@ -1,0 +1,54 @@
+You are currently madly in love with a guy who is having a birthday next week. You are trying to think of what to get him. Since money is tight, you really should be careful about what you will buy.
+*choice mood action
+  #GENEROUS
+    #BUY HIM THE "WINDOWBREAKER" CAR STEREO HE'S HAD HIS EYE ON
+      *goto A11
+    #BUY HIM SOMETHING ELSE
+      *goto A12
+  #MIXED FEELINGS
+    #BUY HIM THE "WINDOWBREAKER" CAR STEREO HE'S HAD HIS EYE ON
+      *goto A21
+    #BUY HIM SOMETHING ELSE
+      *goto A22
+  #NOT THAT GENEROUS
+    *selectable_if (false) #BUY HIM THE "WINDOWBREAKER" CAR STEREO HE'S HAD HIS EYE ON
+      *finish
+    #BUY HIM SOMETHING ELSE
+      *goto A32
+*label A11
+*set IN%-10
+*set HP%-10
+*set GN%+20
+You scrape the money together to buy him the car stereo and proudly present it to him. He gets a funny look on his face. "It's not the 'Windowbreaker II' that I've had my eye on, but I REALLY like it."
+*finish
+*label A21
+*set IN%-10
+*set GN%+10
+Almost immediately after you purchase the stereo, you begin to resent the decision -- and the guy, too. To make matters worse, he gives it to his younger brother as a birthday present.
+*finish
+*label A12
+You can still be generous and not have to sell your blood to pay for gifts.
+
+*if IN>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set SC%+10
+*set CN%+20
+Your Intellectual sphere status shows that you are smart enough to come up with an inventive gift idea, which he loves, and which doesn't leave you penniless.
+*finish
+*label B.F
+*set SC%+10
+It might be hard to come up with an idea for a present, but you do, and he loves you for it.
+*finish
+*label A22
+*set SC%-10
+You try to think of something to buy, but your mixed feelings prevent you from coming up with anything good. Eventually, the whole experience makes you resent the guy.
+*finish
+*label A32
+*set IN%-10
+*set SC%-20
+You buy him some soap-on-a-rope and some 'old man's cologne' which were on sale in "The Salvage Warehouse." He is less than impressed.
+*finish
+

@@ -1,0 +1,14 @@
+*comment @SIE
+*goto_random_scene allow_no_selection
+  female-le-2-1
+  female-le-2-2
+  female-le-2-3
+  female-le-2-4
+  female-le-2-5
+  female-le-2-6
+  female-le-2-7
+  female-le-2-8
+There are none of these experiences you can do right now.
+*set instantaneous true
+*finish
+

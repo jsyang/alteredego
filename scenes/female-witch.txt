@@ -1,0 +1,112 @@
+There is an elderly woman who lives in a house up the street. Everyone calls her "the witch." Some people say she's really paranoid, calling the cops on kids all the time and screaming out the window, even when there is nobody
+there. At night she keeps her light on all the time and sits looking out the window.
+*page_break
+For the past few days the light has been off. Some of the kids think she's just dead in there or something. They jump in front of her house and sing "Ding dong, the witch is dead, the witch is dead," and laugh.
+*choice mood action
+  #SAD
+    *selectable_if (false) #SING WITH EVERYONE ELSE
+      *finish
+    #TRY TO SEE IF ANYTHING IS WRONG
+      *goto A12
+  #HAPPY
+    #SING WITH EVERYONE ELSE
+      *goto A21
+    *selectable_if (false) #TRY TO SEE IF ANYTHING IS WRONG
+      *finish
+*label A12
+*set GN%+40
+*set SC%+20
+One afternoon after school, you look from outside the gate to see if there is anything going on inside the house. There is nothing. You can:
+
+
+Select an action:
+
+*choice
+  #GO THROUGH THE GATE AND KNOCK ON THE DOOR
+    *goto B1
+  #ASK A FRIEND TO GO WITH YOU
+    *goto B2
+*label B2
+*set SC%-5
+Everyone thinks you are crazy to try to go see that mean old lady. You can:
+
+
+Select an action:
+
+*choice
+  #GO THROUGH THE GATE AND KNOCK ON THE DOOR
+    *goto C1
+  #QUIT TRYING TO SEE WHAT IS GOING ON
+    *goto C2
+*label B1
+*label C1
+You hear a voice call out from the back of the house, "Go away and leave me alone!" You can:
+
+
+Select an action:
+
+*choice
+  #SAY "I'D LIKE TO KNOW IF YOU'RE O.K. IN THERE."
+    *goto D1
+  #QUIT TRYING AND LEAVE
+    *goto D2
+*label D1
+You hear nothing for about 30 seconds. Finally, the door opens. The woman looks pale and dazed. She seems smaller than you imagined and very delicate. In the corner of her almost-bare living room there is a television set;
+beside it is a large box of old rubber balls and toys that were left, or had accidentally fallen, on her lawn.
+*page_break
+She asks you why you have come. You mention that you noticed that the light has gone out, and you thought she might be needing some help. She explains that she has no way to replace it. She is too old to climb up to do it. You can:
+
+
+Select an action:
+
+*choice
+  #ASK HER IF SHE WOULD LIKE YOU TO DO IT
+    *goto E1
+  #EXCUSE YOURSELF, NOW THAT YOU KNOW IT'S JUST A PROBLEM WITH A LIGHT BULB
+    *goto E2
+*label E1
+*set GN%+30
+*set PH%+5
+She thanks you. Her face softens. While you are fixing the light, she tells you a very sad story: A long time ago, she had a little girl very much like you, so polite and so kind. She says her daughter was beautiful, and repeats it
+over and over--"as beautiful as a picture."
+*page_break
+She and her husband lived with their daughter not too far from the train yard. She used to tell her child, "Anne Marie, stay away from the tracks, or you'll get hurt." One day, her daughter and her husband went out to play catch with an
+old ball. The ball got away from Anne and rolled across the tracks.
+*page_break
+While she was chasing it, her foot got wedged between two rails. Her father and she struggled to release it, but before they could, they were both struck by a freight train and killed. She's been alone ever since.
+*page_break
+When you are finished fixing the light, the lady gives you some milk and freshly-baked cookies. It almost seems as though she doesn't want you to go. Before you leave, you:
+
+
+Select an action:
+
+*choice
+  #THANK HER FOR THE COOKIES AND ASK IF SHE WOULD LIKE SOMEONE AROUND TO DO ODD JOBS
+    *goto F1
+  #THANK HER AND EXCUSE YOURSELF
+    *goto F2
+*label F1
+*set SC%+20
+*set IN%+30
+*set PH%+5
+Her face brightens. "You must be paid," she says. "I can't afford much, and you'll have to do a fine job, but you can have all the cookies and brownies you can eat. I promise you that." You have done a much kinder thing than you can
+probably imagine at your age. You've given this woman a reason to live.
+*finish
+*label F2
+*set GN%+20
+You have done a kind thing for this woman today. It's been years since her last visitor. Your friends ask you questions about the lady and her house. "Weren't you scared? Didn't you think she would go crazy on you or something?" You
+are beginning to learn about prejudice and ignorance. They always make a perfect pair.
+*finish
+*label C2
+*label D2
+*label E2
+The woman in this house is very lonely, with a horribly sad story to tell. You chose not to be burdened with her. Old and weak, she dies three weeks later. Perhaps she just had nothing to live for.
+*finish
+*label A21
+*set SC%-30
+Sometimes children don't realize how mean they can be. The woman can hear you taunting her outside and spends her days crying, wishing for her life to come to a peaceful end. Then she could be with the people whom she loved and who
+loved her.
+*page_break
+Three weeks later, she really does pass away. Almost no one in the neighborhood notices.
+*finish
+

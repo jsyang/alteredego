@@ -1,0 +1,100 @@
+${spouseName} would like to invite some old friends from the other side of the country, Bill and Marsha, for a visit. Marsha is a sweet person (always HAS been). Bill is a competitive, materialistic so-and-so, who is tolerable in small doses,
+but becomes very difficult to stand, VERY quickly.
+*page_break
+${spouseName} has been hoping to see Marsha for quite some time, and would really be disappointed if you didn't extend an invitation for a few days. What will you do?
+
+
+Select an action:
+
+*choice
+  #INVITE THEM OVER
+    *goto A1
+  #ASK ${SPOUSENAME} TO UNDERSTAND WHY YOU DON'T WANT THEM OVER
+    *goto A2
+*label A1
+*label F1
+*set TH%+50
+Before they even step out of the car, you can hear Bill's big mouth, "HOWYA DOIN' THERE, OLD FELLA, GETTIN' A BIT OF A POT THERE!" (He pats your belly.) "YOU LOOK LIKE YOU'RE ABOUT TO DELIVER A LITTER OF PUPS HA! HA! A LITTER
+OF PUPS, GET IT?!"
+*page_break
+After Bill and Marsha get settled in, Bill goes on to tell you about his boat, his new sports car, his portable video recorder and his local poker championship. "By the way, Scooter," (You don't know where he digs these
+names up from.), "think you wanna mess with the old Grand Master, himself?"
+
+
+Select an action:
+
+*choice
+  #PLAY HIM A GAME OF POKER
+    *goto B1
+  #IGNORE HIM
+    *goto B2
+*label B1
+On the first deal, you are dealt three kings, a jack and a deuce. He draws only one card. With a smirk on his face, he says, "Piece of cake, Buddy, PIECE OF CAKE."
+
+
+Select an action:
+
+*choice
+  #DRAW ONE CARD
+    *goto C1
+  #DRAW MORE THAN ONE CARD
+    *goto C2
+*label C1
+You pick up a second jack. You now have a full house. Bill says, "You wouldn't care to make a little wager on the outcome of this hand, now would you sport? Let's say two grand, that is if you can AFFORD it!"
+
+
+Select an action:
+
+*choice
+  #WAGER $2000
+    *goto D1
+  #DO NOT WAGER $2000
+    *goto D2
+*label D1
+After much melodrama, Bill reveals his hand -- a full house, three queens and two jacks! "HA! HA! HA! CAN'T HUSTLE THE HUSTLER! THE CHAMP! THE KING OF KINGS! HA! HA!" You quietly turn over your cards, showing him your winning hand. He
+turns white and says "Heh, heh. About that two thousand dollars, we were only kidding, right?"
+
+
+Select an action:
+
+*choice
+  #LET HIM OFF THE HOOK FOR THE $2000
+    *goto E1
+  #MAKE HIM PAY UP
+    *goto E2
+*label E1
+*set SC%+60
+You don't get the money, but you do get two thousand dollars worth of humility over the next few days which is well worth it!
+*finish
+*label E2
+He writes you out a check and promptly develops a mysterious illness (he says it's from your wife's cooking). He has to go back home early. P.S. the check bounces!
+*finish
+*label B2
+*label D2
+"HEY, NO BIGGIE. SOME OF US JUST CAN'T AFFORD TO PLAY WITH THE BIG BOYS, EH CHIEF?!" The time drags, but like all disasters, Bill and Marsha leave to plague some other unfortunates. ${spouseName} realizes what you have had to put up
+with for the last few days and gives you the King's treatment until you recover.
+*finish
+*label C2
+*set IN%-10
+Now why would you want to do a silly thing like that? You have passed up the opportunity for a full house. Bill wins the hand and proclaims another poker victory for The King of Cards, one of the many titles he has generously bestowed upon himself.
+*page_break
+The time drags, but like all disasters, Bill and Marsha leave to plague some other unfortunates. ${spouseName} realizes what you have had to put up with for the last few days and gives you special treatment until you recover. You may be a bad
+card player, but you are a considerate husband.
+*finish
+*label A2
+*set TH%-20
+"But Marsha was my best friend in high school. It would be so nice if I could see her again."
+
+
+Select an action:
+
+*choice
+  #GIVE IN
+    *goto F1
+  #KEEP REFUSING
+    *goto F2
+*label F2
+*set TH%-20
+${spouseName} decides to pick up and go visit them WITHOUT YOU.
+*finish
+

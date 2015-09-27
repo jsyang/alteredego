@@ -1,0 +1,74 @@
+A close friend of yours has been showing up everywhere drunk lately. Although he seems to function well at his after-school job, people are beginning to talk about him.
+*choice mood action
+  #CONCERNED
+    #TRY TO HELP HIM STRAIGHTEN OUT
+      *goto A11
+    #DO NOTHING -- IF HE HAS A DRINKING PROBLEM THAT'S HIS WORRY
+      *goto A12
+  #ANGRY
+    #TRY TO HELP HIM STRAIGHTEN OUT
+      *goto A21
+    #DO NOTHING -- IF HE HAS A DRINKING PROBLEM THAT'S HIS WORRY
+      *goto A22
+  #UNCONCERNED
+    *selectable_if (false) #TRY TO HELP HIM STRAIGHTEN OUT
+      *finish
+    #DO NOTHING -- IF HE HAS A DRINKING PROBLEM THAT'S HIS WORRY
+      *goto A32
+*label A11
+*set GN%+30
+He denies that he has any problem.
+
+
+Select an action:
+
+*choice
+  #INSIST THAT HE DOES
+    *goto B1
+  #LEAVE HIM ALONE
+    *goto B2
+*label C2
+*label B2
+You convince yourself that you tried your best, but he wouldn't accept your help.
+*finish
+*label B1
+He gets angry at you, and calls you names.
+
+
+Select an action:
+
+*choice
+  #KEEP INSISTING
+    *goto C1
+  #LEAVE HIM ALONE
+    *goto C2
+*label C1
+*set GN%+10
+*set SC%+20
+Your concern for your friend is admirable. It shows that you are sensitive to the amount of danger that he is in. Unfortunately, there is no way to help people like this. Denial is one of the strongest defenses alcoholics have on
+their side. If he ever chooses to get straightened out, it will have to come from himself, and himself alone.
+*finish
+*label A12
+*set SC%-20
+It often happens that when someone we care about is having serious problems, we ignore them, hoping that they will either vanish, or imagining that we never saw them in the first place. This is probably what your friend's parents have
+done to him all his life. That's probably one of the reasons he is in such sad shape right now.
+*finish
+*label A21
+*set GN%-20
+Perhaps you are angry because you are afraid that this person will embarrass you by having a problem. Sometimes when our friends have difficulties, we admonish ourselves for not being powerful enough to prevent or stop the problem.
+*page_break
+Your anger only generates depression in your friend. As a result, everything you do for him fails, giving him more reason to believe that he is worthless. His only way of dealing with this is to drink, in an effort to relieve the
+pain this brings him.
+*finish
+*label A22
+*set GN%-10
+*set CA%-10
+Perhaps you are upset because you think his behavior will be a negative reflection on you. Maybe you think that you should be or could be powerful enough to prevent him from further hurting himself. Both of your choices do
+him no good at all. They only cause you to sit there shaking your head, saying, "How can he do this to himself?"
+*finish
+*label A32
+*set TH%-30
+I guess this person really wasn't much of a friend. Either that, or you are so self-absorbed that you can't be bothered caring about anyone else.
+*finish
+
+

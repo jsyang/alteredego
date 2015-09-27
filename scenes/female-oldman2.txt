@@ -1,0 +1,81 @@
+Harry Shiner is the kindly old man who owns the candy store near the grade school you attended. Whenever you pass the store, you are reminded of the times he put an extra piece of candy in your hand without charging you, let you run
+up a "tab" if you were a penny or two short, or called your mom to give you a ride home if you missed the school bus.
+*page_break
+Lately, when you pass the old shop you notice the lights are out.
+*choice mood action
+  #SUSPICIOUS/CONCERNED
+    #GET INFORMATION ABOUT HARRY
+      *goto A11
+    *selectable_if (false) #DO NOTHING
+      *finish
+  #NOT CONCERNED
+    *selectable_if (false) #GET INFORMATION ABOUT HARRY
+      *finish
+    #DO NOTHING
+      *goto A22
+*label A11
+*set TH%+10
+You ask the school crossing guard if she has seen Harry. She mentions that he has probably gone to Florida for a vacation. This doesn't sound right to you. He usually takes vacation when the kids are off from school, and school is in
+session these days.
+
+
+Select an action:
+
+*choice
+  #SEEK MORE INFORMATION
+    *goto B1
+  #LET IT PASS
+    *goto B2
+*label A22
+*label B2
+The store never reopens. You never find out what has become of old Harry.
+*finish
+*label B1
+*set TH%+10
+You know that Harry's sister lives upstairs from the candy store. You knock on her door and ask about Harry. How do you feel?
+
+
+Select a mood:
+
+*choice
+  #ANXIOUS
+    *goto C1
+  #CALM
+    *goto C2
+*label C1
+*label C2
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+*set CA%+10
+Harry has been thinking about selling the business and retiring to Florida. It will seem like part of the neighborhood is going along with him.
+*finish
+*label D2
+*set CA%-10
+There is some bad news about Harry. Last month he found out that he has cancer. The doctors say that he doesn't have much longer to live.
+
+
+Select an action:
+
+*choice
+  #EXPRESS SYMPATHY / VISIT HIM IN THE HOSPITAL
+    *goto E1
+  #EXPRESS SYMPATHY
+    *goto E2
+*label E1
+*set HP%-20
+When you get to Harry's room, you can hardly believe it is he. His face is grey and his eyes are half closed. There are tubes in his nose and mouth. He seems to recognize you but calls you by a different name. There have been so many
+"children" in his life. You speak with him for a few moments, but as you chat, Harry falls asleep.
+*page_break
+You excuse yourself, but as you walk out of the room, you hear one of the machines make a shrill beeping sound. Two nurses walk quickly toward Harry's room. A doctor is called over the hospital intercom. By the time he arrives, Harry has
+already stopped breathing.
+*finish
+*label E2
+*set HP%-10
+Expressing your sympathy and hiding your discomfort are difficult. You walk home feeling sad. Gradually you realize that your life is beginning to change.
+*finish
+

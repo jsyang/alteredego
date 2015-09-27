@@ -1,0 +1,51 @@
+${spouseName} has been having a lot of trouble with her legs lately. She has fallen several times, with no serious injuries -- but her escapes have been very close ones. In the middle of the night you notice her leaving the bedroom to go to
+the bathroom. She is making her way slowly and steadily out to the other room.
+
+
+Select an action:
+
+*choice
+  #GET UP AND ASSIST HER
+    *goto A1
+  #KEEP AN EAR OPEN TO MAKE SURE SHE IS O.K.
+    *goto A2
+  #ASK HER IF SHE NEEDS ASSISTANCE
+    *goto A3
+*label A3
+Her voice wavers uncertainly, but she says, "No."
+
+
+Select an action:
+
+*choice
+  #GET UP AND ASSIST HER
+    *goto C1
+  #KEEP AN EAR OPEN TO MAKE SURE SHE IS O.K.
+    *goto C2
+*label A1
+*label C1
+*set TH%+60
+She is sorry to inconvenience you, but your companionship is appreciated. The combination of the darkness, her weak legs, and her trepidation due to her recent experience has her terrified of walking in a dark place at night. You
+have done much to comfort her tonight.
+*finish
+*label A2
+*label C2
+*set TH%-10
+You hear that she has made it safely to the bathroom. The hinge squeaks sharply indicating she has made it though the door. Suddenly, there is a deep hollow THUMP that shakes the house. You run out to see if she is all right. She is
+not conscious. A cold panic tears through your body. You call an ambulance....
+*page_break
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+${spouseName} is taken to the hospital. She has broken a hip and two broken ribs, and will need to stay in intensive care for a long period of time.
+*finish
+*label B2
+*set MS 0
+${spouseName} is taken to the hospital, where she is worked on by many doctors for six hours. Your last view of her alive is one with tubes in her nose and mouth, hooked up to monitors and other complicated-looking equipment. A doctor
+coldly delivers the horrible news. "I'm sorry."
+*finish
+

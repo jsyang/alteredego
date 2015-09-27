@@ -1,0 +1,105 @@
+During a sexual experience with your wife, you notice your mind drifting off. You begin to imagine your wife as your favorite movie star, and suddenly you are more aroused than ever. ${spouseName} notices the change and asks what got into you.
+What will you do?
+
+
+Select an action:
+
+*choice
+  #TELL HER THE TRUTH
+    *goto A1
+  #TELL HER THAT IT WAS REALLY SHE THAT MADE YOU SO PASSIONATE
+    *goto A2
+*label A2
+*set TR%-10
+She doesn't believe you, and she prods you until you give in.
+*label A1
+You tell her about your fantasy and she becomes noticeably upset. She wonders how often you do this and whether she can still excite you.
+
+
+Select an action:
+
+*choice
+  #TELL HER THAT SHE STILL EXCITES YOU
+    *goto B1
+  #TELL HER TO STOP MAKING SUCH A BIG DEAL OVER IT
+    *goto B2
+*label B2
+*set MP+1
+That wasn't very sensitive of you. Now she starts to cry, and your evening is ruined.
+*finish
+*label B1
+She says she understands, and says, "Now that I think about it, I once made belive you were someone else, too."
+
+
+Select an action:
+
+*choice
+  #LET THE CONVERSATION END
+    *goto C1
+  #ASK HER WHO IT WAS SHE WAS THINKING ABOUT
+    *goto C2
+*label C1
+How do you feel about it now that you know your wife does it, too?
+
+
+Select a mood:
+
+*choice
+  #FINE
+    *goto D1
+  #UNEASY
+    *goto D2
+*label E3
+*label D1
+*if CN>60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Your Confidence characteristic shows that this is something that you would indeed be able to handle.
+*finish
+*label E.F
+*set CN%-20
+Your Confidence characteristic is not strong enough to suggest that this would be true.
+*finish
+*label D2
+Yes, I know. It's always easier to accept this kind of behavior in yourself rather than thinking about your wife doing it. Just think of it this way -- would you rather have her THINKING about it or ACTING IT OUT?!
+*finish
+*label C2
+She tells you she once imagined that you were the check-out clerk at the local supermarket, you know, that young kid with all of the muscles. How do you feel?
+
+
+Select a mood:
+
+*choice
+  #ANGRY
+    *goto E1
+  #A BIT UNEASY
+    *goto E2
+  #JUST FINE
+    *goto E3
+*label E1
+*set GN%-20
+I guess you don't think it's fair if your wife uses somebody that's not a famous TV star for the object of your fantasy. Well why not? Why limit your thoughts and fantasies to only those who are well known? Will you begin to belive that
+her admission to you is a sign that your marriage is in trouble?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label F1
+Think about it -- would you rather have her THINK about such things or actually DO them? We all have fantasies, but there's a big difference between pretending and the real thing.
+*finish
+*label F2
+Well it's not. As long as the person can distinguish between fantasy and reality, it is unlikely that they will ever act the fantasy out as long as the marriage is built on a strong foundation.
+*finish
+*label E2
+*set CA%-20
+Perhaps you were expecting a big-time, inaccessible star. Looks like your wife's fantasies come from sources closer to home. I can certainly understand why you might feel a bit threatened by this, but think about it this way: Would you
+rather have your wife FANTASIZING these things or DOING them?
+*finish
+

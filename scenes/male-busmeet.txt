@@ -1,0 +1,205 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this icon, you must be employed. You may come back and play this once you have obtained a job.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You need to talk to someone about a finance-related matter. The person with whom you are dealing has a reputation for being a stern, pragmatic and very money-conscious business type. A meeting between you and this person is
+suggested. The outcome of such a meeting can affect your Vocational sphere tremendously because he is very influential.
+*choice mood action
+  #A LITTLE NERVOUS
+    #SUGGEST A MEETING AT YOUR PLACE OF WORK
+      *goto A11
+    #SUGGEST A LUNCH MEETING
+      *goto A12
+    #SUGGEST A BREAKFAST MEETING
+      *goto A13
+  #CONFIDENT
+    #SUGGEST A MEETING AT YOUR PLACE OF WORK
+      *goto A21
+    #SUGGEST A LUNCH MEETING
+      *goto A22
+    #SUGGEST A BREAKFAST MEETING
+      *goto A23
+  #VERY CONFIDENT
+    #SUGGEST A MEETING AT YOUR PLACE OF WORK
+      *goto A31
+    #SUGGEST A LUNCH MEETING
+      *goto A32
+    #SUGGEST A BREAKFAST MEETING
+      *goto A33
+*label A21
+*label A31
+The businessman suggests a place that is a bit less formal.
+*goto R
+*label A11
+*set CA%-10
+Although he is stern and pragmatic, he would prefer a meeting in less formal surroundings.
+*label R
+
+
+Select an action:
+
+*choice
+  #SUGGEST A LUNCH MEETING
+    *goto B1
+  #SUGGEST A BREAKFAST MEETING
+    *goto B2
+*label A32
+*label A22
+*label B1
+*label A12
+At lunch, the waiter asks if you would like to order a drink.
+
+
+Select an action:
+
+*choice
+  #ORDER AN ALCOHOLIC DRINK
+    *goto C1
+  #ORDER A NON-ALCOHOLIC DRINK
+    *goto C2
+  #WAIT FOR HIM TO ORDER FIRST
+    *goto C3
+*label H1
+*label C1
+*if OH>12
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Your history shows that you have a tendency to abuse alcohol. Since this lunch is an anxiety-evoking situation, your judgement is slightly off. You get a bit tipsy during the lunch meeting.
+*page_break
+*if TH>60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set MN+10000
+*set VC%+40
+Fortunately, because your Thoughtfulness (social judgement) is a strong characteristic, the business meeting goes well, though the person with whom you are meeting has the edge because he is not under the influence. Your
+Resources increase by $10000.
+*label E.F
+Your Thoughtfulness (social judgement) is not a strong characteristic. This combined with the fact that you are tipsy, result in an unsuccessful meeting. You do not gain anything vocationally.
+*finish
+*label D.F
+Your history shows that you are not a regular alcohol abuser. Because of this, you are able to regulate your drinking so that it doesn't affect your judgement.
+
+*if TH>50
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set MN+20000
+*set VC%+40
+Because your Thoughtfulness (social judgement) is generally moderate to strong, the meeting goes well. The outcome is an increase in Resources to the tune of $20,000.
+*finish
+*label F.F
+Unfortunately, because your Thoughtfulness characteristic is generally low, you cannot hold your own in a meeting like this. You do not gain vocationally.
+*finish
+*label H2
+*label C2
+*set TH%+30
+*set VC%+20
+A wise move. Now you won't have to worry about the effects of alcohol interfering with your judgement. Good insight translates into an increase on the Thoughtfulness characteristic.
+*if TH>50
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+*set VC%+10
+*set MN+20000
+Because your Thoughtfulness is generally moderate to strong, the meeting goes well. The outcome is an increase in Resources to the tune of $20,000.
+*finish
+*label G.F
+Unfortunately, because your Thoughtfulness characteristic is generally low, you cannot hold your own in a meeting like this. You do not gain vocationally.
+*finish
+*label C3
+He orders a double vodka martini. You can:
+
+
+Select an action:
+
+*choice
+  #ORDER AN ALCOHOLIC DRINK
+    *goto H1
+  #ORDER A NON-ALCOHOLIC DRINK
+    *goto H2
+*label A33
+*label A23
+*label B2
+*label A13
+You are obviously tuned in to certain business trends. Breakfast meetings are indeed becoming more popular because they are less likely to involve drinking and other kinds of extravagant behavior. This can keep expenses down and wits
+sharp.
+*page_break
+*if CN>80
+  *goto I.T
+*else
+  *goto I.F
+*label I.T
+*set VC%+20
+Your Confidence characteristic shows that you can keep a level head at such meetings. You have this in your favor.
+*goto O
+*label I.F
+*if CN>60
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+*set VC%+10
+Your Confidence characteristic is moderately strong, which is an advantage in this situation.
+*goto O
+*label J.F
+Your Confidence characteristic is not very strong. This will not be to your advantage in this situation.
+*label O
+
+*if IN>70
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+*set VC%+20
+Your Intellectual Sphere is strong, which will help you make smart decisions during this meeting.
+*goto P
+*label K.F
+Your Intellectual Sphere is not strong enough to really help you through this situation.
+*label P
+*page_break
+*if SC>80
+  *goto L.T
+*else
+  *goto L.F
+*label L.T
+*set VC%+20
+You are strong socially. This is a crucial part of impression formation. As a result you have a strong advantage in this situation.
+*goto N
+*label L.F
+*if SC>60
+  *goto M.T
+*else
+  *goto M.F
+*label M.T
+*set VC%+10
+You are moderately strong socially. This is a crucial part of impression formation. As a result, you have an advantage in this situation.
+*goto N
+*label M.F
+You are not that strong socially. Since social skills are a crucial part of impression formation, you gain no advantage in this area.
+*label N
+
+*if VC>70
+  *goto S.T
+*else
+  *goto S.F
+*label S.T
+*set MN+24000
+The result of your meeting is that your Resources increase by $24,000.
+*finish
+*label S.F
+*set MN+8000
+The result of your meeting is that your Resources increase by $8,000.
+*finish
+

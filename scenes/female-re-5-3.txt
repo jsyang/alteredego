@@ -1,0 +1,98 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You know that ${loverName} enjoys the outdoors and would like to spend some time camping. He offers to take you camping on an overnight trip.
+
+
+Select an action:
+
+*choice
+  #OFFER TO GO ALONG BUT ON A DAY TRIP ONLY
+    *goto A1
+  #SAY THAT YOU WILL GO ON AN OVERNIGHT TRIP
+    *goto A2
+  #SAY THAT YOU WILL NOT GO
+    *goto A3
+*label A3
+It doesn't look like the two of you have interests that are well suited to one another. This relationship probably will not succeed.
+*finish
+*label A1
+*set SC%+10
+${loverName} seems a bit disappointed but agrees to go for the day. The weather is splendid, the air crisp and fresh. There is a lake that looks just perfect for rowing. ${loverName} suggests that you and he take a rowboat out.
+*label ROW
+
+
+Select an action:
+
+*choice
+  #GO OUT ON THE ROWBOAT
+    *goto B1
+  #PASS ON THE OFFER
+    *goto B2
+*label B1
+*set SC%+10
+*set HP%+10
+As you are floating around on the lake, ${loverName} produces a bottle of expensive champagne. He offers you a drink. Will you accept?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+The champagne makes you both a little giddy. ${loverName} puts his arm around your waist and gives you a soft kiss. You can:
+
+
+
+Select an action:
+
+*choice
+  #TELL HIM TO KEEP ROWING AND 'DON'T ROCK THE BOAT'
+    *goto D1
+  #ENCOURAGE A SEA ADVENTURE
+    *goto D2
+*label D1
+*set GN%-5
+Looks like he was getting a bit frisky there. Besides, if he got too tired, you could be floating around out there for weeks.
+*finish
+*label D2
+*set HP%+20
+You're feeling very spry today. The rowboat isn't very comfortable, but the two of you have a wonderful time anyway. The day passes with much laughter.
+*finish
+*label C2
+You can see this sea captain's intentions a mile away. You suggest that he concentrate on navigating the lake.
+*finish
+*label B2
+*set SC%-10
+${loverName} is beginning to think that you are boring. The day ends early, and you don't hear from him for a while.
+*finish
+*label A2
+*set HP%+20
+You must be feeling very adventurous. When you arrive at the campgrounds, everything is soaking wet. By evening the air becomes drier, and the sky clears. You stroll arm-in-arm on a beautiful moonlit night. When it is time
+to turn in, ${loverName} asks if you would like to share a sleeping bag with him. You can:
+
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE OFFER
+    *goto E1
+  #TURN HIM DOWN
+    *goto E2
+*label E1
+The two of you settle in for a cozy night of fireside romance. Unfortunately, because of the excitement of the day, when you turn to gaze lovingly into ${loverName}'s eyes, you find him fast asleep! Good night.
+*finish
+*label E2
+The evening was romantic, but you would like it to end here. Tomorrow is another day.
+*finish
+

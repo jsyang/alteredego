@@ -1,0 +1,73 @@
+Early in the evening, a friend's mother appears mysteriously at the door and asks to speak to your mother. From another room, you hear the woman say that you have been a bad influence on her son, and that your mother should try
+harder to "raise you 'the right way'."
+*page_break
+Her complaints, by the way, are totally unjustified. First, you barely know her son, and second, he is the biggest juvenile delinquent in town, without your help or anyone else's.
+*choice mood action
+  #FURIOUS
+    #GO IN AND GIVE THE WOMAN A PIECE OF YOUR MIND
+      *goto A11
+    #WAIT UNTIL SHE LEAVES THEN HAVE A TALK WITH MOM
+      *goto A12
+    #DO NOTHING
+      *goto A13
+  #GUILTY
+    #GO IN AND GIVE THE WOMAN A PIECE OF YOUR MIND
+      *goto A21
+    #WAIT UNTIL SHE LEAVES THEN HAVE A TALK WITH MOM
+      *goto A22
+    #DO NOTHING
+      *goto A23
+  #CALM
+    *selectable_if (false) #GO IN AND GIVE THE WOMAN A PIECE OF YOUR MIND
+      *finish
+    #WAIT UNTIL SHE LEAVES THEN HAVE A TALK WITH MOM
+      *goto A32
+    #DO NOTHING
+      *goto A33
+*label A11
+*set CA%-20
+*set GN%-30
+I can understand why you are angry, but going in and giving the woman a piece of your mind proves her point to her. Here you are storming in from another room, acting rude in front of company! You tried to convince the wrong
+person of your innocence. For better success, you should have concentrated on your mom.
+*finish
+*label A12
+*set IN%+20
+*set CN%+20
+You were smart to stop yourself from running in there like a madman and giving that stupid woman a piece of your mind. Even when you are a bit trying to have around the house your mom still thinks you're a great kid. She lets the
+stupid neighbor's complaints go in one ear and out the other.
+*finish
+*label A13
+*set EX%-10
+*set CA%-10
+Holding your anger in only makes you fantasize about what your mother's reaction to the neighbor was. Did she agree? Did she get angry? Did she stick up for you? This only intensifies your anger and makes you liable to cause trouble
+in some other area of your life.
+*finish
+*label A21
+*set CN%-10
+Why should you feel guilty? You didn't even do anything. Your protests come out in the form of weak defensiveness. The woman replies with: "Listen, young man, a guilty conscience needs no accusing. Stay away from my son." You should
+have let her say her piece, leave, and then discuss it with your mother.
+*finish
+*label A22
+*set HP%-10
+*set CN%-10
+I'm sure that part of your guilt stems from the fact that you feel bad that your mother has to hear all this grief from that stupid lady. Maybe you are also afraid that your mother will believe her.
+*page_break
+When you have a talk with her, she tells you that, in fact, she has heard all the stories about that woman's son. Your mother feels that letting her blow off some steam in your mom's direction will relieve some of the suffering
+she has to bear.
+*finish
+*label A23
+*set CN%-20
+You have put yourself in a difficult position. What will your mother think about what this woman is saying? Will she believe her? Doesn't she know what a trouble-maker that woman's son is?  On the one hand, you wish you could
+stick up for yourself.
+*page_break
+On the other hand, you feel that if you DO stick up for yourself, it may look like you are overreacting to this woman's accusations. You could have resolved all of these worries by having a simple talk about it with your mother.
+*finish
+*label A32
+*set CN%+40
+You are obviously confident that this woman is not being totally accurate. You guess that your mother won't believe a word of what she is saying. Naturally, she doesn't. You chose the most mature set of responses.
+*finish
+*label A33
+*set EX%-10
+This response doesn't make too much sense. No one can be THAT unconcerned at the prospect of another person criticizing his character. You must be denying your true feelings.
+*finish
+

@@ -1,0 +1,73 @@
+A close friend of yours has taken on a peculiar habit lately. After every meal, she runs into the bathroom and throws up so that she doesn't have to worry about her weight. She doesn't seem to think there is anything weird about it,
+and she's losing weight rapidly.
+*choice mood action
+  #CONCERNED
+    #TRY TO HELP STRAIGHTEN HER OUT
+      *goto A11
+    #DO NOTHING -- SHE IS A GOOD FRIEND AND THAT'S HER BUSINESS
+      *goto A12
+  #ANGRY
+    #TRY TO HELP STRAIGHTEN HER OUT
+      *goto A21
+    #DO NOTHING -- SHE IS A GOOD FRIEND AND THAT'S HER BUSINESS
+      *goto A22
+  #UNCONCERNED
+    *selectable_if (false) #TRY TO HELP STRAIGHTEN HER OUT
+      *finish
+    #DO NOTHING -- SHE IS A GOOD FRIEND AND THAT'S HER BUSINESS
+      *goto A32
+*label A11
+*set GN%+30
+She denies that she has any problem.
+
+
+Select an action:
+
+*choice
+  #INSIST THAT SHE DOES
+    *goto B1
+  #LEAVE HER ALONE
+    *goto B2
+*label C2
+*label B2
+You convince yourself that you tried your best, but she wouldn't accept your help.
+*finish
+*label B1
+She gets angry at you and calls you names.
+
+
+Select an action:
+
+*choice
+  #KEEP INSISTING
+    *goto C1
+  #LEAVE HER ALONE
+    *goto C2
+*label C1
+*set GN%+10
+*set SC%+20
+Your concern for your friend is admirable. It shows that you are sensitive to the amount of danger that she is in. Unfortunately, there is no way to help people like this. If she ever chooses to get straightened out, it will have to come
+from within.
+*finish
+*label A12
+*set SC%-20
+It often happens that when someone we care about is having serious problems, we ignore them, hoping that they will either vanish, or imagine that we never saw them in the first place. This is probably what your friend's parents have
+done to her all her life. That's probably one of the reasons she is in such sad shape right now.
+*finish
+*label A21
+*set GN%-20
+Perhaps you are angry because you are afraid that this person will embarrass you by having a problem. Sometimes when our friends have difficulties, we admonish ourselves for not being powerful enough to prevent or stop the problem.
+*page_break
+Your anger only generates depression in your friend. As a result, everything you do for her fails, giving her more reasons to alter her body in a way that will make her seem more acceptable.
+*finish
+*label A22
+*set GN%-10
+*set CA%-10
+Perhaps you are upset because you think her behavior will be a negative reflection on you. Maybe you think that you should be or could be powerful enough to prevent her from further hurting herself. Both of your choices do
+her no good at all. They only cause you to sit there shaking your head, saying, "How can she do this to herself?"
+*finish
+*label A32
+*set TH%-30
+I guess this person really wasn't much of a friend. Either that, or you are so self-absorbed that you can't be bothered caring about anyone else.
+*finish
+

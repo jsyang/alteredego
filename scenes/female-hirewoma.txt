@@ -1,0 +1,278 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry, you have to be employed in order to play through this episode. Please try again later.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You have achieved the kind of status in your job that allows you the luxury of hiring a personal secretary. There are several candidates available for interviewing: Maxine seems well-organized and all business. Cynthia is a casual, laid
+back type.
+*page_break
+At first Cynthia seems inattentive, but as the interview goes on, you realize that she pays attention very carefully, and when she speaks, always says something meaningful. Steven is a handsome, outgoing type, with blond hair and large
+green eyes.
+*page_break
+He seems to be organized, energetic and eager to please. (The fact that he has a charming smile and bulging biceps is noticeable, but hardly worth dwelling on.)
+*choice mood action
+  #SURE
+    #CHOOSE MAXINE
+      *goto A11
+    #CHOOSE CYNTHIA
+      *goto A12
+    #CHOOSE STEVEN
+      *goto A13
+  #UNSURE
+    #CHOOSE MAXINE
+      *goto A21
+    #CHOOSE CYNTHIA
+      *goto A22
+    #CHOOSE STEVEN
+      *goto A23
+*label A11
+*set VC%+60
+Maxine becomes a valuable aid, full of fresh new ideas and tremendous energy. She invests a lot of time on your behalf and makes you look good in front of others. Because of your confidence in hiring her, your Vocational sphere takes a
+giant leap. Good decision.
+*finish
+*label A21
+Were you leaning a bit toward choosing Steven, perhaps?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+That was very honest of you. In the long run, Maxine does a superb job. It might have been difficult to concentrate around the office if you had hired Steven.
+*page_break
+*if TH>60
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+Your impulse control is generally good, judging by your behavior so far. I'm sure this is one of the reasons.
+*finish
+*label B2
+*if TR<40
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Judging by your past history of untrustworthiness, I must say I find this difficult to believe! In the long run, Maxine serves you very well, putting in a lot of time and energy on your behalf.
+*finish
+*label D.F
+Whatever you say. In the long run, Maxine serves you very well, putting in a lot of time and energy on your behalf. In time you may feel more satisfied about your choice.
+*finish
+*label A22
+Were you leaning a bit toward choosing Steven, perhaps?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E1
+That was very honest of you. In the long run, Cynthia serves you very well. You must admit, Steven might have made it a bit more difficult to concentrate.
+*page_break
+*if TH>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Your impulse control is generally good, judging by your behavior so far. I'm sure this is one of the reasons.
+*finish
+*label C.F
+*label F.F
+*set TH%+40
+Your impulse control to date has been kind of unreliable. Perhaps you could have resisted the temptation, perhaps you couldn't. In any event, the judgement that you made here suggests that at least you are making a conscious effort to
+monitor your behavior. You should be proud of that.
+*finish
+*label E2
+*label A12
+*set VC%+10
+Cynthia is a good choice, but only for a short time. Eventually, you find her style a bit unnerving. "What is going on in that young woman's head?" you wonder. Unfortunately, you never get a chance to find out. One day Cynthia calls and
+mentions she is taking a trip to the other side of the country. She never returns.
+*finish
+*label A13
+Was your decision based on Steven's charming smile and rugged good looks?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G2
+Are you claiming that his physical appearance has NOTHING to do with choosing him for the job?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H1
+Bah! I can't believe that. The other people seemed at least equally qualified.
+*finish
+*label H2
+I guess, then, that if you are willing to admit that his appearance was a factor in the decision, you may have to concede that in all probability you didn't choose the BEST possible person for the job.
+*finish
+*label G1
+That was very honest of you.
+*label S1
+He seemed to be very eager to satisfy you during the interview. Could it be that you had more than work in mind for this person? In a short period of time, you discover him to be warm and friendly, with a fantastic sense of humor and
+seemingly endless energy. Sometimes you can't help wondering what would happen if the two of you ever became romantic.
+
+
+Select an action:
+
+*choice
+  #MAKE AN ADVANCE
+    *goto I1
+  #WAIT FOR AN OPPORTUNITY FOR IT TO COME UP NATURALLY
+    *goto I2
+  #DO NOT MAKE THE ADVANCE AT ALL
+    *goto I3
+*label I1
+*set TR%-10
+*set VC%-10
+Steven may be friendly, but he's not THAT friendly. It's not long before your working relationship deteriorates, and you are looking for another secretary. Motto: It is often unwise to mix personal and business relationships.
+*finish
+*label I2
+One night, both of you are working late to get a project finished. You have loosened your clothes to be more comfortable, and Steven has rolled up his sleeves, and opened up the top three buttons of his shirt for the same reason. The
+nature of the work and the fatigue have made you both giddy. When the job is finally finished, Steven looks at you and sighs.
+
+
+Select an action:
+
+*choice
+  #GIVE HIM A QUICK "FRIENDLY" HUG OF APPROVAL
+    *goto J1
+  #TELL HIM HE'S DONE A GOOD JOB
+    *goto J2
+*label J2
+*set TH%+40
+It's a very good idea not to mix your business and personal lives, but you probably know this already. The temptation, however, is great. If it weren't, you would never have gotten into this situation to begin with. As long as you are
+attracted to Steven, you will have to keep careful tabs on your impulses.
+*finish
+*label J1
+His body is warm and strong. For a moment his face is very close to yours. You feel his body pressing up against yours.
+
+
+Select an action:
+
+*choice
+  #KISS HIM
+    *goto K1
+  #BACK OFF
+    *goto K2
+*label K2
+Steven excuses himself and heads home for the evening.
+*finish
+*label K1
+He gives you a long delicious kiss that nearly takes your breath away.
+
+
+Select an action:
+
+*choice
+  #CONTINUE THIS EPISODE TO ITS UNAVOIDABLE CONCLUSION
+    *goto L1
+  #BACK OUT
+    *goto L2
+*label L2
+*set VC%-20
+Things could get very complicated here. In truth, things are ALREADY complicated. This "almost" affair carries with it some of the same negative consequences as a "real" affair. Steven begins to resent the double messages you seem to be
+giving him and eventually leaves his job.
+*finish
+*label L1
+The two of you make love in the office, and now you are faced with some difficult
+*if (SR<1) and (MS<1)
+  *goto M.T
+*else
+  *goto M.F
+*label M.F
+questions, the first of which are those that have to do with your present commitment.
+*goto SCA
+*label M.T
+questions.
+*label SCA
+
+
+Select an action:
+
+*choice
+  #STOP THE AFFAIR
+    *goto Q1
+  #CONTINUE THE AFFAIR
+    *goto Q2
+*label Q1
+*set VC%-20
+Steven admits that it would never work out but secretly resents the rejection. His work performance begins to slip, not so much from incompetence, but from resentment. Eventually he decides to find work elsewhere.
+*finish
+*label Q2
+It's not long before everyone is gossiping about you and Steven. It is the main topic of office chatter for months.
+*if (SR<1) and (MS<1)
+  *goto N.T
+*else
+  *goto N.F
+*label N.F
+
+Eventually it gets back to the love of your life, who becomes insane with rage. For a while you think he might leave you, but he can't help staying around. He's crazy about you!
+*label N.T
+*finish
+*label I3
+*set TH%+50
+You should be proud of yourself.
+*label S2
+Even though Steven is great-looking, you learn to appreciate him for his work skills and for his personality. For now, it is probably best not to mix your business and social lives.
+*finish
+*label A23
+Are you unsure because you think you might not be able to resist the temptation?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto R1
+  #NO
+    *goto R2
+*label R1
+Well, do you think Steven would give in to the temptations of an office romance?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto S1
+  #NO
+    *goto S2
+*label R2
+*set TH%+20
+*set VC%+20
+O.K., then you will just have to wait and see how it turns out. It's hard to say for sure whether he was the best business choice. On the positive side, the fact that you were willing to hire a man (provided you didn't do it with lustful
+intent) was a sign of flexibility.
+*finish
+

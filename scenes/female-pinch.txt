@@ -1,0 +1,67 @@
+While you are sitting at home, preparing a list of what needs to be done this week, your doorbell rings. It is your young neighbor, Julie Wharton.  She came over to ask for some cooking advice, but you can see that there is something
+troubling her.
+*choice mood action
+  #SYMPATHETIC
+    #ASK HER IF THERE IS ANYTHING WRONG
+      *goto A11
+    #ASK HER IF SHE WANTS A CUP OF COFFEE OR TEA
+      *goto A12
+    #GIVE HER THE COOKING ADVICE
+      *goto A13
+  #PREOCCUPIED/BUSY
+    *selectable_if (false) #ASK HER IF THERE IS ANYTHING WRONG
+      *finish
+    *selectable_if (false) #ASK HER IF SHE WANTS A CUP OF COFFEE OR TEA
+      *finish
+    #GIVE HER THE COOKING ADVICE
+      *goto A23
+*label A11
+*set GN%+10
+Julie looks up at you, and her eyes fill with tears. Her husband Bob just confessed that he once had an affair. He felt terribly guilty about it and wanted to tell her, so that she wouldn't find out in a way that would hurt her
+more. She asks for your advice about what to do.
+
+
+Select an action:
+
+*choice
+  #TELL HER TO KICK HIM OUT
+    *goto B1
+  #TELL HER SHE HAS TO DO WHAT IS BEST FOR HER
+    *goto B2
+  #TELL HER TO GIVE HIM ANOTHER CHANCE
+    *goto B3
+  #TELL HER TO GO OUT AND HAVE A FLING HERSELF
+    *goto B4
+*label B1
+*set TH%-10
+"All men are rats," you say. "You can't trust 'em." Julie has a hard time taking you seriously. "After all," she explains, "he did show that he was sorry, and if he didn't say anything at all, he might have gotten away with
+it." Julie thanks you for your support and walks away feeling better.
+*finish
+*label B2
+*set SC%+20
+*set TH%+10
+It's hard to help someone make a decision as important as this. Giving her a direct piece of advice might not work very well. You offer some words of sympathy and a few tales from your own experience. She sees you as kind
+and wise. Julie is still upset when she leaves but feels much better than before.
+*finish
+*label B3
+You offer this piece of advice, knowing through experience that you can live through almost anything, even this. Julie doesn't understand why she should forgive her husband, because she still feels hurt and betrayed. Once you
+suggest that she should forgive him, she begins to realize that he didn't want her to be hurt and that he was honest. She begins to feel better.
+*finish
+*label B4
+*set TH%-20
+Julie begins to giggle at the thought, because that was the first thing SHE thought of. The two of you have a heart-to-heart talk. She respects your wisdom and kindness. You mention that you'll "go out looking" with her any time.
+*finish
+*label A12
+*set SC%+20
+She accepts and sits down at he table. Suddenly, her bottom lip begins to quiver.
+*goto A11
+*label A13
+*set GN%+5
+*set SC%+5
+You know that there is something wrong, and you feel sorry for her, but you aren't sure if you should come right out and ask her if anything is wrong. Before you can, she heads back home, looking sad.
+*finish
+*label A23
+*set GN%-10
+You are much too busy to bother with anyone's troubles. Besides, you have enough of your own!
+*finish
+

@@ -1,0 +1,24 @@
+*comment @SIE
+*goto_random_scene allow_no_selection
+  *if ((AG > 13) and (AG < 18)) male-le-1-1
+  male-le-1-2
+  male-le-1-3
+  *if ((AG > 15) and (AG < 17)) male-le-1-4
+  male-le-1-5
+  male-le-1-6
+  *if ((AG > 18) and (AG < 19)) male-le-1-7
+  male-le-1-8
+  *if ((AG > 13) and (AG < 18)) male-le-1-9
+  male-le-1-10
+  *if ((AG > 14) and (AG < 19)) male-le-1-11
+  male-le-1-12
+  *if ((AG > 13) and (AG < 18)) male-le-1-13
+  *if ((AG > 13) and (AG < 18)) male-le-1-14
+  male-le-1-15
+  male-le-1-16
+  *if ((AG > 13) and (AG < 16)) male-le-1-17
+  *if ((AG > 14) and (AG < 18)) male-le-1-18
+There are none of these experiences you can do right now.
+*set instantaneous true
+*finish
+

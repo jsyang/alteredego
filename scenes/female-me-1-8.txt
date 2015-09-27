@@ -1,0 +1,61 @@
+Your husband has become a lottery fanatic. He can't walk by the corner drugstore without spending a dollar on a lottery ticket. What will you do about this?
+
+
+Select an action:
+
+*choice
+  #NOTHING. WHATEVER HE WANTS TO DO WITH HIS MONEY IS HIS BUSINESS
+    *goto A1
+  #GIVE HIM A DOLLAR AND SAY, "BUY AN EXTRA ONE FOR ME!"
+    *goto A2
+  #TELL HIM IT MIGHT BE A GOOD IDEA TO CONSIDER HOW MUCH MONEY HE IS SPENDING ON LOTTERY TICKETS
+    *goto A3
+*label A1
+*set TH%+20
+True. It IS a hobby that he seems obsessed with. When you speak with him about it, he tells you that he is waiting for his ship to come in. He wants you to know that if he ever "hits it," you'll get half.
+*finish
+*label A2
+*temp randomB
+*rand randomB 1 5
+*if randomB=1
+  *goto B1
+*elseif randomB=2
+  *goto B2
+*elseif randomB=3
+  *goto B3
+*elseif randomB=4
+  *goto B4
+*else
+  *goto B5
+*label B1
+*label B2
+*label B3
+*label B4
+He buys you a ticket, and you lose together!
+*finish
+*label B5
+He buys you a ticket and you win $2000! Will you split it with him?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set MN+1000
+*set GN%+20
+*set TH%+30
+How generous!
+*finish
+*label C2
+*set MN+2000
+*set MP+1
+Cheapskate!
+*finish
+*label A3
+You can't reason with a gambler. He says he HAS to win one of these times, and when he does, you'll both be on easy street. (Sure!)
+*finish
+

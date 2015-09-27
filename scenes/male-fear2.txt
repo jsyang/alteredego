@@ -1,0 +1,55 @@
+You've just turned off the television set and your room is pitch dark. Through the shadows you notice that your closet door is open just a crack. You can almost see the image of a black-hooded ax murderer squinting at you through
+the door. He is waiting...waiting for you to close your eyes and fall asleep.
+*page_break
+In the quiet of the night you can hear his hoarse breath making deep gurgling sounds. You look away from the door, then look back. It's open a bit farther than it was the last time.
+*page_break
+If you can only make it to the closet and shut the door tight, you know he won't be able to get out and murder you in your sleep. The morning light will destroy him so you won't have to worry about seeing him when you wake up.
+*choice mood action
+  #AFRAID
+    #PULL THE COVERS OVER YOUR HEAD
+      *goto A11
+    #GET HELP
+      *goto A12
+    #SNEAK OUT OF THE BED
+      *goto A13
+    *selectable_if (false) #GO TO SLEEP
+      *finish
+  #CALM
+    *selectable_if (false) #PULL THE COVERS OVER YOUR HEAD
+      *finish
+    *selectable_if (false) #GET HELP
+      *finish
+    *selectable_if (false) #SNEAK OUT OF THE BED
+      *finish
+    #GO TO SLEEP
+      *goto A24
+*label A11
+*set CA%-30
+You've convinced yourself that you are a goner. Your heart is pounding through your chest. THUMP!THUMP!THUMP! All of a sudden, the covers rise mysteriously. You SCREAM......"AAaaAGH!" It's Trusty Goodo, your dog. He runs out of
+the room howling. He wants no part of you for the rest of the night!
+*finish
+*label A12
+*set CA%-10
+*if AG<9
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Mom offers you a nice safe spot in bed. You gladly accept.
+*finish
+*label B.F
+Your story is met with skepticism. In his sleep Dad reminds you about the hazards of eating pepperoni and anchovy pizza with heavy mayo so close to bedtime. You make sure to mention the locations of the other bedrooms to
+the closet as you climb back to bed.
+*finish
+*label A13
+*set CN%+40
+As you inch toward the closet, you imagine the murderer laughing at how stupid you are for falling right into his deadly trap. You'll show him. You lunge toward the closet door, tripping over the leg of the bed and pulling the bed
+linens down on top of you. HA! You've done it! The closet is closed.
+*page_break
+You can finally settle down into a relaxing night's sleep. Now, if only those aliens would stop hovering outside your window, waiting to suck you into their spacecraft so they can examine your brain...
+*finish
+*label A24
+*set IN%-5
+You don't have much of an imagination, do you? You're only young once. You could be locked up for imagining these things later, so live a little!
+*finish
+

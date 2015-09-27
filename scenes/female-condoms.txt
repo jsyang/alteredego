@@ -1,0 +1,42 @@
+You are at the drugstore purchasing some "feminine" articles. You are about to bring them up to the cash register, when you notice that Mike Bardy is the cashier.
+*choice mood action
+  #EMBARRASSED
+    #BRING THEM UP TO THE REGISTER
+      *goto A11
+    #AVOID GOING TO THE REGISTER
+      *goto A12
+  #NORMAL
+    #BRING THEM UP TO THE REGISTER
+      *goto A21
+    *selectable_if (false) #AVOID GOING TO THE REGISTER
+      *finish
+*label A21
+*set CA%+20
+*set CN%+20
+*goto NORMAL
+*label A11
+*set CA%-10
+Your face is blushing a scarlet red.
+*label NORMAL
+Mike sees you and gives you a big hello. While he is packing your stuff, he throws in two packs of gum from behind the register and smiles. He didn't even seem to pay attention to what he was
+ringing up.
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*finish
+*label B2
+*page_break
+The next day in school, Ron Johnston walks by you in the hall and whispers, "Hey, it's that irritable time of month, isn't it?" Sometimes guys can be such morons.
+*finish
+*label A12
+You stare at the shampoo and vitamins for what seem to be hours. Every once in a while, you look up at the register to see if he's still there. The store manager sees you and thinks you are shoplifting.
+*page_break
+"MAY I HELP YOU?"
+*page_break
+He scares you half to death. You mumble something and walk out of the store.
+*finish
+

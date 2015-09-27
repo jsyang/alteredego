@@ -1,0 +1,42 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+Mrs. Cromwell, the Music teacher, has "volunteered" you to sing The Star-Spangled Banner at assembly.
+
+
+Select an action:
+
+*choice
+  #SING IT
+    *goto A1
+  #TRY TO GET OUT OF SINGING IT
+    *goto A2
+*label A1
+*if CN>70
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set CN%+10
+You have the confidence necessary to withstand this experience. As a matter of fact, you don't sound half-bad.
+*finish
+*label B.F
+*set SC%-10
+You KNOW your friends are going to make fun of you for the rest of your life for this. Your confidence isn't enough to carry you through the experience. The audience (including the teachers) are howling before you are finished. You
+are given a hearty round of applause for trying.
+*finish
+*label A2
+*set SC%-10
+*set CN%-10
+No one will let you off the hook. Your sore throat stories don't work either, so forget that.
+*page_break
+*goto A1
+
+
+
+
+

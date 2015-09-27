@@ -1,0 +1,46 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+An all-girls school has asked for one member of your class to be a guest exchange student there for a month. Just think--ONE WHOLE MONTH IN A SCHOOL THAT IS NOTHING BUT WALL-TO-WALL GIRLS!!! Gym class will never be better.
+Students are reviewed for consideration. The principal has your name in front of him.
+*page_break
+*if IN>70
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+You have the right intellectual capabilities....
+*goto NEXT1
+*label A.F
+He decides that you aren't smart enough.
+*finish
+*label NEXT1
+*if SC>70
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Socially, you are sophisticated enough...
+*goto NEXT2
+*label B.F
+Socially, however, you fail to make the grade.
+*finish
+*label NEXT2
+*if TH>70
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set SC%+50
+*set HP%+20
+*set CA%-10
+Finally, your emotional sphere shows you can control your impulses. Congratulations! You're going!
+*finish
+*label C.F
+Unfortunately, your emotional characteristics suggest you are too impulsive, and would probably have trouble controlling your hands, your mouth and who knows what else!
+*finish
+

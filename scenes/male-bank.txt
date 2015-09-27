@@ -1,0 +1,275 @@
+*temp la
+*temp dn
+*set dn 0
+*temp AM
+*temp la
+*temp dn
+*set dn 0
+*temp thingtobuy
+*temp AM
+*if BR>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+I'm sorry, but your credit rating makes it impossible for you to get a loan.  At the end of this life stage, if you can afford to pay off your debt, your credit rating will be restored.
+*finish
+*label Z.F
+*label TOP
+
+
+Select an action:
+
+*choice
+  #GET A PERSONAL LOAN
+    *goto A1
+  #GET A LOAN TO PURCHASE A HOUSE
+    *goto A2
+  #PAY BACK PART OF YOUR LOAN
+    *goto A3
+  #LEAVE THIS ICON
+    *goto A4
+*label A4
+*comment @NTQ
+*set instantaneous true
+*finish
+*label A1
+
+
+Select an action:
+
+*choice
+  #BORROW    $1000
+    *goto B1
+  #BORROW    $2000
+    *goto B2
+  #BORROW    $5000
+    *goto B3
+  #BORROW  $10,000
+    *goto B4
+  #BORROW  $20,000
+    *goto B5
+  #BORROW  $50,000
+    *goto B6
+  #BORROW $100,000
+    *goto B7
+  #BORROW $200,000
+    *goto B8
+*label B1
+*set LA 1000
+*goto CHK
+*label B2
+*set LA 2000
+*goto CHK
+*label B3
+*set LA 5000
+*goto CHK
+*label B4
+*set LA 10000
+*goto CHK
+*label B5
+*set LA 20000
+*goto CHK
+*label B6
+*set LA 50000
+*goto CHK
+*label B7
+*set LA 100000
+*goto CHK
+*label B8
+*set LA 200000
+*label CHK
+*if VC<50
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+I'm sorry. We have evaluated your earning power based on your job stability and we are afraid that you cannot be granted this loan.
+*finish
+*label D.F
+*if TR<40
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+I'm sorry. Your personal references have all mentioned your lack of trustworthiness. Because of this we cannot grant you a loan at the present time.
+*finish
+*label E.F
+*if (LA>50000) and (MN<25000)
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+I'm sorry. You do not have enough Resources saved to merit a loan of this size.
+*page_break
+*goto TOP
+*label F.F
+Congratulations! We are pleased to inform you that you have been approved for your loan.
+
+You have one more chance to back out of this transaction. Do you still want the loan?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G1
+*comment @LTB,P
+*set debt +LA
+*set MN -DN
+*set MN +LA
+*set LA 0
+*set DN 0
+You've got it. It has been nice doing business with you.
+*finish
+*label G2
+Okay. Please feel free to apply again some other time.
+*finish
+*label A2
+There are several types of houses from which to choose:
+
+
+Select an action:
+
+*choice
+  #A HANDYMAN'S SPECIAL ($50,000)
+    *goto H1
+  #A SMALL, TWO BEDROOM CAPE COD ($100,000)
+    *goto H2
+  #A CONDOMINIUM TOWNHOUSE ($160,000)
+    *goto H3
+  #A LARGE 9-ROOM COLONIAL ($300,000)
+    *goto H4
+  #A SPACIOUS CONTEMPORARY HOUSE ($500,000)
+    *goto H5
+  #AN ESTATE WITH STABLES AND SERVANTS' QUARTERS ($2,500,000)
+    *goto H6
+*label H1
+You will need a down payment of $10,000 and legal fees of $1160.
+*set thingtobuy "HOUSE-HANDYMAN'S SPECIAL"
+*set AM 12500
+*set DN 11160
+*set LA 40000
+*goto CHECK
+*label H2
+You will need a down payment of $20,000 and legal fees of $1500.
+*set thingtobuy "HOUSE - TWO BDR CAPE COD"
+*set AM 25000
+*set DN 21500
+*set LA 80000
+*goto CHECK
+*label H3
+You will need a down payment of $32,000 and legal fees of $2000.
+*set thingtobuy "CONDOMINIUM TOWNHOUSE"
+*set AM 40000
+*set DN 34000
+*set LA 128000
+*goto CHECK
+*label H4
+You will need a down payment of $60,000 and legal fees of $3000.
+*set thingtobuy "HOUSE - 9 ROOM COLONIAL"
+*set AM 75000
+*set DN 63000
+*set LA 240000
+*goto CHECK
+*label H5
+You will need a down payment of $100,000 and legal fees of $5000.
+*set thingtobuy "HOUSE - CONTEMPORARY"
+*set AM 125000
+*set DN 105000
+*set LA 400000
+*goto CHECK
+*label H6
+You will need a down payment of $500,000 and legal fees of $25,000.
+*set thingtobuy "ESTATE-STABLE, SRV QTRS"
+*set AM 625000
+*set DN 525000
+*set LA 2000000
+*label CHECK
+*page_break
+*if MN>AM
+  *goto J.T
+*else
+  *goto J.F
+*label J.F
+I'm sorry, you do not have enough money to put a down payment on this house. Please try again after you have gained more resources.
+*finish
+*label J.T
+*comment @LTB
+*set debt +LA
+*set MN -DN
+*set LA 0
+*set DN 0
+*if acquisitions != ""
+  *set acquisitions &","
+*set acquisitions &thingtobuy
+
+CONGRATULATIONS ON THE PURCHASE OF YOUR NEW HOME!
+*finish
+*label A3
+
+
+Select an action:
+
+*choice
+  #PAY BACK    $1000
+    *goto K1
+  #PAY BACK    $2000
+    *goto K2
+  #PAY BACK    $5000
+    *goto K3
+  #PAY BACK  $10,000
+    *goto K4
+  #PAY BACK  $50,000
+    *goto K5
+  #PAY BACK $100,000
+    *goto K6
+  #PAY BACK $500,000
+    *goto K7
+  #PAY BACK $1,000,000
+    *goto K8
+*label K1
+*set AM 1000
+*goto CANPAY
+*label K2
+*set AM 2000
+*goto CANPAY
+*label K3
+*set AM 5000
+*goto CANPAY
+*label K4
+*set AM 10000
+*goto CANPAY
+*label K5
+*set AM 50000
+*goto CANPAY
+*label K6
+*set AM 100000
+*goto CANPAY
+*label K7
+*set AM 500000
+*goto CANPAY
+*label K8
+*set AM 1000000
+*label CANPAY
+*if MN>AM
+  *goto L.T
+*else
+  *goto L.F
+*label L.F
+I'm sorry, but you can not afford to repay that much.
+*page_break
+*goto TOP
+*label L.T
+*comment @PBL
+*if AM > debt
+  *set AM debt
+*set debt -AM
+*set MN -AM
+*set AM 0
+Thank you very much!
+*finish
+

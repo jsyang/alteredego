@@ -1,0 +1,61 @@
+On the back of an old matchbook cover you see an offer which promises you the possibility of a free art scholarship if you can draw "Winnie," a cartoon figure on the inside flap.
+*choice mood action
+  #INTERESTED
+    #DRAW WINNIE
+      *goto A11
+    *selectable_if (false) #THROW THE MATCHES OUT
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #DRAW WINNIE
+      *finish
+    #THROW THE MATCHES OUT
+      *goto A22
+*label A11
+*if AG<14
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set CN%+20
+At your age you are still naive enough to believe that things like this are possible. You draw a free-hand rendition of Winnie and receive an impressive-looking packet of materials from the International Institute of Constructive
+Creative Painting and Art.
+*page_break
+It says that you have all of the qualifications of a fine artist and can enroll in their in-home study course immediately. Tuition to the Institute is, of course, completely waived because of your scholarship.
+*page_break
+The cost of tools and materials is $999.99 (plus state sales tax where applicable). Your parents are willing to pass up on this marvelous opportunity, but you can't quite understand why.
+*finish
+*label B.F
+Your picture is returned with an offer to enroll in a home study course, sponsored by the International Institute of Constructive Creative Painting and Art. Tuition is, of course, waived because you qualify for a FULL SCHOLARSHIP. There
+is a $999.99 (plus state sales tax where applicable) fee for "tools and materials." Are you interested in purchasing these materials?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*if MN>1000
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+*set MN-1000
+*if MN < 5
+  *set MN 5
+*set IN%-30
+Congratulations! You just paid almost $1000 for a large pack of crayons and some blank paper. You have been fooled by a very thinly-disguised sham. Intellectual sphere drops significantly (as well as money).
+*finish
+*label Z.F
+You don't have enough money to do this!
+*finish
+*label C2
+You really had me worried for a minute. Your "tools and materials" would have consisted of nothing more than a fancy box of crayons and some drawing pads.
+*finish
+*label A22
+*set IN%+30
+You're not going to be fooled by this old sham. Your drawing of "Winnie" usually entitles you to nothing more than a first-class ride on the bus to Sucker City.
+*finish
+

@@ -1,0 +1,145 @@
+*if EM<1
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+I'm sorry. You can only play through this vignette if you are employed in a steady job. You can go to the WORK ICON, land a job, and return.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.F
+A company that you are involved with is making drastic cutbacks. In the last few months three departments have been reduced to the bare bones. Your services may be next.
+*choice mood action
+  #ANXIOUS
+    #FIND A NEW PLACE TO WORK
+      *goto A11
+    #STAY WHERE YOU ARE
+      *goto A12
+  #CONFIDENT
+    #FIND A NEW PLACE TO WORK
+      *goto A21
+    #STAY WHERE YOU ARE
+      *goto A22
+*label A11
+*if CN>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set HP%+30
+*set CN%+20
+Since your Confidence is generally high, you must have suspected that your relationship with this company was in danger. You switch work settings and become more successful.
+*finish
+*label B.F
+*if CN>39
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set CA%-20
+*set CN%-20
+Your Confidence has not been extremely strong. Perhaps your move was premature. It takes you awhile to find another position like the one you left, but eventually you are more secure. You do not suffer financially, but
+emotionally you become more anxious and even less confident.
+*finish
+*label C.F
+*set CA%-20
+*set MN-2000
+*if MN < 5
+  *set MN 5
+*set CN%-100
+According to your personality status, your confidence is generally low. This makes it difficult for you to find another job. Your resources decrease by $2000. Emotionally, you suffer setbacks in the Confidence and Calmness areas.
+*finish
+*label A21
+Your confidence shows through, and the upper level executives at work begin to think that you may be a valuable asset during this period of transition. They offer you a promotion. You will receive a $2000 bonus.
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE OFFER
+    *goto D1
+  #REJECT IT
+    *goto D2
+*label D1
+*set MN+2000
+*set CN%+10
+*set HP%+20
+A deal is struck. CONGRATULATIONS!
+
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+*label A12
+*set CA%-10
+Unfortunately, after a few months, the corporation goes under and you lose your position. It seems like forever until you are back doing what you want.
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+*finish
+*label E2
+*set MN+2000
+The company begins to regain its profitablity and you continue to climb. Check your Resources for the surprise in your next paycheck.
+*finish
+*label D2
+Taking a hard line, eh? The company will offer you a $10000 "incentive" if you will stay on.
+*label H
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE OFFER
+    *goto I1
+  #REJECT IT
+    *goto I2
+*label I1
+*set MN+10000
+*set HP%+20
+*set CN%+20
+*set SC%+20
+A deal is struck. CONGRATULATIONS!
+*temp randomF
+*rand randomF 1 2
+*if randomF=1
+  *goto F1
+*else
+  *goto F2
+*label F1
+Unfortunately, after a few months, the corporation goes under and you lose your job.
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+*finish
+*label F2
+*set MN+2000
+The company begins to regain its profitablity and you continue to climb. Check your Resources for a little suprise this paycheck.
+*finish
+*label I2
+*set CN%+20
+I guess you are determined to be out on your own. Your confidence carries you through to the next job. You land a secure position in a more stable company.
+*finish
+*label A22
+*set CN%+20
+I guess you feel that the company wouldn't let you go. That IS a sign of confidence.
+
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label G1
+In fact, they don't let you go, but unfortunately, the company goes out of business and you are stuck with no job.
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+*finish
+*label G2
+In fact, the company realizes that you are indispensable and offers you a raise to stay on. Do you:
+*goto H
+
+

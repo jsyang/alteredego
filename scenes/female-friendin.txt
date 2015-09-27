@@ -1,0 +1,79 @@
+A close friend calls you up in a very serious tone of voice. She says she needs to speak with you about something right away. Her life is falling apart, and you are the only one who can help her.
+*choice mood action
+  #SYMPATHETIC
+    #TALK TO HER
+      *goto A11
+    #TELL HER IT SOUNDS TOO SERIOUS -- YOU DON'T WANT THAT KIND OF RESPONSIBILITY
+      *goto A12
+  #PUT OFF/ANXIOUS
+    *selectable_if (false) #TALK TO HER
+      *finish
+    #TELL HER IT SOUNDS TOO SERIOUS -- YOU DON'T WANT THAT KIND OF RESPONSIBILITY
+      *goto A22
+*label A11
+*set TH%+30
+You agree to meet. Her problem is that she has just found out that she is pregnant (and unmarried) and is confused about what she should do. She can't speak with her family and her boyfriend has abandoned her. What will you suggest to her?
+
+
+Select an action:
+
+*choice
+  #HAVE AN ABORTION
+    *goto B1
+  #HAVE THE BABY AND KEEP IT
+    *goto B2
+  #HAVE THE BABY AND GIVE IT UP FOR ADOPTION
+    *goto B3
+  #TRY TO HELP HER COME TO A DECISION ON HER OWN
+    *goto B4
+  #TELL HER TO GET HELP FROM SOMEONE ELSE
+    *goto B5
+*label B1
+*set SC%-30
+It seems that you have given her a very direct piece of advice on an extremely personal (and controversial) matter.
+*goto D
+*label B2
+*label B3
+*set SC%-20
+You seem to have given her a direct piece of advice.
+*goto D
+*label B4
+*set EX%+30
+*set SC%+20
+A sensitive choice. You must have realized that giving anyone a direct piece of advice on a matter as serious as this would surely be a mistake. If things didn't turn out well, she might hold YOU responsible. Unfortunately, it is often
+very difficult to help someone in trouble sort out his or her true feelings.
+*goto E
+*label A12
+I guess what you are saying is that you are a bit frightened by her plea for help, but you are not sure if you are the one who could help her. At this point would you:
+
+
+Select an action:
+
+*choice
+  #APOLOGIZE AND HANG UP
+    *goto C1
+  #ENCOURAGE HER TO SEEK HELP ELSEWHERE
+    *goto C2
+*label C1
+That must have been a difficult thing to do. You may even feel guilty about it. Maybe you were overwhelmed by the panic in her voice.
+*finish
+*label B5
+*label C2
+*set TH%+20
+A thoughtful choice. Helping someone through a crisis alone can become a tremendous responsibility.
+*goto E
+*label A22
+*set TH%-20
+You must be feeling overwhelmed by the panic in your friend's voice. Still, you have abandoned someone when she was in need. The least you might have done was listen to her problem and try to get help for her.
+*finish
+*label D
+*page_break
+Suppose she follows it and then becomes dissatisfied with her decision later? Whom do you think she will hold responsible? You, of course. People who are prone to giving advice like this may need to control others as a way of making
+themselves feel more powerful.
+*finish
+*label E
+*page_break
+The person comes to rely on your direction. She leans on you so that you begin to feel responsible for her, even though you do not actively try to give her advice. While I don't want to say that a person can resolve a crisis ONLY by
+seeking outside help, it is often the best way.
+*finish
+

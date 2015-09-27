@@ -1,0 +1,19 @@
+${loverName} admits that every so often, when the two of you are being romantic, she makes believe that you are a famous movie star. How do you feel about this?
+
+
+Select an action:
+
+*choice
+  #IT'S NOT NORMAL
+    *goto E1
+  #IT'S O.K. AS LONG AS SHE DOESN'T GET CARRIED AWAY WITH IT
+    *goto E2
+*label E1
+Now, now, don't be so quick to judge someone else's behavior (let ME do that!). Actually, it's quite common. A little fantasy often adds variety to the experience. I'm sure you would prefer this to her going out and having the
+actual experience with the movie star!
+*finish
+*label E2
+Actually, this is quite a common way for people (both men and women) to add variety to their relationships without actively seeking someone new. I'm glad you are open enough to accept it. Now what if I told you that the name of
+the famous movie star is Flipper? (Just kidding, just kidding.)
+*finish
+

@@ -1,0 +1,72 @@
+*if (ES<1) and (LT<1)
+  *goto Q.T
+*else
+  *goto Q.F
+*label Q.F
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Q.T
+You have recently found out that ${loverName} is married. Do you still want to continue this relationship with her?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto Z1
+  #NO
+    *goto Z2
+*label Z2
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+You should go to the relationship icon and meet someone else.
+*finish
+*label Z1
+You and ${loverName} make plans to sneak away for a night of adventure and romance. ${loverName}'s alcoholic husband is out of town on business. Where would you like to take her?
+
+
+Select an action:
+
+*choice
+  #TO THE MOVIES
+    *goto A1
+  #OUT FOR DINNER
+    *goto A2
+  #FOR A COZY EVENING OF SENSUAL DELIGHTS (WINK! WINK!)
+    *goto A3
+*label A1
+*label A2
+*label A3
+As you arrive at ${loverName}'s home, she comes to the door wearing a sensuous nightgown, tied loosely at the waist. Her bare, pink skin blushes through the thin material, and her hair is slightly mussed. It looks like she has her
+own plans for you.
+
+
+Select an action:
+
+*choice
+  #TAKE HER IN YOUR ARMS AND DRINK IN HER PLEASURES
+    *goto B1
+  #WAIT FOR HER TO MAKE THE NEXT MOVE
+    *goto B2
+*label B1
+*set PH%-30
+Her body seems unusually stiff and resistant. Could she be playing hard to get? A voice in the background calls out, "Hey! Who's out there, anyway? Try to get rid of them and get back here." It's ${loverName}'s husband.
+*page_break
+You turn to her for an explanation. She tells you quickly that his trip was cancelled at the last minute. She tried to phone you, but you had already left. "What's all the racket out there?" a gruff voice shouts out. "HEY...Who is
+this guy?" ${loverName} breaks down and tells him the whole story. You guessed it--he's the jealous type.
+*page_break
+Unfortunately, you are the breakable type. The next day ${loverName} calls to apologize and says that maybe it would be better if the two of you don't see each other any more. You are too old to play these kinds of games. In case you are
+wondering, you are the fourth casualty this month.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+*label B2
+${loverName} puts her fingers to her lips. Her husband's trip was cancelled. She tried to call and tell you not to come over, but it was too late--you had already left. She begins to cry, softly. She feels guilty and wrong for doing what
+she has done, and explains that it might be best for the two of you not to see each other for a while.
+*finish
+

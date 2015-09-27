@@ -1,0 +1,134 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+You are at The Burger Palace at twelve-thirty in the afternoon on a Saturday. You and your friends are bragging about various disgusting things you have done with food.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*set SC%-5
+*finish
+*label A2
+Larry dares you to stuff a Double Gigantoburger (with cheese, extra secret sauce and pickle dressing) into your mouth and eat it all in one bite. (CONTINUE means accept the challenge)
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*set SC%-5
+*finish
+*label B2
+The burger begins to slide into your cavernous mouth, moistening your lips with grease.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set SC%-10
+*finish
+*label C2
+You hit a slight snag, which causes a minor back-up. A large drop of secret sauce begins to roll down your chin and neck.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto D1
+  #CONTINUE
+    *goto D2
+*label D1
+*set SC%-15
+*finish
+*label D2
+Your friends begin to cheer you on. GO! GO! GO! GO! GO!
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto E1
+  #CONTINUE
+    *goto E2
+*label E1
+*set SC%-20
+*finish
+*label E2
+You begin to gag. You think, perhaps, the burger has you beat.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto F1
+  #CONTINUE
+    *goto F2
+*label F1
+*set SC%-20
+*finish
+*label F2
+Your friends beg you to go on.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto G1
+  #CONTINUE
+    *goto G2
+*label G1
+*set SC%-25
+*finish
+*label G2
+Your eyes are beginning to bulge.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto H1
+  #CONTINUE
+    *goto H2
+*label H1
+*set SC%-25
+*finish
+*label H2
+*temp randomI
+*rand randomI 1 2
+*if randomI=1
+  *goto I1
+*else
+  *goto I2
+*label I1
+*set SC%+30
+Just when you have it almost all the way in your mouth, a piece of lettuce gets stuck in your throat. The meat comes rushing back to its point of entry. You and your friends are evicted from The Burger Palace.
+*finish
+*label I2
+*set SC%+50
+With a Herculean effort, you close your mouth on the monster and commit it to your cast iron stomach in a single gulp. By this time your friends are in tears from laughing hysterically. You become a legend in your own time.
+*finish
+

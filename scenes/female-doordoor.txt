@@ -1,0 +1,114 @@
+It's time to sell candy bars for the school charity drive again.
+*choice mood action
+  #MOTIVATED
+    #TRY TO DO IT ALONE
+      *goto A11
+    #ENLIST YOUR FATHER'S HELP
+      *goto A12
+  #EMBARRASSED
+    #TRY TO DO IT ALONE
+      *goto A21
+    #ENLIST YOUR FATHER'S HELP
+      *goto A22
+*label A11
+*set CN%+50
+*set SC%+30
+Independence and self-sufficiency are desirable qualities. Your confidence is high. This will affect your Social sphere, which will, in turn, make you a better salesperson. Your first prospective sale is an elderly gentleman with a
+pointed chin.
+
+
+Select an action:
+
+*choice
+  #SAY, "EXCUSE ME, SIR, I'M SELLING CANDY BARS FOR CHARITY. THE MONEY WILL BE USED TO MAKE REPAIRS AT THE ORPHANAGE. WOULD YOU PLEASE BUY ONE?"
+    *goto B1
+  #SAY, "EXCUSE ME. WOULD YOU LIKE TO BUY A CANDY BAR FOR CHARITY?"
+    *goto B2
+*label B1
+The man has no patience for your long-winded chattering. He closes the door in your face.
+*finish
+*label B2
+*set IN%+20
+The man can appreciate your direct pitch. He asks you the price of the candy bars.
+
+
+Select an action:
+
+*choice
+  #SAY, "THEY ARE 50 CENTS EACH, 5 FOR 2 DOLLARS."
+    *goto C1
+  #SAY, "IT'S FOR A GOOD CAUSE -- 50 CENTS EACH, 5 FOR 2 DOLLARS."
+    *goto C2
+*label C1
+He replies, "I'll take ten." As he walks back into the house, you hear him say, "I liked that young lady. She had character."
+*finish
+*label C2
+*set CN%-10
+He replies, "I wouldn't have asked how much they were if I didn't think it was for a good cause."
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+You lose the sale.
+*finish
+*label D2
+He buys 3 candy bars.
+*finish
+*label A21
+*set CN%-20
+Going into such an endeavor with these feelings makes you easy to turn down. You spend three hours going door to door and sell four candy bars for a total of 2 dollars.
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+*page_break
+The fourth candy bar was purchased by your mother. Later that night, when you are getting ready for bed, and tired from a hard day's work, you reach under your pillow and find it there for you to eat!
+*finish
+*label E2
+*finish
+*label A12
+*set CN%+20
+*set FM%+40
+What a team! You move from door to door with confidence, selling four whole boxes in less than an hour. It's a powerful bonding experience that strengthens family ties. You go out for an ice-cream soda to celebrate your successful
+partnership.
+*finish
+*label A22
+*set FM%+10
+Dad coaches you from the car as you go from door to door with little success. After an hour, he asks if you would like to see how it's done.
+
+
+Select an action:
+
+*choice
+  #LET HIM
+    *goto F1
+  #TRY TO TALK HIM OUT OF IT
+    *goto F2
+*label F2
+"NONSENSE," he says. "I'll show you how the PROS do it!"
+*page_break
+*label F1
+Dad shows you the "old foot-in-the-door technique" at Mrs. Marcus's house. This technique attracts the attention of both Mrs. Marcus and her 85-pound Doberman Pinscher, Bruiser, who cleanly removes the front of Dad's sneaker.
+
+
+Select an action:
+
+*choice
+  #SAY, "THAT WAS PRETTY GOOD, BUT YOU CAN ONLY DO IT TWICE."
+    *goto G1
+  #SAY, "MAYBE IT'S TIME TO WRAP IT UP FOR TODAY."
+    *goto G2
+*label G1
+Now is not the best time to get wise, but he DID ask for it!
+*finish
+*label G2
+*set FM%+40
+That was very sensitive. On the way home, you stop and share a soda, which strengthens emotional ties and leaves you with a positive feeling.
+*finish
+

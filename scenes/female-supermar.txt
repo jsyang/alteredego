@@ -1,0 +1,142 @@
+While hurrying off to do a chore one day, you look down at the speedometer and see the needle inching past the "70" marker. Before you get the opportunity to ease off the accelerator, you are distracted by a set of flashing blue lights
+and a voice telling you to pull over.
+*choice mood action
+  #CALM
+    #COOPERATIVE
+      *goto A11
+    #RESISTANT/STUBBORN
+      *goto A12
+  #NERVOUS
+    #COOPERATIVE
+      *goto A21
+    #RESISTANT/STUBBORN
+      *goto A22
+  #TEARFUL
+    #COOPERATIVE
+      *goto A31
+    #RESISTANT/STUBBORN
+      *goto A32
+*label A11
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*set CA%+20
+The officer's eyes are hidden behind mirrored sunglasses. "May I see your license and registration, please?"
+
+
+Select an action:
+
+*choice
+  #BEGIN MAKING EXCUSES / APOLOGIZE
+    *goto C1
+  #MAKE NO EXCUSES / ACCEPT THE TICKET
+    *goto C2
+*label C1
+*set CA%-10
+The officer reminds you that you were driving at a very dangerous speed. "You could have easily injured other motorists or yourself," he says. Your excuses do not help. He writes you a summons. Is this likely to make you more careful in
+the future?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*set TH%+40
+Good! You have learned your lesson.
+*finish
+*label D2
+*set TH%-20
+The inability to learn from experience may be a sign of an impulsive character.
+*finish
+*label B2
+*label C2
+*set HP%+30
+The officer takes your license and heads back to his car. After what seems like an eternity, he leans into your window and removes his hat and glasses. "You were driving at a very dangerous speed. I imagine that there are people who
+would miss having you around if you got into a fatal car accident.
+*page_break
+I'm going to give you a warning now, but if I catch you speeding again, I'm going to see to it that you pay the full fine. Have a nice day."
+*finish
+*label A12
+*set GN%-20
+You have decided to take on an attitude that other people are likely to perceive as hostile. The police officer calmly writes you out a speeding ticket.
+*finish
+*label A21
+*set CA%-20
+Your nervousness becomes obvious when you hand the officer your handkerchief and wipe your face off with your driver's license. He feels sorry for you.
+*page_break
+*goto C2
+*label A22
+*set GN%-10
+You sound very defensive about being stopped. After all, you WERE driving 15 miles per hour over the speed limit. The officer doesn't want any excuses. "Tell it to the judge," he says.
+*label GOAWAY
+
+
+Select an action:
+
+*choice
+  #DRIVE AWAY CAREFULLY
+    *goto E1
+  #DRIVE AWAY MAD
+    *goto E2
+*label E1
+*set TH%+20
+You realize that letting yourself get really mad would be a mistake. The stress and the embarrassment of getting caught, along with the anger at the officer giving you a summons, might have made it easy to get into a serious accident.
+*finish
+*label E2
+*set GN%-20
+"That stupid cop," you say to yourself. Driving away, your tires bite the pavement in disgust. As you look in the rear view mirror, you notice HE'S PULLING YOU OVER AGAIN!! You were so angry that you forgot to put on your turn signal
+before you pulled away! Here you go again...
+*finish
+*label A31
+*label A32
+*if MS>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+As you look up at the officer with doe-eyes and a slight pout, you mention, "...M-M-m-y husband is going to kill me!" (You sniff for effect.)
+*page_break
+*temp randomY
+*rand randomY 1 2
+*if randomY=1
+  *goto Y1
+*else
+  *goto Y2
+*label Y1
+*goto C2
+*label Y2
+*set HP%-20
+*set GN%-10
+"Can the waterworks, Miss. You were just driving more than 15 miles per hour over the speed limit." He writes you out a summons.
+*goto GOAWAY
+*label Z.F
+You look up, sniff a few times for effect then lower your head. When you take out your license and registration, a stream of warm salty tears slides down your cheek. "Can the waterworks, Miss. You were driving 15 miles per hour over the
+speed limit."
+
+
+Select an action:
+
+*choice
+  #WAIL
+    *goto X1
+  #CALM DOWN
+    *goto X2
+*label X1
+*set HP%-20
+"WaaAAAAAa!" The policeman is annoyed by your wailing. He tells you to calm down and get yourself together. That stuff only works on "I Love Lucy." He gives you some tissues, and just when you think he's about to let you off the hook,
+out comes his little leather book, and he writes you a summons for speeding.
+*page_break
+*goto GOAWAY
+*label X2
+Your change of tone strikes the policeman off guard.
+*page_break
+*goto C2
+

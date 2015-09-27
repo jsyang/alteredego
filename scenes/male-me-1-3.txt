@@ -1,0 +1,29 @@
+You haven't been married long, and your wife is still unsure of the amount of food one should cook to feed a family your size. For instance, not too long ago she cooked a seven-pound chicken just for the two of you. How should you
+approach her about this?
+
+
+Select an action:
+
+*choice
+  #EAT AS MUCH AS YOU CAN SO YOU DON'T HURT HER FEELINGS
+    *goto A1
+  #TELL HER GENTLY THAT SHE COULD PROBABLY GET AWAY WITH CHICKEN THAT IS A BIT SMALLER
+    *goto A2
+*label A1
+*set PH%-10
+As a result of your lack of assertiveness, you gain 15 pounds. Physical sphere declines.
+*finish
+*label A2
+*if GN>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set GN%-20
+It's unlikely that you would be able to communicate this to her with any sensitivity. Your Gentleness characteristic is very low.
+*finish
+*label B.F
+*set GN%+30
+Your Gentleness characteristic is adequate for you to convey this to her sensitively. She cooks more manageable portions.
+*finish
+

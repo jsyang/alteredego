@@ -1,0 +1,89 @@
+Your wife has come up with a system for taking care of household chores, you will cook three days per week, she will cook four. When you are not cooking, you will wash the dishes and vice versa. How does this sound to you?
+
+
+Select an action:
+
+*choice
+  #O.K.
+    *goto A1
+  #NOT O.K.
+    *goto A2
+*label A1
+*set SC%+20
+*set CA%+10
+*set TH%+30
+Fine. So what's for dinner tonight?
+*finish
+*label A2
+Why isn't this O.K.?
+
+
+Select an action:
+
+*choice
+  #"BECAUSE COOKING IS WOMAN'S WORK"
+    *goto B1
+  #"BECAUSE I DON'T KNOW HOW TO COOK"
+    *goto B2
+  #"BECAUSE I AM TOO TIRED TO COOK WHEN I COME HOME FROM WORK"
+    *goto B3
+*label B1
+*set TH%-20
+My, what a progressive thinker you are! Give us the good old days when men were men and women were women, eh? Too bad your wife doesn't agree with this philosophy. Care to give in and do some cooking?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set TH%+20
+Good. Let's write off your last response to temporary insanity.
+*finish
+*label C2
+*set MP+2
+*if MP>5
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set MS 0
+That was the straw that broke the camel's back. Your wife files for divorce and wins. You are just too difficult to live with. She never wants to see you again.
+*finish
+*label E.F
+*finish
+*label B2
+It's easy to learn. I'm sure a bright young fellow like you could learn to prepare a few simple dishes in no time. For instance, how would you like to learn a quick, easy recipe for Belgian Chicken Cutlets?
+
+
+Select an action:
+
+*choice
+  #"O.K."
+    *goto D1
+  #"NO THANKS"
+    *goto D2
+*label D1
+*set TH%+30
+*set IN%+30
+*set SC%+10
+I admire your motivation. You'll do just fine. Here's the recipe: First, bread and lightly fry four boneless chicken breasts. Second, pour a can of cream-of-chicken soup into a medium saucepan. Add an equal amount (1 can) of milk to the
+soup, and let it come to a boil. Next, add about 1/4 cup white wine and one half pound shredded Swiss cheese to the soup.
+*page_break
+Cook under low heat until the cheese is completely melted. Place the chicken cutlets into shallow baking dishes (au gratin dishes would be best, but you probably don't know what they are). Pour the sauce over the cutlets and top with more
+grated Swiss cheese. Bake at 450 until cheese on top melts and forms a golden brown crust. DEE-LICIOUS!
+*finish
+*label D2
+*set MP+1
+See? It's not that you CAN'T cook, it's just that you're too lazy to learn!
+*finish
+*label B3
+*set MN-500
+*if MN < 5
+  *set MN 5
+O.K.. In that case, you can take your wife out to eat on the nights that you are supposed to cook. I'll take the liberty of deducting some money from your Resource file to account for this.
+*finish
+

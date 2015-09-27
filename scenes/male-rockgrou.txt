@@ -1,0 +1,118 @@
+Your friends ask you if you would like to be in a rock group.
+*choice mood action
+  #EXCITED ABOUT THE IDEA
+    #START PLANNING
+      *goto A11
+    *selectable_if (false) #TELL THEM YOU WOULD LIKE TO PASS ON THE OFFER
+      *finish
+  #NOT THRILLED
+    #START PLANNING
+      *goto A21
+    #TELL THEM YOU WOULD LIKE TO PASS ON THE OFFER
+      *goto A22
+*label A11
+Your first task is to come up with a suitable name for such a group. There are several suggestions. Choose the one you like best:
+
+
+Select an action:
+
+*choice
+  #THE TORMENTED
+    *goto B1
+  #THE CABBAGE HEADS
+    *goto B2
+  #LARRY AND THE MUMBLERS
+    *goto B3
+*label B1
+*label B2
+*label B3
+That sounds like a fitting name for a talent of your caliber. Now you must choose a position in the band:
+
+
+Select an action:
+
+*choice
+  #BASS PLAYER
+    *goto C1
+  #DRUMMER
+    *goto C2
+  #LEAD GUITAR
+    *goto C3
+  #KEYBOARD
+    *goto C4
+*label C1
+*label C2
+*label C3
+*label C4
+Fine, maestro. Do you want to be:
+
+
+Select an action:
+
+*choice
+  #THE BAND LEADER
+    *goto D1
+  #JUST A BAND MEMBER
+    *goto D2
+*label D1
+*if IN>70
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+You certainly have the intelligence needed for this kind of responsibility. Under your leadership the band makes terrific progress. In the coming months:
+*temp randomF
+*rand randomF 1 3
+*if randomF=1
+  *goto F1
+*elseif randomF=2
+  *goto F2
+*else
+  *goto F3
+*label F1
+You win three hundred dollars in a Battle of the Bands contest.
+*set MN+300
+*finish
+*label F2
+*set CN%-10
+Everyone in the neighborhood signs a petition to keep you from practicing in this state. The petition was first drawn up by your mother.
+*finish
+*label F3
+*set SC%+30
+You "interview" every pretty girl in the school, telling them that you need a "star" for your upcoming rock video production plans.
+*finish
+*label E.F
+*set CN%-10
+Your Intellectual characteristic shows that you are not smart enough to be a successful band leader. Without the proper kind of direction, your band is a giant flop!
+*finish
+*label D2
+*set CN%+40
+*set SC%+20
+You take a low profile, but the audience can't resist your star qualities. Those eyes, those long silky locks...Move over Mick Jagger, here comes the new king of rock 'n roll!
+*finish
+*label A21
+You are just doing this to go along with the guys. Soon interest wanes and the band idea is pushed aside.
+*finish
+*label A22
+Please tell me a little bit more about the reason, if you can:
+
+
+Select an action:
+
+*choice
+  #"I'D RATHER BE DOING SOMETHING MORE INTELLECTUALLY STIMULATING"
+    *goto G1
+  #"I DON'T HAVE THE TALENT TO DO THIS SORT OF THING"
+    *goto G2
+  #"NO REASON IN PARTICULAR"
+    *goto G3
+*label G1
+So who says you can't be a genius scientist AND a rock and roll star?
+*finish
+*label G2
+Hogwash! Everyone KNOWS you don't need talent to be in a rock group!
+*finish
+*label G3
+O.K., I guess you don't need a reason for everything.
+*finish
+

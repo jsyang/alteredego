@@ -1,0 +1,163 @@
+Every one of your friends has a new "Turbo Power Mud Jumper" dirt bike (a kind of bicycle). You are being left out of Saturday morning bike trips and your friends call you a baby because you have one of those "regular, sissy bikes."
+*choice mood action
+  #UNCONCERNED ABOUT WHAT FRIENDS THINK
+    #FORGET ABOUT THAT GROUP OF FRIENDS
+      *goto A11
+    *selectable_if (false) #STEAL A DIRT BIKE
+      *finish
+    *selectable_if (false) #TRY TO FIND A WAY TO EARN THE DIRT BIKE
+      *finish
+  #MOTIVATED TO GET THAT BIKE NO MATTER WHAT
+    *selectable_if (false) #FORGET ABOUT THAT GROUP OF FRIENDS
+      *finish
+    #STEAL A DIRT BIKE
+      *goto A22
+    #TRY TO FIND A WAY TO EARN THE DIRT BIKE
+      *goto A23
+*label A22
+*set TR%-50
+Where are you going to try to steal the bike from?
+
+
+Select an action:
+
+*choice
+  #A SHOPPING CENTER
+    *goto B1
+  #SCHOOL
+    *goto B2
+*label B1
+You case the shopping center parking lot and finally see a bike that meets all of the requirements for acceptance into your group. The lock used to chain it up is cheap and can be cut with ordinary pliers. You can:
+
+
+Select an action:
+
+*choice
+  #CUT THE LOCK + STEAL THE BIKE
+    *goto C1
+  #HAVE SECOND THOUGHTS
+    *goto C2
+*label C1
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+*set TH%-30
+*set TR%-40
+This is easier than you thought. You ride away from the shopping center virtually undetected. Your desire to gain acceptance into a peer group has led you into a life of crime. Trustworthiness decreases significantly. Impulsiveness
+increases significantly. You are developing the personality of a juvenile delinquent.
+*finish
+*label D2
+You snip the lock and begin to ride away. You are about to clear the shopping center parking lot when a blue station wagon blocks your exit. It is an off-duty police officer who has seen the whole thing. You are arrested and taken to the
+local police station.
+*if TR<40
+  *goto E.T
+*else
+  *goto E.F
+*label E.F
+You aren't normally that kind of kid.
+*goto CHARGED
+*label E.T
+You have been in this kind of trouble before. You are charged with larceny and released in your parents' custody.
+*label CHARGED
+At your hearing before a judge you are given 25 hours of community service work to perform. Will you show up for this work?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label F1
+*set SC%-10
+*set TH%-40
+Perhaps this will be an isolated incident, then. For now, you will get the benefit of the doubt, but remember: If you act like a criminal, you will be treated like one. Down the road, you just might find yourself in jail, and there will
+be no "Get Out of Jail Free" cards.
+*finish
+*label F2
+*set GN%-20
+*set TR%-30
+*set TH%-40
+It figures. You are playing the part of a real tough guy. Fine. Just remember: If you act like a criminal, you will be treated like one. Two modules down the road, you just might find yourself in jail, and there will be no "Get Out of
+Jail Free" cards.
+*finish
+*label C2
+*set HP%+60
+*set TR%+20
+*set TH%+40
+For a moment there, it looked like you were really going to go through with it. Peer pressure is enough to make you think about doing some very foolish things. Eventually, your parents see how much you want the bike and because you are
+such a "good kid," they buy you one.
+*finish
+*label B2
+*set IN%-20
+*set TR%-30
+*set SC%-40
+You have picked a very dumb place to try to steal a bike from. First of all, there are always too many kids around who might see you. Second of all, any bike you steal from there could probably be easily recognized by the owner. It is
+obvious that you have unconsciously set yourself up for failure.
+*page_break
+You are caught stealing the bike by the school principal. Your parents are notified that if this kind of behavior is ever displayed again you will be expelled and sent to a special school for juvenile delinquents. Intelligence, Social
+Status and Trustworthiness all decrease.
+*finish
+*label A23
+How would you like to try to make the money?
+
+
+Select an action:
+
+*choice
+  #A PAPER ROUTE
+    *goto G1
+  #DOING ODD JOBS
+    *goto G2
+*label G1
+*if TH<60
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+You try very hard, but because of your impulsiveness you don't have the self-control necessary to hold down a job for long enough to reach your goal. The attempt puts you in a better position to accomplish something like this next time
+around.
+*finish
+*label H.F
+*if IN<40
+  *goto I.T
+*else
+  *goto I.F
+*label I.T
+You try very hard, but have difficulty maintaining the responsibilities of a paper route. Eventually, you succeed, but by the time you save up and actually buy the bike, they are no longer the rage.
+*finish
+*label I.F
+*set HP%+30
+*set CN%+40
+Your Emotional characteristics show that you have the attributes necessary to set a goal, then attain it. You work hard and put in long hours, eventually earning enough money to buy the bike. Congratulations on a job well done!
+*finish
+*label G2
+*set CN%+10
+*set TH%+10
+Unfortunately, doing odd jobs is not the kind of steady work that would pay enough money for you to save and make a purchase of this size. Your independence is remarkable and will positively influence your Emotional characteristics, but
+for now, you don't reach your goal.
+*finish
+*label A11
+You are obviously not the type who is easily influenced by peer pressure. Perhaps it's not worth the effort right now. Many people say that you are the type of person who "marches to the beat of a different drummer." Do you think they are
+right?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+You should also know that they use this expression as a nice way of describing people who are short a marble or two.
+*finish
+*label J2
+Well, maybe not. Sometimes this expression is a polite way of saying that you are short a marble or two.
+*finish
+

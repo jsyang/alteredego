@@ -1,0 +1,43 @@
+You may apply for financial aid for college. Are you interested in this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A1
+For how much would you like to apply? Please note that the balance is due at the end of the ADULTHOOD module.
+
+
+Select an action:
+
+*choice
+  #BORROW  $2000
+    *goto B1
+  #BORROW  $10000
+    *goto B2
+  #BORROW $20000
+    *goto B3
+*label B1
+*comment @CBW,2000
+*set MN +2000
+*set debt +2000
+*goto C
+*label B2
+*comment @CBW,10000
+*set MN +10000
+*set debt +10000
+*goto C
+*label B3
+*comment @CBW,20000
+*set MN +20000
+*set debt +20000
+*label C
+Your Resource column has just been updated to include this amount.
+*finish
+*label A2
+*finish
+

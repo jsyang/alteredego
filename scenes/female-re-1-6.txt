@@ -1,0 +1,72 @@
+${loverName} has spent the afternoon visiting friends of the family with his parents. When you see ${loverName}, he can't stop talking about Joanne, their daughter. When ${loverName} and Joanne were younger, everyone joked about how nice it would be if they
+married when they got older.
+*page_break
+Isn't that CUTE? Anyway, ${loverName} goes on to tell you that Joanne grew up to be gorgeous -- a model in fact. How do you feel about all this?
+
+
+Select a mood:
+
+*choice
+  #"FINE, NO BIGGIE."
+    *goto A1
+  #A BIT THREATENED
+    *goto A2
+  #INSANELY JEALOUS
+    *goto A3
+*label A1
+Then you wouldn't mind if ${loverName} and Joanne went to dinner one night, just as friends, would you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+*set CN%-10
+*set EX%+30
+That's better. It can be a bit threatening, but if you try to pretend that not even a hint of jealousy exists, you will wind up taking it out on ${loverName} in another, more devious way.
+*finish
+*label B2
+That's so nice of you. ${loverName} just made a date with her for this Saturday.
+*finish
+*label A2
+*set CN%-10
+That's understandable.
+*if NT>60
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+But from what I understand of ${loverName}, he is a trustworthy person. He's just expressing that she is attractive, and that's probably all.
+*finish
+*label C.F
+From what I understand of ${loverName}, he's not the most trustworthy type. I know that's difficult to hear, but it WAS one of his characteristics when you met him earlier. You should ask yourself why you would want to stay with someone whom you
+might not trust completely.
+*page_break
+Is it just you being overly concerned, or is there really a danger that he might abandon you for the first gorgeous, available woman that comes along?
+*finish
+*label A3
+*set CN%-30
+*set GN%-10
+*set CA%-20
+You immediately begin showing your jealousy by asking for a point-by-point comparison between you and Joanne. If ${loverName} were to be completely honest, you would lose, hands down. As it turns out, he spends the rest of the day massaging your
+fragile ego. Isn't he allowed to be attracted to other people?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+Then lighten up.
+*finish
+*label D2
+Of course not. After all, YOU never have thoughts or fantasies about anyone else since you've started dating ${loverName}, right?
+*finish
+

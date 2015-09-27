@@ -1,0 +1,137 @@
+Your mother has just informed you that a new pile of clothes has arrived from Aunt Doris' house. Her daughter, Henrietta, has been giving you her (disgusting, skeevy, putrid, gross, ugly, grungy, moth-eaten, flea-bitten, nerdy)
+hand-me-downs for years.
+*page_break
+This batch contains a pink flowered pair of pants (the flowers are bright green and yellow), a blue and orange ruffled blouse, and a dress that looks like it was donated to the Salvation Army three hundred years ago.
+*choice mood action
+  #MAD
+    #ABSOLUTELY REFUSE TO WEAR THE CLOTHES
+      *goto A11
+    *selectable_if (false) #"DISPOSE" OF THE CLOTHES
+      *finish
+    *selectable_if (false) #WEAR THE CLOTHES
+      *finish
+  #SNEAKY
+    *selectable_if (false) #ABSOLUTELY REFUSE TO WEAR THE CLOTHES
+      *finish
+    #"DISPOSE" OF THE CLOTHES
+      *goto A22
+    *selectable_if (false) #WEAR THE CLOTHES
+      *finish
+  #NEUTRAL
+    *selectable_if (false) #ABSOLUTELY REFUSE TO WEAR THE CLOTHES
+      *finish
+    #"DISPOSE" OF THE CLOTHES
+      *goto A32
+    #WEAR THE CLOTHES
+      *goto A33
+*label A11
+What are you going to do?
+
+
+Select an action:
+
+*choice
+  #THROW A FULL-FLEDGED FIT (DELUXE PACKAGE INCLUDES YELLING, SCREAMING, STOMPING YOUR FEET, AND ACTING LIKE A MARTYR)
+    *goto B1
+  #YELL AND SCREAM ONLY
+    *goto B2
+*label B1
+*set GN%-20
+You work yourself up into a rage and then throw yourself into a fit that would make any Tasmanian devil envious. After you are through, you stand there panting and wheezing, the tears streaming down your face, nicely finishing the
+effect. Your mother, calmer than you would expect her to be, throws you off-guard by not throwing a correspondingly violent counter-fit.
+*page_break
+"Are you finished?" she asks, calmly.
+*page_break
+"Then get into your room and don't come out until you are ready to rejoin the rest of civilization."
+*page_break
+"DO YOU UNDERSTAND ME? NOW, GO!"
+*finish
+*label B2
+*if ST>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set GN%-10
+*set FM%-10
+Have you forgotten what a strict disciplinarian your mother is? She calmly listens to your screaming and says, "Now that you have gotten that off your chest, will you kindly go to your room and wait for your supper there? Do NOT come out
+until I tell you to."
+*finish
+*label C.F
+*set FM%+20
+*set HP%+20
+Your mother sees that you are upset. She takes a good look at the clothes, then at your forlorn face.
+*page_break
+"Let's get out the scissors and cut them up into rags!"
+*finish
+*label A22
+How are you going to dispose of the clothes?
+
+
+Select an action:
+
+*choice
+  #"ACCIDENTALLY" THROW THEM IN THE GARBAGE
+    *goto D1
+  #"ACCIDENTALLY" DONATE THEM TO CHARITY
+    *goto D2
+  #"ACCIDENTALLY" SPILL A FLAMMABLE SUBSTANCE ON THEM
+    *goto D3
+*label D1
+*set TR%-10
+*set SC%+10
+*set TH%-10
+Oops!
+*page_break
+When Mom confronts you with the question, "What happened to all of Henrietta's lovely clothes?" you remain perfectly dead-pan. They are never unearthed again.
+*finish
+*label D2
+*set TR%-10
+*set SC%+10
+How could you be so cruel? Now some OTHER poor soul is going to have to wear those clothes.
+*finish
+*label D3
+That wasn't sneaky, that was downright dangerous.
+*page_break
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+*set TH%-20
+A spark catches fire to the clothes and burns them as well as half the house down. There is thousands of dollar's worth of damage done to the house. You parents become very upset.
+*finish
+*label E2
+*set TH%-20
+Fortunately, nothing tragic happens, but it could have. Thoughtfulness decreases.
+*finish
+*label A32
+*if CA>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set CA%+10
+*set SC%+20
+You are so unbelievably calm and unaffected by things, that you actually get away with it. No one notices how you trashed the clothes. You have style.
+*finish
+*label F.F
+*set CA%+10
+You are not calm enough to be able to pull this off with an air of nonchalance. You are nabbed as you are disposing of the clothes and grounded.
+*finish
+*label A33
+*if SC>70
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+*set SC%+30
+I'm sure you are aware of the incredibly high social status you have earned. As a result of wearing these clothes, your friends think that you are on the cutting edge of fashion and buy similar ones. Social sphere moves up even higher.
+*finish
+*label G.F
+*set SC%-20
+Your friends can't believe how nerdy you look. Many of them refuse to be seen with you.
+*finish
+

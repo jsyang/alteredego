@@ -1,0 +1,174 @@
+While out on a date with ${loverName}, he discovers that he has forgotten his wallet. What will you do?
+
+
+Select an action:
+
+*choice
+  #LEND HIM SOME MONEY
+    *goto A1
+  #ENCOURAGE HIM TO WASH THE DISHES
+    *goto A2
+  #DO NOTHING/WAIT FOR HIM TO ASK YOU FOR THE MONEY
+    *goto A3
+*label A1
+*label L2
+*set EX%+20
+*set HP%+10
+*set CA%+10
+*set SC%+10
+*set TH%+30
+You discover that the bill comes out to $250. (At least you know ${loverName} is no cheapskate.) Do you want to lend him the money?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+*if MN>260
+  *goto C.T
+*else
+  *goto C.F
+*label C.F
+You don't HAVE that kind of money. Roll up your sleeves and get ready to wash (or dry, you can have first choice). It's going to be a long wet night.
+*finish
+*label C.T
+*set MN-250
+*if MN < 5
+  *set MN 5
+*set TH%+20
+That is very considerate of you. You pay the bill and ${loverName} apologizes profusely.
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+*set MN+250
+He immediately drives to his home, gets his wallet and pays you back. You saved the evening!
+*finish
+*label D2
+${loverName} thanks you and mentions, "The next one's on me."
+
+
+Select an action:
+
+*choice
+  #TELL HIM, "NO WAY. THAT WAS JUST A LOAN."
+    *goto E1
+  #SAY NOTHING
+    *goto E2
+*label E1
+*set MN+200
+He looks rather insulted. "Whatever happened to Women's Lib?" he asks. Reluctantly, he pays you back $200 dollars.
+
+
+Select an action:
+
+*choice
+  #TELL HIM HE STILL OWES YOU $50
+    *goto F1
+  #SAY NOTHING
+    *goto F2
+*label F1
+*set GN%-10
+${loverName} insists the bill was only $200. He accuses you of trying to pull a fast one.
+
+
+Select an action:
+
+*choice
+  #KEEP PRESSING
+    *goto G1
+  #SAY NOTHING
+    *goto G2
+*label G1
+Nothing will convince him.
+
+
+Select an action:
+
+*choice
+  #SUE HIM FOR THE MONEY
+    *goto H1
+  #LET IT DROP
+    *goto H2
+*label H1
+*set MN+50
+*set SR 0
+*set ES 0
+*set GF 0
+*set LT 0
+*set CN%+20
+*set SC%+10
+In the course of suing him for the money, he breaks up with you. To tell you the truth, I can't figure out why you didn't leave this episode and give him the boot. You win the legal case and lose the boyfriend.
+*finish
+*label E2
+*label F2
+*label G2
+*label H2
+*set CN%-20
+*set IN%-20
+You have been taken advantage of. I guess you didn't think it was worth risking the relationship for.
+*finish
+*label B2
+He becomes very embarrassed and apologetic. He asks you to wait there while he drives home and gets his wallet. When he returns, he tells you
+*temp randomI
+*rand randomI 1 2
+*if randomI=1
+  *goto I1
+*else
+  *goto I2
+*label I1
+*set GN%-10
+that he went all the way home, then remembered that he gave you his wallet to hold in your pocketbook. (If you would have offered to pay, you would have seen it in there.)
+*finish
+*label I2
+he got stopped for speeding on the way home and received two tickets: one for speeding, and one for not having his license and registration.
+*finish
+*label A2
+Are you SERIOUS about this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+*label K2
+*set GN%-20
+You have a hard heart.
+*finish
+*label J2
+*goto A1
+*label A3
+Sheepishly, he leans over to you and whispers that he seems to have left his wallet at home. Will you lend him the money?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto K1
+  #NO
+    *goto K2
+*label K1
+*temp randomL
+*rand randomL 1 2
+*if randomL=1
+  *goto L1
+*else
+  *goto L2
+*label L1
+You reach into your pocketbook to take your wallet out and...
+*page_break
+${loverName}'s wallet is right there! You both must have forgotten that he gave it to you to hold.
+*finish
+

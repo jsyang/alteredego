@@ -1,0 +1,31 @@
+As often happens in relationships, ${loverName} begins to gain access to your personal life. Want to know what she finds out?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+
+*label E2
+Well, I'm sorry, but I'm going to have to tell you anyway.
+*page_break
+*label E1
+*if MS>0
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set CA%-40
+*set GF 0
+*set LT 0
+*set SR 0
+*set ES 0
+She finds out that you are MARRIED! She is crushed, heartbroken and utterly infuriated. She tries calling your wife on the phone. Fortunately, you intercept all of her calls and convince her to stop. Whew! That was a close one.
+*finish
+*label F.F
+She finds out that you still play with toy boats when you sit in the tub. Now, THAT'S personal.
+*finish
+

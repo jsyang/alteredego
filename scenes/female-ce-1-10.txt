@@ -1,0 +1,158 @@
+*temp thingtobuy
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+There is a guy in one of your classes that seems painfully shy and out of place. He doesn't seem to have many friends and dresses in a style that is about 20 years out of date. His hair is oily, and he carries a calculator in a vinyl
+pouch, tied onto his belt loop.
+*page_break
+One day, he approaches you nervously and asks if he can borrow your class notes. He had been absent the day before.
+
+
+Select an action:
+
+*choice
+  #LEND HIM THE NOTES
+    *goto A1
+  #DO NOT LEND HIM THE NOTES
+    *goto A2
+*label A1
+*set SC%+10
+*set GN%+10
+*set TH%+10
+He thanks you, then looks down and shuffles back to his seat.
+*page_break
+The next day in class you see him, and he returns the notebook to you. As he walks away, you notice the powerful scent of Sailor's Spice cologne lingering heavily in the air.
+*page_break
+As you flip through your notebook, you see a page with your name written on it in big letters. You turn the page; scotch taped right onto the notebook is a beautiful diamond necklace! There is a note which reads, "Thank you for lending
+me your notes -- Best wishes, Horace."
+
+
+Select an action:
+
+*choice
+  #RETURN THE NECKLACE
+    *goto B1
+  #KEEP THE NECKLACE
+    *goto B2
+*label B1
+*set TH%+10
+Horace seems hurt when you try to return the necklace. He says, "A guy like me doesn't get to go on too many dates. As a matter of fact, most girls won't even look at me. I figured with all the money I've saved not going out with anyone,
+this kind of made up for it."
+
+
+Select an action:
+
+*choice
+  #STILL REFUSE THE NECKLACE
+    *goto C1
+  #KEEP THE NECKLACE
+    *goto C2
+  #KEEP THE NECKLACE AND ASK HORACE OUT FOR A DATE
+    *goto C3
+*label C1
+"Okay, but I hope you wouldn't mind being my friend."
+*label FRIEND
+
+
+Select an action:
+
+*choice
+  #SAY, "OF COURSE I WILL."
+    *goto D1
+  #MUMBLE SOMETHING INSINCERE
+    *goto D2
+*label D1
+*set TH%+30
+*set GN%+30
+Some of your friends kid you about "your new 'boyfriend,' but he just happens to be nicer than most of the creeps you have dealt with before.
+*finish
+*label D2
+*label A2
+*set TH%-20
+*set GN%-10
+*set SC%-10
+What a human being.
+*finish
+*label B2
+*label C2
+*set thingtobuy "DIAMOND NECKLACE"
+*if acquisitions != ""
+  *set acquisitions &","
+*set acquisitions &thingtobuy
+
+Horace is ecstatic that you would accept his gift. Shyly, he asks if you would be his friend.
+*goto FRIEND
+*label C3
+*temp randomE
+*rand randomE 1 3
+*if randomE=1
+  *goto E1
+*elseif randomE=2
+  *goto E2
+*else
+  *goto E3
+*label E1
+Horace turns white as a ghost. He can hardly believe his ears. Delightedly, he accepts.
+*page_break
+He greets you at the door with a paisley shirt and striped tie. His hair is slicked down tightly, and the aroma of Sailor's Spice spikes the air.
+*label AFTER
+*page_break
+The evening is his dream come true. When its over, do you plan on showing him the ways of the world?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label F1
+*set HP%+20
+*comment @SEX,Horace
+*comment @SEX
+*set sex +1
+*comment If not dating, this person becomes an ex-lover.
+*if GF != 1
+  *set loverName "Horace"
+  *rand NT 20 80
+  *rand NG 20 80
+  *rand NC 20 80
+  *rand NF 20 80
+  *rand NH 20 80
+  *rand NA 20 80
+You would have never guessed it in a million years. Not only is Horace extremely well-endowed, he has the most sensitive touch you have ever felt. When you ask him how he does it he says, "Well, I read a lot of books, and have a lot of
+time to practice on my own."
+*page_break
+*label CHECKIT
+*if ((MS>0) and (ES>0)) and (SR>0)
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+By the way, the man in your life never finds out about this incident. My lips are sealed.
+*label G.F
+*finish
+*label F2
+You've already done quite enough.
+*finish
+*label E2
+You arrive to meet Horace at his house. There is a brand new Corvette in the front drive way. The person who greets you at the door looks vaguely familiar -- very sharply dressed, perfectly styled hair. He says, "Hey Baby, thanks for
+stopping over, let's boogie."
+*page_break
+It's Horace!
+*page_break
+You ask him what happened. He tells you he watched Saturday Night Fever on his VCR and did a computer analysis on the social algorithms most favorable to an enjoyable evening.
+*goto AFTER
+*label E3
+Horace looks at you meekly and apologizes.
+*page_break
+"I'm sorry. I don't think we would be compatible."
+*finish
+

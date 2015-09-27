@@ -1,0 +1,28 @@
+At a huge family gathering one of the relatives from your father's side of the family makes a snide remark about your physical appearance and the "lack of taste and good sense children show when dressing and manicuring themselves
+these days."
+*page_break
+*if FM>60
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+*set FM%+30
+Because your Familial sphere status is high, your mother defends your style of dress and individuality. She is happy to inform this relative that the only lack of sense she perceives is shown by someone who criticizes another on
+superficial qualities such as looks, as opposed to more enduring qualities like character. Yeah, Mom!
+*finish
+*label A.F
+*if FM>39
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set FM%-10
+Because your mother doesn't want to start a family battle right there in front of everyone, she quickly changes the subject, neither supporting you, nor defending you.
+*finish
+*label B.F
+*set GN%-10
+*set FM%-20
+Because your Family sphere status is low, your mother probably tends to be overly critical of such superficial characteristics as well (that's what happens when family relationships break down). She agrees with the
+relative, which probably makes you even more angry.
+*finish
+

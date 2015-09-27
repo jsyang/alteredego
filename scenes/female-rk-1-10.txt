@@ -1,0 +1,152 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+You are out with your friends and neglect to keep track of time. You are three hours past curfew.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*set CA%-5
+*finish
+*label A2
+You arrive home and notice that all of the lights are off. Maybe everyone is sleeping and they won't notice you sneaking in.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*set CA%-10
+*finish
+*label B2
+You fish around for your keys while standing at the door.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set CA%-15
+*finish
+*label C2
+The door opens....
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto D1
+  #CONTINUE
+    *goto D2
+*label D1
+*set CA%-15
+*finish
+*label D2
+SQUEEEEEEEEEEEEEK....
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto E1
+  #CONTINUE
+    *goto E2
+*label E1
+*set CA%-15
+*finish
+*label E2
+No one seems to notice.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto F1
+  #CONTINUE
+    *goto F2
+*label F1
+*set CA%-15
+*finish
+*label F2
+You take off your shoes and tiptoe toward your room.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto G1
+  #CONTINUE
+    *goto G2
+*label G1
+*set CA%-15
+*finish
+*label G2
+You are almost home free when...
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto H1
+  #CONTINUE
+    *goto H2
+*label H1
+*set CA%-15
+*finish
+*label H2
+You hear a noise.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto I1
+  #CONTINUE
+    *goto I2
+*label I1
+*set CA%-20
+*finish
+*label I2
+It was just the pipes clanking.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto J1
+  #CONTINUE
+    *goto J2
+*label J1
+*set CA%-20
+*finish
+*label J2
+*set CA%+30
+*set HP%+30
+You sneak into your bedroom and no one is the wiser.
+*finish
+

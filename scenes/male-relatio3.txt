@@ -1,0 +1,490 @@
+
+
+Select an action:
+
+*choice
+  #MEET SOMEONE
+    *goto A1
+  #BREAK OFF WITH SOMEONE
+    *goto A2
+  #GO ON A DATE/HAVE AN EXPERIENCE WITH YOUR PRESENT PARTNER
+    *goto A3
+  #GO STEADY
+    *goto A4
+  #LIVE TOGETHER
+    *goto A5
+  #LEAVE THIS ICON
+    *goto A6
+*label A6
+*comment @NTQ
+*set instantaneous true
+*finish
+
+*label A3
+*if GF<1
+  *goto S.T
+*else
+  *goto S.F
+*label S.T
+I'm sorry, but you don't presently have a relationship.
+*finish
+*label S.F
+*comment @SIE
+*goto_random_scene allow_no_selection
+  male-re-3-1
+  male-re-3-2
+  male-re-3-3
+  male-re-3-4
+  male-re-3-5
+  male-re-3-6
+  male-re-3-7
+There are none of these experiences you can do right now.
+*set instantaneous true
+*finish
+*label A1
+*if (SR<1) and (MS<1)
+  *goto C.T
+*else
+  *goto C.F
+*label C.F
+According to your past relationship behavior, you are involved in a serious relationship. Choosing to continue from here means that you are willing to cheat, risk losing your partner, and suffer the emotional consequences of the breakup.
+Do you want to continue?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D2
+*finish
+*label D1
+*set TR%-30
+*set CH 1
+*label C.T
+Where would you like to meet this person?
+
+
+Select an action:
+
+*choice
+  #AROUND TOWN/IN A CLUB
+    *goto F1
+  #AT WORK
+    *goto F2
+  #SOMEPLACE OTHER THAN AROUND TOWN OR WORK
+    *goto F3
+*label F1
+*comment @SLS|You have seen her shopping in the same supermarket where you shop.|You met her while washing your car at an automated car wash.|She coordinates outdoor concerts for the Parks and Recreation Department.|
+*temp dss
+*temp dss_num
+*rand dss_num 1 4
+*if dss_num = 1
+  *set dss "You have seen her shopping in the same supermarket where you shop."
+  *goto dss_finished40
+*elseif dss_num = 2
+  *set dss "You met her while washing your car at an automated car wash."
+  *goto dss_finished40
+*elseif dss_num = 3
+  *set dss "She coordinates outdoor concerts for the Parks and Recreation Department."
+  *goto dss_finished40
+*else
+  *set dss ""
+  *goto dss_finished40
+*label dss_finished40
+*goto WHO
+*label F2
+*comment @SLS|She is a representative for a company with which you occasionally deal. She does the same thing you do, but for a different organization.|She works at the front desk.|She is in charge of one of the departments at work.|
+*temp dss
+*temp dss_num
+*rand dss_num 1 4
+*if dss_num = 1
+  *set dss "She is a representative for a company with which you occasionally deal. She does the same thing you do, but for a different organization."
+  *goto dss_finished43
+*elseif dss_num = 2
+  *set dss "She works at the front desk."
+  *goto dss_finished43
+*elseif dss_num = 3
+  *set dss "She is in charge of one of the departments at work."
+  *goto dss_finished43
+*else
+  *set dss ""
+  *goto dss_finished43
+*label dss_finished43
+*goto WHO
+*label F3
+*comment @SLS|At a dude ranch.|When she caught the bouquet and you caught the garter at a friend's wedding.|When friends introduced you at a cocktail party.|
+*temp dss
+*temp dss_num
+*rand dss_num 1 4
+*if dss_num = 1
+  *set dss "At a dude ranch."
+  *goto dss_finished46
+*elseif dss_num = 2
+  *set dss "When she caught the bouquet and you caught the garter at a friend's wedding."
+  *goto dss_finished46
+*elseif dss_num = 3
+  *set dss "When friends introduced you at a cocktail party."
+  *goto dss_finished46
+*else
+  *set dss ""
+  *goto dss_finished46
+*label dss_finished46
+*label WHO
+Whom would you like to meet?
+
+
+Select an action:
+
+*choice
+  #JENNIFER
+    *goto E1
+  #MICHELLE
+    *goto E2
+  #LISA
+    *goto E3
+  #KIMBERLY
+    *goto E4
+  #AMY
+    *goto E5
+  #ANGELA
+    *goto E6
+  #MELISSA
+    *goto E7
+  #STEPHANIE
+    *goto E8
+*label E1
+*comment @LVN,Martina
+*set loverName "Jennifer"
+*goto SUM
+*label E2
+*comment @LVN,Judy
+*set loverName "Michelle"
+*goto SUM
+*label E3
+*comment @LVN,Cathy
+*set loverName "Lisa"
+*goto SUM
+*label E4
+*comment @LVN,Helen
+*set loverName "Kimberly"
+*goto SUM
+*label E5
+*comment @LVN,Brenda
+*set loverName "Amy"
+*goto SUM
+*label E6
+*comment @LVN,Suzette
+*set loverName "Angela"
+*goto SUM
+*label E7
+*comment @LVN,Roxanne
+*set loverName "Melissa"
+*goto SUM
+*label E8
+*comment @LVN,Joan
+*set loverName "Stephanie"
+*label SUM
+*set GF 1
+*set SR 0
+*set LT 0
+*set ES 0
+*comment @CLV
+*rand NT 20 80
+*rand NG 20 80
+*rand NC 20 80
+*rand NF 20 80
+*rand NH 20 80
+*rand NA 20 80
+You have chosen to meet with ${loverName}. Her characteristics may be described as follows:
+She is
+*comment @DFL,NT
+*if NT < 40
+  not very
+  *goto dfl_NT
+*elseif NT < 60 
+  moderately
+  *goto dfl_NT
+*else
+  very
+*label dfl_NT
+trustworthy.
+She is
+*comment @DFL,NG
+*if NG < 40
+  not very
+  *goto dfl_NG
+*elseif NG < 60 
+  moderately
+  *goto dfl_NG
+*else
+  very
+*label dfl_NG
+gentle.
+She is
+*comment @DFL,NC
+*if NC < 40
+  not very
+  *goto dfl_NC
+*elseif NC < 60 
+  moderately
+  *goto dfl_NC
+*else
+  very
+*label dfl_NC
+calm.
+She is
+*comment @DFL,NH
+*if NH < 40
+  not very
+  *goto dfl_NH
+*elseif NH < 60 
+  moderately
+  *goto dfl_NH
+*else
+  very
+*label dfl_NH
+happy.
+She is
+*comment @DFL,NF
+*if NF < 40
+  not very
+  *goto dfl_NF
+*elseif NF < 60 
+  moderately
+  *goto dfl_NF
+*else
+  very
+*label dfl_NF
+confident.
+She is
+*comment @DFL,NA
+*if NA < 40
+  not very
+  *goto dfl_NA
+*elseif NA < 60 
+  moderately
+  *goto dfl_NA
+*else
+  very
+*label dfl_NA
+attractive.
+*page_break
+You meet ${loverName} in the following way:
+*comment @DSS
+${dss}
+
+After deciding you are attracted to her, you ask her for a date.
+*if SC<40
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+*set GF 0
+*set CA%-10
+*set HP%-20
+*set CN%+20
+*set SC%+10
+Unfortunately, you don't have the social skills necessary to successfully convince this person that you are worth going out with.
+*goto OLDST
+*label G.F
+*if SC<60
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+*temp randomJ
+*rand randomJ 1 2
+*if randomJ=1
+  *goto J1
+*else
+  *goto J2
+*label H.F
+*if SC<80
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+*temp randomL
+*rand randomL 1 3
+*if randomL=1
+  *goto L1
+*elseif randomL=2
+  *goto L2
+*else
+  *goto L3
+*label K.F
+*label J1
+*label L1
+*label L2
+*set HP%+30
+*set CN%+30
+*set SC%+20
+Fortunately, she accepts.
+*goto OLDST
+*label J2
+*label L3
+*set GF 0
+*set HP%-10
+Unfortunately, this person is not interested in you right now.
+*label OLDST
+*if MS>0
+  *goto AA.T
+*else
+  *goto AA.F
+*label AA.T
+*temp randomZ
+*rand randomZ 1 2
+*if randomZ=1
+  *goto Z1
+*else
+  *goto Z2
+*label Z1
+*set MS 0
+*set HP%-20
+*set CH 0
+Your wife finds out you have been "on the prowl" and leaves you.
+*finish
+*label Z2
+Your wife doesn't find out about this relationship (for now).
+*finish
+*label AA.F
+*if CH>0
+  *goto M.T
+*else
+  *goto M.F
+*label M.T
+*set CH 0
+*page_break
+You were caught trying to weasel your way into another relationship.
+*if GF>0
+  *goto N.T
+*else
+  *goto N.F
+*label N.F
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*set HP%-20
+Your old girlfriend dumps you. Now you have no one!
+*label M.F
+*finish
+*label N.T
+*temp randomP
+*rand randomP 1 2
+*if randomP=1
+  *goto P1
+*else
+  *goto P2
+*label P1
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*set HP%-20
+Both girls dump you. Now you have no one!
+*finish
+*label P2
+*set SR 0
+*set ES 0
+*set LT 0
+Your old girlfriend dumps you. You still have ${loverName}.
+*finish
+*label A2
+*if GF>0
+  *goto W.T
+*else
+  *goto W.F
+*label W.F
+You're obviously upset - and confused! You don't have a girlfriend to break up with.
+*finish
+*label W.T
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+*set SC%-10
+*set CA%-10
+*set HP%-10
+*set GN%-10
+Even though you have chosen to break off this relationship, it will still have an impact on you personally. Please check the status screen to see what adjustments have been made.
+*finish
+*label A4
+*if GF>0
+  *goto T.T
+*else
+  *goto T.F
+*label T.F
+You don't even have a girlfriend!
+*finish
+*label T.T
+*if SR>0
+  *goto R.T
+*else
+  *goto R.F
+*label R.T
+You're already going steady!
+*finish
+*label R.F
+*if SC>70
+  *goto Q.T
+*else
+  *goto Q.F
+*label Q.T
+*set SR 1
+You and ${loverName} make a handsome couple.
+*finish
+*label Q.F
+${loverName} doesn't want to get serious right now. Sorry.
+*finish
+*label A5
+*if LT>0
+  *goto BB.T
+*else
+  *goto BB.F
+*label BB.T
+Didn't you notice the other toothbrush and the extra laundry? You are already living together!
+*finish
+*label BB.F
+*if SR>0
+  *goto CC.T
+*else
+  *goto CC.F
+*label CC.F
+It would probably be a better idea if you were at least going steady first.
+*finish
+*label CC.T
+*temp randomU
+*rand randomU 1 3
+*if randomU=1
+  *goto U1
+*elseif randomU=2
+  *goto U2
+*else
+  *goto U3
+*label U1
+*set HP%+30
+*set CA%+30
+*set LT 1
+After thinking it over, ${loverName} agrees and you move in together.
+*if MS>0
+  *goto MAR.T
+*else
+  *goto MAR.F
+*label MAR.T
+
+*set IN%-30
+*set MS 0
+Your wife does not fail to notice that you are living with another woman. I'm afraid you marriage is over.
+*label MAR.F
+*finish
+*label U2
+${loverName}'s parents don't think it's a good idea and have convinced her to avoid it.
+*finish
+*label U3
+${loverName} feels she really doesn't think she could do this right now.
+*finish
+

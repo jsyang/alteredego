@@ -1,0 +1,72 @@
+*if GF>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. You have to be going out with a guy to play this episode. You may try again later.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You are at a New Year's Eve party with the guy you are seeing, your best friend, and her date. Everyone seems to be caught up in the spirit of the holiday. When midnight strikes, you give your boyfriend a nice big hug and a kiss, then
+turn around to wish some of your friends a happy New Year.
+*page_break
+When you turn around again, you see your boyfriend and your BEST FRIEND stuck together in a liplock.
+*choice mood action
+  #ANGRY
+    #SAY SOMETHING TO YOUR GIRLFRIEND
+      *goto A11
+    #SAY SOMETHING TO YOUR BOYFRIEND
+      *goto A12
+    *selectable_if (false) #SAY NOTHING
+      *finish
+  #COOL
+    #SAY SOMETHING TO YOUR GIRLFRIEND
+      *goto A21
+    #SAY SOMETHING TO YOUR BOYFRIEND
+      *goto A22
+    #SAY NOTHING
+      *goto A23
+*label A11
+*label A12
+They both look at you as if you have two heads. Maybe you were overreacting.
+*page_break
+Later on that evening you see him with his hand on her leg!
+*finish
+*label A23
+You do a slow burn for the rest of the evening. Later, when your boyfriend tries to cuddle with you, you can:
+
+
+Select an action:
+
+*choice
+  #TURN INTO THE ICE QUEEN
+    *goto B1
+  #FORGET ABOUT EVERYTHING AND CUDDLE
+    *goto B2
+*label B1
+*set GN%-10
+Your boyfriend can't figure you out. He calls you "moody" and goes home.
+*finish
+*label B2
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+Maybe you were just imagining things, right? All is forgiven.
+*page_break
+Two weeks later, he dumps you for your best friend. Some friend!
+*finish
+*label A21
+*label A22
+*set CN%+20
+*set GN%-30
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+It's New Year's Eve, right? Everyone gets a little "friendly" at midnight.
+*page_break
+Two weeks later, your boyfriend dumps you for your best friend.
+*finish
+

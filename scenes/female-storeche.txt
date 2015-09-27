@@ -1,0 +1,101 @@
+You are in the candy store buying candy with a $5.00 bill given to you by your  mother. Your bill comes to 89 cents. The man gives you back change but no dollars.
+*choice mood action
+  #ANGRY
+    *selectable_if (false) #LEAVE THE STORE
+      *finish
+    #QUESTION THE MAN
+      *goto A12
+  #CONFUSED
+    *selectable_if (false) #LEAVE THE STORE
+      *finish
+    #QUESTION THE MAN
+      *goto A22
+  #CONTENT
+    #LEAVE THE STORE
+      *goto A31
+    *selectable_if (false) #QUESTION THE MAN
+      *finish
+*label A12
+The man made an honest mistake (he says). He gives you your money and tells you to be more respectful to adults.
+*finish
+*label A22
+The man tells you that you gave him a one-dollar bill.
+
+
+Select an action:
+
+*choice
+  #BE CONTENT WITH THAT
+    *goto B1
+  #DISAGREE
+    *goto B2
+*label B1
+*goto A31
+*label B2
+He says, "Come on now, girlie. I TOLD YA. Now get OUTA here."
+
+
+Select an action:
+
+*choice
+  #KEEP DISAGREEING
+    *goto C1
+  #GET HELP
+    *goto C2
+*label C1
+*set GN%-10
+*set IN%+20
+No matter how much you disagree, he still insists.
+
+
+Select an action:
+
+*choice
+  #GET YOUR MOTHER
+    *goto D1
+  #GET HELP
+    *goto D2
+  #GIVE UP
+    *goto D3
+*label D1
+*label F2
+The man tells your mother, "The kid gave me a 'one.'" An argument ensues and your mother threatens to call the Better Business Bureau. Eventually, your mother gives up.
+
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+At least she knows the man was a crook.
+*finish
+*label E2
+Two days later she finds that she really did give you a dollar bill by mistake. Come to think of it, you never checked, either. I guess parents can be wrong sometimes, too.
+*finish
+*label D2
+*label C2
+Who do you go to for help?
+
+
+Select an action:
+
+*choice
+  #GET THE POLICEWOMAN ON THE CORNER
+    *goto F1
+  #GET MOM
+    *goto F2
+*label F1
+*set HP%+20
+*set IN%+10
+*set CN%+30
+You tell the policewoman the story. She inquires about the incident. The storeowner says, "Listen, Toots, the little brat gave me a 'one.'" This was the wrong thing to say to the policewoman. She makes the man check the cash register.
+He has four dollars more than he should.
+*page_break
+The policewoman calls the station house and finds out that he has done this three times in the last week. Two weeks later, the store is shut down. It was a front for a numbers racket. The storeowner is never heard from again.
+*finish
+*label D3
+*label A31
+You have just been cheated out of 4 dollars.
+*finish
+

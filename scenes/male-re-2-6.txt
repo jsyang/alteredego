@@ -1,0 +1,27 @@
+${loverName} has a dog named Beefcakes whom she loves more than anything else in the world. Beefcakes is a presumptuous pet. He is fond of removing pieces of your body that he presumes to be of no use to you.
+*page_break
+These have included, on various occasions, pieces of arm, leg, toe, and whatever else happens to fall into his cavernous jaws. ${loverName} is thankful that Beefcakes likes you so. What do you think about this?
+
+
+Select an action:
+
+*choice
+  #"I SHOULD KEEP QUIET. IF IT EVER CAME DOWN TO A CHOICE BETWEEN ME AND BEEFCAKES, I WOULD BE THE ONE IN THE DOG HOUSE."
+    *goto E1
+  #"I AM GOING TO POISON THAT ANIMAL ONE DAY. IT'S JUST A MATTER OF TIME."
+    *goto E2
+  #"I AM GOING TO ASK THAT BEEFCAKES BE KEPT IN ANOTHER PART OF THE HOUSE WHILE I AM VISITING."
+    *goto E3
+*label E1
+*set CN%-20
+Wimp! By the time the two of you get serious, you may be missing one of your most valuable parts!
+*finish
+*label E2
+*set GN%-20
+Temper, temper. Beefcakes is too smart for that. Besides, who would want to be around ${loverName} if Beefcakes took the bitter pill one day and keeled over?
+*finish
+*label E3
+*set EX%+20
+That's very assertive, but even the most assertive behavior doesn't guarantee that you will get what you want. Beefcakes stays.
+*finish
+

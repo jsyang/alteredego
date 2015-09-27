@@ -1,0 +1,64 @@
+There is a local blood drive. A volunteer asks if you would like to donate some blood.
+*choice mood action
+  #SQUEAMISH
+    #GIVE BLOOD
+      *goto A11
+    #PASS UP THE OPPORTUNITY
+      *goto A12
+  #GENEROUS
+    #GIVE BLOOD
+      *goto A21
+    *selectable_if (false) #PASS UP THE OPPORTUNITY
+      *finish
+*label A21
+*set TH%+20
+You are a brave soul.
+*goto C
+*label A11
+*set TH%+20
+Bravo! Even though you do not really feel up to it, you overcome your squeamishness and give in. You lie down on the table and wait for the nurse to take the blood.
+*label C
+*page_break
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*set CA%-20
+The nurse is a very thin woman in her mid-thirties. You notice that she wears very thick eyeglasses and her hand shakes a bit. She smiles at you and tells you, "You will only feel a little pinprick." You prepare for a short twinge of
+pain. OUUUUUCH! She must be drilling for oil. "Sorry," she says, as she prepares to go in again.
+*page_break
+OUUUUUCH! "Just a little bit of trouble finding a vein." After what seems like twenty minutes of unsuccessful probing, she gasps in delight. "Oh! I just realized I'm wearing my READING glasses. No wonder. I'll just put on my
+WORKING glasses and we'll be fine. Now...all you will feel is a little pinprick...."
+*finish
+*label B2
+*set SC%+10
+*set CN%+10
+*set TH%+20
+*set HP%+20
+The nurse is a foxy redhead with a short uniform skirt and a cute wiggle in her walk. Your heart is beating faster already. "You will only feel a little pinprick," she says. She leans over you and tightens the tourniquet, resting
+her long, thin fingers on your bare arm. Her nails are painted cherry red.
+*page_break
+After fifteen minutes she offers you a snack to get you back on your feet. At this point I'm sure you wouldn't mind donating another forty pints or so, but you will need to keep some for yourself.
+*finish
+*label A12
+Have you ever seen the nurses that work at these blood drives? Believe me, it's worth a pint or two just to meet some of them. Would you like to change your mind?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*goto C
+*label D2
+*set CN%-20
+Cluck! Cluck!
+*finish
+
+

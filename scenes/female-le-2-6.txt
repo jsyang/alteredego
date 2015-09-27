@@ -1,0 +1,35 @@
+*if (((MD<1) and (FD<1)) and (FM<40)) and (PDIV<1)
+  *goto DIV.T
+*else
+  *goto DIV.F
+*label DIV.F
+You misplace your wallet, forcing you to arrive late to an important appointment.
+*finish
+*label DIV.T
+
+Your parents have been arguing a lot lately.
+
+*temp randomA
+*rand randomA 1 5
+*if randomA=1
+  *goto A1
+*elseif randomA=2
+  *goto A2
+*elseif randomA=3
+  *goto A3
+*elseif randomA=4
+  *goto A4
+*else
+  *goto A5
+*label A1
+*label A2
+*label A3
+*label A4
+*set CA%-30
+Eventually, they seek marital counseling and work things out. General stress level around the house increases, so you experience a decrease in calmness.
+*finish
+*label A5
+*set PDIV+1
+The outcome is a divorce.
+*finish
+

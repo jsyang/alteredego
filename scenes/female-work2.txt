@@ -1,0 +1,647 @@
+*set instantaneous true
+*temp la
+*temp dn
+*set dn 0
+*temp AM
+*temp la
+*temp dn
+*set dn 0
+*temp thingtobuy
+*temp AM
+*label BANKTOP
+
+
+Select an action:
+
+*choice
+  #APPLY FOR A PART-TIME JOB
+    *goto B1
+  #APPLY FOR A FULL-TIME JOB
+    *goto B2
+  #QUIT A JOB/RETIRE
+    *goto B3
+  #GET A PERSONAL LOAN
+    *goto B4
+  #GET A LOAN TO PURCHASE A HOUSE
+    *goto B5
+  #PAY BACK PART OF YOUR LOAN
+    *goto B6
+  #LEAVE THIS ICON
+    *goto B7
+*label B7
+*comment @NTQ
+*set instantaneous true
+*finish
+
+
+*label B1
+*if EM>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+I'm sorry. It seems that you are far too busy to take on the responsibility of another job right now. Please re-apply when your work schedule opens up a bit.
+*finish
+*label D.F
+*if (CO>0) and (CO<2)
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+*set CA%-10
+*set PH%-5
+Taking on a job while going to school is likely to be somewhat stressful. Please be aware of this before going on.
+*page_break
+*label A.F
+What kind of work are you looking for?
+
+
+Select an action:
+
+*choice
+  #SERVICE DELIVERY
+    *goto C1
+  #DOMESTIC/PHYSICAL LABOR
+    *goto C2
+  #TRAINING FOR FUTURE CAREER
+    *goto C3
+*label C1
+*comment @OCP,DELIVERY PERSON
+*set occupation "DELIVERY PERSON"
+*set EM 14000
+*if ((TH>40) and (GN>40)) and (SC>40)
+  *goto E.T
+*else
+  *goto E.F
+*label C2
+*comment @OCP,DOMESTIC/PHYSICAL LABOR
+*set occupation "DOMESTIC/PHYSICAL LABOR"
+*set EM 18000
+*if (SC>40) and (PH>50)
+  *goto E.T
+*else
+  *goto E.F
+*label C3
+*comment @OCP,CAREER TRAINEE
+*set occupation "CAREER TRAINEE"
+*set EM 22000
+*if ((((TR>40) and (GN>40)) and (HP>50)) and (CN>50)) and (IN>50)
+  *goto E.T
+*else
+  *goto E.F
+*label E.F
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+*set EM 0
+I'm sorry. You don't seem to have the qualifications necessary for performing this job. Try again after you have had a bit more life experience.
+*finish
+*label E.T
+*temp randomJ
+*rand randomJ 1 2
+*if randomJ=1
+  *goto J1
+*else
+  *goto J2
+*label J1
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+*set EM 0
+*set HP%-20
+*set VC%+5
+I'm sorry. You have all of the qualifications, but this position has already been filled by someone else. There are frequent job openings, so please try again.
+*finish
+*label J2
+*set HP%+20
+*set SC%+20
+*set VC%+30
+Congratulations! You start work immediately.
+*finish
+*label B2
+*if EM>0
+  *goto ALREADY.T
+*else
+  *goto ALREADY.F
+*label ALREADY.T
+I'm sorry, you seem to already have a steady job. You would be overextending yourself greatly with another job. Please re-apply after your work schedule lightens up a bit.
+*finish
+*label ALREADY.F
+*if (CO>0) and (CO<2)
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+Taking on a full-time job while going to college can be stressful. Are you sure you want to do this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto L1
+  #NO
+    *goto L2
+*label L2
+*finish
+*label L1
+*set PH%-10
+*set SC%-10
+*set VC%+10
+*set HP%+10
+*set CA%-10
+*label K.F
+What employment area are you interested in?
+
+
+Select an action:
+
+*choice
+  #BUSINESS
+    *goto M1
+  #SALES
+    *goto M2
+  #CREATIVE
+    *goto M3
+  #HEALTH SERVICE I
+    *goto M4
+  #HEALTH SERVICE II
+    *goto M5
+  #ENTREPRENEUR
+    *goto M6
+  #TEACHER
+    *goto M7
+  #RESEARCHER
+    *goto M8
+  #LAWYER
+    *goto M9
+  #TECHNICAL
+    *goto M10
+  #LABOR I (FACTORY WORKER, ASSEMBLER, ETC.)
+    *goto M11
+  #LABOR II (SUPERVISOR OF LABOR I POSITIONS)
+    *goto M12
+*label M1
+*set EM 52000
+*comment @OCP,BUSINESS
+*set occupation "BUSINESS"
+*if (((((CC>6) and (TR>50)) and (SC>40)) and (CN>40)) and (TH>50)) and (IN>50)
+  *goto N.T
+*else
+  *goto N.F
+*label M2
+*set EM 56000
+*comment @OCP,SALES
+*set occupation "SALES"
+*if ((((((CC>6) and (TR>30)) and (SC>50)) and (CN>50)) and (EX>50)) and (TH>50)) and (IN>50)
+  *goto N.T
+*else
+  *goto N.F
+*label M3
+*set EM 40000
+*comment @OCP,CREATIVE
+*set occupation "CREATIVE"
+*if ((SC>50) and (CN>50)) and (EX>60)
+  *goto N.T
+*else
+  *goto N.F
+*label M4
+*set EM 36000
+*comment @OCP,HEALTH SERVICE I
+*set occupation "HEALTH SERVICE I"
+*if (((CC>6) and (TR>50)) and (GN>50)) and (IN>50)
+  *goto N.T
+*else
+  *goto N.F
+*label M5
+*set EM 100000
+*comment @OCP,HEALTH SERVICE II
+*set occupation "HEALTH SERVICE II"
+*if ((((((CC>11) and (TR>60)) and (GN>50)) and (CA>40)) and (CN>60)) and (IN>60)) and (SC>50)
+  *goto N.T
+*else
+  *goto N.F
+*label M6
+*set EM 60000
+*comment @OCP,ENTREPRENEUR
+*set occupation "ENTREPRENEUR"
+*if (CN>60) and (SC>60)
+  *goto N2.T
+*else
+  *goto N2.F
+*label M7
+*set EM 36000
+*comment @OCP,TEACHER
+*set occupation "TEACHER"
+*if (((CC>11) and (TR>50)) and (GN>60)) and (IN>60)
+  *goto N.T
+*else
+  *goto N.F
+*label M8
+*set EM 24000
+*comment @OCP,RESEARCHER
+*set occupation "RESEARCHER"
+*if ((CC>11) and (IN>60)) and (SC<70)
+  *goto N.T
+*else
+  *goto N.F
+*label M9
+*set EM 70000
+*comment @OCP,LAWYER
+*set occupation "LAWYER"
+*if (((((CC>11) and (TR>50)) and (TR<80)) and (GN<80)) and (CN>60)) and (IN>60)
+  *goto N.T
+*else
+  *goto N.F
+*label M10
+*set EM 50000
+*comment @OCP,TECHNICAL
+*set occupation "TECHNICAL"
+*if (((CC>6) and (IN>60)) and (SC<70)) and (EX>40)
+  *goto N.T
+*else
+  *goto N.F
+*label M11
+*set EM 22000
+*comment @OCP,LABOR I
+*set occupation "LABOR I"
+*if (PH>50) and (CN>40)
+  *goto N.T
+*else
+  *goto N.F
+*label M12
+*set EM 50000
+*comment @OCP,LABOR II
+*set occupation "LABOR II"
+*if (IN>50) and (PH>60)
+  *goto N.T
+*else
+  *goto N.F
+*label N.F
+*label N2.F
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+I'm sorry, you don't seem to have the qualifications necessary for performing this job. Try again after you have had a bit more life experience.
+*finish
+*label N.T
+*temp randomY
+*rand randomY 1 2
+*if randomY=1
+  *goto Y1
+*else
+  *goto Y2
+*label Y1
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+I'm sorry. You have all of the qualifications, but this position has already been filled by someone else. There are frequent job openings, so please try again.
+*finish
+*label N2.T
+*label Y2
+*set HP%+20
+*set CN%+30
+*set VC%+30
+*set SC%+40
+*set IN%+20
+*set TH%+20
+*set CA%+50
+Congratulations! You start work immediately.
+*finish
+*label B3
+*if EM>0
+  *goto BB.T
+*else
+  *goto BB.F
+*label BB.F
+*finish
+*label BB.T
+Please list a reason for leaving work.
+
+
+Select an action:
+
+*choice
+  #JOB DISSATISFIED
+    *goto LEAVE1
+  #DESIRE FOR CAREER CHANGE
+    *goto LEAVE2
+  #RETIREMENT
+    *goto LEAVE3
+*label LEAVE1
+*set CA%-10
+*set GN%-10
+*set SC%-10
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+I hope your next job turns out better!
+*finish
+*label LEAVE2
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+Good luck in finding something better!
+*finish
+*label LEAVE3
+*set EM 0
+*comment @OCP,(RETIRED)
+*set occupation "(RETIRED)"
+*if AG<65
+  *goto CHECKAGE.T
+*else
+  *goto CHECKAGE.F
+*label CHECKAGE.T
+*if MN>50000
+  *goto CHECKMN.T
+*else
+  *goto CHECKMN.F
+*label CHECKMN.T
+You certainly have enough Resources to take it easy a bit. Have an enjoyable retirement.
+*finish
+*label CHECKMN.F
+Your Resources aren't exactly going to keep you comfortable for the rest of your life. Be careful that you don't go bankrupt!
+*finish
+*label CHECKAGE.F
+*if VC>70
+  *goto CHECKVOC.T
+*else
+  *goto CHECKVOC.F
+*label CHECKVOC.T
+*set MN+250000
+Everyone you work with is sorry that you will no longer be interacting with them. You were very good at your job. Your retirement benefits amount to approximately $250,000.
+*finish
+*label CHECKVOC.F
+*if VC>50
+  *goto CHECKAGAIN.T
+*else
+  *goto CHECKAGAIN.F
+*label CHECKAGAIN.T
+*set MN+60000
+You have been a decent worker during your career. A small gathering of people you work with bids you a fond farewell. Your retirement benefits amount to approximately $60,000.
+*finish
+*label CHECKAGAIN.F
+*set MN+20000
+Your work performance has been poor over the span of your career. You are hardly missed at your place of work. Your retirement benefits amount to approximately $20,000.
+*finish
+
+*label B4
+*label BANKA1
+*if BR>0
+  *goto A1BR.T
+*else
+  *goto A1BR.F
+*label A1BR.T
+I'm sorry, but your credit rating makes it impossible for you to get a loan.  At the end of this life stage, if you can afford to pay off your debt, your credit rating will be restored.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label A1BR.F
+
+
+
+Select an action:
+
+*choice
+  #BORROW    $1000
+    *goto BANKB1
+  #BORROW    $2000
+    *goto BANKB2
+  #BORROW    $5000
+    *goto BANKB3
+  #BORROW  $10,000
+    *goto BANKB4
+  #BORROW  $20,000
+    *goto BANKB5
+  #BORROW  $50,000
+    *goto BANKB6
+  #BORROW $100,000
+    *goto BANKB7
+  #BORROW $200,000
+    *goto BANKB8
+*label BANKB1
+*set LA 1000
+*goto BANKCHK
+*label BANKB2
+*set LA 2000
+*goto BANKCHK
+*label BANKB3
+*set LA 5000
+*goto BANKCHK
+*label BANKB4
+*set LA 10000
+*goto BANKCHK
+*label BANKB5
+*set LA 20000
+*goto BANKCHK
+*label BANKB6
+*set LA 50000
+*goto BANKCHK
+*label BANKB7
+*set LA 100000
+*goto BANKCHK
+*label BANKB8
+*set LA 200000
+*label BANKCHK
+*if VC<50
+  *goto BANKD.T
+*else
+  *goto BANKD.F
+*label BANKD.T
+I'm sorry. We have evaluated your earning power based on your job stability and we are afraid that you cannot be granted this loan.
+*finish
+*label BANKD.F
+*if TR<40
+  *goto BANKE.T
+*else
+  *goto BANKE.F
+*label BANKE.T
+I'm sorry. Your personal references have all mentioned your lack of trustworthiness. Because of this we cannot grant you a loan at the present time.
+*finish
+*label BANKE.F
+*if (LA>50000) and (MN<25000)
+  *goto BANKF.T
+*else
+  *goto BANKF.F
+*label BANKF.T
+I'm sorry. You do not have enough Resources saved to merit a loan of this size.
+*page_break
+*goto BANKTOP
+*label BANKF.F
+Congratulations! We are pleased to inform you that you have been approved for your loan.
+
+You have one more chance to back out of this transaction. Do you still want the loan?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto BANKG1
+  #NO
+    *goto BANKG2
+*label BANKG1
+*comment @LTB,P
+*set debt +LA
+*set MN -DN
+*set MN +LA
+*set LA 0
+*set DN 0
+You've got it. It has been nice doing business with you.
+*finish
+*label BANKG2
+Okay. Please feel free to apply again some other time.
+*finish
+*label B5
+*if BR>0
+  *goto A2BR.T
+*else
+  *goto A2BR.F
+*label A2BR.T
+I'm sorry, but your credit rating makes it impossible for you to get a loan.  At the end of this life stage, if you can afford to pay off your debt, your credit rating will be restored.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label A2BR.F
+There are several types of houses from which to choose:
+
+
+Select an action:
+
+*choice
+  #A HANDYMAN'S SPECIAL ($50,000)
+    *goto BANKH1
+  #A SMALL, TWO BEDROOM CAPE COD ($100,000)
+    *goto BANKH2
+  #A CONDOMINIUM TOWNHOUSE ($160,000)
+    *goto BANKH3
+  #A LARGE 9-ROOM COLONIAL ($300,000)
+    *goto BANKH4
+  #A SPACIOUS CONTEMPORARY HOUSE ($500,000)
+    *goto BANKH5
+  #AN ESTATE WITH STABLES AND SERVANTS' QUARTERS ($2,500,000)
+    *goto BANKH6
+*label BANKH1
+You will need a down payment of $10,000 and legal fees of $1160.
+*set thingtobuy "HOUSE-HANDYMAN'S SPECIAL"
+*set AM 12500
+*set DN 11160
+*set LA 40000
+*goto BANKCHECK
+*label BANKH2
+You will need a down payment of $20,000 and legal fees of $1500.
+*set thingtobuy "HOUSE - TWO BDR CAPE COD"
+*set AM 25000
+*set DN 21500
+*set LA 80000
+*goto BANKCHECK
+*label BANKH3
+You will need a down payment of $32,000 and legal fees of $2000.
+*set thingtobuy "CONDOMINIUM TOWNHOUSE"
+*set AM 40000
+*set DN 34000
+*set LA 128000
+*goto BANKCHECK
+*label BANKH4
+You will need a down payment of $60,000 and legal fees of $3000.
+*set thingtobuy "HOUSE - 9 ROOM COLONIAL"
+*set AM 75000
+*set DN 63000
+*set LA 240000
+*goto BANKCHECK
+*label BANKH5
+You will need a down payment of $100,000 and legal fees of $5000.
+*set thingtobuy "HOUSE - CONTEMPORARY"
+*set AM 125000
+*set DN 10500
+*set LA 400000
+*goto BANKCHECK
+*label BANKH6
+You will need a down payment of $500,000 and legal fees of $25,000.
+*set thingtobuy "ESTATE-STABLE, SRV QTRS"
+*set AM 625000
+*set DN 525000
+*set LA 2000000
+*label BANKCHECK
+*page_break
+*if MN>AM
+  *goto BANKJ.T
+*else
+  *goto BANKJ.F
+*label BANKJ.F
+I'm sorry, you do not have enough money to put a down payment on this house. Please try again after you have gained more resources.
+*finish
+*label BANKJ.T
+*comment @LTB
+*set debt +LA
+*set MN -DN
+*set LA 0
+*set DN 0
+*if acquisitions != ""
+  *set acquisitions &","
+*set acquisitions &thingtobuy
+
+CONGRATULATIONS ON THE PURCHASE OF YOUR NEW HOME!
+*finish
+*label B6
+
+
+Select an action:
+
+*choice
+  #PAY BACK    $1000
+    *goto BANKK1
+  #PAY BACK    $2000
+    *goto BANKK2
+  #PAY BACK    $5000
+    *goto BANKK3
+  #PAY BACK  $10,000
+    *goto BANKK4
+  #PAY BACK  $50,000
+    *goto BANKK5
+  #PAY BACK $100,000
+    *goto BANKK6
+  #PAY BACK $500,000
+    *goto BANKK7
+  #PAY BACK $1,000,000
+    *goto BANKK8
+*label BANKK1
+*set AM 1000
+*goto BANKCANPAY
+*label BANKK2
+*set AM 2000
+*goto BANKCANPAY
+*label BANKK3
+*set AM 5000
+*goto BANKCANPAY
+*label BANKK4
+*set AM 10000
+*goto BANKCANPAY
+*label BANKK5
+*set AM 50000
+*goto BANKCANPAY
+*label BANKK6
+*set AM 100000
+*goto BANKCANPAY
+*label BANKK7
+*set AM 500000
+*goto BANKCANPAY
+*label BANKK8
+*set AM 1000000
+*label BANKCANPAY
+*if MN>AM
+  *goto BANKL.T
+*else
+  *goto BANKL.F
+*label BANKL.F
+I'm sorry, but you can not afford to repay that much.
+*page_break
+*goto BANKTOP
+*label BANKL.T
+*comment @PBL
+*if AM > debt
+  *set AM debt
+*set debt -AM
+*set MN -AM
+*set AM 0
+Thank you very much!
+*finish
+

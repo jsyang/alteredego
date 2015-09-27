@@ -1,0 +1,82 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+Your grade on your last Science test was terrible! Today, after school, Mr. Hinckley is offering a help session to those who did poorly. Your dilemma: Should you go for the help session, or to an after-school party at your friend's house?
+
+
+Select an action:
+
+*choice
+  #GO TO THE HELP SESSION
+    *goto A1
+  #GO TO THE PARTY
+    *goto A2
+*label A1
+*set TR%+20
+*set IN%+10
+*set TH%+10
+Mr. Hinckley is ten minutes late. Will you:
+
+
+Select an action:
+
+*choice
+  #LEAVE
+    *goto B1
+  #STAY
+    *goto B2
+*label B2
+*set TH%+10
+As it turns out, Mr. Hinckley is a bit of a flake. He forgot all about the help session he offered and went home right after school. You can go to the party, after all.
+*finish
+*label B1
+As you are about to leave, you see Mr. Hinckley coming down the hall. Will you:
+
+
+Select an action:
+
+*choice
+  #DUCK OUT OF HIS WAY
+    *goto C1
+  #GO BACK TO CLASS
+    *goto C2
+*label C1
+*set TH%-20
+I thought you were really going to stick it out there for awhile, but you let your impulses get the better of you again. You have a great time at the party, and you get credit for trying to stay after class, besides!
+*label E2
+*if IN>80
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Fortunately, you are pretty smart, so you are able to catch up with your work with no trouble. This is one time in life where you are able to have your cake and eat it, too. Savor it -- it doesn't happen often.
+*finish
+*label C2
+*set TR%+20
+*set IN%+15
+*set TH%+10
+*set SC%-10
+Mr. Hinckley apologizes for being late and gives you a personal study session.  As a result, you do much better on your next test.
+*page_break
+Later, some of your friends make fun of you for not going to the party.  (There will be others, right?)
+*finish
+*label D.F
+*set IN%-10
+Unfortunately, you have trouble trying to catch up with material you didn't understand, and as a result, you fail the next test as well.
+*finish
+*label A2
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+*set SC%+30
+You got lucky! Mr. Hinckley is a bit of a flake. He completely forgot about the help session he offered and went home right after school.
+*finish
+

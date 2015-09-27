@@ -1,0 +1,72 @@
+Livingston, a foreign friend from Jamaica, asks you over to his house for dinner. Your first course is an interesting-looking kind of soup. You take a sip and find it delicious. You inquire, "What kind of soup is this?"
+Livingston's mother replies with a proud smile on her face, "Turtle soup."
+*choice mood action
+  #HORRIFIED
+    #TRY TO EAT ALL OF THE SOUP
+      *goto A11
+    #EAT A LITTLE MORE OF THE SOUP
+      *goto A12
+    #STOP EATING THE SOUP AND HOPE NO ONE NOTICES
+      *goto A13
+  #AMBIVALENT
+    #TRY TO EAT ALL OF THE SOUP
+      *goto A21
+    #EAT A LITTLE MORE OF THE SOUP
+      *goto A22
+    #STOP EATING THE SOUP AND HOPE NO ONE NOTICES
+      *goto A23
+  #OPEN
+    #TRY TO EAT ALL OF THE SOUP
+      *goto A31
+    #EAT A LITTLE MORE OF THE SOUP
+      *goto A32
+    *selectable_if (false) #STOP EATING THE SOUP AND HOPE NO ONE NOTICES
+      *finish
+*label A11
+*set TH%+20
+Your desire not to offend anyone in your friend's family is admirable. You convince yourself that the little pieces of meat taste just like chicken. When you are all through, Livingston's mother is beaming. She places another nice
+hot bowl in front of you. Eat hearty, young man!
+*finish
+*label A12
+*label A32
+*set PH%-10
+*set GN%+30
+The more you eat, the more you think of those cute little pet turtles you once had in your room. You politely explain that the soup is good, but very filling.
+*if SC>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set SC%+40
+Your charming social character hides your disgust and no one is in the least bit offended.
+*finish
+*label B.F
+Your social skills aren't quite up to hiding your disinclination to eat the soup. Livingston's mother is sensitive to this kind of thing, however, she shows no sign of disapproval.
+*finish
+*label A13
+*set SC%-10
+*set GN%-10
+Your abrupt rejection of the food insults Livingston's mother.
+*finish
+*label A21
+*set SC%+20
+*set TH%+30
+*set CA%-10
+You have chosen to resolve your ambivalence by considering the feelings of Livingston's mother. You eat most of the soup, convincing yourself that the little pieces of meat taste just like chicken. Social, Thoughtfulness and
+Gentleness characteristics rise. Calmness decreases a little.
+*finish
+*label A22
+*set HP%+10
+Your confusion becomes apparent to your friend, who finishes his soup and then switches plates with you when no one is looking.
+*finish
+*label A23
+Your hesitation to eat the soup is resolved by focusing in on your own needs. Your sudden behavior change confuses Livingston's mom, but doesn't seem to upset her.
+*finish
+*label A31
+*set CN%+40
+*set SC%+20
+*set IN%+20
+Your willingness to experience new things is remarkable. Besides, those little pieces of meat taste just like chicken. Your adventurousness delights Livingston's mom, who shows you pictures of her island and tells you about
+its people and  customs. Intellectual sphere rises.
+*finish
+

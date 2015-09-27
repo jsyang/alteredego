@@ -1,0 +1,174 @@
+You don't have very many skills yet. As a matter of fact, life is pretty boring.
+*choice mood action
+  #RESTLESS/IRRITABLE
+    *selectable_if (false) #SLEEP
+      *finish
+    #LOOK AROUND
+      *goto A12
+    #CRY
+      *goto A13
+  #QUIET
+    #SLEEP
+      *goto A21
+    #LOOK AROUND
+      *goto A22
+    *selectable_if (false) #CRY
+      *finish
+*label A13
+*label G1
+*label J2
+I can understand how new and confusing all of this must seem to you. Nine months of rest and relaxation, followed by all of that commotion, and now this. You can't see much, and you have no control over your body. Your crying makes
+something happen. You are lifted up and rocked.
+
+
+Select an action:
+
+*choice
+  #KEEP CRYING
+    *goto B1
+  #CALM DOWN
+    *goto B2
+*label B1
+You were startled when you were lifted up. Mom is going to have to learn to handle you a bit more gently.
+
+
+Select an action:
+
+*choice
+  #KEEP CRYING
+    *goto C1
+  #CALM DOWN
+    *goto C2
+*label C1
+You got really scared. Your mother pulls you closer to her where it is warm and safe.
+
+
+Select an action:
+
+*choice
+  #KEEP CRYING
+    *goto D1
+  #CALM DOWN
+    *goto D2
+*label D1
+Your mother is beginning to get frustrated and worried.
+
+
+Select an action:
+
+*choice
+  #KEEP CRYING
+    *goto E1
+  #CALM DOWN
+    *goto E2
+*label E1
+Your mother is beginning to wonder whether or not you have colic. She may have to call the pediatrician if you keep crying all the time.
+
+
+Select an action:
+
+*choice
+  #KEEP CRYING
+    *goto F1
+  #CALM DOWN
+    *goto F2
+*label F1
+You have made your mother feel rejected. She will internalize this and feel guilty throughout your childhood. I know you didn't do this on purpose, but new parents are very sensitive to this sort of thing.
+*set FM%-10
+*finish
+*label B2
+*label C2
+*label D2
+*label E2
+*label F2
+The gentle rocking reminds you of the good old days. Maybe this won't be so bad after all. Adaptation to change is a sign of healthy development. Keep this in mind for later.
+*set HP%+20
+*finish
+*label A12
+Feel like you're going stir crazy? I can just imagine. The room is filled with bright colors but you have trouble focusing on any of them.
+
+
+Select an action:
+
+*choice
+  #CRY AND YELL FOR ATTENTION
+    *goto G1
+  #KEEP LOOKING AROUND
+    *goto G2
+  #CALM YOURSELF DOWN
+    *goto G3
+*label G2
+*label A22
+You look around and see a large blur about eleven inches away from your eye. Every once in a while it moves. Hey...wait a minute...just as you had that thought it moved again.
+
+
+Select an action:
+
+*choice
+  #KEEP LOOKING
+    *goto H1
+  #LOSE INTEREST
+    *goto H2
+*label H1
+CONGRATULATIONS! You've found your hand. This may not seem like much of a big discovery but it is. You will have to learn how to control your hands as part of childhood development. When you are an adolescent, those hands are going
+to get you into quite a bit of trouble -- because that requires a different kind of hand control.
+*set IN%+40
+*finish
+*label H2
+*label M2
+It's hard to pay attention to all of this new stuff. Right now you are just feeling very fickle and difficult to please.
+
+
+Select an action:
+
+*choice
+  #GO TO SLEEP
+    *goto J1
+  #CRY
+    *goto J2
+*label SLEEP
+*label L1
+*label M1
+*label J1
+*label A21
+*set PH%+10
+Good idea. Infants do need their sleep. As a matter of fact, most newborns spend a very small amount of their time awake (only about six or seven minutes of wakefulness per hour) for the first six or eight weeks of life. What's
+even more interesting is the fact that out of all of this time, more that 50 percent of it is spent in sleep that follows the same pattern as adult dream sleep. What could you be dreaming about?
+*finish
+*label G3
+A remarkable baby. Keeping calm can be very difficult, but if you start practicing this early, you will surely avoid ulcers later on.
+*set CA%+50
+
+
+Select an action:
+
+*choice
+  #GO TO SLEEP
+    *goto K1
+  #REMAIN AWAKE
+    *goto K2
+*label K1
+*goto SLEEP
+*label K2
+You really should try to get some rest. Infants need a lot of sleep. Care to take a nap?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto L1
+  #NO
+    *goto L2
+*label L2
+*set PH%-10
+Overactivity even at a very early age can be a bad sign. Please try to get some rest.
+
+
+Select an action:
+
+*choice
+  #SLEEP
+    *goto M1
+  #STAY AWAKE
+    *goto M2

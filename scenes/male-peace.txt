@@ -1,0 +1,136 @@
+The thought occurs to you that it might be interesting to travel to a far-away place for a little while and experience new things. Someone suggests joining the Peace Corps.
+*choice mood action
+  #STIMULATED BY THE NOTION
+    #CONTACT THE PEACE CORPS FOR MORE INFORMATION
+      *goto A11
+    #DISMISS THE IDEA AS NOT RIGHT FOR YOU AT THIS TIME IN YOUR LIFE
+      *goto A12
+  #TURNED OFF BY THE NOTION
+    *selectable_if (false) #CONTACT THE PEACE CORPS FOR MORE INFORMATION
+      *finish
+    #DISMISS THE IDEA AS NOT RIGHT FOR YOU AT THIS TIME IN YOUR LIFE
+      *goto A22
+*label A12
+*label A22
+It might have seemed like an interesting thought, but it's not anything you would actually DO.
+*finish
+*label A11
+A Peace Corps representative tells you that you would be spending a portion of your life working in one of any number of settings. The task that seems right for you is working in an agricultural community in an underdeveloped nation.
+There will be very few if any economic rewards.
+*page_break
+As a matter of fact, you will probably lose out financially because of what you could have been earning in a more traditional job in this country during the same time period. What you will lack in monetary reimbursement, you will more
+than make up for in emotionally satisfying experiences and the knowledge that you have devoted a small portion of your life to helping others.
+*page_break
+Before you volunteer, your qualifications would have to be checked. Are you interested in joining?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B2
+The Peace Corps representative thanks you for inquiring.
+*finish
+*label B1
+*if MS>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+Your wife doesn't want you to go and doesn't want to go with you, either. She says that if you leave her to go to some underdeveloped country, she will divorce you. Do you still want to go?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*set TH%-50
+*set MS 0
+O.K. If that's the way you want it. Your wife files for divorce and leaves you before you even get accepted to go.
+*goto G
+*label D2
+*set MP+2
+Just the thought that you would make such a major change makes your wife wonder about your commitment to the marriage. Your marriage suffers considerable stress.
+*finish
+*label C.F
+*if SR>0
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Your girlfriend doesn't want you to go and doesn't want to go with you, either. She says that if you leave her to go to some underdeveloped country, she will break up with you. Do you still want to go?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label F2
+*finish
+*label F1
+*set TH%-40
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+O.K. If that's the way you want it. Your girlfriend leaves you before you even get accepted to go.
+*label E.F
+*label G
+*page_break
+Now that you have decided to join the Peace Corps, your qualifications must be considered...
+
+*if IN>60
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+You certainly have the intellectual skills.
+
+*goto I
+*label H.F
+*set TH%+30
+I'm sorry. You don't possess the intellectual skills for this kind of
+work.
+*finish
+*label I
+*if GN>70
+  *goto J.T
+*else
+  *goto J.F
+*label J.F
+*set TH%+30
+I'm sorry. You really are not sensitive enough to do this kind of work.
+*finish
+*label J.T
+Your Gentleness characteristic shows that you possess the kind of sensitivity needed for such a job.
+*page_break
+*if TR>70
+  *goto L.T
+*else
+  *goto L.F
+*label L.T
+*set TR%+40
+*set IN%+50
+*set GN%+40
+*set HP%+40
+*set SC%+40
+*set EX%+50
+*set CA%+40
+Finally, you seem to possess the responsibilty needed to do this work. Congratulations! You are accepted into the Peace Corps. Your work is difficult but rewarding. Over the course of your experience many of your Life Spheres
+increase markedly.
+*finish
+*label L.F
+*set TH%+30
+I'm sorry. You don't possess the sense of responsibility needed for a job like this.
+*finish
+

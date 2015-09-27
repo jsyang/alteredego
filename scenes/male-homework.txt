@@ -1,0 +1,78 @@
+Your friends are all waiting for you to come out after school. You have a ton of homework and you've been watching television since you came home. On your way out your mother asks, "Did you do all your homework?"
+*choice mood action
+  #HONEST
+    *selectable_if (false) #SAY "YES"
+      *finish
+    #SAY "NO"
+      *goto A12
+    *selectable_if (false) #SAY "I'VE ONLY GOT A LITTLE LEFT"
+      *finish
+  #DISHONEST
+    #SAY "YES"
+      *goto A21
+    *selectable_if (false) #SAY "NO"
+      *finish
+    *selectable_if (false) #SAY "I'VE ONLY GOT A LITTLE LEFT"
+      *finish
+  #SEMI-HONEST
+    *selectable_if (false) #SAY "YES"
+      *finish
+    *selectable_if (false) #SAY "NO"
+      *finish
+    #SAY "I'VE ONLY GOT A LITTLE LEFT"
+      *goto A33
+*label A12
+*set TR%+20
+Your mother replies, "You are not going out unless you do your homework." You can:
+
+
+Select an action:
+
+*choice
+  #STAY IN 15 MINUTES AND FAKE THE HOMEWORK
+    *goto B1
+  #STAY IN AND DO THE HOMEWORK
+    *goto B2
+*label B1
+*label A21
+*if AG<10
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set TR%-10
+You are too young to fool anyone. Your mother checks to see if you have done it. You are grounded for a week.
+*finish
+*label C.F
+You are old enough to know how to fake your homework so that it passes by your mother. It doesn't pass by your teacher.
+*if IN<80
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+You cannot afford too much more laziness in the Intellectual area right now.
+*finish
+*label D.F
+*set SC%+40
+*set TR%-30
+Your Intellectual sphere status shows that you can manage without doing some of your homework. Socially you advance, since you spend time with friends. Your Trustworthiness is decreasing.
+*finish
+*label B2
+*if IN<80
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set TR%+30
+That was a wise decision. Your Intellectual sphere needs improvement. Trustworthiness is increasing.
+*finish
+*label F.F
+*set FM%+30
+*set TR%+40
+*set SC%-20
+Familial and Emotional characteristics increase because you are honest. Socially your score drops slightly because you lose the play experience with friends.
+*finish
+*label A33
+"Semi-Honest" is the truthfulness equivalent of "semi-pregnant." Your mother says, "Finish what you have left before you go out."
+*finish
+

@@ -1,0 +1,98 @@
+While you are on a sightseeing cruise, you hear a cry and see a small boy fall over the railing into the water. There doesn't seem to be enough time to call for help, because the boat is moving too quickly.
+*choice mood action
+  #PANIC
+    #CALL FOR HELP
+      *goto A11
+    #JUMP IN THE WATER AFTER HIM
+      *goto A12
+  #CALM
+    #CALL FOR HELP
+      *goto A21
+    #JUMP IN THE WATER AFTER HIM
+      *goto A22
+*label A11
+There is not enough time for this. The boy drowns.
+*finish
+*label A12
+The panic numbs your body, even before it hits the cold water. When you break the surface a wave washes salt water into your mouth and down your throat. The boy is at least 25 yards away from you.
+*page_break
+*if PH>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You are in good shape physically. You must believe that you will be able to get to the boy in time.
+*label E
+
+
+Select an action:
+
+*choice
+  #CALL OUT TO THE BOY
+    *goto C1
+  #SAVE YOUR ENERGY
+    *goto C2
+*label C1
+*set SC%+30
+*set CN%+30
+*set TH%+30
+*set HP%+30
+This was a good idea. The sound of your voice is comforting, and helps orient the boy in the proper direction. Eventually, you get to the boy. As you clutch him in your arms, you see a small motorized raft from the sightseeing boat
+heading towards you. Your heroic efforts helped save the boy's life.
+*page_break
+The next day, newspaper and television reports chronicle your heroic deed. You are quite a remarkable person.
+*finish
+*label C2
+*set TH%+30
+*set SC%+30
+Calling out to the boy would have bolstered his spirits and helped orient him in the proper direction. By the time you reach him, he has disappeared beneath the waves. A small motorized raft is heading toward you. You are thanked
+for your brave effort. This experience has turned out to be a tragedy.
+*finish
+*label B.F
+You are not in good enough physical shape for this. You can feel sharp pains shooting through your stomach and chest. You are becoming short of breath with the child still 25 yards out. A motorized raft from the sightseeing boat
+begins to make its way toward you. There is not enough time to pick up both you and the boy before the boy drowns.
+
+
+Select an action:
+
+*choice
+  #SIGNAL THE BOAT TO PASS YOU
+    *goto D1
+  #GET IN THE BOAT
+    *goto D2
+  #KEEP SWIMMING TOWARD THE BOY
+    *goto D3
+*label D1
+*set TH%+70
+*set CN%+30
+*set HP%+30
+*set GN%+30
+*set SC%+50
+As the boat passes you, it creates a wake that washes across your face, filling your mouth and lungs with water. You can feel yourself beginning to pass out. Every wave that strikes against your body incapacitates you more.
+*page_break
+When you regain consciousness you are greeted by the faces of loved ones, other passengers and a small boy wrapped in a flannel blanket. Your heroic efforts helped save the boy's life!
+*finish
+*label D2
+You have chosen to save your own life over the boy's. By the time the boat reaches the child, he has disappeared under the waves.
+*finish
+*label D3
+The boy is still quite a distance away.
+*goto E
+*label A21
+Your calmness fails to arouse anyone to the boy's aid. He drowns.
+*finish
+*label A22
+*if CA>50
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Calmness is a trait that is central to your personality. In this instance you use it to react quickly and efficiently. As you enter the water, you spot the boy about 25 yards to your left.
+*goto E
+*label F.F
+The kind of Calmness this situation requires is not in your personality. Instead of acting calmly, you expend energy trying to keep yourself calm and neglect the situation at hand.
+*page_break
+Panic does have a purpose. It mobilizes the body and prepares for an extreme situation. This would have been a much better response. Your concern with keeping calm interferes with your ability to help the boy. You both drown.
+This game is over.
+*goto_scene you_have_died
+

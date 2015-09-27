@@ -1,0 +1,608 @@
+*temp AM 0
+Welcome to the Marriage Icon.
+*if (SR<1) and (MS<1)
+  *goto XX.T
+*else
+  *goto XX.F
+*label XX.T
+In order to enter this icon you must first be involved in a steady relationship. It's generally considered good form to know the person with whom you plan to spend a presumably large portion of your life.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label XX.F
+While you are in this icon you can make arrangements to plan and enter into a marriage, or (and I'm sorry to have to be so blunt) leave a marriage. What would you like to do?
+
+
+Select an action:
+
+*choice
+  #BECOME ENGAGED
+    *goto A1
+  #PLAN AND HAVE A WEDDING
+    *goto A2
+  #GET A DIVORCE FROM YOUR HUSBAND
+    *goto A3
+  #HAVE AN EXPERIENCE WITH YOUR HUSBAND
+    *goto A4
+  #LEAVE THIS ICON
+    *goto A5
+*label A5
+*comment @NTQ
+*set instantaneous true
+*finish
+
+
+*label A4
+*if MS>0
+  *goto XY.T
+*else
+  *goto XY.F
+*label XY.T
+*comment @SIE
+*goto_random_scene allow_no_selection
+  female-me-2-1
+  female-me-2-2
+  female-me-2-3
+  female-me-2-4
+  female-me-2-5
+  female-me-2-6
+There are none of these experiences you can do right now.
+*set instantaneous true
+*finish
+*label XY.F
+I'm sorry, but you'll have to get married first.
+*finish
+*label A1
+*if MS>0
+  *goto PLG.T
+*else
+  *goto PLG.F
+*label PLG.T
+I'm sorry, but this game doesn't allow for polygamy!
+*finish
+*label PLG.F
+*if ES>0
+  *goto BB.T
+*else
+  *goto BB.F
+*label BB.T
+*set TH%-10
+I'm sorry, life would get much too complicated if you could be engaged to two people at once. Please go back and break the news to your old fiance before becoming engaged to someone else!
+*finish
+*label BB.F
+One thing that may cross your mind is getting a ring.
+*label RNG
+What kind of ring would you be satisfied with?
+
+
+Select an action:
+
+*choice
+  #WORTH   $200
+    *goto RNG1
+  #WORTH   $1000
+    *goto RNG2
+  #WORTH  $2000
+    *goto RNG3
+  #WORTH  $10000
+    *goto RNG4
+  #WORTH  $20000
+    *goto RNG5
+  #A FAMILY HEIRLOOM
+    *goto RNG6
+*label RNG6
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+Your boyfriend's family doesn't have any heirlooms.
+*finish
+*label RNG1
+*set AM 0
+*goto CHECK$
+*label RNG2
+*set AM 1000
+*goto CHECK$
+*label RNG3
+*set AM 2000
+*goto CHECK$
+*label RNG4
+*set AM 10000
+*goto CHECK$
+*label RNG5
+*set AM 20000
+*label CHECK$
+*if MN>AM
+  *goto CC.T
+*else
+  *goto CC.F
+*label CC.F
+I'm sorry. Your boyfriend couldn't afford to pay for a ring like that.
+*page_break
+*goto RNG
+*label CC.T
+*if AM>1000
+  *goto DD.T
+*else
+  *goto DD.F
+*label DD.T
+*set TH%-10
+It sounds like you are the type of person whose affections can be BOUGHT. I hope your hand can manage the weight.
+*goto PHASE2
+*label DD.F
+*label B2
+*set GN%+10
+That sounds reasonable....
+*label PHASE2
+*page_break
+In the period of time that you and ${loverName} are getting to know one another and planning for marriage...
+*page_break
+*if TR>70
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+${loverName} senses your Trustworthy character and approves of this aspect of your personality.
+*page_break
+*label D.F
+*if TR<50
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+He begins to realize that you are untrustworthy, and judging by your status sheet, he is right.
+*page_break
+*goto INLAWPROBS
+*label E.F
+*if GN>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+${loverName} senses your Gentleness and feels comfortable about the way you would treat him.
+*page_break
+*label F.F
+*if GN<40
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+${loverName} sees how hostile you can be and wonders about the way you would treat him.
+*page_break
+*goto INLAWPROBS
+*label G.F
+*if TH<40
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+${loverName} sees that you are quite impulsive and wonders whether you will be able to keep your household in good running order.
+*page_break
+*goto INLAWPROBS
+*label H.F
+*if TH>60
+  *goto I.T
+*else
+  *goto I.F
+*label I.T
+He sees that you are responsible and realizes what a good partnership the relationship will foster.
+*goto PHASE3
+*label I.F
+There is some discomfort about various aspects of your personality, but ${loverName} will try to see it through.
+*goto PHASE3
+*label INLAWPROBS
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+All in all, there is too much turmoil in your relationship for it to work. ${loverName} tells you, "The marriage is off!"
+*finish
+*label PHASE3
+Now that you have given your engagement a good deal of thought, it wouldn't hurt to drop a few hints to ${loverName} about the big event.
+
+
+Select an action:
+
+*choice
+  #DROP SOME HINTS
+    *goto M1
+  #WAIT FOR HIM TO INITIATE A DISCUSSION ABOUT IT
+    *goto M2
+*label M1
+*temp randomN
+*rand randomN 1 5
+*if randomN=1
+  *goto N1
+*elseif randomN=2
+  *goto N2
+*elseif randomN=3
+  *goto N3
+*elseif randomN=4
+  *goto N4
+*else
+  *goto N5
+*label N1
+*label N2
+*label N3
+*label N4
+He has been thinking about it too. The two of you discuss the possibilities, and it seems like the two of you may have a future together...
+*goto PROPOSE
+*label N5
+${loverName} begins to get very nervous when he discovers what you are hinting at. He doesn't want to talk about it right now.
+*finish
+*label M2
+${loverName} seems very dense. It doesn't seem like he's EVER going to be able to initiate a discussion like this.
+*finish
+*label PROPOSE
+*page_break
+As a matter of fact, not long after the two of you begin talking about it, the following happens:
+*temp randomJ
+*rand randomJ 1 4
+*if randomJ=1
+  *goto J1
+*elseif randomJ=2
+  *goto J2
+*elseif randomJ=3
+  *goto J3
+*else
+  *goto J4
+*label J1
+*temp randomK
+*rand randomK 1 2
+*if randomK=1
+  *goto K1
+*else
+  *goto K2
+*label K1
+${loverName} buys you an engagement ring. He asks you out to dinner. He tries to arrange it so that the waiter brings it to you for dessert, so you will be surprised.
+*page_break
+The waiter sneaks out the back door with your ring! Fortunately, he is captured. ${loverName}'s proposal has gotten your future off to an exciting start.
+*goto PHASE4
+*label K2
+${loverName} buys you an engagement ring. He asks you out to dinner. He arranges it so that the waiter brings it to you as a surprise for dessert. Everyone in the restaurant claps for the two of you. ${loverName}'s proposal has created quite a stir.
+How romantic!
+*goto PHASE4
+*label J2
+While reading the morning paper, you notice that ${loverName} has taken out a full page ad asking for your hand. Definitely an 80's approach to getting engaged, but effective. You must be flattered.
+*goto PHASE4
+*label J3
+On a romantic moonlit evening, ${loverName} produces a small square box and holds it out to you in the palm of his hand. Bending down on one knee, he looks up at you and shyly asks for your hand in marriage. How romantic!
+*goto PHASE4
+*label J4
+While driving to the movies one night, ${loverName} matter-of-factly asks you to marry him.
+*label PHASE4
+*page_break
+Now, for the big moment. Your desire to have ${loverName} ask for your hand has come true. Will you accept?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto L1
+  #NO
+    *goto L2
+*label L2
+${loverName} can't believe it. He's crushed, heartbroken and suicidal (not to mention a little peeved). You seemed to want to marry him. You dropped all kinds of hints. Your last-minute change of heart has shattered ${loverName}'s dream.
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+*finish
+*label L1
+You're on your way to your wedding day! Congrats!
+*set ES 1
+*finish
+*label A2
+*if ES<1
+  *goto WEASEL.T
+*else
+  *goto WEASEL.F
+*label WEASEL.T
+I'm sorry. You need to get engaged before you become married. Please go back and wait for a proposal. Marriage is a game for two, as they say. It would be nice if you let him in on it.
+*finish
+*label WEASEL.F
+Marriage is a serious commitment, one that should last a lifetime. Are you sure you can handle it?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto O1
+  #NO
+    *goto O2
+*label O2
+Well, get back out there and come back when you are ready!
+*finish
+*label O1
+Do the two of you want a large or a small wedding?
+
+
+Select an action:
+
+*choice
+  #LARGE
+    *goto P1
+  #SMALL
+    *goto P2
+*label P1
+*label P2
+Okay. As long as the two of you have agreed on it.
+
+What kind of honeymoon would you like to have?
+
+
+Select an action:
+
+*choice
+  #EXTRAVAGANT
+    *goto R1
+  #NICE, ROMANTIC, NOT NECESSARILY TOO FANCY
+    *goto R2
+  #QUIET AND SIMPLE
+    *goto R3
+*label R1
+*label R2
+*label R3
+That sounds nice.
+
+In what kind of area do the two of you eventually want to live?
+
+
+Select an action:
+
+*choice
+  #IN THE CITY
+    *goto T1
+  #IN THE SUBURBS
+    *goto T2
+  #IN THE COUNTRY
+    *goto T3
+*label T1
+*label T2
+*label T3
+It's tough to find a decent place to live these days, you know.
+*page_break
+Now that you have thought about some of the major preparations, the weeks fly by until your wedding date.
+*comment @WLV
+*temp trouble0
+*temp trouble1
+*temp trouble2
+*temp trouble3
+*temp trouble4
+*temp trouble5
+*temp troubleCount
+*set troubleCount 1
+*temp trouble0
+*set trouble0 "OTHER"
+*if NT < 40
+  *set trouble1 "AFFAIR"
+  *set trouble2 "COLDFEET"
+  *set troubleCount +2
+*if NG < 40
+  *setref ("trouble"&troubleCount) "ASSAULT"
+  *set troubleCount +1
+*if NC < 40
+  *setref ("trouble"&troubleCount) "PRENUP"
+  *set troubleCount +1
+*if NF < 40
+  *setref ("trouble"&troubleCount) "COLDFEET"
+  *set troubleCount +1
+*set troubleCount -1
+*temp troubleNum
+*rand troubleNum 0 troubleCount
+*temp trouble
+*set trouble {"trouble"&troubleNum}
+*if trouble = "AFFAIR"
+  *goto AFFAIR
+*elseif trouble = "COLDFEET"
+  *goto COLDFEET
+*elseif trouble = "ASSAULT"
+  *goto ASSAULT
+*elseif trouble = "PRENUP"
+  *goto PRENUP
+*else
+  *goto OTHER
+*label AFFAIR
+The time that passes is crucial and can determine the future success of your entire marriage. Everyone has their share of problems
+during this time. Unfortunately, this includes you, too. Approximately one week before the wedding, you discover that ${loverName} had a casual affair with a perfect stranger during a weak moment at some point during your engagement.
+*goto BACKOUTNOW
+*label ASSAULT
+The time that passes is crucial and can determine the future success of your entire marriage. Everyone has their share of problems
+during this time. Unfortunately, this includes you, too. At a stressful moment about a month before the wedding, ${loverName} hits you hard across the face in anger.  He says he won't do it again.
+*goto BACKOUTNOW
+*label PRENUP
+The time that passes is crucial and can determine the future success of your entire marriage. Everyone has their share of problems
+during this time. Unfortunately, this includes you, too. ${loverName} wants to create a pre-nuptual financial agreement that would guarantee her half of all your joint holdings in the event of a divorce.
+*goto BACKOUTNOW
+*label OTHER
+*temp randomV
+*rand randomV 1 4
+*if randomV=1
+  *goto V1
+*elseif randomV=2
+  *goto V2
+*elseif randomV=3
+  *goto V3
+*else
+  *goto V4
+*label V1
+The time that passes is crucial and can determine the future success of your entire marriage. Everyone has their share of problems
+during this time. Unfortunately, this includes you, too. ${loverName}'s family has been rude to your family and will not allow them to invite more than a set number of people. ${loverName} agrees with her parents completely. These people would be crushed if they found out they couldn't attend the wedding.
+*goto BACKOUTNOW
+
+*label BACKOUTNOW
+*page_break
+Does this make you want to change your mind about the wedding?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto W1
+  #NO
+    *goto W2
+*label W1
+*set HP%-10
+*set CA%-10
+*set GN%-10
+*set SC%-20
+In that case, it's best if you end it now, before things get too complicated.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+*label W2
+With that out of the way, your wedding day comes and goes without a hitch. It will an occasion to remember forever.
+*goto NIGHT
+
+*label COLDFEET
+*page_break
+Your wedding day seems to be going along perfectly. It will surely be a memorable occasion. Unfortunately
+*set HP%-20
+*set CA%-20
+*set GN%-20
+*set SC%-30
+${loverName} gets cold feet at the very last second and leaves you standing at the altar.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+*label V2
+*page_break
+Your wedding day seems to be going along perfectly. It will surely be a memorable occasion. Unfortunately
+your Uncle Harry gets stinking drunk at the reception and falls down, breaks his leg and has to be taken to the hospital by an ambulance.
+*goto NIGHT
+*label V3
+*page_break
+Your wedding day seems to be going along perfectly. It will surely be a memorable occasion. Unfortunately
+you get into a car accident on the way to the wedding and have to say your wedding vows in a leg cast.
+*goto NIGHT
+*label V4
+*page_break
+Your wedding day seems to be going along perfectly. It will surely be a memorable occasion. Unfortunately
+the best man has a fight with his girlfriend and arrives two hours late (with a black eye).
+*goto NIGHT
+
+
+*label NIGHT
+*comment @GBW
+*set MS 1
+*set spouseName loverName
+*set WT NT
+*set WG NG
+*set WC NC
+*set WF NF
+*set WH NH
+*set WA NA
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+*page_break
+Your wedding night arrives. The two of you climb into bed in anticipation of a night of unbridled passion.
+*page_break
+*temp randomZ
+*rand randomZ 1 3
+*if randomZ=1
+  *goto Z1
+*elseif randomZ=2
+  *goto Z2
+*else
+  *goto Z3
+*label Z1
+${spouseName} seems awkward and clumsy. Perhaps he is trying too hard to make this a special night. As the two of you lie in each other's arms, the exhaustion of a busy day sweeps over the two of you. You close your eyes, and before you know it,
+the morning light signals the first full day of your new life together!
+*goto PHASE5
+*label Z2
+The exhaustion brought on by the day's events seems to have taken its toll on ${spouseName}. Even though you have dressed in your sexiest lingerie, your new husband can't respond with the kind of passion you imagined there would be tonight.
+Although it is a bit awkward, the two of you decide that you will have lots of time to practice.
+*goto PHASE5
+*label Z3
+You slip into bed next to ${spouseName} and cuddle into the bend of his warm body. He seems peaceful and at ease. The two of you relax from the hectic excitement of the day. You both fall asleep, tired and exhausted, without having sex. There
+will be lots of time for that, you both decide.
+*label PHASE5
+*page_break
+The next morning the two of you get ready to leave for your honeymoon.
+
+How will you be traveling to your honeymoon spot?
+
+
+Select an action:
+
+*choice
+  #BY PLANE
+    *goto AA1
+  #BY CAR
+    *goto AA2
+  #BY BOAT
+    *goto AA3
+  #BY TRAIN
+    *goto AA4
+*label AA1
+*label AA2
+*label AA3
+*label AA4
+*set HP%+20
+The trip to your honeymoon hideaway is a safe and pleasurable one.
+*page_break
+Your honeymoon is peaceful and relaxing. Any problems you might have experienced on your wedding night are washed away by the peacefulness of your surroundings. This is the start of a lifetime that will be filled with many emotions.
+There is love of course, but that will have to be tempered with tolerance.
+*page_break
+After all, loving someone who loves you in return is easy. Tolerating him when he is moody and irritable is difficult and may mean the difference between staying together or falling apart. Admiration will sometimes be offset by
+petty jealousy. Desire for companionship will sometimes be replaced by a need for solitude.
+*page_break
+This kind of talk may seem premature at this stage of your marriage, but within the next two years things will start to become very difficult. The newness of the marriage will wear off, and you will have to start coming to grips with
+the fact that your partner is not as perfect as you would really like.
+*page_break
+This is not a bad thing, but it is reality. Your ability to adjust to your partner's strengths and weaknesses (and vice versa) will ultimately determine the success of your marriage. Good luck!
+*page_break
+Please check your Resource file to see how your wedding gifts have affected your monetary status.
+*temp randomY
+*rand randomY 1 5
+*if randomY=1
+  *goto Y1
+*elseif randomY=2
+  *goto Y2
+*elseif randomY=3
+  *goto Y3
+*elseif randomY=4
+  *goto Y4
+*else
+  *goto Y5
+*label Y1
+*set MN+1000
+*label Y2
+*set MN+3000
+*label Y3
+*set MN+700
+*label Y4
+*set MN+150
+*label Y5
+*set MN+150
+*finish
+*label A3
+*if MS>0
+  *goto WIFE.T
+*else
+  *goto WIFE.F
+*label WIFE.F
+You're not married!
+*finish
+*label WIFE.T
+Divorce can be painful, but I imagine you must feel that it is the best choice for you right now.
+*page_break
+*set MS 0
+*set SC%-20
+*set HP%-10
+*set CA%-10
+*set GN%-20
+*finish
+

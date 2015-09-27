@@ -1,0 +1,44 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+You have committed the most serious of all possible crimes in Gym class -- you have forgotten your gym shorts. Mr. Black, the ex-Marine drill sergeant, will use this as an excuse to have you "drop and do fifty." Freddy always has an
+extra pair of gym shorts and he is about your size.
+
+
+Select an action:
+
+*choice
+  #BORROW FREDDY'S SHORTS
+    *goto A1
+  #CONFRONT MR. BLACK WITH THE BAD NEWS
+    *goto A2
+*label A1
+*set HP%-10
+Freddy hands you his extra pair of gym shorts. They are crinkled up so badly that the school name and logo are unreadable. They are also completely STIFF. The inside band, that used to be white, is now dark gray. You can:
+
+
+Select an action:
+
+*choice
+  #WEAR THE SHORTS
+    *goto B1
+  #TAKE YOUR CHANCES WITH MR. BLACK
+    *goto B2
+*label B1
+*set PH%-10
+Your legs and crotch are itchy for the rest of the day.
+*finish
+*label A2
+*label B2
+*set HP%-5
+"ATTEN-SHUN. REPEAT AFTER ME: I WILL NOT FORGET MY GYM SHORTS EVER AGAIN, SIR." You follow Mr. Black's directions. "GOOD. NOW DROP AND GIVE ME TWENTY."
+
+Oh, well. It could have been worse...
+*finish
+
+
+

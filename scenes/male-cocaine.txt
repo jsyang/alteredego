@@ -1,0 +1,84 @@
+While rubbing elbows with some trendy upwardly-mobile types, you are passed a small mirror, on the surface of which is a line of fine, white powder.
+*choice mood action
+  #APPRECIATIVE
+    #SNORT THE WHITE POWDER
+      *goto A11
+    *selectable_if (false) #PASS IT ON
+      *finish
+  #UNSURE
+    #SNORT THE WHITE POWDER
+      *goto A21
+    #PASS IT ON
+      *goto A22
+  #NOT INTERESTED
+    *selectable_if (false) #SNORT THE WHITE POWDER
+      *finish
+    #PASS IT ON
+      *goto A32
+*label A11
+*set OH+4
+*set TH%-10
+*set SC%+10
+SNNNNNNNNIIIIF! Up it goes. Is this something you think you would like to do often?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+*if TH<30
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set OH+3
+Be careful. You have a personality that is likely to gravitate toward habit-forming substances.
+*finish
+*label C.F
+*set TH%-20
+Be careful. The rush may not be worth the consequences.
+*finish
+*label B2
+*set SC%-10
+Maybe you're just trying to fit in with the crowd. Lemmings do that too, you know. Perhaps you should consider staying away from cliffs on seashores.
+*finish
+*label A21
+Does your lack of certainty reflect your concern with how you might look in front of all these people?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*set SC%-10
+Maybe you shouldn't be so concerned with fitting in.
+*finish
+*label D2
+*set IN%-10
+*set TH%-10
+I can't see any other reason. Your response is puzzling.
+*finish
+*label A22
+*set CN%+20
+*set IN%+30
+Perhaps some of your uncertainty stems from the fact that you want these people to think highly of you. It's a sign of strength to keep yourself from doing impulsive things just for the sake of impressing others.
+*page_break
+In life, the risks worth taking are usually the ones that bring the most gain to yourself and those around you. In this case, the social gain that people get from "just fitting in" does not seem to be justified by the risk of becoming a
+"coke head."
+*finish
+*label A32
+*set CN%+20
+*set IN%+10
+*set SC%+30
+You may be wondering what you're doing at this kind of party in the first place. Fads like this often have a way of touching a person's life in one way or another. They touch some people harder than others. Snorting up some of the white
+stuff seems to become a preoccupation with many people your age. Some people even devote their lives to it.
+*finish
+

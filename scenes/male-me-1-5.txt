@@ -1,0 +1,63 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+Until now, your sexual experiences with your wife have been the standard fare. You've done a little experimenting with positions but that's about it. Have you been thinking about suggesting something a little more out of the ordinary?
+
+
+Select an action:
+
+*choice
+  #"AS A MATTER OF FACT, YES"
+    *goto A1
+  #"NO"
+    *goto A2
+*label A2
+*finish
+*label A1
+What would you like to try?
+
+
+Select an action:
+
+*choice
+  #ORAL SEX
+    *goto B1
+  #BEING TIED UP AND TICKLED
+    *goto B2
+  #EXPERIMENTING WITH MARITAL AIDS (VIBRATORS, CREAMS, ETC.)
+    *goto B3
+  #SUGGESTING A MENAGE A' TROIS (SEX WITH YOUR WIFE AND ANOTHER WOMAN AT THE SAME TIME)
+    *goto B4
+*label B1
+*label B2
+*label B3
+*label B4
+*if WC>50
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+Your wife agrees that it would be fun
+*if EX>70
+  *goto Y.T
+*else
+  *goto Y.F
+*label Y.T
+*set HP%+40
+and goes along with the experience. The two of you have a great time. You find that this can be a powerful way of satisfying her sexual needs.
+*finish
+*label Y.F
+*set HP%-30
+but doesn't go along with it. Your Expressiveness characteristic is not developed enough for you to explain what you would like to try in a way that gets her sufficiently aroused to want to do anything.
+*finish
+*label Z.F
+*set MP+1
+Your wife is too inhibited to do this, she tells you she would rather not.
+*finish
+

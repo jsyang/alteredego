@@ -1,0 +1,60 @@
+At a party, you meet a group of people who are into the "artsy" side of life. They are extremely analytical people who express themselves creatively. Some are artists, others dancers, some self-styled "Renaissance People." They are
+apolitical and non-materialistic and consider the best decisions ones made on the spur of the moment. They are certainly different.
+*choice mood action
+  #IMPRESSED
+    #TRY TO BECOME MORE LIKE THEM
+      *goto A11
+    *selectable_if (false) #CRITICIZE THEM
+      *finish
+    *selectable_if (false) #DO NOTHING
+      *finish
+  #BORED
+    *selectable_if (false) #TRY TO BECOME MORE LIKE THEM
+      *finish
+    #CRITICIZE THEM
+      *goto A22
+    #DO NOTHING
+      *goto A23
+  #NEUTRAL/OPEN
+    *selectable_if (false) #TRY TO BECOME MORE LIKE THEM
+      *finish
+    *selectable_if (false) #CRITICIZE THEM
+      *finish
+    #DO NOTHING
+      *goto A33
+*label A11
+*if TH>30
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set CN%-5
+You can't do it. Emotionally, you aren't capable of making such a drastic change in personality.
+*finish
+*label B.F
+You have the Emotional characteristics, but for some reason, people like this seem to be born, not made.
+*finish
+*label A22
+*set GN%-10
+That's a bit on the rude side, don't you think?
+*finish
+*label A23
+Some people would be stimulated by such free-spirited individuals. Maybe your boredom stems from the fact that you actually feel threatened by people who are so vastly different from yourself.
+*finish
+*label A33
+You seem neither threatened by nor critical of people like this.
+
+*if (TH<30) and (IN>90)
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+That is because you are this type of person.
+*finish
+*label D.F
+*set TH%+30
+*set SC%+30
+*set IN%+30
+You seem to be the type of person who is tolerant of many different kinds of people. Intellectual, Social and Emotional characteristics increase.
+*finish
+

@@ -1,0 +1,47 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You are sitting in ${loverName}'s living room. The lights are low, and the two of you are very cozy. ${loverName} begins to get VERY romantic, and you respond in kind. She explains that she would really like to make love with you, but doesn't have
+any birth control. What will you do?
+
+
+Select an action:
+
+*choice
+  #SUGGEST THAT YOU SATISFY EACH OTHER WITHOUT HAVING INTERCOURSE
+    *goto E1
+  #RUN OUT TO THE DRUG STORE AND BUY SOME CONDOMS
+    *goto E2
+  #CONVINCE HER THAT YOU WILL PULL OUT BEFORE EJACULATING AND THAT IT WILL BE SAFE
+    *goto E3
+*label E1
+*set TH%+20
+That's a nice alternative. The two of you chose a safe, sensible way out of your dilemma.
+*finish
+*label E2
+*set TH%+30
+After thirty five-minutes of searching, you finally find a drugstore that is open late. You purchase the condoms and rush back to ${loverName}'s house. She has fallen asleep in the living room and does not answer the door!
+*if LT>0
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+You get to sleep in the car tonight!
+*finish
+*label G.F
+*set HP%-40
+You drive home disappointed.
+*finish
+*label E3
+*set TH%-30
+*set SEX+1
+Yes, of course--and the moon is made of green cheese--and one day flying pigs will break the sound barrier. Haven't you played this game long enough to know what's going to happen? Well, it doesn't. Luckily ${loverName} doesn't get
+pregnant. In case you didn't know, pulling out is no guarantee that you will not get a woman pregnant.
+*finish
+

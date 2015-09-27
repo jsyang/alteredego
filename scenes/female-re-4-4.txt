@@ -1,0 +1,75 @@
+${loverName} has discovered a very sound investment that he thinks could make both of you a lot of money. The investment involves pastry kiosks that will be set up in every major city in the nation. A franchise sells for $40,000 in
+resources: $20,000 to be supplied by you, the other $20,000 to be invested by ${loverName}. Are you interested?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A1
+*if MN>19999
+  *goto B.T
+*else
+  *goto B.F
+*label B.F
+I'm sorry. You don't have that kind of money to invest.
+*finish
+*label B.T
+*set TH%-20
+*set MN-20000
+*if MN < 5
+  *set MN 5
+It is pretty risky to trust a man you barely know. You invest the money, and
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+*set MN+70000
+*set HP%+30
+*set SC%+30
+*set VC%+30
+the kiosk does very well. You make back your original $20,000, plus $50,000 more.
+*finish
+*label C2
+the kiosk idea does very poorly. The episode results in a loss of the entire investment.
+*finish
+*label A2
+Don't you have any faith in ${loverName}?
+
+
+Select an action:
+
+*choice
+  #"YES, BUT I HARDLY KNOW HIM."
+    *goto D1
+  #"NO."
+    *goto D2
+*label D1
+*set IN%+20
+That's true, but he happens to have very good business sense. Are you sure you don't want to give the kiosk idea a try?
+
+
+Select an action:
+
+*choice
+  #"I DON'T THINK SO."
+    *goto E1
+  #"OKAY. WHAT'S $20,000?"
+    *goto E2
+*label E1
+*label D2
+${loverName} decides to go with the idea on his own. As a result, he becomes a multimillionaire. Too bad!
+*finish
+*label E2
+*set MN+1000000
+*set HP%+30
+*set VC%+20
+That's the spirit. You can't make money unless you invest some. Your risk-taking pays off nicely. Your $20,000 parlays itself into a cool MILLION!
+*finish
+

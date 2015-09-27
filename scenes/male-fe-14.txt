@@ -1,0 +1,177 @@
+*comment @KID,2,14,21
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childgender0 = 2) and ((childage0 < 22) and (childage0 > 14))
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childgender1 = 2) and ((childage1 < 22) and (childage1 > 14))
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childgender2 = 2) and ((childage2 < 22) and (childage2 > 14))
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childgender3 = 2) and ((childage3 < 22) and (childage3 > 14))
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childgender4 = 2) and ((childage4 < 22) and (childage4 > 14))
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+Your daughter has just introduced you to her date for the evening. His name is Mark "Mongo" Mattingly. He looks like a nice young man, but his jewelry is a bit odd, particularly one ring, which he wears in his left nostril. You
+wonder if a boy who wears an earring in his nose (a nosering?) can be trusted with your daughter.
+
+
+Select an action:
+
+*choice
+  #SUSPICIOUS/CALL YOUR DAUGHTER OVER FOR A CHAT
+    *goto A1
+  #TRUSTING/WISH THE TWO OF THEM AN ENJOYABLE NIGHT
+    *goto A2
+  #SUSPICIOUS BUT DON'T SAY ANYTHING
+    *goto A3
+  #TRUSTING BUT CALL HER OVER FOR A CHAT, ANYWAY
+    *goto A4
+*label A1
+What would you like to chat with your daughter about?
+
+
+Select an action:
+
+*choice
+  #SOME GENERAL QUESTIONS ABOUT THE YOUNG MAN STANDING IN THE LIVING ROOM WITH THE RING IN HIS NOSE
+    *goto B1
+  #A TALK REQUESTING THAT SHE DOES NOT LEAVE THE HOUSE WITH THAT BOY TONIGHT
+    *goto B2
+  #A LECTURE ON WHY SHE SHOULD THROW HIM OUT THE DOOR AS SOON AS POSSIBLE
+    *goto B3
+*label B1
+"Oh, THAT! Don't worry. He only wears it on special dates. As a matter of fact, I've only seen it on him once before. The other times I've seen him, he wears his everyday earrings (on his ears, in case you're wondering). He must be
+trying to impress you." Now, doesn't that make you feel better?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+I'll bet you're going to go and fix yourself a nice, stiff drink.
+*finish
+*label C2
+Will you try to stop her from going out with him tonight?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D2
+It probably wouldn't do any good, anyway.
+*finish
+*label D1
+*label B2
+*set CA%-10
+She would be too embarrassed to tell him that. After all, he walked THREE whole blocks to get to the house. Some fathers are so RUDE. "Daddy, please."
+
+*if FM>70
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set FM%+20
+Because you have a good relationship with your family members, she comes home early from her date so that you don't worry about her. What a sweetheart.
+*finish
+*label E.F
+*if FM>50
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set CA%-20
+Your family relationships are good. You really want to trust her. But some of the young guys these days are such jerks. You worry until she comes home
+*finish
+*label F.F
+*set FM%-20
+*page_break
+You don't want to make an issue out of it, but, she ignores you. Your family relationships have been poor lately. Perhaps you just don't know how to talk to your children. She doesn't come home from her date until three in the
+morning. You were worried sick. She explains that if you would have checked, you would have seen them talking right outside the window since about 11.
+*finish
+*label B3
+You have chosen to take a dictatorial stance with your daughter. Dictatorships are often effective, but have one bad side effect -- they encourage revolution. She defies your orders and walks out the door arm and arm with her friend.
+*finish
+*label A3
+*set CA%-10
+You don't trust that guy, but you don't want to make an issue out of it either. You stay up waiting for your daughter to arrive home safely.
+*page_break
+*if FM<40
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+She doesn't come home from her date until three in the morning. You were worried sick. She explains that if you would have checked, you would have seen them talking right outside the window since about 11.
+*finish
+*label G.F
+*set FM%+20
+${childName} senses your worry and because she is concerned, she makes sure to get home right on time. She is becoming a responsible, caring adult.
+*finish
+*label A4
+What kind of chat could you possibly have without trying to pry, criticize, or express shock at her choice of dating partner? I know, you just wanted to make sure that she knew what she was doing. Do you think she would say no to that?
+I doubt it. If you are going to trust your daughter, you will have to do it in words AND actions.
+*finish
+*label A2
+It's nice of you to be so trusting. Do you think you will stay up waiting for her to come home?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H1
+*set TH%+30
+*set FM%+20
+That's good. There's a difference between loving trust and careless nonchalance. You gave the young man with the ring in his nose the benefit of the doubt, but you are remaining on guard just in case.
+*finish
+*label H2
+*set FM%-10
+Are you really trusting her, or failing to watch out for her safety? She is only a child, and you never can be too sure about a kid who wears an earring in his nose.
+*finish
+

@@ -1,0 +1,66 @@
+Your dad's boss thinks that you are a fine young man. He would be honored if you would consider escorting his lovely daughter Mathilda to the company dinner dance.
+*choice mood action
+  #SUSPICIOUS
+    #ACCEPT THE INVITATION
+      *goto A11
+    #MAKE AN EXCUSE
+      *goto A12
+    *selectable_if (false) #TELL HIM YOU'LL GET BACK TO HIM
+      *finish
+  #INTERESTED
+    #ACCEPT THE INVITATION
+      *goto A21
+    *selectable_if (false) #MAKE AN EXCUSE
+      *finish
+    *selectable_if (false) #TELL HIM YOU'LL GET BACK TO HIM
+      *finish
+  #DISINTERESTED
+    *selectable_if (false) #ACCEPT THE INVITATION
+      *finish
+    #MAKE AN EXCUSE
+      *goto A32
+    #TELL HIM YOU'LL GET BACK TO HIM
+      *goto A33
+*label A11
+*set CA%-10
+What kind of girl needs her father to make a date for her? You see your father's boss waiting outside the country club where they are staging the affair, with his mustachioed chauffeur. Wait a minute...That's not the
+chauffeur, it's Mathilda! Eeeeeek! Your wildest dreams have come true, except they are nightmares!
+*finish
+*label A12
+The boss senses that you are trying to give him the runaround.
+
+
+Select an action:
+
+*choice
+  #HOPE HE DOESN'T GET TOO ANGRY
+    *goto B1
+  #LIE YOUR WAY OUT OF THE EXCUSE AND ACCEPT THE INVITATION
+    *goto B2
+*label B1
+*set FM%-10
+He doesn't get angry at all. Maybe it is just a coincidence that your dad has to sit on a stool, behind a plant, for the company affair.
+*finish
+*label B2
+*label A21
+*set TH%+10
+*set SC%+30
+This was a very open-minded set of choices. You arrive at the country club waiting to meet Dad's boss's daughter. All of a sudden, this MOVIE STAR walks up to you. Your eyes glaze...your mouth gets dry and you must concentrate
+very hard to prevent your tongue from dropping out of your mouth. COULD THIS BE MATHILDA?
+*page_break
+Nope. It's some lady who thinks you work there parking cars. Mathilda arrives complete with braces, pigtails and a squeaky laugh. As the night goes on, you find out she's not so bad. Dad gets a raise the following week. Now, about
+the company picnic next month...
+*finish
+*label A32
+*set GN%-20
+*set TH%-40
+*set FM%-20
+Your behavior is rude and insensitive. Your boss reconsiders his earlier positive evaluation of you, and begins to wonder about your dad as well. You have caused the family considerable stress.
+*finish
+*label A33
+*set FM%-40
+You must really hate your father. The boss' face becomes red. He takes a handful of high blood pressure medication (Hey, just like Dad says!). When he calms down, he promises that you will never have a job in his company.
+*page_break
+Not only have you soured a potentially lucrative future business contact, you messed up the opportunity to date "Maddy," a blond-haired, blue-eyed knockout that would make your eyebrows twitch.
+*finish
+

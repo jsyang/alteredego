@@ -1,0 +1,104 @@
+You are waiting for some important news that might drastically change your life. For some strange reason, every time you think about what is happening, you get the urge to munch on something.
+*choice mood action
+  #RESTRAINED
+    #SNACK ON SOMETHING TO KEEP OCCUPIED
+      *goto A11
+    #WORK OFF THE NERVOUS ENERGY
+      *goto A12
+  #HUNGRY
+    #SNACK ON SOMETHING TO KEEP OCCUPIED
+      *goto A21
+    *selectable_if (false) #WORK OFF THE NERVOUS ENERGY
+      *finish
+*label A11
+The cupboard just happens to be stocked with goodies. What would you like to nibble on?
+
+
+Select an action:
+
+*choice
+  #A BAG OF POTATO CHIPS
+    *goto B1
+  #CARROT STICKS
+    *goto B2
+  #A FIVE-POUND BOX OF CHOCOLATES
+    *goto B3
+  #ICE CREAM
+    *goto B4
+*label B1
+*label B3
+*label B4
+*if TH<50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set TH%-20
+You think, worry a bit, and munch. Think, worry a bit, and munch. Think, worry a bit, and munch. Your Thoughtfulness score shows that you are a bit on the impulsive side. As a result, you don't really pay that much attention to what
+you are eating and
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+*set PH%-20
+wind up giving yourself a bad case of indigestion.
+*finish
+*label D2
+*set PH%-30
+wind up gaining 11 pounds.
+*finish
+*label C.F
+*set CA%+40
+You think, worry a bit, and munch, but have the self-control necessary to keep from developing the kind of "eating when nervous" habit that would make this episode a big event in more than one sense of the word. Your munching actually
+serves to lower your anxiety.
+*finish
+*label B2
+They are healthy, but unsatisfying. You eat so many of them, that you imagine your front teeth growing, and develop an unusual spring in your step.
+*finish
+*label A12
+*if CA>60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set CA%+20
+Since you are generally a calm person, this is a healthy undertaking. Your productivity during these periods offsets the anxiety you feel about the news you are waiting to hear.
+*finish
+*label E.F
+*if CA>49
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+You are a pretty calm person, so this seems like a good idea. By and large you have trouble finishing the work you begin and, as a result, feel like you are under even more stress. Perhaps you should relax a bit more.
+*finish
+*label F.F
+*set CA%-20
+You are not a very calm person, so this idea may actually make things worse. You search for things to keep you busy, but they backfire, leaving you feeling both worried and incompetent.
+*finish
+*label A21
+This can lead to disastrous outcomes.
+*if TH>60
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+Fortunately, you have the self-control necessary to keep your eating habits in check. You could gain a lot of weight eating when you are nervous.
+*finish
+*label G.F
+*if TH>49
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+*set PH%-10
+You gain 10 pounds waiting for the news to arrive.
+*finish
+*label H.F
+*set PH%-20
+You gain 20 pounds waiting for the news to arrive.
+*finish
+

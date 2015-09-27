@@ -1,0 +1,26 @@
+Someone is spreading bad rumors about you within your social circle.
+*page_break
+*if CN>70
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+Because your Confidence characteristic is high, you let this roll off your back with no problem. There is no sense trying to track down the gossip monger who started the rumors. He or she is probably a pitiful soul who is lacking
+happiness in his or her own life.
+*finish
+*label A.F
+*if CN>49
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You are moderately strong on the Confidence characteristic. Because of this, you don't really take the rumor badly, but it still bothers you a bit. No sense in getting paranoid over it.
+*finish
+*label B.F
+*set GN%-10
+Your Confidence characteristic is not very strong. Rumors such as these are likely to bother you a lot. You would probably try to track down the gossip monger who is spreading them.  If you WERE able to locate the source
+of the rumors, the person would only deny saying them. This would only cause you more aggravation.
+*page_break
+How can I be sure that this is how you would react? I can't. But if it bothers you that I made these criticisms, I am probably right!
+*finish
+

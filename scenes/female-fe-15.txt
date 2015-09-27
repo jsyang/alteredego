@@ -1,0 +1,96 @@
+*comment @KID,2,20,100
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childgender0 = 2) and ((childage0 < 101) and (childage0 > 20))
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childgender1 = 2) and ((childage1 < 101) and (childage1 > 20))
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childgender2 = 2) and ((childage2 < 101) and (childage2 > 20))
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childgender3 = 2) and ((childage3 < 101) and (childage3 > 20))
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childgender4 = 2) and ((childage4 < 101) and (childage4 > 20))
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+You awake one morning and in the confusion of being still in a daze, you remember...
+*page_break
+THIS IS ${childName}'s wedding day!
+*page_break
+You hurry to get ready, making sure all of the last minute arrangements are made. Your hands are shaking so badly you can hardly put your makeup on or even dress yourself. The ceremony is truly heartwarming. My, children do grow up
+fast. As you watch your beautiful daughter walk down the aisle, you can hear the chatter of relatives whispering their delight at this happy occasion.
+*page_break
+A few more steps and she'll be gone forever. For a moment you are filled with overwhelming sadness. Suddenly, you begin to think about the pattering of little feet running around the house again. A whole new generation of blessings yet
+to arrive. You say the word "Grandma" to yourself, not thinking about the age associated with it, just the two words "grand" and "mother."
+*page_break
+*temp randomA
+*rand randomA 1 3
+*if randomA=1
+  *goto A1
+*elseif randomA=2
+  *goto A2
+*else
+  *goto A3
+*label A1
+*set HP%+30
+Time passes quickly after your daughter's marriage. One day you receive a telephone call and are informed that, indeed, it won't be long until you become a grandmother!
+
+Eight months later
+*temp randomB
+*rand randomB 1 3
+*if randomB=1
+  *goto B1
+*elseif randomB=2
+  *goto B2
+*else
+  *goto B3
+*label B1
+you become the grandmother of a beautiful baby boy!
+*finish
+*label B2
+you become the grandmother of a beautiful baby girl!
+*finish
+*label B3
+you become the grandmother of a beautiful set of twins! (One boy and one girl)
+*finish
+*label A2
+Your daughter seems happy in her new home. You feel a bit more lonely.
+*finish
+*label A3
+Unfortunately, your daughter's marriage turns out to be a disaster. She moves back into your home less than a year after the wedding.
+*finish
+

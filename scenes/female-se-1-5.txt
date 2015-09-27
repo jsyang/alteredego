@@ -1,0 +1,99 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+There is a school trip next week, and you are DYING to go. The cost of the trip is $250.
+
+
+Select an action:
+
+*choice
+  #TRY TO PAY FOR IT YOURSELF
+    *goto A1
+  #ASK YOUR PARENTS TO PAY FOR IT
+    *goto A2
+  #ASK YOUR PARENTS FOR A LOAN
+    *goto A3
+*label A1
+*if MN>250
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set MN-250
+*if MN < 5
+  *set MN 5
+*set HP%+30
+Your parents are proud of you for saving the money to go on the trip. You have demonstrated the ability to work hard, save your money, and give yourself enjoyment. Happiness increases.
+*finish
+*label B.F
+You don't have enough money saved. You can't go.
+*finish
+*label A2
+*if ST>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set HP%-10
+Pay for it? Your parents are so strict that they won't even let you go!
+*finish
+*label C.F
+*if FM>50
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+*set FM%+20
+*set SC%+20
+*set CA%+30
+Your parents can see how excited you are. They tell you that you can go, provided that you are CAREFUL. They love you very much.
+*finish
+*label D.F
+*set FM%-20
+Your family relationships aren't strong enough to convince them to spend the money. They say that a trip like this is "frivolous and unnecessary."
+*finish
+*label A3
+*if ST>0
+  *goto S.T
+*else
+  *goto S.F
+*label S.T
+*set HP%-20
+Give you a loan? Your parents are so strict that they won't even let you go!
+*finish
+*label S.F
+*if FM>50
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set CN%+10
+*set HP%+20
+*set SC%+10
+*set TH%+30
+Your relationship with your parents is very good. One reason is because you simply don't assume that they will just hand you everything on a silver platter. They GIVE you the money for the trip.
+*finish
+*label E.F
+*set FM%+30
+Your relationship with your parents is not great. They don't think you have shown that you are responsible enough to take on the responsibilities of a loan like this right now. They DO say that you have taken a step in the right direction
+by not ASSUMING that they would give you the money.
+*page_break
+*temp randomF
+*rand randomF 1 2
+*if randomF=1
+  *goto F1
+*else
+  *goto F2
+*label F1
+*set HP%+30
+At the last minute, they give you the money and tell you to have a good time.
+*finish
+*label F2
+*set HP%-20
+It almost seems that at the last minute they will change their minds and let you go. Unfortunately, they don't.
+*finish
+

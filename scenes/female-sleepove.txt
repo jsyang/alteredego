@@ -1,0 +1,101 @@
+Your mother has just reminded you that it is time to practice your piano lessons.
+*choice mood action
+  #HAPPY
+    *selectable_if (false) #COMPLAIN
+      *finish
+    #DO THE LESSONS
+      *goto A12
+  #SAD
+    #COMPLAIN
+      *goto A21
+    #DO THE LESSONS
+      *goto A22
+  #MAD
+    #COMPLAIN
+      *goto A31
+    #DO THE LESSONS
+      *goto A32
+*label A12
+*label G2
+*label RECITAL
+You practice some scales and then get down to serious business. You have a recital next week, you know. How do you think you will do?
+
+
+Select an action:
+
+*choice
+  #WELL
+    *goto B1
+  #NOT WELL
+    *goto B2
+*label B1
+*if CN>50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*if ST>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+You are very confident, but you have a very strict mother who makes you nervous. As you prepare to go on stage for your recital, you can see her staring at you with her arms folded. You can hardly pay attention to the sheet music. With
+characteristics like these, you will probably grow up to be a super-achiever who never seems satisfied with her own performance.
+*finish
+*label D.F
+You are a very confident person with a supportive family. You give a brilliant performance, and everyone calls you a "gifted" child.
+*finish
+*label C.F
+*if ST>0
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Even though you say you will do well, you have not shown much confidence in the past. This is probably because your mother is the strict type who criticizes your behavior. On the night of the recital you get a severe case of stage
+fright. Fortunately, Mrs. Halsley, the music teacher, is able to calm you down. You give a nice performance.
+*page_break
+Your mother says, "It was great except for that one mistake you made at the end."
+*finish
+*label E.F
+Even though you say you will do well, you are not usually very confident. Fortunately, your mother is the type who supports you and encourages you to do well. With her help, and your own show of confidence, you give a brilliant
+performance. Everyone in the auditorium gives you a standing ovation.
+*finish
+*label B2
+You are not very confident, are you? On the night of the recital, everyone says you did a wonderful job. Do you believe them?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label F1
+That's better. You have to start thinking POSITIVELY!
+*finish
+*label F2
+You are become a depressed child who lacks self-confidence. Give yourself some credit. Perhaps you feel that it is easier to get attention by being so hard on yourself. This can work fine, but eventually it will begin to bother people
+and they will ignore you.
+*finish
+*label A22
+*label A32
+Begrudgingly, you sit down at the piano and pluck your way through the scales. Every key is torture. "Is that clock broken or something?" you say to yourself. Every time you look at it, the time never seems to change.
+
+
+Select an action:
+
+*choice
+  #TELL YOUR MOTHER YOU WANT TO QUIT
+    *goto G1
+  #KEEP PRACTICING
+    *goto G2
+*label G1
+"After you BEGGED me to take the lessons?" she says, "Try it for a little while longer, then we'll talk about it."
+*finish
+*label A21
+*label A31
+"Why do you have to take these stupid piano lessons?" your mother echos back. "You have to take these stupid piano lessons because your father and I paid a fortune for this piano and the lessons that went with it because of your
+begging." she continues. "Now practice. You have a recital next week."
+*goto RECITAL
+

@@ -1,0 +1,37 @@
+*if MD>0
+  *goto MD.T
+*else
+  *goto MD.F
+*label MD.T
+You get a phone call from someone asking for your mother.  You awkwardly explain that she died some time ago.  The caller excuses herself and hangs up.
+*finish
+*label MD.F
+*temp randomA
+*rand randomA 1 4
+*if randomA=1
+  *goto A1
+*elseif randomA=2
+  *goto A2
+*elseif randomA=3
+  *goto A3
+*else
+  *goto A4
+*label A1
+*label A2
+After returning from the doctor's office one day, your mother walks into the house and bursts into tears. She has just been told that she has cancer. It is not operable and must be treated with a combination of chemotherapy and
+radiation. The family is in shock.
+*page_break
+On the outside she looks healthy and vital, but on the inside she is deteriorating rapidly. The doctors can give you no definite answers about her condition, and no prediction of how long she will live. In the coming months, there is
+suffering. The family may begin to treat her as if she is already gone, even while she remains alive.
+*page_break
+In the months that follow, there is much sadness. A short time later, your mother passes away. It will take a long time to recover from the loss.
+*set HP%-40
+*comment @MDI
+*set MD 1
+*finish
+*label A3
+*label A4
+After returning home from the doctor's office one day, your mother sits on the couch and lets out a cry of anguish: "FLEAS! I can't believe that mangy mutt gave me his FLEAS!" She is exasperated. Goodo, your dog, innocently sniffs her
+ankle and looks up at her with a sheepish grin.
+*finish
+

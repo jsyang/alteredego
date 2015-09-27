@@ -1,0 +1,119 @@
+At a carnival, a friend tries to convince you to have your cards read by Madame Natasha, a psychic medium.
+*choice mood action
+  #FRIVOLOUS
+    #SEE THE MEDIUM
+      *goto A11
+    *selectable_if (false) #DO NOT SEE THE MEDIUM
+      *finish
+  #SKEPTICAL
+    #SEE THE MEDIUM
+      *goto A21
+    #DO NOT SEE THE MEDIUM
+      *goto A22
+*label A11
+*set HP%+20
+*set SC%+20
+You step inside a dark room. Medium Natasha looks more like LARGE Natasha, and fills most of the space. You notice that she has a kind face and a gentle voice. The fee for a reading is $100 ("kesh only, plis, dahlink"). Natasha asks if you
+want to continue:
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B2
+Yes. There IS a fine line between frivolity and stupidity.
+*finish
+*label B1
+*if MN>100
+  *goto C.T
+*else
+  *goto C.F
+*label C.F
+I'm sorry. You don't have enough resources to continue this vignette.
+*finish
+*label C.T
+*set MN-100
+*if MN < 5
+  *set MN 5
+Madame Natasha speaks: "You ahr a veery eenterestink fyellow, my deehr. Sometimes brev ent eggs-cit-eenk, sometimes somber ent veethdrawn. You vill haf meexed luck een life, you understandeenk, dahleenk? MEEXED luck. Een a wery short time
+you will haf two expeeriences, von a wery lucky expeerience, von not lucky, but not necesirily terrible either.
+*page_break
+I see people stahndink around you in an open place and talkink to you in a loud voice. Hmmm, vot else? Let's see, oh yes! I see evil comink into your life, great vorces of eevil causing you pain ent sufferink. This ees all the cards vill
+tell us for now dahlink.
+*page_break
+For $100 (I take de travelers check if you haf it) I vill light a candle vich vill tell the rest of this story." Are you villing?
+
+
+Select an action:
+
+*choice
+  #DA
+    *goto D1
+  #NYET
+    *goto D2
+*label D1
+*if MN>99
+  *goto E.T
+*else
+  *goto E.F
+*label E.F
+I'm sorry, you don't have enough resources to continue with this vignette.
+*finish
+*label E.T
+*set MN-100
+*if MN < 5
+  *set MN 5
+"Thank you, dahlink. Now let us see...Hmmm. These vorces of eevil...They are wery, wery powerful. They are needink beeg spell, this spell weel rid you of them for a long, long time. The cost of such a spell is meenimal ($1000, all
+materials inkluded), compared to the havoc caused by the absence of the spell." Are you villing?
+
+
+Select an action:
+
+*choice
+  #DA
+    *goto F1
+  #NYET
+    *goto F2
+*label F1
+*set MN-1000
+*if MN < 5
+  *set MN 5
+"A wery wise move, dahlink. You must trust that I vill rid you of these vorces that vill destroy your happiness. Ent remember, dahlink, money is the root of all ewil, so hend it over."
+*page_break
+After you pay Madame Natasha an additional $1000, she waves her arms in the air and puts herself in a trance. "Lamina, samina, humina, humina, make the vorces disappear ent brink the next sucker, I mean customer, in here." Thank you
+dahlink and good luck!
+*finish
+*label F2
+*set TH%+10
+Good thinkink. At $100 you were just a bit gullible. At 200 dollars, you were a sucker. At $1000 I would have tried to sell you a nice piece of real estate right near the Florida Everglades.
+*finish
+*label D2
+Too bad. Now the "vorces" will bring you bad luck. That's the way it goes, I guess. On the way out of the room you trip over a loose floorboard. Madame Natasha yells, "This eez only the beginnink, dahlink!"
+*finish
+*label A21
+You step inside a dark room. Medium Natasha looks more like LARGE Natasha, and fills most of the space. You notice that she has a kind face and a gentle voice. The fee for a reading is $100 ("kesh only, plis, dahlink"). Natasha asks if you
+want to continue:
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G1
+I thought you were SKEPTICAL! Oh, well, it's YOUR money.
+*goto E.T
+*label G2
+Well, at least it satisfied your friend's curiosity.
+*finish
+*label A22
+*set SC%-10
+Boy! What a party pooper. You don't have to buy anything, you know. You could have just gone in to see what Madame Natasha was like and then left.
+*finish
+

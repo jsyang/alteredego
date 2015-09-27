@@ -1,0 +1,64 @@
+While walking around in the store with your friend, you notice that she sneaks a small item into her purse. You ask her what she is doing, and she tells you how easy it is to shoplift, saying, "They never check girls."
+*choice mood action
+  #HONEST
+    #URGE HER TO PUT IT BACK
+      *goto A11
+    #REFUSE TO STAY WITH HER
+      *goto A12
+    *selectable_if (false) #STEAL SOMETHING
+      *finish
+  #DISHONEST
+    *selectable_if (false) #URGE HER TO PUT IT BACK
+      *finish
+    *selectable_if (false) #REFUSE TO STAY WITH HER
+      *finish
+    #STEAL SOMETHING
+      *goto A23
+*label A11
+*set TR%+40
+You refuse to steal and tell her that she had better put back what she stole. You can:
+
+
+Select an action:
+
+*choice
+  #TURN HER IN TO THE STORE MANAGER
+    *goto B1
+  #KEEP TRYING TO CONVINCE HER
+    *goto B2
+*label B1
+*set TR%+50
+*set CA%-10
+You are positive that if she gets caught, you will also get in trouble. You tell the manager that she has stolen something. Your friend calls you a traitor, but you are sure you did the right thing. Trustworthiness increases, but Calmness decreases.
+*finish
+*label B2
+It's too late. She's already a hardened criminal. She sneaks a tube of lipstick into your purse. While you protest, the store manager comes over to see what the commotion is about. He sees the lipstick tube sticking out of your purse. He
+accuses YOU of shoplifting. He calls up your mother.
+*label D
+*if TR>50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+Because you are trustworthy, Mom believes that you were framed.
+*finish
+*label C.F
+Since you have not been that trustworthy in the past, your mother does not believe you, and you get punished. A bad reputation has a tendency to follow its owner.
+*finish
+*label A12
+*set GN%-10
+You get angry with her for jeopardizing you by stealing. Unfortunately, you haven't noticed that she has sneaked a tube of lipstick into your pocket. The manager sees it, accuses YOU of stealing and calls your home.
+*goto D
+*label A23
+*if TR<50
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Your Trustworthy characteristic shows that you have been devious before. The store manager calls the police, who in turn call your mother. You are grounded for a month.
+*finish
+*label E.F
+*set TR%-20
+This kind of behavior is not in your character. Stealing something is a common childhood experience, but if it develops into a habit, it will cost you later.
+*finish
+

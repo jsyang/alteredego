@@ -1,0 +1,78 @@
+You are in a large department store waiting in line, and there is an extremely well-endowed woman standing in front of you. She smiles. It looks like she may be an interesting person to talk to.
+*choice mood action
+  #INQUISITIVE
+    #ASK HER SOME QUESTIONS
+      *goto A11
+    *selectable_if (false) #BE QUIET
+      *finish
+  #SHY
+    *selectable_if (false) #ASK HER SOME QUESTIONS
+      *finish
+    #BE QUIET
+      *goto A22
+*label A11
+*label QUEST
+Which question would you like to ask her?
+
+
+Select an action:
+
+*choice
+  #"DO YOU HAVE A HUSBAND?"
+    *goto B1
+  #"DO YOU HAVE A DOGGIE?"
+    *goto B2
+  #"MOMMY SAID THAT DADDY HAS A THICK SKULL. DO YOU?"
+    *goto B3
+  #"I TRIED VERY HARD TO PINCH A PENNY LIKE AUNT EDNA BUT COULDN'T. CAN YOU?"
+    *goto B4
+  #STOP ASKING QUESTIONS
+    *goto B5
+*label B1
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+She tells you that she doesn't have a husband.
+*finish
+*label C2
+She tells you that she does have a husband.
+*finish
+*label B2
+She tells you, "No. No doggie. Only a cat." You inform her that Daddy said that that's what they cook in the restaurant on the corner.
+*page_break
+Perhaps you are interested in asking something else...
+*goto QUEST
+*label B3
+The lady giggles and Mom puts her hand over your mouth and says, "Shhhhhhhhh!"
+Whack!
+*page_break
+Perhaps you are interested in asking something else...
+*goto QUEST
+*label B4
+You don't get past the word "Aunt" before you are scooped up by your mother and dragged to a new line.
+*finish
+*label B5
+You have caused your mother enough embarrassment for one day.
+*finish
+*label A22
+The lady begins to ask YOU questions. You are shy and a little bit afraid of her. She begins to chat with your mom. Are you beginning to feel more friendly to her?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*goto QUEST
+*label D2
+You remain quiet and leave the store with your mom.
+*finish
+
+

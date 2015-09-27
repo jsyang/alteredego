@@ -1,0 +1,89 @@
+*comment @KID,0,6,11
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 12) and (childage0 > 6)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 12) and (childage1 > 6)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 12) and (childage2 > 6)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 12) and (childage3 > 6)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 12) and (childage4 > 6)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+At a large picnic, you and ${childName} are asked if you want to join a three-legged race.
+
+
+Select an action:
+
+*choice
+  #JOIN THE RACE
+    *goto A1
+  #SIT THIS ONE OUT
+    *goto A2
+*label A1
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+*if PH>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set HP%+30
+*set PH%+10
+Since you are in good physical shape you can easily keep up with the ${childName}'s energy. The two of you win the three-legged race! Congratulations!
+*finish
+*label B.F
+*set FM%+20
+*set HP%+40
+Since you are not in very good physical condition, you have trouble keeping up with your energetic child. You loose the race, but ${childName} bolsters your sagging esteem by telling you that you were the best Dad in the whole race -- you just
+didn't want to show off. It would be difficult to imagine someone who could make you feel more special.
+*finish
+*label C2
+${childName} says, "I don't want to be in any dumb three-legged race!"
+*finish
+*label A2
+Party pooper!
+*finish
+

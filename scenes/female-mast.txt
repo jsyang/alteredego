@@ -1,0 +1,72 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+Early in the morning, while you are still groggy from sleep, you rub your legs together and notice that it makes you feel very good. You wonder whether or not you should keep doing this or stop.
+*choice mood action
+  #EMBARRASSED/ANXIOUS
+    #STOP WHAT YOU ARE DOING
+      *goto A11
+    #CONTINUE WHAT YOU ARE DOING
+      *goto A12
+  #CURIOUS
+    #STOP WHAT YOU ARE DOING
+      *goto A21
+    #CONTINUE WHAT YOU ARE DOING
+      *goto A22
+*label A11
+*set CA%-20
+Since it is making your body feel good in a way that you are not familair with, and in a place that is still a mystery, you get nervous and stop. Still, you can't help wondering where all those pleasant feelings came from.
+*finish
+*label A12
+*set CA%-10
+*set TH%-10
+*label HEREIS
+You feel a hot tingly feeling between your legs that spreads all over your body. The more you rub your legs together, the better it feels. You wonder about whether to continue doing this.
+
+
+Select an action:
+
+*choice
+  #KEEP RUBBING YOUR LEGS TOGETHER
+    *goto B1
+  #TOUCH YOURSELF WITH YOUR HAND
+    *goto B2
+  #STOP WHAT YOU ARE DOING
+    *goto B3
+*label B1
+*label B2
+As your body gets warmer, you notice some goosebumps on different parts of you. As you rub, you begin to get a little nervous wondering what's going to happen. All of a sudden, your body gets tight and shivers for a few seconds.
+*page_break
+It feels weird and good at the same time. After this, you feel tired. Even though you may have never heard of this word, you have just done something called "masturbate." How do you feel about this?
+
+
+Select a mood:
+
+*choice
+  #GUILTY
+    *goto C1
+  #FINE
+    *goto C2
+*label C1
+Even though you may have heard that this is not a proper thing to do, you really had no way of knowing exactly what was happening. Now that you know, you can make your own choice about whether or not you want to do it again.
+Some people think it's good, and some people think it's bad.  It can't harm you physically in any way.
+*finish
+*label C2
+This is the beginning of exploring your sexuality. Like everything else that has to do with sex, people have all kinds of opinions about it. As you grow up, you will find that you have to choose among these opinions for yourself. Where
+things like sex are concerned, it is best to have all of the information before deciding anything.
+*finish
+*label B3
+*label A21
+I guess there must be something inside your head telling you not to continue with what you are doing. Some people believe that giving yourself pleasure in this way is a bad thing to do. Other people think it is perfectly fine.
+Like many things in life, in order to decide what's best for you, you should seek out as much information as you can.
+*finish
+*label A22
+*set HP%+20
+*goto HEREIS
+

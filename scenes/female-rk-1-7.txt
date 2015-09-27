@@ -1,0 +1,286 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+You are sitting in the school library, bored to death. It is a warm spring day and the sun is streaming through the windows, lighting up a square area on the desk in front of you. You are wishing for a distraction to take you away from
+the research project you are SUPPOSED to be doing.
+*page_break
+Suddenly, a terrific-looking guy walks in and sits in the study area directly across from you. He flashes you a broad smile then settles into his seat and begins work. He seems like the studious type.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto A1
+  #CONTINUE
+    *goto A2
+*label A1
+*set CA%-10
+*finish
+*label A2
+Trying to look as intelligent as possible, you start writing furiously, hoping to attract his attention. His eyes remain glued to his own work.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto B1
+  #CONTINUE
+    *goto B2
+*label B1
+*set CA%-15
+*finish
+*label B2
+You ask him if he knows what time it is.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto C1
+  #CONTINUE
+    *goto C2
+*label C1
+*set CA%-20
+*finish
+*label C2
+He looks up for a brief moment and says, "Time to take a break." He tells you the time, trots off for a few moments then comes back and resumes work.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto D1
+  #CONTINUE
+    *goto D2
+*label D1
+*set CA%-20
+*finish
+*label D2
+You're not one who gives up easily. About 10 minutes pass. He gets up from his seat and walks toward the back of the library. You notice that he has left his  books behind. He's heading toward the men's room.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto E1
+  #CONTINUE
+    *goto E2
+*label E1
+*set CA%-20
+*finish
+*label E2
+The sun is warm and relaxing. You wish he would come back soon.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto F1
+  #CONTINUE
+    *goto F2
+*label F1
+*set CA%-20
+*finish
+*label F2
+You feel a soft hand encircle your shoulder and hear someone whisper, "What are you doing YOUR project on? 'Dreaming'?" The smell of cologne stirs you from your brief nap.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto G1
+  #CONTINUE
+    *goto G2
+*label G1
+*set CA%-25
+*finish
+*label G2
+You turn your head to meet the man of your dreams face to face...
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto H1
+  #CONTINUE
+    *goto H2
+*label H1
+*set CA%-30
+*finish
+*label H2
+*set CA%-30
+*set CN%-10
+You look up...MR. CROMLEY, the LIBRARIAN! Oh, NO! He says, "I haven't been treated to such a flirtatious look in ages. You're so sweet. Now GET BACK TO WORK!" He waddles off.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto I1
+  #CONTINUE
+    *goto I2
+*label I1
+*set CA%-20
+*finish
+*label I2
+The guy comes back, picks up his things and leaves.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto J1
+  #CONTINUE
+    *goto J2
+*label J1
+*set CA%-20
+*finish
+*label J2
+Later that evening, you leaf through your papers and discover a note.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto K1
+  #CONTINUE
+    *goto K2
+*label K1
+*set CA%-20
+*finish
+*label K2
+The note says, "Sat with you in the library today. I think you are an incredible fox. I was too shy to talk to you. If YOU'RE not too shy, why don't you give me a call at 555-9854 -- Paul Pfopmeister"
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto L1
+  #CONTINUE
+    *goto L2
+*label L1
+*set CA%-20
+*finish
+*label L2
+You call, but the line seems to be constantly busy.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto M1
+  #CONTINUE
+    *goto M2
+*label M1
+*set CA%-20
+*finish
+*label M2
+Finally, you hear the line ringing.
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto N1
+  #CONTINUE
+    *goto N2
+*label N1
+*set CA%-25
+*finish
+*label N2
+Someone picks up the phone..."Hello, City Dump."
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto O1
+  #CONTINUE
+    *goto O2
+*label O1
+*set CA%-25
+*finish
+*label O2
+Your heart sinks, but you give it one last futile try. "Is Paul there?"
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto P1
+  #CONTINUE
+    *goto P2
+*label P1
+*set CA%-25
+*finish
+*label P2
+It was Paul's stupid brother playing a joke. Your dreamboat picks up the phone. "Hi. This is Paul."
+
+
+Select an action:
+
+*choice
+  #STOP
+    *goto Q1
+  #CONTINUE
+    *goto Q2
+*label Q1
+*set CA%-30
+*finish
+*label Q2
+You introduce yourself and tell him that he has been on your mind all day.
+*if SC>80
+  *goto R.T
+*else
+  *goto R.F
+*label R.T
+*set SC%+30
+*set CN%+30
+*set HP%+40
+He only goes for the people who are absolutely primo. He thinks you're it. Your Social status sphere suggests that you have the skills to impress him. Your first date with him is this Saturday. Get ready, Baby, those sparks will fly!
+*page_break
+*if SR>0
+  *goto S.T
+*else
+  *goto S.F
+*label S.T
+*set SR 0
+Your desire to go through with this risk means that you are not that concerned about your steady boyfriend. He discovers that you are cheating on him and breaks your steady relationship.
+*label S.F
+*comment @LVN,Paul
+*set loverName "Paul"
+*comment @CLV
+*rand NT 20 80
+*rand NG 20 80
+*rand NC 20 80
+*rand NF 20 80
+*rand NH 20 80
+*rand NA 20 80
+*set GF 1
+*set NA 90
+*finish
+*label R.F
+*set CN%-40
+Your Social status sphere suggests that you don't have the skills to impress this Paul. He gives you the brush off over the phone, and you never see him again.
+*finish
+

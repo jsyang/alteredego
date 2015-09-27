@@ -1,0 +1,81 @@
+*temp thingtobuy
+A famous dairy products company is sponsoring a baking contest at your school. The first prize is a new bicycle and a trip to Disneyworld. Your mother is the world's best cheese cake baker. You know that getting her to bake the cake
+for you would certainly tip the chances of winning the contest in your favor.
+*choice mood action
+  #DEVIOUS
+    #GET YOUR MOTHER TO BAKE THE CAKE FOR YOU
+      *goto A11
+    *selectable_if (false) #TRY TO BAKE THE CAKE YOURSELF
+      *finish
+    *selectable_if (false) #DO NOT ENTER THE CONTEST AT ALL
+      *finish
+  #HONEST
+    *selectable_if (false) #GET YOUR MOTHER TO BAKE THE CAKE FOR YOU
+      *finish
+    #TRY TO BAKE THE CAKE YOURSELF
+      *goto A22
+    #DO NOT ENTER THE CONTEST AT ALL
+      *goto A23
+  #NEUTRAL
+    *selectable_if (false) #GET YOUR MOTHER TO BAKE THE CAKE FOR YOU
+      *finish
+    *selectable_if (false) #TRY TO BAKE THE CAKE YOURSELF
+      *finish
+    #DO NOT ENTER THE CONTEST AT ALL
+      *goto A33
+*label A11
+*set TR%-30
+You tell your mother that there is a bake sale for charity at school, and ask her if she would help you by baking a cake. She agrees. You bring the cake to school and enter it into the contest. As a result:
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+You win the contest. Everyone is in awe of your baking skills. The bicycle is presented to you and you are told that you can take the Disneyworld visit whenever you wish. How do you feel?
+
+
+Select a mood:
+
+*choice
+  #GUILTY/NEEDING TO CONFESS
+    *goto C1
+  #NOT AT ALL GUILTY
+    *goto C2
+  #GUILTY/NOT NEEDING TO CONFESS
+    *goto C3
+*label C1
+*set TR%+20
+At first everyone is shocked. They can't believe you would do such a thing. Of course, you will have to give the bicycle and the trip back. One positive thing about the whole incident is that after things simmer down, people respect you
+for being honest in the end.
+*finish
+*label C2
+*set TR%-20
+*set thingtobuy "BICYCLE"
+*if acquisitions != ""
+  *set acquisitions &","
+*set acquisitions &thingtobuy
+
+You are developing an early knack for being sneaky and underhanded. I'm sure you will come up with convinving lies to explain how you got the bicycle and the trip. Now you had just better hope that none of your teachers mention your
+"talents" to your parents.
+*finish
+*label C3
+*set TR%-5
+Can't bring yourself to face the music, eh? Eventually your lies catch up to you. You find it too difficult to explain where you got the bike, and how you won the free trip. You are disgraced in front of your family and friends. I hope
+this experience has taught you a lesson.
+*finish
+*label B2
+*set TR%-30
+Melissa Baker wins the contest with her homemade ice cream cake. Some of the teachers suspect that you did not make the cake yourself and mention it to your mother. You are grounded for a week.
+*finish
+*label A22
+*set TR%+30
+*set FM%+30
+You try very hard to duplicate your mother's cake. It comes out very tasty, but is not good enough to win the contest. Your family is proud of your independence and your effort. Trustworthiness and Familial scores rise.
+*finish
+*label A23
+*label A33
+I guess entering a baking contest doesn't do much for you right now.
+*finish
+

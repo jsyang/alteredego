@@ -1,0 +1,44 @@
+You are in one of your "ultra-cool" moods. While cruising through the house, you bump your foot on a piece of furniture and you let a swear word sneak out. Your mother calls you in from the other room. She says, "Did you say what I
+THOUGHT you said?"
+*choice mood action
+  #TRUTHFUL
+    #TELL HER YOU DID AND APOLOGIZE
+      *goto A11
+    *selectable_if (false) #TELL HER YOU DIDN'T
+      *finish
+    *selectable_if (false) #TELL HER YOU DID AND SO WHAT
+      *finish
+  #LESS THAN TRUTHFUL
+    *selectable_if (false) #TELL HER YOU DID AND APOLOGIZE
+      *finish
+    #TELL HER YOU DIDN'T
+      *goto A22
+    *selectable_if (false) #TELL HER YOU DID AND SO WHAT
+      *finish
+  #TOO COOL TO CARE
+    *selectable_if (false) #TELL HER YOU DID AND APOLOGIZE
+      *finish
+    *selectable_if (false) #TELL HER YOU DIDN'T
+      *finish
+    #TELL HER YOU DID AND SO WHAT
+      *goto A33
+*label A11
+*set TR%+30
+*set FM%+10
+*set IN%+40
+Wisely, you drop the cool act. It's important to be cool, but when Mom has her temper up, she can put you on ice permanently. Intellectual sphere increases sharply.
+*finish
+*label A22
+*set TR%-30
+*set IN%-20
+*set FM%-10
+First you swear, and then you lie about it. Your mother refuses to believe that she has auditory hallucinations and grounds you for a week.
+*finish
+*label A33
+*set HP%-20
+*set FM%-20
+*set IN%-10
+"SO WHAT?" She decides to show you so what. You are not too big to get your mouth washed out with soap. With superhuman strength, she grabs you by your cool haircut, dumps you into the cool bathroom, and forces a quarter of a
+bar of soap (with lemon-fresh skin conditioners) down your ultra-cool throat.
+*finish
+

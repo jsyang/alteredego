@@ -1,0 +1,104 @@
+On a recent walk through town, you notice a woman shivering in an alley between two buildings. She looks as if she lives in the street. As you walk by, she crouches close to the building and eyes you suspiciously.
+*page_break
+"They put filberts in the pecan pie! I can just taste them," she says, cackling in a high voice, then hiding her head under her arm and squinting out at you. "I HATE FILBERTS!"
+*page_break
+You notice that her body is shaking wildly and her skin seems very blue. You wonder if she might be very ill.
+*choice mood action
+  #CONCERNED
+    #OFFER HER SOME HELP
+      *goto A11
+    *selectable_if (false) #IGNORE HER
+      *finish
+  #UNCONCERNED
+    *selectable_if (false) #OFFER HER SOME HELP
+      *finish
+    #IGNORE HER
+      *goto A22
+*label A11
+She walks up to you and touches your hair. "No fleas in clean hair, no bats in your underwear."
+
+
+Select an action:
+
+*choice
+  #WALK AWAY
+    *goto B1
+  #STAY
+    *goto B2
+*label B1
+I guess she was just too bizarre for you.
+*finish
+*label B2
+Her hands are shaking badly. You ask her if you can help and she says, "Doctors are the messengers of Satan."
+
+
+Select an action:
+
+*choice
+  #WALK AWAY
+    *goto C1
+  #STAY
+    *goto C2
+*label C1
+I guess you feel as if you tried to help her.
+*finish
+*label C2
+You point out that she is shaking, and she looks at her hand. She leans on your shoulder and says in a low groan, "Help me, child."
+
+
+Select an action:
+
+*choice
+  #CALL THE POLICE
+    *goto D1
+  #BRING HER TO A HOSPITAL
+    *goto D2
+*label D1
+The police come and load her into the car. They call her "Esmerelda." You never see or hear of her again.
+*finish
+*label D2
+*set TH%+20
+They know her at the hospital. She has been there many times before. The doctors say she is suffering from exposure. She will only stay there until the symptoms pass, then she returns to the street.
+
+
+Select an action:
+
+*choice
+  #OFFER TO HELP HER FIND A PLACE TO LIVE
+    *goto E1
+  #LEAVE THE HOSPITAL
+    *goto E2
+*label E2
+*finish
+*label E1
+*set GN%+30
+Your offer is greatly appreciated, but she declines, saying she prefers the roof of "The Great Outdoors."
+*page_break
+Exactly one week after you first see her, she approaches you in town (much more coherent) and hands you a large thick envelope, which feels like it is full of old rags. "Open it when you get home," she says, walking off in short slow
+steps.
+*page_break
+When you get home, what will you do?
+
+
+Select an action:
+
+*choice
+  #OPEN THE ENVELOPE
+    *goto F1
+  #THROW IT OUT
+    *goto F2
+*label F1
+*set MN+100000
+*set HP%+30
+*set CA%-10
+The envelope contains almost $100,000 in large bills. There is a note that says, "Don't try to give it back. It's clean money, it's mine, and it is only a small fraction of what I have. God bless you."
+*finish
+*label F2
+Not very appreciative, are you?
+*finish
+*label A22
+*set TH%-10
+*set GN%-10
+You never see or hear from her again.
+*finish
+

@@ -1,0 +1,73 @@
+*if MS>0
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+I'm sorry. You can't play this icon if you are married.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label A.F
+A friend of a friend from Hollywood calls and asks if you would like to be on a new game show called "DATE OF A LIFETIME." It's a television dating show where you can win CASH, VALUABLE PRIZES and a night of romance and adventure with
+ONE OF THE WORLD'S MOST BEAUTIFUL WOMEN.
+*choice mood action
+  #EXCITED
+    #AGREE TO BE ON THE SHOW
+      *goto B11
+    *selectable_if (false) #DO NOT GO ON THE SHOW
+      *finish
+  #SHY/EMBARRASSED
+    #AGREE TO BE ON THE SHOW
+      *goto B21
+    #DO NOT GO ON THE SHOW
+      *goto B22
+  #TURNED OFF
+    *selectable_if (false) #AGREE TO BE ON THE SHOW
+      *finish
+    #DO NOT GO ON THE SHOW
+      *goto B32
+*label B11
+*set CN%+20
+The voice of the announcer booms out, "Your host, Martin Martinson will tell you who your fabulous date CAN be." Martin smiles a huge smile and says, "Thank yew very much, Jack, you old sailor. Today's DATE OF A LIFETIME is the lovely
+and talented Morgana Morganstein, actress, model and star of the daytime television serial, THE YOUNG AND THE READY FOR A NERVOUS BREAKDOWN."
+*page_break
+*if SC<61
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+After you answer a series of questions in front of eight million home viewers about things you wouldn't even discuss with your mother, you win THE DATE OF A LIFETIME.
+*page_break
+Unfortunately, on the night of your big date, Morgana has to go to
+Europe for a filming ("I'm sorry, Tiger, but THAT'S HOLLYWOOD. I'm sure the experience would have been REAL. Ta-ta!"). To compensate, the studio gives you a lifetime supply of Cracko's wheat treats, The Snack of The Stars. Ta-ta!
+*finish
+*label C.F
+*if SC>70
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+*set IN%+10
+*set TH%+20
+Your social skills are too good to succeed on a show like this. You don't quite have the "charisma" it takes to admit to embarrassing things in front of eight million people, humiliate yourself by groveling in front of television stars,
+or dress up in an elk suit and ask people on Santa Monica Boulevard for directions to the North Pole. Too bad.
+*page_break
+Jack the announcer says, "But don't worry, even though you didn't win THE DATE OF A LIFETIME, we won't let you go away
+empty-handed. Just for being our guest, you'll receive a copy of Morgana Morganstein's best selling self-improvement guide, 'Be The Man I Want You To Be.'
+*finish
+*label D.F
+*set CN%-10
+Your social skills are too low to impress Morgana. Actually, the two of you would have been perfect for each other. Perhaps it was your answer to the question, "Please describe two of Morgana's most noteworthy
+accomplishments," that made her think twice. Oh, well. Some people just can't take a joke.
+*finish
+*label B21
+*set CN%-20
+You never make it past the initial interview for the show. You are too shy to admit embarrassing personal things in front of eight million television viewers, humiliate yourself by groveling in front of television stars or
+dress up in an elk suit and ask people on Santa Monica Boulevard for directions to the North Pole.
+*finish
+*label B32
+*label B22
+*set IN%+10
+How could you pass up THE DATE OF A LIFETIME? Easily, evidently. So you won't win a date with a big star, a thousand dollars and a trip to Bermuda, or a gift certificate from the Beagle catalog. At least you still have your dignity!
+*finish
+

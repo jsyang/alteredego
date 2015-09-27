@@ -1,0 +1,107 @@
+It's about time to get a medical check-up.
+*choice mood action
+  #ANXIOUS
+    #GO TO THE DOCTOR
+      *goto A11
+    #DON'T GO TO THE DOCTOR/YOU DONT WANT TO WORRY ANYONE
+      *goto A12
+  #CALM/NEUTRAL
+    #GO TO THE DOCTOR
+      *goto A21
+    #DON'T GO TO THE DOCTOR/YOU DONT WANT TO WORRY ANYONE
+      *goto A22
+*label A11
+*set CA%-10
+At this age, you never know WHAT the doctor is going to tell you about yourself. The young doctor handles you gently, perhaps because he senses your nervousness. He asks if you have any complaints these days. You can:
+
+
+Select an action:
+
+*choice
+  #COMPLAIN ABOUT YOUR ARMS AND LEGS
+    *goto B1
+  #COMPLAIN ABOUT SHORTNESS OF BREATH
+    *goto B2
+  #COMPLAIN ABOUT NOTHING IN PARTICULAR
+    *goto B3
+*label B1
+He manipulates your body carefully, extending your arms and legs, then pushing them gently back into their resting positions, all the while asking, "Does this hurt?" or "How does this feel?" Some movements hurt; others feel O.K.
+*page_break
+The doctor says you have a touch of arthritis, common for your age, and prescribes the newest arthritis medication. You take it home and use it but soon realize it works just about as well as a couple of extra-strength aspirin.
+*finish
+*label B2
+The doctor checks your heart. It is a bit weak, and he would like to have you admitted to the hospital for tests. Once in the hospital, the tests show
+*label HOSP
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+that you need a coronary bypass operation. Do you want to try the operation? It might be a bit risky, like any other operation, but it can also improve your health tremendously.
+*page_break
+It's been done many thousands of times in the past with great success. Do you want the operation?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+*set PH%+40
+The operation is a complete success. Physical sphere takes a sharp rise.
+*finish
+*label E2
+The operation is a failure. You die on the operating table from complications. This game is over.
+*goto_scene you_have_died
+*label D2
+*set PH%-20
+Without the operation, your physical health deteriorates. It will probably shorten your lifespan.
+*finish
+*label C2
+that you are experiencing some minor respiratory problems from old age. Your doctor prescribes some light exercise to help build up your heart and lungs.
+*finish
+*label A12
+*set CA%-10
+*set EX%-30
+It's very bad not to go to the doctor for regular checkups at your age. People will worry more if they think you are sick and will not help yourself.
+
+*label B3
+*label A22
+*if PH>60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Fortunately, you are in decent shape. There would have been no bad news this time around, but next time you may not be so lucky.
+*finish
+*label E.F
+Your health isn't all that terrific. You suffer nothing serious now, but you may not be so lucky in the future.
+*finish
+*label A21
+*set CA%+20
+Perhaps you have the philosophy that staying alive long enough to live for another checkup is proof of another battle won. The doctor is young and intelligent looking. He checks your eyes, your tongue, your heart and your limbs.
+*page_break
+*if PH>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+You seem to be in fine shape. The doctor asks you some cursory questions about your lifestyle and your eating habits, then sends you on your way.
+*finish
+*label F.F
+There seems to be a slight difficulty with your heart. The doctor would like to admit you to the hospital for some tests. Once in the hospital, the tests
+show...
+*goto HOSP
+

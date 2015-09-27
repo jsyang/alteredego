@@ -1,0 +1,54 @@
+While searching through the mail, you come across a hand-addressed letter with an unfamiliar return address. You open it and read the handwritten letter inside it. The letter requests that you write ten copies of it and mail them to ten
+different people. It contains testimonials from the people who have faithfully performed the task to become the beneficiaries of much good fortune.
+*page_break
+It reads: "A woman in Peoria, after receiving this letter and carrying out the instructions, won two free dinners with every vacation purchased to the Maplewood Dude Ranch and Health Camp, and a free copy of the Jacques Cousteau
+Illustrated Guide to Marine Life of the Dead Sea. She feels that the good luck was passed on to her by the letter."
+*page_break
+There are also tales of misfortune for those who did not follow the instructions: "A woman in Peoria, after dismissing the letter as 'nothing but a silly hoax,' found Bubba, her longtime pet wire-haired terrier and friend of fifteen
+years, dead of a mysterious and rare canine-aging disease.
+*page_break
+The woman felt that Bubba's misfortune was the deadly result of her "inability to realize the importance of the letter at the time."
+*choice mood action
+  #COMPLIANT / SUPERSTITIOUS
+    #PERFORM THE TASK
+      *goto A11
+    *selectable_if (false) #DO NOT PERFORM THE TASK
+      *finish
+  #NON-COMPLIANT
+    *selectable_if (false) #PERFORM THE TASK
+      *finish
+    #DO NOT PERFORM THE TASK
+      *goto A22
+*label A11
+*set CA%-10
+A wise decision. A few weeks later
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+you win the opportunity to purchase a once-in-a-lifetime bargain: The 'Musically Yours' toilet seat. This is a cushioned, electronically-heated toilet seat that plays one of five all-time family favorite musical melodies. You can
+receive one of these truly marvelous conveniences of modern living for the low, low price of just $189.95.
+*finish
+*label B2
+you win two tickets to the Off-Off-Off Broadway production of "The Stranger Came in the Front Door and Went Out the Back Door," an uproarious adaptation of the widely known book of the same name, starring Patrick Haffert and Veronica
+Hulhaney, presented in the auditorium of the Walt Whitman High School in town.
+*finish
+*label A22
+You must be the type who believes in living dangerously. A few weeks later
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+one of your goldfish dies of constipation. "Just a coincidence," you say? Don't forget what happened to poor Bubba.
+*finish
+*label C2
+*set PH%-5
+while getting up to go to the bathroom in the middle of the night, you stub your toe on the bedpost, necessitating the surgical removal of the toenail from your big toe. THAT'S no coincidence!
+*finish
+

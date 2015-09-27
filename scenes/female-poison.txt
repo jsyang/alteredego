@@ -1,0 +1,147 @@
+You are alone in the kitchen and begin exploring the closets and refrigerator.
+*choice mood action
+  #ADVENTUROUS
+    #MOVE TOWARD REFRIGERATOR
+      *goto A11
+    #MOVE TOWARD PANTRY
+      *goto A12
+  #CURIOUS BUT CAUTIOUS
+    #MOVE TOWARD REFRIGERATOR
+      *goto A21
+    #MOVE TOWARD PANTRY
+      *goto A22
+*label A11
+*set TH%-10
+*set PH%-10
+You wonder if you are strong enough to open the refrigerator. You pull on the long handle and the door swings open, hitting you in the head. This produces a nasty swelling.
+
+
+Select an action:
+
+*choice
+  #CRY
+    *goto B1
+  #IGNORE THE PAIN AND CONTINUE EXPLORING
+    *goto B2
+*label B1
+You attract your mother's attention. She comes in and scolds you for playing in a place that's off-limits.
+*finish
+*label B2
+Ouch! It really hurts, but look at all the smooth jars and shiny bottles. There are several, delicious-looking things within reach on the bottom shelf: a full can of whipped cream, a jar of red cherries, a jar of mayonnaise and a
+bottle of red hot chili sauce. Which one would you like to taste?
+
+
+Select an action:
+
+*choice
+  #WHIPPED CREAM
+    *goto C1
+  #CHERRIES
+    *goto C2
+  #MAYO
+    *goto C3
+  #HOT SAUCE
+    *goto C4
+  #NOTHING
+    *goto C5
+*label C1
+*set PH%-10
+You pull the cap off and press the button on top. Whipped cream shoots out all over the floor in white, billowy streams. You put some on your fingers and taste it. Delicious!
+*page_break
+It isn't long before you learn to point the can into your mouth and suck down great big amounts of it! It is also not long before you get sick from the gas in the can and all of that whipped cream. You throw up all over the floor.
+Physical sphere takes a sharp temporary decrease.
+*finish
+*label C2
+*set HP%-20
+*if AG<2
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+*set PH%-20
+You are too small to turn the cap on the jar of cherries. It slips through your fingers and falls on the floor, shattering into small pieces. The cherries leak out in a sticky stream. You touch one of them and cut your finger on a piece
+of glass.
+*page_break
+Physically, you are a mess. Your head hurts and your finger is bleeding. You cry and your mother comes into the kitchen. She tends to your wounds, then sends you to the corner for being bad.
+*finish
+*label K.F
+You twist off the cap and eat the sticky cherries one by one. When you are finished, you drink the juice in the bottle and almost immediately get sick. Your mom finds you and sends you to your room.
+*finish
+*label C3
+*set HP%-20
+The jar is brand new, and you cannot open it. Instead, you take some other jars out of the refrigerator and use the heavy jar of mayonnaise as a "bowling ball." CRASH! A strike! SMACK! It's your mom! To your room for the rest of
+the day for making a mess!
+*finish
+*label C4
+*set PH%-10
+The thin bottle of sauce fits your small hand perfectly. Small amounts of liquid can squirt from a tiny hole at the top of the bottle. You squirt a few drops into your mouth. A little tangy, but not bad. You suck down the contents of the
+bottle.
+*page_break
+This is a big mistake. Your stomach feels queasy. You call for Mom, who gets very nervous and calls the doctor for advice. You will be O.K., but your physical sphere takes a nasty turn for the worse.
+*finish
+*label C5
+*set HP%+20
+*set TH%+20
+You replace the items and close the refrigerator. Your mother notices the mess the next time she goes into the kitchen and blames it on someone else.
+*finish
+*label A12
+You swing the pantry door open and see all of the beautifully-colored jars, boxes and bottles. One jar looks particularly pretty. It is shiny and brown and full of liquid. You unscrew the cap and smell what is inside. It smells sweet.
+
+
+Select an action:
+
+*choice
+  #TASTE IT
+    *goto F1
+  #PUT IT BACK
+    *goto F2
+*label F2
+*set TH%+40
+You have just avoided a potentially lethal accident. Your good judgment has saved your life!
+*finish
+*label F1
+It tastes good.
+
+
+Select an action:
+
+*choice
+  #KEEP TASTING IT
+    *goto G1
+  #PUT IT BACK
+    *goto G2
+*label G1
+*set PH%-90
+It tastes so good that you drink a large portion of it. After a while, your stomach begins to feel queasy and upset. You get dizzy and begin to feel faint. You call out for some help but no one seems to hear you.
+*page_break
+The liquid in the bottle was poison. An ambulance comes to take you to the hospital, where your stomach gets pumped. You are only slightly aware of what is going on but know that your parents are crying and looking frightened.
+*page_break
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label H1
+*set PH%-40
+The doctors try hard to clean your stomach, but you drank a large amount of highly toxic cleaning fluid. Your stomach and intestines are badly burned. You barely survive the experience. Your parents are shocked and badly traumatized.
+*finish
+*label H2
+The doctors work on you for several hours. Your stomach and intestines are badly burned. You have ingested a large quantity of highly toxic cleaning fluid. You lie still for a very long time. Your father's chest rises and falls with
+great sobs as he holds your hand and prays that you will survive.
+*page_break
+After what seems to be a very long time, your eyes open and you begin to cry because you are very frightened. You will be healthy in time, but this illness will restrict your diet and activities for at least another full year.
+*set PH%-60
+*finish
+*label G2
+*set PH%-10
+You were drinking a highly toxic cleaning fluid that could have resulted in your early death! You stopped soon enough to avoid permanent damage to your digestive system, but your mother must administer first aid and becomes very
+frightened. She is too frightened to punish you, which makes you confused and depressed.
+*finish
+*label A21
+*label A22
+*set TH%+30
+You have a grand time examining and smelling many of the items in the kitchen. You are young but have obviously learned that many things can hurt you if you put them in your mouth. You should know that some of the other choices could
+have led to your early death from accidental poisoning. Your judgment is superb and will help you in later life.
+*finish
+

@@ -1,0 +1,77 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You and ${loverName} have just had a lovely dinner together. The restaurant tab is incredibly expensive, but well worth it for the time you had. Just as you get ready to pay the bill, ${loverName} snatches it out of your hand and prepares to
+pay, saying, "My treat!"
+
+
+Select an action:
+
+*choice
+  #INSIST THAT SHE LET YOU PAY
+    *goto A1
+  #LET HER PAY, BUT RELUCTANTLY
+    *goto A2
+  #LET HER PAY (GLADLY)
+    *goto A3
+*label A2
+Still a trace of that old machismo in you, eh? I guess you can't help it. ${loverName} feels flattered that you appreciate her independence and equality.
+*goto Q
+*label A1
+Your sense of protocol is appreciated, but a little overdone. This is not exactly the Victorian Age any more. These days you run the risk of hurting a woman's feelings by not allowing her to pick up the tab when she wants to.
+
+
+Select an action:
+
+*choice
+  #BACK DOWN
+    *goto B1
+  #KEEP INSISTING
+    *goto B2
+*label B1
+*set SC%+10
+That's more like it.
+*label Q
+
+When you get back to ${loverName}'s house she turns and looks at you with a fiery gleam in her eye. "O.K.," she commands, "GET NAKED!"
+*label D
+
+
+Select an action:
+
+*choice
+  #PROTEST
+    *goto C1
+  #GO WITH THE FLOW
+    *goto C2
+*label C1
+The nerve. Just because she picks up the dinner tab, she thinks you will go all the way. Not this sailor. Hrmmph!
+*finish
+*label C2
+*set HP%+20
+Long live the New Woman! ${loverName} puts a strain on your heart that you may never get over, but hey, what a way to go!
+*finish
+*label B2
+*set SC%-20
+Your insistence turns ${loverName} off. Because she has no desire to make a scene, she lets you play out the macho man act. The evening ends on a sour note.
+*finish
+*label A3
+A free meal's a free meal, right? You are a New Man, on the surface at least. It is curious that you didn't at least offer to pay, just for the sake of tradition.
+*page_break
+*if TR<50
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Your personality profile suggests that you can be self-serving at times, so I wonder how much of your behavior reflects an appreciation of the liberated woman, versus a "get-whatever-I-can" attitude.
+*finish
+*label E.F
+Your behavior in the past hasn't really been overly self-serving, so I must assume that you really do have an appreciation for the liberated woman.
+*goto Q
+

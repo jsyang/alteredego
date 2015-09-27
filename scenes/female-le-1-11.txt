@@ -1,0 +1,23 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 17
+  Sorry, you're too old for this experience.
+  *finish
+A guy that you have been DREAMING about has asked if you want to go out for a soda after school. You have no money, and you are not sure whether or not he will pay for you. After all, you're not SEEING him or anything.
+*page_break
+*if SC>60
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+*set SC%+40
+Because you have excellent social skills, you remain calm. You tell him that you are trying to lose some weight and the mere sight of any food around you would make you GAG. You convince him to just hang out and shoot the breeze.
+*finish
+*label A.F
+*set SC%-10
+You would like to try to persuade him to just hang out with you without getting a soda, but you don't have the social skills for it.
+*finish
+
+

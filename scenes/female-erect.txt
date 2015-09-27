@@ -1,0 +1,74 @@
+You are relaxing in your room one day, when you notice a slightly wet feeling in your pants and a small round stain between your legs. When you check to see what is happening, you notice that the stain is red, then realize that it is
+blood.
+*choice mood action
+  #EMBARRASSED / NERVOUS / CONFUSED
+    #CALL MOM FOR SOME HELP
+      *goto A11
+    #HANDLE THE SITUATION
+      *goto A12
+  #CALM
+    #CALL MOM FOR SOME HELP
+      *goto A21
+    #HANDLE THE SITUATION
+      *goto A22
+*label A11
+*set CA%-20
+Do you think your mom has any idea about what is happening to you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+Do YOU have any idea about what is happening to you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*label A21
+*set FM%+30
+Mom takes you aside and explains that you have started menstruation. This is the beginning of a new time in a young woman's life.
+*goto MES1B
+*label C2
+I guess Mom hasn't explained what is happening to you yet. Mom takes you aside and explains that this is the beginning of a new time in a young woman's life.
+*page_break
+*goto MES1
+*label B2
+*label A22
+Do you know what is happening to you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*label A12
+*set FM%-10
+I guess that your mother hasn't really been that supportive or comfortable with things like this. That's too bad. It often helps to have the support of someone close to you, when you first begin menstruating. Even if you know what's
+going on from school or from friends, it can be scary and confusing.
+*goto MES2
+*label D2
+*label MES1
+What's happening is called menstruation, and it marks the beginning of a time in a young woman's life when her body is capable of having children.
+*label MES1B
+There are times when it will seem uncomfortable and distressing. It may even get downright painful and make you tense and irritable. Mom explains that, as you get older, you will learn to adjust to it.
+*label MES2
+*page_break
+For a time, you may feel a curious mixture of sadness and joy at being grown-up. Some people say that this is the beginning of "womanhood," and that is scary, too. Getting used to all of the changes in your body makes this time of life
+difficult. It's like walking into a house that you've known for years and finding all of the comfortable furniture has been replaced by new pieces.
+*finish
+

@@ -1,0 +1,78 @@
+This semester you must decide where you would like to live now that you are in college.
+
+
+Select an action:
+
+*choice
+  #LIVE ON CAMPUS IN ONE OF THE DORMITORIES
+    *goto A1
+  #LIVE AT HOME
+    *goto A2
+*label A2
+*finish
+*label A1
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+You are assigned a roommate named Tony Castano. Although he seems like a nice enough person, he is extremely sloppy, is prone to turning his stereo up very loud, and spends most of his time seeking out and ingesting federally-controlled
+substances. When you ask what his major is, he replies
+"Physics -- I'm taking up time and space!" Does this seem like someone you can live with?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set OH+1
+The two of you must be well suited for each other. You must be a Physics major, too.
+*finish
+*label C2
+I'm sorry, there are no other room assignments available right now. You'll just have to see if you can work it out.
+*finish
+*label B2
+You are assigned a roommate named Tony Castano. When you walk into the room, a beautiful, shapely brunette walks out of the bathroom wrapped in just a towel. Her name is TONI Castano. Looks like the people who assign rooms made a bit
+of a mistake. Toni is the free-spirited type. She says she is willing to make the best of it if you are. Would you like to try
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+Do you think you would like to try anything romantic with her?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E1
+*set HP%-10
+I don't blame you, she is a FOX. However, she is not that type of fox. She is madly in love with a tennis pro who travels around the world and calls her about once a month. Be prepared to take a lot of cold showers.
+*finish
+*label E2
+*set TH%+10
+I could understand trying to maintain that type of boundary with someone you hardly know and with whom you have to live. The two of you should get along just fine.
+*finish
+*label D2
+*set TH%+10
+*set HP%-10
+*set CA%-10
+Maybe you feel that it would be too risky to room with someone who looks like Toni. Maybe the temptations would be too great. If her current style of (un)dress is any indication of her typical lounging attire, you would
+probably not be able to stand the frequent cold showers.
+*finish
+

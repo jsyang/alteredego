@@ -1,0 +1,71 @@
+The boy who sits next to you in school has just passed you a note, folded in a tight square. He motions to you to read it. You look around the room. Mrs. Henessey, the meanest teacher in the school, has her back to the class. The
+note says, "What has more crust than the entire surface of the earth?"
+*choice mood action
+  #CURIOUS/DARING
+    #WRITE A NOTE BACK, ASKING, "WHAT?"
+      *goto A11
+    *selectable_if (false) #CRUMPLE THE PAPER UP AND THROW IT AWAY
+      *finish
+  #AFRAID/RELUCTANT
+    *selectable_if (false) #WRITE A NOTE BACK, ASKING, "WHAT?"
+      *finish
+    #CRUMPLE THE PAPER UP AND THROW IT AWAY
+      *goto A22
+*label A11
+You return the note and wait for another response.
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+All of a sudden, you hear Mrs. Henessey say to your friend, "Mr. Bradley would you care to share your little secret with the rest of the class?"
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+*set HP%+10
+Jimmy Bradley steps out of his seat, stands up, and begins to play dumb (this is his forte). While he is making believe he doesn't know what the teacher is talking about, he crumples up the note and slips it down the back of his pants.
+*page_break
+Mrs. Henessey asks him to show her what he has in his hands. Both hands fan open revealing two pink palms. He turns to you and smirks. Later, he tells you that the thing that has more crust than the entire surface of the earth is
+Mrs. Henessey's underwear.
+*finish
+*label C2
+Jimmy Bradley looks at the teacher with innocent eyes. He points to you and says,"He was just passing me this homework assignment, Mrs. Henessey." She says,"Bring it up here." He shows it to her. Mrs. Henessey reads it and
+looks at you sternly. Then she looks at Jimmy. She says,"Mr. Bradley, do you take me for some kind of fool? I can tell your terrible handwriting a mile away. Get to the principal's office!"
+*finish
+*label B2
+The note returns and you read what it says: "Mrs. Henessey's underwear." You can:
+
+
+Select an action:
+
+*choice
+  #GIGGLE
+    *goto D1
+  #CRUMPLE UP THE PAPER AND THROW IT AWAY
+    *goto D2
+*label D1
+*if TH<80
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+You can't control your giggling. You get sent down to the principal's office for talking in class and spend the afternoon doing a punishment assignment.
+*finish
+*label E.F
+*set HP%+20
+Your level of impulse control shows that you can get yourself back into control when necessary. You have a quick laugh, then calm down before Mrs. Henessey (even with her radar ears) can pinpoint the location of the disturbance.
+*finish
+*label D2
+*label A22
+*set CA%+20
+The noise attracts Mrs. Henessey's attention. She begins walking down the aisle and your heart begins to race. She looks you squarely in the eye -- the smell of her perfume is so overpowering it could kill you all by itself. You cough.
+*page_break
+She says, "Can't you use that scrap paper for something else before you throw it away? Protect our natural resources!" You breathe a sigh of relief.
+*finish
+

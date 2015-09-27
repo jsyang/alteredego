@@ -1,0 +1,31 @@
+It's time for your next dental checkup.
+
+*if PH>75
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+You seem to take pretty good care of yourself.
+*temp randomB
+*rand randomB 1 3
+*if randomB=1
+  *goto B1
+*elseif randomB=2
+  *goto B2
+*else
+  *goto B3
+*label B1
+You have a perfect checkup.
+*finish
+*label B2
+You have only one cavity.
+*finish
+*label B3
+*set PH%-20
+You have three cavities.
+*finish
+*label A.F
+*set PH%-25
+You need to have one tooth removed and three cavities filled.
+*finish
+

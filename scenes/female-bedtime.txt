@@ -1,0 +1,70 @@
+You have just been ordered to bed by your parents in the middle of a favorite television show.
+*choice mood action
+  #ANGRY
+    #COMPLAIN ABOUT HAVING TO GO TO BED
+      *goto A11
+    #BEG FOR TEN MORE MINUTES
+      *goto A12
+    *selectable_if (false) #WHINE
+      *finish
+  #DESPERATE
+    #COMPLAIN ABOUT HAVING TO GO TO BED
+      *goto A21
+    #BEG FOR TEN MORE MINUTES
+      *goto A22
+    #WHINE
+      *goto A23
+*label A11
+*label A21
+*set EX%+20
+*set GN%-10
+Your mother can appreciate the fact that it is not fair for you to have to go to bed during a favorite television show but finishes her show of sympathy with, "...but sometimes life just isn't fair."
+*finish
+*label A12
+*set GN%-10
+*set FM%-10
+It doesn't sound like begging when you are angry. Instead, it sounds like you are demanding more time. Your mother sends you off to bed with a stern lecture on how to speak to your parents.
+*finish
+*label A22
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*set HP%+30
+Begging makes your parents feel guilty. They let you stay up ten more minutes.
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+After ten minutes they forget you are supposed to go to bed and let you stay up for another hour before anyone notices.
+*label C2
+*finish
+*label B2
+*set HP%-10
+The begging routine doesn't work. They are too tired to hear it. You are sent up to bed anyway.
+*finish
+*label A23
+*set HP%-20
+*set FM%-20
+You say, "Pleeeeeeeeeeeze," in a breathless and desperate tone. Neither of your parents can stand it when you do this.
+
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+You are allowed to stay up ten more minutes, just so you will shut up.
+*finish
+*label D2
+*set FM%-10
+Everyone in the house has had a hard day. You hear a loud voice say, "If you're going to do that, do it in your room." You are ignored until you stop. Sometimes it doesn't pay to be so dramatic.
+*finish
+

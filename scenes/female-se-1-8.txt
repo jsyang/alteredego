@@ -1,0 +1,56 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+You have been studying all night long for a Chemistry test. There is one formula that you absolutely cannot learn. At about 2 a.m. you begin to see how easy it would be to write the formula on your hand and cheat from it. Will you:
+
+
+Select an action:
+
+*choice
+  #WRITE IT ON YOUR HAND
+    *goto A1
+  #KEEP TRYING TO LEARN IT FROM MEMORY
+    *goto A2
+*label A1
+*set TR%-10
+*if CA<50
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set CA%-20
+You are too anxious to go through with cheating like this. Having to keep track of where your teacher is all the time, just so you can cheat for this one formula, is distracting you and keeping you from the material you really DO
+know.
+*finish
+*label B.F
+*set IN%+20
+*set TR%-20
+You calmly write the answer on your hand, then transfer it to your paper. You run your hand up and down on your leg a few times to erase the evidence. You have gotten away with cheating on your test.
+*finish
+*label A2
+*set HP%+10
+*set PH%-10
+The more you try, the more you are frustrated. At 4 a.m. you finally doze off to sleep. The next day, when you sit down to take the test, you find out that the formula you couldn't learn was not included on this test. Your grade for
+the test is:
+*temp randomC
+*rand randomC 1 3
+*if randomC=1
+  *goto C1
+*elseif randomC=2
+  *goto C2
+*else
+  *goto C3
+*label C1
+A
+*finish
+*label C2
+B
+*finish
+*label C3
+B-
+*finish
+

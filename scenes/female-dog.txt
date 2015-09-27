@@ -1,0 +1,90 @@
+Your "dizzy" next-door neighbor is having dinner guests over. Three hours before her guests arrive, she bursts into your home and asks if you would help her cook a meal for them. She has absolutely no idea about "how to start."
+*page_break
+"Maybe if she didn't sleep until noon every day and watch the soaps until five, she could learn how to cook," you think to yourself. On the other hand, she has done a score of small favors for you, so maybe it wouldn't hurt to lend her
+some kind of hand.
+*choice mood action
+  #SYMPATHETIC
+    #LEND HER A COOKBOOK
+      *goto A11
+    #LEND HER A VIDEOTAPE
+      *goto A12
+    #PREPARE TWO OF THE DISHES IN YOUR HOME, THEN BRING THEM OVER
+      *goto A13
+    #GO OVER AND COOK AN ENTIRE MEAL FOR HER
+      *goto A14
+    *selectable_if (false) #TELL HER THAT YOU ARE SORRY, BUT YOU ARE TOO BUSY TO HELP HER TODAY
+      *finish
+  #UNSYMPATHETIC
+    #LEND HER A COOKBOOK
+      *goto A21
+    #LEND HER A VIDEOTAPE
+      *goto A22
+    *selectable_if (false) #PREPARE TWO OF THE DISHES IN YOUR HOME, THEN BRING THEM OVER
+      *finish
+    *selectable_if (false) #GO OVER AND COOK AN ENTIRE MEAL FOR HER
+      *finish
+    #TELL HER THAT YOU ARE SORRY, BUT YOU ARE TOO BUSY TO HELP HER TODAY
+      *goto A25
+*label A11
+*set GN%+10
+*set EX%+10
+*set SC%+10
+Your sympathy is appreciated.
+
+*goto START1
+*label A21
+*set SC%-10
+*label START1
+Unfortunately, your friend isn't sophisticated enough to use a cookbook. She runs in and out of your home asking you things like, "Can I borrow a 'tubespout?'" When you ask what a 'tubespout' is,
+she says, "Isn't that what 'tbsp.' stands for?"
+*page_break
+*label WINDIT
+One hour before the guests arrive, she orders out for some food and serves it in her (never used) imported china and silver place settings. Her party is a smashing success! (No thanks to you.)
+*finish
+*label A12
+*set GN%+10
+*set SC%+10
+Your sympathy is appreciated.
+
+*goto START2
+*label A22
+*set SC%-10
+*label START2
+Unfortunately, she cannot work the recorder. Eventually, she ruins your perfectly good tape.
+*page_break
+*goto WINDIT
+*label A13
+This is the most sensible choice. Your sympathy is appreciated as well.
+*page_break
+*if FM>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You are a marvelous cook. How do I know that? Well, your Family sphere characteristic is high. That means you must have spent a good deal of time watching your mother cook when you were younger.
+*page_break
+What if your MOTHER were a lousy cook, you say? Let's just give her the benefit of the doubt.
+*label DISHES
+*page_break
+The two dishes you make for her, the two dishes your OTHER neighbor makes for her, the appetizer your OTHER neighbor makes for her, and the chocolate mousse that the bachelor down the street makes for her, makes her party a tremendous
+success!
+*finish
+*label B.F
+Unfortunately, you are not the world's greatest cook. How do I know this? I don't know it for sure, but looking at your Family sphere status, it seems that you did not spend a lot of time interacting with your parents at home, so you
+would have no way of learning how to cook. It is a lot of effort, but eventually, you turn out two good dishes.
+*goto DISHES
+*label A14
+*set IN%-10
+*set SC%+10
+*set TR%+10
+*set EX%+30
+While you are slaving away at preparing the meal, she is sitting on the couch, munching Godiva chocolates and watching television. Every once in a while she comes over, tastes what you are cooking and says, "I think it needs something."
+*page_break
+The dinner is a tremendous success. You get a day behind in whatever it is you were doing.
+*finish
+*label A25
+*set GN%-20
+*set SC%-20
+Life is tough, isn't it? She will just have to learn how to fend for herself.
+*finish
+

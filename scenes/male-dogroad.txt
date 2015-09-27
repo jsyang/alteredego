@@ -1,0 +1,72 @@
+You are driving in a car with a friend when he runs over a dog. He seems rather insensitive about it and doesn't stop the car.
+*choice mood action
+  #ANGRY
+    #TELL HIM TO STOP THE CAR
+      *goto A11
+    #ACT AS IF NOTHING HAPPENED
+      *goto A12
+  #NEUTRAL
+    #TELL HIM TO STOP THE CAR
+      *goto A21
+    #ACT AS IF NOTHING HAPPENED
+      *goto A22
+*label A11
+*set GN%-10
+*set TH%+20
+He tells you not to worry about a stupid dog that was running around loose.
+
+
+Select an action:
+
+*choice
+  #DEMAND THAT HE STOP THE CAR
+    *goto B1
+  #TELL HIM THAT YOUR FRIENDSHIP IS AT STAKE
+    *goto B2
+*label B2
+He lets the car screech to a stop and says "If you want to help that stupid dog, go help it and walk home."
+
+
+Select an action:
+
+*choice
+  #GET OUT OF THE CAR AND HELP THE DOG
+    *goto C1
+  #TELL HIM TO KEEP DRIVING
+    *goto C2
+*label A12
+*label C1
+*set TH%+40
+Your "friend" drives away. You can't believe how insensitive he is. What a jerk.
+*finish
+*label C2
+*set TH%-10
+You backed down because you didn't want to walk all the way home after helping the dog. I can understand wanting to avoid the discomfort of all that walking, but there seemed to have been a principle at stake here. The dog was run over.
+You were walked on.
+*finish
+*label B1
+He just ignores you. By now you are too far away from the dog to walk back and try to help it.
+
+
+Select an action:
+
+*choice
+  #LET THIS NEGATIVELY AFFECT YOUR RELATIONSHIP WITH YOUR FRIEND
+    *goto D1
+  #LET IT BLOW OVER
+    *goto D2
+*label D1
+You begin to realize that you and your friend don't see eye to eye on many important matters in life. Your friendship begins to grow stale.
+*finish
+*label D2
+*set SC%-10
+Your friend seems to dictate the course of your relationship with him. His needs are filled and his temper tantrums are tolerated. Your needs are largely ignored. This doesn't sound like a very fair friendship.
+*finish
+*label A21
+He ignores you and keeps driving. Nice friend.
+*finish
+*label A22
+*set TH%-50
+No big deal. It was just a dog running around loose in the road. One less hungry mouth to feed.
+*finish
+

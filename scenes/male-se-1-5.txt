@@ -1,0 +1,52 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+Your Biology teacher is breezing through the miraculous inner workings of the common cockroach, BLABERUS CRANIFER. It is enough to make you lose your lunch. You can't understand a word he is saying, but everyone else seems to be
+nodding and following along. What will you do?
+
+
+Select an action:
+
+*choice
+  #STOP HIM AND ASK FOR CLARIFICATION
+    *goto A1
+  #KEEP QUIET
+    *goto A2
+*label A1
+*set IN%+10
+*set SC%-10
+Your teacher is impressed by the fact that you thought enough of the subject matter to ask him to explain it so that you fully understand it. His explanation makes it almost barely understandable but at least that's enough
+to get you through the next quiz.
+*page_break
+He even gives you a few live souvenirs to take home and study on your own. What do you do with the souvenirs?
+
+
+Select an action:
+
+*choice
+  #PUT THEM IN MARY JANE'S LUNCH BAG
+    *goto B1
+  #SET THEM FREE IN THEIR NATIVE HABITAT (THE SCHOOL CAFETERIA)
+    *goto B2
+  #TAKE THEM HOME AND STUDY THEM
+    *goto B3
+*label B1
+*set TH%-10
+*set HP%+20
+Five minutes after lunch period begins you hear the desired result: "EEEEEEEEEEEEEEEEEK!" Mission accomplished!
+*finish
+*label B2
+Yes, now they can be reunited with thousands of their relatives living comfortably and in high style in the school cafeteria.
+*finish
+*label B3
+*set SC%-10
+BROWN NOSE!
+*finish
+*label A2
+Yawn...You'll probably understand it after you get the notes from...zzzzzz....
+*finish
+

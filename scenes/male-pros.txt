@@ -1,0 +1,154 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+A bunch of your friends con you into going to a bar that features "couch dancing." Couch dancing is where a woman, clad only in a G-string, stands on a couch while you support her by the ankles. Once she is in this position she
+dances for your entertainment pleasure.
+*page_break
+After the girl finishes her dance, she invites you into the back room for a "relaxing massage." It becomes clear that she is a prostitute offering her services.
+*choice mood action
+  #SHOCKED/DISGUSTED
+    *selectable_if (false) #ENLIST HER SERVICES
+      *finish
+    #TELL HER THAT YOU ARE NOT A PAYING CUSTOMER
+      *goto A12
+  #CURIOUS BUT NOT CERTAIN
+    #ENLIST HER SERVICES
+      *goto A21
+    #TELL HER THAT YOU ARE NOT A PAYING CUSTOMER
+      *goto A22
+  #READY TO GO
+    #ENLIST HER SERVICES
+      *goto A31
+    *selectable_if (false) #TELL HER THAT YOU ARE NOT A PAYING CUSTOMER
+      *finish
+*label A12
+*set TH%+10
+She tells you not to be so shy, but you refuse, anyway. This is not your idea of a good time.
+*finish
+*label A21
+*set TH%-20
+Curiosity killed the cat, but you might not get away quite that easily.
+
+*label A31
+*label G1
+You are presented with the following "massage options:"
+
+
+Select an action:
+
+*choice
+  #HAND PLEASURING ($50)
+    *goto B1
+  #ORAL PLEASURING ($100)
+    *goto B2
+  #MASSAGE WITH SOCIAL INTERCOURSE ($200)
+    *goto B3
+  #AROUND THE WORLD ($150 PACKAGE DEAL -- ON SALE THIS WEEK)
+    *goto B4
+*label B1
+*if MN<50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+I'm sorry. You don't have enough money for this. Please leave quietly to avoid disturbing any of the paying cutomers.
+*finish
+*label C.F
+*set MN-50
+*if MN < 5
+  *set MN 5
+*set GN%-10
+*set SC%-10
+The "masseuse" requests that you remove all of your clothing and wrap a towel loosely around your waist. She gently rubs warm, scented oil all over your hands. "Mmmmm", she purrs. Doesn't this feel terrific? You have no choice but
+to agree. "THANK YOU, Sir. Please come back for another session of hand pleasuring whenever you feel tension in that area!"
+*page_break
+You've been had -- unfortunately, not in the way you intended.
+*finish
+*label B2
+*if MN<100
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+I'm sorry. You don't have enough money for this. Please leave quietly to avoid disturbing any of the paying cutomers.
+*finish
+*label D.F
+*set MN-100
+*if MN < 5
+  *set MN 5
+*set TH%-10
+*set SC%-10
+*set HP%-10
+The "masseuse" requests that you remove all of your clothing and wrap a towel loosely around your waist. She gently rubs warm, scented oil all over your back and neck and proceeds to read you selections from Elizabethan love sonnets.
+*page_break
+
+"Aren't these beautiful?" she whispers. After about five minutes of light massage accompanied by the sonnets she thanks you for being her customer. She mentions that she actually read you one more oral passage than most of her
+other customers because you seemed so interested. It seems you've been had -- unfortunately, not in the way you intended.
+*finish
+*label B3
+*if MN<200
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+I'm sorry. You don't have enough money for this. Please leave quietly to avoid disturbing any of the paying customers.
+*finish
+*label E.F
+*set MN-200
+*if MN < 5
+  *set MN 5
+*set CN%-10
+*set TH%-10
+*set SC%-10
+*set HP%-10
+*set TR%-10
+The "masseuse" requests that you remove all of your clothing and wrap a towel loosely around your waist. She gently rubs warm, scented oil all over your body. Just when she is about to remove the towel, three more of the girls
+from the establishment come into the room and begin removing what little clothing they have on.
+*page_break
+They walk over to the table where you are resting and lean toward you. The one on your left asks how many brothers and sisters you have. The one on the right asks what your home town was. So much for the social intercourse portion of
+your massage. Please come back soon. You've been had -- unfortunately, not in the way you intended.
+*finish
+*label B4
+*if MN<150
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+I'm sorry. You don't have enough money for this. Please leave quietly to avoid disturbing any of the paying cutomers.
+*finish
+*label F.F
+*set MN-150
+*if MN < 5
+  *set MN 5
+*set CN%-10
+*set HP%-10
+*set TH%-10
+*set TR%-10
+The "masseuse" requests that you remove all of your clothing and wrap a towel loosely around your waist. She gently rubs warm, scented oil all over your body. She begins by making large swirling motions across your back. As she
+massages your back, she begins projecting a series of slides on the wall in front of you (probably to get you aroused).
+*page_break
+The first slide is the Eiffel Tower. Next is London Bridge. These are followed by slides of the Empire State Building and the Hanging Gardens of Cyprus. "Thank you for taking this magical massage tour around the world, Sir. Please
+try us again." You've been had -- unfortunately, not in the way you planned.
+*finish
+*label A22
+She removes her G-string and asks if that changes your mind.
+
+
+Select an action:
+
+*choice
+  #GIVE IN
+    *goto G1
+  #PASS
+    *goto G2
+*label G2
+*set TH%+50
+You are a model of self-control.
+*finish
+

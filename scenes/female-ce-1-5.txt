@@ -1,0 +1,68 @@
+The Student Government Organization is gathering to hold a meeting. Are you interested in running for a school office?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A1
+*if SC>70
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*if (GN>39) and (GN<75)
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.T
+*set VC%+20
+*set SC%+10
+*set CN%+20
+*set IN%+10
+You have just the right mix of Social skills and aggressiveness to be a confident school leader.
+*goto C
+*label B.F
+*label Z.F
+You do not have the right combination of Social skills and aggressiveness to get elected to school office. You are voted down early in the process.
+*finish
+*label C
+*if EX>80
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+
+Your Expressiveness characteristic shows that you quickly become a great speechmaker.
+*goto E
+*label D.F
+*set VC%-10
+*set SC%-10
+*set CN%-10
+Unfortunately, your Expressiveness characteristic limits your ability to make good speeches, and as a result, you are an ineffective school politician.
+*finish
+*label E
+*page_break
+*if TH>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set SC%+20
+*set TH%+20
+*set EX%+20
+*set IN%+30
+Your Thoughtfulness characteristic shows that you attend to the needs of the students well and have a successful term in office. As a result, Social, Thoughtful, Expressive and Intellectual domains all increase.
+*finish
+*label F.F
+*set SC%-10
+*set VC%-10
+Your Thoughtfulness characteristic shows that you may be too impulsive to make decisions based on the needs of the masses. It is this shortcoming that ultimately spells your political demise.
+*finish
+*label A2
+I guess school politics just isn't for you.
+*finish
+

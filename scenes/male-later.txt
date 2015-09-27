@@ -1,0 +1,111 @@
+Your Dad has promised that he will fix your bicycle. He is taking a nap (so he's not doing anything). Now seems like a good time to remind him.
+*choice mood action
+  #ANNOYING
+    #TAP DAD ON THE SHOULDER
+      *goto A11
+    #MAKE THE TV LOUD SO HE WAKES UP
+      *goto A12
+    *selectable_if (false) #LEAVE DAD ALONE
+      *finish
+  #PATIENT AND SWEET
+    #TAP DAD ON THE SHOULDER
+      *goto A21
+    *selectable_if (false) #MAKE THE TV LOUD SO HE WAKES UP
+      *finish
+    #LEAVE DAD ALONE
+      *goto A23
+*label A11
+*label A21
+*set GN%-10
+You tap Dad rapidly on the shoulder and say, "Dad?" next to his ear but he doesn't seem to move. You can:
+
+
+Select an action:
+
+*choice
+  #SHAKE HIM BACK AND FORTH A LITTLE
+    *goto B1
+  #GET MOM
+    *goto B2
+*label B1
+*set GN%-10
+You say, "Daaaaaaad...Oh, Daaaaaaaad." You move him back and forth. He is very heavy. All of a sudden, he makes a loud snorting sound. He looks at you glassy-eyed. You can:
+*label SAY/LV
+
+
+Select an action:
+
+*choice
+  #SAY SOMETHING TO HIM
+    *goto C1
+  #LEAVE HIM ALONE
+    *goto C2
+*label C1
+What question would you like to ask him?
+
+
+Select an action:
+
+*choice
+  #"UM, DAD WOULD YOU FIX MY BIKE?"
+    *goto D1
+  #"DAD! WOULD YOU FIX MY BIKE NOW?"
+    *goto D2
+  #"FORGET IT."
+    *goto D3
+*label D1
+*set HP%-20
+Even though you seem helpless, Dad just rolls over and falls back asleep. He mumbles, "Later."
+*finish
+*label D2
+Dad says, "Please, Son, don't bother me. I'm taking a nap right now. Ask me again later." You can:
+
+
+Select an action:
+
+*choice
+  #LEAVE HIM ALONE
+    *goto E1
+  #WAIT 5 MINUTES THEN ASK AGAIN
+    *goto E2
+*label E1
+*set HP%+20
+Dad isn't feeling too energetic right now, but when he wakes up, he fixes your bike.
+*finish
+*label E2
+*set HP%-10
+*set GN%-10
+Your perseverance will come in handy in many situations. Unfortunately, this is definitely not one of them. Dad greets you from his sleep with a resounding "NO!" that shakes the house. You may cry a little here if you feel you have
+to, but it won't help.
+*finish
+*label D3
+Dad levitates from the couch, spins in the air and lands with his back to you. I guess you frustrated him.
+*finish
+*label C2
+*goto E1
+*label B2
+You try to enlist Mom's help, but she recommends that you let Dad have his little nap. You can:
+*goto SAY/LV
+*label A12
+It worked! Now that you've got his attention (look at how wide his eyes are open) you can:
+*goto SAY/LV
+*label A23
+*set IN%+30
+*set FM%+30
+Your patience pays off. When Dad wakes up you ask if he will fix your bike.
+
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label H1
+He is feeling so good that he asks you to go on a little trip with him. He takes you to the bicycle shop and buys you a brand new bike!
+*finish
+*label H2
+*set HP%+40
+*set IN%+30
+He fixes your bicycle then takes you out for a king-sized ice cream cone.
+*finish
+

@@ -1,0 +1,159 @@
+There is a new girl in school. Her name is Ginger Clarke. She's a perky, busty (bleach) blonde who wears very red lipstick almost all the time. Two weeks after she arrives at school, she has dated every eligible guy and even some of the
+ineligible guys. A friend informs you that yesterday Ginger asked ${loverName} to help her study. How do you feel about this?
+
+
+Select a mood:
+
+*choice
+  #ANGRY
+    *goto A1
+  #DEPRESSED
+    *goto A2
+  #ANXIOUS
+    *goto A3
+  #INSANELY JEALOUS
+    *goto A4
+  #NO BIG DEAL
+    *goto A5
+*label A1
+On whom are you going to take your anger out?
+
+
+Select an action:
+
+*choice
+  #GINGER
+    *goto B1
+  #${LOVERNAME}
+    *goto B2
+*label B1
+*set GN%-10
+What are you going to do?
+
+
+Select an action:
+
+*choice
+  #CONFRONT HER AND TELL HER SHE'S A LOW LIFE
+    *goto C1
+  #SPREAD AROUND SOME VICIOUS GOSSIP ABOUT HER
+    *goto C2
+  #TELL HER TO LAY OFF OR ELSE
+    *goto C3
+*label C1
+*set GN%-10
+How was she supposed to know he was your boyfriend?
+
+*if SR>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Besides, even if you ARE going steady with him, it wouldn't be Ginger's fault if he cheated on you. He DOES have a mind of his own.
+*finish
+*label D.F
+Besides, you are not officially going steady, which means that technically, he isn't even your boyfriend.
+*finish
+*label C2
+*set GN%-20
+*set TH%-20
+*set SC%-20
+Tacky, tacky. No one believes a word of what you say. They avoid you, thinking you will resort to the same kinds of tactics with them.
+*finish
+*label C3
+OR ELSE WHAT? Threatening almost never does any good and will only make you look immature.
+*if GN<40
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set SC%-30
+*set SR 0
+*set GF 0
+Your temper brought out a bad side in you and ${loverName} saw it, perhaps for the first time. He breaks off the relationship with you and begins going out with Ginger.
+*label E.F
+*finish
+*label B2
+*set TH%-10
+*set GN%-10
+Why are you angry at ${loverName}? He has a mind of his own.
+
+*if NT>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Besides, ${loverName} has shown himself to be pretty trustworthy in the past.
+*finish
+*label F.F
+*if NT<40
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+If he has been a little untrustworthy in the past, that's no guarantee that he would cheat on you now.
+*finish
+*label G.F
+*set SC%-10
+Taking your anger out on ${loverName} makes him resentful. The outcome is that you drive him right into the arms of Ginger. It's interesting how people are often the cause of making their own suspicions come true.
+*finish
+*label A2
+*label I2
+*set HP%-10
+Have you given up on ${loverName} so soon? You have obviously fantasized that the two of them are living happily ever after.
+
+*if NT>50
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+*set TH%-10
+${loverName} is a trustworthy sort of person who is not likely to cheat on you. You made yourself upset for nothing.
+*finish
+*label H.F
+*page_break
+*set HP%-10
+*set SR 0
+*set GF 0
+Perhaps you got so upset because ${loverName} really isn't very trustworthy. Well, you're right--he isn't. He did fall for Ginger, but perhaps if you had spoken to him about it instead of getting so depressed, you could have prevented it.
+*finish
+*label A3
+*set CA%-10
+I don't blame you for getting a bit jittery over a voluptuous bombshell like Ginger trying to move in on your boyfriend. What are you going to do about it?
+
+
+Select an action:
+
+*choice
+  #TALK TO ${LOVERNAME}
+    *goto I1
+  #LET THINGS HAPPEN
+    *goto I2
+*label I1
+*if NT>50
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+You have nothing to worry about. ${loverName} is very trustworthy and he convinces you of this when you speak with him.
+*finish
+*label J.F
+*set SR 0
+*set GF 0
+I have a feeling I know why you were so worried. ${loverName} really isn't that trustworthy, is he? Well, what you feared might happen actually did. ${loverName} has fallen for Ginger. He tells you that he no longer wants to see you.
+*page_break
+They deserve one another!
+*finish
+*label A4
+*set TH%-20
+*set GN%-10
+*set SR 0
+*set GF 0
+You run around accusing both Ginger and ${loverName} of "fooling around" behind your back. ${loverName} had no intention of doing anything like that. You make such a fool of yourself that, as a result, they become close friends and ${loverName}
+eventually drops you for Ginger.
+*finish
+*label A5
+*set CN%+40
+I guess you figure that if ${loverName} is going to fool around, that's HIS problem. As it turns out, he remains faithful to you. You must be a very confident person!
+*finish
+

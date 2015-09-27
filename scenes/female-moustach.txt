@@ -1,0 +1,99 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this icon, you need a steady job. You may go to the WORK ICON and apply for one, then return.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You and a group of people you work with are sitting around and having a discussion. The person sitting next to you looks up and says, "I could sure go for a cup of coffee." Several people look up and agree with the suggestion.
+*page_break
+Turning to you he says, "Would you make us a fresh pot of coffee? I'm all thumbs, and I hate to go out when there's a coffee maker right here."
+
+*choice mood action
+  #FURIOUS
+    #MAKE THE COFFEE
+      *goto A11
+    #DON'T MAKE THE COFFEE
+      *goto A12
+  #ANGRY
+    #MAKE THE COFFEE
+      *goto A21
+    #DON'T MAKE THE COFFEE
+      *goto A22
+  #NEUTRAL
+    #MAKE THE COFFEE
+      *goto A31
+    #DON'T MAKE THE COFFEE
+      *goto A32
+*label A11
+*label A21
+*set CN%-20
+You must be trying to give yourself an ulcer! I guess you think that you really have no choice in the matter. Well, as a matter of fact you do. Your Confidence must be very low.
+*finish
+*label A12
+What would you like to say to this guy?
+
+
+Select an action:
+
+*choice
+  #"YOU'RE GOING TO BE ALL BROKEN THUMBS IF YOU EVER ASK ME TO DO YOUR SLAVE WORK AGAIN."
+    *goto B1
+  #"NOT ON YOUR LIFE."
+    *goto B2
+  #SOMETHING WHICH WOULD INCLUDE A STRING OF COLORFUL FOUR LETTER ADJECTIVES
+    *goto B3
+*label B1
+*label B2
+*label B3
+*set GN%-20
+*set CA%-10
+*set HP%+20
+That fellow is the one at work who is known for making the most socially inapproriate comments. There is one in every office. Everyone giggles as you tear him apart, but for some strange reason, people feel sorry for him and see YOU as
+hostile.
+*finish
+*label A22
+*if GN>50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set SC%+30
+Your personality is one that is tempered with gentleness. Even though you would probably like to haul off and belt this guy, you keep cool. You explain that you are not his or anybody else's slave and that you will gladly TEACH him how
+to make the coffee. "Can't depend on women for everything," you say.
+*finish
+*label C.F
+*set GN%-10
+Your personality is too explosive to deal with him in an angry but effective way. You blow your stack at him, but everyone thinks you are overdoing it.
+*finish
+*label A31
+You must either feel comfortable enough with yourself to ignore his comments and make some coffee because YOU want some. If not, you must feel that it is okay for men to treat women like they are their personal servants. A female
+co-worker asks you if you were offended by the guy. Which do you believe?
+
+
+Select an action:
+
+*choice
+  #HE WAS JUSTIFIED IN ASKING/YOU DON'T MIND DOING THIS FOR MEN
+    *goto D1
+  #YOU FELT LIKE HAVING SOME COFFEE/EVERYONE KNOWS THAT GUY IS A JERK
+    *goto D2
+*label D1
+*set SC%-5
+Your co-worker can't believe it, but obviously you are comfortable in that role.
+*finish
+*label D2
+*set CN%+30
+You must be an extraordinarily confident person.
+*finish
+*label A32
+*set CN%+30
+*set SC%+20
+*set TH%+10
+*set GN%+10
+Sometimes if you ignore someone long enough he or she will just go away. Unfortunately, people like this never learn. You refuse to give him the pleasure of seeing you get upset and intimidated. Bravo.
+*finish
+

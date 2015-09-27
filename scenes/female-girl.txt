@@ -1,0 +1,129 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+At a party at the house of one of your friends, Mark Powers (a.k.a. "The Most Incredible Hunk In The Ninth Grade") asks you to be his partner in a game that some of the kids are playing. The game is called "Seven Minutes In Heaven."
+It is played like this:
+*page_break
+All of the "couples" find a place to be comfortable in a very large room. Someone is in charge of working the lights. When the lights go out, the couples make out (and stuff) for seven minutes. When the lights get turned back on,
+the couples can either stay with each other or switch partners.
+*choice mood action
+  #AROUSED
+    #ACCEPT THE OFFER
+      *goto A11
+    *selectable_if (false) #REJECT THE OFFER
+      *finish
+  #UNINTERESTED
+    *selectable_if (false) #ACCEPT THE OFFER
+      *finish
+    #REJECT THE OFFER
+      *goto A22
+*label A11
+*set CA%-10
+*set SC%+30
+The two of you get comfortable, and the lights go off. Mark pulls you close and presses his lips against yours. You can:
+
+
+Select an action:
+
+*choice
+  #BECOME MORE AGGRESSIVE
+    *goto B1
+  #KISS HIM FOR A BIT MORE BEFORE TRYING ANYTHING ELSE
+    *goto B2
+*label B1
+What do you decide to do?
+
+
+Select an action:
+
+*choice
+  #GIVE HIM A FRENCH KISS
+    *goto C1
+  #TRY TO GET HIM TO TOUCH YOU ON THE OUTSIDE OF YOUR SHIRT
+    *goto C2
+  #NIBBLE ON HIS EAR
+    *goto C3
+*label C1
+*set SC%-10
+All of a sudden Mark pulls away. He stutters and says, "I gotta go get a soda. I'll be right back." He looks scared to death. The next day, you find out that he has told everyone he could have had his way with you.
+*finish
+*label C2
+*set SC%+20
+You place his hand on your shirt, thinking it will please him. Instead, he looks like he gets into a panic. He stutters and says, "I gotta go get a soda. I'll be right back." The next day, you find out that he told all of his friends
+that he had his way with you."
+*finish
+*label C3
+*set IN%-10
+That stuff only works on T.V. and in cheap novels. You treat his ear as if it were a piece of dried fruit. "Yeeeeeeech! That's disGUSTing," Mark cries out. Your "Seven Minutes in Heaven" are brought to an abrupt end.
+*finish
+*label B2
+As you kiss him, you feel him moving close to you, pressing himself up against you. You can:
+
+
+Select an action:
+
+*choice
+  #GIVE HIM A FRENCH KISS
+    *goto D1
+  #LET HIM TOUCH YOU ON THE OUTSIDE OF YOUR SHIRT
+    *goto D2
+  #NIBBLE ON HIS EAR
+    *goto D3
+  #EXCUSE YOURSELF SAYING, "I JUST REMEMBERED SOMETHING I GOTTA DO."
+    *goto D4
+  #KEEP KISSING HIM
+    *goto D5
+*label D1
+*goto C1
+*label D2
+*goto C2
+*label D3
+*goto C3
+*label D4
+*set CA%-20
+You are overwhelmed and afraid that you will not be able to handle what could come next. Mark looks confused as you head for the door. The next day, he tells everyone that he "felt you up."
+*finish
+*label D5
+His hands slide up and down your shirt and brush across your leg. You can:
+
+
+Select an action:
+
+*choice
+  #EXCUSE YOURSELF SAYING, "I JUST REMEMBERED SOMETHING I GOTTA DO."
+    *goto E1
+  #KEEP KISSING HIM
+    *goto E2
+  #GIVE HIM A FRENCH KISS
+    *goto E3
+  #LET HIM TO TOUCH YOU ON THE OUTSIDE OF YOUR BLOUSE
+    *goto E4
+  #NIBBLE ON HIS EAR
+    *goto E5
+*label E1
+*goto D4
+*label E2
+*set CA%-20
+He pulls your shirt out of your pants and runs his hands up and down your chest. He kisses you on the neck... and then reaches for the snap on your jeans.
+*page_break
+LIGHTS ON! You look up at Mark. You try to regain your composure. Mark asks if he can get you a soda. You expect that when he comes back, he will finish what he started. Your heart is pounding wildly.
+*page_break
+You think to yourself, "It's only a few minutes until the next round." Mark returns with Lucy "Loose" Garfield. As she passes by, she asks, "Who are YOU gonna be with next?"
+*finish
+*label E3
+*goto C1
+*label E4
+*goto C2
+*label E5
+*goto C3
+*label A22
+*set CN%+30
+You are obviously not interested in a seven-minute affair with Mark. You are much too sophisticated for that. Besides, who wants to kiss someone who has had fifteen other people slobbering all over his face all night?
+*finish
+

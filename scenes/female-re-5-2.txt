@@ -1,0 +1,100 @@
+${loverName} has decided that he wants to take you on a surprise date. Do you accept his invitation?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A2
+${loverName} says you would be missing out on a lot of fun. Would you reconsider just for the sake of a good time?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label F2
+Too bad.
+*finish
+*label A1
+*label F1
+*set SC%+20
+${loverName} drives you way out into the country to a small airport. He asks, "Do you know I belong to a flying club?" ${loverName} is proud to inform you that he is a licensed pilot! He tells the manager of the flying club to get "NOSEDIVER"
+out for a flight.
+
+
+Select an action:
+
+*choice
+  #HEAD BACK FOR THE CAR
+    *goto B1
+  #GO UP IN THE PLANE WITH HIM
+    *goto B2
+*label B1
+*set TH%+20
+Chicken! It's completely safe. "Don't you know that flying is safer than driving a car?" He says he's never had a severe crash since he began flying, and that was over a YEAR ago.
+
+
+Select an action:
+
+*choice
+  #STAY IN THE CAR
+    *goto C1
+  #GO UP IN THE PLANE WITH HIM
+    *goto C2
+*label C1
+CLUCK! CLUCK! He'll go without you. He takes off and circles the park twice -- once right-side-up, the next time (gulp!) upside-down. When he gets back, he tells you the experience was exhilarating. You were a party-pooper.
+*finish
+*label C2
+*label B2
+*set TH%-10
+*set SC%+40
+The two of you are handed crash helmets. The manager of the flight club carefully points out the location of the parachute and whispers, "Make sure you strap yourself down REAL tight. He's quite a pilot." Once you get in
+the plane, you observe that ${loverName} really seems to know what he is doing. The pre-flight check is even rather interesting.
+*page_break
+Your confidence in ${loverName} grows by the minute, until he takes out the flight manual and mumbles, "I think you are supposed to push the wheel forward to go down, back to go up. Oh, what the heck. I'll find out soon enough." He shouts
+out, "O.K., co-pilot, say your prayers. We're goin' ta meet the Lord!"
+*page_break
+The engine fires up with a roar and, before you know it, the two of you are flying. ${loverName} tells you he really appreciates all the trust you've put in him. At this point...
+
+
+Select an action:
+
+*choice
+  #YOUR KNEES ARE SHAKING
+    *goto D1
+  #YOU ARE FEELING A BIT MORE RELAXED
+    *goto D2
+*label D1
+*set CA%-20
+He senses your nervousness and avoids doing anything too fancy. He brings you around the field a couple of times and then sets the craft down. You're not sure whether the experience has taken years off your life or put them on,
+but at least you are alive to tell about it.
+*finish
+*label D2
+*set CA%+10
+"Now for some fancy flying!" ${loverName} turns the plane upside-down and does a barrel roll. "Just like the 'The Flying Tigers'." He has a bit of trouble getting the plane back on course, but after a quick consultation with
+the flight manual, the plane is once again right-side-up.
+*page_break
+Just when things have calmed down, he flips the autopilot switch and turns to you with a funny look in his eye. He asks, "Ever done it at 10,000 feet?"
+
+
+Select an action:
+
+*choice
+  #JOIN THE MILE-HIGH CLUB
+    *goto E1
+  #PASS ON THE OFFER
+    *goto E2
+*label E1
+You are certainly an adventurer! The cabin space is tight, but you've got to admit, it IS different. Next week, SKYDIVING!
+*finish
+*label E2
+You are missing out on quite an experience, but all in all you have been a good sport. Next week, SKYDIVING!
+*finish
+

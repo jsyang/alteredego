@@ -1,0 +1,115 @@
+It's about time you had a visit with your gynecologist.
+*choice mood action
+  #ANXIOUS/RELUCTANT
+    #GO FOR THE CHECKUP
+      *goto A11
+    #PUT IT OFF
+      *goto A12
+  #CALM
+    #GO FOR THE CHECKUP
+      *goto A21
+    #PUT IT OFF
+      *goto A22
+  #TERRIFIED
+    #GO FOR THE CHECKUP
+      *goto A31
+    #PUT IT OFF
+      *goto A32
+*label A12
+This can be very dangerous. Would you like to make an appointment?
+*label J
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+That's better. The doctor will see you now. The results of your checkup show:
+*label I
+*if CA<40
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+That you are at risk of developing a peptic ulcer related to your level of stress and anxiety. Please try to relax a bit more.
+*goto G
+*label C.F
+*if GN<40
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+That you have high blood pressure because you have developed an angry and explosive style of dealing with things.
+*goto G
+*label D.F
+*if PH<40
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*temp randomF
+*rand randomF 1 2
+*if randomF=1
+  *goto F1
+*else
+  *goto F2
+*label F1
+*set CA%-20
+Your checkup shows that you have a small lump under your left breast. Your gynecologist tells you that the lump is not dangerous. The doctor removes it in the office. You are taught to give yourself regular checkups.
+*goto G
+*label F2
+*set PH%-10
+Your checkup shows that you have some small vericose veins on your lower legs. You are advised about special cosmetic procedures and ways of improving your circulation.
+*label G
+*set MN-400
+*if MN < 5
+  *set MN 5
+Your bill is $400.
+*finish
+*label E.F
+*set MN-400
+*if MN < 5
+  *set MN 5
+You are in perfect health! Your bill is $400.
+*finish
+*label B2
+O.K. As a result of your avoidance,
+*if PH>50
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+nothing happens. Basically you are in good shape, but you really should get regular checkups.
+*finish
+*label H.F
+*set PH%-30
+you fail to detect the emergence of what becomes a chronic lower back problem. Your physical health declines.
+*finish
+*label A11
+*set CA%+10
+It's great that you are able to get over your feelings of avoidance in order to do something that is unpleasant but necessary. The doctor will see you now. The results of your checkup show:
+*goto I
+*label A22
+*set CA%+30
+*set PH%-30
+You are remaining calm by denying the real importance of regular physical checkups. This is unhealthy from both a physical and psychological point of view. This can be very dangerous. Would you like to make an appointment?
+*goto J
+*label A21
+*set IN%+30
+That's very brave and intelligent of you. The doctor will see you now. The results of the checkup show:
+*goto I
+*label A31
+*set CA%-20
+There, there. I realize its difficult to get regular checkups, but as you know, it's really a necessity. Besides, with all of the wonders of modern technology, it's much less terrifying than you think. The doctor will see
+you now. The results of the checkup show:
+*goto I
+*label A32
+*set CA%-30
+I know it can be frightening to go to the doctor, but chances are things will be just fine. If you continue to put off going to the doctor, something that you might have been able to avoid might give you a difficult time. Do you
+want to make an appointment?
+*goto J
+

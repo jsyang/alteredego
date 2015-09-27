@@ -1,0 +1,43 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+You have found a new way of "expressing yourself" through the way you comb your hair -- straight up.
+
+*if FM>80
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+Your family is somewhat supportive, but every once in a while someone can't help giggling as you walk by. Your dad makes a crack about staying away from open light sockets.
+*finish
+*label A.F
+*if FM>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Your family constantly asks you when you are going to "change back to normal" but are generally tolerant of it.
+*finish
+*label B.F
+*if FM>40
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set HP%-20
+*set SC%-10
+*set FM%-10
+You are hounded by your mother to either "point your hair in the direction of the nearest beautician" or "find some zoo keeper that will take you in as a boarder."
+*page_break
+Your family is less than supportive. Perhaps you should have tried to be a more family-oriented type of person; then they might have been able to
+tolerate this passing fancy without getting so hostile.
+*finish
+*label C.F
+*set FM%-30
+Everyone in the house just treats you like some kind of alien until you get a more conventional hair style. Relationships with family members become even cooler than they already are.
+*finish
+

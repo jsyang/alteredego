@@ -1,0 +1,407 @@
+*set instantaneous true
+*temp AM
+*temp thingtobuy
+Welcome to THE WONDERFUL WORLD OF MAJOR PURCHASES! In this icon you will have the opportunity to purchase the material possessions you have always dreamed about! You can use either cash or our easy-to-arrange credit program!
+*page_break
+While you are in this icon I will encourage you to spend, spend, spend to your heart's content. But, please note that spending beyond your means can (and in most cases WILL) be hazardous to your emotional and physical health!
+*page_break
+Also, keep in mind these ancient words of consumer wisdom: "CAVEAT EMPTOR!" In this module, you can purchase several items. Would you like to make a purchase?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A2
+Thank you for visiting THE WONDERFUL WORLD OF MAJOR PURCHASES. Look for our circulars for the latest news on how you can save more than ever!
+*finish
+*label A1
+How fabulous! Your salesperson will be Bob Roberts. What would you like to purchase?
+
+
+Select an action:
+
+*choice
+  #WATCH
+    *goto B1
+  #STEREO EQUIPMENT
+    *goto B2
+  #PHOTO EQUIPMENT
+    *goto B3
+  #VIDEO EQUIPMENT
+    *goto B4
+  #COMPUTER
+    *goto B5
+  #SPORTS EQUIPMENT
+    *goto B6
+  #CLOTHES/WARDROBE
+    *goto B7
+  #AUTOMOBILE
+    *goto B8
+  #LIBRARY OF BOOKS
+    *goto B9
+  #BOAT
+    *goto B10
+  #TOYS AND GOODIES FOR THE WIFE AND KIDS
+    *goto B11
+*label B1
+There are three watches that you can buy:
+
+
+Select an action:
+
+*choice
+  #CHEAP ($20)
+    *goto C1
+  #BETTER ($100)
+    *goto C2
+  #EXTRAVAGANT ($1000)
+    *goto C3
+*label C1
+*set IN%+10
+*set AM 20
+*set thingtobuy "CHEAP WATCH"
+A practical choice. Intellectual sphere rises slightly because you have made a down-to-earth decision.
+*goto L
+*label C2
+*set IN%+10
+*set SC%+10
+*set AM 100
+*set thingtobuy "WATCH"
+A somewhat-sensible choice. A more expensive watch will probably last longer than a cheap one. Social and Intellectual spheres rise slightly.
+*goto L
+*label C3
+*set SC%+30
+*set AM 1000
+*set thingtobuy "EXTRAVAGANT WATCH"
+You are obviously a person who values status purchases. Your new watch impresses people, so Social sphere rises moderately.
+*goto L
+*label B2
+You have two choices:
+
+
+Select an action:
+
+*choice
+  #AN AVERAGE SOUND SYSTEM WITH THE STANDARD ROUND DIALS AND BUTTONS ($250)
+    *goto D1
+  #A HIGH TECH MODEL WITH LIGHTS, SWITCHES, LASER BEAMS AND SPEAKERS THAT A SMALL PERSON COULD EASILY LIVE IN ($899).
+    *goto D2
+*label D1
+*set TH%+10
+*set AM 250
+*set thingtobuy "AVERAGE STEREO"
+You have chosen a stereo that does the job without taking you to the cleaners. You have shown your resistance to peer and sales pressure by not going for the fancy package.
+*goto L
+*label D2
+*set AM 899
+*set thingtobuy "HIGH-TECH STEREO"
+Your stereo arrives in twelve boxes and takes six days to put together. By the time you have it hooked up, production on the unit stops. Your model is obsolete. On the positive side, you now have something you have always wanted--the
+ability to create minor earthquakes with the simple flick of a switch.
+*goto L
+*label B3
+You have three choices:
+
+
+Select an action:
+
+*choice
+  #A STANDARD AUTOMATIC POCKET TRAVEL CAMERA ($50)
+    *goto E1
+  #A BASIC 35MM CAMERA SET UP W/INSTRUCTION BOOK ($125)
+    *goto E2
+  #A COMPUTER-CONTROLLED FULLY ELECTRONIC CAMERA ($399)
+    *goto E3
+*label E1
+*set AM 50
+*set thingtobuy "POCKET CAMERA"
+This camera takes good snap-shots and travels well. It will not win you any photography awards, but it is durable.
+*goto L
+*label E2
+*set AM 125
+*set thingtobuy "35MM CAMERA"
+Looks like you want to take a crack at some serious photography.
+*goto L
+*label E3
+*set AM 399
+*set thingtobuy "ELECTRONIC 35MM CAMERA"
+Another toy with lights and buttons to play with. It takes good pictures, but must be handled very delicately.
+*goto L
+*label B4
+You can purchase one of two set-ups:
+
+
+Select an action:
+
+*choice
+  #A GAME-STATION-BOX THAT PLAYS MOVIES AND GAMES ($275)
+    *goto F1
+  #AN ENORMOUS HIGH-DEFINITION TV WITH 3D GLASSES ($4999)
+    *goto F2
+*label F1
+*set AM 275
+*set thingtobuy "GAMESTATION"
+The basic model is plenty enjoyable.
+*goto L
+*label F2
+*set SC%+10
+*set AM 4999
+*set thingtobuy "3D HD TV"
+Your friends will start coming over to your place to watch TV.
+*goto L
+*label B5
+You can purchase three computers:
+
+
+Select an action:
+
+*choice
+  #A BASIC TABLET PC ($500)
+    *goto G1
+  #A LIGHTWEIGHT POWERHOUSE LAPTOP ($1500)
+    *goto G2
+  #A SUPER-POWERFUL GAMING RIG ($3499)
+    *goto G3
+*label G1
+*set AM 500
+*set thingtobuy "TABLET PC"
+It's hard to type on these things; you'll mostly use it to watch TV and play games.
+*goto L
+*label G2
+*set VC%+20
+*set SC%+20
+*set IN%+20
+*set AM 1500
+*set thingtobuy "LAPTOP COMPUTER"
+Your new laptop computer becomes a powerful useful tool. It helps you Vocationally and Intellectually.
+*goto L
+*label G3
+*set SC%+20
+*set AM 3499
+*set thingtobuy "HIGH-END GAMER PC"
+The top of the line! Be sure to come back next year when your machine is obsolete.
+*goto L
+*label B6
+You can buy sports equipment at $50 per purchase. Do you still want to buy some?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H1
+*set SC%+5
+*set PH%+5
+*set AM 50
+*set thingtobuy ""
+Physical and Social spheres increase slightly. (I will assume you use the equipment you buy at least a little before you throw it in the bottom of the closet.)
+*goto L
+*label H2
+*finish
+*label B7
+You can buy some new clothes at $100 per purchase. Do you still want to buy some?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto I1
+  #NO
+    *goto I2
+*label I1
+*set SC%+5
+*set AM 100
+*set thingtobuy ""
+Social sphere increases slightly. (I will assume that you have at least average taste).
+*goto L
+*label I2
+*finish
+*label B8
+There are five types of automobile you can buy:
+
+
+Select an action:
+
+*choice
+  #AN OLD CLUNKER ($600)
+    *goto J1
+  #A LATE MODEL USED CAR ($5000)
+    *goto J2
+  #A NEW ECONOMY CAR ($14000)
+    *goto J3
+  #A NEW SPORTS CAR ($30,000)
+    *goto J4
+  #A LUXURIOUS PRESTIGE CAR ($59,999)
+    *goto J5
+*label J1
+*set AM 600
+*set thingtobuy "OLD CLUNKER"
+It gets you where you want to go. Who cares what everyone else says?
+*goto L
+*label J2
+*set AM 5000
+*set thingtobuy "LATE MODEL USED CAR"
+*set TH%+10
+A sensible choice, considering your budget at this time in your life.
+*goto L
+*label J3
+*set TH%+20
+*set AM 14000
+*set thingtobuy "ECONOMY CAR"
+A wise investment. There will be less money to pay on repairs.
+*goto L
+*label J4
+*set SC%+40
+*set AM 30000
+*set thingtobuy "SPORTS CAR"
+What a showoff! The truth is, you'll probably never have the chance to live it up in a sports car more than now. If you can afford it, enjoy it!
+*goto L
+*label J5
+*set SC%+40
+*set AM 60000
+*set thingtobuy "PRESTIGE CAR"
+If you keep this up, you'll probably be traveling in either a private jet or a hearse by the next phase of life!
+*goto L
+*label B9
+You can buy some new books at $50 per purchase. Do you still want to buy some?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto K1
+  #NO
+    *goto K2
+*label K1
+*set IN%+10
+*set AM 50
+*set thingtobuy ""
+Intellectual sphere rises slightly.
+*goto L
+*label K2
+*finish
+
+*label B10
+You can buy three kinds of boats:
+
+
+Select an action:
+
+*choice
+  #A SPEED BOAT ($10000)
+    *goto BOATS1
+  #A SAIL BOAT THAT SLEEPS FOUR ($18000)
+    *goto BOATS2
+  #A MOTOR YACHT WITH CREW ($520,000)
+    *goto BOATS3
+*label BOATS1
+*set AM 10000
+*set thingtobuy "SPEED BOAT"
+Ah yes, the dashing sea captain off for a lovely romp on the ocean waves!
+*goto L
+*label BOATS2
+*set AM 18000
+*set thingtobuy "SAIL BOAT"
+Very classy and reserved.
+*goto L
+*label BOATS3
+*set AM 520000
+*set thingtobuy "YACHT"
+Ahoy Captain Moneybags! It won't be long before you own your own ocean to go along with it!
+*goto L
+*label B11
+*if MS>0
+  *goto CHECKMAR.T
+*else
+  *goto CHECKMAR.F
+*label CHECKMAR.T
+*goto APP
+*label CHECKMAR.F
+*if CL>0
+  *goto CHECKKID.T
+*else
+  *goto CHECKKID.F
+*label CHECKKID.T
+*goto APP
+*label CHECKKID.F
+This choice does not apply to you!
+*finish
+*label APP
+*set AM 150
+*set thingtobuy ""
+Your generosity is appreciated by all.
+*if FM<50
+  *goto LACK.T
+*else
+  *goto LACK.F
+*label LACK.T
+Unfortunately, it seems as though you are trying to buy the affection of your family members, rather than earn it.
+*goto L
+*label LACK.F
+*set FM%+10
+Familial sphere increases slightly.
+*label L
+*page_break
+Would you like to pay for this with:
+
+
+Select an action:
+
+*choice
+  #CASH
+    *goto M1
+  #CREDIT
+    *goto M2
+  #(DON'T BUY)
+    *goto M3
+*label M3
+*finish
+*label M1
+*if MN>AM
+  *goto AF.T
+*else
+  *goto AF.F
+*label AF.F
+I'm sorry, but your current finances won't enable you to make this cash purchase.
+*goto L
+*label AF.T
+*comment @SAM
+*set MN -AM
+*comment invoke debt as need be?
+*if MN < 5
+  MN = 5
+*set AM 0
+*goto END
+*label M2
+*if BR>0
+  *goto CS.T
+*else
+  *goto CS.F
+*label CS.T
+I'm sorry, but because of your credit history you can not make a purchase on credit.
+*goto L
+*label CS.F
+*comment @STB
+*set debt +round((1.2*AM)+0.5)
+*set AM 0
+Your finance charge is twenty percent of the purchase price. This amount will be added to the purchase price. Now for the good news: You have the rest of the module to pay! Your credit purchases will not be deducted from your resources
+until after you finish the module.
+*page_break
+Please make sure you have enough money to cover your debts by then, or your credit rating will suffer, and you will not be able to get any more credit until the end of the game.
+*page_break
+*label END
+*if acquisitions != ""
+  *set acquisitions &","
+*set acquisitions &thingtobuy
+
+Thank you for CASHING IN on this ONCE-IN-A-LIFETIME VALUE! Come again soon!
+*finish
+

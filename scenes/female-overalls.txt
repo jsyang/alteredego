@@ -1,0 +1,150 @@
+It's time to go to Aunt Lucy's house. It's chilly outside and you need to be dressed in a coverall-type suit.
+*label FND
+*choice mood action
+  #ANGRY
+    #GO LIMP
+      *goto A11
+    #RESIST
+      *goto A12
+    *selectable_if (false) #COOPERATE
+      *finish
+  #PLAYFUL
+    #GO LIMP
+      *goto A21
+    #RESIST
+      *goto A22
+    #COOPERATE
+      *goto A23
+*label A11
+You hate this suit, which is a cross between a strait jacket and a sausage wrapping. To make matters worse, your mother is attempting to put your foot through the pants leg without taking your shoe off. You hit upon the perfect solution.
+*page_break
+You let your body go limp and you drop to the table like a thirty pound sack of potatoes. All your limbs go into the suit, but none comes out! Mom is frustrated and hands you over to Grandma.
+*set GN%-10
+*label GRANNY
+
+
+Select an action:
+
+*choice
+  #COOPERATE FOR GRANDMA
+    *goto B1
+  #KEEP GIVING EVERYONE A HARD TIME
+    *goto B2
+*label B1
+Grandma is calm, unlike your mom who is currently at her wits' end. You are learning early in life that no one can supply the endless amount of goodies that Grandma can. Your arms and legs pop out of the suit like the first
+flowers of Spring, which secretly annoys your mom, who feels incompetent.
+*set FM%-10
+*finish
+*label B2
+Persisting to act like a little brat is not a very wise choice. How do you expect to motivate Grandma to spoil you if you are not willing to make your mom look foolish in front of her? Would you like to give in now or make everyone even
+angrier with you?
+*set GN%-10
+*label GIVE_PUSH
+
+
+Select an action:
+
+*choice
+  #GIVE IN
+    *goto C1
+  #PUSH YOUR LUCK
+    *goto C2
+*label C1
+Testing the limits isn't always so terrible, and this may have been a good time to find out how tolerant everyone can be when you get into one of these moods. You get into your little suit and are carried out to the car. You suffer no
+serious long- or short-term consequences.
+*finish
+*label C2
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+Your mother and your grandmother are late getting to their destination. They must now resort to begging, pleading and bribery to get you into your suit. You are in a position of power, but you got there by being stubborn and resistant.
+Keep this up, and you will be powerful but lonely in your old age.
+*set GN%-10
+*finish
+*label D2
+Your mother pulls you away from your grandmother and literally stuffs you into the suit. It is tucked in and bunched up in all the wrong places, and you are uncomfortable. Your grandmother protests but to no avail. Your mom has the last
+word, and your physical sphere suffers temporary, short-term discomfort.
+*set GN%-10
+*set PH%-5
+*finish
+*label A12
+You react against being squeezed into this uncomfortable suit by crying and sending out long sirens of protest. Your grandmother graciously offers to help.
+*goto GRANNY
+*label A21
+This is one of your favorite games. Mommy knows how uncomfortable the suit is and tries to distract you by making faces and singing the "go bye-bye" song. (Parents are always singing because they know that music will often soothe the
+savage child.)
+*page_break
+This makes you laugh, which in turn causes your mom even greater difficulty. It becomes a vicious cycle until Grandma intervenes. When Grandma tries to help you:
+*set GN%-10
+
+
+Select an action:
+
+*choice
+  #LAUGH EVEN HARDER
+    *goto E1
+  #GET INTO YOUR SUIT
+    *goto E2
+*label E1
+You certainly are a happy baby, but no less difficult to dress. You are giving everyone an incredibly hard time, but no one seems to notice.
+*set HP%+30
+*goto GIVE_PUSH
+*label E2
+What excellent judgment. You have succeeded in having some fun (albeit at someone else's expense) in a somewhat uncomfortable situation. Using humor to deal with uncomfortable situations is a very healthy response. You gain socially,
+emotionally and intellectually.
+*set SC%+25
+*set IN%+20
+*set HP%+20
+*finish
+*label A22
+This may be the beginning of a passive-aggressive personality trait. That means that you are displaying a hostile response, disguised as something that doesn't appear outwardly or directly hostile. People (men especially) will resent you
+for this. Your grandmother steps in to give your mother a hand.
+*goto GRANNY
+*label A23
+What a good baby! Your mother has very little trouble getting you into your suit. Your grandmother holds you while your mom gets dressed.
+*set HP%+20
+*set FM%+30
+
+
+Select an action:
+
+*choice
+  #GIVE HER A GREAT BIG SMILE
+    *goto F1
+  #SPIT UP ON HER
+    *goto F2
+  #IGNORE HER
+    *goto F3
+*label F1
+You are behaving yourself very nicely today. This is one of those experiences that your grandma will always remember. You have just become one of her favorite grandchildren and will be rewarded handsomely later in life. This can help if
+you get yourself into a jam (which you undoubtedly will).
+*set SC%+25
+*finish
+*label F2
+Grandma says, "What has your mother been feeding you, you poor thing? I'll bet it was that terrible frankfurter puree you had for lunch." She gets a warm cloth and washes your face. You have to be taken out of your suit to be cleaned.
+*set GN%-25
+*goto FND
+*label F3
+Bundled up tightly like this can be quite confining. You would need to expend a great deal of energy turning your head so that you can see what your grandmother is doing.
+*set GN%-10
+
+
+Select an action:
+
+*choice
+  #KEEP IGNORING
+    *goto G1
+  #LOOK AT GRANDMA
+    *goto G2
+*label G1
+Too bad for you. She was fishing around in the "bottomless bag" and has found a lollipop with your name on it. Thinking you are uninterested, she puts it back.
+*finish
+*label G2
+It was worth the energy. Grandma has pulled out a delicious cherry lollipop from the "bottomless bag" and has given it to you to eat. It pays to attend to Grandma.
+*set HP%+10
+*finish
+

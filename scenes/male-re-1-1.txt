@@ -1,0 +1,159 @@
+There is a new guy in school. His name is Chet Clarke. He's built like a linebacker and has handsome, rugged good looks. Two weeks after he arrives at school he has made every major sports team. A friend informs you that
+yesterday, Chet asked ${loverName} for a date. How do you feel about this?
+
+
+Select a mood:
+
+*choice
+  #ANGRY
+    *goto A1
+  #DEPRESSED
+    *goto A2
+  #ANXIOUS
+    *goto A3
+  #INSANELY JEALOUS
+    *goto A4
+  #NO BIG DEAL
+    *goto A5
+*label A1
+On whom are you going to take your anger out?
+
+
+Select an action:
+
+*choice
+  #CHET
+    *goto B1
+  #${LOVERNAME}
+    *goto B2
+*label B1
+*set GN%-10
+What are you going to do?
+
+
+Select an action:
+
+*choice
+  #CONFRONT HIM AND TELL HIM HE'S A LOW LIFE
+    *goto C1
+  #BEAT HIM UP
+    *goto C2
+  #TELL HIM TO KEEP AWAY OR ELSE
+    *goto C3
+*label C1
+*set GN%-10
+How was he supposed to know she was your girl friend?
+
+*if SR>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Besides, even if you are going steady with her, it wouldn't be Chet's fault if she cheated on you. She has a mind of her own.
+*finish
+*label D.F
+Besides, you are not officially going steady, which means that technically, she isn't even your girl friend.
+*finish
+*label C2
+*set PH%-20
+FAT CHANCE! He makes mincemeat out of you in about 10 seconds. This is no way to handle a confrontation.
+*finish
+*label C3
+OR ELSE WHAT? Threatening almost never does any good, especially with guys like this. He is easily twice your size.
+
+*if GN<40
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set SC%-30
+*set SR 0
+*set GF 0
+Your temper brought out a bad side in you and ${loverName} saw it, perhaps for the first time. She breaks off the relationship with you and begins going out with Chet.
+*label E.F
+*set CN%-10
+Chet is twice your size, so he isn't very impressed with your threats.  However, he also didn't know that ${loverName} was your girl friend.  He laughs at you, which hurts your confidence, but he does eventually back off.
+*finish
+*label B2
+*set TH%-10
+*set GN%-10
+Why are you angry at ${loverName}? HE asked HER out on a date.
+
+*if NT>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Besides, ${loverName} has shown herself to be pretty trustworthy in the past.
+*finish
+*label F.F
+*if NT<40
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+If she has been a little untrustworthy in the past, that's no guarantee that she would cheat on you now.
+*finish
+*label G.F
+*set SC%-10
+Taking your anger out on ${loverName} makes her resentful. The outcome is that you drive her right into the arms of Chet. It's interesting how people are often the cause of making their own suspicions come true.
+*finish
+*label A2
+*label I2
+*set HP%-10
+Have you given up on ${loverName} so soon? You have obviously fantasized that she accepted the date and now the two of them are living happily ever after.
+
+*if NT>50
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+*set TH%-10
+${loverName} is a trustworthy sort of person who is not likely to cheat on you. You made yourself upset for nothing.
+*finish
+*label H.F
+*page_break
+*set HP%-10
+*set SR 0
+*set GF 0
+Perhaps you got so upset because ${loverName} really isn't very trustworthy. Well, you're right--she isn't. She did fall for Chet, but perhaps if you had spoken to her about it instead of getting so depressed, you could have prevented it.
+*finish
+*label A3
+*set CA%-10
+I don't blame you for getting a bit jittery over a hulking moose like Chet trying to ask your girl for a date. What are you going to do about it?
+
+
+Select an action:
+
+*choice
+  #TALK TO ${LOVERNAME}
+    *goto I1
+  #LET THINGS HAPPEN
+    *goto I2
+*label I1
+*if NT>50
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+You have nothing to worry about. ${loverName} is very trustworthy and she convinces you of this when you speak with her.
+*finish
+*label J.F
+*set SR 0
+*set GF 0
+I have a feeling I know why you were so worried. ${loverName} really isn't that trustworthy, is she? Well, what you feared might happen actually did. ${loverName} has fallen for Chet. She tells you that she no longer wants to see you. They
+deserve one another!
+*finish
+*label A4
+*set TH%-20
+*set GN%-10
+*set SR 0
+*set GF 0
+You run around accusing both Chet and ${loverName} of "fooling around" behind your back. ${loverName} had no intention of doing anything like that. You make such a fool out of yourself that, as a result, they become close friends and ${loverName}
+eventually drops you for Chet.
+*finish
+*label A5
+*set CN%+40
+I guess you figure that if ${loverName} is going to fool around, that's HER problem. As it turns out she remains faithful to you. You must be a very confident person!
+*finish
+

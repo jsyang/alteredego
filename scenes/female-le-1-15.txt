@@ -1,0 +1,19 @@
+Lately, school has been making you nervous, so nervous, that your stomach is beginning to bother you from time to time.
+
+*if FM>50
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+*set PH%+10
+*set FM%+20
+*set HP%+20
+*set CA%+20
+Fortunately, the people in your family sense the strain you are under and help make you more calm. You have avoided an ulcer.
+*finish
+*label A.F
+*set PH%-30
+*set FM%-10
+Your family life is not that good. You may complain about the pains, but they think that you are only doing it for the attention. Eventually, you develop an ulcer. Physical sphere declines.
+*finish
+

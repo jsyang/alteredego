@@ -1,0 +1,86 @@
+*comment @KID,0,0,2
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 3) and (childage0 > 0)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 3) and (childage1 > 0)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 3) and (childage2 > 0)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 3) and (childage3 > 0)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 3) and (childage4 > 0)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+It's time to give the baby a bath. How do you feel?
+
+
+Select a mood:
+
+*choice
+  #CALM/RELAXED
+    *goto A1
+  #ANXIOUS/TERRIFIED
+    *goto A2
+*label A1
+*if CA<50
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set CA%+20
+I'm sure you are TRYING to be calm and relaxed, but this kind of calmness is not in your personality. The baby senses your tension and stiffens up in the water. Between your soapy hands and the baby's movements, you almost drop the child
+in the tub.
+*page_break
+Fortunately, everything turns out well.
+*finish
+*label B.F
+*set CA%+10
+*set FM%+20
+You are a calm and relaxed person in general. You keep the baby's attention on you as you support it in the warm water. A warm water bath is not something that babies are all that unfamiliar with, you know. Your reactions are
+likely to influence the child more than anything else.
+*finish
+*label A2
+*set CA%+10
+*set FM%+20
+Being a new mommy certainly has its share of worries. Perhaps you are afraid that you will drop the baby into the water. Actually, the danger in giving a small infant a bath comes from the possibility of accidentally scalding the
+baby with hot water.
+*page_break
+A warm water environment is not exactly foreign to an infant. Your reactions usually set the tone of such experiences. I'm sure you will do just fine.
+*finish
+

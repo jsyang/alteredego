@@ -1,0 +1,104 @@
+*comment @KID,0,2,6
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 7) and (childage0 > 2)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 7) and (childage1 > 2)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 7) and (childage2 > 2)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 7) and (childage3 > 2)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 7) and (childage4 > 2)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+You have just picked up the phone, only to discover that one of your most annoying relatives is on the other end. Every sentence will be punctuated with, "Right?" or, "Yaknooow?" and be utterly insignificant.
+*page_break
+Worst of all, the baby is taking a nap, and you could have some peace and quiet. It would be easy enough to rush her off the phone if it weren't for the fact that she is terribly lonely, and there isn't a single person in the family who
+will talk to her.
+*label LATER
+
+
+Select an action:
+
+*choice
+  #TELL HER THAT YOU HAVE NO TIME TO TALK
+    *goto A1
+  #CHAT WITH HER FOR A SHORT TIME
+    *goto A2
+  #TELL HER THAT YOU WOULD LOVE TO TALK, BUT THAT THE BABY IS CRYING
+    *goto A3
+*label A1
+*set TR%-5
+"When can I call back?" she says.
+
+
+Select an action:
+
+*choice
+  #TELL HER LATER IN THE DAY
+    *goto B1
+  #TELL HER LATER IN THE WEEK
+    *goto B2
+  #TELL HER NEVER
+    *goto B3
+*label B1
+"Okay," she says. Later in the day she calls back.
+*goto LATER
+*label B2
+"Okay," she says. Two days later she calls back.
+*goto LATER
+*label B3
+*set GN%-20
+"Well, I have never been treated so rudely in my whole life!" You never hear from her again.
+*finish
+*label A2
+*set GN%+20
+*set SC%+10
+*set TR%+20
+*set CN%+10
+*set CA%+10
+That is very kind of you. She's not really all THAT bad, is she?
+*finish
+*label A3
+*set TR%-5
+USING THE POOR, INNOCENT, DEFENSELESS BABY TO HELP YOU LIE YOUR WAY OUT OF A SITUATION?
+*page_break
+Good thinking! You will probably have to tell a fib or two to help out ${childName}, so you'll be even.
+*finish
+

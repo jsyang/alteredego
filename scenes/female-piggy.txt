@@ -1,0 +1,35 @@
+You just received 25 dollars as a present. Your mother tells you that you can either put it in your own piggy bank or give it to her to "hold" for you.
+*choice mood action
+  #TRUSTING
+    #GIVE UP THE MONEY
+      *goto A11
+    *selectable_if (false) #SAVE IT YOURSELF
+      *finish
+  #SUSPICIOUS
+    #GIVE UP THE MONEY
+      *goto A21
+    #SAVE IT YOURSELF
+      *goto A22
+*label A11
+*set FM%+10
+*set TR%+10
+You have no reason to doubt Mom's good sense. She places the money in a bank account for you.
+*finish
+*label A21
+*set FM%-10
+You mean you don't even trust your own mother? For shame. For shame. Well, she does "hold onto" the money. Then, when you ask her about it, she tells you that she used it to buy you a new pair of shoes.
+*finish
+*label A22
+*if TH>50
+  *goto B.T
+*else
+  *goto B.F
+*label B.F
+You don't have the self-control to spend it wisely. When you run out of money and ask your mother for more to go to the movies, she says, "If you would have given me the money in the first place, you would still have some left for the
+movies. You'll have to stay home now."
+*finish
+*label B.T
+*set VC%+30
+You spend the money wisely, exercising good judgment. You will be a fine businessperson.
+*finish
+

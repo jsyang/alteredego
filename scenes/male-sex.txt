@@ -1,0 +1,113 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+In the schoolyard your friends are sitting around discussing something very secretively. You go over to see what is going on and you hear one of them say something very strange. It has to do with the way you were made.
+*choice mood action
+  #DISGUSTED
+    #DENY THAT YOUR PARENTS WOULD EVER DO THAT
+      *goto A11
+    #ASK YOUR MOTHER FOR THE REAL STORY
+      *goto A12
+    #DO NOTHING
+      *goto A13
+  #SKEPTICAL
+    #DENY THAT YOUR PARENTS WOULD EVER DO THAT
+      *goto A21
+    #ASK YOUR MOTHER FOR THE REAL STORY
+      *goto A22
+    #DO NOTHING
+      *goto A23
+  #UNAFFECTED
+    #DENY THAT YOUR PARENTS WOULD EVER DO THAT
+      *goto A31
+    #ASK YOUR MOTHER FOR THE REAL STORY
+      *goto A32
+    #DO NOTHING
+      *goto A33
+*label A11
+*label A21
+*set IN%-5
+How could anyone believe a story like that! Besides, your father would probably crush your mother if they ever did it that way. Still, you must think it COULD be true, or you would have chosen to get some clarification on it. Your
+decision to deny it reflects a failure to confront reality.
+*finish
+*label A12
+With a look of shock and horror on your face you whisper your query to your mother while she is having coffee with her friend.
+*page_break
+She says, "WHERE DID YOU HEAR THIS?" between coughing spasms. You judge by
+her surprise that this is new information to her as well.
+*page_break
+*label CONT
+*if ST>0
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+She says that she will talk to you about it later. Since she is strict, she is likely to be anxious about the topic of sex.
+*page_break
+She tells you that children are the creation of God and that they are a miracle. Then she says, "That's all you need to know for now."
+*finish
+*label B.F
+Your choice for a leisurely topic of conversation catches Mom off guard. Later you have a nice discussion about how babies are born. She stresses the love aspect, but neglects to tell you that practicing for the real thing can
+be fun, too. You may find this out for yourself, later.
+*finish
+*label A13
+*set CA%-20
+You brood about it for hours, wondering how THAT could be the thing people are always getting so crazy about.
+*page_break
+You conclude that it must be some kind of germ people catch when they get older. (You will almost surely be infected later!)
+*finish
+*label A22
+*set CN%+20
+You find it difficult to believe, but you have seen Wild Kingdom enough times to know that anything is possible. You confront your Mother with the information as you remember hearing it.
+*goto CONT
+*label A23
+You wait until you have the opportunity to get a second opinion. You can:
+
+
+Select an action:
+
+*choice
+  #ASK YOUR BEST FRIEND
+    *goto D1
+  #ASK THE GIRL WHO SITS NEXT TO YOU IN SCHOOL
+    *goto D2
+*label D1
+Your best friend is just as confused as you are. He was hoping YOU would know.
+*finish
+*label D2
+*if CA<30
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+Considering your level of anxiety, this must have taken some nerve. You try to explain what you want to know and she calls you a PERVERT.
+*finish
+*label E.F
+She has heard that just kissing a boy is enough to make a girl have a baby. This makes you even more confused. (The good news is that just kissing cannot make a girl pregnant. The bad news is that if you want to learn any more
+about sex, you have to wait until later.)
+*finish
+*label A31
+If you are so unaffected, then why do you have to deny the possibilities?
+*finish
+*label A33
+*if CA<30
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+That response was out of character. Your anxiety level indicates that you probably would have responded differently. On the other hand, you may be getting more mature about things. It's too soon to say you are fibbing, but
+try to examine your real feelings more closely.
+*finish
+*label F.F
+You have taken this information in stride. You have seen Wild Kingdom enough times to know that such things are indeed possible. You giggle at the thought of your parents "doing it."
+*finish
+*label A32
+If you were truly unaffected, you wouldn't care enough to ask. You should examine your feelings more closely.
+*finish
+

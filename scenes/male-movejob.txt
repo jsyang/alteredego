@@ -1,0 +1,170 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this icon, you need a steady job. You may go to the WORK ICON and apply for one, then return.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+Your success in the job market would be more likely if you moved to the other side of the country.
+*choice mood action
+  #CONFIDENT
+    #MAKE THE MOVE
+      *goto A11
+    *selectable_if (false) #DO NOT MAKE THE MOVE
+      *finish
+  #AMBIVALENT
+    #MAKE THE MOVE
+      *goto A21
+    #DO NOT MAKE THE MOVE
+      *goto A22
+  #RESISTANT
+    *selectable_if (false) #MAKE THE MOVE
+      *finish
+    #DO NOT MAKE THE MOVE
+      *goto A32
+*label A11
+*if (MS<1) and (SR<1)
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Since you have no female partner to tie you down, the transition is relatively smooth. The move brings some changes which cause some temporary stress. This stress is related to moving to a new place, losing old social contacts and
+settling into a good job.
+*page_break
+*if CN>70
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set MN+10000
+*set CN%+20
+*set CA%+100
+*set HP%+20
+Since your Confidence characteristic is high the transition has no negative effects. Your Resources improve by $10000.
+*finish
+*label E.F
+*set MN+1000
+*set CN%+20
+*set HP%+20
+Your Resources improve by $1000 immediately and will continue to improve over time.
+*finish
+*label B.F
+Don't you think you ought to have a discussion with your steady partner about this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G2
+*set CA%-20
+But she doesn't want to go. If you want to go, you'll have to break the relationship with her. The repercussions of this are likely to affect your performance on the new job. As a matter of fact, if you TRY to break off your relationship,
+it will cause so many complications that the job offer will have expired before you can straighten the whole mess out.
+*finish
+*label G1
+Good. She tells you that she doesn't want to go. What will you do?
+
+
+Select an action:
+
+*choice
+  #TRY TELLING HER SHE HAS NO CHOICE
+    *goto H1
+  #GIVE HER TIME TO MAKE A DECISION
+    *goto H2
+*label H1
+*set HP%-20
+*set CA%-20
+Good luck. She is almost as stubborn as you are. She refuses to leave with you. The only way you're going to go is by leaving her behind. You can go to the RELATIONSHIP ICON or the MARRIAGE ICON and break up the relationship, but the
+stress associated with that AND changing jobs is likely to cause poor performance.
+*page_break
+Besides, by the time you go through the whole emotional ordeal of splitting up, the job opportunity will have passed. For now, you are stuck where you are.
+*finish
+*label H2
+That is very considerate of you. Her decision is:
+
+*temp randomI
+*rand randomI 1 2
+*if randomI=1
+  *goto I1
+*else
+  *goto I2
+*label I1
+*set TH%+30
+*set HP%+20
+To stick by you. Since the decision was not a one-sided one, you avoided making her feel trapped and overpowered.
+*finish
+*label I2
+*if GN<40
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+*set CN%-10
+Your Gentleness characteristic is too low for you to make her believe you are sincere in your wish for her to be involved in the decision-making process. Your temper and hostility make her feel pressured. She refuses to go. Now you are in
+a bind.
+*page_break
+If you end the relationship, emotionally you will not be able to manage the stresses of the new job. However, since it took you so long to make a decision, the job offer has expired.
+*finish
+*label J.F
+*set HP%-10
+Even though you are sincere in your desire to get her input on this life change, she doesn't want to leave. This whole dilemma has taken so long to resolve that in the process, the job offer expires.
+*finish
+*label A21
+*if (SR<1) and (MS<1)
+  *goto K.T
+*else
+  *goto K.F
+*label K.T
+*set CN%-20
+*set HP%-10
+You should never make a major life change without first thinking it all the way through. Your mixed feelings affect your ability to do the job. As a result, you are told that you simply "won't work out in the new position."
+
+
+Select an action:
+
+*choice
+  #GO BACK TO YOUR OLD HOME
+    *goto N1
+  #STAY PUT
+    *goto N2
+*label N1
+*set PH%+10
+*set CN%+10
+*set CA%+20
+Some of the stress of changing locations is relieved by the fact that you are back home. I guess you never wanted to go in the first place.
+*finish
+*label N2
+*set PH%-10
+*set CA%-20
+You may be thinking "Maybe the job didn't work out, but I might warm up to this place, after all." Perhaps so, unless you are not returning home just to avoid the embarrassment of admitting that you failed. In any case, your stress level
+increases moderately due to the amount of change you must deal with.
+*finish
+*label K.F
+(Don't you think you ought to have a discussion with your steady partner about this?)
+*finish
+*label A22
+*if (SR<1) and (MS<1)
+  *goto P.T
+*else
+  *goto P.F
+*label P.F
+I can understand how difficult it would be to make a major move, especially considering what it would mean to you and your steady partner.
+*finish
+*label P.T
+I can understand that you might not want to take a risk as serious as this at the present time.
+*finish
+*label A32
+*set PH%+10
+*set IN%+20
+*set CN%+30
+*set CA%+40
+You are clear on what you want to do. For some people the opportunity to move away and start a new job is exciting. Either way, I respect your ability to make a clear decision.
+*finish
+

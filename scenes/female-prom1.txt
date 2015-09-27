@@ -1,0 +1,121 @@
+*if AG < 16
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 17
+  Sorry, you're too old for this experience.
+  *finish
+It's time for the Junior Prom. Are you planning to attend?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A2
+*finish
+*label A1
+Who will you be going with?
+
+
+Select an action:
+
+*choice
+  #A STEADY BOYFRIEND
+    *goto B1
+  #SOMEONE I AM CURRENTLY DATING (PROBABLY)
+    *goto B2
+  #I DON'T KNOW IF ANYONE WILL ASK ME
+    *goto B3
+*label B1
+*if SR>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.F
+You must have met him in your dreams, because you aren't currently WITH a steady boyfriend. You'll have to go to the prom with him in your dreams too, because now it's too late.
+*finish
+*label C.T
+${loverName} looks absolutely stunning in his rented sky-blue tuxedo with the pink ruffled shirt.
+*label I
+*page_break
+The events that transpire over the course of the evening include:
+*if SC>90
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+*set SC%+30
+You and your date are crowned the King and Queen of the prom!
+*finish
+*label D.F
+*if TR<40
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set SC%+10
+You meet someone you like better than your date and spend the evening with him.
+*finish
+*label E.F
+*if OH>12
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+You get drunk or high (as usual) and pass out, forgetting most of the evening.
+*finish
+*label F.F
+*set HP%+30
+You and your date have a memorable time and take a moonlight stroll on the beach, where you pause for a bit of sandy romance.
+*finish
+*label B2
+*if SR>0
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+You are going steady with someone. Do you mean to say that you are going with someone other than a steady, someone you plan on "having an affair" with?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H1
+*set TR%-10
+*set HP%+30
+*set SR 0
+*set GF 0
+You'll never get away with it. As a matter of fact, your steady finds out that you've been looking to stiff him and dumps you before prom night even arrives.
+*finish
+*label H2
+*set SC%-10
+*set SR 0
+*set GF 0
+Then I can only assume that you made an unconscious error by choosing this option -- a Freudian slip of the interface, so to speak. I must interpret this as a sign that you never wanted to go to the prom with your steady
+boyfriend in the first place, which means your relationship is on the skids.
+*page_break
+The excitement of the prom causes stress which destroys your relationship before prom night even arrives. You fail to find another date and spend the night alone and lonely.
+*finish
+*label J.F
+*label G.F
+The guys practically line up to ask you to be their prom date. Guys you've never seen before are scrambling for your attention. Your date looks foxy in a sexy, black, European-cut tuxedo.
+*goto I
+*label B3
+*if SC<40
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+*set CN%-10
+I'm sorry to break the news to you, but you don't have the social skills necessary to get a date for the prom. You'll have to pass on this one.
+*finish
+
+

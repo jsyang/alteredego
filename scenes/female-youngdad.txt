@@ -1,0 +1,65 @@
+*if CL<1
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. This episode is only for those who do not yet have children.
+*finish
+*label Z.T
+A casual acquaintance asks you to hold her newborn for a minute. As you lift it into your arms, you can smell the sweet scent of baby powder. As you hold the baby up against your chest, it grasps your blouse and curls it tightly in its
+small, pink hand.
+*page_break
+Her eyes are blue-grey.
+*choice mood action
+  #UNCOMFORTABLE/TAKEN ABACK
+    #THINK ABOUT BECOMING A MOTHER
+      *goto A11
+    #BE THANKFUL THAT YOU ARE NOT A MOTHER
+      *goto A12
+  #HAPPY
+    #THINK ABOUT BECOMING A MOTHER
+      *goto A21
+    #BE THANKFUL THAT YOU ARE NOT A MOTHER
+      *goto A22
+  #SAD
+    #THINK ABOUT BECOMING A MOTHER
+      *goto A31
+    #BE THANKFUL THAT YOU ARE NOT A MOTHER
+      *goto A32
+*label A11
+I guess this means that you couldn't possibly imagine yourself as a mother in this phase of your life. The experience causes you to have one of those uncomfortable discussions with yourself: "Is she too young to be a mother? Or am I old
+enough to be approaching that time of life but have been thinking I'm much younger?"
+*finish
+*label A12
+*set TH%+10
+You haven't had all of the experiences you want out of life; it's too soon to be thinking about motherhood. It's still a little scary to think that you COULD be responsible for another little person's life.
+*finish
+*label A21
+*set FM%+10
+*set SC%+10
+*set TH%+10
+It must be quite an experience to care for a helpless infant. What characteristics would she or he have? Your eyes? Your smile? His disposition? Sigh! Do you feel that slight tugging at your heart? That's called the MATERNAL INSTINCT.
+*finish
+*label A22
+*set CA%-10
+No, thanks! This is not for you. Maybe some day, after you have done a little more traveling or had another fling or two. Right now you wouldn't trade places with her for anything.
+*finish
+*label A31
+Life is so complicated sometimes it's depressing. Will you ever reach the point when you can handle that kind of responsibility?
+
+*if TH>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You certainly are responsible enough to do it. I'm sure you will make a good mother.
+*finish
+*label B.F
+At the rate you are going, you'll have to improve a bit more in order to handle the responsibility. Keep trying.
+*finish
+*label A32
+*set TH%+10
+You can't imagine yourself in her position. But, more important than that, maybe you are feeling sad because you are becoming aware that your life may change drastically one day, with the advent of new responsibilites that you haven't
+had the chance to ponder yet. Geez, you can't even take care of all of your present responsibilities. A baby would be overwhelming.
+*finish
+

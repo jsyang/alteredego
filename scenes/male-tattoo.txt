@@ -1,0 +1,69 @@
+Some of your friends are going to the city this weekend to get tattooed.
+*choice mood action
+  #INTERESTED
+    #GET A TATTOO
+      *goto A11
+    *selectable_if (false) #DO NOT GET A TATTOO
+      *finish
+  #DISINTERESTED
+    *selectable_if (false) #GET A TATTOO
+      *finish
+    #DO NOT GET A TATTOO
+      *goto A22
+*label A11
+Jimmy "The Pen" runs the tattoo shop. There are a table full of needles in front of you.
+
+
+Select an action:
+
+*choice
+  #HAVE SECOND THOUGHTS
+    *goto B1
+  #GET THE TATTOO
+    *goto B2
+*label B1
+*set IN%+30
+You have just saved yourself a lot of unnecessary pain.
+*finish
+*label B2
+What kind of tattoo will you get?
+
+
+Select an action:
+
+*choice
+  #"MOTHER" INSIDE A RED HEART
+    *goto C1
+  #A SKULL AND CROSSBONES
+    *goto C2
+  #A BALD EAGLE
+    *goto C3
+*label C1
+*label C2
+*label C3
+*set PH%-20
+The tattoo is even more painful than you imagined it would be. You must leave the bandage on it until it becomes a scab. For a few days it oozes blood.
+
+
+Select an action:
+
+*choice
+  #TELL YOUR PARENTS ABOUT IT
+    *goto D1
+  #AVOID TELLING YOUR PARENTS ABOUT IT
+    *goto D2
+*label D1
+*set FM%-10
+For some reason, they just don't find it all that attractive. As a matter of fact, your mother nearly faints at the sight of it. Eventually, they learn to accept it, but deep down inside it is one of those things that they will
+never understand.
+*finish
+*label D2
+*set FM%-20
+A tattoo can be hidden for a while, but not indefinitely. Eventually your mother sees it, and fails to appreciate its artistic merit. She becomes upset over the tattoo, but even more upset over the fact that you didn't tell her
+about it. Sure, she would have been upset just the same, but not as much as she is now.
+*finish
+*label A22
+*set IN%+10
+You have just saved yourself a lot of unnecessary pain.
+*finish
+

@@ -1,0 +1,57 @@
+While out on a date with ${loverName}, he mentions that he has been doing a lot of thinking about what it would be like to be married. What do you have to say about this?
+
+
+Select an action:
+
+*choice
+  #"YES, WE ALL HAVE DREAMS, DON'T WE?"
+    *goto E1
+  #"UM, AH, ER, IIIYA (GULP! COUGH!)," ETC.
+    *goto E2
+  #"WHY DON'T WE TALK ABOUT WHAT IT WOULD BE LIKE?"
+    *goto E3
+  #"SOME ASPECTS OF MARRIED LIFE MUST BE JUST GREAT, BUT MARRIAGE JUST DOESN'T SEEM RIGHT FOR ME RIGHT NOW."
+    *goto E4
+*label E1
+*set GN%-20
+Very nice, Ms. Wise Guy. I'm sure he appreciates your sarcasm.
+*finish
+*label E2
+Whatsamatter? Cat got your tongue? Calm down. Saying the word "marriage" to some people can have the same effect as trying to blow-dry your hair with one foot in the bathtub. He's only talking about it.
+*if MS>0
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*page_break
+I KNOW WHY YOU ARE SO NERVOUS! IF ONLY YOUR HUSBAND WERE A FLY ON THE WALL. HE'D PROBABLY BITE YOU RIGHT ON THE REAR!
+*finish
+*label F.F
+*finish
+*label E3
+If you like the idea so much, why don't you go over to the Marriage Icon and tie the knot?
+*if MS>0
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+
+I KNOW WHY! THAT POOR GUY!
+*finish
+*label G.F
+*finish
+*label E4
+*if MS>0
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+CREEP! Does your husband know that you don't think marriage is "for you."
+*finish
+*label H.F
+*set SC%+30
+*set TH%+20
+*set IN%+20
+That's putting it tactfully. Well done.
+*finish
+

@@ -1,0 +1,68 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You and ${loverName} have just had a lovely dinner together. The restaurant tab is incredibly expensive, but well worth it for the time you had. You have been thinking that you might really like to do something nice for ${loverName}. Picking up the
+dinner tab might pleasantly surprise him.
+
+
+Select an action:
+
+*choice
+  #INSIST EMPHATICALLY THAT HE LET YOU PAY
+    *goto A1
+  #INSIST THAT HE LET YOU PAY
+    *goto A2
+  #LET HIM PAY (GLADLY)
+    *goto A3
+*label A1
+${loverName} acts as if he has just been insulted. He manages to say that he is flattered, but he thinks that it is "unnecessary."
+*goto Q
+*label A2
+Your offer is appreciated, but makes ${loverName} feel uncomfortable. "This is not exactly the Victorian Age any more," you think.
+
+
+Select an action:
+
+*choice
+  #BACK DOWN
+    *goto B1
+  #KEEP INSISTING
+    *goto B2
+*label B1
+*set SC%+10
+${loverName} seems relieved.
+*page_break
+*label Q
+
+When you get back to ${loverName}'s house, he turns and looks at you with a fiery gleam in his eye. "O.K.," he commands, "GET NAKED!"
+*label D
+
+
+Select an action:
+
+*choice
+  #PROTEST
+    *goto C1
+  #GO WITH THE FLOW
+    *goto C2
+*label C1
+The nerve. Just because he picks up the dinner tab, he thinks he can have his way with you. That barbarian!
+*finish
+*label C2
+*set HP%+20
+You must enjoy the "caveman-cavewoman" type of relationship. Different strokes...
+*finish
+*label B2
+*set SC%-20
+Your insistence turns ${loverName} off. Because he has no desire to make a scene, he lets you pay for the meal, but still feels funny about it. The evening ends on a sour note.
+*finish
+*label A3
+A free meal's a free meal, right? Forget this Women's Lib stuff!
+*finish
+

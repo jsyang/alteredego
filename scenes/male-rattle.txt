@@ -1,0 +1,190 @@
+*label FND
+Lying on your stomach in the crib you notice an interesting object an arm's distance away. It has a round shape at the top, and a ring on the bottom.
+*choice mood action
+  #ANGER/FRUSTRATION
+    #GRASP FOR OBJECT
+      *goto A11
+    #CRY
+      *goto A12
+    #IGNORE OBJECT
+      *goto A13
+  #DETERMINATION
+    #GRASP FOR OBJECT
+      *goto A21
+    #CRY
+      *goto A22
+    #IGNORE OBJECT
+      *goto A23
+  #NEUTRAL
+    #GRASP FOR OBJECT
+      *goto A31
+    #CRY
+      *goto A32
+    #IGNORE OBJECT
+      *goto A33
+*label A11
+You should never try to do a job when you are angry. You make random swiping movements at the rattle and your frustration increases.
+*set GN%-20
+*set PH%+5
+
+
+Select an action:
+
+*choice
+  #KEEP TRYING
+    *goto B1
+  #QUIT TRYING
+    *goto B2
+*label B1
+You wear yourself out a bit, angrily swiping at the rattle. You compose yourself and lunge toward the toy...
+*set CN%+20
+*set PH%+15
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+You get lucky. Your little pinky catches the ring on the bottom of the rattle and it spins around your finger making a long, pleasing sound. You are becoming the type of person who won't take no for an answer; an aggressive,
+goal-oriented type. Be careful - you just might get everything you bargain for.
+*set CN%+30
+*finish
+*label C2
+You miss. Your hand spins the rattle farther from your reach. Every time you miss your rage increases. If you could talk, you would be cursing and swearing at that rattle, but there is plenty of time for that when you have to fix
+your own car later, when you are all grown up.
+*set GN%-10
+*finish
+*label B2
+*temp randomD
+*rand randomD 1 3
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*else
+  *goto D3
+*label D1
+There are bigger and better things to look forward to. Toilet training and your first kiss are only two of them. The rattle can wait.
+*finish
+*label D2
+You quit trying but you sulk, not able to let go of your anger. It leaves a bad taste in your mouth and you are forced to drown your troubles in a bottle of strained carrot juice (yum!).
+*set GN%-20
+*finish
+*label D3
+Why give up so easily? Do you think that life will get any easier? Don't count on it. Your first cliche: If at first you don't succeed....
+*finish
+*label A12
+Your cries solicit help from your mother who comes in and holds the rattle up and shakes it. She moves the rattle closer to you. What do you want to do with it?
+
+
+Select an action:
+
+*choice
+  #SHAKE IT
+    *goto E1
+  #IGNORE IT AND TRY TO GET MOTHER TO PLAY
+    *goto E2
+*label E1
+All of that trouble for a couple of silly noises. You turn toward your mother, but she is already out of the room, tending to something else.
+
+
+Select an action:
+
+*choice
+  #CRY
+    *goto F1
+  #SLEEP
+    *goto F2
+*label F1
+Your mom is too busy to come in and pick you up now. You cry yourself to sleep.
+*set GN%-10
+*finish
+*label F2
+A wise choice. You doze off peacefully and will wake up in a much better mood.
+*set HP%+25
+*finish
+*label E2
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label G1
+You flash her one of your famous ear-to-ear smiles. She picks you up and spins you around a few times and lays you back down in the crib. Social sphere gets a nice boost.
+*set SC%+10
+*finish
+*label G2
+She doesn't fall for it. She calls you a little rascal and heads out the door.
+*finish
+*label A21
+*set IN%+30
+*set PH%+15
+You have the fighting spirit of your Uncle Bill! You sneak and crawl on your belly like a combat soldier heading into battle. You reach your destination, grasp the rattle confidently and drool on it in victory! Intellectual sphere
+shows a marked increase.
+*set CN%+20
+
+
+Select an action:
+
+*choice
+  #SHAKE THE RATTLE
+    *goto H1
+  #KEEP DROOLING ON IT
+    *goto H2
+  #EMIT A PLEASURABLE YELL
+    *goto H3
+*label H1
+This is terrific fun. You spend a good amount of time shaking the rattle and then fall asleep, exhausted by the long trek from one end of the crib to the other.
+*finish
+*label H2
+Yes, saliva is something that infants seem to have a never-ending supply of. Manufacturing it will come in handy when someone you don't like picks you up and starts spinning you around over his or her face. Keep practicing.
+*finish
+*label H3
+*set IN%+20
+This stimulates vocal cords and language centers in your brain. Good language skills are essential to development. Intellectual sphere increases. If no one is looking, give a little yell yourself for choosing this option. Go on. Did
+you do it?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+Good. I just gave you some extra social points for being a good sport.
+*set SC%+20
+*finish
+*label J2
+Loosen up a bit; this game can take a very long time to play.
+*finish
+*label A33
+I can't blame you for not taking a more active interest in your environment just yet. Be careful - being neutral, not taking risks and choosing options that seem dull will get you nowhere and leave you at the mercy of fate.
+*label BACK
+Would you like to go back and try again?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto L1
+  #NO
+    *goto L2
+*label L1
+*goto FND
+*label L2
+*finish
+*label A13
+*label A22
+*label A23
+*label A31
+*label A32
+How could these two choices possibly go together? I will let you go back and try a more sensible set of responses for now, but let me warn you: Choosing responses without thinking about them first might be interpreted as a sign of
+poor judgment. People who have poor judgment usually wind up having very difficult lives. Please try again.
+*page_break
+*goto FND
+

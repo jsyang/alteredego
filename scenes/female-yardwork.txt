@@ -1,0 +1,82 @@
+A neighbor approaches you and asks if you would like to make some extra money babysitting. You evaluate the job: It is highly nerve-wracking work (the child is a beast) for a $40-per-week payoff.
+*choice mood action
+  #INTERESTED
+    #ACCEPT THE RESPONSIBILITY
+      *goto A11
+    *selectable_if (false) #REJECT THE RESPONSIBILITY
+      *finish
+  #UNINTERESTED
+    *selectable_if (false) #ACCEPT THE RESPONSIBILITY
+      *finish
+    #REJECT THE RESPONSIBILITY
+      *goto A22
+*label A11
+*set TH%+30
+*set VC%+10
+After your third week of work, your friends plan a trip to the mall and ask if you would like to come along. Jamie's mother will be driving, but the trip will occur during the time when you babysit. There is no way you can squeeze the
+two events in on the same day.
+
+
+Select an action:
+
+*choice
+  #REFUSE THE TRIP TO THE MALL
+    *goto B1
+  #TAKE THE BABY ALONG TO THE MALL
+    *goto B2
+  #ASK YOUR NEIGHBOR IF SHE WOULD MIND GETTING A REPLACEMENT
+    *goto B3
+*label B1
+*set TH%+40
+You stay and babysit like a responsible person. At this point, how much money will you try to put away in the bank every week?
+
+
+Select an action:
+
+*choice
+  #ABOUT $10.00
+    *goto C1
+  #ABOUT $20.00
+    *goto C2
+  #MORE THAN $20.00
+    *goto C3
+*label C1
+*label C2
+*label C3
+*if TH<70
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+You lack the self-control to do any real saving. Like most children, you are quick to dip into your savings for little pleasures. You have, however, shown good attitudes toward work and good responsibility, which will help you with work
+later on.
+*finish
+*label E.F
+*set TR%+20
+*set MN+600
+*set VC%+30
+Your saving habits are admirable. You accumulate $600.
+*finish
+*label B2
+While you're at the mall, you run into the woman who you babysit for. The baby you are with looks familiar. YOU ARE FIRED!
+*finish
+*label B3
+*temp randomM
+*rand randomM 1 2
+*if randomM=1
+  *goto M1
+*else
+  *goto M2
+*label M1
+*set VC%-10
+She doesn't mind. She simply asks a friend of yours who is happy to take the job and the money, AND skip shopping. She does a good job and replaces you permanently. Some friend!
+*finish
+*label M2
+*set VC%-10
+She asks the girl down the block, who does a much better job and is willing to take $30. You are replaced.
+*finish
+*label A22
+*set VC%-10
+Work is not for you right now. That's O.K., but you have just passed up an opportunity to collect some resources.
+*finish
+

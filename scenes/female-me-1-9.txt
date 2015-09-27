@@ -1,0 +1,82 @@
+${spouseName} has just telephoned you to say that he will be late for dinner tonight because he is stopping off to have a few drinks with some friends. You have been preparing a special dinner that will suffer (but not be completely ruined) if
+it gets cold.
+
+
+Select an action:
+
+*choice
+  #TELL HIM ABOUT THE DINNER
+    *goto A1
+  #TELL HIM TO HAVE A GOOD TIME
+    *goto A2
+  #GET ANGRY AND TELL HIM TO COME RIGHT HOME
+    *goto A3
+*label A1
+He thanks you but mentions that he wouldn't mind eating it a little cold. He's really been looking forward to getting together with some of his friends.
+
+
+Select a mood:
+
+*choice
+  #UNDERSTANDING
+    *goto B1
+  #ANGRY
+    *goto B2
+*label B1
+*label A2
+*set GN%+30
+That's very nice of you. He comes home, sits down, eats the meal and nods off to sleep early. Does this make you feel angry enough to talk to ${spouseName} about it?
+
+
+Select a mood:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*label E1
+*if GN<40
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+*set GN%-10
+*set EX%+20
+Your Gentleness characteristic suggests that you would probably bring the topic up in a hostile sarcastic tone. ${spouseName} becomes defensive and hostile too. The two of you wind up having a big fight.
+*finish
+*label D.F
+*set EX%+30
+*set CN%+30
+*set SC%+10
+*set IN%+10
+Your Gentleness characteristic shows that you are capable of having a discussion about your feelings without becoming hostile or putting him on the defensive. He apologizes, and the event is forgotten about.
+*finish
+*label C2
+*label E2
+*set GN%-10
+*set EX%-10
+It is likely that, by not expressing your anger, you will resent him for what he has done.
+*finish
+*label B2
+*set CN%-10
+*set SC%-10
+Now you sound like you are whining. You have already told him about the dinner. He told you that he wanted to be with his friends. The issue really isn't over, whether or not his dinner will be cold. Perhaps you are feeling that you
+should be a priority over ${spouseName}'s friends. Will you have a talk with ${spouseName} about this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label A3
+*set MP+1
+*set GN%-20
+You sound very demanding. I guess you think ${spouseName} should pass up his time with his friends so that he can eat your special creation. It would have been nice to see if there was some kind of compromise, but I guess you thought there
+wasn't. ${spouseName} comes home but hardly notices the dinner. He says, "You made me come home for THIS?"
+*finish
+

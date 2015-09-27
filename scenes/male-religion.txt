@@ -1,0 +1,59 @@
+You are in a quiet, pensive mood, and your thoughts turn to the subject of religion. Your family's beliefs seem out of step with your own as you wonder about the nature of your existence. Would they understand if you told them
+about the differences?
+*choice mood action
+  #CURIOUS
+    #CONFRONT YOUR FAMILY AND TALK TO THEM ABOUT WHAT YOU ARE THINKING
+      *goto A11
+    *selectable_if (false) #DO NOT CONFRONT YOUR FAMILY
+      *finish
+  #NOT CURIOUS
+    *selectable_if (false) #CONFRONT YOUR FAMILY AND TALK TO THEM ABOUT WHAT YOU ARE THINKING
+      *finish
+    #DO NOT CONFRONT YOUR FAMILY
+      *goto A22
+*label A11
+*set IN%+20
+*set CN%+20
+Your desire to question the meaning of religion, faith and some of life's larger, more philosophical questions is admirable. This kind of independent thinking stimulates the mind and fuels divergent thought.
+*page_break
+*if FM>50
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+*set FM%+20
+Your parents accept your right to your views, but strongly disagree. You feel that their arguments are weak compared to yours. They seem to accept more things on faith. You want REASONS.
+*page_break
+The discussion seems futile, until you realize that perhaps the most important aspect about it is their acceptance of you, and their secret pride in the knowledge that you are a bright, free-thinking person.
+*finish
+*label B.F
+*set CA%-10
+*set FM%-10
+Your parents can't accept your views. They say you are all wrong. It doesn't even seem as if they are listening to what you are saying. You think they accept too much of their religion on faith.
+*page_break
+You are quick to point out several elements of the religion that seem hypocritical. Because your family relationships have been strained in the past, they are reluctant to accept you as an independent, free-thinking person.
+*finish
+*label A22
+Is that because:
+
+
+Select a mood:
+
+*choice
+  #YOUR FAMILY WOULD NEVER HAVE SUCH A DISCUSSION WITH YOU?
+    *goto C1
+  #RELIGION IS NOT AN IMPORTANT ENOUGH TOPIC TO DISCUSS AROUND YOUR HOUSE?
+    *goto C2
+  #YOU JUST DON'T FEEL LIKE BRINGING IT UP?
+    *goto C3
+*label C1
+*set FM%-10
+That's too bad. Independent thinking and questioning of values is an important part of adolescent growth.
+*finish
+*label C2
+I guess to some people it's more important than to others.
+*finish
+*label C3
+Fine.
+*finish
+

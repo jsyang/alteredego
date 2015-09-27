@@ -1,0 +1,108 @@
+You are attending the dinner party of a close friend, Judy Lewis, and her handsome husband, Mike. All through dinner, Mike has been passing admiring glances your way. This kind of attention hasn't been lavished on you for quite some time.
+*page_break
+He has commented on your clothing, your jewelry, and your perfume. While clearing the dishes and preparing for dessert, Judy asks crisply if you would help her do something in the kitchen.
+*choice mood action
+  #SHY/EMBARRASSED BY MIKE'S FLATTERY
+    #GO INTO THE KITCHEN AND HELP
+      *goto A11
+    #MAKE AN EXCUSE AND AVOID GOING INTO THE KITCHEN
+      *goto A12
+  #ENJOYING MIKE'S ATTENTION
+    #GO INTO THE KITCHEN AND HELP
+      *goto A21
+    #MAKE AN EXCUSE AND AVOID GOING INTO THE KITCHEN
+      *goto A22
+  #NEUTRAL ABOUT MIKE'S ATTENTION
+    #GO INTO THE KITCHEN AND HELP
+      *goto A31
+    #MAKE AN EXCUSE AND AVOID GOING INTO THE KITCHEN
+      *goto A32
+*label A11
+*label A21
+*label A31
+*if (SR<1) and (MS<1)
+  *goto B.T
+*else
+  *goto B.F
+*label B.F
+The love of your life gives you a sympathetic look, and shrugs his shoulders as you go off into the kitchen.
+*goto G
+*label B.T
+No one seems to notice you wandering off into the kitchen with Judy.
+*label G
+
+When you are in the kitchen, Judy mentions that she notices how complimentary Mike has been toward you all evening. Her eyebrows begin to raise. You sense that she is trying to tell you something. What will you do now?
+
+
+Select an action:
+
+*choice
+  #ASK HER WHAT SHE IS GETTING AT
+    *goto H1
+  #EXCUSE YOURSELF AND RETURN TO THE DINING ROOM
+    *goto H2
+  #FREEZE UP WITH ANXIETY
+    *goto H3
+*label H1
+*set GN%-10
+Through clenched teeth she says, "What I'm getting at is why you feel it necessary to hang all over Mike?"
+
+
+Select an action:
+
+*choice
+  #TELL HER SHE DOESN'T KNOW WHAT SHE'S TALKING ABOUT
+    *goto I1
+  #ADMIT THAT YOU WERE ENJOYING HIS ATTENTION BUT THOUGHT NOTHING OF IT
+    *goto I2
+*label K2
+*label I2
+Judy drops what she is preparing into the sink and begins to cry. She has just discovered that Mike has been involved in a string of affairs since the start of their marriage. It has gotten to the point where she is suspicious of
+everyone he talks to. When you go back to the table and Mike says something complimentary, you can:
+
+
+Select an action:
+
+*choice
+  #DROP SOME MASHED POTATOES INTO HIS LAP
+    *goto J1
+  #IGNORE HIM
+    *goto J2
+*label J2
+*set GN%-5
+You feel sympathy for Judy and begin to wonder why she tolerates this kind of behavior in Mike.
+*finish
+*label J1
+Plop! Mike excuses himself, saying, "I sometimes have that effect on women," and leaves the room to change.
+*finish
+*label I1
+"The hell I don't!" she snaps. "Do you think I'm blind? He's been GAPING at you since the evening began." You notice that her lip is beginning to quiver.
+
+
+Select an action:
+
+*choice
+  #KEEP ARGUING WITH HER
+    *goto K1
+  #ASK HER IF THERE IS ANYTHING WRONG
+    *goto K2
+*label K1
+*set GN%-10
+There is no convincing her that you weren't trying to flirt with her husband. You find out later that Mike has had a long string of affairs since the beginning of their marriage. Judy refuses to believe that he has anything to do with
+it and has become suspicious of every woman within ten miles of him at any time.
+*finish
+*label A12
+*label A22
+*set TR%-10
+*label A32
+"Would you PLEASE come in and help me?" she insists.
+*goto G
+*label H2
+*set SC%-10
+You aren't going to stay around and put up with these kinds of accusations. It's not like you were going to jump into bed with him or something. The evening procedes in a very strained manner.
+*finish
+*label H3
+*set CA%-20
+You must be feeling a little nervous about eating up the compliments a bit too conspicously. No harm done. You are able to laugh it off with Judy.
+*finish
+

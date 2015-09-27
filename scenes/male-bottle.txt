@@ -1,0 +1,68 @@
+It is announced to you during a heart to heart talk that it is time for you to give up the bottle and drink from a glass like a big boy.
+*choice mood action
+  #ANGRY/STUBBORN
+    #RESIST/REFUSE
+      *goto A11
+    *selectable_if (false) #GIVE THE BOTTLE UP
+      *finish
+  #DISAPPOINTED BUT WILLING TO TRY
+    *selectable_if (false) #RESIST/REFUSE
+      *finish
+    #GIVE THE BOTTLE UP
+      *goto A22
+*label A11
+How are you going to show your resistance?
+
+
+Select an action:
+
+*choice
+  #CRY
+    *goto B1
+  #FOLD YOUR ARMS AND SAY "NO!"
+    *goto B2
+  #THROW THE BOTTLE AT MOMMY
+    *goto B3
+*label B1
+Crying makes your mom feel badly, but only proves to her that you are immature and need to let go of some "babyish" things like the bottle. You are too young to explain to her that you ARE a baby.
+*label SK/LRN
+
+
+Select an action:
+
+*choice
+  #SUCK YOUR THUMB AS A SUBSTITUTE
+    *goto C1
+  #LEARN TO LIVE WITHOUT IT
+    *goto C2
+*label C1
+This can be the beginning of a dependent personality. It can also give you warts (just kidding).
+*finish
+*label C2
+It will be tough for a while -- you'll turn to Superduck for comfort. Believe me, cold turkey is the best way to do it. Good luck.
+*finish
+*label B2
+A nice strong effort to fight for what you believe in. Since you are strong enough to put up such a fuss, you are also old enough to get off the bottle.
+*goto SK/LRN
+*label B3
+You must really be furious. That bottle is more than just a casual drinking buddy -- it is a constant companion. It has been a source of comfort and a weapon against adversaries. You've come to think of it as an extension of
+yourself. Mom doesn't understand this at all, and you get whacked for being disrespectful.
+*goto SK/LRN
+*label A22
+Mom understands how difficult it is to let go of an old friend and appreciates your effort. She has a box for you.
+
+
+Select an action:
+
+*choice
+  #OPEN IT
+    *goto D1
+  #REMAIN UPSET AND NOT OPEN IT
+    *goto D2
+*label D1
+OH BOY! A plastic Superduck drinking cup with bendable straw! Look at this! It even has your name on it. Mom tells you Superduck wrote it there himself. (Mom is laying it on a bit thick at the moment.)
+*finish
+*label D2
+You open it up when you are feeling better. It's a plastic Superduck drinking cup with bendable straw. It's some consolation but you still miss the bottle.
+*finish
+

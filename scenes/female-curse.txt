@@ -1,0 +1,86 @@
+Early in the afternoon you watch your mom as she tries to wash the clothes. Since the washing machine is always broken, Mom has given it a name, just like a pet. The washing machine's name is *&%$. You have a toy washer just like
+it. Later in the afternoon, your parents tell you to go into your room and play while relatives visit.
+*choice mood action
+  #NEGLECTED
+    #MAKE BELIEVE YOU ARE MOM
+      *goto A11
+    #OCCUPY YOURSELF WITH SOMETHING QUIETLY
+      *goto A12
+  #BORED
+    #MAKE BELIEVE YOU ARE MOM
+      *goto A21
+    #OCCUPY YOURSELF WITH SOMETHING QUIETLY
+      *goto A22
+*label A11
+*set IN%+30
+*set HP%-10
+Playing pretend makes you the grownup sending Mom and Dad to their room. Now you pretend to be just like Mom. You are washing the clothes.
+
+
+Select an action:
+
+*choice
+  #CALL OUT THE NAME OF THE WASHER
+    *goto B1
+  #KEEP QUIET
+    *goto B2
+*label SWEAR
+*label B1
+*set HP%+40
+Oh *&%#! You *&%#! You sound just like Mom! This is fun. You scream it loud so everyone can hear how big you are. You hear pounding feet. THUMP! THUMP! THUMP! THUMP! It's Mom -- she looks upset. This is very confusing.
+*if ST>0
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+You are lifted up by your arm and flown into the bathroom. Yuck! Mom is putting soap in your mouth and screaming something you can't quite understand.
+*set HP%-20
+*finish
+*label E.F
+You get a lecture about the "good" words and the "bad" words. "Washing Machine" seems to be a "bad" word. You don't quite understand.
+*finish
+*label QUIET
+*label B2
+*set TH%+40
+You are behaving yourself today. This is very considerate of you, but not too much fun. You show remarkable self-control, which will be helpful later.
+*finish
+*label A12
+*set HP%-10
+You wonder, "Why do they sometimes send me away?" You can't concentrate, and not even Poseable Suzie Fantasik can cheer you up. You begin to cry. Your bottom teeth shake. The tears roll down your cheeks and catch the corners of your
+mouth, making a salty taste. Your nose begins to drip. You place your thumb in your mouth and fall asleep in your parents' bed.
+*finish
+*label A21
+*set IN%+10
+Your boredom stimulates a flash of creative genius. You go to the closet and put on Mom's clothes. You are pretending to wash the clothes.
+
+
+Select an action:
+
+*choice
+  #CALL OUT THE NAME OF THE WASHER
+    *goto C1
+  #KEEP QUIET
+    *goto C2
+*label C1
+*goto SWEAR
+*label C2
+*goto QUIET
+*label A22
+*set TH%+30
+Even though you are bored, you stimulate yourself by doing something creative. You remove all of the knobs on every drawer you can find, and shoot them under the sofa bed one by one. When you are finished you:
+
+
+Select an action:
+
+*choice
+  #REPLACE THEM
+    *goto D1
+  #LEAVE THEM ALONE
+    *goto D2
+*label D1
+That was very kind of you.
+*finish
+*label D2
+Dad steps on one and it sticks into the bottom of his foot. He stomps up and down, calling for the washer. Mom vacuums up two of them the next time she cleans the floor, and it costs $90 to repair the vacuum.
+*finish
+

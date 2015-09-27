@@ -1,0 +1,96 @@
+*if (ES<1) and (MS<1)
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+This experience is not for those who are engaged (or already married!).
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+On a date with ${loverName} she begins to pry about your past relationships: who you've gone out with, why it didn't last, and other personal questions. How does this cross-examination make you feel?
+
+
+Select an action:
+
+*choice
+  #SELF-CONSCIOUS
+    *goto A1
+  #ANGRY
+    *goto A2
+  #ANXIOUS
+    *goto A3
+*label A1
+*set CN%-10
+Perhaps there is more to this conversation than meets the eye. ${loverName} has marriage on her mind! The questions and conversation lean more and more toward wondering whether you are planning to settle down. How will you handle it?
+*label F
+
+
+Select an action:
+
+*choice
+  #AVOID THE ISSUE
+    *goto B1
+  #COME RIGHT OUT AND TELL HER YOU'RE NOT READY FOR MARRIAGE JUST YET
+    *goto B2
+*label B1
+*set EX%-10
+This only makes her press you harder for your intentions.
+
+
+Select an action:
+
+*choice
+  #TELL HER YOU'LL TALK TO HER ABOUT IT LATER
+    *goto C1
+  #COME RIGHT OUT AND TELL HER YOU'RE NOT READY FOR MARRIAGE JUST YET
+    *goto C2
+*label C1
+*set EX%-10
+You aren't being very expressive, and you're still avoiding her. After all, you are not exactly the young bull you might once have thought you were. Are you ever going to settle down?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*set TH%-20
+Then perhaps you are just anxious about the thought of doing it with ${loverName}. She does deserve some indication of what your intentions are.
+*finish
+*label D2
+Ha! That's what they all say. Just wait until Ms. Right comes along; she'll probably have you eating right out of her hand!
+*finish
+*label B2
+*label C2
+*set TH%+30
+*set SC%+40
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+I guess that must have been difficult to say, but at least ${loverName} knows where she stands. By the way, did you know that ${loverName} just happens to be the heir of a rather large fortune? Marrying her would put a cool $1,000,000 in your resource
+column. She's ready, you know. All you have to do is pop over to the MARRIAGE ICON and propose.
+*page_break
+Too late. Mr. Right II beat you to it!
+*finish
+*label A2
+You don't want anybody snooping into your personal life like that.
+*if GN>60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set SC%+20
+Your Gentleness characteristic shows that you can tell her to stop prying without sounding too hostile. She is put off by your annoyance, but the evening moves along smoothly.
+*finish
+*label E.F
+You snap at her and sound hostile, as if you are protecting some well-guarded secret. This puts ${loverName} off. The evening ends early.
+*finish
+*label A3
+She has you on the ropes now, kiddo! One sign of trepidation and she moves in for the BIG QUESTION. "So, do you see yourself settling down with anyone in the near future?"
+*goto F
+

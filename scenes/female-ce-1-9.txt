@@ -1,0 +1,30 @@
+Your Philosophy professor is delivering a lecture on the image of "Today's Woman." He describes the present generation of young women as morally weak and unable to take a stand.
+*page_break
+He criticizes them by saying, "They are apathetic, naive, even misanthropic, concerned with gathering resources and acquiring worldly goods, and unconcerned with the larger issues of truth, existence and real love." How will you react
+to such a lecture?
+
+
+Select an action:
+
+*choice
+  #SIT QUIETLY AND TAKE NOTES
+    *goto A1
+  #DISAGREE WITH HIM
+    *goto A2
+  #WRITE HIM OFF AS BEING POMPOUS AND BOMBASTIC
+    *goto A3
+*label A1
+*set TH%-10
+I guess you don't realize that your professor is trying to anger you and the rest of his students for didactic purposes. Your lack of reaction proves his point about student apathy.
+*finish
+*label A2
+*set IN%+20
+You match wits with your professor, but he outmaneuvers you with logic. The fact is that the new generation of young women is going after material possessions more than any other before it. He points to the popularity of classified
+"personal" advertisements which support the current notion that even true love and good relationships can be acquired like used cars.
+*page_break
+Even though you lose on some minor points, you gain respect from the professor who gives you an "A" for the course.
+*finish
+*label A3
+His style may be a bit melodramatic, but listen to what he is saying. Aren't you part of the same world he is talking about? Don't you want a Porsche and a house on the beach?
+*finish
+

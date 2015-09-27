@@ -1,0 +1,64 @@
+In with the day's mail, there is a letter from someone you haven't seen for years. In the letter he states that you have been a profound influence on his life and that he still thinks about you often, wondering what you have been up to.
+*page_break
+It's funny, but you barely remember him, only recalling the fact that he was very shy and withdrawn, a social outcast. It seems that now he is the president of a large corporation, is married and has two small children.
+*choice mood action
+  #GRATIFIED
+    #WRITE HIM BACK
+      *goto A11
+    #DO NOTHING
+      *goto A12
+  #SUSPICIOUS
+    #WRITE HIM BACK
+      *goto A21
+    #DO NOTHING
+      *goto A22
+  #DEPRESSED
+    #WRITE HIM BACK
+      *goto A31
+    #DO NOTHING
+      *goto A32
+*label A11
+*set HP%+30
+*set CA%+30
+*set CN%+40
+Soon the two of you begin corresponding regularly and become close friends. It's funny how people have a tendency to resurface after long periods, isn't it?
+*finish
+*label A12
+How often do you think of yourself as having this kind of effect on people?
+
+
+Select an action:
+
+*choice
+  #OFTEN
+    *goto B1
+  #ONCE IN A WHILE
+    *goto B2
+  #NOT VERY OFTEN AT ALL
+    *goto B3
+*label B1
+*set CN%+20
+Perhaps there is something in your personality that impresses people in a positive way.
+*finish
+*label B2
+*set CN%+10
+Perhaps you should become more aware of your special qualities, so that other people can benefit from them, too.
+*finish
+*label B3
+*set CN%-20
+Perhaps you aren't giving yourself the credit you deserve for having the kind of unique qualities that influence the lives of others.
+*finish
+*label A21
+*set TH%-20
+I guess you are wondering what this guy is up to. Nothing, really. It's too bad that you can't take the experience for the compliment that it was meant to be.
+*finish
+*label A22
+I guess you find it difficult to believe that this could ever happen to you. It really was meant to be a compliment, you know.
+*finish
+*label A31
+*label A32
+*set HP%-20
+Perhaps you feel depressed because you don't feel like you have achieved as much as this fellow from your past. That's not very important, is it? After all, this person is telling you that your influence on his life helped him to achieve
+great things. That must mean that you are capable of doing great things as well.
+*finish
+

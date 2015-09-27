@@ -1,0 +1,17 @@
+One day you overhear your mother and father talking about the fact that they are very short on money and the bank is ready to foreclose on their mortgage...
+*page_break
+*if FM>60
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+Because your Familial sphere status indicates good family relationships, you pull through this period of hardship with few difficulties.
+*finish
+*label A.F
+*set CA%-10
+*set TH%-10
+*set GN%-10
+Your Familial sphere status indicates that these financial problems would spill over into other areas of life. The family's increased financial stress causes you to experience a decrease in the Calmness, Thoughfulness and Gentleness
+characteristics.
+*finish
+

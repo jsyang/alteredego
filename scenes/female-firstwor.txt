@@ -1,0 +1,158 @@
+You are lying down in the crib while your mom and dad are speaking in the other room. You hear their voices, deep and muffled from beyond the door. Why aren't they paying attention to you?
+*choice mood action
+  #HAPPY
+    #SLEEP
+      *goto A11
+    #MAKE NOISES
+      *goto A12
+  #SAD
+    #SLEEP
+      *goto A21
+    #MAKE NOISES
+      *goto A22
+*label A11
+*set HP%+20
+It's very considerate of you to leave your parents with some time alone together. It does seem like a perfect opportunity to attract some attention, however. You have a comfortable nap and wake up feeling hungry.
+
+
+Select an action:
+
+*choice
+  #CRY
+    *goto B1
+  #MAKE NOISES
+    *goto B2
+*label CRY
+*label B1
+Your crying brings in Dad, who is holding a nice warm bottle of milk. Hunger needs are satisfied.
+*finish
+*label NOISE
+*label B2
+*set IN%+40
+You make a variety of noises using your mouth, lips and saliva. You make them over and over again. "LA-LA-LA-LA." "MMmmmMMM." "GAaaAAaaaAAA." Suddenly, your mom comes in.
+
+
+Select an action:
+
+*choice
+  #BE QUIET AND ATTENTIVE
+    *goto C1
+  #KEEP MAKING NOISES
+    *goto C2
+*label QUIET
+*label C1
+*set SC%+30
+Your mom lifts you up and gives you a bottle. Her comforting satisfies you emotionally.
+
+
+Select an action:
+
+*choice
+  #MAKE NOISES
+    *goto D1
+  #STAY QUIET
+    *goto D2
+*label D1
+*goto KEEP
+*label KEEP
+*label C2
+*set IN%+20
+This brings Mom closer to you. She smiles at you, which makes you feel very excited. You pound your hands up and down on the crib mattress and move your feet like a person riding a bicycle. You begin to notice that your sounds and
+movements create responses from others.
+*label MS
+
+
+Select an action:
+
+*choice
+  #MAKE SOUNDS AT MOM
+    *goto E1
+  #STOP MAKING SOUNDS
+    *goto E2
+*label E1
+*temp randomJ
+*rand randomJ 1 6
+*if randomJ=1
+  *goto J1
+*elseif randomJ=2
+  *goto J2
+*elseif randomJ=3
+  *goto J3
+*elseif randomJ=4
+  *goto J4
+*elseif randomJ=5
+  *goto J5
+*else
+  *goto J6
+*label J1
+MAAAAAA...
+*goto MOM
+*label J2
+DAAAAAA...
+*goto MOM
+*label J3
+BA-BA-BA-BA-BA
+*goto MS
+*label J4
+EEeeeOOOOooo...
+*goto MS
+*label J5
+GAAAaaGaGaGaga..
+*goto MS
+*label J6
+BBRRrrEEEeeee...
+*goto MS
+*label MOM
+*set IN%+30
+MAAAAAA...
+*page_break
+Your mom hears this combination and gets excited. This causes you to say it over and over. Mother is reinforcing this combination of sounds with attention, and you are reinforcing her attention with the sounds, keeping her close to you.
+*page_break
+This marks the beginning of language development and is a very significant moment in your life. Intellectual, Emotional and Social spheres increase dramatically.
+*finish
+*label D2
+*label E2
+You have missed a good opportunity to develop speech and language skills. Some language experts believe language skills develop when parents begin to reward random sounds by giving attention.
+*page_break
+Others believe that language skills are the products of the development of inborn structures. You do not suffer terribly as a result of your choice to be quiet. You will find out later that keeping your mouth shut can be much better than
+talking too much.
+*finish
+*label A12
+*set HP%+20
+*set IN%+30
+Positive, happy noises are sure to bring rewards in the form of attention from parents. You make a variety of noises using your mouth, lips and saliva. You make them over and over again. "LA-LA-LA-LA." "MMmmmMMM." "GAaaAAaaaAAA..."
+Suddenly, Mom comes in.
+
+
+Select an action:
+
+*choice
+  #BE QUIET AND ATTENTIVE
+    *goto F1
+  #KEEP MAKING NOISES
+    *goto F2
+*label F1
+*goto QUIET
+*label F2
+*goto KEEP
+*label A21
+*set HP%-30
+Perhaps you are feeling left out of things by your parents. This is understandable, but remember, they need some time alone too. You take a nap and awake refreshed and alert.
+
+
+Select an action:
+
+*choice
+  #CRY
+    *goto G1
+  #MAKE NOISES
+    *goto G2
+*label G1
+*goto CRY
+*label G2
+*goto NOISE
+*label A22
+*set HP%-20
+You begin to cry. This alarms your parents and is a negative way of attracting attention. Daddy comes in holding a bottle of warm milk, which satisfies you temporarily.
+*finish
+

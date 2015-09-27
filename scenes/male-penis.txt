@@ -1,0 +1,53 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You are getting dressed one day and notice a small red mark on your penis. Could it be some kind of disease?
+*choice mood action
+  #ANXIOUS
+    #GO TO THE DOCTOR
+      *goto A11
+    #IGNORE IT (IT WILL PROBABLY GO AWAY)
+      *goto A12
+  #TERRIFIED
+    #GO TO THE DOCTOR
+      *goto A21
+    #IGNORE IT (IT WILL PROBABLY GO AWAY)
+      *goto A22
+  #CALM
+    #GO TO THE DOCTOR
+      *goto A31
+    #IGNORE IT (IT WILL PROBABLY GO AWAY)
+      *goto A32
+*label A11
+*set CA%-20
+Nothing to worry about. It's just a pimple.
+*finish
+*label A21
+*set CA%-30
+Don't worry. It's just a pimple.
+*finish
+*label A31
+*set CA%+30
+*set CN%+40
+Doesn't anything alarm you? It was only a pimple. Just what you thought. It's a good thing you had it checked.
+*finish
+*label A12
+*set CA%-30
+It's only a pimple, but you worry about it until it goes away. Calmness decreases.
+*finish
+*label A22
+*set CA%-30
+Thinking about it in your state of mind makes it itch constantly. You are convinced that your penis will soon fall off, yet you still won't go to the doctor. It's only a pimple. It goes away in a few days, but it always pays
+to get these things checked by a doctor. You could have given yourself a heart attack worrying about it.
+*finish
+*label A32
+*set EX%-10
+You are using the defense mechanism of denial -- don't think about it, and it will go away. This time, as it happens, it does go away. Next time, you might not be so lucky.
+*finish
+

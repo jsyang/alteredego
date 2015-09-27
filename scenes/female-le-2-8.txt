@@ -1,0 +1,1133 @@
+*temp willadopt
+*set willadopt 0
+*temp gfwant
+*set gfwant 0
+*if GF=0
+  *goto DISQUAL.T
+*else
+  *goto DISQUAL.F
+*label DISQUAL.T
+*label DISQUAL2.T
+You get into a serious traffic accident.  The other driver says it was your fault, but it looks to you like it was his fault.
+*page_break
+His insurance agency agrees with you and agrees to pay for your medical expenses and a new car in exchange for not filing suit.
+*finish
+*label DISQUAL.F
+*if SEX=0
+  *goto DISQUAL2.T
+*else
+  *goto DISQUAL2.F
+*label DISQUAL2.F
+It's been five weeks since that fateful date with ${loverName}...
+*page_break
+Since then, you've been feeling nauseous and a bit off your game.  Plus, you're late.  You're starting to think that you might be pregnant.
+
+*choice mood action
+  #TERRIFIED
+    #PURCHASE A HOME PREGNANCY KIT
+      *goto A11
+    #WAIT A WHILE LONGER
+      *goto A12
+  #CALM
+    #PURCHASE A HOME PREGNANCY KIT
+      *goto A21
+    #WAIT A WHILE LONGER
+      *goto A22
+*label A11
+*set CA%-20
+Are congratulations in order? Maybe, maybe not. In any case, the rabbit is dead. You are officially pregnant.
+*page_break
+*if GF>0
+  *goto GFPREG.T
+*else
+  *goto GFPREG.F
+*label A12
+*set CA%-50
+*set PH%-10
+Another couple of weeks go by...  you're starting to feel quite sick.
+
+
+Select an action:
+
+*choice
+  #FIND OUT IF YOU'RE PREGNANT
+    *goto B1
+  #WAIT A LITTLE WHILE LONGER
+    *goto B2
+*label B1
+Are congratulations in order? Maybe, maybe not. In any case, the rabbit is dead. You are officially pregnant.
+*page_break
+*if GF>0
+  *goto GFPREG.T
+*else
+  *goto GFPREG.F
+*label B2
+*set HP%-60
+*set CA%-30
+*set PH%-40
+Well, it turns out, you were pregnant.  In the middle of the night, you have a painful miscarriage.  You spend the rest of the night vomiting and crying.
+*if GF>0
+  *goto GFMISC.T
+*else
+  *goto GFMISC.F
+*label GFMISC.F
+*finish
+*label GFMISC.T
+*page_break
+Do you think you'll tell your boyfriend about this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto TELLGFMISC1
+  #NO
+    *goto TELLGFMISC2
+*label TELLGFMISC1
+*set HP%-40
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+He doesn't take it well.  After he finds out about your miscarriage, he dumps you.
+*finish
+*label TELLGFMISC2
+*set TR%-20
+*set CN%+10
+OK.  The next few months are pretty miserable, but you survive.  This teaches you a lot about what you're capable of doing by yourself.
+*finish
+*label A21
+Are congratulations in order? Maybe, maybe not. In any case, the rabbit is dead. You are officially pregnant.
+*page_break
+*if GF>0
+  *goto GFPREG.T
+*else
+  *goto GFPREG.F
+*label A22
+*set PH%-10
+Another couple of weeks go by...  you're starting to feel quite sick.
+
+
+Select an action:
+
+*choice
+  #FIND OUT IF YOU'RE PREGNANT
+    *goto B1
+  #WAIT A LITTLE WHILE LONGER
+    *goto B2
+
+*label GFPREG.F
+You try to track down the father, but it seems he's nowhere to be found.
+*page_break
+What do you think you're going to do next?
+
+
+
+Select an action:
+
+*choice
+  #KEEP AND RAISE THE BABY
+    *goto ABORT1
+  #HAVE THE BABY, BUT PUT THE BABY UP FOR ADOPTION
+    *goto ABORT2
+  #HAVE AN ABORTION
+    *goto ABORT3
+*label GFPREG.T
+Do you think you'll tell your boyfriend about this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto TELLGFPREG1
+  #NO
+    *goto TELLGFPREG2
+*label TELLGFPREG1
+*if NT>40
+  *goto GFTRUST.T
+*else
+  *goto GFTRUST.F
+*label GFTRUST.F
+*set HP%-40
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+He doesn't take it well.  After he finds out about your pregnancy, he dumps you, refusing to take any sort of responsibility.  But, what did you expect? You are both still quite young.  He won't even help you make a decision about what to do next.
+*page_break
+What ARE you going to do next?
+
+
+
+Select an action:
+
+*choice
+  #KEEP AND RAISE THE BABY
+    *goto ABORT1
+  #HAVE THE BABY, BUT PUT THE BABY UP FOR ADOPTION
+    *goto ABORT2
+  #HAVE AN ABORTION
+    *goto ABORT3
+*label GFTRUST.T
+*set GF 1
+He takes it quite well, considering.  He doesn't know how, but he promises to support you as best he can.
+*page_break
+What are you and your boyfriend going to do now?
+
+
+
+Select an action:
+
+*choice
+  #KEEP AND RAISE THE BABY
+    *goto ABORT1
+  #HAVE THE BABY, BUT PUT THE BABY UP FOR ADOPTION
+    *goto ABORT2
+  #HAVE AN ABORTION
+    *goto ABORT3
+*label TELLGFPREG2
+*set TR%-40
+*set CN%+10
+*set GF 0
+OK.  The next few months will be pretty miserable, but you'll survive.  This may teach you a lot about what you're capable of doing by yourself.
+*page_break
+What do you think you're going to do next?
+
+
+
+Select an action:
+
+*choice
+  #KEEP AND RAISE THE BABY
+    *goto ABORT1
+  #HAVE THE BABY, BUT PUT THE BABY UP FOR ADOPTION
+    *goto ABORT2
+  #HAVE AN ABORTION
+    *goto ABORT3
+*label ABORT1
+*if GF>0
+  *goto KEEPGF.T
+*else
+  *goto KEEPGF.F
+*label ABORT2
+*if GF>0
+  *goto ADOPTGF.T
+*else
+  *goto ADOPTGF.F
+*label ABORT3
+*if GF>0
+  *goto ABORTGF.T
+*else
+  *goto ABORTGF.F
+
+*label KEEPGF.F
+*set WILLADOPT 0
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label KEEPGF.T
+*temp randomKEEPGFSUP
+*rand randomKEEPGFSUP 1 3
+*if randomKEEPGFSUP=1
+  *goto KEEPGFSUP1
+*elseif randomKEEPGFSUP=2
+  *goto KEEPGFSUP2
+*else
+  *goto KEEPGFSUP3
+*label KEEPGFSUP1
+${loverName} agrees that this would be the best thing to do.  He doesn't know how, but he promises to support you and the baby as best he can.
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label KEEPGFSUP2
+${loverName} agrees with your decision to keep the baby, but insists that you put the baby up for adoption.  He explains that he can't afford to commit himself to raising a child at this point in his life.
+
+
+
+Select an action:
+
+*choice
+  #KEEP THE BABY ANYWAY
+    *goto KEEPORADOPT1
+  #AGREE TO PUT THE BABY UP FOR ADOPTION
+    *goto KEEPORADOPT2
+*label KEEPORADOPT1
+${loverName} grudingly agrees to go along with your decision.
+*set WILLADOPT 0
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label KEEPORADOPT2
+*set WILLADOPT 1
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label KEEPGFSUP3
+*set GFWANT 3
+${loverName} strongly disagrees with your decision.  He thinks that you should have an abortion.  He explains that he can't afford to commit himself to raising a child at this point in his life.
+
+
+
+Select an action:
+
+*choice
+  #KEEP THE BABY ANYWAY
+    *goto KEEPORABORT1
+  #AGREE TO HAVE AN ABORTION
+    *goto KEEPORABORT2
+*label KEEPORABORT1
+${loverName} grudingly agrees to go along with your decision.
+*set WILLADOPT 0
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label KEEPORABORT2
+You manage to put together the cost of the abortion.
+*page_break
+*temp randomABORTEVENT
+*rand randomABORTEVENT 1 2
+*if randomABORTEVENT=1
+  *goto ABORTEVENT1
+*else
+  *goto ABORTEVENT2
+
+*label ADOPTGF.F
+*set WILLADOPT 1
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label ADOPTGF.T
+*temp randomADOPTGFSUP
+*rand randomADOPTGFSUP 1 3
+*if randomADOPTGFSUP=1
+  *goto ADOPTGFSUP1
+*elseif randomADOPTGFSUP=2
+  *goto ADOPTGFSUP2
+*else
+  *goto ADOPTGFSUP3
+*label ADOPTGFSUP1
+${loverName} agrees with your decision to keep the baby, but he feels strongly that you should keep the child; you and he could raise the baby together.
+
+
+
+Select an action:
+
+*choice
+  #PUT THE BABY UP FOR ADOPTION ANYWAY
+    *goto ADOPTORKEEP1
+  #AGREE TO KEEP THE BABY
+    *goto ADOPTORKEEP2
+*label ADOPTORKEEP1
+${loverName} grudingly agrees to go along with your decision.
+*set WILLADOPT 1
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label ADOPTORKEEP2
+*set WILLADOPT 0
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label ADOPTGFSUP2
+${loverName} agrees with your decision.
+*set WILLADOPT 1
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label ADOPTGFSUP3
+*set GFWANT 3
+${loverName} doesn't agree with your decision.  He thinks that you should have an abortion.  He's uncomfortable with the idea that his child might one day be out there somewhere; he also says that he's not sure if he can afford to commit himself to helping you through your pregnancy.
+
+
+
+Select an action:
+
+*choice
+  #PUT THE BABY UP FOR ADOPTION ANYWAY
+    *goto ADOPTORABORT1
+  #AGREE TO HAVE AN ABORTION
+    *goto ADOPTORABORT2
+*label ADOPTORABORT1
+${loverName} grudingly agrees to go along with your decision.
+*set WILLADOPT 1
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label ADOPTORABORT2
+You manage to put together the cost of the abortion.
+*page_break
+*temp randomABORTEVENT
+*rand randomABORTEVENT 1 2
+*if randomABORTEVENT=1
+  *goto ABORTEVENT1
+*else
+  *goto ABORTEVENT2
+
+*label ABORTGF.F
+You manage to put together the cost of the abortion.
+*page_break
+*temp randomABORTEVENT
+*rand randomABORTEVENT 1 2
+*if randomABORTEVENT=1
+  *goto ABORTEVENT1
+*else
+  *goto ABORTEVENT2
+*label ABORTGF.T
+*temp randomABORTGFSUP
+*rand randomABORTGFSUP 1 3
+*if randomABORTGFSUP=1
+  *goto ABORTGFSUP1
+*elseif randomABORTGFSUP=2
+  *goto ABORTGFSUP2
+*else
+  *goto ABORTGFSUP3
+*label ABORTGFSUP1
+*set GFWANT 1
+${loverName} strongly disagrees with your decision to have an abortion.  He tells you that abortion is morally wrong, and insists that you keep the child so you and he can raise the baby together.  "It's my baby, too!" he argues.  He also says that he'll never speak to you again if you have an abortion.
+
+
+
+Select an action:
+
+*choice
+  #HAVE AN ABORTION ANYWAY
+    *goto ABORTORKEEP1
+  #AGREE TO KEEP THE BABY
+    *goto ABORTORKEEP2
+*label ABORTORKEEP1
+*set HP%-20
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+As you might expect, ${loverName} is very unhappy with this news.  You won't be seeing much of him any more.
+*page_break
+You manage to put together the cost of the abortion.
+*page_break
+*temp randomABORTEVENT
+*rand randomABORTEVENT 1 2
+*if randomABORTEVENT=1
+  *goto ABORTEVENT1
+*else
+  *goto ABORTEVENT2
+*label ABORTORKEEP2
+*set WILLADOPT 0
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label ABORTGFSUP2
+*set GFWANT 2
+${loverName} agrees with your decision not to keep the baby, but insists that you should put the baby up for adoption rather than abort a child.  He says that he'll break up with you if you have an abortion.
+
+
+
+Select an action:
+
+*choice
+  #HAVE AN ABORTION ANYWAY
+    *goto ABORTORADOPT1
+  #AGREE TO PUT THE BABY UP FOR ADOPTION
+    *goto ABORTORADOPT2
+*label ABORTORADOPT1
+*set HP%-20
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+As you might expect, ${loverName} is very unhappy with this news.  You won't be seeing much of him any more.
+*page_break
+You manage to put together the cost of the abortion.
+*page_break
+*temp randomABORTEVENT
+*rand randomABORTEVENT 1 2
+*if randomABORTEVENT=1
+  *goto ABORTEVENT1
+*else
+  *goto ABORTEVENT2
+*label ABORTORADOPT2
+*set WILLADOPT 1
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label ABORTGFSUP3
+*set GFWANT 3
+${loverName} agrees with your decision.  He offers to help pay for the cost of the abortion and to provide whatever emotional support he can give you.
+You manage to put together the cost of the abortion.
+*page_break
+*temp randomABORTEVENT
+*rand randomABORTEVENT 1 2
+*if randomABORTEVENT=1
+  *goto ABORTEVENT1
+*else
+  *goto ABORTEVENT2
+
+
+
+*label ABORTEVENT1
+As you arrive at the clinic, you face a wall of angry protestors outside.  As you humbly march towards the door, they call you a murderer and other terrible names.  One of them screams that God hates you.
+*page_break
+*temp randomABORTPARSUP
+*rand randomABORTPARSUP 1 2
+*if randomABORTPARSUP=1
+  *goto ABORTPARSUP1
+*else
+  *goto ABORTPARSUP2
+*label ABORTEVENT2
+Though your health insurance is unwilling to help you pay for it, your doctor has provided you with a prescription of the "abortion pill," which allows you to have an abortion within the privacy of your own home.
+*page_break
+*temp randomABORTPARSUP
+*rand randomABORTPARSUP 1 2
+*if randomABORTPARSUP=1
+  *goto ABORTPARSUP1
+*else
+  *goto ABORTPARSUP2
+
+*label ABORTPARSUP1
+*set FM%-10
+Your family has been no support to you in this; you'll have to do it alone.
+*page_break
+Are you ready?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto READY1
+  #NO
+    *goto READY2
+*label ABORTPARSUP2
+*set FM%+10
+Fortunately, your family has been very understanding about this.  You'll get through it with their love and support.
+*page_break
+Are you ready?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto READY1
+  #NO
+    *goto READY2
+*label READY1
+Your abortion is quick, but you feel sick for a number of days afterwards.  Many women undergo severe depression after an abortion.
+*page_break
+*temp randomABORTDEP
+*rand randomABORTDEP 1 2
+*if randomABORTDEP=1
+  *goto ABORTDEP1
+*else
+  *goto ABORTDEP2
+*label ABORTDEP1
+You are lucky; you feel relatively OK.  Life goes on.
+*finish
+*label ABORTDEP2
+*set HP%-40
+You are one of the unlucky ones.  You can't stop thinking about what your son or daughter might have been like.  Eventually, however, life goes on.
+*finish
+*label READY2
+*set CA%-30
+Do you want to back out of having an abortion?
+
+
+
+Select an action:
+
+*choice
+  #NO, I'M READY NOW
+    *goto FINALCHOICE1
+  #I WANT TO KEEP AND RAISE THE BABY
+    *goto FINALCHOICE2
+  #I WANT TO PUT THE BABY UP FOR ADOPTION
+    *goto FINALCHOICE3
+*label FINALCHOICE1
+Your abortion is quick, but you feel sick for a number of days afterwards.  Many women undergo severe depression after an abortion.
+*page_break
+*temp randomABORTDEP
+*rand randomABORTDEP 1 2
+*if randomABORTDEP=1
+  *goto ABORTDEP1
+*else
+  *goto ABORTDEP2
+*label FINALCHOICE2
+*set WILLADOPT 0
+*if GF>0
+  *goto GFBACKOUT.T
+*else
+  *goto GFBACKOUT.F
+*label FINALCHOICE3
+*set WILLADOPT 1
+*if GF>0
+  *goto GFBACKOUT.T
+*else
+  *goto GFBACKOUT.F
+*label GFBACKOUT.F
+Very well.  It's your decision.
+*page_break
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label GFBACKOUT.T
+*if GFWANT=3
+  *goto GFNOTSTILLMAD.T
+*else
+  *goto GFNOTSTILLMAD.F
+*label GFNOTSTILLMAD.F
+*set GF 0
+OK, but you'll still have to do this without your boyfriend.  ${loverName} still won't return your phone calls.
+*page_break
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+*label GFNOTSTILLMAD.T
+${loverName} grudingly agrees to go along with your decision.
+*page_break
+Over the course of the next seven months
+*temp randomD
+*rand randomD 1 5
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*else
+  *goto D5
+
+*label D1
+you have a rather uneventful pregnancy, or so the doctor seems to think.
+*if (ST<1) and (FM>50)
+  *goto PARSUP.T
+*else
+  *goto PARSUP.F
+*label D2
+you have a rather uneventful pregnancy, or so the doctor seems to think.
+*if (ST<1) and (FM>50)
+  *goto PARSUP.T
+*else
+  *goto PARSUP.F
+*label D3
+*set PH%-10
+*set CA%-20
+*set HP%-20
+you experience stressful cramps, water retention and nausea. It is a very difficult pregnancy.
+*if (ST<1) and (FM>50)
+  *goto PARSUP.T
+*else
+  *goto PARSUP.F
+*label D4
+*set PH%-10
+*set CA%-20
+*set HP%-20
+you experience stressful cramps, water retention and nausea. It is a very difficult pregnancy.
+*if (ST<1) and (FM>50)
+  *goto PARSUP.T
+*else
+  *goto PARSUP.F
+*label D5
+*set HP%-20
+*set CA%-20
+you have a miscarriage. I'm sorry that such an unfortunate thing has happened to you.
+*finish
+
+*label PARSUP.F
+*set FM%-20
+*set CA%-30
+*page_break
+Your family did not take this news well, and relations are strained. Family scores go down. Stress rises, and money falls.
+
+Now that you are well along the way, please choose the method of childbirth you think is best.
+
+
+
+Select an action:
+
+*choice
+  #NATURAL CHILDBIRTH (SPECIAL CLASSROOM TRAINING REQUIRED)
+    *goto METHOD1
+  #ANESTHESIA
+    *goto METHOD2
+  #HYPNOSIS
+    *goto METHOD3
+*label PARSUP.T
+*set FM%+20
+*set CA%-10
+*page_break
+Thankfully, you have the support of your family in this time of stress. Family scores go up. Stress rises slightly.
+Now that you are well along the way, please choose the method of childbirth you think is best.
+
+
+
+Select an action:
+
+*choice
+  #NATURAL CHILDBIRTH (SPECIAL CLASSROOM TRAINING REQUIRED)
+    *goto METHOD1
+  #ANESTHESIA
+    *goto METHOD2
+  #HYPNOSIS
+    *goto METHOD3
+*label METHOD1
+*if GF>0
+  *goto NATURALGF.T
+*else
+  *goto NATURALGF.F
+*label NATURALGF.F
+*if MD>0
+  *goto MOTHERDEAD.T
+*else
+  *goto MOTHERDEAD.F
+*label MOTHERDEAD.F
+The next two months fly quickly by as preparations for the new arrival are made. You and Coach Mom sit in on the required classes and you learn a great deal about childbirth as a phenomenon and as an experience. This also brings the two of you together in a closer bond than you thought possible.
+*page_break
+One evening you are disturbed by a series of sharp pains, followed by contractions at regular intervals. It's time to go to the hospital!
+*page_break
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label MOTHERDEAD.T
+*if FD>0
+  *goto FATHERDEAD.T
+*else
+  *goto FATHERDEAD.F
+*label FATHERDEAD.F
+The next two months fly quickly by as preparations for the new arrival are made. You and Coach Dad sit in on the required classes and you learn a great deal about childbirth as a phenomenon and as an experience. This also brings the two of you together in a closer bond than you thought possible.
+*page_break
+One evening you are disturbed by a series of sharp pains, followed by contractions at regular intervals. It's time to go to the hospital!
+*page_break
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label FATHERDEAD.T
+The next two months fly quickly by as preparations for the new arrival are made. You sit in on the required classes and you learn a great deal about childbirth as a phenomenon and as an experience.
+*page_break
+You envy the support network most of the other women seem to have. Without either of your parents or the father around, you seem to be having the hardest time of all.  Some of the mothers-to-be notice, and lend you their support.
+*page_break
+One evening you are disturbed by a series of sharp pains, followed by contractions at regular intervals. It's time to go to the hospital!
+*page_break
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label NATURALGF.T
+The next two months go slowly by as preparations for the new arrival are made. You and ${loverName} sit
+in on the required classes and learn a great deal about childbirth as a phenomenon and as an experience.
+You also learn a great deal about each other, and grow closer because of it.
+*page_break
+One evening you are disturbed by a series of sharp pains, followed by contractions at regular intervals. It's time to go to the hospital!
+*page_break
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label METHOD2
+Some people are a bit timid about more natural forms of childbirth. This procedure is slightly more risky.
+*page_break
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label METHOD3
+This choice is an interesting alternative to the other two. Not all people can be hypnotized (about 20 percent of us are resistant to hypnosis), so there is no guarantee that it will be effective.
+
+Fortunately, you become hypnotized quite easily.
+*page_break
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+
+*label G1
+*set HP%+50
+The delivery is a difficult one, and a Cesarean section has to be performed. There are some tense moments. You are groggy from the anesthesia.
+*page_break
+*if GF>0
+  *goto BADDELGF.T
+*else
+  *goto BADDELGF.F
+*label BADDELGF.F
+*if FD>0
+  *goto BADDELFD.T
+*else
+  *goto BADDELFD.F
+*label BADDELFD.F
+Your father paces outside nervously, but soon
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label BADDELFD.T
+*if MD>0
+  *goto BADDELMD.T
+*else
+  *goto BADDELMD.F
+*label BADDELMD.F
+Your mother paces outside nervously, but soon
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label BADDELMD.T
+Soon,
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label BADDELGF.T
+Your boyfriend paces outside nervously, but soon
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label G2
+*set HP%+60
+*if GF>0
+  *goto GOODDELGF.T
+*else
+  *goto GOODDELGF.F
+*label GOODDELGF.F
+*if MD>0
+  *goto GOODDELMD.T
+*else
+  *goto GOODDELMD.F
+*label GOODDELGF.T
+The birth has quite a few complications. Due to the amount of stress and the fact that it is a month early, you begin to bleed a bit more than the doctor would like. He does seem to have it under control, although your boyfriend does not look as calm. The event itself is inspiring. Even though you are so young, and regret the decisions made you do not regret this. There is a small amount of discomfort, but your boyfriend and the doctors make a fine cheerleading squad. As you prepare to see your child emerge, you fantasize about the events to come for your baby -- teething, talking, school plays, dancing lessons, softball games, college, grandchildren. It is overwhelming.
+*page_break
+Suddenly,
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label GOODDELMD.F
+The birth goes along smoothly with few complications. The event itself is inspiring. Even though you are so young, and though you may regret some of the decisions that brought you here, you do not regret this. There is a small amount of discomfort, but your mom and the doctors make a fine cheerleading squad. As you prepare to see your child emerge, you fantasize about the events to come for your baby -- teething, talking, school plays, dancing lessons, softball games, college, grandchildren. It is overwhelming. You're happy, but also afraid.
+*page_break
+Suddenly,
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label GOODDELMD.T
+*if FD>0
+  *goto GOODDELFD.T
+*else
+  *goto GOODDELFD.F
+*label GOODDELFD.F
+The birth goes along smoothly with few complications. The event itself is inspiring. Even though you are so young, and though you may regret some of the decisions that brought you here, you do not regret this. There is a small amount of discomfort, but your dad and the doctors make a fine cheerleading squad. As you prepare to see your child emerge, you fantasize about the events to come for your baby -- teething, talking, school plays, dancing lessons, softball games, college, grandchildren. It is overwhelming. You're happy, but also afraid.
+*page_break
+Suddenly,
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label GOODDELFD.T
+The birth goes along smoothly with few complications. The event itself is inspiring. Even though you are so young, and though you may regret some of the decisions that brought you here, you do not regret this. There is a small amount of discomfort, but the doctors make a fine cheerleading squad. As you prepare to see your child emerge, you fantasize about the events to come -- teething, talking, school plays, dancing lessons, softball games, college, grandchildren. It is overwhelming. You're happy, but also afraid.
+*page_break
+Suddenly,
+a shrill cry cuts through the silence of the delivery room. "WAAAAAAAAAAA! AAACK! AAAACK!" OMIGOSH... A B-B-B-A-B-Y! You eagerly await reports of the first, quick inventory... ten fingers... ten toes... two eyes... a crinkly nose... oh, yes, one more thing -- that part in the middle. Let's have a look...
+*page_break
+CONGRATULATIONS, YOU ARE NOW THE PROUD MOTHER OF A BOUNCING BABY
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label H1
+*set BB 1
+BOY!
+*if WILLADOPT>0
+  *goto WILLADOPT.T
+*else
+  *goto WILLADOPT.F
+*label H2
+*set BB 2
+GIRL!
+*if WILLADOPT>0
+  *goto WILLADOPT.T
+*else
+  *goto WILLADOPT.F
+*label WILLADOPT.F
+*comment @CBY
+*setref ("childborn"&CL) AG
+*setref ("childgender"&CL) BB
+*set CL +1
+*page_break
+Over the course of the next two days you try to recuperate from the experience.
+*temp randomK
+*rand randomK 1 3
+*if randomK=1
+  *goto K1
+*elseif randomK=2
+  *goto K2
+*else
+  *goto K3
+*label K1
+*set CA%-20
+Unfortunately, there are some complications. The baby needs to be observed and monitored for the next few days at the hospital, just as a precaution. Although it is a stressful period for you, the result is that the baby is healthy.
+*finish
+*label K2
+The next few days pass without a problem. The baby is healthy and alert. Good luck!
+*finish
+*label K3
+*set HP%-20
+The next few days pass without a problem for the baby. For some strange reason, however, you go into a severe post-partum depression. Eventually, you get over it.
+*finish
+*label WILLADOPT.T
+*page_break
+Of course, now it's time for you to sign the adoption papers.  Are you still willing to go through with it?
+
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto REALLYADOPT1
+  #NO
+    *goto REALLYADOPT2
+*label REALLYADOPT1
+*set HP%-20
+*set WILLADOPT 0
+You sign the papers in tears, hoping your child finds a happy home.  The adoption agency explains to you that it will be impossible for you to try to contact your child again in the future.  Still, you'll always wonder.
+*page_break
+Over the course of the next two days you try to recuperate from the experience.
+*temp randomX
+*rand randomX 1 2
+*if randomX=1
+  *goto X1
+*else
+  *goto X2
+*label X1
+The next few days pass without a problem.  Life goes on.
+*finish
+*label X2
+*set HP%-20
+You go into a severe post-partum depression.  Eventually, you get over it.
+*finish
+*label REALLYADOPT2
+You throw the papers away.  You're a mother now.  Good luck!
+
+*comment @CBY
+*setref ("childborn"&CL) AG
+*setref ("childgender"&CL) BB
+*set CL +1
+*page_break
+Over the course of the next two days you try to recuperate from the experience.
+*temp randomK
+*rand randomK 1 3
+*if randomK=1
+  *goto K1
+*elseif randomK=2
+  *goto K2
+*else
+  *goto K3
+
+

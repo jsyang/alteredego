@@ -1,0 +1,22 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+You have just spent your last dime of available cash on a new record album. On the way out of the store, a beautiful girl asks if you would like to take her to a movie later.
+*page_break
+*if SC>75
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+*set SC%+40
+Because you have excellent social skills, you convince her to come over to your house to listen to your new album instead. You are irresistable, so naturally she accepts.
+*finish
+*label A.F
+*set SC%-10
+You would like to try and persuade her to come over to your house and listen to your new album, but you don't have the social skills to do it.
+*finish
+

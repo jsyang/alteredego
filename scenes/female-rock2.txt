@@ -1,0 +1,70 @@
+You ask Mom if you can go to a party at the house of a friend whose parents are away for the weekend. She says "No." (Of course not, she never lets you do anything that is the least bit fun.)
+*choice mood action
+  #OBEDIENT
+    *selectable_if (false) #GO ANYWAY
+      *finish
+    #STAY HOME
+      *goto A12
+    *selectable_if (false) #ASK DAD
+      *finish
+  #DEFIANT
+    #GO ANYWAY
+      *goto A21
+    *selectable_if (false) #STAY HOME
+      *finish
+    *selectable_if (false) #ASK DAD
+      *finish
+  #CRAFTY
+    *selectable_if (false) #GO ANYWAY
+      *finish
+    *selectable_if (false) #STAY HOME
+      *finish
+    #ASK DAD
+      *goto A33
+*label A21
+*set FM%-20
+*set TR%-20
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+You have a loud argument and then sneak out of the house to go anyway. After you get there, you have a really great time. All of the most popular kids from school are there.
+*page_break
+Suddenly, you hear a large window crash behind you. Some of the boys were getting rough, and one of them was pushed through the window. He is injured badly and has to be taken to the hospital. A neighbor sees that you are there and calls
+your parents. You are grounded for a month.
+*finish
+*label B2
+*set HP%-40
+You sneak out of the house and go anyway.
+*label C2
+You can't figure what your mom gets so worried about. When you arrive, all of the best people are there. Before long, some of the boys begin to get a little rowdy.
+*page_break
+A neighbor, who is also a policeman, looks in on the house and before long, the whole neighborhood (including your folks) knows what is going on. You are grounded for a month.
+*finish
+*label A33
+Dad, half-listening says, "Sure, Sweetheart. Have fun."
+
+
+Select an action:
+
+*choice
+  #HAVE SECOND THOUGHTS
+    *goto C1
+  #GO
+    *goto C2
+*label C1
+*set FM%+20
+*set TH%+20
+*set TR%+30
+I guess you felt a bit guilty about that kind of deception. Besides, it could have caused an argument between your mom and dad. You acted responsibly.
+*finish
+*label A12
+*set TR%+30
+*set HP%-20
+Sometimes it is very difficult to obey the wishes of those responsible for bringing you up. You occupy yourself with something else that day, and later find out that the party was crashed by some older rowdy boys and several people got
+hurt.
+*finish
+

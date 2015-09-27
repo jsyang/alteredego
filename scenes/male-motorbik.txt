@@ -1,0 +1,142 @@
+The thought occurs to you that it might be economical, practical and convenient to putter around town on a small motorcycle.
+*choice mood action
+  #INTERESTED
+    #GET A MOTORCYCLE
+      *goto A11
+    *selectable_if (false) #DO NOT GET A MOTORCYCLE
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #GET A MOTORCYCLE
+      *finish
+    #DO NOT GET A MOTORCYCLE
+      *goto A22
+*label A11
+*label K1
+*set CN%+20
+Everyone thinks you are a bit off your rocker, but you think it's really great. On the way to the market one day, you notice that there is a flat stretch of open road just waiting for you to tear up. Will you:
+
+
+Select an action:
+
+*choice
+  #TWIST THE THROTTLE TO THE MAX
+    *goto B1
+  #BE SAFE
+    *goto B2
+*label B1
+*set TH%-20
+VROOOOOOM! The speedometer hits 40, 50, 60...
+
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+A siren's loud wail interrupts your moment of glory. You get pulled over. "Excuse me, Sir, you were doing 70 in a 55 mile zone," the young policeman says. You can:
+
+
+Select an action:
+
+*choice
+  #TRY TO TALK YOUR WAY OUT OF IT
+    *goto D1
+  #TAKE A TICKET AND BE MORE CAREFUL
+    *goto D2
+*label D1
+*if SC<60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+I'm sorry. You don't have the social skills required for this. You get a ticket anyway.
+*finish
+*label E.F
+You still have it, you sly fox! The police officer gets a kick out of you. You tell him about some of your wilder days as a youth. As you pull away from the police officer, you can:
+*label WHEEL
+
+
+Select an action:
+
+*choice
+  #DO A WHEELIE
+    *goto F1
+  #DRIVE AWAY CAREFULLY
+    *goto F2
+*label F1
+*set TH%-10
+"YEEEEEEEEEHAAAAAH!"
+*finish
+*label F2
+No sense pushing your luck.
+*finish
+*label D2
+The police officer gives you a lecture on motorcycle safety which you resent, but doesn't give you a ticket. As you pull away you can:
+*goto WHEEL
+*label C2
+All of a sudden a big, old log looms directly in your path. What will you do?
+
+
+Select an action:
+
+*choice
+  #TRY TO JUMP THE LOG
+    *goto H1
+  #TRY TO STOP
+    *goto H2
+*label H1
+You yank up on the handlebars of the motorcycle and give it full acceleration. The front wheel lightly touches the log and you begin your ascent skyward. The motorcycle lands back on the road with a loud THUMP! YOU MADE IT!
+*finish
+*label H2
+*set PH%-10
+You haven't got a chance. You were driving too fast. You hit the log and go flying over the handlebars. You land on the hard road with a CRACK! Miraculously, nothing is broken or damaged, but you are sore for weeks. You were very lucky.
+*finish
+*label B2
+*set TH%+20
+You putter along rather smartly on your shiny motorcycle, waving to everyone in town. It IS a convenient way to get around. Some of your friends tell you to act your age. You can:
+
+
+Select an action:
+
+*choice
+  #TELL THEM THAT AGE IS SIMPLY A STATE OF MIND
+    *goto I1
+  #GIVE THEM THE FINGER
+    *goto I2
+*label I1
+Yes, in some ways, it certainly is. I'm glad you won't let them get to you. Ride on, Easy Rider!
+*finish
+*label I2
+*set GN%-20
+Very mature. You are quite a character!
+*finish
+*label A22
+Are you not interested because you are afraid it is dangerous and you might get hurt?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+If you are careful you won't get hurt. Would you like to try one?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto K1
+  #NO
+    *goto K2
+*label K2
+Suit yourself.
+
+*label J2
+Well, you must have your reasons then.
+*finish
+

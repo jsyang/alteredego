@@ -1,0 +1,132 @@
+You know that ${loverName} enjoys the outdoors and would like to spend some time camping.
+
+
+Select an action:
+
+*choice
+  #OFFER TO TAKE HER CAMPING FOR A DAY
+    *goto A1
+  #OFFER TO TAKE HER CAMPING ON AN OVERNIGHT TRIP
+    *goto A2
+  #DON'T OFFER TO TAKE HER CAMPING
+    *goto A3
+*label A3
+It doesn't look like the two of you have interests that are well suited to one another. This relationship probably will not succeed.
+*finish
+*label A1
+*set SC%+10
+The weather is splendid, the air crisp and fresh. There is a lake that looks just perfect for rowing. ${loverName} suggests that you take a rowboat out.
+*label ROW
+
+
+Select an action:
+
+*choice
+  #TAKE OUT THE ROWBOAT
+    *goto B1
+  #DECLINE FOR HEALTH REASONS
+    *goto B2
+*label B1
+*if PH<60
+  *goto C.T
+*else
+  *goto C.F
+*label C.F
+You are in excellent physical shape, so your rowing is strong. Eventually, your arms begin to tire.
+
+
+Select an action:
+
+*choice
+  #KEEP ROWING
+    *goto F1
+  #STOP ROWING AND REST
+    *goto F2
+  #ASK ${LOVERNAME} TO DO SOME OF THE ROWING
+    *goto F3
+*label C.T
+Rowing is physically demanding work, so you'll have to take it very easy. While you are rowing, you feel a sharp pain in your chest.
+
+
+Select an action:
+
+*choice
+  #KEEP ROWING
+    *goto D1
+  #STOP ROWING AND REST
+    *goto D2
+  #ASK ${LOVERNAME} TO DO SOME OF THE ROWING
+    *goto D3
+  #TRY TO GET ASSISTANCE
+    *goto D4
+*label D1
+*label F1
+*set PH%-20
+*set IN%-20
+All of this rowing is putting a tremendous strain on your heart and lungs. You experience a mild heart attack, which puts ${loverName} in a panic. Fortunately, a passing boater rescues you both and brings you to a hospital where you must
+recuperate for several weeks.
+*page_break
+You have got to learn to SLOW DOWN. A positive aspect of this experience is that while you are in the hospital ${loverName} visits you daily. You enjoy the food and also the attention that she brings you.
+*finish
+*label D2
+*label F2
+*set IN%+30
+${loverName} asks you if there is anything wrong.
+
+
+Select an action:
+
+*choice
+  #SAY YOU ARE JUST TAKING IN THE SCENERY
+    *goto E1
+  #SAY THAT YOU NEED A REST FROM ROWING
+    *goto E2
+*label E1
+*set SC%+10
+A clever way to try to hide the fact that you are tired from rowing. ${loverName} senses your exhaustion and is concerned, but plays along so as not to damage your pride.
+*finish
+*label E2
+*set TR%+40
+That is very honest of you. For a few minutes you and ${loverName} float along in the warm sun and take in the scenery. There is no need to prove that you are a macho man with her. The day is very enjoyable. One of the most enjoyable aspects is
+the fact that you don't overexert yourself.
+*finish
+*label D3
+*label F3
+That's one good thing about equal rights, eh? ${loverName} gets a kick out of your request and pitches in to lend a helping hand. At the end of the day, you sooth each other's hands with cream to take care of some of the blisters you've both
+developed.
+*finish
+*label D4
+The pain in your chest makes you nervous. You flag down a passing motorboat and ask them for a tow back to shore. You were wise not to push your luck.
+*finish
+*label B2
+*if PH>60
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+*set TH%-20
+You are healthy enough to row a boat. Your Physical sphere is a good distance past the half-way mark on the positive side. Perhaps you are being a bit of a hypochondriac!
+*finish
+*label G.F
+That is very wise. You haven't got the stamina for a day of rowing in the hot sun.
+*finish
+*label A2
+*set TR%-10
+"Not so fast, you sly tomcat!" Are you agreeable to separate tents?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H1
+*set SC%+30
+On your first day there, weather is splendid, the air crisp and fresh. There is a lake that looks just perfect for rowing. ${loverName} suggests that you take a rowboat out.
+*goto ROW
+*label H2
+That just proves where your intentions are! SLAP!
+*finish
+

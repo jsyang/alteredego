@@ -1,0 +1,29 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+You are starving, and the cafeteria line seems to be moving very slowly. Today's menu includes: meatballs (breadballs), pizza (cardboard), and chicken (mystery of the unknown meat) pies. About the only things edible seem to be the French
+fries and the white powdered donuts.
+*page_break
+You take a portion of fries, but by the time you get to the cash register, you have already finished them. You can:
+
+
+Select an action:
+
+*choice
+  #KEEP WALKING THROUGH AND SAY THAT YOU HAVE DECIDED TO SKIP LUNCH
+    *goto A1
+  #PAY FOR THE FRIES
+    *goto A2
+*label A1
+*set TR%-10
+Hah! Do you think Maxine, the cafeteria lady, was born yesterday? She can smell "French-fry breath" from two hundred yards. She makes you pay.
+*finish
+*label A2
+*set TR%+30
+It's a good thing you didn't try to sneak through. Maxine, the cafeteria lady, can smell "French-fry breath" from two hundred yards away.
+*finish
+

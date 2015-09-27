@@ -1,0 +1,78 @@
+An ad in the paper says, "Wanted young adults 15-20 for acting/modeling jobs. Ask for Rod."
+*choice mood action
+  #INTERESTED
+    #APPLY FOR THE JOB
+      *goto A11
+    *selectable_if (false) #DO NOT APPLY FOR THE JOB
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #APPLY FOR THE JOB
+      *finish
+    #DO NOT APPLY FOR THE JOB
+      *goto A22
+*label A11
+*set VC%+10
+Rod seems very interested in you and gives you an appointment for an "interview." When you arrive at the place where the interview is to be held, you notice that it is a bare apartment with almost no furniture (just a
+mattress and an old desk with a phone on it).
+
+
+Select an action:
+
+*choice
+  #LEAVE
+    *goto B1
+  #STAY
+    *goto B2
+*label B1
+*set TH%+30
+*set IN%+40
+This place could only have meant bad news.
+*finish
+*label B2
+Rod is a large, muscular man, whose face looks as though it was once severely blemished. He describes himself as a "producer" of adult films. It's not long before you discover that Rod is looking for people to act in pornographic
+movies. He says, "Just think--all the sex you could ever dream of, Kid."
+
+
+Select an action:
+
+*choice
+  #GO
+    *goto C1
+  #STAY
+    *goto C2
+*label C1
+*set IN%+40
+There have got to be better ways to make a living.
+*finish
+*label C2
+*set PH%-10
+*set CA%-50
+*set TH%-30
+*set IN%-20
+You might have thought this would be fun, but it isn't. When you don't perform as expected Rod kicks you and punches you. If you try to leave, he threatens you with violence. He also tells you that you don't deserve to be paid for
+what you are doing. You're lucky he's going to let you live to tell about it. At the end of the day, you go home.
+
+
+Select an action:
+
+*choice
+  #TELL YOUR MOM OR DAD WHAT HAPPENED
+    *goto D1
+  #GO TO THE POLICE
+    *goto D2
+  #DO NOTHING
+    *goto D3
+*label D1
+They are horrified and together you go to the police with the story.
+
+*label D2
+The police ask you where Rod had his operation set up. You return there and the apartment is completely empty. The landlord has no idea where he went.
+*finish
+*label D3
+You have been taken advantage of, but you should have thought more about what you were doing. You could have been killed.
+*finish
+*label A22
+*set TH%+30
+It's a good thing you passed by this opportunity. Rod runs an underground, illegal pornographic movie business. Getting tied up with him could mean big trouble.
+*finish
+

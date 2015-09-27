@@ -1,0 +1,29 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 16
+  Sorry, you're too old for this experience.
+  *finish
+You are entered in the school spelling bee.
+
+*if IN>80
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+*set IN%+10
+Because you have already shown remarkable intellectual potential, you win easily. Intellectual sphere gains even more. (By the way, the winning word was "synecdoche".)
+*finish
+*label A.F
+*if IN>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Because you have already shown some intellectual promise, you take third place. (The word you missed was "synecdoche.")
+*finish
+*label B.F
+Your Intellectual sphere is not yet developed enough for you to make a good showing in this event. Better luck next time.
+*finish
+

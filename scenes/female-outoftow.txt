@@ -1,0 +1,242 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this icon, you need a steady job. You may go to the WORK ICON and apply for one, then return.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+In order to get part of your work finished, John Jakobs, a close work associate, mentions that you have to take a trip out of town together. He is good-looking, married, and shows every indication of being a faithful and loving father
+and husband. You must decide whether or not it is best for you to go. Staying home might mean suffering a decline in your Vocational sphere.
+*choice mood action
+  #UNEASY
+    #DECLINE THE TRIP
+      *goto A11
+    #GO ON THE TRIP
+      *goto A12
+  #EXCITED
+    *selectable_if (false) #DECLINE THE TRIP
+      *finish
+    #GO ON THE TRIP
+      *goto A22
+*label A11
+He asks why you don't want to go with him. How do you respond?
+
+
+Select an action:
+
+*choice
+  #TELL HIM THAT YOU THINK THAT PEOPLE WOULD GET THE WRONG IDEA
+    *goto B1
+  #TELL HIM THAT YOU AREN'T IN THE MOOD TO TRAVEL RIGHT NOW
+    *goto B2
+*label B1
+*set TR%+10
+*set TH%+10
+*set VC%-10
+"I don't quite understand," he says. "How can people get the wrong idea about two people going away on some business?"
+
+
+Select an action:
+
+*choice
+  #TELL HIM THAT YOU JUST DON'T THINK IT IS RIGHT
+    *goto C1
+  #TELL HIM THAT THE REAL ISSUE IS NOT KNOWING HOW YOUR PRESENT PARTNER WILL HANDLE IT
+    *goto C2
+  #CHANGE YOUR MIND AND GO
+    *goto C3
+*label C2
+*if GF>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.F
+*if MS>0
+  *goto F.T
+*else
+  *goto F.F
+*label F.F
+*set TR%-10
+*set TH%-20
+Since you really have no steady relationship, I guess you think this is a good coverup for whatever your real reason is for not wanting to go.
+*page_break
+*label C1
+*set EX%-10
+*set VC%-10
+"Suit yourself," he says. Outwardly, he seems confused about your lack of motivation to go, but he also feels angry. It seems to him that you don't trust him. He resents this. After all, he has never given you reason to think he CAN'T
+be trusted.
+*finish
+*label D.T
+*label F.T
+He suggests that you talk it over with your partner first before you make a quick decision. Would you consider doing this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G1
+How do you think you will approach telling him about the situation?
+
+
+Select an action:
+
+*choice
+  #AS CAREFULLY AS POSSIBLE
+    *goto H1
+  #IN A MATTER-OF-FACT WAY / NEUTRALLY
+    *goto H2
+  #BLUNTLY
+    *goto H3
+*label H1
+*set CA%-20
+Your caution about relaying the news immediately makes him suspicious.
+*label JEL
+He becomes very jealous. The questions begin to flow fast and furious: "Who is this guy?" "What does he look like?" "Is he married?" Now that you know his reaction to the situation, how will you handle it?
+*label DILEMMA
+
+
+Select an action:
+
+*choice
+  #DECIDE NOT TO GO
+    *goto I1
+  #GO ANYWAY
+    *goto I2
+*label I1
+*set EX%-10
+*set CA%-10
+*set CN%-10
+You have allowed yourself to get pushed around by your partner's jealousy.
+*finish
+*label I2
+*set CN%+30
+*set SC%+10
+*set EX%+30
+*set VC%+40
+You have not allowed yourself to get pushed around by your partner's jealousy. You go on the trip, which increases your Vocational sphere. When you return, you wonder how things will be with your partner. Oddly, upon your arrival back
+in town, you are given treatment fit for a Queen! I guess your partner realized how important you are, after all.
+*finish
+*label H2
+*if CA>40
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+*set VC%+40
+*set CA%+20
+You calmly deliver the news that there is an important out-of-town business meeting that you have to attend with a man you work with. Your calmness and poise keep your partner relaxed and unthreatened.
+*page_break
+Even though he lets a couple of insecurities slip out in the form of teasing ("Make sure you don't run off with anyone."), he feels as comfortable as possible with the idea. Your trip turns out very successfully.
+*finish
+*label J.F
+You do not possess the kind of calmness and poise needed for delivering this potentially threatening message to your partner.
+*goto JEL
+*label H3
+*set EX%-10
+Your blunt approach sounds more like a challenge than a discussion. Your partner's jealous side immediately springs to the surface.
+*goto DILEMMA
+*label G2
+*set CN%-30
+I guess you are positive that it will cause a problem for you and your partner. If you are feeling that there are some things that you cannot even BRING UP to your partner, it may mean your relationship is strained or faltering.
+*finish
+*label C3
+*set CN%+10
+After giving it some thought, you change your mind.
+*page_break
+*label A12
+*set CA%-10
+*set VC%+20
+Since you didn't feel entirely comfortable with the idea in the first place, you are guarded and defensive during the trip. In all, the experience is a moderate success. You gain Vocationally.
+*finish
+*label A22
+*set CN%+30
+*set VC%+30
+You decide that this might be a terrific opportunity to gain in the Vocational area of life.
+*page_break
+*temp randomK
+*rand randomK 1 2
+*if randomK=1
+  *goto K1
+*else
+  *goto K2
+*label K1
+*set SC%+30
+*set VC%+30
+*set CN%+20
+You are right on target. Your excitement about taking the trip carries over into your work. You impress a great many people. Your Vocational and Social spheres take a healthy rise! Congratulations!
+*finish
+*label K2
+*set SC%+30
+*set VC%+30
+You are correct. Your excitement about taking the trip carries over into your work. You impress a great many people. Social and Vocational spheres show great improvements. The person you are traveling with would like to take you to
+dinner as a way of celebrating your success.
+
+
+Select an action:
+
+*choice
+  #DECLINE THE INVITATION
+    *goto L1
+  #GO WITH HIM
+    *goto L2
+*label L1
+*set TH%+30
+*set IN%+20
+I guess you feel very strongly about not mixing business with pleasure.
+*finish
+*label L2
+The dinner passes uneventfully. The two of you exchange small talk about your work and social lives. He mentions that he misses his children on trips like this.
+*temp randomM
+*rand randomM 1 2
+*if randomM=1
+  *goto M1
+*else
+  *goto M2
+*label M1
+While the two of you sit sipping coffee after dinner, your associate looks
+off into the distance and chuckles to himself.
+*page_break
+You ask him why he is laughing. Shaking himself out of his private conversation, he looks at you and wonders why he can't have this kind of relaxed evening with his wife. He confesses that he would
+love to spend "the rest of the evening in your company."
+
+
+Select an action:
+
+*choice
+  #FOLLOW THIS EPISODE TO ITS INEVITABLE CONCLUSION
+    *goto N1
+  #EXCUSE YOURSELF FOR THE EVENING
+    *goto N2
+*label N1
+*set HP%+10
+*set TH%-20
+*set VC%-10
+*set SC%-10
+The two of you spend the evening in each other's arms, lost in a world that is doomed to fade in the morning's sunlight. When you return, you must deal with the consequences of your brief affair.
+*page_break
+John seems uneasy around you, always wondering if you will try to continue the relationship and obviously feeling very guilty about the encounter. Your work relationship with him suffers, but you will probably continue to move upward
+Vocationally.
+*finish
+*label N2
+*set IN%+30
+"He didn't seem like the type," you think to yourself. You wonder if it is ever possible to have a "friendly" relationship with someone you work with.
+*finish
+*label M2
+*set VC%+10
+*set SC%+20
+*set IN%+10
+He congratulates you on your success, and the two of you bid each other an early good night.
+*finish
+*label B2
+*set VC%-20
+*set SC%-20
+He sees this as an evasive answer but respects your wishes not to go. Vocationally, you decline.
+*finish
+

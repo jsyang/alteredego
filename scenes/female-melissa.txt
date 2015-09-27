@@ -1,0 +1,142 @@
+Billy Harper is the cutest guy in your class. You have been giving each other "the eye" for about two weeks now. You are all set to "talk to him" when your best friend (who happens to have nicer clothes and is prettier than you)
+confesses that she cannot sleep at night because of him.
+*page_break
+She asks your advice about the best way to meet him, unaware that you, too, are smitten by him.
+*choice mood action
+  #JEALOUS
+    #GIVE ADVICE
+      *goto A11
+    #ADMIT THAT YOU LIKE HIM, TOO
+      *goto A12
+  #FRANK ABOUT YOUR FEELINGS
+    #GIVE ADVICE
+      *goto A21
+    #ADMIT THAT YOU LIKE HIM, TOO
+      *goto A22
+  #SYMPATHETIC
+    #GIVE ADVICE
+      *goto A31
+    #ADMIT THAT YOU LIKE HIM, TOO
+      *goto A32
+*label A11
+*set TR%-20
+You have chosen to do something devious. You have two choices:
+
+
+Select an action:
+
+*choice
+  #SAY SOMETHING TO MAKE HIM LOOK BAD
+    *goto B1
+  #SAY SOMETHING TO MAKE YOUR FRIEND LOOK BAD
+    *goto B2
+*label B1
+*set TR%-10
+*set SC%-10
+You take your best friend into your confidence and casually mention that Billy's father is a convicted mass murderer--no big deal though; you can get to know the family by visiting him on Saturdays. Needless to say, your friend's
+interest is somewhat dampened.
+*page_break
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+*set SC%-10
+It's not long before your story is discovered as a lie. Billy's father is a telephone repairman who fixed your friend's mother's phone just yesterday! As a result, you lose your best friend and your chance to meet Billy.
+*finish
+*label C2
+*set TH%-10
+Things turn out well for you. You and Billy become a hot item around school. You sacrifice your best friend in the process. How do you feel about it?
+
+
+Select a mood:
+
+*choice
+  #GOOD
+    *goto D1
+  #BAD
+    *goto D2
+*label D1
+*set SC%-10
+I guess you are the type who feels that friends are disposable. Actually, Billy feels the same way. Two weeks after you begin dating him, he starts seeing a cheerleader who has already begun to wear a bra.
+*finish
+*label D2
+*set CA%-10
+Your new love is soured by the guilt caused by the loss of your best friend.
+
+
+Select an action:
+
+*choice
+  #CONFESS AND ASK HER FORGIVENESS
+    *goto E1
+  #TRY NOT TO THINK ABOUT IT
+    *goto E2
+*label E1
+Your friend is more understanding than you would have been. Besides, someone has spread a rumor that Billy has "cheese breath" and is a lousy kisser.
+*finish
+*label E2
+You simply cannot put things like this out of your mind. The most you can do is learn to live with the fact that you are a heel.
+*finish
+*label B2
+*set SC%-10
+*set TR%-10
+You give your friend good advice, then you take Billy aside for a heart-to-heart talk. You tell Billy that you care about your friend a great deal and don't want to see her get hurt. It's just that she has this habit that she can't
+control.
+*page_break
+Whenever she is around boys she has these violent temper fits. ("These fits run in the family," you mention.) If you're not careful you could lose an eye, or worse. You ask Billy to please be patient about this, because she really is a
+great person. He wants no part of it. Your dirty work is accomplished.
+*finish
+*label A12
+*label A22
+*set EX%+50
+Bringing your feelings out into the open prevents you from acting on them in a destructive way.
+*label AGREE
+
+
+Select an action:
+
+*choice
+  #AGREE THAT YOU CAN BOTH TRY TO MEET HIM
+    *goto F1
+  #AGREE NOT TO INTERFERE WITH YOUR FRIEND'S BID FOR HIS ATTENTION
+    *goto F2
+*label F1
+*set SC%+20
+*set CN%+10
+*set TR%+30
+This doesn't sit comfortably with either you or your friend. You both decide that your friendship is more important than a date with Billy.
+*finish
+*label F2
+*set TR%+50
+That was kind of you. Your friend goes out with Billy, for a week and then reports that he has "cheese breath." He becomes a lot less attractive to you both after this.
+*finish
+*label A21
+If you are going to be honest about your feelings, you really can't give good advice. These choices reflect confusion and ambivalence.
+*finish
+*label A31
+*set SC%+20
+Your ability to put your feelings aside is remarkable. Your friendship bond becomes stronger, but seriously, do you really think you can tolerate this without holding a grudge?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G1
+I don't believe that. I understand how you can be sympathetic, but you HAVE to feel a little resentful. You don't have to ACT on the resentment, but you can still FEEL bad.
+*finish
+*label G2
+That's perfectly understandable. You are bound to feel a little resentment. You are smart enough to understand that, just because you make a sacrifice for someone, it doesn't mean you shouldn't feel the loss of what you have sacrificed.
+People who don't acknowledge this can become martyrs and annoying to be around.
+*finish
+*label A32
+*set TR%+10
+Your sympathy is much appreciated, but it also presents a dilemma for you and your friend.
+*goto AGREE
+

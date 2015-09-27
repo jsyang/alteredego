@@ -1,0 +1,83 @@
+A friend of yours since grammar school has gotten mixed up in a series of bad deals, poor judgments and impulsive "hair-brained" schemes. He calls you up on the phone sounding very desperate and asks you for a $1000 loan.
+*choice mood action
+  #PITY
+    #GIVE HIM THE LOAN
+      *goto A11
+    #ASK WHAT HE WANTS THE LOAN FOR
+      *goto A12
+    #REFUSE TO GIVE HIM THE MONEY
+      *goto A13
+  #ANGER
+    #GIVE HIM THE LOAN
+      *goto A21
+    #ASK WHAT HE WANTS THE LOAN FOR
+      *goto A22
+    #REFUSE TO GIVE HIM THE MONEY
+      *goto A23
+*label A11
+*if MN>499
+  *goto B.T
+*else
+  *goto B.F
+*label B.F
+You don't have enough money to lend him!
+*finish
+*label B.T
+*set MN-1000
+*if MN < 5
+  *set MN 5
+*set IN%-10
+*set TH%-10
+Part of the reason why this person has been able to get into so much trouble is because people like you have felt sorry for him and have given him the resources to do himself harm. He promptly loses your $1000 dollars in a scheme to raise
+chinchillas at home for fun and profit.
+*finish
+*label A12
+He tells you that he knows of a sure-fire way to make a lot of money. His plan is to raise chinchillas in his basement at home for fun and profit. He has a book on it. Will you lend him the money?
+*label E
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set MN+500
+It sounds like another hair-brained scheme, but for some reason, it sounds like it might work (that is, it must sound like that TO YOU). The outcome is that, miraculously, he DOES make money on it. He gives you back your $1000 PLUS an
+extra $500 for helping him out when he was in need!
+*finish
+*label A13
+*label C2
+*set TH%+20
+*set SC%-5
+Your friend is crushed. Now he has to get a REAL job.
+*finish
+*label A21
+*if MN>999
+  *goto D.T
+*else
+  *goto D.F
+*label D.F
+You don't have enough money to lend him!
+*finish
+*label D.T
+*set MN-1000
+*if MN < 5
+  *set MN 5
+*set TH%-10
+*set IN%-5
+You want to tell him you think he's crazy, but you don't want to turn him down because he is your friend. He loses the $1000 on a scheme to raise chinchillas at home. You never see the money again.
+*finish
+*label A22
+"What is it THIS time?" you wonder in exasperation. He tells you it is a sure-fire way to raise cash by breeding chinchillas at home. Will you lend him the money?
+*goto E
+*label A23
+*set GN%-10
+*set SC%-10
+*set IN%+10
+*set TH%+20
+You really resent his hitting you up for this kind of money. To make matters worse, his scheme is to raise chinchillas at home for fun and profit. When you refuse to give him the loan he is crushed. Now he has to go out and find a REAL job.
+*finish
+

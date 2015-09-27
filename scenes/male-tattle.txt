@@ -1,0 +1,136 @@
+You are in school and the teacher is giving a boring lecture. The boy sitting two seats away is rolling up a piece of paper and putting it in his mouth. Using the barrel of his pen, he spits the paper at the blackboard, where
+it lands with a wet "SPLAT."
+*page_break
+The teacher is furious. She screams, "WHO DID THIS?" Everyone in the class is howling until she promises that if the person who did this will not come forward the whole class will get a punishment. You are probably the only
+person who saw the true culprit.
+*choice mood action
+  #ANGRY
+    #KEEP QUIET
+      *goto A11
+    #RAISE YOUR HAND
+      *goto A12
+  #ANXIOUS
+    #KEEP QUIET
+      *goto A21
+    #RAISE YOUR HAND
+      *goto A22
+  #MIXED FEELINGS
+    #KEEP QUIET
+      *goto A31
+    #RAISE YOUR HAND
+      *goto A32
+*label A11
+*set EX%-10
+*set GN%-20
+Keeping the anger in will do you no good whatsoever. After all, why should you suffer because of the stupidity of someone else? It's too late to do anything about it now.
+*finish
+*label A12
+*set SC%+20
+You raise your hand to tell the teacher who spit the paper at the blackboard. You don't care if some of the other kids call you a "rat" for telling, and you shouldn't. After all, you can probably find a better way to spend the time it
+would take to do that punishment. Many of the other kids in class express their support, although quietly.
+*finish
+*label A21
+*set CA%-10
+Feeling some responsibility? You should be. Everyone in class will suffer if you don't say who did it. It's almost time to go home. Will you say who did it?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+*set SC%+10
+The class appreciates what you have done, but the kid who shot the spitball corners you after school. He puts you up against the fence in the playground and threatens to punch you in the face. You can:
+
+
+Select an action:
+
+*choice
+  #WALK AWAY
+    *goto C1
+  #FIGHT HIM
+    *goto C2
+*label C1
+*set IN%+30
+As you walk away he chases after you, then gets on his bicycle and tries to run you down. In his anger, he carelessly rides into the street and is hit by a car. His leg is broken.
+*finish
+*label C2
+*if PH>75
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+You are much stronger than he is, and easily pin him to the floor. You can:
+
+
+Select an action:
+
+*choice
+  #HIT HIM IN THE FACE
+    *goto D1
+  #WALK AWAY FROM HIM
+    *goto D2
+*label D1
+*set GN%-40
+*set PH%+10
+You give him a bloody nose and get in trouble with the principal for fighting. Your anger was understandable, but stooping to a lower level to settle an argument often has negative consequences.
+*finish
+*label D2
+*goto C1
+*label F.F
+*set SC%+10
+*set PH%+10
+Your status sheet shows you are not physically capable of winning a fist fight of this kind. You are beaten badly, but it gets you the sympathy of the cutest girl in the class.
+*finish
+*label B2
+Your hesitancy is understandable, but it also generates misery for you and your classmates.
+*finish
+*label A22
+The teacher acknowledges you. You can:
+
+
+Select an action:
+
+*choice
+  #SAY "UM,MAY I PLEASE BE EXCUSED?"
+    *goto E1
+  #SAY (POINTING) "HE WAS THE ONE WHO DID IT."
+    *goto E2
+*label E1
+It looks like you've chickened out. Your teacher replies, "This is the third time today. Be quick about it."
+*finish
+*label E2
+*label TELL
+*set CA%-20
+*set SC%+20
+A hush falls over the class. Some of the other children sigh in relief, some snicker. Your anxiety makes you look a little nerdish, but everyone is thankful.
+*finish
+*label A31
+*set CA%-10
+*set EX%+20
+Ambivalence can be a difficult emotion to handle. You probably feel a little anxious, some guilt and a pinch of self-criticism. You can:
+
+
+Select an action:
+
+*choice
+  #FANTASIZE ABOUT TELLING
+    *goto F1
+  #RAISE YOUR HAND AND TELL THE TEACHER
+    *goto F2
+*label F1
+The teacher catches you daydreaming and sends you out of the room.
+*finish
+*label F2
+*goto TELL
+*label A32
+*set CA%+10
+*set SC%+10
+*set EX%+10
+You choose to resolve your ambivalence by taking a risk. This is a healthy response. You feel a little concerned about what others might think of you. You chose to put concern for the welfare of others and a desire to avoid unjust
+punishment above the desire to do something that might be considered more socially acceptable.
+*finish
+

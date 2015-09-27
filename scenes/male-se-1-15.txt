@@ -1,0 +1,30 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 16
+  Sorry, you're too old for this experience.
+  *finish
+An upper classman thinks its a good idea to see if you can fit into the TOP part of a locker. He begins by picking you up and placing your head in the small, square area.
+
+
+Select an action:
+
+*choice
+  #GO LIMP AND MAKE BELIEVE HE KILLED YOU
+    *goto A1
+  #KICK HIM IN THE FACE
+    *goto A2
+*label A1
+*set IN%+30
+It works! He gets nervous and puts you back down on the floor. After he discovers you are not injured, he gives you a "wedgie." In case you have never been on the receiving end of a wedgie, that is when someone grabs you by the elastic
+band in your underwear and lifts you off the floor.
+*page_break
+This firmly roots the underwear in a very uncomfortable position as well as putting a tight squeeze on the family jewels.
+*finish
+*label A2
+*set IN%+20
+*set PH%-5
+It works! He lets go of you and your head bangs off the top of the locker with a loud "GONG!" That was quick thinking. Now go down to the nurse's office and get some aspirin for that headache, Ace.
+*finish
+

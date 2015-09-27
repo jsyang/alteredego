@@ -1,0 +1,53 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+Your teacher has just accused the class bully of breaking a valuable piece of equipment that you SAW the school custodian break. The custodian denies it to the hilt, and the teacher believes him. The class bully is punished and suspended
+from school.
+
+
+Select an action:
+
+*choice
+  #TELL THE TEACHER THAT YOU SAW THE CUSTODIAN BREAK IT
+    *goto A1
+  #SAY NOTHING
+    *goto A2
+*label A2
+*finish
+*label A1
+*temp randomB
+*rand randomB 1 3
+*if randomB=1
+  *goto B1
+*elseif randomB=2
+  *goto B2
+*else
+  *goto B3
+*label B1
+*set GN%-10
+*set TR%-5
+The teacher tells you to mind your own business. "Why would the custodian lie about something like that?" he says.
+*finish
+*label B2
+*if TR>50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*goto B1
+*label C.F
+*set TR%-10
+*set GN%-10
+The teacher thinks about it for a second and decides that because of your bad reputation, you must have been involved in it too. A note is sent home to your parents, and you, too, are blamed for the accident.
+*finish
+*label B3
+*set TR%+20
+*set TH%+20
+*set GN%+20
+The teacher is both shocked and embarrassed at having been unfairly biased against the bully. You are growing up to be someone who is capable of keeping others on their toes.
+*finish
+

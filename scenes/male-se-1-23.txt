@@ -1,0 +1,34 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+Mr. Andre, your French teacher, who everyone in school claims is gay, has asked for your help cleaning up his office after school today. He asks you in front of a whole group of your friends, who begin to look at one another
+and make faces. What will you do?
+
+
+Select an action:
+
+*choice
+  #TELL HIM YOU HAVE SOMETHING TO DO AFTER SCHOOL
+    *goto A1
+  #TELL HIM YOU WILL HELP HIM, THEN DON'T SHOW UP
+    *goto A2
+  #TELL HIM YOU WILL HELP HIM
+    *goto A3
+*label A1
+*set SC%-10
+Completely shaken up by the request, you tell him you work in a local coal mining operation and have almost no time to yourself. You quickly excuse yourself. Your friends tease you anyway saying, "Why did he ask YOU in the first place?"
+*finish
+*label A2
+*set CA%-10
+This only makes him ask you again and again. After the fifth time, he finally stops asking you. By now, he resents you for rejecting him, which will probably bias him against you when he is giving out your grades.
+*finish
+*label A3
+*set SC%+30
+This makes you the subject of unbearable teasing. In his office there is a picture of his wife and his daughter, Monique, who is a beautiful young girl about your age. He explains that she goes to a private school. You comment
+on how pretty she is. Mr. Andre smiles and offers to invite you over so that you can meet. Oooh, la, la!
+*finish
+

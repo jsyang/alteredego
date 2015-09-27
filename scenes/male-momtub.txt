@@ -1,0 +1,115 @@
+Your mom is in the bathtub taking a nice relaxing bath. You are playing quietly in your room. All of a sudden the doorbell rings. Mom doesn't seem to hear it.
+*choice mood action
+  #ALL GROWN UP
+    #ANSWER THE DOOR
+      *goto A11
+    *selectable_if (false) #IGNORE THE DOORBELL
+      *finish
+    #TELL MOM
+      *goto A13
+  #RESENTFUL
+    *selectable_if (false) #ANSWER THE DOOR
+      *finish
+    #IGNORE THE DOORBELL
+      *goto A22
+    *selectable_if (false) #TELL MOM
+      *finish
+  #NONCHALANT
+    #ANSWER THE DOOR
+      *goto A31
+    #IGNORE THE DOORBELL
+      *goto A32
+    #TELL MOM
+      *goto A33
+*label A11
+*set CN%+20
+You approach the door and say, "Who is it?" in your most grown-up voice. It is a salesman asking where your mommy is. You can:
+
+
+Select an action:
+
+*choice
+  #POINT TO THE BATHROOM DOOR
+    *goto B1
+  #SAY "SHE'S NAKED IN THE BATHTUB NOW"
+    *goto B2
+  #SAY "JUST FOLLOW ME"
+    *goto B3
+*label B1
+*set SC%-10
+Just as you point to the door your Mother says, "Is someone out there?" The salesman excuses himself and walks quickly out the door. You get yelled at for letting a stranger into the house.
+*finish
+*label B2
+The salesman's face turns very red. He thanks you and walks quickly out the door. You are developing a knack for bluntness.
+*finish
+*label B3
+*set FM%-10
+*set GN%-10
+You lead the man to the bathroom door and swing it open. Your mother yells very loudly. The man runs out through the front door. You get a spanking for letting a stranger into the house. Later that day Mom comes over and gives you a big
+hug and asks you not to tell Daddy about what happened. You will:
+
+
+Select an action:
+
+*choice
+  #TELL DAD
+    *goto C1
+  #NOT TELL DAD
+    *goto C2
+*label C1
+*set GN%-10
+You spiteful little devil. Of course, this creates a big commotion. That ought to teach Mom for spanking you so hard. You'll regret this choice later.
+*finish
+*label C2
+*set FM%+10
+You have just avoided making your mom angry and resentful.
+*finish
+*label A13
+*set SC%-10
+You can't be that grown-up if you have to rely on Mom to answer the doorbell all the time. This set of choices doesn't make too much sense.
+*finish
+*label A22
+*set GN%-10
+You don't appreciate the fact that Mom locks herself in the bathroom and has all that fun while you are left alone. Let that stupid doorbell ring. After the fourth ring you:
+
+
+Select an action:
+
+*choice
+  #KEEP IGNORING
+    *goto D1
+  #ANSWER THE BELL
+    *goto D2
+*label D1
+*set GN%-10
+You are a stubborn little devil. The doorbell stops ringing. It was a package that your mom was expecting.
+*finish
+*label D2
+*goto A11
+*label A31
+A salesman is at the door. He looks like a nice man. You say, "Just a minute," and you close the door. You tell Mom; she asks you to tell the man to please come back another day. You tell the man:
+
+
+Select an action:
+
+*choice
+  #"PLEASE COME BACK ANOTHER DAY"
+    *goto E1
+  #"MOMMY IS WET AND NAKED AND CAN'T COME OUT"
+    *goto E2
+*label E1
+*set SC%+10
+The man says, "Thank you." Then he leaves.
+*finish
+*label E2
+*set SC%-10
+The man chuckles, then says something under his breath and goes away.
+*finish
+*label A33
+*set IN%+30
+Like a good little boy, you tell Mom that the doorbell is ringing. She tells you to ask "Who is it?" without opening the door. You learn the valuable lesson of not allowing strangers in your home, which makes you smarter.
+*finish
+*label A32
+You are too cool to worry about such mundane matters. Superduck awaits you in the toy box.
+*finish
+

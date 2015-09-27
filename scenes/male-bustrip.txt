@@ -1,0 +1,59 @@
+You are on the school bus, on a class field trip, getting cozy with your newest girlfriend.
+*choice mood action
+  #AMOROUS BUT DISCREET
+    #BEGIN A MAKE OUT SESSION
+      *goto A11
+    #JUST CUDDLE
+      *goto A12
+    *selectable_if (false) #HAVE AN INTELLECTUAL DISCUSSION
+      *finish
+  #AMOROUS BUT INDISCREET
+    #BEGIN A MAKE OUT SESSION
+      *goto A21
+    #JUST CUDDLE
+      *goto A22
+    *selectable_if (false) #HAVE AN INTELLECTUAL DISCUSSION
+      *finish
+  #NOT AMOROUS
+    *selectable_if (false) #BEGIN A MAKE OUT SESSION
+      *finish
+    *selectable_if (false) #JUST CUDDLE
+      *finish
+    #HAVE AN INTELLECTUAL DISCUSSION
+      *goto A33
+*label A11
+*set SC%-10
+You call that DISCREET?! Of course, teen-agers like to be recognized slobbering all over each other in public. It is a way of "marking off the territory" so no one interferes with anyone else's partner.
+*label C
+*page_break
+*if SC>80
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Fortunately, you are a real smoothy, with excellent social skills. Your girlfriend thinks you are a fantastic lover, your friends think you are a wild macho stud, and even you have to give yourself credit for being a bit of a
+playboy and man-about-town. Please don't let this go to your head. Girls don't tolerate these kinds of public displays very long.
+*finish
+*label B.F
+*set SC%-20
+Unfortunately, you don't have the social skills required to get away with this kind of behavior. Everyone thinks of you as an insensitive cad.
+*finish
+*label A21
+That's it, mark off the territory so all of your friends can see what's your "property." Don't you know that's no way to treat a lady?
+*goto C
+*label A12
+*set SC%+30
+*set TR%+10
+*set CN%+20
+How romantic. Your girlfriend is very impressed. You are a sensitive person. Social sphere and several positive emotional indicators rise.
+*finish
+*label A22
+*set SC%-20
+YOU CALL THAT CUDDLING? An octopus with five extra arms could be more tactful. You are a cad.
+*finish
+*label A33
+*set SC%-10
+What would you talk about? Camus? Satre'? The meaning of life? Why concern yourself with such things? School bus trips can be very romantic. If you're not careful, your seat might be filled by someone else on the return trip.
+Adolescent relationships often have a very short life span. I've seen them begin and end just waiting in line to pick up lunch in the cafeteria.
+*finish
+

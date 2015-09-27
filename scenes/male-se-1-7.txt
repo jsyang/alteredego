@@ -1,0 +1,29 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+Mrs. Harnaur, your English Literature teacher, is getting on in years. Everyone knows that she is a bit hard of hearing. Whenever she gives a test, people can whisper to one another without the slightest chance of being heard. On
+today's test everyone seems to be cheating. There are two answers that you do not know. Will you:
+
+
+Select an action:
+
+*choice
+  #CHEAT WITH EVERYONE ELSE
+    *goto A1
+  #DO YOUR OWN WORK
+    *goto A2
+*label A1
+*set TR%-30
+*set IN%+30
+You are not caught. Your grade on the test improves as a result of your cheating.
+*finish
+*label A2
+*set TR%+30
+*set IN%-10
+Because you didn't cheat, you get those two questions wrong, and your grade is lower. The people who did cheat think you were foolish.
+*finish
+

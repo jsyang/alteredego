@@ -1,0 +1,49 @@
+While you are out having cocktails with ${loverName}, you encounter, Caroline Richardson, a famous fashion model and old ex-love of ${loverName}'s. She flashes her pearly white (capped) teeth at ${loverName} and walks over, slinging a brand new blue fox wrap
+over her arm with a melodramatic flourish.
+*page_break
+"Fancy running into you here, Sweetie. Mind if I kill some time waiting for Rex to catch up with me?" ${loverName} seems to melt, introduces the two of you and asks if you wouldn't mind the intrusion. What will you do?
+
+
+Select an action:
+
+*choice
+  #SAY, "ACTUALLY I DO MIND, WE WERE DISCUSSING SOMETHING IMPORTANT!"
+    *goto A1
+  #INVITE HER TO SIT DOWN
+    *goto A2
+  #MAKE A FACE AND ACCEPT RELUCTANTLY
+    *goto A3
+*label A1
+*set SC%-40
+Please, rush right out and pick up a copy of Miss Manners' latest book. You are REALLY going to need it! I can understand why you might feel a little threatened, but ${loverName} sees your behavior as rude and boorish. Caroline leaves the two
+of you alone (she seems to know everyone at the bar), but the result is that ${loverName} sees you as a clod.
+*finish
+*label A2
+*set SC%+10
+As the conversation evolves, you notice ${loverName} is absolutely captivated by her. She makes several comments, including one rather annoying one which is, "I hope you realize how lucky you are. One day I might just gobble him right back up!"
+${loverName} eats it up and says, "Caroline, stop. You're embarrassing me." After a few drinks, Rex, Caroline's date, shows up.
+*page_break
+You recognize him from the covers of several men's fashion catalogs. Within five minutes he is groveling at her feet. She takes him away on what appears to be an invisible leash.
+
+
+Select an action:
+
+*choice
+  #POINT OUT HOW GOOGLY-EYED ${LOVERNAME} WAS IN HIS PRESENCE
+    *goto B1
+  #KEEP QUIET ABOUT THE INCIDENT
+    *goto B2
+*label B1
+*set CN%+30
+"True," he says. "But to tell you the truth, when she talks, I try my best to tune her out completely. She's all fancy wrapping and pretty bows, but once you open the present, there's really nothing inside." He'll take you over her any
+day.
+*finish
+*label B2
+*set CN%-20
+Too bad. You might have found out something really flattering about yourself.
+*finish
+*label A3
+*set CN%-20
+Tsk! Tsk! Watch yourself. That green-eyed monster is rearing her ugly head. No, not Caroline; that green-eyed monster, Jealousy.
+*finish
+

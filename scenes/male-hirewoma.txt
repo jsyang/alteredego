@@ -1,0 +1,257 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry, you have to be employed in order to play through this icon.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You are being made responsible for hiring a new employee, an apprentice who will learn your job so that you can expand your work. There are several candidates available for interviewing: Max is an energetic young achiever with a degree
+from a large university. Harold is a casual, laid back type.
+*page_break
+At first he seems slow, but as the interview goes on you realize that he pays attention very carefully, and when he speaks always says something meaningful. Gabrielle is a young, sexy, outgoing type with a great pair of legs, and large,
+green eyes. She seems to be very organized, and is eager to please.
+*choice mood action
+  #SURE
+    #CHOOSE MAX
+      *goto A11
+    #CHOOSE HAROLD
+      *goto A12
+    #CHOOSE GABRIELLE
+      *goto A13
+  #UNSURE
+    #CHOOSE MAX
+      *goto A21
+    #CHOOSE HAROLD
+      *goto A22
+    #CHOOSE GABRIELLE
+      *goto A23
+*label A11
+*set VC%+60
+Max becomes a valuable aid, full of fresh new ideas and tremendous energy. He invests a lot of time on your behalf and makes you look good in front of others. Because of your confidence in hiring him, your Vocational sphere takes a giant
+increase. Good decision.
+*finish
+*label A21
+Were you leaning a bit toward choosing Gabrielle, perhaps?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+That was very honest of you. In the long run, Max does a superb job. You must admit that the temptations caused by having someone like that work closely with you might have caused trouble.
+*page_break
+*if TH>60
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+Your impulse control is generally good, judging by your behavior so far. I'm sure this is one of the reasons.
+*finish
+*label C.F
+*set TH%+40
+Your impulse control to date has been kind of unreliable. Perhaps you could have resisted the temptation, perhaps you couldn't. In any event, the judgement that you made here suggests that at least you are making a conscious effort to
+monitor your behavior. You should be proud of that.
+*finish
+*label B2
+*if TR<40
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Judging by your past history of untrustworthiness, I must say I find this difficult to believe! In the long run, Max serves you very well, putting in a lot of time and energy on your behalf.
+*finish
+*label D.F
+Whatever you say. In the long run, Max serves you very well, putting in a lot of time and energy on your behalf. In time you may feel more satisfied about your choice.
+*finish
+*label A12
+Harold is a good choice, but only for a short time. Eventually, you find his quietness a bit unnerving. "What is going on in that young man's head?" you wonder. Well, what's going on is he's collecting all the information he needs to go
+out and start his own company, which he does, and it becomes very successful!
+*finish
+*label A22
+Were you leaning a bit toward choosing Gabrielle, perhaps?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E1
+That was very honest of you. In the long run, Harold serves you very well. You must admit that the temptations caused by having someone like that work so closely with you might have caused trouble.
+*page_break
+*if TH>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Your impulse control is generally good, judging by your behavior so far. I'm sure this is one of the reasons.
+*finish
+*label F.F
+*set TH%+40
+Your impulse control to date has been kind of unreliable. Perhaps you could have resisted the temptation, perhaps you couldn't. In any event, the judgement that you made here suggests that at least you are making a conscious effort to
+monitor your behavior. You should be proud of that.
+*finish
+*label E2
+*set VC%+10
+If you say so. Harold is a good choice, but only for a short time. Eventually, you find his quietness a bit unnerving. "What is going on in that young man's head?" you wonder. Well, what's going on is he's collecting all the information
+he needs to go out and start his own company, which he does, and it becomes very successful!
+*finish
+*label A13
+O.K. Was you decision based on the thought that Gabrielle might compromise herself in order to get ahead?
+*label S
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G2
+Are you claiming that her physical appearance has NOTHING to do with choosing her for the job?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H1
+Bah! I can't believe that. The other people were much more qualified, on the basis of their descriptions. We can disagree on this, but I don't think you are being very honest with yourself.
+*finish
+*label H2
+I guess, then, that if you are willing to admit that her appearance was a factor in the decision, you will concede that in all probabilty you didn't choose the BEST possible person for the job.
+*finish
+*label G1
+It's impossible to tell at this point. She DOES seem friendly, but the signals are unclear as to what would happen if you ever made a sexual advance on her. What will you do?
+
+
+Select an action:
+
+*choice
+  #MAKE THE ADVANCE
+    *goto I1
+  #WAIT FOR AN OPPORTUNITY FOR IT TO COME UP NATURALLY
+    *goto I2
+  #DO NOT MAKE THE ADVANCE AT ALL
+    *goto I3
+*label I1
+*set TR%-10
+*set VC%-10
+SLAP! Gabrielle may be friendly, but she's not THAT friendly. It's not long before your working relationship deteriorates and you are looking for another apprentice. Motto: It is often unwise to mix personal and business relationships.
+*finish
+*label I2
+One night, both of you are working late to get a project finished. You have loosened your clothes to be more comfortable, and Gabrielle has taken off her shoes, and opened up the top two buttons of her blouse for the same reason. The
+nature of the work and the fatigue have made you both giddy. When the job is finally finished Gabrielle sighs and rests her elbow on your shoulder.
+
+
+Select an action:
+
+*choice
+  #GIVE HER A QUICK, "FRIENDLY" HUG OF APPROVAL
+    *goto J1
+  #MOVE AWAY
+    *goto J2
+*label J2
+*set TH%+40
+It's a very good idea not to mix your business and personal lives, but you probably know this already. The temptation, however, is great. If it weren't, you would never have gotten into this situation to begin with. As long as you are
+attracted to Gabrielle you will have to keep careful tabs on your impulses.
+*finish
+*label J1
+Her body is soft and warm. For a moment her face is very close to yours. You see her eyes close and her lips open slightly.
+
+
+Select an action:
+
+*choice
+  #KISS HER
+    *goto K1
+  #BACK OFF
+    *goto K2
+*label K2
+Gabrielle opens her mouth and lets out a yawn. She excuses herself and heads home for the evening.
+*finish
+*label K1
+You hear a gentle, "Mmmmmmmmmmm." She confesses that she has been wanting to do that all night.
+
+
+Select an action:
+
+*choice
+  #CONTINUE THIS EPISODE TO ITS UNAVOIDABLE CONCLUSION
+    *goto L1
+  #BACK OUT
+    *goto L2
+*label L2
+*set VC%-20
+Things could get very complicated here. In truth, things are ALREADY complicated. This "almost" affair carries with it some of the same negative consequences as a "real" affair. Gabrielle begins to resent you and eventually leaves her job.
+*finish
+*label L1
+The two of you make love in the office, and now you are faced with some difficult questions,
+*if (SR<1) and (MS<1)
+  *goto M.T
+*else
+  *goto M.F
+*label M.F
+the first of which are those that have to do with your present commitment.
+*label M.T
+
+
+Select an action:
+
+*choice
+  #DISCONTINUE THE AFFAIR
+    *goto Q1
+  #CONTINUE THE AFFAIR
+    *goto Q2
+*label Q1
+*set VC%-20
+Gabrielle admits that it would never work out, but secretly she resents the rejection. Her work performance begins to slip, not so much from incompetence, as from resentment. Eventually she decides to leave her work.
+*finish
+*label Q2
+It's not long before everyone is gossiping about you and Gabrielle. It is the main topic of office chatter for months.
+*if (SR<1) and (MS<1)
+  *goto N.T
+*else
+  *goto N.F
+*label N.F
+Eventually it gets back to the love of your life, who, as a result of feeling foolish, taken advantage of and rejected, makes you sleep on the couch for a week.
+*label N.T
+*finish
+*label I3
+*set TH%+50
+You are really beginning to master your impulses. Gabrielle is indeed flirtatious, but in time you become used to this aspect of her personality. For now, it is probably best not to mix your business and social lives.
+*finish
+*label A23
+Are you unsure because you think you might not be able to resist the temptation?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto R1
+  #NO
+    *goto R2
+*label R1
+Well, do you think Gabrielle is the type of person who would compromise herself to get ahead?
+*goto S
+*label R2
+*set TH%+20
+*set VC%+20
+O.K., then you will just have to wait and see how it turns out. She wasn't the best business choice, because by her description she wasn't as qualified as the other two. On the other hand, the fact that you were willing to hire a
+woman (provided you didn't do it with lustful intent) was a sign of flexibility.
+*finish
+

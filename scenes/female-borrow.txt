@@ -1,0 +1,88 @@
+You are in the house, bored, with ABSOLUTELY nothing to do. (Your mother keeps telling you, "Read a book.") You look over at the telephone and wonder, "How many children in town, in this state, in this country, IN THIS WHOLE WORLD, are
+bored at this very second?" Why not try to make a new friend?
+*choice mood action
+  #INQUISITIVE
+    #DIAL THE PHONE
+      *goto A11
+    #LEAVE THE PHONE ALONE
+      *goto A12
+  #APPREHENSIVE
+    #DIAL THE PHONE
+      *goto A21
+    #LEAVE THE PHONE ALONE
+      *goto A22
+*label A11
+*label A21
+*set TH%-5
+*set SC%+5
+The phone rings...
+
+*temp randomD
+*rand randomD 1 6
+*if randomD=1
+  *goto D1
+*elseif randomD=2
+  *goto D2
+*elseif randomD=3
+  *goto D3
+*elseif randomD=4
+  *goto D4
+*elseif randomD=5
+  *goto D5
+*else
+  *goto D6
+*label D1
+"Alo, splecken dingen haben eben?"
+*goto HANGUP
+*label D2
+"Alabama State Penitentiary, may I help you?"
+*goto HANGUP
+*label D3
+"Stradsveetsia, kak tue doomyetsya?"
+*goto HANGUP
+*label D4
+"I'm sorry, the number you have reached is out of service or temporarily disconnected. Please check the number and try again. This is a recording."
+*goto HANGUP
+*label D5
+"Myong hi hee op tter nee mwaa."
+*goto HANGUP
+*label D6
+"YOUNG LADY, WHAT DO YOU THINK YOU ARE DOING?" Oops, it's Mom on the extension. Now you have something to do. Go to your room.
+*finish
+*label HANGUP
+*page_break
+This doesn't sound like a very worthwhile telephone call. Do you want to try again?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+*goto A11
+*label B2
+About three weeks later, your mother asks your father if he knows where these peculiar telephone calls came from.
+*if TR>50
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+Because you are usually so trustworthy, you are never discovered.
+*finish
+*label C.F
+Suddenly, both of them turn to one another and say your name. The next day, a telephone lock is installed on the phone. P.S., this is only the beginning of your love affair with the telephone.
+*finish
+*label A12
+*set TH%+20
+You have excellent impulse control for a child your age.
+*finish
+*label A22
+*set TH%+20
+*set TR%+30
+You have evidently thought long and hard about the possibility of randomly dialing telephone numbers. Your freedom to play outside for the next week and your parents' telephone bill have both been spared. Thoughtfulness and
+Trustworthiness have both increased.
+*finish
+

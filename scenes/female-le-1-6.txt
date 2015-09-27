@@ -1,0 +1,18 @@
+When you open the refrigerator, you spot a beautiful pie (your favorite), with a single, triangular wedge cut neatly out of it. You know that if you eat a slice, you will be out of control and never fit into your jeans for tonight's date.
+*page_break
+*if TH>50
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+*set SC%+30
+*set CN%+30
+*set HP%+20
+Because you have the self-control necessary to resist the treat, you avoid the consequences. Social sphere goes up, and so does Confidence.
+*finish
+*label A.F
+*set SC%-20
+*set CN%-30
+Unfortunately, you don't have the self-contol to resist the treat, and as a result, eat FOUR pieces of pie, suffering the consequences later. Social sphere and Confidence go way down.
+*finish
+

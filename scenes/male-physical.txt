@@ -1,0 +1,84 @@
+It's time for another medical check-up.
+*choice mood action
+  #ANXIOUS
+    #GO TO THE DOCTOR
+      *goto A11
+    #DON'T GO TO THE DOCTOR
+      *goto A12
+  #CALM/NEUTRAL
+    #GO TO THE DOCTOR
+      *goto A21
+    #DON'T GO TO THE DOCTOR
+      *goto A22
+*label A11
+*set CA%-20
+Some people simply never get over the fear of having to go to the doctor regularly. It is better to be afraid and go, than to avoid it. He asks if you have any complaints these days. You can:
+
+
+Select an action:
+
+*choice
+  #COMPLAIN ABOUT FEELING DIZZY AND OUT OF BREATH EVERY SO OFTEN
+    *goto B1
+  #COMPLAIN ABOUT COLDNESS IN THE HANDS AND FEET
+    *goto B2
+  #COMPLAIN ABOUT NOTHING IN PARTICULAR
+    *goto B3
+*label B1
+*set PH%-10
+The doctor is concerned about this complaint. He would like you to go into the hospital for some tests. Once in the hospital, the test results show
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+the presence of a shadow indicating the possibility of a tumor on your lung. An exploratory operation is recommended.
+*page_break
+The doctors operate and find a fast-spreading cancer. The lung is removed, but complications from the operation cause you difficulty. You die on the operating room table. This game is over.
+*goto_scene you_have_died
+*label C2
+nothing specific. The doctor tries some medication on you that seems to work.
+*finish
+*label B2
+The doctor checks your heart, and blood circulation. He would like to have you admitted to the hospital for tests.  Once in the hospital, the tests show
+*label HOSP
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+*set CA%-10
+that you are diabetic. You will have to watch your diet very carefully and take special medication.
+*page_break
+It is very important that you follow the doctor's directions to the letter. At your age diabetics can easily develop gangrene, and suffer many adverse effects from this disease.
+*finish
+*label D2
+*set CA%-10
+that you are suffering from some minor circulatory problems due to old age. You are given some medication which helps a little.
+*finish
+*label A12
+*label A22
+*set CA%-20
+*set EX%-20
+While walking outside one day, you feel a numbness in your left hand and shoulder. Suddenly, you whole body feels a cold stab of pain. You suffer a major stroke and die. This game is over.
+*goto_scene you_have_died
+*label A21
+*set CA%+20
+The doctor is happy to see you (he likes you because you are such a good patient); and the two of you make small talk for a little while. He gives you the usual check-up. The results suggest the following:
+*page_break
+*label B3
+*if PH>60
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+You seem to be in fine shape. The doctor asks you some cursory questions about your lifestyle and your eating habits and sends you on your way.
+*finish
+*label D.F
+There seems to be a slight difficulty with your blood circulation. The doctor would like to have you admitted to the hospital for some tests. Once in the hospital, the tests show
+*goto HOSP
+

@@ -1,0 +1,16 @@
+A close friend gets mononucleosis.
+
+*if PH>70
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+Because you are in such great shape, you avoid getting it.
+*finish
+*label A.F
+*set PH%-10
+*set SC%-10
+*set IN%-10
+Your physical condition is not strong enough to resist it. You become infected. Physical, Social and Intellectual characteristics all decrease.
+*finish
+

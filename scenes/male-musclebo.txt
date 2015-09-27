@@ -1,0 +1,39 @@
+A cousin of yours asks if you would like to inherit his weight set.
+*choice mood action
+  #INTERESTED
+    #ACCEPT THE WEIGHT SET
+      *goto A11
+    *selectable_if (false) #PASS ON THE OFFER
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #ACCEPT THE WEIGHT SET
+      *finish
+    #PASS ON THE OFFER
+      *goto A22
+*label A11
+*set PH%+5
+*if TH<51
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You work out for about a week, but your status sheet suggests that you don't have the self-discipline to keep it up for much longer.
+*finish
+*label B.F
+*set PH%+20
+*if TH<80
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+You begin a workout schedule and within three months there is a noticeable improvement in the way your body looks. After a few compliments from the girls you begin to slack off. Physical sphere definitely improves.
+*finish
+*label C.F
+*set PH%+20
+*set SC%+40
+You are the type of person who sticks with his interests. You build up your body, increasing strength and definition. A group of girls at school have begun referring to you as "the bod." Physical and Social characteristics increase.
+*finish
+*label A22
+Sounds like too much hard work for you. Besides, who wants to look like those muscle-bound guys who can't even comb their hair without their biceps getting in the way?
+*finish
+

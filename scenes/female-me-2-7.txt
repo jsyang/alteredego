@@ -1,0 +1,39 @@
+You and ${spouseName} are both very tired. Before you turn in, ${spouseName} complains that his feet have been bothering him, and that he would appreciate it if you would give him a nice, soothing foot massage. It would take a great effort to give
+him a massage, since you are so tired.
+
+
+Select an action:
+
+*choice
+  #GIVE HIM A FOOT MASSAGE
+    *goto A1
+  #TELL HIM YOU WILL GIVE HIM ONE IF HE GIVES YOU ONE FIRST
+    *goto A2
+  #TELL HIM THAT YOU ARE TOO TIRED
+    *goto A3
+*label A1
+*label B2
+*set GN%+30
+His feet are calloused and bony. As you massage ${spouseName}'s feet your fatigue seems to fade, because you realize how much pleasure and relief the massage is giving your husband. It is an intimate moment for both of you; and he appreciates
+the special care he is receiving. As you talk, you notice that his voice is beginning to drift off. He falls soundly asleep.
+*finish
+*label A2
+*set GN%-10
+"No deal, that's too selfish!" A massage is not the type of thing to make deals over. No recipient of a good massage is likely to want to give one in return. You should know that by now. ${spouseName} falls asleep but has a restless night.
+*finish
+*label A3
+"Pleeeeeeease?" he pleads.
+
+
+Select an action:
+
+*choice
+  #SLEEP
+    *goto B1
+  #GIVE HIM A MASSAGE
+    *goto B2
+*label B1
+*set GN%-10
+${spouseName} thinks you are being selfish (you really are), but by now he knows what to expect from you, and keeps reminding himself of the phrase "for better or worse...."
+*finish
+

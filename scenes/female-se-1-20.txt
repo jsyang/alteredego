@@ -1,0 +1,31 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 17
+  Sorry, you're too old for this experience.
+  *finish
+You have committed the most serious offense possible. You have come to school without your gym shorts. Mrs. Black, the gym teacher, will never let you hear the end of it, if you are out of uniform. Kathy Daly says she has an extra
+pair of shorts.
+
+
+Select an action:
+
+*choice
+  #BORROW THE SHORTS
+    *goto A1
+  #DO NOT BORROW THE SHORTS
+    *goto A2
+*label A1
+*set HP%-10
+You put the shorts on. They feel a bit stiff and unusually large, but at least you won't get into trouble. During class you turn to Kathy and comment on her once being quite a bit larger to have fit into these shorts. Very
+matter-of-factly she says, "Oh, those aren't mine. They're my brother's."
+*page_break
+All of a sudden, your skin begins to crawl. Jack (Fish Breath) Daly has got to be one of the grossest creatures in the universe. He is an absolute alien. After you take the shorts off, your legs are itchy for the rest of the day.
+*finish
+*label A2
+*set HP%-20
+*set GN%-10
+"YOUNG LADY. HOW CAN I STRESS THE IMPORTANCE OF THE PROPER KIND OF CLOTHING NEEDED FOR RIGOROUS PHYSICAL FITNESS? YOU MUST BECOME MORE RESPONSIBLE!"
+*finish
+

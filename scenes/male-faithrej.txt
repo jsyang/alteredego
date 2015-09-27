@@ -1,0 +1,125 @@
+You have just mustered up the courage to ask Faith Morgan (voted "hottest bod of the century" by fellow classmates) out on a date. She looks you up and down, rolls her eyes and says, "Be real."
+*choice mood action
+  #ANGRY
+    #WALK AWAY
+      *goto A11
+    #SAY SOMETHING TO HER
+      *goto A12
+    #GIVE HER AN ALMOST UNIVERSALLY-UNDERSTOOD FINGER SIGNAL
+      *goto A13
+  #DEPRESSED
+    #WALK AWAY
+      *goto A21
+    #SAY SOMETHING TO HER
+      *goto A22
+    *selectable_if (false) #GIVE HER AN ALMOST UNIVERSALLY-UNDERSTOOD FINGER SIGNAL
+      *finish
+  #UNFLAPPABLE
+    #WALK AWAY
+      *goto A31
+    *selectable_if (false) #SAY SOMETHING TO HER
+      *finish
+    *selectable_if (false) #GIVE HER AN ALMOST UNIVERSALLY-UNDERSTOOD FINGER SIGNAL
+      *finish
+*label A11
+*set GN%-20
+You convince yourself that she isn't worth getting upset about, yet you are boiling inside. You spend the rest of the day fantasizing about what life will be like when you are a rich oil tycoon, and she is selling pencils on the
+street. Meanwhile, you still don't have a date for Saturday night....
+*finish
+*label A12
+You can say:
+
+
+Select an action:
+
+*choice
+  #"%$%$ YOU, FAITH"
+    *goto B1
+  #"I WOULDN'T GO OUT WITH YOU IF YOU WERE THE LAST WOMAN ON EARTH"
+    *goto B2
+  #"IT'S O.K. IF YOU DON'T WANT TO GO OUT WITH ME, BUT DO YOU HAVE TO BE SO SNOTTY ABOUT IT?"
+    *goto B3
+*label B1
+*set GN%-30
+*set CA%-20
+*set TH%-10
+Very articulate. Even though she might have deserved it, you have done nothing more than give her another reason why it would have been stupid to socialize with you. Think before you speak.
+*finish
+*label B2
+*set GN%-20
+That may be true, but as long as there ARE other women on the face of the earth, why not spend your time asking THEM on a date, rather than pursuing this futile cause?
+*finish
+*label B3
+*set GN%+10
+*set EX%+20
+*set IN%+20
+That was a nice way of expressing your feelings without being unduly critical of Faith. It is clear that she does not deserve a young man of your caliber. By the way, ten years from now you bump into a friend who tells you that Faith
+married a night club singer who eventually left her for an 18-year-old waitress.
+*finish
+*label A13
+*set TH%-20
+Save it! She already thinks you are a jerk. Why etch the impression of yourself as a boorish slob any deeper into her mind?
+*finish
+*label A21
+*set HP%-20
+I'm sorry that you are taking this so badly. She seems like a cruel kind of person, doesn't she?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+Well, if she is so cruel, then why would you want to go out with her? It's clear that she is not the type who is easy to get along with. (Besides, her "hot bod" is almost 100 percent strategically placed tissue paper.)
+*finish
+*label C2
+*set HP%-10
+Wake up and smell the roses! You are obviously the type of person who yearns to be miserable. Be careful, or you'll probably get what you want.
+*finish
+*label A22
+You can say:
+
+
+Select an action:
+
+*choice
+  #"YOU HAVE JUST RUINED MY ENTIRE LIFE"
+    *goto D1
+  #"YOU DON'T HAVE TO BE SO CRUEL ABOUT IT"
+    *goto D2
+*label D1
+*set HP%-10
+You may be thinking this, but YOU are the one who has ruined your life by placing the control of your happiness on someone other than yourself. I can understand why you're depressed, but you're going to have to take
+responsibility for your own feelings.
+*finish
+*label D2
+What you said to her is obvious, but it certainly won't have any effect on her behavior. Give up trying to rehabilitate her and find someone else.
+*finish
+*label A31
+*set CN%+30
+Your guts may be turning, but outside you stay cool, calm and collected. You are confident, but rejection is hard to take at your age no matter how well adjusted you are.
+*page_break
+You'll probably meet someone who can appreciate these things in you. When you do, Faith becomes interested in you and tries to steal you away. Now is your chance (Remember..."hottest bod of the CENTURY"). You can:
+
+
+Select an action:
+
+*choice
+  #FLY INTO HER ARMS
+    *goto E1
+  #RESIST HER
+    *goto E2
+*label E1
+*set IN%-10
+Fool! She breaks up with you two days after you go out with her. This girl is only interested in guys she CAN'T have.
+*finish
+*label E2
+*set IN%+30
+Good choice. This girl is only interested in guys she CAN'T have.
+*finish
+
+
+

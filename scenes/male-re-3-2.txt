@@ -1,0 +1,102 @@
+${loverName} has prepared a delicious home-cooked dinner for you. She has spent the entire afternoon preparing the meal. She has placed an arrangement of fresh flowers on the table. She has put on a suggestive, sexy outfit, guaranteeing that an
+even more sumptuous treat is available after the meal.
+*page_break
+She leaves the room for a moment, and you notice that her cat, who has been in and out of everything all evening, has a familiar-looking dinner dripping from his face and whiskers. The cover from the casserole dish is ajar. What will you
+do now?
+
+
+Select an action:
+
+*choice
+  #CURSE AT THE CAT
+    *goto A1
+  #NOT MENTION IT TO ${LOVERNAME}
+    *goto A2
+  #MENTION IT TO ${LOVERNAME}
+    *goto A3
+*label A1
+Now that you have blown off some of your steam at that *&#!ing cat will you:
+
+
+Select an action:
+
+*choice
+  #NOT MENTION IT TO ${LOVERNAME}
+    *goto B1
+  #MENTION IT TO ${LOVERNAME}
+    *goto B2
+*label A2
+*label B1
+*set PH%-10
+She serves you what would ordinarily have been a terrific dinner, but you can't help thinking that the cat's slimy little pink tongue probably covered the entire contents of the dish. ${loverName} is eating heartily.
+
+
+Select an action:
+
+*choice
+  #FINISH EVERYTHING ON YOUR PLATE
+    *goto C1
+  #LEAVE SOME
+    *goto C2
+*label C1
+*set PH%-10
+With every bite you take, you imagine tasting the cat's whiskers and hairs mixed in with the food, but you are afraid of hurting ${loverName}'s feelings. When you are finished she asks if you enjoyed the meal. What will you say?
+
+
+Select an action:
+
+*choice
+  #IT WAS INTERESTING
+    *goto D1
+  #YES
+    *goto D2
+  #NO
+    *goto D3
+*label D2
+*label D1
+${loverName} says, "Fluffy liked it, too. I gave her some before we sat down to eat!"
+*finish
+*label D3
+*set TH%-20
+How could you be so sensitive one second and so insensitive the next. You have hurt ${loverName}'s feelings.
+*finish
+*label C2
+${loverName} wonders whether you are enjoying the meal.
+
+
+Select an action:
+
+*choice
+  #TELL HER ABOUT THE CAT
+    *goto E1
+  #TELL HER YOU ARE ON A DIET
+    *goto E2
+  #TELL HER YOU ARE FULL
+    *goto E3
+*label E2
+*set SC%+20
+You tell her that you want to stay looking terrific, like her. She falls for it. She also mentions that Fluffy seems to have really enjoyed the dish she prepared as well--she gave some to Fluffy before you both sat down.
+*finish
+*label E3
+*set SC%+30
+An old standby excuse that never works. She thinks you just didn't like the meal.
+*finish
+*label B2
+*label A3
+*label E1
+"Don't be silly," she says. "I gave some to Fluffy before we sat down. That's what you must have noticed." You eat the meal and are relieved to discover that it is indeed delicious. On your last forkful you notice something stuck between
+your teeth.
+
+*temp randomF
+*rand randomF 1 2
+*if randomF=1
+  *goto F1
+*else
+  *goto F2
+*label F1
+It's a cat hair!
+*finish
+*label F2
+It's nothing.
+*finish
+

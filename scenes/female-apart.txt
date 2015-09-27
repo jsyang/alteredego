@@ -1,0 +1,69 @@
+You are quietly playing with your mother's pocketbook. (She is not around.) Look! It opens up so easily!
+*choice mood action
+  #INQUISITIVE
+    #LOOK BUT DON'T TOUCH
+      *goto A11
+    #LOOK, TOUCH AND EMPTY
+      *goto A12
+  #DEVILISH
+    *selectable_if (false) #LOOK BUT DON'T TOUCH
+      *finish
+    #LOOK, TOUCH AND EMPTY
+      *goto A22
+*label A11
+*set TH%+20
+Your self-control is quite remarkable. Look at all of those tiny little bottles and tubes. No one would notice if you touched a few. Want to go back and try again?
+*label B
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+*set TH%-15
+That's more like it. Time to play "I'm the Mommy!"
+*finish
+*label B2
+What a good girl. You're beautiful without all that make-up.
+*finish
+*label A12
+*set IN%+10
+*set TH%-20
+You pluck out some of the more interesting-looking items, tasting one or two as you go along. They are definitely not for eating. You know Mom will be pleased with how nice you will look after you put some of her lipstick on!
+*finish
+*label A22
+*set TH%-20
+You know you shouldn't touch Mom's things. Want to stop now while everything is still in one piece?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set IN%+10
+That was very wise. Your need to explore was satisfied with few negative consequences to your mom's pocketbook and its contents.
+*finish
+*label C2
+I didn't think so. You dump everything out on the floor.
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+Your mom gasps at what you've done. Your dad blames her for leaving it within your reach. She tells him that you ate two of his charge cards. You get whacked on the bottom.
+*finish
+*label D2
+Your mom spends an afternoon trying to salvage some of her make-up, and finally gives up. She spends fifty dollars to replace it.
+*finish
+
+

@@ -1,0 +1,48 @@
+*if AG < 18
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+*comment @GHS
+*set graduatedHighSchool 1
+It's time to graduate from high school. You can't go back to the High School icon again during this game.
+
+*if IN>79
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+You have above-average to superior intelligence and are an excellent candidate for college.
+*finish
+*label A.F
+*if IN>49
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You are average to above-average on the Intellectual sphere characteristics. You have good potential to do well in life.
+*finish
+*label B.F
+Even though your Intellectual sphere status shows that you are not intellectually gifted, you can still do well in life if you are willing to put in the time and the effort.
+*page_break
+*if SC>79
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+Your social skills are excellent. This should help get you far in life.
+*finish
+*label C.F
+*if SC>60
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+Your Social sphere status shows that you are capable of presenting a good impression. This will be an important determinant of your success in the future.
+*finish
+*label D.F
+You might want to take a close look at how you deal with people. It seems that this is an area that needs improvement.
+*finish
+

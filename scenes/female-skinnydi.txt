@@ -1,0 +1,90 @@
+You and your friends have all gone to the shore for a beach party. It's late at night. One of your friends has a suggestion. He says, "Let's go skinnydipping."
+*choice mood action
+  #SHY
+    #TAKE YOUR CLOTHES OFF
+      *goto A11
+    #WAIT FOR EVERYONE ELSE TO TAKE THEIR CLOTHES OFF
+      *goto A12
+    #KEEP YOUR CLOTHES ON
+      *goto A13
+  #UNINHIBITED
+    #TAKE YOUR CLOTHES OFF
+      *goto A21
+    #WAIT FOR EVERYONE ELSE TO TAKE THEIR CLOTHES OFF
+      *goto A22
+    *selectable_if (false) #KEEP YOUR CLOTHES ON
+      *finish
+*label A11
+*set CA%-10
+You are in mixed company. Are you sure you want to go ahead with this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label E1
+*label C1
+*label B1
+*set CN%-10
+*set CA%-10
+You take off you clothes and quickly jump into the water. After a while, you begin to get cold. Unfortunately, when you decide to come back out, you realize that everyone else has already left the water. As a matter of fact, they are
+all dried off and dressed again. When you emerge, all eyes are upon you and your various attributes.
+*finish
+*label B2
+At the last, minute everyone else chickens out too.
+*finish
+*label A12
+Some kids take off their clothes, and some chicken out. Do you still want to go ahead with this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label E2
+*label C2
+Later, a guy you've had your eye on for weeks whispers to you, "I was just waiting for you to go, then I would have done it too."
+*finish
+*label A13
+Like most daring fantasies that come up during adolescence, everyone has big ideas, but few follow through on them. Several people actually go skinnydipping, but almost everyone keeps his or her clothes on.
+*finish
+*label A21
+There you are, stark naked, when you realize that everyone else has chickened out and left his or her clothes on. How do you feel?
+
+
+Select an action:
+
+*choice
+  #EMBARRASSED
+    *goto D1
+  #UNASHAMED
+    *goto D2
+*label D1
+*set CA%-10
+A few of the guys make comments, and the experience becomes a popular story (Remember the time when...), but by and large you survive it.
+*finish
+*label D2
+*set CN%+10
+You aren't going to let them get the better of you, even though some of the guys are really getting their jollies. You put your clothes back on and sit down.
+*finish
+*label A22
+That's REALLY uninhibited, all right. All of the uninhibited people are already in the water. You have barely removed your sneakers. Are you sure you really want to go through with this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+
+
+

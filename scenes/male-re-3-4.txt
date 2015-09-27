@@ -1,0 +1,140 @@
+One night, while you are out with ${loverName}, you see her looking into the distance with a tear in her eye. When you ask her if anything is wrong, she denies it. You get the distinct feeling she is hiding some deep, dark secret. What will you
+do?
+
+
+Select an action:
+
+*choice
+  #IGNORE HER APPARENT DISTRESS
+    *goto A1
+  #ASK HER TO TALK TO YOU ABOUT WHAT IS GOING ON WITH HER
+    *goto A2
+*label A1
+*set TH%-10
+All night long ${loverName} seems to be on an emotional roller coaster. One minute she is smiling and happy; the next, she has to excuse herself to go to the bathroom and cry.
+
+
+Select an action:
+
+*choice
+  #OFFER TO TAKE HER HOME EARLY
+    *goto B1
+  #MENTION THAT YOU RESPECT HER PRIVACY BUT IF THERE IS ANYTHING SHE NEEDS TO TALK ABOUT, SHE CAN CONFIDE IN YOU
+    *goto B2
+*label B1
+${loverName} agrees that tonight this might be the best thing for the both of you. You never find out what she had on her mind.
+*finish
+*label A2
+*label B2
+That is very sensitive of you. It helps break past the wall of silence she has put up between you. Eventually, she tells you that
+*if MS>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+she can no longer bear being "the other woman." She wants more of your time.
+*page_break
+She has become obsessed with thoughts of you being her constant companion. She is afraid that she will do something dangerous to herself if things do not change soon.
+
+
+Select an action:
+
+*choice
+  #GET A DIVORCE AND MARRY YOUR MISTRESS
+    *goto D1
+  #END THE RELATIONSHIP FOR THE GOOD OF BOTH OF YOU
+    *goto D2
+  #TELL HER TO WAIT AND THINGS WILL WORK OUT
+    *goto D3
+*label D1
+*set TH%-60
+*set TR%-40
+I'm glad you think it's so easy. Have you considered ${spouseName}'s feelings about this?
+*if CL>0
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+And what about the children? You'll never get custody of them. You'll have to go to the MARRIAGE ICON and file for divorce, but before you do I would suggest thinking it over very carefully.
+*finish
+*label E.F
+You'll have to go to the MARRIAGE ICON and file for divorce, but before you do I would suggest thinking it over very carefully.
+*finish
+*label D2
+After you end the relationship, you receive a desperate phone call from her saying that she has just taken some pills and will end it all. What will you do?
+
+
+Select an action:
+
+*choice
+  #RUSH TO HER SIDE
+    *goto F1
+  #CALL A DOCTOR AND LET HIM DEAL WITH IT
+    *goto F2
+*label F1
+*set TH%+30
+Rushing to her side reinforces the fact that she can manipulate you by threatening to harm herself. You are probably beginning to see that this is only one of the many ways that this woman actually controls you. Sooner or later you are
+going to have to make some decisions. This affair has become sticky and complicated.
+
+
+Select an action:
+
+*choice
+  #END IT
+    *goto G1
+  #KEEP IT GOING AWHILE LONGER
+    *goto G2
+*label G1
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+The most serious attempt she makes on her life is taking a whole box of antacids. Eventually, she leaves you alone.
+*finish
+*label G2
+The suicide-attempt pattern sets the tone for the remainder of the relationship. Now every time you refuse to do what she wants, she threatens to kill herself. By staying in this relationship you are living out a fantasy of being a hero
+and savior.
+*page_break
+Believe me, if you really wanted to leave her, chances are she wouldn't do anything harmful to herself other than eventually taking up with another married man.
+*finish
+*label F2
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+The attempt was not serious -- all she tried to do was swallow a small bottle of antacid tablets. It becomes clear that her suicidal behavior is a desperate attempt to manipulate and control you. It is often the case that mistresses of
+married men have a fantasy of luring the lover away from his family and that one day he will indeed stay with her.
+*finish
+*label D3
+Of course she accepts this, because she wants to believe this more than anything else. For you, it's probably an attempt to have your cake and eat it, too. You get it, but every indulgence has its price.
+*page_break
+*temp randomI
+*rand randomI 1 3
+*if randomI=1
+  *goto I1
+*elseif randomI=2
+  *goto I2
+*else
+  *goto I3
+*label I1
+She is really an ex-alcoholic and is worried that you will find out about this and end the relationship.
+*finish
+*label I2
+*set CA%-10
+She is married to someone who is currently in jail (a convicted murderer -- but it wasn't his fault, they said it was a crime of passion), and is afraid that now that you know, you will leave her. She claims she loves you, but just
+doesn't think she could leave her husband.
+*page_break
+By the way, he's getting out next week. (Psssst...you might want to think about either increasing your health insurance coverage, or think about going back to the RELATIONSHIP ICON and ending it while you can still walk.)
+*finish
+*label I3
+After a long, tearful deliberation, she tells you that
+*label C.F
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+she likes you as a person, but doesn't feel the least bit attracted to you, because you remind her too much of her father.
+*page_break
+She feels the relationship just can't continue this way because she knows she will never feel any differently. She says, (SOB!) "I'm sorry, papa!"
+*finish
+

@@ -1,0 +1,31 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+Mr. Horace, a Social Studies teacher in your school, has a funny habit of twitching one eye when he speaks. You are always sure to get a laugh out of your friends whenever you imitate this twitch for them.
+*page_break
+One day in class, Mr. Horace is interrupted by someone wishing to give him a message. As he walks over to the door, a friend starts asking you to "Do Horace." Will you:
+
+
+Select an action:
+
+*choice
+  #IMITATE MR. HORACE
+    *goto A1
+  #TELL HER, "NOT NOW."
+    *goto A2
+*label A1
+*set SC%+20
+*set GN%-10
+Four or five people around you laugh. Mr. Horace has seen what you have done but is not the type to say anything about that. He's used to the ridicule and has been getting teased for ages.
+*page_break
+He goes back to teaching, apparently unaffected by what he saw. Later that night, he has trouble sleeping. He wonders why he was so unlucky as to be cursed with this habit.
+*finish
+*label A2
+*set GN%+30
+It was nice of you to give Mr. Horace a break. He is aware of how everyone makes fun of him, and even though he doesn't show it, he is very sensitive about it.
+*finish
+

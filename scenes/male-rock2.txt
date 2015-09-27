@@ -1,0 +1,70 @@
+You ask Mom if you can climb the big rock in the park with a group of friends. She says no.
+*choice mood action
+  #OBEDIENT
+    *selectable_if (false) #GO ANYWAY
+      *finish
+    #STAY HOME
+      *goto A12
+    *selectable_if (false) #ASK DAD
+      *finish
+  #DEFIANT
+    #GO ANYWAY
+      *goto A21
+    *selectable_if (false) #STAY HOME
+      *finish
+    *selectable_if (false) #ASK DAD
+      *finish
+  #CRAFTY
+    *selectable_if (false) #GO ANYWAY
+      *finish
+    *selectable_if (false) #STAY HOME
+      *finish
+    #ASK DAD
+      *goto A33
+*label A21
+*set FM%-20
+*set TR%-20
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*set PH%-70
+It is a beautiful day. You and your friends are having a great time. At the top of the rock, you and your friends get silly and start to push each other; each claiming, "I'm king of the hill!" One of your friends pushes you a bit too
+hard, and you begin to slip off the rock.
+*page_break
+For a moment, it looks as if you can regain your balance, but you don't. You tumble off the rock and fracture your skull in three places.
+*finish
+*label B2
+*set HP%-40
+*set PH%+20
+It is a beautiful day. You can't figure what your mom was so worried about. You and your friends horse around on top of the rock, and somebody slips. He crashes to the bottom, fracturing his skull in three places. He dies before
+he can be taken to the hospital.
+*finish
+*label A33
+Dad says, "Sure, son, just be careful." You can:
+
+
+Select an action:
+
+*choice
+  #HAVE SECOND THOUGHTS
+    *goto C1
+  #GO
+    *goto C2
+*label C1
+*set FM%+20
+*set TH%+20
+*set TR%+30
+I guess you felt a bit guilty about that kind of deception. Besides it could have caused an argument between your mom and dad. You acted responsibly.
+*finish
+*label C2
+*goto A21
+*label A12
+*set TR%+30
+*set HP%-20
+Sometimes it is very difficult to obey the wishes of those responsible for bringing you up. You occupy yourself with something else that day, and later find out that one of your friends fell off the rock and was killed.
+*finish
+

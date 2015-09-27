@@ -1,0 +1,103 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+Five of your friends have decided to chip in and buy one box of condoms between the six of you. You are elected to make the purchase.
+*choice mood action
+  #EMBARRASSED
+    #BUY THE CONDOMS
+      *goto A11
+    #REFUSE TO BUY THE CONDOMS
+      *goto A12
+  #ANXIOUS
+    #BUY THE CONDOMS
+      *goto A21
+    #REFUSE TO BUY THE CONDOMS
+      *goto A22
+  #CALM
+    #BUY THE CONDOMS
+      *goto A31
+    *selectable_if (false) #REFUSE TO BUY THE CONDOMS
+      *finish
+*label A11
+You walk up to the counter and wonder, "Why do all pharmacies have the same weird smell?" There is an elderly woman behind you. The druggist looks at you and says, "May I help you, young man?"
+
+
+Select an action:
+
+*choice
+  #CHICKEN OUT
+    *goto B1
+  #ASK FOR THE CONDOMS
+    *goto B2
+*label C1
+*label B1
+*set CA%-10
+*set SC%-15
+Your friends are disappointed in you. Your social status drops slightly.
+*finish
+*label B2
+*set SC%+40
+You stumble across the words, and the druggist smiles. The woman in back of you says, "Tsk, tsk," and whispers something to the lady behind her. You pay for your purchase with a one dollar bill and a handful of loose change.
+*page_break
+Your embarrassment disappears when you arrive outside of the store, and your friends delight in the fact that you went through with the purchase. Your social status increases markedly. You take your portion, and carefully sneak
+it into your wallet, where it will probably remain for the next several months.
+*finish
+*label A12
+*set CA%-20
+That's O.K.. A lot of people much older than you refuse to buy condoms in the drug store for the very same reason. However, if you decide to become sexually active, it's wiser to tolerate the embarrassment of purchasing birth control,
+than to risk becoming a father.
+*finish
+*label A21
+Oh, no! To make matters even worse, when you go into the drug store, the person behind the counter is a young teen-aged girl.
+
+
+Select an action:
+
+*choice
+  #CHICKEN OUT
+    *goto C1
+  #ASK FOR THE CONDOMS
+    *goto C2
+*label C2
+*set CA%-20
+*set SC%+20
+Stuttering at about ninety miles an hour, you finally get the words out. The girl behind the counter has fair skin. Her face turns scarlet red. It is a very uncomfortable moment for both of you.
+*page_break
+By the time you pay for the merchandise and return to your friends, your heart is pounding and your hands are dripping with sweat. Your friends are delighted to see that you have made the purchase. Your social status increases. This
+should be a little bit of a relief.
+*finish
+*label A22
+*set CA%-30
+I can understand why you are anxious. Please make sure that you don't let that anxiety cause you to avoid thinking about birth control when you really need it.
+*finish
+*label A31
+You walk into the drug store and notice a pretty teen-aged girl taking care of customers for the druggist. You place your order. You can:
+
+
+Select an action:
+
+*choice
+  #OPEN THE BOX, TAKE OUT A CONDOM, AND PLACE ONE ON THE DESK, SAYING, "HERE'S ONE I'M LEAVING YOU AS A TIP."
+    *goto D1
+  #WALK OUT OF THE STORE CONFIDENTLY
+    *goto D2
+*label D1
+*set CN%-10
+*set SC%-10
+The girl sneers at you. She asks if you would kindly take it back, and pull it down over your head, where it can cover up your obnoxious mouth. I think you were a bit too forward. Well, live and learn!
+*finish
+*label D2
+*set CN%+30
+*set SC%+10
+*set TH%-20
+You are probably the type of person that people call "a real character." You may not have any reason to use them, but none of your friends will ever know that. You distribute them to your friends, who put them in their wallets.
+*page_break
+Every couple of days a friend comes up and asks, "Did you use yours yet?" You probably don't tell them a thing except, "Just use your imagination." You are cool.
+*finish
+

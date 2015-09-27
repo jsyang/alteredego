@@ -1,0 +1,46 @@
+You and ${loverName} have just had a nice, romantic date. You have treated her well all evening -- movies, a bite to eat, the works. Now you are feeling very romantic, but for some strange reason, ${loverName} only wants to engage in idle chit chat.
+Every time you try to kiss her, she turns her face away and says, "Let's just talk." How do you feel?
+
+
+Select a mood:
+
+*choice
+  #FEEL LIKE CHATTING AS WELL
+    *goto A1
+  #FRUSTRATED
+    *goto A2
+  #ANGRY, AND COMPLAIN
+    *goto A3
+*label A1
+*set CN%-10
+Fine, ${loverName} says, "Then please stop 'chit-chatting' with your hand on my leg."
+*finish
+*label A2
+What will you do as a result of your frustration?
+
+
+Select an action:
+
+*choice
+  #TELL ${LOVERNAME} SHE'S NOT BEING FAIR
+    *goto B1
+  #GET ANGRY AND COMPLAIN
+    *goto B2
+  #EXPRESS YOUR FRUSTRATION
+    *goto B3
+*label B1
+*set GN%-10
+*set TH%-10
+Not being fair about what? She wants to talk, you want to kiss. The two of you are disagreeing. If she is being unfair because she's not doing what YOU want, then you are being equally as unfair for not doing what SHE wants.
+*finish
+*label B3
+*set EX%+20
+Expressing your frustration keeps you from acting on your feelings in an inappropriate way. Still, she doesn't feel like doing anything. Talking about your feelings doesn't always change the way things are. At least you made
+your needs understood in a direct way.
+*finish
+*label A3
+*label B2
+*set SC%-30
+What a big baby! Can't you respect her right to not want to kiss you? Maybe she has something on her mind. The evening ends with a fight.
+*finish
+

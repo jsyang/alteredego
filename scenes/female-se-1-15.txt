@@ -1,0 +1,27 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 16
+  Sorry, you're too old for this experience.
+  *finish
+You are in home economics class trying to make sugar cookies. The (supposed) teacher said to put in a small amount of an ingredient from that can over there. It seems to need much more than she suggested.
+
+
+Select an action:
+
+*choice
+  #ADD SOME MORE
+    *goto A1
+  #FOLLOW RECIPE AS IS
+    *goto A2
+*label A1
+*set CN%+10
+Oops! Looks like you put in too much. The cookies turn into green gook and start running into one another, like fungus. Doug puts some on the floor and makes wretching sounds. How infantile!
+*finish
+*label A2
+*set TR%+20
+The cookies come out as dry as bones. You should have followed your instincts. You point out the dryness to the teacher, who looks at them, crumbles them between her fingers and says, "That's the way they're supposed to be, Dear."
+You cannot believe that woman. She's the ULTIMATE spaz.
+*finish
+

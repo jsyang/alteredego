@@ -1,0 +1,59 @@
+While looking at yourself in the mirror one day, you begin to realize that you are beginning to get a chest! You are not exactly what anyone would call "voluptuous," but the thought crosses your mind that it just might be time
+for you to begin wearing a bra!
+*choice mood action
+  #DARING/EXCITED
+    #ASK FOR A BRA
+      *goto A11
+    *selectable_if (false) #WAIT A WHILE LONGER
+      *finish
+  #UNCONCERNED
+    *selectable_if (false) #ASK FOR A BRA
+      *finish
+    #WAIT A WHILE LONGER
+      *goto A22
+*label A11
+*set CA%-5
+You wait until Mom is in a good mood, and nonchalantly mention that you think its about time for you to begin wearing a bra.
+*page_break
+*temp randomB
+*rand randomB 1 3
+*if randomB=1
+  *goto B1
+*elseif randomB=2
+  *goto B2
+*else
+  *goto B3
+*label B1
+*set HP%+10
+This frightens your mother, who tries very hard to avoid the fact that you are, indeed, blossoming into womanhood. Soon, Dad mentions it. The next day, you get your first bra.
+*finish
+*label B2
+*set HP%+10
+Your mother looks at you closely and says in a very serious tone, "Yes, I think its about time we started paying attention to ourselves up there." You get to go shopping with Mom to pick out a bra. There is a black lacy underwire bra
+that looks interesting, but Mom explains it might be a year of two before you could wear something like that.
+*finish
+*label B3
+Your mom tries to convince you that you are still too young to wear a bra. You can:
+
+
+Select an action:
+
+*choice
+  #PERSIST
+    *goto C1
+  #GIVE UP
+    *goto C2
+*label C1
+*set HP%+10
+Eventually, she gives in, although she would much rather think of you as her "sweet little baby" forever. Your mom sighs pensively and realizes you are growing up.
+*finish
+*label C2
+*set GN%-5
+Your mom would like to avoid the fact that you are blossoming into womanhood, but can't do it for long. A few weeks later, Mom notices the clerk at the supermarket staring at you. The next day, you go shopping for a bra.
+*finish
+*label A22
+*set CA%+20
+*set CN%+50
+I guess you are not interested in these kinds of things right now. It's likely that one day you'll have to consider wearing a bra, but at this stage, who cares?
+*finish
+

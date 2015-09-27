@@ -1,0 +1,149 @@
+Soap opera star Rexavier De laPunda (Dr. Reynaldo Bedini on Animal Hospital) will be appearing at a record store in town to sign autographs and look for a child actress to play a kidnapped victim in an upcoming episode.
+*page_break
+Every one of your friends will be there (especially Christine Hobbs, who has taken six years of acting and ballet lessons). This is finally your chance to meet the hunk of all hunks, Rexavier De laPunda. If only Mom would drive you.
+*choice mood action
+  #HYSTERICAL
+    #ASK MOM TO TAKE YOU
+      *goto A11
+    #BEG MOM TO TAKE YOU
+      *goto A12
+    *selectable_if (false) #STAY HOME
+      *finish
+  #INTERESTED
+    #ASK MOM TO TAKE YOU
+      *goto A21
+    #BEG MOM TO TAKE YOU
+      *goto A22
+    *selectable_if (false) #STAY HOME
+      *finish
+  #NOT INTERESTED
+    *selectable_if (false) #ASK MOM TO TAKE YOU
+      *finish
+    *selectable_if (false) #BEG MOM TO TAKE YOU
+      *finish
+    #STAY HOME
+      *goto A33
+*label A11
+*label A22
+*goto STARTIT
+*label A12
+*set CA%-10
+*label STARTIT
+*if ST>0
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Your mother is the strict type. She gives you a flat "No," and makes sure you have something to do, so you don't sneak off with one of your friends.
+*finish
+*label B.F
+*label F1
+*set HP%+20
+Your mother sees that you are really excited about going. She drives you there and pushes you through the crowd surrounding Rey (that's what all his leading ladies call him). He's beautiful, although he does look quite a bit shorter than
+you had imagined.
+
+
+Select an action:
+
+*choice
+  #SCREAM
+    *goto C1
+  #FAINT
+    *goto C2
+  #DO NOTHING
+    *goto C3
+*label C1
+*set TH%-10
+*set HP%+10
+Your screaming fills the air and attracts his attention. He looks at you. Suddenly, he waves his arm in your direction and points at you!
+*page_break
+Your mother tells you that he is motioning you to come forward. You are frozen in your tracks; all of your friends are pointing at you with their mouths hanging open.
+*page_break
+*temp randomD
+*rand randomD 1 2
+*if randomD=1
+  *goto D1
+*else
+  *goto D2
+*label D1
+"Were you the one who screamed?" he asks. (OH MY GOD. HE PROBABLY WANTS YOU TO BE IN THE SHOW!)
+*page_break
+
+
+Select an action:
+
+*choice
+  #SCREAM AGAIN
+    *goto E1
+  #NOD
+    *goto E2
+*label E1
+*set CA%-5
+"YIIIIIIIIIIIIIIII!" He loves it. "Get that voice on tape. I MUST have it."
+*page_break
+Rey compliments you on your fine scream and asks if you wouldn't mind letting him use a recording of it on his new burglar alarm at home.
+*page_break
+"Please cara, do it for me just one more time, with FEELING!"
+*finish
+*label E2
+*set HP%-10
+"Would you kindly do that outside? You are hurting my delicate ears."
+*finish
+*label D2
+He addresses your mother by name, completely ignoring you. You find out that they were buddies in school. He asks if this is "your little girl." Ugh!
+*page_break
+Later, you find out that his real name is Eugene Blechner.
+*finish
+*label C2
+*set PH%-10
+You hit the floor like a bag of potatoes. Your mother gasps in horror. She is afraid you hit your head. She gets help. Rexavier watches the whole thing. He thinks your mother is terrific. He offers her the part as the mother of the
+kidnapped girl on the show.
+*page_break
+*temp randomQ
+*rand randomQ 1 2
+*if randomQ=1
+  *goto Q1
+*else
+  *goto Q2
+*label Q1
+Couldn't you just shrivel up and die?
+*finish
+*label Q2
+What better person to "emote" for than her own daughter? You get the part too!
+*finish
+*label C3
+He signs your autograph, kisses your hand, then motions to the next girl.
+*finish
+*label A21
+*set HP%-10
+Your mother needs you to help her do some work around the house.
+
+
+Select an action:
+
+*choice
+  #BEG HER
+    *goto F1
+  #FORGET ABOUT IT AND STAY HOME
+    *goto F2
+*label F2
+*label A33
+The next day you see Christine Hobbs at school. "Guess what?" she asks.
+
+
+Select an action:
+
+*choice
+  #SAY, "STUFF IT, CHRISTINE!"
+    *goto G1
+  #SAY, "SPARE ME, CHRISTINE."
+    *goto G2
+  #SAY, "WHAT?"
+    *goto G3
+*label G1
+*label G2
+*label G3
+*set HP%-10
+She looks at you with that smug, stuck-up look and says, "I'm going to be an ACTress." (Barf!)
+*finish
+

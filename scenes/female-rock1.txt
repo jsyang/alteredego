@@ -1,0 +1,100 @@
+Your best friend challenges you to a dress-up competition.
+*choice mood action
+  #COMPETITIVE
+    *selectable_if (false) #TURN DOWN THE OFFER AND SUGGEST A DIFFERENT GAME
+      *finish
+    #ACCEPT THE CHALLENGE
+      *goto A12
+  #RELUCTANT
+    #TURN DOWN THE OFFER AND SUGGEST A DIFFERENT GAME
+      *goto A21
+    #ACCEPT THE CHALLENGE
+      *goto A22
+*label A12
+*set CN%+30
+After several minutes of posing and make-believe dress-up, your friend points to your mom's closet and challenges you to some "real" dressing up.
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE CHALLENGE
+    *goto B1
+  #TELL HER TO DO IT FIRST
+    *goto B2
+  #TURN HER DOWN
+    *goto B3
+*label A22
+*label B1
+You find two designer evening dresses and pull them on over your high heels.
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+You look simply smashing dahhhling. You win the contest. Now for a nice make-up session...
+*finish
+*label C2
+RRiiiIIP! You guessed it! You can:
+
+
+Select an action:
+
+*choice
+  #PUT THE DRESSES IN THE REAR OF THE CLOSET AND HOPE FOR THE BEST
+    *goto D1
+  #TELL YOUR MOM THE TRUTH ABOUT WHAT HAPPENED
+    *goto D2
+*label D1
+*set TR%-10
+You avoid detection--for now.
+*finish
+*label D2
+*if TR<10
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+You have been less than honest in the past. The fact that you confess to what you have done impresses your mother. The dress you tore was an old one anyway.
+*finish
+*label H.F
+That was the responsible thing to do. Your family is proud of you.
+*finish
+*label B2
+She puts on a clingy black number and strikes a statuesque pose. (She is SO conceited!) Now it is your turn. You can:
+*label THR/QUIT
+
+
+Select an action:
+
+*choice
+  #DRESS UP
+    *goto E1
+  #QUIT
+    *goto E2
+*label E1
+*goto B1
+*label E2
+Your friend calls you a chicken.
+*finish
+*label B3
+She eggs you on, saying, "You could NEVER look as grown up as ME." You can:
+*goto THR/QUIT
+*label A21
+Your friend threatens to tell everyone at school that you like Dickie Lehrburg if you don't play the game. You can:
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE CHALLENGE
+    *goto G1
+  #KEEP REFUSING
+    *goto G2
+*label G1
+*goto B1
+*label G2
+*goto E2
+

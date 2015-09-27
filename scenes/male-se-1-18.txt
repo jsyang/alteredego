@@ -1,0 +1,41 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+You have been given detention after school for a disturbance you had absolutely no part in. Mr. Black comes in and asks for "volunteers" to help him wash his car as an alternative to detention.
+
+
+Select an action:
+
+*choice
+  #VOLUNTEER
+    *goto A1
+  #REMAIN SEATED
+    *goto A2
+*label A1
+After you are outside you are handed a sponge and told to "get to work."
+
+
+Select an action:
+
+*choice
+  #WORK FAST AND FINISH AS QUICKLY AS POSSIBLE
+    *goto B1
+  #WORK SLOWLY AND DO A LOUSY JOB
+    *goto B2
+*label B1
+*set TH%+30
+You sold out, but I guess you made the best of an unpleasant situation.
+*finish
+*label B2
+*set HP%+10
+Mr. Black's car is his LIFE. Your disrespect for his black and chrome "dream machine" makes him furious. There's not much he can say. After all, he said you had to come out and WASH it. He didn't say you had to do a good job.
+*finish
+*label A2
+*set GN%-10
+Why should you do THEM a favor when they stick you in this dumb room for doing absolutely nothing?  You have a point there. Sometimes life isn't very fair.
+*finish
+

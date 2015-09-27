@@ -1,0 +1,33 @@
+a[data-name] {
+    width    : 100%;
+    height   : 100%;
+    position : relative;
+    display  : block;
+}
+
+a[data-name] img {
+    position : absolute;
+    left     : 50%;
+    top      : 50%;
+}
+
+a[data-name]:hover:after {
+    display          : block;
+    position         : absolute;
+    top              : 0;
+    left             : 0;
+    right            : 0;
+    bottom           : 0;
+    background-color : rgba(32, 32, 32, 0.8);
+    color            : white;
+    text-align       : center;
+    line-height      : 128px;
+    text-shadow      : 0 0 10px rgb(255, 0, 0);
+    text-transform   : capitalize;
+    white-space      : nowrap;
+}
+
+td[width="64"] a[data-name]:hover:after {
+    line-height : 64px;
+    font-size   : 9px;
+}

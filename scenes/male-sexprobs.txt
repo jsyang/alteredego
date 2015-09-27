@@ -1,0 +1,95 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+A long-time friend and confidant tells you that he is having an unusual sexual problem with his wife. It seems that he can no longer get or maintain an erection like he used to.
+*choice mood action
+  #SYMPATHETIC
+    #TELL HIM TO SEE A DOCTOR
+      *goto A11
+    #TELL HIM NOT TO WORRY ABOUT IT
+      *goto A12
+    #TELL HIM, "THAT'S LIFE"
+      *goto A13
+  #UNSYMPATHETIC
+    *selectable_if (false) #TELL HIM TO SEE A DOCTOR
+      *finish
+    *selectable_if (false) #TELL HIM NOT TO WORRY ABOUT IT
+      *finish
+    #TELL HIM, "THAT'S LIFE"
+      *goto A23
+*label A11
+*set GN%+30
+*set TH%+30
+He returns to tell you that the doctor told him that his problems might have been caused by the high blood pressure medication he has been taking. He feels relieved. Now there is only one small difficulty: you notice that you are having
+the same type of problem. What will you do?
+*label E
+
+
+Select an action:
+
+*choice
+  #GET ANXIOUS
+    *goto B1
+  #SEE A DOCTOR
+    *goto B2
+  #IGNORE IT
+    *goto B3
+*label B1
+*set CA%-20
+Getting anxious only makes the problem worse. It seems that no matter how hard you try, you have difficulty getting an erection.
+
+
+Select an action:
+
+*choice
+  #WRITE IT OFF AS THE EFFECTS OF AGING
+    *goto C1
+  #SEE A DOCTOR
+    *goto C2
+*label C1
+*set CA%-20
+*set HP%-20
+I wonder why you are so willing to write off a vital and enjoyable part of your life. Many people think that it is "normal" to lose sexual capacity in later years, but in reality, this is not so. The period of time between erections may
+increase, but the ability to have an erection should not disappear altogether.
+*page_break
+If you would have seen your doctor, he would probably have mentioned this to you. In all likelihood, when your friend told you of his problem, it made you nervous, and you developed one of your own.
+*finish
+*label B2
+*label C2
+The doctor gives you a checkup and tells you that there is nothing wrong with your system. Anxiety can certainly affect sexual functioning. Perhaps when your friend told you that he was having difficulties, it made you so anxious that you
+developed some of your own.
+*finish
+*label B3
+*if CA>60
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+You ignore it, and in time the difficulties pass.
+*finish
+*label D.F
+Judging by your personality characteristics, it seems likely that you are the type of person who would find this difficult to ignore. You might not ADMIT that it bothers you, and the failure to admit that it troubles you might cause
+enough anxiety for you to develop this erection difficulty.
+*page_break
+You are entering a phase of life where habits become resistant to change, so I won't give you a lecture about being more expressive and honest with yourself.
+*finish
+*label A12
+*set TH%-10
+I'm sure this advice is given with good intentions, however, it is not what he wants to hear. Oddly enough, about a week later, you find yourself experiencing the same kind of problem.
+*goto E
+*label A13
+*set SC%-20
+True, that may be life, but it's HIS life, and he's pretty worried about it. He perceives your comment as being a bit insensitive, but maybe that is really how you feel about the matter. Oddly enough, about a week later, you find yourself
+experiencing the same kinds of problem.
+*goto E
+*label A23
+*set SC%-20
+I guess you really don't feel interested in hearing about his sexual problems. Oddly enough, about a week later, you find yourself experiencing the same kind of problem.
+*goto E
+

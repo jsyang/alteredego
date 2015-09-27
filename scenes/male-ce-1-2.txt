@@ -1,0 +1,48 @@
+As a way of earning extra money, a friend of yours suggests that you pose nude for a "Hunks of Academia" calendar being put together by some Business majors. The fee for doing the job is $200.
+
+
+Select an action:
+
+*choice
+  #POSE FOR THE CALENDAR
+    *goto A1
+  #REFUSE THE OFFER
+    *goto A2
+*label A1
+You are Mr. April. The work involved was practically zero. When the calendar comes out, it creates a major campus controversy. As a result
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+the calendar is banned from campus and the project goes bankrupt. You do not get paid.
+*goto C
+*label B2
+*set MN+200
+*set VC%+10
+the calendar sells like hotcakes. You are paid within a week after it comes out.
+*label C
+*page_break
+*set SC%+40
+Everyone who posed for the calendar gains overnight celebrity status on campus. You are in high demand for dates.
+*if SR>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+Your popularity puts a strain on your steady relationship. You and your partner break up.
+*finish
+*label D.F
+*finish
+*label A2
+*set VC%-10
+*set TH%+10
+You would never lower yourself like this for a meager $200. You are too proud--poor, maybe, but proud.
+*finish
+

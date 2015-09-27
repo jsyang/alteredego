@@ -1,0 +1,105 @@
+You are in a restaurant with three of your friends and it is time to pay the check. The bill is $50 (allow another ten for a tip).
+*choice mood action
+  #GENEROUS/FRIVOLOUS
+    #OFFER TO PICK UP THE TAB
+      *goto A11
+    *selectable_if (false) #SUGGEST SEPARATE CHECKS
+      *finish
+    *selectable_if (false) #WAIT FOR SOMEONE ELSE TO PICK UP THE TAB
+      *finish
+  #CAUTIOUS/PRUDENT
+    *selectable_if (false) #OFFER TO PICK UP THE TAB
+      *finish
+    #SUGGEST SEPARATE CHECKS
+      *goto A22
+    #WAIT FOR SOMEONE ELSE TO PICK UP THE TAB
+      *goto A23
+  #OPPORTUNISTIC
+    *selectable_if (false) #OFFER TO PICK UP THE TAB
+      *finish
+    *selectable_if (false) #SUGGEST SEPARATE CHECKS
+      *finish
+    #WAIT FOR SOMEONE ELSE TO PICK UP THE TAB
+      *goto A33
+*label A11
+*if MN<30
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You can't afford to pay for that kind of meal. You don't have that kind of money. Your friends resent your playing the part of the big spender, then not coming through.
+*finish
+*label B.F
+*set SC%+30
+*set MN-60
+*if MN < 5
+  *set MN 5
+What a guy! Your Social status takes a rise. Resources decline.
+*finish
+*label A22
+This suggestion seems sensible and practical (if not somewhat frugal). How do you want to handle the bill?
+
+
+Select an action:
+
+*choice
+  #EACH PERSON PAYS HIS OWN AMOUNT
+    *goto C1
+  #SPLIT IT EVENLY
+    *goto C2
+*label C1
+*set MN-6
+*if MN < 5
+  *set MN 5
+*set SC%-20
+You whip out your pocket calculator and tell everyone what they owe. You don't want to be cheated or overspend. Your part comes out to six dollars.
+*finish
+*label C2
+*set MN-12
+*if MN < 5
+  *set MN 5
+*set SC%+20
+*set IN%+30
+A sensible, socially acceptable way of doing things. Everyone had similar portions of food, so a few cents here and there among friends doesn't seem to make a big difference.
+*finish
+*label A33
+The check arrives and you wait for someone else to make the first move. You know from past experience that the guy directly to your left has made a big deal out of paying for everyone whenever a group goes out. His father is
+some rich banker and this is how he gets his jollies. He is just waiting for someone else to make a gesture so he can upstage him.
+
+
+Select an action:
+
+*choice
+  #OFFER TO PICK UP THE TAB, KNOWING HE WILL NEVER LET YOU DO IT
+    *goto D1
+  #KEEP QUIET
+    *goto D2
+*label D1
+*set IN%-30
+*set SC%-20
+You say, "Don't worry guys, it's on me." The guy to your left says, "Thanks. I'll tell you what -- I'll take everyone to the movies, on ME. I'll go to the telephone and call one of Daddy's limos."
+*page_break
+*if MN>60
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*finish
+*label E.F
+You don't have enough money to pick up the tab. Your friends figure out what you were trying to do and think you are a jerk.
+*finish
+*label D2
+*label A23
+Eventually the guy to your left offers to pick up the tab, but then apologizes, saying he doesn't have enough cash. He checks the cashier at the restaurant and is told that they do not accept credit cards. Everyone must pay for himself.
+Your bill is eighteen dollars.
+*if MN>18
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*finish
+*label F.F
+*set SC%-20
+You don't even have $18 to your name! Your friends think you are a big moocher, which, by the way, you ARE!
+*finish
+

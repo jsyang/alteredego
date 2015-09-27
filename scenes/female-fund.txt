@@ -1,0 +1,128 @@
+*temp AM
+You are given the opportunity to participate in a charity fund-raiser. The proceeds will be used to provide food and shelter to orphaned children.
+*page_break
+If you decide to help out, even in the most minimal capacity, it will take a
+large amount of your time, and possibly your Resources.
+*choice mood action
+  #HELPFUL / SELF-SACRIFICING
+    #HELP OUT
+      *goto A11
+    #GIVE A DONATION
+      *goto A12
+    *selectable_if (false) #DON'T HELP/NO DONATION
+      *finish
+  #REGRETFUL, BUT TOO BUSY
+    *selectable_if (false) #HELP OUT
+      *finish
+    #GIVE A DONATION
+      *goto A22
+    #DON'T HELP/NO DONATION
+      *goto A23
+*label A11
+*set TH%+30
+*set GN%+20
+In what capacity would you like to serve?
+
+
+Select an action:
+
+*choice
+  #ORGANIZING THE FUND-RAISER
+    *goto B1
+  #PLAY A VITAL ROLE
+    *goto B2
+  #PLAY A HELPING, NON-LEADERSHIP ROLE
+    *goto B3
+*label B1
+*set TH%+10
+*set MN-100
+*if MN < 5
+  *set MN 5
+You spend time coordinating the event, managing schedules and taking care of public relations. This takes you away from work, and your Resources decline. Overall, the event is a success. Being a leader is sometimes a thankless job. In
+this case, you really don't get the credit you deserve.
+*finish
+*label B2
+*set TH%+10
+Your job is to answer the phones and manage donation money. Do you want to do this?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set SC%+30
+*set TH%+10
+*set CA%+10
+Not only do you do an excellent job, but the son of a rich and famous movie star calls to make a donation. He likes your voice and wants to take you to dinner... on his next trip to Paris!
+*finish
+*label C2
+*set TH%-20
+I guess you really didn't want to help that much, after all.
+*finish
+*label B3
+*set SC%+20
+You are asked to handle parking arrangements for the fund-raiser. It's not a glamorous job, but it is a very important one. As a result, you are thanked by the person who organized the fund-raiser and given special recognition at the
+dinner which follows it. Well done!
+*finish
+*label A12
+Giving a donation is certainly a sacrifice, but not in the way this episode presents the choices. Your donation will help, but not as much as your time would have.
+*label K
+
+
+Select an action:
+
+*choice
+  #DONATE   $1
+    *goto D1
+  #DONATE   $5
+    *goto D2
+  #DONATE  $10
+    *goto D3
+  #DONATE $100
+    *goto D4
+  #DONATE $200
+    *goto D5
+*label D1
+*set AM 1
+*goto G.T
+*label D2
+*set AM 5
+*goto CHK
+*label D3
+*set AM 10
+*goto CHK
+*label D4
+*set AM 100
+*goto CHK
+*label D5
+*set AM 200
+*label CHK
+*if MN>AM
+  *goto G.T
+*else
+  *goto G.F
+*label G.F
+You cannot afford to donate that amount of money. How much would you like to donate?
+*goto K
+*label G.T
+*comment @SAM
+*set MN -AM
+*comment invoke debt as need be?
+*if MN < 5
+  MN = 5
+*set AM 0
+Thank you.
+*finish
+*label A22
+Your time and talent would have been far more valuable than a donation. The children at the orphanage need human contact almost as much as they need the food and shelter. How much are you willing to donate?
+*goto K
+*label A23
+*set TH%-20
+I can understand that you may be too busy right now, but how critical do your problems seem compared to those faced by these abandoned children? It's easy to get wrapped up in the problems of everyday life -- so easy that we sometimes
+lose perspective on it.
+*finish
+

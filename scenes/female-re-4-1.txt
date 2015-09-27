@@ -1,0 +1,83 @@
+*if (ES<1) and (LT<1)
+  *goto Q.T
+*else
+  *goto Q.F
+*label Q.F
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Q.T
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You have recently found out that ${loverName} is married. Do you still want to continue this relationship with him?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto Z1
+  #NO
+    *goto Z2
+*label Z2
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+You should go to the relationship icon and meet someone else.
+*finish
+*label Z1
+You and ${loverName} make plans to sneak away for a night of adventure and romance. You will meet at his place. ${loverName}'s wife is out of town on business. What would you like to do?
+
+
+Select an action:
+
+*choice
+  #GO TO THE MOVIES
+    *goto A1
+  #GO OUT FOR DINNER & DANCING
+    *goto A2
+  #HAVE A COZY EVENING OF SENSUAL DELIGHTS (WINK! WINK!)
+    *goto A3
+*label A1
+*label A2
+*label A3
+When you arrive at ${loverName}'s home, he comes to the door barechested. He has on slippers and pajama bottoms. It looks like he wants to spend the evening in bed.
+
+
+Select an action:
+
+*choice
+  #RUSH INTO HIS ARMS ANS SAY, "TAKE ME, YOU ANIMAL!"
+    *goto B1
+  #TELL HIM TO GET DRESSED AND GET READY TO GO OUT
+    *goto B2
+*label B1
+His body seems unusually stiff. Could he be playing hard to get? A voice in the background calls out, "Hey! Who's out there, anyway? Tell them to go away so we can be ALONE." It's ${loverName}'s wife.
+*page_break
+You turn to him for an explanation. He tells you quickly that her trip was cancelled at the last minute. He tried to phone you, but you had already left. "What's going on out there?" his wife shouts out. "HEY...Who is this?" ${loverName} breaks
+down and tells her the whole story. You guessed it -- she's the jealous type. SLAAAPP!!
+*page_break
+The next day ${loverName} calls to apologize and says that maybe it would be better if the two of you don't see each other any more. You are too old to play these kinds of games. In case you are
+wondering, you are the fourth casualty this month.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+*label B2
+${loverName} puts his fingers to his lips. His wife's trip was cancelled. He tried to call and tell you not to come over, but it was too late -- you had already left. ${loverName} becomes very sad, almost tearful. He feels guilty and wrong about the
+affair, and explains that it might be best for the two of you not to see each other for a while.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+

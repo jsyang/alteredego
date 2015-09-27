@@ -1,0 +1,130 @@
+You have been invited to sleep over at your best friend's house. This is your first "sleep away" experience.
+*choice mood action
+  #RELUCTANCE
+    #LIE TO YOUR FRIEND AND TELL HIM YOU ARE NOT ALLOWED
+      *goto A11
+    #ASK YOUR PARENTS IF THEY WILL STILL BE THERE WHEN YOU GET BACK
+      *goto A12
+    *selectable_if (false) #GO TO YOUR FRIEND'S HOUSE AS SOON AS POSSIBLE
+      *finish
+  #EXCITEMENT
+    *selectable_if (false) #LIE TO YOUR FRIEND AND TELL HIM YOU ARE NOT ALLOWED
+      *finish
+    #ASK YOUR PARENTS IF THEY WILL STILL BE THERE WHEN YOU GET BACK
+      *goto A22
+    #GO TO YOUR FRIEND'S HOUSE AS SOON AS POSSIBLE
+      *goto A23
+  #MIXED FEELINGS
+    #LIE TO YOUR FRIEND AND TELL HIM YOU ARE NOT ALLOWED
+      *goto A31
+    #ASK YOUR PARENTS IF THEY WILL STILL BE THERE WHEN YOU GET BACK
+      *goto A32
+    #GO TO YOUR FRIEND'S HOUSE AS SOON AS POSSIBLE
+      *goto A33
+*label A11
+*set TR%-10
+*set FM%+20
+It's very difficult to separate from the security your parents and your home provide, isn't it? Maybe they won't be there when you get back. Maybe they will go someplace and get a "replacement child." I don't blame you one bit for
+staying. Besides, who would save them if the house caught on fire?
+*finish
+*label A12
+*set SC%+20
+It's very difficult to separate from the security that your parents provide, but you are intrigued by the thought of exploring someone else's house and lifestyle. You ask your father if they will still be there when you return.
+*label DADJOKE
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+Jokingly Dad says, "No, we're going off on the Space Shuttle to spend a weekend on the moon!" You can:
+
+
+Select an action:
+
+*choice
+  #GO ANYWAY
+    *goto C1
+  #DECIDE TO STAY HOME
+    *goto C2
+*label C1
+This is an unrealistic choice since children your age usually don't understand the meaning of such jokes. Either you really don't care if they are taking a trip to the moon, or you are super smart for your age.
+*page_break
+*if IN>75
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+I can see by your status sheet that you ARE smart enough to know that this is just a joke. Have a good time!
+*finish
+*label E.F
+I can see by your status sheet that you ARE NOT smart enough to see that it's just Dad's little joke. You go to your friend's house, but your anxiety level gets so high that you don't really have a good time.
+*finish
+*label C2
+*set HP%-10
+Dad made a stupid mistake. Children your age do not really understand the meaning of such jokes. His comment bothers you for a few days, causing you to mope around in a mild depression.
+*finish
+*label B2
+Dad reassures you that he and Mom will both be there when you get back. He doesn't encourage you to go or stay but leaves the choice up to you. You can:
+
+
+Select an action:
+
+*choice
+  #GO
+    *goto D1
+  #STAY
+    *goto D2
+*label D1
+*set HP%+40
+*set SC%+20
+You go and miss your parents a little, but your talk with Dad has kept you calm enough to have a very pleasant experience.
+*finish
+*label D2
+*set FM%+10
+That's O.K.. I guess you are just not ready to make that first big trip away from home.
+*finish
+*label A22
+*set SC%+40
+*set FM%+10
+Even though you are very excited, you still want to make sure that everything will be just as it was when you left. You are assured that it will be. Your little bit of hesitancy is, more than anything, a sign of maturity. Have fun!
+*finish
+*label A23
+*set TH%-10
+Your choices show an impulsiveness, and a lack of appreciation for the security your parents provide. If you have a bad dream at your friend's house tonight, do you think HIS parents are going to let you into their bed?
+*finish
+*label A31
+*set FM%+10
+Ambivalence is a very difficult feeling to overcome. It's a hard choice to make, but I guess right now you are feeling that the security your parents can provide is worth more than the excitement of a night away. There will be
+other opportunities.
+*finish
+*label A32
+*set FM%+10
+Your asking is an emotionally mature way of resolving the ambivalence you are experiencing.
+*goto DADJOKE
+*label A33
+One way of resolving a mixed feeling is to plunge headlong into a risky situation. Although risk-taking is sometimes a sign of emotional maturity, it can be dangerous if you do not take the time to consider the possible consequences.
+*page_break
+While you are over at your friend's house
+*temp randomF
+*rand randomF 1 3
+*if randomF=1
+  *goto F1
+*elseif randomF=2
+  *goto F2
+*else
+  *goto F3
+*label F1
+*set HP%-10
+you have a bad dream and wake up screaming for your parents.
+*finish
+*label F2
+*set CA%-10
+you become frightened and demand to be taken home at two in the morning.
+*finish
+*label F3
+*set SC%+30
+nothing terrible happens, and the experience turns out very well in spite of the possible risks.
+*finish
+

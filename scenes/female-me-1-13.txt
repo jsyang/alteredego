@@ -1,0 +1,177 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+You choose an extrememly low-cut dress to wear to a get-together the two of you are attending tonight. How do you think ${spouseName} will feel about this?
+
+
+Select an action:
+
+*choice
+  #APPROVE
+    *goto A1
+  #WILL NOT APPROVE
+    *goto A2
+*label A1
+*set HP%+10
+*set CN%+20
+*set SC%+20
+He thinks you look great. As the evening passes, he can't take his eyes off you for a moment. When you get home you can:
+
+
+Select an action:
+
+*choice
+  #GET ROMANTIC
+    *goto B1
+  #GO TO SLEEP
+    *goto B2
+*label N4
+*label B2
+BOOOOOOOOOOORINNNG!
+*finish
+*label B1
+*set CA%-10
+The both of you have been getting aroused all evening. After some playful teasing, the two of you begin to make love.
+
+
+Select an action:
+
+*choice
+  #PLEASURE EACH OTHER ORALLY
+    *goto C1
+  #TRY SOME EXCITING SEX POSITIONS
+    *goto C2
+  #I HAVE MY OWN IDEAS
+    *goto C3
+*label N1
+*label C1
+By now you are both very aroused. The two of move your mouths gently over each other's most sensitive parts. It isn't long before the two of you both explode with pleasure. After you are finished you can:
+*label H
+
+
+Select an action:
+
+*choice
+  #LIE IN BED AND CUDDLE
+    *goto D1
+  #GO TO SLEEP
+    *goto D2
+  #MAKE YOUR HUSBAND SOMETHING TO EAT
+    *goto D3
+*label D1
+*set HP%+20
+*set TH%+20
+That's very good. People do not do this nearly enough. As a matter of fact, some say that afterplay (the period immediately following sex) is one of the most satisfying parts of a lovemaking session.
+*finish
+*label D2
+I guess you must be tired, but you should know that many women complain about their HUSBAND'S lack of interest in afterplay (the period immediately following sex). Some women (and men too) find this to be one of the most gratifying
+aspects of lovemaking.
+*finish
+*label D3
+*set TH%+30
+Men all over America are looking for you. Can you possibly be for real? This action is above and beyond the call of duty, and your husband appreciates it very much. Are you ready to go again?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E1
+*set HP%+40
+The second time is even better than the first. The two of you lie exhausted and giddy in one another's arms. This has been a great night.
+*finish
+*label E2
+I guess you are just too tired. Well, have a good night's rest.
+*finish
+*label N2
+*label C2
+You make love in a variety of sexual positions with the fervor and stamina of a honeymoon couple.
+*if PH>60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+It's a good thing that you are in shape; tonight's lovemaking really tested the limits of the flexibility of the human body. (I'll bet you didn't know you were able to bend like that!)
+*goto G
+*label F.F
+You have to be careful, though. Your Physical sphere shows that you are not exactly limber enough to do some of the things you might be thinking of.
+*label G
+*page_break
+After a while, the two of you find a position that is both comfortable and exciting. Soon you both explode in a wonderful climax! After you are finished, you can:
+*goto H
+*label N3
+*label C3
+I'm sure you do. I hope you are considerate enough to share them with your husband. After you are both weary and exhausted from doing only-you-know-what, you can:
+*goto H
+*label A2
+You tell him to stop being such an old fuddy-duddy. You can:
+
+
+Select an action:
+
+*choice
+  #REFUSE TO CHANGE
+    *goto I1
+  #CHANGE YOUR OUTFIT
+    *goto I2
+*label I1
+*set MP+1
+This turns into one of those childish arguments that continues until somebody ultimately gives in. Is that somebody going to be you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto J1
+  #NO
+    *goto J2
+*label J1
+You go out but have a lousy time.
+*finish
+*label J2
+*set MP+1
+You showed him. The both of you stay home and act miserabley toward one another.
+*finish
+*label I2
+Even though you have done something to keep the peace, will you remain angry with ${spouseName}?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto K1
+  #NO
+    *goto K2
+*label K1
+*set MP+1
+You make snide comments to one another all night. He maintains that you have a tendency to flaunt yourself. You tell him he has a dirty mind.
+*finish
+*label K2
+That's very sporting of you. The evening turns out to be very enjoyable. When you return home, your husband is feeling very romantic.
+
+
+Select an action:
+
+*choice
+  #PLEASURE EACH OTHER ORALLY
+    *goto N1
+  #TRY SOME EXCITING SEX POSITIONS
+    *goto N2
+  #I HAVE MY OWN IDEAS
+    *goto N3
+  #GO TO SLEEP
+    *goto N4
+
+
+

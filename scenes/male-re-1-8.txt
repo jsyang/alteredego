@@ -1,0 +1,51 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+${loverName} is late for your date and you are forced to sit in the living room and converse with her somewhat nosy parents. Her father looks you squarely in the eye and asks you, "Son, I'd really like to know what your plans are for my
+daughter." What would you be inclined to say about this?
+
+
+Select an action:
+
+*choice
+  #"MY PLANS ARE TO TAKE HER TO THE MOVIES AND TRY VERY HARD TO HAVE SEX WITH HER BEFORE THE NIGHT IS THROUGH"
+    *goto A1
+  #"I DON'T QUITE UNDERSTAND WHAT YOU MEAN BY THAT, SIR."
+    *goto A2
+  #"FOR NOW, I PLAN ON DEVELOPING A FRIENDSHIP WITH YOUR DAUGHTER. IT'S A LITTLE TOO EARLY FOR US TO LOOK VERY FAR INTO THE FUTURE."
+    *goto A3
+*label A1
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+*set GN%-10
+*set TH%-10
+My aren't we sarcastic? Fortunately, ${loverName}'s dad has more of a sense of humor than you (or anyone else) would expect. He realizes that he put you on the spot, perhaps a bit unfairly. Because you are such a wise guy, however,
+he keeps very close tabs on you for as long as you date ${loverName}.
+*finish
+*label B2
+*set TH%-20
+My aren't we sarcastic? You lost your patience with ${loverName}'s dad and were a bit impulsive. He takes this kind of statement as a sign that you are a wise guy (which, by the way, you are). He will be a source of difficulty for you and
+${loverName}. On your way out the door, he turns to ${loverName}'s mother and says, "I didn't like that boy from the start. He has shifty eyes."
+*finish
+*label A2
+Trying to avoid the question makes it appear as if you take ${loverName}'s father for a fool. He begins to have his doubts about you...
+*finish
+*label A3
+*set TH%+30
+*set SC%+20
+*set IN%+30
+What an answer! I'm sure you think it's worth copying down to use in real life! Naturally, ${loverName}'s father is impressed. He also sees your response as kind of a challenge.
+*page_break
+You may be so terrific, his daughter might begin to like you more than him. He serves you up another loaded question: "So where do you see yourself ten years from now, young man?" Don't worry -- after this, there are about 1000 more.
+You're on your own.
+*finish
+

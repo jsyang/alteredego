@@ -1,0 +1,64 @@
+*set instantaneous true
+*label START
+*label C2
+*label B2
+
+
+Select an action:
+
+*choice
+  #CONTINUE
+    *goto A1
+  #SKIP ON TO THE NEXT LIFE STAGE
+    *goto A2
+  #START THE GAME OVER AGAIN
+    *goto A3
+*label A3
+Are you SURE you want to start your entire game over again?  Your current stored life will be erased.
+
+
+
+Select an action:
+
+*choice
+  #YES, RESET MY GAME
+    *goto B1
+  #NO, I DIDN'T MEAN THAT
+    *goto B2
+*label B1
+*comment @RST
+OK, your game has been reset.
+*page_break
+*restart
+
+*label A2
+Are you sure you want to skip on to the next life stage?  You might miss something in the current one.
+
+
+
+Select an action:
+
+*choice
+  #YES, TAKE ME TO THE NEXT LEVEL
+    *goto C1
+  #NO, I WANT TO KEEP PLAYING
+    *goto C2
+*label C1
+*if AG<65
+  *goto OK.T
+*else
+  *goto OK.F
+*label OK.T
+*comment @BMP
+*set AG 99
+*set instantaneous false
+OK, you're on your way to the next life stage.
+*finish
+*label OK.F
+You're already on the last life stage.  You can't skip on to the next one.
+*goto START
+*label A1
+*comment @NTQ
+*set instantaneous true
+*finish
+

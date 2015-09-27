@@ -1,0 +1,85 @@
+*if LT<1
+  *goto Q.T
+*else
+  *goto Q.F
+*label Q.F
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Q.T
+${loverName} invites you to his home for lunch. Interestingly, he takes meticulous care of everything, with no assistance from anyone else. He must be remarkably well-rounded. As he gives you a tour of the house, you notice that there is a
+sewing room that looks recently used.
+*page_break
+The bobbin is threaded, and a fresh piece of material lies over the back of a nearby chair. You seem to recall that ${loverName}'s wife passed on more than ten years ago. You don't remember ${loverName} mentioning anything about sewing.
+
+
+Select an action:
+
+*choice
+  #BE CURIOUS/QUESTION ${LOVERNAME} ABOUT THE ARTICLES
+    *goto B1
+  #REMAIN QUIET ABOUT THE ARTICLES
+    *goto B2
+*label B2
+Truthfully, do you think all of this is very bizarre?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label B1
+Very matter-of-factly, he tells you that those were his wife's belongings. Even though much time has passed, he still feels her "presence" in the house. He keeps her favorite magazines on the nightstand and her slippers tucked
+neatly under her side of the bed.
+*page_break
+Sometimes he can almost smell the sweet scent of spice cake cooking in the kitchen around holiday time, even though he knows she really isn't there, anymore.
+
+
+Select an action:
+
+*choice
+  #TRY TO CONVINCE HIM THAT WHAT HE IS DOING IS UNHEALTHY
+    *goto C1
+  #RESPECT HIS BEHAVIOR WITHOUT CRITICIZING IT
+    *goto C2
+*label C1
+*set GN%-20
+Your criticism of his behavior sounds unduly harsh to him. He suspects that you do not really understand much about love.
+*page_break
+*label E1
+It must seem very eerie to you. He does acknowledge that she has passed away; he knows he doesn't really speak to her. The only thing that is different in ${loverName} is that he verbalizes and acts out what most people feel and won't
+admit after the loss of a spouse.
+*page_break
+If he were a recluse or really believed he saw and spoke to his wife, there might be cause for alarm, but he really doesn't believe any of these things.
+*finish
+*label C2
+*label E2
+*set GN%+30
+If you respect his behavior, you realize that surviving the loss of a spouse can be one of the most traumatic experiences in life. He realizes that she is gone but still feels that somehow she is a part of his life.  His behavior
+may seem odd or eerie to some, but in reality it is just his way of reminiscing.
+*page_break
+He is not a social recluse who spends all of his days living in the past. It's just that this is his monument to a person he loves very dearly and doesn't want to forget. Do you think you can have a relationship with ${loverName},
+given this kind of behavior?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+Your sensitivity is very admirable.
+*finish
+*label D2
+*set GF 0
+*set SR 0
+*set LT 0
+*set ES 0
+I admire your honesty. I guess this must just be too difficult for you to accept deep down in your heart.
+*finish
+

@@ -1,0 +1,107 @@
+${loverName} would like to go dancing tonight. Would you like to take her?
+
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A2
+She really wants to go, so if you don't take her she'll either find someone else to take her, or go by herself. Will you change your mind and take her?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto H1
+  #NO
+    *goto H2
+*label H2
+${loverName} says, "Maybe we can get together some other time."
+*finish
+*label H1
+*label A1
+*set GN%+20
+When you pick her up, you notice that she has had her hair done for her date with you. She must have been quite a good-looking girl in her youth. Heck, she's good-looking now!
+*page_break
+As the two of you move across the dance floor to music that you used to listen to as kids, you notice that many eyes are upon you. Occasionally, another man asks ${loverName} if she wants to dance. How do you feel about this?
+
+
+Select a mood:
+
+*choice
+  #FINE
+    *goto B1
+  #JEALOUS
+    *goto B2
+  #INSANELY JEALOUS
+    *goto B3
+*label B1
+*set CN%+30
+At your age, less bothers you than when you were younger. You are sure she is not going to run off with anyone. After the dance, you take her back home. WIll you:
+*label KISS
+
+
+Select an action:
+
+*choice
+  #KISS HER GOOD NIGHT, GENTLY
+    *goto C1
+  #KISS HER GOOD NIGHT, PASSIONATELY
+    *goto C2
+  #SHAKE HER HAND
+    *goto C3
+*label C1
+How romantic! You still have that soft touch. ${loverName} melts under your gentle caress. She says that she appreciates your consideration. She has gone out with men who thought she would go "all the way" on their first date. "A good
+swift kick in the chops told them a different story," she says!
+*finish
+*label C2
+(Make sure your teeth are in tightly.) You kiss ${loverName} passionately, which seems to take her by surprise. She doesn't seem to resist.
+
+
+Select an action:
+
+*choice
+  #REST A LITTLE
+    *goto D1
+  #TRY GOING ALL THE WAY
+    *goto D2
+*label D1
+You rest a bit to catch your breath. ${loverName} looks uncomfortable. She explains that she is not ready to just dive into a whirlwind romance with you or anyone else. She wishes you a good night.
+*finish
+*label D2
+*set TR%-20
+KICK! ${loverName} gives you one right in the chops. "The NERVE!" she says. "I barely even know you." You have taken your liberties with ${loverName} and it hasn't paid off. She refuses to speak with you for the rest of the evening.
+*if MS>0
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*page_break
+If you wanted this kind of aggravation you could have stayed at home with your wife!
+*label E.F
+*finish
+*label C3
+What a gentleman! Too gentle, perhaps. ${loverName} wonders whether "you've lost that lovin' feeling." In any case, she admires your wish to respect a lady and will reserve judgement on whether or not you are an old fuddy-duddy until next time.
+*finish
+*label B2
+You get that jealous look in your eye and ${loverName} senses it. That doesn't stop her from dancing, mind you, but she senses your jealousy and is flattered by it. It makes her feel good to know that she is worth fighting for.
+*if SC<60
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Unfortunately, you don't have the social skills necessary to keep ${loverName}'s attention. She spends most of the night dancing with other men.
+*finish
+*label F.F
+Since your social skills are very strong, the other men she dances with serve only as dance partners. After the dance, you take her back home. WIll you?
+*goto KISS
+*label B3
+*set GN%-20
+${loverName} thinks you are being a bit unreasonable. There is a shortage of willing female dance partners. All the men are trying to do is have a little fun. Your possessiveness reminds her of an ex-husband, and puts a damper on the evening.
+*finish
+

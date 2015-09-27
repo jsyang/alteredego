@@ -1,0 +1,41 @@
+*if AG < 14
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 19
+  Sorry, you're too old for this experience.
+  *finish
+The teacher asks for a volunteer from the class to help an Italian exchange student, Gino, learn to speak English. You can:
+
+
+Select an action:
+
+*choice
+  #VOLUNTEER
+    *goto A1
+  #NOT VOLUNTEER
+    *goto A2
+*label A1
+*set TH%+20
+Wouldn't it be great if Gino were this incredible-looking, sexy, wild and uninhibited Italian fox?  It would be, but as it turns out, Gino is rather ordinary-looking. Do you:
+
+
+Select an action:
+
+*choice
+  #STOP HELPING HIM AFTER A SHORT PERIOD OF TIME
+    *goto B1
+  #STICK WITH IT
+    *goto B2
+*label B1
+*set TH%-20
+You're behaving kind of selfishly, don't you think? Haven't you ever heard of being nice, just for the sake of being nice?
+*finish
+*label B2
+*set SC%+40
+As it turns out, Gino has a really great personality. He becomes a good friend.
+*finish
+*label A2
+I guess you believe that you're too busy right now.
+*finish
+

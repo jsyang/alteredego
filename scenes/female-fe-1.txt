@@ -1,0 +1,83 @@
+*comment @KID,0,0,1
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 2) and (childage0 > 0)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 2) and (childage1 > 0)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 2) and (childage2 > 0)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 2) and (childage3 > 0)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 2) and (childage4 > 0)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+You are watching ${childName} sleep peacefully in the crib. Suddenly, ${childName}'s mouth opens in a perfect "O"-shape. Hands clenched in tight little fists, the baby awakens and focuses intently on your face.
+
+
+Select an action:
+
+*choice
+  #JUST STAND THERE AND SMILE AT THE BABY
+    *goto A1
+  #PICK THE BABY UP
+    *goto A2
+*label A1
+That isn't very stimulating. ${childName} would have preferred a nice warm body to be close to.
+*finish
+*label A2
+*set FM%+20
+The baby makes a cooing noise followed by a few short grunts. Soon you smell the pungent odor of you-know-what.
+
+
+Select an action:
+
+*choice
+  #CALL SOMEONE ELSE TO CHANGE THE BABY
+    *goto B1
+  #CHANGE THE BABY
+    *goto B2
+*label B1
+*set FM%-10
+Coward!
+*finish
+*label B2
+*set TH%+30
+That's the spirit! Only a coward would hand over the dirty work to someone else.
+*finish
+

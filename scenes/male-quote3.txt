@@ -1,0 +1,20 @@
+*check_purchase adfree
+*if choice_purchase_supported and not(choice_purchased_adfree)
+  Come back in a few minutes to play the next part of Alter Ego!
+
+  Or, you can buy the game now to skip the wait.
+
+  *purchase adfree $4.99 purchased
+  *delay_break 600
+
+*label purchased
+WELCOME TO ADOLESCENCE
+
+
+"He was a bold man that first eat an oyster."
+
+JONATHAN SWIFT
+1667-1745
+Polite Conversation, Dialogue I
+*finish
+

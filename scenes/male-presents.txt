@@ -1,0 +1,64 @@
+You are currently madly in love with a girl who is having a birthday next week. You are trying to think of what to get her. She has hinted about a very expensive piece of jewelry that would just about wipe out your life savings,
+if you chose to buy it for her.
+*choice mood action
+  #GENEROUS
+    #BUY HER THE JEWELRY
+      *goto A11
+    #TRY TO THINK OF SOMETHING ELSE
+      *goto A12
+  #MIXED FEELINGS
+    #BUY HER THE JEWELRY
+      *goto A21
+    #TRY TO THINK OF SOMETHING ELSE
+      *goto A22
+  #NOT THAT GENEROUS
+    *selectable_if (false) #BUY HER THE JEWELRY
+      *finish
+    #TRY TO THINK OF SOMETHING ELSE
+      *goto A32
+*label A11
+*set IN%-10
+You will never be able to support this girl in the style to which she is accustomed. Eventually, she runs off with some guy who has a thousand-dollar smile, a ten-thousand-dollar sports car and a million dollar inheritance. Ta, ta!
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+*label A21
+*set IN%-20
+Almost immediately after you purchase the jewelry, you begin to resent the decision -- and your girlfriend, too. The relationship falls apart, and to make matters worse, she keeps the jewelry.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+*label A12
+You can still be generous and not have to sell your blood to pay for gifts.
+*if IN>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+Your Intellectual sphere status shows that you are smart enough to come up with an inventive gift idea, which she loves, and which doesn't leave you penniless.
+*finish
+*label B.F
+It might be hard to come up with an idea for a present, but you do, and she loves you for it.
+*finish
+*label A22
+*set SC%-10
+You try to think of something else, but your guilt prevents you from coming up with anything good. Eventually, the whole experience makes you resent the girl and the relationship flops.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+*label A32
+*set IN%-10
+*set SC%-20
+You buy her a soap dish and some hand towels (with some tacky Oriental design on them) which were on sale in "The Salvage Warehouse." She is less than impressed. You are given the brush-off.
+*set GF 0
+*set SR 0
+*set ES 0
+*set LT 0
+*finish
+

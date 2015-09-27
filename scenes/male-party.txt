@@ -1,0 +1,227 @@
+A group of your parents' closest friends have come over for dinner. You are fed early and put upstairs to entertain yourself.
+*label FND
+*choice mood action
+  #ANGRY
+    #TRY TO SNEAK DOWNSTAIRS
+      *goto A11
+    #TRY TO ATTRACT PARENTS' ATTENTION
+      *goto A12
+  #DEPRESSED
+    #TRY TO SNEAK DOWNSTAIRS
+      *goto A21
+    #TRY TO ATTRACT PARENTS' ATTENTION
+      *goto A22
+  #CURIOUS
+    #TRY TO SNEAK DOWNSTAIRS
+      *goto A31
+    #TRY TO ATTRACT PARENTS' ATTENTION
+      *goto A32
+*label A11
+I don't blame you for feeling angry at your parents. After all, who's more important, a bunch of stupid friends or you? You peek out of your room, and head down the stairs. You have everyone in your sights.
+
+
+Select an action:
+
+*choice
+  #CRY FOR SYMPATHY
+    *goto B1
+  #KEEP SNEAKING
+    *goto B2
+*label B1
+*label CRY
+Your mother sees you crying and feels sorry for you. She takes you downstairs for five minutes and lets you mingle with the guests. They like you, but soon the novelty of your presence wears off.
+
+
+Select an action:
+
+*choice
+  #LOOK FOR SOMETHING TO DRINK
+    *goto C1
+  #GO BACK UPSTAIRS
+    *goto C2
+*label C1
+A plastic cup with some brownish liquid is sitting on the table.
+
+
+Select an action:
+
+*choice
+  #TAKE A SIP
+    *goto D1
+  #LEAVE IT ALONE
+    *goto D2
+*label D1
+*label SIP
+Yech! It tastes just like medicine!
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+Oops! It slips out of your hands and drops right onto the living room rug. Your father notices and tries to wipe it up. You are sent back upstairs.
+*finish
+*label E2
+Oops! You are caught by your mom, who tells you not to drink things from other people's glasses. That drink was for grownups only. Back to the bedroom for you.
+*finish
+*label D2
+*label NOSIP
+Good choice. That drink was for grownups only. There are some cookies on the table over there. Do you want to:
+
+
+Select an action:
+
+*choice
+  #TRY TO STEAL A COOKIE
+    *goto F1
+  #ASK YOUR MOTHER FOR A COOKIE IN FRONT OF ALL HER FRIENDS
+    *goto F2
+*label F1
+*goto COOKIE
+*label F2
+*goto ASK
+*label B2
+*label SNEAK
+You look around the bend and spy a table full of cookies that your mother has baked for all the guests. What nerve.
+
+
+Select an action:
+
+*choice
+  #TRY TO STEAL A COOKIE
+    *goto G1
+  #ASK YOUR MOTHER FOR A COOKIE IN FRONT OF ALL HER FRIENDS
+    *goto G2
+*label G1
+*label COOKIE
+They are just out of reach.
+
+
+Select an action:
+
+*choice
+  #GET UP ON YOUR TIPTOES
+    *goto H1
+  #GENTLY TUG ON THE TABLECLOTH, BRINGING THEM CLOSER TO THE EDGE
+    *goto H2
+*label H1
+*temp randomJ
+*rand randomJ 1 2
+*if randomJ=1
+  *goto J1
+*else
+  *goto J2
+*label J1
+You can't reach them. You are spotted by your mother who gives you half a cookie (half?!) and sends you up to bed.
+*finish
+*label J2
+You got it! Your victory is short-lived. Your mom scoots you back up to bed.
+*finish
+*label H2
+CRASH! The entire tray of cookies hits the floor with a loud clang. Fortunately for you there are too many people standing around for your mother to paddle you for this. Instead, you get THE FACE. You will regret it if you try anything
+else tonight.
+*finish
+*label G2
+*label ASK
+Intellectual sphere takes a giant leap. How can she refuse without looking like an ogre? You savor the spoils of victory!
+*set IN%+10
+*finish
+*label C2
+Who wants to stay around with a bunch of dumb grownups anyway? You can now:
+
+
+Select an action:
+
+*choice
+  #GO TO SLEEP
+    *goto K1
+  #WATCH TV IN YOUR PARENTS' ROOM
+    *goto K2
+*label K1
+It's been a long day. Tomorrow morning, when your parents are tired from going to bed late, you'll sneak back downstairs and eat leftover potato chips and onion dip for breakfast.
+*finish
+*label K2
+Why don't they have any cartoons on at this time of night? You fall asleep on your parents' bed. Your dad comes up to check on you, finds you sleeping and brings you to your own room. He tucks you in and says "I love you." Your
+Emotional sphere takes a healthy jump.
+*set CN%+20
+*finish
+*label A21
+Don't take it personally. Parents are entitled to some fun too. Besides, there's a whole party down there to explore. Go to it!
+
+
+Select an action:
+
+*choice
+  #CRY FOR SYMPATHY
+    *goto L1
+  #KEEP SNEAKING
+    *goto L2
+*label L1
+*goto CRY
+*label L2
+*goto SNEAK
+*label A12
+*label A32
+After all, who's more important, a bunch of stupid friends, or you? You survey the area and discover three possible ways to attract attention.
+
+
+Select an action:
+
+*choice
+  #JUMP UP AND DOWN ON YOUR PARENTS' BED
+    *goto N1
+  #REMOVE ALL OF YOUR CLOTHES AND GO DOWNSTAIRS
+    *goto N2
+  #TURN ON THE TV AS LOUD AS IT CAN GO
+    *goto N3
+*label N1
+*label JUMP
+BOING! BOING! BOING! CRASH! You fall off the bed and land on the floor, knocking your head on the bedpost. Your mom rushes up the stairs. You are more afraid than in pain, but you get a lump on your head, just the same. You sit
+on the couch downstairs for the rest of the night. This isn't as much fun as you thought it would be.
+*finish
+*label N2
+*label STRIP
+This certainly gets a reaction, from your parents (who are completely mortified), and their friends (who are relieved that someone else's child does things like that). After your dad puts some clothes on you he takes you
+downstairs and lets you wander around. You spot a drink on the table.
+
+
+Select an action:
+
+*choice
+  #TAKE A SIP
+    *goto P1
+  #LEAVE IT ALONE
+    *goto P2
+*label P1
+*goto SIP
+*label P2
+*goto NOSIP
+*label N3
+*label TV
+Big mistake. Your dad comes up and uses the LOUD VOICE to let you know you were bad. You are put back in your room and told to go to sleep.
+*finish
+*label A31
+You can't get downstairs. Mom put a special fence in front of the stairs. It might be fun to see what you can do upstairs that your parents would normally not allow you to do. If you have to stay upstairs, you might as well have some
+fun, right?
+
+
+Select an action:
+
+*choice
+  #JUMP UP AND DOWN ON YOUR PARENTS' BED
+    *goto Q1
+  #REMOVE ALL OF YOUR CLOTHES AND GO DOWNSTAIRS
+    *goto Q2
+  #TURN ON THE TV SET AS LOUD AS IT WILL GO
+    *goto Q3
+*label Q1
+*goto JUMP
+*label Q2
+*goto STRIP
+*label Q3
+*goto TV
+*label A22
+These two choices don't go together. When a person is depressed he becomes self-absorbed. When you get older these two choices can lead to very self-destructive consequences. For now, go back and try another set of choices.
+*goto FND
+

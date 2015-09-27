@@ -1,0 +1,62 @@
+*if (MS<1) and (CL<1)
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. This episode is only for those who have yet to tie the knot!
+*finish
+*label Z.T
+While you are doing some grocery shopping, you run into a high school friend who is wheeling around a small child. He is the same age as you and is a father.
+*choice mood action
+  #UNCOMFORTABLE/TAKEN ABACK
+    #PONDER FATHERHOOD
+      *goto A11
+    #BE THANKFUL THAT YOU ARE NOT YET A FATHER
+      *goto A12
+  #HAPPY
+    #PONDER FATHERHOOD
+      *goto A21
+    #BE THANKFUL THAT YOU ARE NOT YET A FATHER
+      *goto A22
+  #SAD
+    #PONDER FATHERHOOD
+      *goto A31
+    #BE THANKFUL THAT YOU ARE NOT YET A FATHER
+      *goto A32
+*label A11
+I guess this means that you couldn't possibly imagine yourself as a father in this phase of your life. The experience causes you to have one of those uncomfortable discussions with yourself, "Is HE really too young to be a father? Or am I
+old enough to be approaching that time of life, but have been thinking I'm much younger?"
+*finish
+*label A12
+*set TH%+10
+You haven't had all of the experiences you want out of life; it's too soon to be thinking about fatherhood. It's still a little scary to think that you COULD be responsible for another little person's life.
+*finish
+*label A21
+*set FM%+10
+*set SC%+10
+*set TH%+10
+It must be quite an experience to have a little version of yourself running around. What characteristics would she or he have? Your eyes, your smile, her disposition? Sigh! Do you feel that slight tugging at your heart? That's called the
+PATERNAL INSTINCT. I hope you didn't think that only women had such feelings.
+*finish
+*label A22
+*set CA%-10
+Not now, buddy. This is not for you. Maybe someday after you have done a little more traveling or after you have sown a few more wild oats. Right now you wouldn't trade places with him for anything.
+*finish
+*label A31
+Life is so complicated sometimes it's depressing. Will you ever reach the point where you can handle that kind of responsibility?
+*if TH>70
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+You certainly are responsible enough to do it. I'm sure you will make a good father.
+*finish
+*label B.F
+At the rate you are going, you'll have to improve a bit more in acceptance of responsibility. Keep trying.
+*finish
+*label A32
+*set TH%+10
+Poor guy. You can't imagine yourself in his position. But, more important than that, maybe you are feeling sad because you are becoming aware that your life may change drastically one day, with the advent of new responsibilites that you
+haven't had the chance to ponder yet. Geez, you can't even take care of all of your present responsibilities.
+*finish
+

@@ -1,0 +1,67 @@
+You and your family are at a holiday get-together. Uncle Sam is sitting in the corner of the room, drinking from a funny-looking glass. He's the one who always kisses you and squeezes you hard whenever you see him.
+*page_break
+Mom says to mind him because he's your father's brother, but you don't like him. He always smells like whiskey. Here he comes now, calling out your name and saying that you are his "little darling."
+*choice mood action
+  #FRIGHTENED/SHY
+    #WALK AWAY
+      *goto A11
+    #STAND THERE AND WAIT FOR HIM
+      *goto A12
+  #MAD
+    #WALK AWAY
+      *goto A21
+    *selectable_if (false) #STAND THERE AND WAIT FOR HIM
+      *finish
+*label A11
+*set GN%-20
+*set HP%-10
+You try to walk away fast, with your head down (maybe he won't see you), but he scoops you up from under your arms and gives you a big hug, holding you close to his body. His face is rough and prickly.
+*page_break
+He tries to pull you up onto his lap, but you begin to squirm, which makes you difficult to manage. Finally, he lets you go, giving you a hard smack on the bottom. You wish someone would tell him to stop.
+*finish
+*label A12
+*set GN%-20
+*set HP%-20
+*set CA%-20
+You stand there stiff and nervous, waiting for him to greet you and get it over with. He scoops his hand under your arms and lifts you close to his body. His face is rough and prickly.
+
+
+Select an action:
+
+*choice
+  #SQUIRM
+    *goto B1
+  #KEEP STILL
+    *goto B2
+*label B1
+*set IN%+20
+You squirm and make it difficult for him to get a tight hold on you. Finally, he laughs and gives you a hard smack on the bottom, letting you go. You wish someone would tell him to stop.
+*finish
+*label B2
+He holds you from under your arms and pulls you close to him. His face is rough and prickly, and you can smell the drinks on his breath. It's awful. Finally, your mother comes over and asks you to do an errand for her. Thank Goodness!
+*page_break
+You notice Mom saying something to him. He's laughing and saying, "Don't be silly!" Mom has a stern look on her face. Later, when you see Mom, she seems mad at you, but you can't figure out why.
+*finish
+*label A21
+*set GN%-20
+*set IN%+10
+You're not letting that smelly old man near you again.
+
+
+Select an action:
+
+*choice
+  #WALK TOWARDS MOM
+    *goto C1
+  #WALK TOWARDS THE BATHROOM
+    *goto C2
+*label C1
+*set HP%+20
+Your mom sees you walking over but doesn't know what you are walking away from. She sees Uncle Sammy and thinks he is about to eat the rest of the food at the buffet table. ("He eats like a horse," Mom always says.) She steers him away
+from the table and from you, too. That was close!
+*finish
+*label C2
+He's a jerk, but he'll never follow you in there. You reach for the knob and turn it. Your hand slides over the smooth surface without turning the knob. It's occupied! Uncle Sam scoops you up and tickles you. You squirm away and yell for
+Mom. She walks you to the upstairs bathroom.
+*finish
+

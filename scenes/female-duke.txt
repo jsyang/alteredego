@@ -1,0 +1,111 @@
+While socializing at a friend's party, you run into someone you had a terrible crush on in 5th grade. He looks even better now than he did back then. He is with someone who looks bored. (She is just standing there, picking her teeth with
+one of those fancy toothpicks.)
+*choice mood action
+  #SOCIABLE / FLIRTATIOUS
+    #WALK OVER AND SAY "HELLO"
+      *goto A11
+    *selectable_if (false) #JUST IGNORE HIM
+      *finish
+  #UNSOCIABLE / SELF-CONSCIOUS
+    *selectable_if (false) #WALK OVER AND SAY "HELLO"
+      *finish
+    #JUST IGNORE HIM
+      *goto A22
+*label A22
+Oddly enough, HE walks over to YOU and begins a conversation about "the old days."
+
+*goto TALK
+*label A11
+*set SC%+10
+*set CN%+10
+*label TALK
+You are introduced to Debbie, his date, who excuses herself to look for something to eat.
+
+
+Select an action:
+
+*choice
+  #MAKE SMALL TALK, THEN EXCUSE YOURSELF
+    *goto B1
+  #BRING UP THE FACT THAT YOU HAD A TERRIBLE CRUSH ON HIM "IN THE OLD DAYS"
+    *goto B2
+*label B1
+*set SC%+10
+*set CN%-10
+You talk about how things have changed and how everyone has "grown up" since grade school. Neither of you has kept up with anyone. The conversation soon runs out of steam and you excuse yourself. Besides, Debbie has returned and
+is whining about wanting to go home or go to a REAL party.
+*finish
+*label B2
+As the sweat dampens your palms, you take the risk of telling him that back in grade school you thought he was irresistable. You tell him that you wrote his name all over your arm and didn't wash it for a week.
+*page_break
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+He admits that he had quite an impression of you, too. Everyone used to call you "Chipmunk Cheeks" because of the way your teeth were too big for your mouth. He continues, "Everyone thought you were so CUTE."
+*page_break
+Debbie returns. "Can we go home NOW?" she whines. What a disappointment.
+*finish
+*label C2
+*set CN%+30
+*set SC%+20
+*set HP%+20
+He admits that he remembers you well too. He used to torture himself at night trying to think of things to say to you in the hall but was afraid that you would laugh at him. He says, "Sometimes I thought I would have to kill myself just
+to get you to notice me."
+
+
+Select an action:
+
+*choice
+  #QUIETLY SLIP HIM YOUR NUMBER
+    *goto D1
+  #WALK AWAY WONDERING, "WHAT IF..."
+    *goto D2
+*label D1
+He quickly stuffs the telephone number in his pocket.
+*if (SR<1) and (MS<1)
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*finish
+*label E.F
+*page_break
+Isn't there the small matter of a commitment that you have made to someone else that you seem to be forgetting? What do you have to say about this?
+
+
+Select an action:
+
+*choice
+  #"I'LL TAKE MY CHANCES."
+    *goto I1
+  #"I DIDN'T REALLY PLAN ON DOING ANYTHING WITH HIM."
+    *goto I2
+*label I1
+*set TR%-30
+That's not very trustworthy of you. As it turns out, he never calls. Six months later, you find out that he and Debbie are married and there is a child on the way. What a waste!
+*finish
+*label I2
+*set TR%-20
+I know, SURE. Whatever you say.
+*finish
+*label D2
+*if (SR<1) and (MS<1)
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+*set CN%-20
+*set CA%-20
+Coward! How else will you find out what kinds of surprises life has in store for you. Live a little.
+*finish
+*label J.F
+*set SC%+10
+*set HP%+20
+*set CN%+20
+How flattering. You walk away thinking about how things might have been if only you had known him back then, when things weren't so complicated.
+*finish
+

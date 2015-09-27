@@ -1,0 +1,123 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+Gary Barber is an acquaintance who has taken a few of the same classes you have. He is an attractive, down-to-earth guy with gorgeous green eyes, a nice smile and a slim athletic body. He approaches you on campus and asks if
+you would be interested in helping him decorate his apartment. He thinks it needs a "classy woman's touch." What will you do?
+
+
+Select an action:
+
+*choice
+  #HELP HIM DECORATE
+    *goto A1
+  #PASS ON THE OPPORTUNITY
+    *goto A2
+*label A2
+*finish
+*label A1
+*set TH%+10
+*set SC%+10
+During the course of the afternoon, you get to know one another very well. You work together in close quarters (the room is very small), so a lot of accidental touching and bumping occurs during the day. You aren't sure, but you think
+that Gary is coming on to you.
+
+
+Select an action:
+
+*choice
+  #SUGGEST THAT THE TWO OF YOU SHOWER OFF TOGETHER
+    *goto B1
+  #IGNORE ANY SIGNALS THAT HE MIGHT BE GIVING YOU
+    *goto B2
+*label B1
+*if SC>70
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+*set CN%+20
+You are aggressive, "but indeed classy," as Gary says. The two of you take a nice, warm romantic shower together. I'll leave what comes after the shower to your imagination.
+*label F
+*page_break
+*if SR>0
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+*set TR%-10
+A fling like this is not likely to escape the attention of your steady partner. Amazingly, after he finds out about your brief affair, he forgives you. (You don't really deserve it, but your social skills are so good that you can
+sweet-talk just about anybody.)
+*finish
+*label D.F
+*if MS>0
+  *goto H.T
+*else
+  *goto H.F
+*label H.F
+*finish
+*label H.T
+*set TR%-40
+*set MS 0
+*page_break
+A fling like this is not likely to escape the attention of your husband! After he finds out about your brief affair, he divorces you.
+
+*finish
+*label C.F
+*set CN%-10
+You don't really have the social skills necessary to make a move like this. Gary gets frightened by your forwardness, thanks you for your help and sends you on your way.
+*finish
+*label B2
+I guess this is not your style. It IS Gary's style, though. He asks if you would like to take a nice hot shower, then get one of his famous body massages.
+
+
+Select an action:
+
+*choice
+  #ACCEPT THE OFFER
+    *goto E1
+  #REJECT THE OFFER
+    *goto E2
+*label E1
+*set CN%+10
+*set HP%+20
+*set SC%+10
+The two of you take a nice, warm, romantic shower together. I'll leave what comes after the shower up to your imagination.
+*goto F
+*label E2
+How could you pass up an offer like this?
+
+
+Select an action:
+
+*choice
+  #"I'M GOING OUT WITH SOMEONE, AND I DON'T WANT TO CHEAT ON HIM."
+    *goto G1
+  #"I'M AFRAID I WON'T BE ABLE TO HANDLE IT."
+    *goto G2
+  #"THIS KIND OF EXPERIENCE WOULD BE CHEAP AND DEMEANING."
+    *goto G3
+  #"IT'S JUST NOT FOR ME."
+    *goto G4
+*label G1
+*set TR%+30
+That is very admirable. You are extremely trustworthy.
+*finish
+*label G2
+*set CA%-10
+*set CN%-10
+Sometimes men who come on this strongly can be frightening.
+*finish
+*label G3
+*set GN%+30
+*set TH%+20
+Maybe so. On the other hand, good relationships can start in many ways. Just because a relationship begins with a sexual experience, doesn't mean it has to continue as a series of shallow, impersonal encounters.
+*finish
+*label G4
+O.K., enough said. Gary seems very understanding.
+*finish
+

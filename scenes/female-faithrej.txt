@@ -1,0 +1,131 @@
+You have just been given the female lead role in the school play opposite Curt Harris (voted "hottest bod of the century" by classmates). The role calls for a VERY heavy love scene. Unaware that you are within hearing distance, Curt
+learns that you are his female lead and blurts out, "I can't kiss HER. I'll puke."
+*choice mood action
+  #ANGRY
+    #QUIT THE SHOW
+      *goto A11
+    #SAY SOMETHING TO HIM
+      *goto A12
+    #DO NOTHING/THE SHOW MUST GO ON
+      *goto A13
+  #DEPRESSED
+    #QUIT THE SHOW
+      *goto A21
+    #SAY SOMETHING TO HIM
+      *goto A22
+    #DO NOTHING/THE SHOW MUST GO ON
+      *goto A23
+  #UNFLAPPABLE
+    *selectable_if (false) #QUIT THE SHOW
+      *finish
+    #SAY SOMETHING TO HIM
+      *goto A32
+    #DO NOTHING/THE SHOW MUST GO ON
+      *goto A33
+*label A11
+*set GN%-20
+You don't have to put up with this. Months later you find out that what you really heard Curt saying was why he didn't want to kiss Ms. Murlinger, the teacher, after the performance.
+*finish
+*label A12
+*label A32
+You can say:
+
+
+Select an action:
+
+*choice
+  #"%$%$ YOU, CURT."
+    *goto B1
+  #"WHAT MAKES YOU THINK I'M SO HAPPY ABOUT KISSING YOU, JERKFACE."
+    *goto B2
+  #"THAT'S JUST ABOUT THE CRUDEST THING ANYONE HAS EVER SAID ABOUT ME."
+    *goto B3
+*label B1
+*set GN%-30
+*set CA%-20
+*set TH%-10
+Very articulate. Even though he might have deserved it, you have done nothing more than give him another reason to turn off to you. After all, the show MUST go on.
+*finish
+*label B2
+*set GN%-20
+The two of you start off on the wrong foot. In the end, however, the anger that you generate in one another gets redirected in the play. The result is some pretty torrid love scenes. He apologizes after the last show and says that
+you have given him some of the best kisses of his life.
+*finish
+*label B3
+*label D2
+*set GN%+10
+*set EX%+20
+*set IN%+20
+Yes, he is quite crude.
+*page_break
+*label GETIT
+As it turns out, he was only saying this to keep up a macho front with his friends. The fact is, he is scared to death to have to play a love scene with you. The more you work with him, the more you realize that
+he is the Ultimate Turd.
+*finish
+*label A13
+*set CN%+40
+*set GN%-20
+The two of you are a smashing success, despite Curt's lack of social skills.
+*page_break
+*goto GETIT
+*label A21
+*set HP%-20
+I'm sorry that you are taking this so badly. He seems like a cruel kind of person, doesn't he?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+Well, if he is so cruel, then why would you want to be in a play with him? It's clear that he is not the type who is easy to get along with.
+*finish
+*label C2
+*label A23
+*set HP%-10
+Wake up and smell the roses! You are obviously the type of person who yearns to be miserable. Be careful, or you'll probably get what you want.
+*finish
+*label A22
+You can say:
+
+
+Select an action:
+
+*choice
+  #"YOU HAVE JUST RUINED MY ENTIRE LIFE."
+    *goto D1
+  #"THAT IS THE CRUDEST THING THAT ANYONE HAS EVER SAID TO ME."
+    *goto D2
+*label D1
+*set HP%-10
+You may be thinking this, but YOU are the one who has ruined your life by placing the control of your happiness on someone other than yourself. Why pay any attention to THAT jerk?
+*finish
+*label A33
+*set CN%+30
+Your guts may be turning, but outside you stay cool, calm and collected. You are confident, but rejection is hard to take at your age no matter how well adjusted you are.
+*page_break
+After the first rehearsal Curt starts to put the moves on you. Looks like you weren't so disgusting, after all.
+
+
+Select an action:
+
+*choice
+  #FLY INTO HIS ARMS
+    *goto E1
+  #RESIST HIM
+    *goto E2
+*label E1
+*set IN%-10
+Fool! He spreads stories all around school about how "easy" you are.
+*finish
+*label E2
+*set IN%+30
+Good choice. You've got his number.
+*finish
+
+
+
+

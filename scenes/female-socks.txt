@@ -1,0 +1,80 @@
+A friend has asked you to mind her six-year-old son Evan for the afternoon. Evan is a sweet child with large brown eyes as big as chocolate kisses. His mom had promised to take him to the mall to see his favorite superhero, Captain
+Cosmos, from the Captain Cosmos Cartoon Hour.
+*page_break
+You have agreed to make good on his mom's promise. After patiently waiting to see Captain Cosmos (who arrived forty minutes late) and receiving a secret decoder ring and discount coupons to Captain Cosmos' Pizza Palace, you make your way
+through the crowded parking lot for the return trip home.
+*page_break
+Evan, still fascinated by his larger-than-life hero, abruptly returns to Earth to notice something very peculiar about the man who gets into the old blue Cadillac parked next to your car. "Hey, that man has the same pants and space
+boots as Captain Cosmos," he says, pointing a tiny finger in the direction of the man climbing into the car.
+*choice mood action
+  #NERVOUS
+    #TELL HIM THE TRUTH
+      *goto A11
+    #MAKE UP A STORY
+      *goto A12
+  #CALM
+    #TELL HIM THE TRUTH
+      *goto A21
+    #MAKE UP A STORY
+      *goto A22
+*label A11
+*set CA%-10
+Evan crooks his head and looks at you incredulously. "I'll bet he's just driving to the airport 'cause they won't let him land the Captain Cosmos Cruiser in the parking lot."
+*finish
+*label A12
+*set CA%-10
+Your story doesn't seem to make sense to Evan. All the way home he appears lost in deep thought, searching for a clue to the man who seemed so out of place in the parking lot. "I'll bet he's just driving to the airport 'cause they won't
+let him land the Captain Cosmos Cruiser in the parking lot."
+
+You wisely agree.
+*finish
+*label A21
+*set GN%-10
+The disappointment registers immediately on his face. After a few seconds, the disappointment softens and yields to confusion. All of a sudden, Evan's world becomes filled with inconsistencies.
+
+
+Select an action:
+
+*choice
+  #TRY TO EXPLAIN THINGS MORE FULLY
+    *goto B1
+  #SAY NOTHING
+    *goto B2
+*label B1
+The more you try to explain, the more confused he seems to get. Your explanations seem to raise more questions than they answer.
+*finish
+*label B2
+When you return Evan to his mom, it seems that he is anxious to ask her many questions.
+
+
+Select an action:
+
+*choice
+  #APOLOGIZE TO YOUR FRIEND FOR CONFUSING HIM
+    *goto C1
+  #INSIST THAT IT'S BEST TO SHOW CHILDREN THE REAL WORLD AS SOON AS POSSIBLE
+    *goto C2
+*label C1
+*set CA%+20
+Your friend understands, and eventually Evan is satisfied.
+*finish
+*label C2
+*set GN%-5
+Everyone is entitled to his or her opinion, but you shouldn't be shocked if the next time you see Evan is at his college graduation!
+*finish
+*label A22
+*if CA>50
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+*set GN%+20
+Your story satisfies Evan's curiosity and allows him to keep the faith in one of his favorite heroes. He has plenty of time to find out that Captain Cosmos also runs The Frankfurter Shack at the south end of the mall.
+*finish
+*label D.F
+*set GN%+20
+You are not calm enough to tell a believable tale, so Evan offers one that makes more sense to him: "I'll bet he's just driving to the airport 'cause they won't let him land the Captain Cosmos Cruiser in the parking lot."
+
+You wisely agree.
+*finish
+

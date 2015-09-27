@@ -1,0 +1,131 @@
+${spouseName} has decided that she would like to go back to college full time to enrich her life. She claims to feel bored with her present life and craves the change. Her going back would cause you to have more responsibilities.
+*page_break
+You would have to cook and clean up a bit more. You would also have fewer resources, because of college costs, transportation expenses, and any loss of income if ${spouseName} stops working. What will you do?
+
+
+Select an action:
+
+*choice
+  #ENCOURAGE ${SPOUSENAME} TO GO TO COLLEGE
+    *goto A1
+  #DISCOURAGE ${SPOUSENAME} FROM GOING TO COLLEGE
+    *goto A2
+  #TELL HER SHE SHOULD THINK ABOUT IT A LOT MORE BEFORE DECIDING
+    *goto A3
+*label A1
+That was very supportive of you.
+*label I
+Over the course of her studies, you begin to see ${spouseName} less and less. It seems that she has discovered a new life at school. There are newer, younger friends (both men and women), and lots of talk about
+things which either don't interest you, or you don't understand. At this point you can:
+
+
+Select an action:
+
+*choice
+  #SAY THAT YOU ARE FEELING A LITTLE NEGLECTED
+    *goto B1
+  #SAY NOTHING BECAUSE SHE SEEMS HAPPY
+    *goto B2
+  #SUGGEST THAT YOU BOTH TAKE A COURSE TOGETHER
+    *goto B3
+*label B1
+*set HP%-10
+${spouseName} can understand this, because she has felt a little neglected more than a few times. She had to tolerate these feelings, and so must you. She has no plans to quit what she is doing, because she enjoys it too much.
+
+
+Select an action:
+
+*choice
+  #TOLERATE IT
+    *goto C1
+  #CREATE AN ISSUE OUT OF IT
+    *goto C2
+*label C1
+It is a hard thing to accept, but eventually you realize how crucial college is to ${spouseName}. As a matter of fact, she does quite well at it. Eventually, she graduates. How do you feel?
+*label E
+
+
+Select an action:
+
+*choice
+  #PROUD
+    *goto D1
+  #RELIEVED THAT THIS "PHASE" IS OVER WITH
+    *goto D2
+*label D1
+*set HP%+10
+That is very admirable of you. She is proud of herself as well. Now, about graduate school....
+*finish
+*label D2
+*set GN%-20
+This statement is condescending, and even if you don't admit it, the condescension shows through. ${spouseName} is aware that you never appreciated her desire to learn. One of the things she learned best was not to seek the
+approval of anyone (not even a husband) before doing something that will enrich her life. Her college education becomes a source of resentment for both of you.
+*finish
+*label C2
+*set MP+1
+${spouseName} thinks you are acting like a stubborn child. She is changing her life for the better, and you are resisting that change. Perhaps you don't feel comfortable about ${spouseName} getting "too smart." She may realize that you are
+selfish and that you put your own best interests ahead of hers. Her college education becomes a source of resentment for both of you.
+*finish
+*label B2
+*set HP%-10
+Yes, she IS happy. Unfortunately, her happiness may make you feel a little left out. But there are times in a marriage when people begin to lose track of who they are, other than "the husband of so-and-so" or "the wife of so-and-so."
+*page_break
+This can cause a great deal of confusion and resentment. If you try to help your spouse out of this dilemma, she will resent you for not letting her figure it out for herself. As it turns out, your wife does very well in school and
+eventually graduates. How do you feel?
+*goto E
+*label B3
+*set TH%+10
+*set CA%-10
+I can see why you think this would be a terrific idea. ${spouseName} doesn't think so. She is taking college courses to become more of an individual. As difficult as it may seem to understand, she is trying to separate a part of herself from you.
+*page_break
+She doesn't want to give you up; she just wants to see what she is capable of doing on her own. She would rather you take your college courses at a different school. How do you feel about this?
+
+
+Select an action:
+
+*choice
+  #ANGRY/REJECTED
+    *goto F1
+  #UNDERSTANDING
+    *goto F2
+*label F1
+*set GN%-10
+*set CN%-10
+I can understand why you feel this way--you WERE rejected, but at least she was honest. Eventually ${spouseName} finishes school and is ready to graduate. How do you feel?
+*goto E
+*label F2
+It must be difficult to be understanding at a time like this. Eventually, ${spouseName} does very well in school and graduates. How do you feel?
+*goto E
+*label A2
+*set GN%-10
+*set TH%-20
+There comes a point in almost every marriage when a spouse may begin to question the separateness of his or her own identity. A person may wake up one day and ask the question, "Who am I besides the (husband/wife) of so-and-so?"
+*page_break
+This can cause real panic. Often times a person will choose going back to school as a way of regaining some individuality or independence. Are you sure you want to keep discouraging her from going back?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto G1
+  #NO
+    *goto G2
+*label G1
+*set GN%-10
+*set CA%-30
+*set PH%-30
+*set MS 0
+Then, I'm sure you can see where you are headed for trouble. Creating an issue out of your wife's desire to go back to college only clarifies in her mind the feeling that she has been living in your shadow, or is expected to live in
+your shadow. As a result, she files for divorce and leaves you.
+*finish
+*label G2
+It is very understanding of you to change your mind. ${spouseName} does well in school and eventually graduates. How do you feel?
+*goto E
+*label A3
+*set HP%-10
+${spouseName} wonders whether you think she would be foolish enough to consider doing something like this without giving it a lot of thought. She produces a carton full of college catalogs and brochures, sample schedules and a list of
+requirements for her major.
+*page_break
+*goto I
+

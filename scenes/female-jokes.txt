@@ -1,0 +1,74 @@
+The girl who sits next to you in school has just passed you a note, folded in a tight square. She motions to you to read it. You look around the room. Mr. Henessey, the meanest teacher in the school, has his back to the class.
+*page_break
+The note says, "Did you notice that Mr. Henessey's underpants are pulled up so high, you can see them right through his shirt?" Your realization of this is enough to give you an uncontrollable case of the giggles.
+*choice mood action
+  #CURIOUS/DARING
+    #WRITE A NOTE BACK ASKING, "I WONDER IF MRS. DUNPHY GAVE THEM TO HIM?"
+      *goto A11
+    *selectable_if (false) #CRUMPLE THE PAPER UP AND THROW IT AWAY
+      *finish
+  #AFRAID/RELUCTANT
+    *selectable_if (false) #WRITE A NOTE BACK ASKING, "I WONDER IF MRS. DUNPHY GAVE THEM TO HIM?"
+      *finish
+    #CRUMPLE THE PAPER UP AND THROW IT AWAY
+      *goto A22
+*label A11
+You return the note and wait for another response.
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+All of a sudden, you hear Mr. Henessey say to your friend, "Ms. Bradley, would you care to share your little secret with the rest of the class?"
+*page_break
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+*set HP%+10
+Melissa Bradley steps out of her seat, stands up and begins to act like she is really scared (this is her forte). While she is making believe she doesn't know what the teacher is talking about (on the verge of tears), she crumples up
+the note and slips it under her desk.
+*page_break
+Mr. Henessey asks her to show him what she has in her hands. Both hands fan open, revealing two pink palms. She turns to you and lets another giggle loose.
+*finish
+*label C2
+Melissa Bradley looks at the teacher with innocent eyes. She points to you and says, "She was just passing me this homework assignment, Mr. Henessey." He says, "Bring it up here." She shows it to him. (You could just DIE!)
+*page_break
+Mr. Henessey reads it and looks at you sternly. Then he looks at Melissa. He says, "Ms. Bradley, do you take me for some kind of fool? I can tell your terrible handwriting a mile away. Get to the principal's office!"
+*finish
+*label B2
+The note returns and you read what it says, "Maryanne Marcus says she caught them kissing in the parking lot. (YUK!)"
+
+
+Select an action:
+
+*choice
+  #GIGGLE
+    *goto D1
+  #CRUMPLE UP THE PAPER AND THROW IT AWAY
+    *goto D2
+*label D1
+*if TH<80
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+You can't control your giggling. You get sent down to the principal's office for talking in class and spend the afternoon doing a punishment assignment.
+*finish
+*label E.F
+*set HP%+20
+Your level of impulse control shows that you can get yourself back into control when necessary. You have a quick laugh, then calm down before Mr. Henessey (even with his radar ears) can pinpoint the location of the disturbance.
+*finish
+*label D2
+*label A22
+*set CA%+20
+The noise attracts Mr. Henessey's attention. He begins walking down the aisle, and your heart begins to race. He looks you squarely in the eye--the smell of his cologne is so overpowering, it could kill you all by itself. You cough.
+*page_break
+He says, "Can't you use that scrap paper for something else before you throw it away? Protect our natural resources!" You breathe a sigh of relief.
+*finish
+

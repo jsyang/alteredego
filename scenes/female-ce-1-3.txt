@@ -1,0 +1,80 @@
+This semester you must decide where you would like to live, now that you are in college.
+
+
+Select an action:
+
+*choice
+  #LIVE ON CAMPUS IN ONE OF THE DORMITORIES
+    *goto A1
+  #LIVE AT HOME
+    *goto A2
+*label A2
+*set MN+500
+You will probably save some money by living at home.
+*finish
+*label A1
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+You are assigned a roommate named Bonnie Castano. Although she seems like a nice enough person, she is extremely sloppy, is prone to turning the stereo up very loud, and spends most of her time seeking out and ingesting
+federally-controlled substances. When you ask what her major is, she replies, "Partying! What else is there?" Does this seem like someone you can live with?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set OH+1
+*set TH%-10
+The two of you must be well suited for each other. I'll assume you have the same interests.
+*finish
+*label C2
+I'm sorry. There are no other room assignments available right now. You'll just have to see if you can work it out.
+*finish
+*label B2
+You are assigned a roommate named Bonnie Castano. When you walk into the room, a beautiful, shapely brunette walks out of the bathroom wrapped in a towel. When you get to know her she tells you that she is interested in "men,"
+"partying,"  and "men."  Looks like the people who assign rooms put you with a free-spirited type. Does Bonnie sound like someone you can live with?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+Great. She asks if you wouldn't mind clearing out for a few nights. She is expecting a male guest and things might get a little wild. Is this okay with you?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto E1
+  #NO
+    *goto E2
+*label E1
+*set HP%-10
+Bonnie tells you that you are outrageous. I guess you think she'll do the same for you sometime.
+*page_break
+When you return to your room, you find that things HAVE gotten a "little wild." When you finally locate and reassemble your bed, you notice thick globs of dried macaroni and cheese stuck to the mattress. When you ask Bonnie what it is
+she says, "Dinner."
+*finish
+*label E2
+*set TH%+10
+Bonnie thinks you are being totally unreasonable and "uncool." After all, she would do the same thing for you, adding, "As long as it's not a Monday or a Friday or in September through March."
+*finish
+*label D2
+*set HP%+10
+I guess she's just not your type. The college finds you someone much more to your liking to live with.
+*finish
+

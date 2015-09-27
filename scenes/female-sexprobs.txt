@@ -1,0 +1,86 @@
+A long-time friend and confidant tells you that she is worried that her husband is fooling around with another woman. You have known the two of them for quite some time and don't THINK her husband would do something like that, but you
+aren't positive about it, either.
+*choice mood action
+  #SYMPATHETIC
+    #TELL HER IT'S PROBABLY NOTHING
+      *goto A11
+    #TELL HER TO DO SOME CHECKING UP ON HIM
+      *goto A12
+    #TELL HER SHE'S PARANOID
+      *goto A13
+  #UNSYMPATHETIC
+    *selectable_if (false) #TELL HER IT'S PROBABLY NOTHING
+      *finish
+    *selectable_if (false) #TELL HER TO DO SOME CHECKING UP ON HIM
+      *finish
+    #TELL HER SHE'S PARANOID
+      *goto A23
+*label A11
+*set GN%+30
+*set TH%+30
+Not long after she tells you this, you happen to see her husband walking arm-in-arm with a beautiful young woman.
+*label E
+
+
+Select an action:
+
+*choice
+  #IGNORE IT
+    *goto B1
+  #TELL YOUR FRIEND WHAT YOU SAW
+    *goto B2
+  #CONFRONT HIM ABOUT IT DIRECTLY
+    *goto B3
+*label B1
+*set CA%-20
+You try very hard to ignore it, but all you can think of is your friend, whose heart is being torn apart by that little home-wrecker.
+
+
+Select an action:
+
+*choice
+  #PUT IT OUT OF YOUR MIND COMPLETELY
+    *goto C1
+  #TELL YOUR FRIEND WHAT YOU SAW
+    *goto C2
+*label C1
+*set CA%-10
+*set IN%+10
+You were wise not to meddle in the affairs (no pun intended) of others. Your friend soon finds out about her husband's tryst and throws him out!
+*finish
+*label B2
+*label C2
+*set TH%-20
+*set TR%-10
+Couldn't resist poking your nose into other people's business, could you? After revealing what you saw, your friend confronts her husband and throws him out of the house. Not soon after, the husband presents an airtight alibi which
+exonerates HIM and identifies YOU as a meddler.
+*finish
+*label B3
+He doesn't know what you are talking about. On the day you claim to have seen him, he was out of town on business -- and his wife was with him! "BUTT OUT!" he says.
+*finish
+*label A12
+*set TH%-10
+I'm sure this advice is given with good intentions. However, it is not what she wants to hear. What if she finds out that her suspicions are correct? Besides, she doesn't want strangers knowing her business. She would rather hear the
+"ugly news" from a friend.
+*page_break
+Soon after this, you notice her husband walking arm-in-arm with a beautiful woman 15 years his junior.
+*goto E
+*label A13
+*set SC%-20
+She doesn't believe she is paranoid; she thinks she is justifiably worried. Your comment is perceived as insensitive, but maybe that is really how you feel about the matter.
+*page_break
+About a week later, you see her husband walking arm-in-arm with a beautiful woman 15 years his junior.
+*goto E
+*label A23
+*set SC%-20
+I guess you really don't feel interested in hearing about her problems.
+*if (MS<1) and (GF<1)
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+
+Oddly enough, about a week later you notice a peculiar hair on the love of your life's jacket sleeve. His shirt collar also smells like perfume...
+*label Z.T
+*finish
+

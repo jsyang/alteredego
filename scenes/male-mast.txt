@@ -1,0 +1,89 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+Robbie Starker always gets his father's girlie magazines out whenever friends come over to visit. Today, he is "entertaining" you and some other friends, when he suggests you try something new. He explains that if you rub yourself
+"down there" while looking at the pictures, something really great happens. Everyone seems to think it's a good idea.
+*choice mood action
+  #EMBARRASSED
+    #LEAVE THE HOUSE
+      *goto A11
+    #DO WHAT EVERYONE ELSE DOES
+      *goto A12
+  #ANXIOUS/AFRAID
+    #LEAVE THE HOUSE
+      *goto A21
+    #DO WHAT EVERYONE ELSE DOES
+      *goto A22
+  #AROUSED
+    #LEAVE THE HOUSE
+      *goto A31
+    #DO WHAT EVERYONE ELSE DOES
+      *goto A32
+*label A11
+*set CA%-20
+*set SC%-10
+All of your friends call you a "dork" because you don't want to look at the magazines. Robbie says that this is the way you become a man. Almost everyone winds up trying this, but for now you are a bit shy.
+*finish
+*label A12
+*set CA%-20
+Your nervousness and embarrassment prevent you from feeling anything much. It DOES seem like it COULD be enjoyable. Later, when you go home, you can:
+
+
+Select an action:
+
+*choice
+  #DO IT AGAIN, ALONE
+    *goto B1
+  #DON'T THINK ABOUT IT
+    *goto B2
+*label B1
+*label A31
+*set CA%-10
+*set HP%+20
+In the privacy of your own room, you do it again. It turns out to be quite a bit of fun.  All of a sudden, your body begins to shudder and you wet yourself a little. Is this SUPPOSED to happen? I think everyone wonders that.
+*page_break
+Yes, it is supposed to happen, and even though no one will admit it, almost everyone does it. It's called masturbation.
+*finish
+*label B2
+*set CA%-10
+Although you are not sure why, you think that this is something that is wrong to do. The more you try to put it out of your mind, the more you think about it. Eventually, you will probably give in.
+*page_break
+How you think about yourself as a result of this experience (it's called masturbation) will at least partially determine your attitudes about your sexuality.
+*finish
+*label A21
+*set SC%-10
+Whatever it is they are doing is too frightening to try, but you can't quite figure out why. Eventually, you will probably experiment like this, but you will probably prefer to do it on your own.
+*finish
+*label A22
+You try to do what everyone else is doing, but nothing is happening. Someone asks you if your penis is getting hard. You can:
+
+
+Select an action:
+
+*choice
+  #SAY "YES"
+    *goto C1
+  #SAY "NO"
+    *goto C2
+*label C1
+*set TR%-10
+*set CN%-10
+That can't be true if you are so anxious. This is the start of manhood for you in many ways. Not only are you learning about sexuality, you are also learning about something called "machismo".
+*finish
+*label C2
+*set CA%-10
+That makes sense if you are anxious. You may experiment like this on your own a bit and feel less anxious. People often place a great deal of importance on having a hard penis. It's interesting that even children your age get
+this idea in their heads before they even find out what a hard penis is for.
+*finish
+*label A32
+*set SC%+20
+You can't quite understand why, but this feels pretty good. After rubbing your penis for a while, you shudder and wet yourself a little. This is an experience that marks the beginning of emerging sexuality. You and your friends are
+exploring your sexuality. Later, many of your friends will brag about their sexual experiences. Most of them will be fibbing.
+*finish
+

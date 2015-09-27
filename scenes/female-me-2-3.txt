@@ -1,0 +1,47 @@
+Your husband has become interested in photography and has signed up for a photography class at the local high school. His assignment for this week is "candid photography." As a result, everything you do at home is accompanied by a
+familiar "CLICK-WHIR-CLICK."
+*page_break
+Yesterday morning, he snapped you just as you were rising and called the picture "Squirrel's Nest Surprise!" One afternoon while you are alone in the house, sitting on the toilet, the telephone rings.
+
+
+Select an action:
+
+*choice
+  #PICK UP THE PHONE
+    *goto A1
+  #LET IT RING
+    *goto A2
+*label A1
+*temp randomB
+*rand randomB 1 2
+*if randomB=1
+  *goto B1
+*else
+  *goto B2
+*label B1
+"CLICK-WHIR-SNAP!" Your hubby has set you up. He takes a picture of you with your underwear around your knees answering the phone and calls it "Interrupted Business."
+*finish
+*label B2
+*set MN+1000
+A representative from a famous magazine calls to congratulate you on your sense of humor and your desire to see your husband succeed. "Squirrel's Nest Surprise" was entered in a photo contest, and your husband has won first prize-$2000.
+${spouseName} gives you half of it for being such a good model, not to mention an exceptionally good sport.
+*finish
+*label A2
+Were you afraid that your husband would ambush you and take a picture as you were hurrying out of the bathroom with your underwear around your knees?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto C1
+  #NO
+    *goto C2
+*label C1
+*set IN%+30
+Very clever!
+*finish
+*label C2
+Well, it's a good thing you didn't come out, anyway.
+*finish
+

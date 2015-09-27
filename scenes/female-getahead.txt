@@ -1,0 +1,38 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this episode, you need a steady job. You may go to the WORK ICON and apply for one, then return.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You are trying to move ahead as quickly as possible in your vocational life, but it is rough. The more honest hard work you do, the more time you spend spinning your wheels and getting no place fast.
+*page_break
+An opportunity arises for you to move ahead. It comes unexpectedly -- a highly influential person slips up. You could capitalize on this error and move ahead, but if you do, this person's life will be ruined.
+*choice mood action
+  #AGGRESSIVE
+    #CAPITALIZE
+      *goto A11
+    *selectable_if (false) #AVOID DESTROYING THIS PERSON'S LIFE
+      *finish
+  #NOT AGGRESSIVE
+    *selectable_if (false) #CAPITALIZE
+      *finish
+    #AVOID DESTROYING THIS PERSON'S LIFE
+      *goto A22
+*label A11
+*set MN+10000
+*set TR%-30
+*set CN%+20
+*set VC%+20
+*set GN%-30
+You are successful. The person is crushed. For a short time it looks as if there may even be a suicide attempt. Your Resources increase by $10000.
+*finish
+*label A22
+*set TR%+40
+*set SC%+30
+You remain exactly where you are, vocationally. You will probably adhere to the belief that hard work will eventually get you some place. Maybe it will, maybe it won't.
+*finish
+

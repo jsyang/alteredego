@@ -1,0 +1,42 @@
+*if AG < 13
+  Sorry, you're still too young for this experience.  Come back later.
+  *set instantaneous true
+  *finish
+*elseif AG > 18
+  Sorry, you're too old for this experience.
+  *finish
+While having a soda at ${loverName}'s house, the phone rings. He picks it up and looks around the room nervously. He walks out of the room with the phone, and you think you can hear him say, "I TOLD you not to call me at home." He puts the
+phone back down and proceeds as if it had never rung.
+*page_break
+You casually ask who it was. His voice cracks as he says, "No one." His eyes dart around the room. How do you feel about this?
+
+
+Select a mood:
+
+*choice
+  #SUSPICIOUS
+    *goto A1
+  #ANGRY
+    *goto A2
+  #CONFUSED
+    *goto A3
+*label A1
+*label A2
+*label A3
+Will you keep pressing him for information until he finally tells you who was calling?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto B1
+  #NO
+    *goto B2
+*label B1
+He STILL won't tell you.
+*finish
+*label B2
+He never mentions it again.
+*finish
+

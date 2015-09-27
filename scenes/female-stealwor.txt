@@ -1,0 +1,53 @@
+*if EM>0
+  *goto Z.T
+*else
+  *goto Z.F
+*label Z.F
+I'm sorry. In order to play through this episode, you must be employed.
+*comment @NTQ
+*set instantaneous true
+*finish
+*label Z.T
+You notice someone stealing an extremely large amount of valuable property from work.
+*choice mood action
+  #CONCERNED
+    #TELL HIM TO STOP
+      *goto A11
+    #TELL THE BOSS
+      *goto A12
+    *selectable_if (false) #DO NOTHING
+      *finish
+  #UNCONCERNED
+    *selectable_if (false) #TELL HIM TO STOP
+      *finish
+    *selectable_if (false) #TELL THE BOSS
+      *finish
+    #DO NOTHING
+      *goto A23
+*label A11
+He says, "Mind your own G%^#%& business," and sneers at you. You can:
+
+
+Select an action:
+
+*choice
+  #TELL THE BOSS
+    *goto B1
+  #DO NOTHING
+    *goto B2
+*label A12
+*label B1
+*set TH%+10
+*set SC%+30
+*set TR%+30
+The boss asks if you can prove what you are saying. Since you have no pictures or direct evidence, he tells you, "There's nothing I can do." This is one of those times when you think the whole world is completely insane. Sometimes it
+just about is.
+*finish
+*label A23
+*label B2
+*set HP%-10
+*set GN%-10
+I guess you believe that at this point it doesn't seem worthwhile to get involved. Two weeks after the incident, you notice that your leather jacket is missing from the coat rack at work. You haven't seen anyone steal it, so you
+can't prove who stole it. You DO have an idea who took it, however. It is never recovered.
+*finish
+

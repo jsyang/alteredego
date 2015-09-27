@@ -1,0 +1,122 @@
+WARNING - THIS EPISODE CONTAINS SUBJECT MATTER OF A SEXUAL NATURE.
+Do you wish to continue?
+*choice
+  #Yes
+    *goto sexualEncounter
+  #No
+    *set instantaneous true
+    *finish
+*label sexualEncounter
+A friend asks if you would be kind enough to drop off a package at the house of someone he knows lives close to you.
+*choice mood action
+  #COOPERATIVE
+    #DELIVER THE PACKAGE
+      *goto A11
+    *selectable_if (false) #DO NOT DELIVER THE PACKAGE
+      *finish
+  #NOT COOPERATIVE
+    *selectable_if (false) #DELIVER THE PACKAGE
+      *finish
+    #DO NOT DELIVER THE PACKAGE
+      *goto A22
+*label A11
+You arrive at the address. It is a huge split-level house with a Rolls Royce, a Jaguar and a Porsche parked in the driveway. You ring the bell, and an older, very attractive woman comes to the door in a sheer negligee. She has
+evidently just stepped out of the shower. You deliver the package and turn to walk away. She asks if you would like to stop in for a drink.
+
+
+Select an action:
+
+*choice
+  #EXCUSE YOURSELF AND GO HOME
+    *goto B1
+  #STOP IN FOR A DRINK
+    *goto B2
+*label B1
+*set SC%-10
+Suit yourself. Opportunity knocked. You headed out the door.
+*finish
+*label B2
+"Sit down on the couch and make yourself comfortable." She asks you what kind of drink you would like....
+
+
+Select an action:
+
+*choice
+  #SOMETHING WITH A LITTLE KICK TO IT
+    *goto C1
+  #SOMETHING COOL AND REFRESHING
+    *goto C2
+  #SOMETHING HHHHHOT!
+    *goto C3
+*label C1
+*set OH+1
+*label C2
+*label C3
+She fixes your drink and places it down on a long marble table. As you scan the room, you notice expensive-looking art work -- vases, rugs, sculptures -- on every wall and in every corner. She invites you into the adjoining "rumpus room."
+The rumpus room is filled with hunting trophies: a lion's head, some elephant tusks, a zebra skin.
+*page_break
+Her husband is an avid lover of the sport, but she thinks it's barbaric. You finish your drink.
+
+
+Select an action:
+
+*choice
+  #EXCUSE YOURSELF AND LEAVE
+    *goto D1
+  #STICK AROUND FOR A WHILE
+    *goto D2
+*label E2
+*label D1
+*set TH%+30
+Get the feeling that sticking around might have made you a permanent part of the rumpus room? Sometimes being paranoid can save your own rumpus, so to speak.
+*finish
+*label D2
+The woman turns to you, and in a deep, sexy voice says, "Enough! We both know what we want. TAKE ME!"
+
+
+Select an action:
+
+*choice
+  #BECOME HER WILD JUNGLE SAVAGE
+    *goto E1
+  #EXCUSE YOURSELF
+    *goto E2
+*label E1
+*set TH%-20
+You barely touch her before she lets out a blood-curdling, "YIIIIIIIIIII!!!" and collapses from exhaustion. "You were the best, darling, now run along before my husband comes home. He's insanely jealous and would absolutely shoot us both
+on sight if ever he had a notion of what a wild animal you are." Just then, the door to the rumpus room swings open.
+*page_break
+A man in a pith helmet and khaki uniform peers into the room. He twists his handlebar moustache nervously but calmly asks what you are doing in HIS house, alone with HIS wife, in HIS rumpus room.
+
+
+Select an action:
+
+*choice
+  #CONFESS
+    *goto F1
+  #TELL HIM YOU JUST CAME TO DELIVER A PACKAGE
+    *goto F2
+  #FIGHT FOR THE WOMAN
+    *goto F3
+*label F1
+*set TH%-10
+*set TR%+20
+*goto G
+*label F2
+*set TH%-10
+"That's what they all say. I suppose the package was so heavy it took two of you to carry it into the rumpus room!" The man squints his eyes and works himself into a rage.
+*goto G
+*label F3
+*set GN%-10
+Fight with what? This guy has a house full of hunting trophies. Doesn't it make sense that he has a house full of guns, too?
+*label G
+*page_break
+"AHA! CAD! SCOUNDREL! LEECH! HOW DARE YOU ATTACK MY INNOCENT WIFE! PREPARE TO MEET YOUR MAKER." He races to the wall and pulls down a double-barrel shotgun. The woman screams, "No, my darling. I just had all of the rugs cleaned!".
+*page_break
+The cold shotgun barrel presses firmly against your neck. CLICK...The lights come on...You wake up. You've got to stop eating those anchovy pizzas so close to bedtime.
+*finish
+*label A22
+*set SC%-20
+Nice friend. Little do you know, -- you might have just passed up the opportunity of a lifetime!
+*finish
+

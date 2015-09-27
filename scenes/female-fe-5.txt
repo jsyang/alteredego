@@ -1,0 +1,102 @@
+*comment @KID,0,3,9
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 10) and (childage0 > 3)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 10) and (childage1 > 3)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 10) and (childage2 > 3)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 10) and (childage3 > 3)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 10) and (childage4 > 3)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+You are about to leave ${childName} in the tender loving care of your mother. You give her a brief list of rules regarding sleep ("Do not let ${childName} stay up too late."); eating ("Restrict the junkfood. Sugar makes ${childName} hyper."); and playthings
+("Please do not buy ${childName} any fancy toys. Every time we pass a toy store, ${childName} wants something.")
+*page_break
+When you return, you find out that ${childName} was allowed to watch the Johnny Carson show every night ("Now, Now. There was no school, so what's the harm.") ${childName} is bouncing off the walls and running in circles on the floor -- there is a
+huge (empty) box of chocolates on the table. ("Oh, come on. Just a taste, Sweetheart.")
+*page_break
+On the way out, Mom yells, "${childName}, don't forget the shopping bag!" (which happens to be full of toys). ("They're all EDUCATIONAL toys, Dear.")
+
+
+Select an action:
+
+*choice
+  #GET FURIOUS AND REALLY LET HER HAVE IT
+    *goto A1
+  #GET MILDLY ANGRY / BE PERSISTENT
+    *goto A2
+  #RESOLVE THAT THERE IS NOTHING YOU CAN DO ABOUT IT
+    *goto A3
+*label A1
+*set FM%-10
+*set GN%-10
+This causes a big fight. The two of you start to yell and scream at one another. You accuse her of spoiling the child. She accuses you of not leting her love her grandchild. ${childName} begins to cry. You blame it on one another.
+*page_break
+Mom gives ${childName} a big piece of chocolate. "It will calm the child."
+
+On the way home, ${childName} asks why you are so mean to
+*if MD>0
+  *goto Q.T
+*else
+  *goto Q.F
+*label Q.T
+"Grandma."
+*finish
+*label Q.F
+Mom.
+*finish
+*label A2
+*set FM%+10
+*set EX%+20
+Mom gets the message, but it is hard for her to resist. She apologizes.
+*finish
+*label A3
+*set EX%-20
+*set FM%-10
+*set TH%-10
+There is plenty you can do about it. You just don't want to rock the boat. Sometimes grandparents feel a bit guilty about being strict with their own children. When the grandchildren start to appear, they have a chance to absolve
+themselves of that guilt.
+*page_break
+As wonderful a treat as this is for the child, it sometimes sets up an imbalance of power between parents and grandparents. The grandparents become "the good guys," and the parents become "the bad guys."
+*page_break
+You can easily lose control of your child this way, and that is a condition you would like to avoid.
+*finish
+

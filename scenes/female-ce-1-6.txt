@@ -1,0 +1,46 @@
+During a college vacation break, you bump into a person who used to be a good friend in high school. She chose to skip college and find a job. Now she's married (for the second time) and has two children. She works part-time in
+a clothing factory. When you try to converse with her, she seems distant and aloof, almost resentful.
+
+
+Select an action:
+
+*choice
+  #ASK WHAT IS ON HER MIND
+    *goto A1
+  #MAKE SMALL TALK FOR A FEW MINUTES AND WALK AWAY
+    *goto A2
+*label A1
+She says, "What would you care? Besides, you have the easy life in college now. You would never understand MY worries."
+
+
+Select an action:
+
+*choice
+  #GET ANGRY AND WALK AWAY
+    *goto B1
+  #ASK HER IF SHE WANTS TO TELL YOU ABOUT IT ANYWAY
+    *goto B2
+*label B1
+*set GN%-10
+The nerve of some people. Besides, who said college was the good life? You chose to walk away from this person's rudeness, which is perfectly O.K. You couldn't have valued her friendship much or perhaps you would have tried
+harder to find out what was behind the hostility.
+*finish
+*label B2
+*set TH%+30
+*set GN%+20
+*set SC%+20
+Your sincerity causes her to see that she has treated you in a rude fashion. She admits that her life is very difficult now. She has bills to pay and other responsibilities she really wasn't ready for. Her life is routine, and she
+gets little enjoyment out of her work.
+*page_break
+Seeing you sparked some envy in her, but soon your friendship is renewed. She only criticized you because she felt you might be looking down on her because she didn't go to college -- a move she regrets now. Your patience brings down
+her defenses and motivates her to take a closer look at her life.
+*finish
+*label A2
+*set SC%-10
+The conversation between you and your friend is stilted and uneasy. You sense a great tension between the two of you. Soon you get the feeling that she is just waiting for you to say something that sounds like you were smart for going to
+college and that she was stupid for getting a job.
+*page_break
+She secretly regrets the choice she made but doesn't want anyone bringing it to her attention. Your small talk takes some of the threatening tone out of her voice. You rationalize the experience by saying to yourself, "Some people
+just change."
+*finish
+

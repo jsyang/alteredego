@@ -1,0 +1,70 @@
+While you are pulling out of a parking lot, you witness a hit-and-run accident -- a young boy on a bicycle has been struck by another motorist and is bleeding in the middle of the street. It doesn't look like there is enough time for you
+to get help.
+*choice mood action
+  #PANIC
+    #CALL FOR HELP
+      *goto A11
+    #TRY TO ADMINISTER FIRST AID
+      *goto A12
+  #CALM
+    #CALL FOR HELP
+      *goto A21
+    #TRY TO ADMINISTER FIRST AID
+      *goto A22
+*label A11
+There is not enough time for this. The boy dies.
+*finish
+*label A12
+The panic numbs you to everything except the boy. Your reactions become automatic.
+*page_break
+*if PH>60
+  *goto B.T
+*else
+  *goto B.F
+*label B.F
+You are not in good shape physically. As you run toward the boy, your heart is pounding through your chest.
+*goto E
+*label B.T
+You are in good shape physically. The boy is still in the street. You must decide whether to try to help him there or drag him to the safety of the walk.
+*label E
+
+
+Select an action:
+
+*choice
+  #HELP HIM THERE
+    *goto C1
+  #DRAG HIM TO THE WALK
+    *goto C2
+*label C1
+*set SC%+30
+*set CN%+30
+*set TH%+30
+*set HP%+30
+This was a good idea. Moving him might have meant complications, especially if there were broken bones. The sound of your voice is comforting; the boy is relieved that you are there. You apply pressure to the bleeding. Soon an ambulance
+arrives. You are credited with saving the boy's life.
+*page_break
+The next day, newspaper and television reports chronicle your heroic deed. You are quite a remarkable person.
+*finish
+*label C2
+*set TH%+30
+*set SC%+30
+It is not a good idea to try to move an injured person. The injuries become complicated. The boy dies in your arms.
+*finish
+*label A21
+Your calmness fails to arouse anyone to the boy's aid. He perishes.
+*finish
+*label A22
+*if CA>50
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Calmness is a trait that is central to your personality. In this instance you use it to react quickly and efficiently. You approach the boy, who is bleeding profusely.
+*goto E
+*label F.F
+The kind of coolness this situation requires is not in your personality. Instead of acting calmly, you expend energy trying to keep yourself calm and neglect the situation at hand.
+*page_break
+Eventually, the panic overwhelms you. You cannot concentrate on saving the boy. He dies.
+*finish
+

@@ -1,0 +1,201 @@
+You are in a sandbox playing with your favorite toy. An older girl pulls it away from you and screams, "MINE!"
+*choice mood action
+  #ANGRY
+    #GRAB IT BACK
+      *goto A11
+    #GET AN ADULT
+      *goto A12
+    #CRY
+      *goto A13
+  #ANXIOUS
+    #GRAB IT BACK
+      *goto A21
+    #GET AN ADULT
+      *goto A22
+    #CRY
+      *goto A23
+*label A11
+*set GN%-10
+*set PH%+15
+The child seems much stronger than you. She puts three fingers in your mouth and tries to push you away. She is holding the toy above your head.
+
+
+Select an action:
+
+*choice
+  #TRY TO BITE HER
+    *goto B1
+  #RUN AWAY
+    *goto B2
+*label BITE
+*label B1
+*temp randomC
+*rand randomC 1 2
+*if randomC=1
+  *goto C1
+*else
+  *goto C2
+*label C1
+"AAaaaaaaAAAaaaOW," the other girl yells. You bit her hard. She drops your toy and runs off.
+*set CN%+30
+*finish
+*label C2
+*set PH%-20
+CRASH! The toy comes down right on your head. CRASH! Again! CRASH! Again! You are beginning to feel dizzy. You cry out. CRASH! CRASH! She finally stops, but your head and face are covered with scratches.
+*page_break
+The girl's mother takes her away before either one of your parents can tell what happened. She is a problem child, because she hits other children. She has done this before. You were treated unfairly.
+*finish
+*label RUN
+*label B2
+She was much bigger than you. You might have gotten hurt. From a safe distance you watch her put your toy down and go play someplace else. Do you want to go back for your toy?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto D1
+  #NO
+    *goto D2
+*label D1
+*temp randomE
+*rand randomE 1 2
+*if randomE=1
+  *goto E1
+*else
+  *goto E2
+*label E1
+You retrieve your toy with no difficulty. You showed good judgment in this situation.
+*set IN%+20
+*finish
+*label E2
+The girl comes back and reclaims your toy. Are you going to fight for it?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto F1
+  #NO
+    *goto F2
+*label F1
+You grab for the toy and are scratched by the girl. Your arm starts to bleed, but you pull hard and run to your mother for safety.
+*set PH%+10
+*finish
+*label D2
+*label F2
+You have given up your toy. This whole experience has been very unfair.
+*temp randomG
+*rand randomG 1 2
+*if randomG=1
+  *goto G1
+*else
+  *goto G2
+*label G1
+
+Fortunately, your mother becomes aware of what has happened and gets your toy back for you.
+*label G2
+*finish
+*label A12
+*temp randomH
+*rand randomH 1 2
+*if randomH=1
+  *goto H1
+*else
+  *goto H2
+*label H1
+You are able to get your toy back. The girl gets a spanking from her mother.
+*finish
+*label H2
+No adult can understand what you're trying to say. You get put back in the sandbox, where the other girl throws sand in your face.
+*finish
+*label L2
+*label A13
+*set HP%-20
+Your crying excites the girl who has been bothering you. She picks up a bucket of sand and dumps it out on your face. It gets into your mouth and eyes.
+
+
+Select an action:
+
+*choice
+  #HIT THE GIRL
+    *goto I1
+  #RUN AWAY
+    *goto I2
+*label I1
+*temp randomJ
+*rand randomJ 1 2
+*if randomJ=1
+  *goto J1
+*else
+  *goto J2
+*label J1
+The girl backs off, and you get your toy back.
+*set PH%-20
+*finish
+*label J2
+The girl is much stronger than you. She scratches you in the eye and runs away. You were treated unfairly.
+*finish
+*label I2
+*goto RUN
+*label A21
+*set CA%-30
+Because you are nervous, your action is weak and tentative. The girl puts three fingers in your mouth and tries to push you away from her newly claimed toy.
+
+
+Select an action:
+
+*choice
+  #TRY TO BITE HER
+    *goto K1
+  #RUN AWAY
+    *goto K2
+*label K1
+*goto BITE
+*label K2
+*goto RUN
+*label A22
+*set CA%-20
+You begin to get up and run for an adult, but the girl grabs you and pulls you down.
+
+
+Select an action:
+
+*choice
+  #KICK HER
+    *goto L1
+  #CRY
+    *goto L2
+*label L1
+*set PH%+10
+*temp randomM
+*rand randomM 1 2
+*if randomM=1
+  *goto M1
+*else
+  *goto M2
+*label M1
+You knock the wind out of her and run away. Your mother gets your toy back for you.
+*finish
+*label M2
+You miss her. The girl scratches you and pulls your hair. She makes your face and arms bleed. Her mother sees her and doesn't even spank her. She is the lenient type who doesn't believe in punishment.
+*set PH%+5
+*finish
+*label A23
+*set HP%-20
+You send out loud cries of anxious protest. The girl sees you and brings your toy back. You reach for it.
+*page_break
+*temp randomN
+*rand randomN 1 2
+*if randomN=1
+  *goto N1
+*else
+  *goto N2
+*label N1
+SMACK! She slaps you right in the face and laughs. Her mother sees her and pulls her away. Your mother sees her mother and gives her a piece of her mind. It is wasted. This woman doesn't really care about the behavior of her child.
+*finish
+*label N2
+This girl actually has some kindness in her. She gives you your toy back and "makes nice" by rubbing your hair. She becomes your friend.
+*finish
+

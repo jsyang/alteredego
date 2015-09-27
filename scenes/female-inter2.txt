@@ -1,0 +1,86 @@
+You have just passed through CHILDHOOD.
+*page_break
+Family life is progressing
+*if FM>60
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+very well. Dad is still the greatest hero of all time, and Mom is pretty terrific too.
+*goto PH
+*label A.F
+poorly. You don't seem to have the strong contact with your family that helps provide the foundation for good relationships later in life.
+*label PH
+*page_break
+Physically, you are
+*if PH>50
+  *goto B.T
+*else
+  *goto B.F
+*label B.T
+healthy. You contract the standard fare of childhood diseases, assorted sniffles, coughs, bumps and stomach aches.
+*goto SC
+*label B.F
+not very healthy. Be careful to avoid situations that could lead to illness.
+*label SC
+*page_break
+Socially, this can be an awkward phase of life, especially when you hit the ripe old age of nine or ten. Should you like boys? Should you not like boys? Decisions, decisions. All in all,
+*if SC>70
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+you are extremely lovable. You are well-mannered and respectful of adults. Your social skills are so good that I'll bet before long you are throwing classy parties and attracting all the "right" people.
+*goto EMO
+*label C.F
+*if SC>50
+  *goto D.T
+*else
+  *goto D.F
+*label D.T
+you are developing good social skills. You don't always close your mouth when you are chewing food, but hey, nobody's perfect.
+*goto EMO
+*label D.F
+your manners need more minding. Adults see you as a rude child, not particularly well-bred. You have a tendency to seek attention in negative ways.
+*label EMO
+*page_break
+Now, regarding your emotional and personality development...
+*page_break
+*if TR<50
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+You are not the kind of girl that can be easily trusted. Some people might even call you downright sneaky at times.
+*goto GN
+*label E.F
+*if TR<70
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+Your trustworthiness and sense of fair play are commendable. You are an honest child, but no tattle-tale either.
+*goto GN
+*label F.F
+You are a remarkably trustworthy young lady. Your sense of ethics and fair play are quite remarkable for a child your age.
+*label GN
+*page_break
+*if GN<50
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+The degree to which you display aggressive types of behavior is somewhat alarming, especially for a young lady. You can be nasty and spiteful at times.
+*goto ENDIT
+*label G.F
+You have a gentle, easy-going way about you most of the time. You have not had much of a problem getting your teachers to like you, and you seem to be able to control your temper, even when the boys tease you.
+*label ENDIT
+*page_break
+You are about to enter adolescence. It is a somewhat hectic time of life -- full of surprises. There will be many high highs, and many low lows. With each year you will gain responsibilities.
+*page_break
+You may also notice that people will begin to start forgiving you less for things previously described as mere childhood habits. You will be expected to "act like a lady" and become helpful around the house. Sometimes you may become
+moody and teary without any reason at all.
+*page_break
+Oh, yes... then there's the matter of boys. If you haven't noticed them much in this phase, I'm sure you will soon. They'll also be noticing you quite a bit.
+*finish
+

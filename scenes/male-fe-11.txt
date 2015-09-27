@@ -1,0 +1,81 @@
+*comment @KID,1,14,18
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childgender0 = 1) and ((childage0 < 19) and (childage0 > 14))
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childgender1 = 1) and ((childage1 < 19) and (childage1 > 14))
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childgender2 = 1) and ((childage2 < 19) and (childage2 > 14))
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childgender3 = 1) and ((childage3 < 19) and (childage3 > 14))
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childgender4 = 1) and ((childage4 < 19) and (childage4 > 14))
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+${childName} has just brought back his date for the evening to meet the family. Her name is Cheryl, and she is perky, and VERY mature.
+
+
+Select an action:
+
+*choice
+  #BECOME FLIRTATIOUS
+    *goto A1
+  #REMAIN IN THE ROLE OF AUTHORITY
+    *goto A2
+*label A1
+*set FM%-10
+You warmly embrace Cheryl and tell her that you are happy to have her as a guest in your home. Just then the phone rings.... It's for you. When you return, your son and Cheryl are gone for the evening!
+*finish
+*label A2
+*set FM%+20
+That is very considerate of you, considering how sensitive your son would probably be to you horning in on his date. Later when ${childName} returns home you can:
+
+
+Select an action:
+
+*choice
+  #COMPLIMENT HIM ON HIS TASTE IN WOMEN
+    *goto B1
+  #NOT SAY ANYTHING
+    *goto B2
+*label B1
+*set FM%+30
+${childName} tells you he had an excellent teacher-you! What a son!
+*label B2
+*finish
+

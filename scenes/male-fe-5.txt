@@ -1,0 +1,111 @@
+*comment @KID,0,6,8
+*temp validchildcount
+*set validchildcount 0
+*temp childage0
+*set childage0 0-1
+*if childborn0 > 0
+  *set childage0 AG-childborn0
+*temp validchild0
+*if (childage0 < 9) and (childage0 > 6)
+   *setref ("validchild"&validchildcount) 0
+   *set validchildcount +1
+*temp childage1
+*set childage1 0-1
+*if childborn1 > 0
+  *set childage1 AG-childborn1
+*temp validchild1
+*if (childage1 < 9) and (childage1 > 6)
+   *setref ("validchild"&validchildcount) 1
+   *set validchildcount +1
+*temp childage2
+*set childage2 0-1
+*if childborn2 > 0
+  *set childage2 AG-childborn2
+*temp validchild2
+*if (childage2 < 9) and (childage2 > 6)
+   *setref ("validchild"&validchildcount) 2
+   *set validchildcount +1
+*temp childage3
+*set childage3 0-1
+*if childborn3 > 0
+  *set childage3 AG-childborn3
+*temp validchild3
+*if (childage3 < 9) and (childage3 > 6)
+   *setref ("validchild"&validchildcount) 3
+   *set validchildcount +1
+*temp childage4
+*set childage4 0-1
+*if childborn4 > 0
+  *set childage4 AG-childborn4
+*temp validchild4
+*if (childage4 < 9) and (childage4 > 6)
+   *setref ("validchild"&validchildcount) 4
+   *set validchildcount +1
+*set validchildcount -1
+*temp validchildnum
+*rand validchildnum 0 validchildcount
+*set validchildNum {"validchild"&validchildnum}
+*temp childName
+*set childName {"childname"&validchildnum}
+${childName} wants to sleep over at a friend's house. You have met this friend before and have always noted that this child's parents do not seem to impress the right kind of cleanliness habits on the child. Will you give ${childName} permission
+to go in spite of whatever reservations you might have?
+
+
+Select an action:
+
+*choice
+  #YES
+    *goto A1
+  #NO
+    *goto A2
+*label A1
+While you are home you are wondering whether or not ${childName} is safe.
+
+
+Select an action:
+
+*choice
+  #CALL THE CHILD'S PARENTS
+    *goto B1
+  #WAIT FOR ${CHILDNAME} TO COME HOME
+    *goto B2
+*label B1
+*set GN%+20
+*set TH%+30
+*set FM%+10
+The phone rings several times before it is picked up. The person on the other end is slurring his speech and can't seem to hold a coherent conversation.
+
+
+Select an action:
+
+*choice
+  #KEEP TRYING TO TALK TO THE PERSON
+    *goto C1
+  #GO TO THE HOUSE AND TAKE ${CHILDNAME} HOME
+    *goto C2
+*label C1
+You have no luck getting a clear thought out of him. The telephone conversation is interrupted by the man's wife who seems embarrassed.
+
+
+Select an action:
+
+*choice
+  #LET ${CHILDNAME} STAY OVER
+    *goto D1
+  #GO TO THE HOUSE AND TAKE ${CHILDNAME} HOME
+    *goto D2
+*label B2
+*label D1
+*set FM%-20
+I don't think that choice showed very good judgement. The next day ${childName} tells you that last night's dinner consisted of dry crackers and jelly.
+*finish
+*label C2
+*label D2
+*set FM%+20
+${childName} doesn't quite understand. Everyone was all set to have potato chips and breakfast cereal for dinner. ${childName} wonders why you or Mommy don't make good dinners like that.
+*finish
+*label A2
+*set FM%+10
+${childName} is disappointed and cries. Your decision to be a bit strict here was a sensible one.
+*finish
+

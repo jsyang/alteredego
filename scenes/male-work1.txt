@@ -1,0 +1,130 @@
+*set instantaneous true
+*if AG<15
+  *goto A.T
+*else
+  *goto A.F
+*label A.T
+You are too young to take on the responsibilities of a job just yet. Concentrate on your schoolwork.
+*finish
+*label A.F
+
+
+Select an action:
+
+*choice
+  #APPLY FOR A JOB
+    *goto B1
+  #QUIT A JOB
+    *goto B2
+  #LEAVE THIS ICON
+    *goto B3
+*label B3
+*comment @NTQ
+*set instantaneous true
+*finish
+
+
+*label B2
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+*finish
+*label B1
+*if EM>0
+  *goto C.T
+*else
+  *goto C.F
+*label C.T
+You may only have one job at a time. If you want a new job, you will have to quit your old one first.
+*finish
+*label C.F
+For what kind of job would you like to apply?
+
+
+Select an action:
+
+*choice
+  #COOK IN A FAST FOOD STORE
+    *goto D1
+  #CLERK IN  A DRUG STORE
+    *goto D2
+  #TICKET TAKER IN A MOVIE THEATER
+    *goto D3
+  #TRUCKER'S HELPER FOR A MOVING FIRM
+    *goto D4
+  #ASSISTANT IN A LAW OFFICE
+    *goto D5
+*label D1
+*if ((TH>40) and (GN>30)) and (CN>40)
+  *goto E.T
+*else
+  *goto E.F
+*label E.T
+*set EM 4000
+*comment @OCP,COOK
+*set occupation "COOK"
+*goto GETJOB
+*label D2
+*if ((SC>40) and (TR>40)) and (IN>40)
+  *goto F.T
+*else
+  *goto F.F
+*label F.T
+*set EM 4500
+*comment @OCP,DRUGSTORE CLERK
+*set occupation "DRUGSTORE CLERK"
+*goto GETJOB
+*label D3
+*if ((SC>50) and (HP>40)) and (TR>40)
+  *goto G.T
+*else
+  *goto G.F
+*label G.T
+*set EM 5000
+*comment @OCP,TICKET TAKER
+*set occupation "TICKET TAKER"
+*goto GETJOB
+*label D4
+*if PH>40
+  *goto H.T
+*else
+  *goto H.F
+*label H.T
+*set EM 6000
+*comment @OCP,TRUCKER'S HELPER
+*set occupation "TRUCKER'S HELPER"
+*goto GETJOB
+*label D5
+*if ((((((TR>40) and (GN>40)) and (HP>50)) and (CN>50)) and (IN>60)) and (SC>50)) and (EX>40)
+  *goto J.T
+*else
+  *goto J.F
+*label J.T
+*set EM 7500
+*comment @OCP,LAW OFFICE ASSISTANT
+*set occupation "LAW OFFICE ASSISTANT"
+*goto GETJOB
+*label E.F
+*label F.F
+*label G.F
+*label H.F
+*label J.F
+I'm sorry, but you don't seem to have the qualifications necessary for performing this job. Try again after you have had a bit more life experience.
+*finish
+*label GETJOB
+*temp randomK
+*rand randomK 1 2
+*if randomK=1
+  *goto K1
+*else
+  *goto K2
+*label K1
+*set EM 0
+*comment @OCP,(NONE)
+*set occupation "(NONE)"
+I'm sorry. You have all of the qualifications, but this position has already been filled by someone else. There are regular job openings, so please try again.
+*finish
+*label K2
+Congratulations! You start work immediately.
+*finish
+
