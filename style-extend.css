@@ -31,3 +31,15 @@ td[width="64"] a[data-name]:hover:after {
     line-height : 64px;
     font-size   : 9px;
 }
+
+#main #text a[accesskey="n"]:before {
+    display    : block;
+    content    : '';
+    top        : 50%;
+    left       : 50%;
+    position   : absolute;
+    margin     : -30% -30%;
+    width      : 60%;
+    height     : 60%;
+    box-shadow : 0 0 80px greenyellow;
+}

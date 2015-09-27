@@ -5,9 +5,9 @@ function printx(msg, parent) {
         parent.appendChild(document.createTextNode(" "));
         return;
     }
-    msg = (msg + "").replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\[n\/\]/g, '<br>').replace(/\[b\]/g, '<b>').replace(/\[\/b\]/g, '</b>').replace(/\[i\]/g, '<i>').replace(/\[\/i\]/g, '</i>');
-    var frag = document.createDocumentFragment();
-    temp = document.createElement('div');
+    msg            = (msg + "").replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\[n\/\]/g, '<br>').replace(/\[b\]/g, '<b>').replace(/\[\/b\]/g, '</b>').replace(/\[i\]/g, '<i>').replace(/\[\/i\]/g, '</i>');
+    var frag       = document.createDocumentFragment();
+    temp           = document.createElement('div');
     temp.innerHTML = msg;
     while (temp.firstChild) {
         frag.appendChild(temp.firstChild);
@@ -17,7 +17,7 @@ function printx(msg, parent) {
 function println(msg, parent) {
     if (!parent)parent = document.getElementById('text');
     printx(msg, parent);
-    var br = window.document.createElement("br");
+    var br             = window.document.createElement("br");
     parent.appendChild(br);
 }
 function showStats() {
@@ -28,8 +28,11 @@ function showStats() {
         return;
     }
     var currentScene = window.stats.scene;
-    var scene = new Scene("choicescript_stats", window.stats, this.nav, { secondaryMode : "stats", saveSlot : "temp" });
-    main.innerHTML = "<div id='text'></div>";
+    var scene        = new Scene("choicescript_stats", window.stats, this.nav, {
+        secondaryMode : "stats",
+        saveSlot      : "temp"
+    });
+    main.innerHTML   = "<div id='text'></div>";
     scene.execute();
 }
 function redirectFromStats(scene, label, originLine, callback) {
@@ -44,7 +47,7 @@ function redirectFromStats(scene, label, originLine, callback) {
 }
 function showAchievements(hideNextButton) {
     if (document.getElementById('loading'))return;
-    var button = document.getElementById("achievementsButton");
+    var button       = document.getElementById("achievementsButton");
     if (!button)return;
     if (button.innerHTML == "Return to the Game") {
         setButtonTitles();
@@ -64,7 +67,7 @@ function showAchievements(hideNextButton) {
 }
 function showMenu() {
     if (document.getElementById('loading'))return;
-    var button = document.getElementById("menuButton");
+    var button       = document.getElementById("menuButton");
     if (!button)return;
     if (button.innerHTML == "Return to the Game") {
         button.innerHTML = "Menu";
@@ -130,7 +133,7 @@ function setButtonTitles() {
     if (button) {
         if (nav.achievementList.length) {
             button.style.display = "";
-            button.innerHTML = "Achievements";
+            button.innerHTML     = "Achievements";
         } else {
             button.style.display = "none";
         }
@@ -139,7 +142,7 @@ function setButtonTitles() {
 function spell(num) {
     if (num > 99)return num;
     var smallNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-    var tens = ["zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+    var tens         = ["zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
     if (num < 20) {
         return smallNumbers[num];
     }
@@ -151,25 +154,25 @@ function spell(num) {
     return tens[tensDigit] + "-" + smallNumbers[onesDigit];
 }
 function printAchievements(target) {
-    var unlockedBuffer = [];
-    var lockedBuffer = [];
-    var achievedCount = 0, hiddenCount = 0, score = 0, totalScore = 0;
+    var unlockedBuffer    = [];
+    var lockedBuffer      = [];
+    var achievedCount     = 0, hiddenCount = 0, score = 0, totalScore = 0;
     var totalAchievements = nav.achievementList.length;
     var buffer;
     for (var i = 0; i < totalAchievements; i++) {
-        var name = nav.achievementList[i];
+        var name        = nav.achievementList[i];
         var achievement = nav.achievements[name];
-        var points = achievement.points;
+        var points      = achievement.points;
         totalScore += points;
         var description;
         if (nav.achieved[name]) {
             achievedCount++;
             score += points;
-            buffer = unlockedBuffer;
+            buffer      = unlockedBuffer;
             description = achievement.earnedDescription;
         } else {
             if (achievement.visible) {
-                buffer = lockedBuffer;
+                buffer      = lockedBuffer;
                 description = achievement.preEarnedDescription;
             } else {
                 hiddenCount++;
@@ -209,7 +212,7 @@ function printAchievements(target) {
         buffer.push.apply(buffer, unlockedBuffer);
         buffer.push("<p>");
     } else {
-        buffer = ["You have unlocked " + spell(achievedCount) + " out of " + spell(totalAchievements) + " possible achievements, earning you a score of " + score + " out of a possible " + totalScore + " points.<p>"];
+        buffer        = ["You have unlocked " + spell(achievedCount) + " out of " + spell(totalAchievements) + " possible achievements, earning you a score of " + score + " out of a possible " + totalScore + " points.<p>"];
         buffer.push.apply(buffer, unlockedBuffer);
         var remaining = totalAchievements - achievedCount;
         if (remaining == hiddenCount) {
@@ -274,10 +277,10 @@ function asyncConfirm(message, callback) {
 }
 function clearScreen(code) {
     main.innerHTML = "";
-    var text = document.createElement("div");
+    var text       = document.createElement("div");
     text.setAttribute("id", "text");
     main.appendChild(text);
-    var useAjax = true;
+    var useAjax    = true;
     if (isWeb && window.noAjax) {
         useAjax = false;
     }
@@ -299,7 +302,7 @@ function clearScreen(code) {
         if (!initStore())alert("Your browser has disabled cookies; this game requires cookies to work properly.  Please re-enable cookies and refresh this page to continue.");
         startLoading();
         var form = window.document.createElement("form");
-        var axn = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        var axn  = window.location.protocol + "//" + window.location.host + window.location.pathname;
         form.setAttribute("action", axn);
         form.setAttribute("method", "POST");
         main.appendChild(form);
@@ -316,7 +319,7 @@ function startLoading() {
     var loading = document.getElementById('loading');
     if (!loading) {
         safeCall(null, function () {
-            loading = document.createElement('div');
+            loading           = document.createElement('div');
             loading.setAttribute("id", "loading");
             loading.innerHTML = "<p>Loading...</p><p>" +
                 (/MSIE [67]/.test(navigator.userAgent) ? "" : "<img src=\"data:image/gif;base64,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\">") + "</p>";
@@ -357,10 +360,10 @@ function getFormValue(name) {
     return null;
 }
 function printOptions(groups, options, callback) {
-    var form = document.createElement("form");
+    var form      = document.createElement("form");
     main.appendChild(form);
-    var self = this;
-    form.action = "#";
+    var self      = this;
+    form.action   = "#";
     form.onsubmit = function () {
         safeCall(self, function () {
             var currentOptions = options;
@@ -396,9 +399,9 @@ function printOptions(groups, options, callback) {
     };
     if (!options)throw new Error(this.lineMsg() + "undefined options");
     if (!options.length)throw new Error(this.lineMsg() + "no options");
-    var globalNum = 1;
+    var globalNum      = 1;
     var currentOptions = options;
-    var div = document.createElement("div");
+    var div            = document.createElement("div");
     form.appendChild(div);
     setClass(div, "choice");
     for (var groupNum = 0; groupNum < groups.length; groupNum++) {
@@ -408,7 +411,7 @@ function printOptions(groups, options, callback) {
             textBuilder.push(/^[aeiou]/i.test(group) ? "an " : "a ");
             textBuilder.push(group);
             textBuilder.push(":");
-            var p = document.createElement("p");
+            var p           = document.createElement("p");
             p.appendChild(document.createTextNode(textBuilder.join("")));
             div.appendChild(p);
         }
@@ -422,7 +425,7 @@ function printOptions(groups, options, callback) {
         currentOptions = currentOptions[0].suboptions;
     }
     form.appendChild(document.createElement("br"));
-    var useRealForm = false;
+    var useRealForm   = false;
     if (useRealForm) {
         printButton("Next", form, false);
     } else {
@@ -430,14 +433,14 @@ function printOptions(groups, options, callback) {
     }
 }
 function printOptionRadioButton(div, name, option, localChoiceNumber, globalChoiceNumber, isLast, checked) {
-    var line = ("" + option.name).toUpperCase();
+    var line         = ("" + option.name).toUpperCase();
     var unselectable = false;
     if (!name)unselectable = option.unselectable;
     var disabledString = unselectable ? " disabled" : "";
-    var id = name + localChoiceNumber;
+    var id             = name + localChoiceNumber;
     if (!name)name = "choice";
     var radio;
-    var div2 = document.createElement("div");
+    var div2  = document.createElement("div");
     var label = document.createElement("label");
     if (!/^\w+$/.test(name))throw new Error("invalid choice group name: " + name);
     label.innerHTML = "<input type='radio' name='" + name + "' value='" + localChoiceNumber + "' id='" + id + "' " + (checked ? "checked" : "") + disabledString + ">";
@@ -460,7 +463,7 @@ function printOptionRadioButton(div, name, option, localChoiceNumber, globalChoi
                 try {
                     var target = evt.target;
                     if (!/label/i.test(target.tagName))return;
-                    var button = document.getElementById(target.getAttribute("for"));
+                    var button     = document.getElementById(target.getAttribute("for"));
                     button.checked = true;
                 } catch (e) {
                 }
@@ -470,7 +473,7 @@ function printOptionRadioButton(div, name, option, localChoiceNumber, globalChoi
                 try {
                     var target = window.event.srcElement;
                     if (!/label/i.test(target.tagName))return;
-                    var button = document.getElementById(target.getAttribute("for"));
+                    var button     = document.getElementById(target.getAttribute("for"));
                     button.checked = true;
                 } catch (e) {
                 }
@@ -509,8 +512,8 @@ function moreGames() {
         if (window.isAmazonAndroidApp) {
             var androidLink = document.getElementById('androidLink');
             if (androidLink && androidLink.href) {
-                androidUrl = androidLink.href;
-                var package = /id=([\.\w]+)/.exec(androidUrl)[1];
+                androidUrl           = androidLink.href;
+                var package          = /id=([\.\w]+)/.exec(androidUrl)[1];
                 window.location.href = "http://www.amazon.com/gp/mas/dl/android?p=" + package + "&showAll=1&t=choofgam-20&ref=moreGames";
             } else {
                 window.location.href = "http://www.amazon.com/gp/mas/dl/android?p=com.choiceofgames.dragon&showAll=1&t=choofgam-20&ref=moreGames";
@@ -539,7 +542,7 @@ function printShareLinks(target, now) {
             callIos("share");
             return;
         }
-        var button = document.createElement("button");
+        var button     = document.createElement("button");
         button.appendChild(document.createTextNode("Share This Game"));
         button.onclick = function () {callIos("share");};
         msgDiv.appendChild(button);
@@ -561,8 +564,8 @@ function printShareLinks(target, now) {
             if (androidUrl) {
                 if (window.isAmazonAndroidApp) {
                     var package = /id=([\.\w]+)/.exec(androidUrl)[1];
-                    androidUrl = "http://www.amazon.com/gp/mas/dl/android?p=" + package + "&t=choofgam-20&ref=rate";
-                    mobileMesg = "  <li><a href='" + androidUrl + "'>Rate this app</a> in the Amazon Appstore</li>\n";
+                    androidUrl  = "http://www.amazon.com/gp/mas/dl/android?p=" + package + "&t=choofgam-20&ref=rate";
+                    mobileMesg  = "  <li><a href='" + androidUrl + "'>Rate this app</a> in the Amazon Appstore</li>\n";
                 } else {
                     mobileMesg = "  <li><a href='" + androidUrl + "'>Rate this app</a> in the Google Play Store</li>\n";
                 }
@@ -587,7 +590,7 @@ function printShareLinks(target, now) {
             }
         }
     }
-    var url = window.location.href;
+    var url   = window.location.href;
     var links = document.getElementsByTagName("link");
     for (var i = links.length - 1; i >= 0; i--) {
         if (links[i].getAttribute("rel") == "canonical") {
@@ -602,11 +605,11 @@ function printShareLinks(target, now) {
             url = "https://www.choiceofgames.com" + url;
         }
     }
-    url = encodeURIComponent(url);
-    var title = encodeURIComponent(document.title);
+    url                  = encodeURIComponent(url);
+    var title            = encodeURIComponent(document.title);
     var dataUriSupported = !/MSIE [67]/.test(navigator.userAgent);
-    var shareLinkText = '<li>' + (dataUriSupported ? '<img height="16" width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAACNFBMVEUAAAD///8ASZIASpIKTI0KSIcWSX5lgZ1YcIhYbYIAUpsHTpAhVIEAWaUAWaIAVp4AU5wAVJsAVJgAUpYAUpUBWaQWU4cAYqoAXqUAW6MAXKMAWqIAXKAFXZ8IWZZihZ8AbrgAbrcAaK0AZaoDbLIFZakGZqoKbrMAb7gAbrYBc7tsm7mizecge62izuiizeYBbqgId7INh8QQdqgXg7kVeK0fgLROm8Kh0uyducgRf7QXi8MvlcRTrNdZsdlvt9qDs8l/0O2v4/aY2u7j9/2/6fP4/f7s+/32/f71/f7t/P34/v76/v77/v76/f38/v7q7Oz9/v75/vvf8eX1/vjq/fDP+9zr/fDq/e+/9Mrq/e7E+Mxm3HN24YSC3YwTwSMUtSIXuycavikfxi4izDIhyTAhyTE8ykoauiclxjEowDUsxDYPthgsxTUDyQgg2iQ08jk43z3Q9tHP9dAA0gAA0QAA0AAAzwAAwQAAvAAAuwEAtAEAswAArAAB0AEBxQIBrAEC1AICtwMDvQUF1AUJ2QkL3wwL2gsKygwKwgsMxQwO3w4T6BMZ6xko7ChH3kdDyUN623qE64R8znx1wnX+/v79/f38/Pz7+/v6+vr5+fn4+Pj39/f29vby8vLx8fHq6urp6eno6Ojl5eXj4+Pg4ODf39/W1tbMzMzGxsbFxcXDw8PCwsKvr6+urq6srKypqamoqKiUlJSSkpKQkJCKioqIiIiHh4eGhoZ+fn5xcXFwcHBUP7YxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1wgUDigoTpImZAAAARtJREFUGNMBEAHv/gABAQEBlZeanJ2dm5iVAQEBAAGYAZVyknGMho+RpJ+YlQEAAQGVc3CNi4WBdXSIqKGalQABlXOOh4R+dnV3d3pTrKKZAJVyb39fY2ZlZG54eVc5q6AAlpODWUtHR0pPVoJ7WC8HqACZkG2VPSclJjeVaH1VLAyvAJuJbFREQj4TLZVqfVouFLIAnIqAaV1bTDU2lWt8WDgStgCclGJhYFxRMzFJXmdSPxa3AJpQTU9PRkMVDUFITkUkCLMAmKM8NDowESMYIjI7HAW7sACVn0AqISkgKCEoFwoLCLWpAAGapSsdDxsaGQ4QBAi5rqYAAZWep64fHgIDBgm6ta2nngABAZeepqqxtLi4s7Cppp6XR0lhOIfKM38AAAAASUVORK5CYII=">' : "") + ' <a href="http://www.stumbleupon.com/submit?url=' + url + '&amp;title=' + title + '" class="spacedLink">StumbleUpon</a></li>' + '<li>' + (dataUriSupported ? '<img height="16" width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsklEQVQ4EWNgoBAwgvQnVq75f+vBG5KMUlMQYZjfHsLIBNJFqmZkPSzEWKsqL8zQXebJICLIDVZuEzUTrg3sAjgPBwNZM7oSolyAzWaYQUS5AKYYG43XBUeWpaPogfGRwwCvAW/efwUbAPMCjI9sKl4DArKXgNXCbIbxkQ2gOAwoNgDsBS5ONgYNJTFkl2FlG2nLwMVv3HsFZlPHBTLifAznrj6Bm47OQI42mBwoM1EFAAAnVCliRFKHdQAAAABJRU5ErkJggg==">' : "") + ' <a href="http://www.facebook.com/sharer.php?u=' + url + '&amp;t=' + title + '"' + 'onclick="if (window.isFile || window.isXul) return true; ' + 'window.open(&quot;http://www.facebook.com/sharer.php?u=' + url + '&amp;t=' + title + '&quot;,&quot;sharer&quot;,&quot;toolbar=0,status=0,width=626,height=436&quot;);return false;" class="spacedLink">Facebook</a></li>' + '<li>' + (dataUriSupported ? '<img height="16" width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/ElEQVQ4EYVTO24UQRB9/dmZkdfCIK0QBhMACQdwgDgMN4AEiYALcAFy7kNABkYkGzhAWMa2DHg9n+7iVfXMaAmAknp7tuvVq1dV3Q6j9SlJlzLEOXgIPPcmRjf5/7ZHdWQRaVPCOjucDYJlcHi8AFLOErz/J4kRQASXGfjYDmhIeDwAKx9xBzz8jxUCgjqSfE8CPWi5EpeTjOu+F36CVcGxrEBBMVDiaDOB5vqVBQu6WAU+dQmnwZuGwkACstxlRDckqWIhMQLPOtfXvfw0AmfA95thqwBNWGg04PktLbTYrEAlXxJTEciemtd+KdvZf7ESTjipEyaazAgyu/2lTTjP2ZpICZZQYSp7gg8kelh5PFj4Kd56ZvhE2IUSMOMVm/niZoPDOqJl0FSAYlYhoNoabSmBiI5pVNouv39w32G3l05wIwaqKRq00XErWGWYFvXz3uAbA4+51lyf+wy9h0JVRqAgfmehc8vmJt7n/CrKP6J81fzqfIPTVOOAo+S9soko+GkzhxgNocUkDfLmosPrsyvwtpTDP5KRWBz2Of4PB3vYr8o9mNuZncfLvRrPdmveJJVNDn0G8yKUMV/pO+p16MVmAn00yvnu9g7erpZ4xAbUrFtXMy42AE9YwmHNxo42lzAd6AtMQ48NgjVVOz+BVNQ9Zql4UI9P/TehBOJIi+EJIAAAAABJRU5ErkJggg==">' : "") + ' <a href="https://twitter.com/intent/tweet?related=choiceofgames&amp;text=Awesome+game%3A+' + title + '&amp;url=' + url + '&amp;via=choiceofgames" class="spacedLink">Twitter</a></li>';
-    var nowMsg = "";
+    var shareLinkText    = '<li>' + (dataUriSupported ? '<img height="16" width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAACNFBMVEUAAAD///8ASZIASpIKTI0KSIcWSX5lgZ1YcIhYbYIAUpsHTpAhVIEAWaUAWaIAVp4AU5wAVJsAVJgAUpYAUpUBWaQWU4cAYqoAXqUAW6MAXKMAWqIAXKAFXZ8IWZZihZ8AbrgAbrcAaK0AZaoDbLIFZakGZqoKbrMAb7gAbrYBc7tsm7mizecge62izuiizeYBbqgId7INh8QQdqgXg7kVeK0fgLROm8Kh0uyducgRf7QXi8MvlcRTrNdZsdlvt9qDs8l/0O2v4/aY2u7j9/2/6fP4/f7s+/32/f71/f7t/P34/v76/v77/v76/f38/v7q7Oz9/v75/vvf8eX1/vjq/fDP+9zr/fDq/e+/9Mrq/e7E+Mxm3HN24YSC3YwTwSMUtSIXuycavikfxi4izDIhyTAhyTE8ykoauiclxjEowDUsxDYPthgsxTUDyQgg2iQ08jk43z3Q9tHP9dAA0gAA0QAA0AAAzwAAwQAAvAAAuwEAtAEAswAArAAB0AEBxQIBrAEC1AICtwMDvQUF1AUJ2QkL3wwL2gsKygwKwgsMxQwO3w4T6BMZ6xko7ChH3kdDyUN623qE64R8znx1wnX+/v79/f38/Pz7+/v6+vr5+fn4+Pj39/f29vby8vLx8fHq6urp6eno6Ojl5eXj4+Pg4ODf39/W1tbMzMzGxsbFxcXDw8PCwsKvr6+urq6srKypqamoqKiUlJSSkpKQkJCKioqIiIiHh4eGhoZ+fn5xcXFwcHBUP7YxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1wgUDigoTpImZAAAARtJREFUGNMBEAHv/gABAQEBlZeanJ2dm5iVAQEBAAGYAZVyknGMho+RpJ+YlQEAAQGVc3CNi4WBdXSIqKGalQABlXOOh4R+dnV3d3pTrKKZAJVyb39fY2ZlZG54eVc5q6AAlpODWUtHR0pPVoJ7WC8HqACZkG2VPSclJjeVaH1VLAyvAJuJbFREQj4TLZVqfVouFLIAnIqAaV1bTDU2lWt8WDgStgCclGJhYFxRMzFJXmdSPxa3AJpQTU9PRkMVDUFITkUkCLMAmKM8NDowESMYIjI7HAW7sACVn0AqISkgKCEoFwoLCLWpAAGapSsdDxsaGQ4QBAi5rqYAAZWep64fHgIDBgm6ta2nngABAZeepqqxtLi4s7Cppp6XR0lhOIfKM38AAAAASUVORK5CYII=">' : "") + ' <a href="http://www.stumbleupon.com/submit?url=' + url + '&amp;title=' + title + '" class="spacedLink">StumbleUpon</a></li>' + '<li>' + (dataUriSupported ? '<img height="16" width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsklEQVQ4EWNgoBAwgvQnVq75f+vBG5KMUlMQYZjfHsLIBNJFqmZkPSzEWKsqL8zQXebJICLIDVZuEzUTrg3sAjgPBwNZM7oSolyAzWaYQUS5AKYYG43XBUeWpaPogfGRwwCvAW/efwUbAPMCjI9sKl4DArKXgNXCbIbxkQ2gOAwoNgDsBS5ONgYNJTFkl2FlG2nLwMVv3HsFZlPHBTLifAznrj6Bm47OQI42mBwoM1EFAAAnVCliRFKHdQAAAABJRU5ErkJggg==">' : "") + ' <a href="http://www.facebook.com/sharer.php?u=' + url + '&amp;t=' + title + '"' + 'onclick="if (window.isFile || window.isXul) return true; ' + 'window.open(&quot;http://www.facebook.com/sharer.php?u=' + url + '&amp;t=' + title + '&quot;,&quot;sharer&quot;,&quot;toolbar=0,status=0,width=626,height=436&quot;);return false;" class="spacedLink">Facebook</a></li>' + '<li>' + (dataUriSupported ? '<img height="16" width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/ElEQVQ4EYVTO24UQRB9/dmZkdfCIK0QBhMACQdwgDgMN4AEiYALcAFy7kNABkYkGzhAWMa2DHg9n+7iVfXMaAmAknp7tuvVq1dV3Q6j9SlJlzLEOXgIPPcmRjf5/7ZHdWQRaVPCOjucDYJlcHi8AFLOErz/J4kRQASXGfjYDmhIeDwAKx9xBzz8jxUCgjqSfE8CPWi5EpeTjOu+F36CVcGxrEBBMVDiaDOB5vqVBQu6WAU+dQmnwZuGwkACstxlRDckqWIhMQLPOtfXvfw0AmfA95thqwBNWGg04PktLbTYrEAlXxJTEciemtd+KdvZf7ESTjipEyaazAgyu/2lTTjP2ZpICZZQYSp7gg8kelh5PFj4Kd56ZvhE2IUSMOMVm/niZoPDOqJl0FSAYlYhoNoabSmBiI5pVNouv39w32G3l05wIwaqKRq00XErWGWYFvXz3uAbA4+51lyf+wy9h0JVRqAgfmehc8vmJt7n/CrKP6J81fzqfIPTVOOAo+S9soko+GkzhxgNocUkDfLmosPrsyvwtpTDP5KRWBz2Of4PB3vYr8o9mNuZncfLvRrPdmveJJVNDn0G8yKUMV/pO+p16MVmAn00yvnu9g7erpZ4xAbUrFtXMy42AE9YwmHNxo42lzAd6AtMQ48NgjVVOz+BVNQ9Zql4UI9P/TehBOJIi+EJIAAAAABJRU5ErkJggg==">' : "") + ' <a href="https://twitter.com/intent/tweet?related=choiceofgames&amp;text=Awesome+game%3A+' + title + '&amp;url=' + url + '&amp;via=choiceofgames" class="spacedLink">Twitter</a></li>';
+    var nowMsg           = "";
     if (now)nowMsg = "<p>Please support our work by sharing this game with friends!  The more people play, the more resources we'll have to work on the next game.</p>";
     msgDiv.innerHTML = nowMsg + "<ul id='sharelist'>\n" +
         mobileMesg +
@@ -626,19 +629,7 @@ function isFollowEnabled() {
     if ("localhost" != window.location.hostname && !/\.?(playalterego|choiceofgames)\.com$/.test(window.location.hostname))return false;
     return true;
 }
-function printFollowButtons() {
-    if (!isFollowEnabled())return;
-    var target = document.getElementById('text');
-    var iframe = document.createElement('iframe');
-    var width = 300;
-    var height = 66;
-    iframe.setAttribute("src", "//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fchoiceofgames" + "&amp;send=false&amp;layout=standard&amp;width=" + width + "&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;" + "action=like&amp;height=" + height + "&amp;appId=190439350983878");
-    iframe.setAttribute("scrolling", "no");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("style", "border:none; overflow:hidden; width:" + width + "px; height:" + height + "px;");
-    iframe.setAttribute("allowTransparency", "true");
-    target.appendChild(iframe);
-}
+function printFollowButtons() {return;}
 function subscribeLink(e) {clearScreen(function () {subscribe(document.getElementById('text'), "now", function () {clearScreen(loadAndRestoreGame);});});}
 function subscribeByMail(target, now, callback, code) {
     if (now) {
@@ -671,11 +662,11 @@ function subscribe(target, now, callback) {
             if (cancel) {
                 return safeCall(null, callback);
             }
-            var head = document.getElementsByTagName('head')[0];
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            var timestamp = new Date().getTime();
-            var timeout = setTimeout(function () {
+            var head                    = document.getElementsByTagName('head')[0];
+            var script                  = document.createElement('script');
+            script.type                 = 'text/javascript';
+            var timestamp               = new Date().getTime();
+            var timeout                 = setTimeout(function () {
                 window["jsonp" + timestamp]({
                     result : "error",
                     msg    : "Couldn't connect. Please try again later."
@@ -694,11 +685,11 @@ function subscribe(target, now, callback) {
                     });
                 }
             };
-            var mailParams = "u=eba910fddc9629b2810db6182&id=e9cdee1aaa&SIGNUP=" + window.storeName + "-" + platformCode() + "&EMAIL=" + encodeURIComponent(email);
+            var mailParams              = "u=eba910fddc9629b2810db6182&id=e9cdee1aaa&SIGNUP=" + window.storeName + "-" + platformCode() + "&EMAIL=" + encodeURIComponent(email);
             if (window.isChromeApp) {
                 chrome.permissions.contains({ origins : ["http://choiceofgames.us4.list-manage.com/"] }, function (isXhrAllowed) {
                     if (isXhrAllowed) {
-                        var xhr = new XMLHttpRequest();
+                        var xhr                = new XMLHttpRequest();
                         xhr.open("GET", 'http://choiceofgames.us4.list-manage.com/subscribe/post-json?' + mailParams, true);
                         xhr.onreadystatechange = function () {
                             if (xhr.readyState != 4)return;
@@ -721,12 +712,12 @@ function subscribe(target, now, callback) {
                     } else {
                         window.addEventListener('message', function (event) {
                             if (window["jsonp" + timestamp]) {
-                                var jsonpt = window["jsonp" + timestamp];
+                                var jsonpt                  = window["jsonp" + timestamp];
                                 window["jsonp" + timestamp] = null;
                                 if (jsonpt)jsonpt(event.data);
                             }
                         });
-                        var iframe = document.createElement("IFRAME");
+                        var iframe    = document.createElement("IFRAME");
                         iframe.setAttribute("src", "sandbox.html");
                         iframe.setAttribute("name", "sandbox");
                         iframe.onload = function () {
@@ -742,9 +733,9 @@ function subscribe(target, now, callback) {
                 });
             } else {
                 if (isWinStoreApp || window.location.protocol == "https:") {
-                    var xhr = findXhr();
+                    var xhr                = findXhr();
                     xhr.open("GET", 'https://www.choiceofgames.com/mailchimp_proxy.php/subscribe/post-json?' + mailParams, true);
-                    var done = false;
+                    var done               = false;
                     xhr.onreadystatechange = function () {
                         if (done)return;
                         if (xhr.readyState != 4)return;
@@ -844,7 +835,7 @@ function checkPurchase(products, callback) {
         });
     } else {
         var productList = products.split(/ /);
-        var purchases = {};
+        var purchases   = {};
         for (i = 0; i < productList.length; i++) {
             purchases[productList[i]] = true;
         }
@@ -865,7 +856,7 @@ function restorePurchases(callback) {
                 getKnownPurchases(restoreCallback);
             } else {
                 clearScreen(function () {
-                    var target = document.getElementById('text');
+                    var target       = document.getElementById('text');
                     target.innerHTML = "<p>Please sign in to Playalterego.com to restore purchases.</p>";
                     loginForm(document.getElementById('text'), 1, null, restoreCallback);
                 });
@@ -896,7 +887,7 @@ function purchase(product, callback) {
         callIos("purchase", product);
     } else if (window.isAndroidApp) {
         window.purchaseCallback = purchaseCallback;
-        var androidStackTrace = androidBilling.purchase(product);
+        var androidStackTrace   = androidBilling.purchase(product);
         if (androidStackTrace)throw new Error(androidStackTrace);
     } else if (window.isWinOldApp) {
         window.external.Purchase(product);
@@ -952,7 +943,7 @@ function purchase(product, callback) {
 
             if (registered)return fetchEmail(stripe);
             clearScreen(function () {
-                var target = document.getElementById('text');
+                var target       = document.getElementById('text');
                 target.innerHTML = "<p>Please sign in to Playalterego.com to purchase.</p>";
                 loginForm(document.getElementById('text'), 1, null, function (registered) {
                     if (registered) {
@@ -990,9 +981,9 @@ function achieve(name, title, description) {
     if (initStore())window.store.set("achieved", toJson(nav.achieved));
     registerNativeAchievement(name);
     if (window.isIosApp)return;
-    var escapedTitle = title + "".replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    var escapedTitle       = title + "".replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     var escapedDescription = description + "".replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\[b\]/g, '<b>').replace(/\[\/b\]/g, '</b>').replace(/\[i\]/g, '<i>').replace(/\[\/i\]/g, '</i>');
-    var html = "<b>Achievement: " + escapedTitle + "</b><br>" + escapedDescription;
+    var html               = "<b>Achievement: " + escapedTitle + "</b><br>" + escapedDescription;
     alertify.log(html);
 }
 function checkAchievements(callback) {
@@ -1001,9 +992,9 @@ function checkAchievements(callback) {
         window.store.get("achieved", function (ok, value) {
             function mergeNativeAchievements(achieved) {
                 window.checkAchievementCallback = null;
-                var nativeRegistered = {};
+                var nativeRegistered            = {};
                 for (var i = 0; i < achieved.length; i++) {
-                    nav.achieved[achieved[i]] = true;
+                    nav.achieved[achieved[i]]     = true;
                     nativeRegistered[achieved[i]] = true;
                 }
                 for (var achievement in nav.achieved) {
@@ -1022,11 +1013,11 @@ function checkAchievements(callback) {
                 }
             }
             if (window.isIosApp) {
-                alreadyLoadingAchievements = !!window.checkAchievementCallback;
+                alreadyLoadingAchievements      = !!window.checkAchievementCallback;
                 window.checkAchievementCallback = mergeNativeAchievements;
                 if (!alreadyLoadingAchievements)callIos("checkachievements");
             } else if (window.isMacApp && window.macAchievements) {
-                alreadyLoadingAchievements = !!window.checkAchievementCallback;
+                alreadyLoadingAchievements      = !!window.checkAchievementCallback;
                 window.checkAchievementCallback = mergeNativeAchievements;
                 if (!alreadyLoadingAchievements)macAchievements.checkAchievements();
             } else if (window.isWinOldApp) {
@@ -1078,16 +1069,16 @@ function showFullScreenAdvertisement(callback) {
 }
 function showTicker(target, endTimeInSeconds, finishedCallback) {
     if (!target)target = document.getElementById('text');
-    var div = document.createElement("span");
+    var div          = document.createElement("span");
     div.setAttribute("id", "delayTicker");
     target.appendChild(div);
     var timerDisplay = document.createElement("span");
     div.appendChild(timerDisplay);
     var timer;
-    var statsButton = document.getElementById("statsButton");
+    var statsButton  = document.getElementById("statsButton");
     if (statsButton) {
         var defaultStatsButtonDisplay = statsButton.style.display;
-        statsButton.style.display = "none";
+        statsButton.style.display     = "none";
     }
     if (endTimeInSeconds > Math.floor(new Date().getTime() / 1000)) {
         if (window.isAndroidApp) {
@@ -1118,15 +1109,15 @@ function showTicker(target, endTimeInSeconds, finishedCallback) {
                 return "" + minutesRemaining + "m " + formatSecondsRemaining(remainderSeconds);
             } else {
                 var hoursRemaining = Math.floor(secondsRemaining / 3600);
-                remainderSeconds = secondsRemaining - hoursRemaining * 3600;
+                remainderSeconds   = secondsRemaining - hoursRemaining * 3600;
                 return "" + hoursRemaining + "h " + formatSecondsRemaining(remainderSeconds, true);
             }
         }
     }
 
     function tick() {
-        window.tickerRunning = true;
-        var tickerElement = document.getElementById("delayTicker");
+        window.tickerRunning   = true;
+        var tickerElement      = document.getElementById("delayTicker");
         var tickerStillVisible = tickerElement && tickerElement.parentNode && tickerElement.parentNode.parentNode;
         if (!tickerStillVisible) {
             cleanUpTicker();
@@ -1149,10 +1140,10 @@ function showTicker(target, endTimeInSeconds, finishedCallback) {
 function printButton(name, parent, isSubmit, code) {
     var button;
     if (isSubmit) {
-        button = document.createElement("input");
-        button.type = "submit";
+        button       = document.createElement("input");
+        button.type  = "submit";
         button.value = name;
-        button.name = name;
+        button.name  = name;
     } else {
         button = document.createElement("button");
         button.setAttribute("type", "button");
@@ -1203,9 +1194,9 @@ function kindleButton(target, query, buttonName) {
 }
 function printInput(target, inputType, callback, minimum, maximum, step) {
     if (!target)target = document.getElementById('text');
-    var form = document.createElement("form");
+    var form    = document.createElement("form");
     target.appendChild(form);
-    var self = this;
+    var self    = this;
     form.action = "#";
     if (inputType == "textarea") {
         var input = document.createElement("textarea");
@@ -1220,7 +1211,7 @@ function printInput(target, inputType, callback, minimum, maximum, step) {
             input.setAttribute("step", step);
         }
     }
-    input.name = "text";
+    input.name    = "text";
     input.setAttribute("style", "font-size: 25px; width: 90%;");
     form.appendChild(input);
     form.onsubmit = function (e) {
@@ -1246,21 +1237,21 @@ function printInput(target, inputType, callback, minimum, maximum, step) {
 }
 function promptEmailAddress(target, defaultEmail, callback) {
     if (!target)target = document.getElementById('text');
-    var form = document.createElement("form");
-    var self = this;
-    form.action = "#";
-    var message = document.createElement("div");
-    message.style.color = "red";
+    var form                 = document.createElement("form");
+    var self                 = this;
+    form.action              = "#";
+    var message              = document.createElement("div");
+    message.style.color      = "red";
     message.style.fontWeight = "bold";
     message.setAttribute("id", "errorMessage");
     form.appendChild(message);
-    var input = document.createElement("input");
+    var input                = document.createElement("input");
     try {
         input.type = "email";
     } catch (e) {
     }
-    input.name = "email";
-    input.value = defaultEmail;
+    input.name    = "email";
+    input.value   = defaultEmail;
     input.setAttribute("style", "font-size: 25px; width: 90%;");
     form.appendChild(input);
     target.appendChild(form);
@@ -1273,7 +1264,7 @@ function promptEmailAddress(target, defaultEmail, callback) {
         safeCall(this, function () {
             var email = trim(input.value);
             if (!/^\S+@\S+\.\S+$/.test(email)) {
-                var messageText = document.createTextNode("Sorry, \"" + email + "\" is not an email address.  Please type your email address again.");
+                var messageText   = document.createTextNode("Sorry, \"" + email + "\" is not an email address.  Please type your email address again.");
                 message.innerHTML = "";
                 message.appendChild(messageText);
             } else {
@@ -1285,11 +1276,11 @@ function promptEmailAddress(target, defaultEmail, callback) {
 }
 function loginForm(target, optional, errorMessage, callback) {
     if (!isRegisterAllowed() || !initStore())return safeTimeout(function () {callback(!"ok");}, 0);
-    var optional_start = 1;
-    var optional_returning_subscribe = 2;
+    var optional_start                  = 1;
+    var optional_returning_subscribe    = 2;
     var optional_returning_no_subscribe = 3;
-    var optional_new_subscribe = 4;
-    var optional_new_no_subscribe = 5;
+    var optional_new_subscribe          = 4;
+    var optional_new_no_subscribe       = 5;
     startLoading();
     fetchEmail(function (defaultEmail) {
         isRegistered(function (registered) {
@@ -1321,28 +1312,28 @@ function loginForm(target, optional, errorMessage, callback) {
             var escapedEmail = defaultEmail.replace(/'/g, "&apos;");
             var passwordButton;
             if (optional == optional_start) {
-                form.innerHTML = "<div id=message style='color:red; font-weight:bold'>" + errorMessage + "</div><div class='choice'>" + "<label for=yes class=firstChild><input type=radio name=choice value=yes id=yes checked> My email address is: " + "<input type=email name=email id=email value='" + escapedEmail + "' style='font-size: 25px; width: 11em'></label>" +
+                form.innerHTML     = "<div id=message style='color:red; font-weight:bold'>" + errorMessage + "</div><div class='choice'>" + "<label for=yes class=firstChild><input type=radio name=choice value=yes id=yes checked> My email address is: " + "<input type=email name=email id=email value='" + escapedEmail + "' style='font-size: 25px; width: 11em'></label>" +
                     ((isWeb && window.facebookAppId) ? "<label for=facebook><input type=radio name=choice value=facebook id=facebook > Sign in with Facebook.</label>" : "") +
                     ((isWeb && window.googleAppId) ? "<label for=google><input type=radio name=choice value=google id=google > Sign in with Google.</label>" : "") + "<label for=no class=lastChild><input type=radio name=choice value=no id=no > No, thanks.</label>" + "<p><label class=noBorder for=subscribe><input type=checkbox name=subscribe id=subscribe checked> " + "Email me when new games are available.</label></p>";
                 form.email.onclick = function () {setTimeout(function () {form.email.focus();}, 0);};
                 setTimeout(function () {form.email.focus();}, 0);
             } else {
-                form.innerHTML = "<div id=message style='color:red; font-weight:bold'>" + errorMessage + "</div><span><span>My email address is: </span><input type=email name=email id=email value='" +
+                form.innerHTML                    = "<div id=message style='color:red; font-weight:bold'>" + errorMessage + "</div><span><span>My email address is: </span><input type=email name=email id=email value='" +
                     escapedEmail + "' style='font-size: 25px; width: 12em'></span><p><label class=noBorder id=subscribeLabel for=subscribe>" + "<input type=checkbox name=subscribe id=subscribe checked> " + "Email me when new games are available.</label></p><p>Do you have a Playalterego.com password?</p>" + "<div class='choice'>" + "<label for=new class=firstChild><input type=radio name=choice value=new id=new checked> No, I'm new.</label>" + "<label for=passwordButton><input type=radio name=choice value=passwordButton id=passwordButton> " + "Yes, I have a password: <input id=password type=password name=password disabled class=needsclick style='font-size: 25px; width: 11em'></label>" + "<label for=forgot><input type=radio name=choice value=forgot id=forgot> I forgot my password.</label>" +
                     ((isWeb && window.facebookAppId) ? "<label for=facebook><input type=radio name=choice value=facebook id=facebook> Sign in with Facebook.</label>" : "") +
                     ((isWeb && window.googleAppId) ? "<label for=google><input type=radio name=choice value=google id=google> Sign in with Google.</label>" : "") +
                     (optional ? "<label for=no><input type=radio name=choice value=no id=no> Cancel.</label>" : "") + "</div><br>";
-                var labels = form.getElementsByTagName("label");
+                var labels                        = form.getElementsByTagName("label");
                 setClass(labels[labels.length - 1], "lastChild");
-                var password = form.password;
-                passwordButton = form.passwordButton;
+                var password                      = form.password;
+                passwordButton                    = form.passwordButton;
                 passwordButton.parentNode.onclick = function () {
                     passwordButton.checked = true;
                     passwordButton.onchange();
                 };
-                var radioButtons = form.choice;
-                var onchange = function () {
-                    var enabled = passwordButton.checked;
+                var radioButtons                  = form.choice;
+                var onchange                      = function () {
+                    var enabled       = passwordButton.checked;
                     password.disabled = !enabled;
                     if (enabled) {
                         password.focus();
@@ -1358,17 +1349,17 @@ function loginForm(target, optional, errorMessage, callback) {
                 }
             }
             function showMessage(msg) {
-                var message = document.getElementById('message');
-                var messageText = document.createTextNode(msg);
+                var message       = document.getElementById('message');
+                var messageText   = document.createTextNode(msg);
                 message.innerHTML = "";
                 message.appendChild(messageText);
             }
 
             form.onsubmit = function (event) {
                 preventDefault(event);
-                var email = trim(form.email.value);
+                var email     = trim(form.email.value);
                 var subscribe = form.subscribe.checked;
-                var choice = getFormValue("choice");
+                var choice    = getFormValue("choice");
                 if ("facebook" == choice) {
                     if (!window.FB)return asyncAlert("Sorry, we weren't able to sign you in with Facebook. (Your network connection may be down.) Please try again later, or contact support@playalterego.com for assistance.");
                     var loginParams = { scope : 'email', return_scopes : true };
@@ -1449,14 +1440,14 @@ function loginForm(target, optional, errorMessage, callback) {
                         } else if ("new" == choice) {
                             target.innerHTML = "";
                             window.scrollTo(0, 0);
-                            form = document.createElement("form");
+                            form             = document.createElement("form");
                             var escapedEmail = email.replace(/'/g, "&apos;");
-                            form.innerHTML = "<div id=message style='color:red; font-weight:bold'></div>" + "<div>My email address is: </div><div><input type=email name=email id=email value='" +
+                            form.innerHTML   = "<div id=message style='color:red; font-weight:bold'></div>" + "<div>My email address is: </div><div><input type=email name=email id=email value='" +
                                 escapedEmail + "' style='font-size: 25px; width: 12em'></div>" + "<div>Type it again: </div><div><input type=email name=email2 id=email2 autocomplete='off' style='font-size: 25px; width: 12em'></div>" + "<div>Enter a new password:&nbsp;</div><div>" + "<input type=password name=password id=password style='font-size: 25px; width: 12em'></div>";
-                            form.onsubmit = function (event) {
+                            form.onsubmit    = function (event) {
                                 preventDefault(event);
-                                var email = trim(form.email.value);
-                                var email2 = trim(form.email2.value);
+                                var email          = trim(form.email.value);
+                                var email2         = trim(form.email2.value);
                                 if (!/^\S+@\S+\.\S+$/.test(email)) {
                                     showMessage('Sorry, "' + email + '" is not an email address.  Please type your email address again.');
                                     return;
@@ -1541,17 +1532,17 @@ function loginForm(target, optional, errorMessage, callback) {
     });
 }
 function loginDiv(registered, email) {
-    var domain = "https://www.playalterego.com/";
+    var domain   = "https://www.playalterego.com/";
     var identity = document.getElementById("identity");
     if (!identity)return;
     if (registered) {
-        var emailLink = document.getElementById("email");
+        var emailLink          = document.getElementById("email");
         emailLink.setAttribute("href", domain + "profile" + "/");
-        emailLink.innerHTML = "";
+        emailLink.innerHTML    = "";
         emailLink.appendChild(document.createTextNode(email));
         identity.style.display = "block";
-        var logoutLink = document.getElementById("logout");
-        logoutLink.onclick = function (event) {
+        var logoutLink         = document.getElementById("logout");
+        logoutLink.onclick     = function (event) {
             preventDefault(event);
             logout();
             loginDiv();
@@ -1592,7 +1583,7 @@ function preventDefault(event) {
 }
 function getPassword(target, code) {
     if (!target)target = document.getElementById('text');
-    var textArea = document.createElement("textarea");
+    var textArea  = document.createElement("textarea");
     textArea.cols = 41;
     textArea.rows = 30;
     setClass(textArea, "savePassword");
@@ -1604,14 +1595,14 @@ function getPassword(target, code) {
 function showPassword(target, password) {
     if (!target)target = document.getElementById('text');
     var textBuffer = [];
-    var colWidth = 40;
+    var colWidth   = 40;
     for (var i = 0; i < password.length; i++) {
         textBuffer.push(password.charAt(i));
         if ((i + 1) % colWidth === 0) {
             textBuffer.push('\n');
         }
     }
-    password = "----- BEGIN PASSWORD -----\n" + textBuffer.join('') + "\n----- END PASSWORD -----";
+    password         = "----- BEGIN PASSWORD -----\n" + textBuffer.join('') + "\n----- END PASSWORD -----";
     var shouldButton = isMobile;
     if (shouldButton) {
         var button = printButton("Email My Password to Me", target, false, function () {
@@ -1625,19 +1616,19 @@ function showPassword(target, password) {
     }
     var shouldTextArea = !isMobile;
     if (shouldTextArea) {
-        var textArea = document.createElement("textarea");
-        textArea.cols = colWidth + 1;
-        textArea.rows = 30;
+        var textArea     = document.createElement("textarea");
+        textArea.cols    = colWidth + 1;
+        textArea.rows    = 30;
         setClass(textArea, "savePassword");
         textArea.setAttribute("readonly", true);
         textArea.onclick = function () {textArea.select();};
-        textArea.value = (password);
+        textArea.value   = (password);
         target.appendChild(textArea);
     }
 }
 function changeTitle(title) {
     document.title = title;
-    var h1 = document.getElementsByTagName("h1");
+    var h1         = document.getElementsByTagName("h1");
     if (h1)h1 = h1[0];
     h1.innerHTML = "";
     h1.appendChild(document.createTextNode(title));
@@ -1646,7 +1637,7 @@ function changeTitle(title) {
     }
 }
 function changeAuthor(author) {
-    var authorTag = document.getElementById("author");
+    var authorTag       = document.getElementById("author");
     authorTag.innerHTML = "";
     authorTag.appendChild(document.createTextNode("by " + author));
 }
@@ -1759,11 +1750,11 @@ window.onerror = function (msg, file, line, stack) {
         window.location.href = (supportEmailHref + "?subject=Error Report&body=" + encodeURIComponent(body));
     }
 };
-window.onload = function () {
+window.onload  = function () {
     if (window.alreadyLoaded)return;
     window.alreadyLoaded = true;
-    window.main = document.getElementById("main");
-    var head = document.getElementsByTagName("head")[0];
+    window.main          = document.getElementById("main");
+    var head             = document.getElementsByTagName("head")[0];
     window.nav.setStartingStatsClone(window.stats);
     if (window.achievements && window.achievements.length) {
         nav.loadAchievements(window.achievements);
@@ -1771,7 +1762,7 @@ window.onload = function () {
         setButtonTitles();
     }
     stats.sceneName = window.nav.getStartupScene();
-    var map = parseQueryString(window.location.search);
+    var map         = parseQueryString(window.location.search);
     if (!map) {
         if (window.androidQueryString) {
             map = parseQueryString(window.androidQueryString);
@@ -1781,8 +1772,8 @@ window.onload = function () {
     }
     if (map) {
         window.forcedScene = map.forcedScene;
-        window.slot = map.slot;
-        window.debug = map.debug;
+        window.slot        = map.slot;
+        window.debug       = map.debug;
         if (map.restart) {
             restartGame();
         } else if (map.achievements) {
@@ -1813,12 +1804,12 @@ window.onload = function () {
         }
     }
     if (window.isCef) {
-        var buttons = document.getElementById("buttons");
+        var buttons          = document.getElementById("buttons");
         buttons.appendChild(document.createTextNode(" "));
-        var menuButton = document.createElement("button");
-        menuButton.id = "menuButton";
+        var menuButton       = document.createElement("button");
+        menuButton.id        = "menuButton";
         setClass(menuButton, "spacedLink");
-        menuButton.onclick = showMenu;
+        menuButton.onclick   = showMenu;
         menuButton.innerHTML = "Menu";
         buttons.appendChild(menuButton);
     }
@@ -1841,7 +1832,7 @@ if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", window.onload, false);
 }
 try {
-    var style = document.createElement('style');
+    var style  = document.createElement('style');
     style.type = 'text/css';
     try {
         style.innerHTML = 'noscript {display: none;}';
@@ -1851,50 +1842,13 @@ try {
 } catch (e) {
 }
 if (window.isWeb) {
-    document.write("<style>.webOnly { display: block !important; }</style>\n" + "<scr" + "ipt src='https://checkout.stripe.com/v2/checkout.js'></scr" + "ipt>");
-    var metas = document.getElementsByTagName("meta");
-    var facebookAppId, googleAppId;
-    var googleLoginCallbackCallback;
-    for (var i = 0; i < metas.length; i++) {
-        var meta = metas[i];
-        if ("fb:app_id" == meta.getAttribute("property")) {
-            facebookAppId = meta.getAttribute("content");
-        } else if ("google-signin-clientid" == meta.getAttribute("name")) {
-            googleAppId = meta.getAttribute("content");
-        }
-    }
-    if (facebookAppId) {
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId   : facebookAppId,
-                cookie  : true,
-                xfbml   : true,
-                version : 'v2.0'
-            });
-        };
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id))return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    }
-    if (googleAppId)(function () {
-        var po = document.createElement('script');
-        po.type = 'text/javascript';
-        po.async = true;
-        po.src = 'https://apis.google.com/js/client:plusone.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(po, s);
-    })();
+    document.write("<style>.webOnly { display: block !important; }</style>");
 }
 if (!isWeb && window.isIosApp) {
     document.write("<style>" + "#header { display: none; }" + "" + "#emailUs { display: none; }" + "" + "#main { padding-top: 1em; }" + "</style>" + "<meta name = 'viewport' content = 'width = " + window.innerWidth + "'>");
     window.addEventListener("resize", function () {
         document.querySelector("meta[name=viewport]").setAttribute("content", "width=" + window.innerWidth);
-        var dummy = document.createElement("p");
+        var dummy       = document.createElement("p");
         dummy.innerHTML = "&nbsp;";
         document.body.appendChild(dummy);
         window.setTimeout(function () {document.body.removeChild(dummy);}, 10);
@@ -1914,19 +1868,19 @@ if (window.isChromeApp) {
     base.setAttribute("target", "_blank");
     document.head.appendChild(base);
     document.addEventListener("DOMContentLoaded", function () {
-        var aboutLink = document.getElementById("aboutLink");
+        var aboutLink   = document.getElementById("aboutLink");
         aboutLink.addEventListener("click", function () {
             if (chrome.app.window) {
                 event.preventDefault();
                 chrome.app.window.create("credits.html", {}, function (w) {
                     w.contentWindow.addEventListener("DOMContentLoaded", function () {
-                        var win = this;
-                        var back = win.document.getElementById("back");
+                        var win                                      = this;
+                        var back                                     = win.document.getElementById("back");
                         back.addEventListener("click", function (event) {
                             event.preventDefault();
                             win.close();
                         }, false);
-                        var base = win.document.createElement('base');
+                        var base                                     = win.document.createElement('base');
                         base.setAttribute("target", "_blank");
                         win.document.head.appendChild(base);
                         win.document.documentElement.style.overflowY = "scroll";
@@ -1944,13 +1898,13 @@ if (window.isChromeApp) {
             achievementsButton.onclick = undefined;
             achievementsButton.addEventListener("click", function () {showAchievements();}, false);
         }
-        var restartButton = document.getElementById("restartButton");
-        restartButton.onclick = undefined;
+        var restartButton       = document.getElementById("restartButton");
+        restartButton.onclick   = undefined;
         restartButton.addEventListener("click", function () {restartGame("prompt");}, false);
-        var subscribeAnchor = document.getElementById("subscribeLink");
+        var subscribeAnchor     = document.getElementById("subscribeLink");
         subscribeAnchor.onclick = undefined;
         subscribeAnchor.addEventListener("click", function () {subscribeLink();}, false);
-        var supportAnchor = document.getElementById("supportEmail");
+        var supportAnchor       = document.getElementById("supportEmail");
         supportAnchor.addEventListener("click", function (event) {event.preventDefault();}, false);
     }, false);
 }
@@ -1970,8 +1924,8 @@ if (window.isCef) {
     pollPurchases();
 }
 function winStoreShareLinkHandler(e) {
-    var request = e.request;
-    var canonical = document.querySelector("link[rel=canonical]");
+    var request       = e.request;
+    var canonical     = document.querySelector("link[rel=canonical]");
     var canonicalHref = canonical && canonical.getAttribute("href");
     if (!/^https?:/.test(canonicalHref)) {
         canonicalHref = "https://www.playalterego.com" + canonicalHref;
@@ -1980,16 +1934,16 @@ function winStoreShareLinkHandler(e) {
         canonicalHref += "/";
     }
     canonicalHref += "redirect.php?src=winshare";
-    request.data.properties.title = document.title;
+    request.data.properties.title       = document.title;
     request.data.properties.description = document.querySelector("meta[name=description]").getAttribute("content");
     request.data.setUri(new Windows.Foundation.Uri(canonicalHref));
 }
 if (window.isWinStoreApp) {
     var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
     dataTransferManager.addEventListener("datarequested", winStoreShareLinkHandler);
-    baseScript = document.createElement("script");
-    baseScript.src = "//Microsoft.WinJS.1.0/js/base.js";
-    baseScript.onload = function () {
+    baseScript              = document.createElement("script");
+    baseScript.src          = "//Microsoft.WinJS.1.0/js/base.js";
+    baseScript.onload       = function () {
         WinJS.Application.onsettings = function (e) {
             var privacyCmd = new Windows.UI.ApplicationSettings.SettingsCommand("privacy", "Privacy Policy", function () {window.open("https://www.playalterego.com/privacy-policy");});
             e.detail.e.request.applicationCommands.append(privacyCmd);
@@ -1997,11 +1951,11 @@ if (window.isWinStoreApp) {
         WinJS.Application.start();
     };
     document.head.appendChild(baseScript);
-    uiScript = document.createElement("script");
-    uiScript.src = "//Microsoft.WinJS.1.0/js/ui.js";
+    uiScript                = document.createElement("script");
+    uiScript.src            = "//Microsoft.WinJS.1.0/js/ui.js";
     document.head.appendChild(uiScript);
 } else if (isWinOldApp) {
-    console = {
+    console                = {
         log   : function (message) {window.external.ConsoleLog(message);},
         error : function (message) {window.external.ConsoleError(message);}
     };
